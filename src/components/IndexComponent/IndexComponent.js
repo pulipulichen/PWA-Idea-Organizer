@@ -1,5 +1,7 @@
 import $ from 'jquery'
 import './summernote/summernote-lite.webpack.js'
+//let summernoteLoader = () => import(/* webpackChunkName: "summernote" */ './summernote/summernote-lite.webpack.js')
+//let summernoteLoader = () => import('./summernote/summernote-lite.webpack.js')
 
 let IndexComponent = {
   props: ['lib', 'status', 'config'],
@@ -15,7 +17,8 @@ let IndexComponent = {
 //  },
 //  watch: {
 //  },
-  mounted() {
+  async mounted() {
+    //summernoteLoader()
     this.initEditor()
   },
   methods: {
@@ -89,7 +92,7 @@ let IndexComponent = {
         ['sort', ['toggleSortMode']],
         ['list', ['ul', 'ol', 'indent', 'outdent']],
         ['color', ['forecolor', 'backcolor', 'underline']],
-        ['format', ['removeElement']],
+        ['format', ['removeFormat' , 'removeElement']],
         ['insert', ['hr']],
         ['manage', ['copyRichFormat', 'clearTarget']]
       ]

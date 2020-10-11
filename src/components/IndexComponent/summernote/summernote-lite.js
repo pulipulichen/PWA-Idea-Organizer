@@ -142,21 +142,35 @@ import Sortable from "sortablejs";
           $tooltip.find('.note-tooltip-content').text(title);
           $tooltip.appendTo(this.options.target);
           //console.log($tooltip.prop('outerHTML'))
+          //console.log($node)
+          
           var nodeWidth = $node.outerWidth();
           var nodeHeight = $node.outerHeight();
           var tooltipWidth = $tooltip.outerWidth();
           var tooltipHeight = $tooltip.outerHeight();
-          let leftOffset = -10
+          let leftOffset = 0
+          
+          let left = offset.left + (nodeWidth / 2 - tooltipWidth / 2) + leftOffset
+          let width = $tooltip.width()
+          //console.log(window.innerWidth, left + $tooltip.width())
+          if ((left + width) > window.innerWidth) {
+            left = window.innerWidth - width
+            $tooltip.attr('data-x-position', 'right')
+          }
+          else {
+            $tooltip.attr('data-x-position', 'center')
+          }
+          
           if (placement === 'bottom') {
               $tooltip.css({
                   top: offset.top + nodeHeight,
-                  left: offset.left + (nodeWidth / 2 - tooltipWidth / 2) + leftOffset
+                  left
               });
           }
           else if (placement === 'top') {
               $tooltip.css({
                   top: offset.top - tooltipHeight,
-                  left: offset.left + (nodeWidth / 2 - tooltipWidth / 2)
+                  left
               });
           }
           else if (placement === 'left') {
@@ -203,11 +217,12 @@ import Sortable from "sortablejs";
           });
       };
       DropdownUI.prototype.clear = function () {
-          var $parent = $('.note-btn-group.open');
+          var $parent = $$1('.note-btn-group.open');
           $parent.find('.note-btn.active').removeClass('active');
           $parent.removeClass('open');
       };
       DropdownUI.prototype.show = function () {
+          this.$button.parents('.note-toolbar').addClass('show-dropdown')
           this.$button.addClass('active');
           this.$button.parent().addClass('open');
           var $dropdown = this.$button.next();
@@ -223,6 +238,7 @@ import Sortable from "sortablejs";
           }
       };
       DropdownUI.prototype.hide = function () {
+        this.$button.parents('.note-toolbar').removeClass('show-dropdown')
           this.$button.removeClass('active');
           this.$button.parent().removeClass('open');
       };
@@ -239,12 +255,15 @@ import Sortable from "sortablejs";
       return DropdownUI;
   }());
   $$1(document).on('click', function (e) {
-      if (!$(e.target).closest('.note-btn-group').length) {
-          $('.note-btn-group.open').removeClass('open');
+      
+      if (!$$1(e.target).closest('.note-btn-group').length) {
+        $$1('.note-btn-group.open').parents('.note-toolbar').removeClass('show-dropdown')
+        $$1('.note-btn-group.open').removeClass('open');
       }
   });
   $$1(document).on('click.note-dropdown-menu', function (e) {
-      $(e.target).closest('.note-dropdown-menu').parent().removeClass('open');
+      $$1(e.target).closest('.note-dropdown-menu').parent().removeClass('open');
+      $$1(e.target).parents('.note-toolbar').removeClass('show-dropdown')
   });
 
   var ModalUI = /** @class */ (function () {
@@ -5933,7 +5952,7 @@ ${links}`
            */
           this.floatMe = this.wrapCommand(function (value) {
             if (this.hasSelectedRange() === false) {
-              return
+              return false
             }
             
               var $target = $$1(_this.restoreTarget());
@@ -8122,7 +8141,7 @@ sel.addRange(range);
                       }, 
                       click: function (event) {
                           //console.log('set color')
-                        
+                          
                           event.stopPropagation()
                           event.preventDefault()
                           
@@ -8184,6 +8203,9 @@ sel.addRange(range);
                               //console.log(hasSelectedRange())
                               
                               _this.context.invoke('editor.' + eventName, value);
+                              
+                              $currentButton.closest('.note-dropdown-menu').parent().removeClass('open');
+                              $$1('.note-btn-group.open').parents('.note-toolbar').removeClass('show-dropdown')
                           }
                           else {
                             //console.log('其他')
@@ -8331,6 +8353,13 @@ sel.addRange(range);
               }).render();
           });
           this.context.memo('button.clear', function () {
+              return _this.button({
+                  contents: _this.ui.icon(_this.options.icons.eraser),
+                  tooltip: _this.lang.font.clear + _this.representShortcut('removeFormat'),
+                  click: _this.context.createInvokeHandler('editor.removeFormat')
+              }).render();
+          });
+          this.context.memo('button.removeFormat', function () {
               return _this.button({
                   contents: _this.ui.icon(_this.options.icons.eraser),
                   tooltip: _this.lang.font.clear + _this.representShortcut('removeFormat'),

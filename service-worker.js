@@ -14,7 +14,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v202010120435';
+const PRECACHE = 'precache-v202010120504';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
@@ -27,7 +27,6 @@ const PRECACHE_URLS = [
   './dist/index.js.map',
   './dist/vendors/semantic-ui-niwsf.js',
   './dist/vendors/semantic-ui-niwsf.js.map',
-  
   './dist/asset/brand-icons.eot',
   './dist/asset/brand-icons.svg',
   './dist/asset/brand-icons.ttf',

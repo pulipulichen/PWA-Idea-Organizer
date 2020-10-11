@@ -34,7 +34,8 @@
   position: absolute;
   z-index: 1070;
   display: block;
-  font-size: 13px;
+  //font-size: 13px;
+  font-size: 1rem;
   -webkit-opacity: 0;
   -khtml-opacity: 0;
   -moz-opacity: 0;
@@ -44,6 +45,12 @@
   line-height: initial;
   
   font-family: 'Noto Sans CJK TC Light', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  
+  white-space: nowrap;
+  //&[data-x-position="right"] {
+    //background-color: red;
+    //text-align: right;
+  //}
 }
 
 .note-tooltip.in {
@@ -81,7 +88,7 @@
   left: 50%;
   margin-left: -5px;
   border-bottom-color: #000;
-  border-width: 0 5px 5px
+  border-width: 0 5px 5px;
 }
 
 .note-tooltip.top .note-tooltip-arrow {
@@ -90,6 +97,12 @@
   margin-left: -5px;
   border-top-color: #000;
   border-width: 5px 5px 0
+}
+
+.note-tooltip[data-x-position="right"] .note-tooltip-arrow {
+  left: calc(100% - 1.5rem) !important;
+  //right: 50% !important;
+  //border-color: green !important;
 }
 
 .note-tooltip.right .note-tooltip-arrow {

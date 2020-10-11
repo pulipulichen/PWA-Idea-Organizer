@@ -373,8 +373,15 @@ kbd {
   &.enable-overflow {
     //background-color: red;
     white-space: nowrap;
-    overflow-y: auto;
+    overflow-x: scroll;
+    
+    &.show-dropdown {
+      overflow-x: visible;
+      padding-bottom: 10px;
+    }
   }
+  
+  
   
   &.compact {
     padding: 0; 

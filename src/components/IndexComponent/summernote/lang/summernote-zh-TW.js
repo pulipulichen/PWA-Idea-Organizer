@@ -18,6 +18,8 @@ import jQuery from 'jquery'
         uncomment: '取消註解',
         htmlify: '轉換為HTML',
         textify: 'HTML轉換為純文字',
+        copyRichFormat: '複製',
+        toggleSortMode: '整理模式'
       },
       image: {
         image: '圖片',
@@ -125,7 +127,10 @@ import jQuery from 'jquery'
         left: '靠右對齊',
         center: '靠中對齊',
         right: '靠右對齊',
-        justify: '左右對齊'
+        justify: '左右對齊',
+        removeElement: '移除',
+        clearTarget: '清空文件',
+        clearTargetConfirm: '您確定要清空文件嗎？',
       },
       color: {
         recent: '字型顏色',

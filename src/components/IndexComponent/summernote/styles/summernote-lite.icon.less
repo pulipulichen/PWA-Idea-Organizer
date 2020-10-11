@@ -370,6 +370,12 @@ kbd {
   padding: 10px 5px;
   border-bottom: 1px solid #e2e2e2;
 
+  &.enable-overflow {
+    //background-color: red;
+    white-space: nowrap;
+    overflow-y: auto;
+  }
+  
   &.compact {
     padding: 0; 
     
@@ -409,7 +415,8 @@ kbd {
 
 .note-btn-group>.note-btn,
 .note-btn-group>.note-btn-group {
-  margin-left: -4px;
+  //margin-left: -4px;
+  margin-left: 0;
   border-radius: 0
 }
 
@@ -453,11 +460,16 @@ kbd {
   display: block
 }
 
+.note-toolbar.larger .note-btn {
+  //font-size: 2rem;
+}
+
 .note-btn {
   display: inline-block;
   padding: 5px 10px;
   margin-bottom: 0;
-  font-size: 14px;
+  //font-size: 14px;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.4;
   color: #333;

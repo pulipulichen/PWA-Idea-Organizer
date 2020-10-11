@@ -39,8 +39,43 @@
   margin: 0 0 10px
 }
 
+
+&.note-editor.mobile .note-editing-area .note-editable {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  
+  &[contenteditable="false"] {
+    //color: red;
+  }
+}
+    
+
 &.note-editor .note-editing-area .note-editable {
-  outline: 0
+  outline: 0;
+  
+  &[contenteditable="false"] {
+    p,li {
+      cursor: pointer;
+    }
+    
+    .sortable-ghost {
+      background-color: #dff0ff;
+      color: #2185d0;
+      -webkit-box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent;
+      box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent;
+    }
+
+    .sortable-selected {
+      background-color: #e1f7f7;
+      color: #10a3a3;
+      -webkit-box-shadow: 0 0 0 1px #10a3a3 inset, 0 0 0 0 transparent;
+      box-shadow: 0 0 0 1px #10a3a3 inset, 0 0 0 0 transparent;
+    }
+  }
+}
+
+&.note-editor .note-editing-area .note-editable.sort-mode {
+  user-select: none;
 }
 
 &.note-editor .note-editing-area .note-editable * {

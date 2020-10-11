@@ -1,9 +1,6 @@
 import $ from 'jquery'
 import './summernote/summernote-lite.webpack.js'
 
-import jqueryNodeDragger from 'jquery-node-dragger'
-jqueryNodeDragger($)
-
 let IndexComponent = {
   props: ['lib', 'status', 'config'],
   data() {    
@@ -19,9 +16,7 @@ let IndexComponent = {
 //  watch: {
 //  },
   mounted() {
-    setTimeout(() => {
-      this.initEditor()
-    }, 1000)
+    this.initEditor()
   },
   methods: {
     initEditor () {
@@ -48,8 +43,9 @@ let IndexComponent = {
         },
         //enableAirPopover: this._summernoteOptionsEnableAirPopover(),
         enableStatusbar: false,
-        toolbarAlign: 'center',
+        toolbarAlign: 'right',
         toolbarCompact: true,
+        toolbarOverflow: true,
         placeholder: '<ul><li>What do you write...</li></ul>',
         focus: true,
         //container: this.editor.parent(),
@@ -90,8 +86,10 @@ let IndexComponent = {
     _summernoteOptionsToolbar () {
       return [
         // [groupName, [list of button]]
+        ['sort', ['toggleSortMode']],
         ['list', ['ul', 'ol', 'indent', 'outdent']],
-        ['style', ['forecolor', 'backcolor', 'bold', 'underline', 'clear', 'removeElement']],
+        ['color', ['forecolor', 'backcolor', 'underline']],
+        ['format', ['removeElement']],
         ['insert', ['hr']],
         ['manage', ['copyRichFormat', 'clearTarget']]
       ]
@@ -101,7 +99,9 @@ let IndexComponent = {
       //console.log('onChange:', contents, $editable);
       localStorage.setItem('contents', contents)
     },
-    
+    _onImageUpload () {
+      
+    }
     
   } // methods
 }

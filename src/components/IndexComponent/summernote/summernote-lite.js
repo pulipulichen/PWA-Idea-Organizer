@@ -84,12 +84,19 @@ import $ from 'jquery'
   var TooltipUI = /** @class */ (function () {
       function TooltipUI($node, options) {
           this.$node = $node;
+          
           this.options = $.extend({}, {
               title: '',
               target: options.container,
               trigger: 'hover focus',
               placement: 'bottom'
           }, options);
+          
+          //console.log(this.options)
+          if (this.options.toolbarPosition === 'bottom') {
+            this.options.placement = 'top'
+          }
+          
           // create tooltip node
           this.$tooltip = $([
               '<div class="note-tooltip in">',
@@ -122,11 +129,17 @@ import $ from 'jquery'
           var $tooltip = this.$tooltip;
           var title = this.options.title || $node.attr('title') || $node.data('title');
           var placement = this.options.placement || $node.data('placement');
+          
+          //console.log($node.parents('.note-toolbar:first').hasClass('bottom'))
+          if ($node.parents('.note-toolbar:first').hasClass('bottom')) {
+            placement = 'top'
+          }
+          
           $tooltip.addClass(placement);
           $tooltip.addClass('in');
           $tooltip.find('.note-tooltip-content').text(title);
           $tooltip.appendTo(this.options.target);
-          console.log($tooltip.prop('outerHTML'))
+          //console.log($tooltip.prop('outerHTML'))
           var nodeWidth = $node.outerWidth();
           var nodeHeight = $node.outerHeight();
           var tooltipWidth = $tooltip.outerWidth();
@@ -952,7 +965,8 @@ import $ from 'jquery'
               iframe: 'Iframe',
               subscript: 'Subscript',
               superscript: 'Superscript',
-              size: 'Font Size'
+              size: 'Font Size',
+              copyRichFormat: 'Rich Format Copy'
           },
           image: {
               image: 'Picture',
@@ -1054,7 +1068,10 @@ import $ from 'jquery'
               left: 'Align left',
               center: 'Align center',
               right: 'Align right',
-              justify: 'Justify full'
+              justify: 'Justify full',
+              removeElement: 'Remove Element',
+              clearTarget: 'Clear Target',
+              clearTargetConfirm: 'Are you sure?',
           },
           color: {
               recent: 'Recent Color',
@@ -1096,6 +1113,7 @@ import $ from 'jquery'
               'justifyCenter': 'Set center align',
               'justifyRight': 'Set right align',
               'justifyFull': 'Set full align',
+              'removeElement': 'Remove current element',
               'insertUnorderedList': 'Toggle unordered list',
               'insertOrderedList': 'Toggle ordered list',
               'outdent': 'Outdent on current paragraph',
@@ -5367,6 +5385,28 @@ ${links}`
           });
           
           /**
+           * insert horizontal rule
+           */
+          this.removeElement = this.wrapCommand(function () {
+            let rng = _this.createRange()
+            
+            let parent = $(rng.sc)[0]
+            while (parent.nodeName.toLowerCase() === '#text') {
+              parent = $(parent).parent()[0]
+            }
+            
+            parent = $(parent)
+            if (parent.hasClass('note-editable')) {
+              return false
+            }
+            else {
+              parent.remove()
+            }
+            //console.log(parent.nodeName, parent)
+            //$(rng.sc).remove()
+          });
+          
+          /**
            * lineHeight
            * @param {String} value
            */
@@ -6047,7 +6087,8 @@ ${links}`
               setTimeout(() => {
                 _this.saveBlurRange()
               }, 0)
-              _this.context.triggerEvent('change', _this.$editable.html());
+              //_this.context.triggerEvent('change', _this.$editable.html());
+              _this.triggerChangeEvent()
           }, 10));
           this.$editor.on('focusin', function (event) {
               _this.context.triggerEvent('focusin', event);
@@ -6345,7 +6386,8 @@ ${links}`
           */
           this.context.triggerEvent('before.command', this.$editable.html());
           this.history.undo();
-          this.context.triggerEvent('change', this.$editable.html());
+          //this.context.triggerEvent('change', this.$editable.html());
+          this.triggerChangeEvent()
       };
       /*
       * commit
@@ -6353,15 +6395,51 @@ ${links}`
       Editor.prototype.commit = function () {
           this.context.triggerEvent('before.command', this.$editable.html());
           this.history.commit();
-          this.context.triggerEvent('change', this.$editable.html());
+          //this.context.triggerEvent('change', this.$editable.html());
+          this.triggerChangeEvent()
       };
+      
+      let lastChangedContents = null
+      let triggerChangeTimer = null
+      Editor.prototype.triggerChangeEvent = function () {
+        let contents = this.$editable.html()
+        
+        if (contents === '<p><br></p>'
+                || contents === '<p></p>') {
+          contents = ''
+        }
+
+        if (contents.endsWith('<p></p>')) {
+          contents = contents.slice(0, -7)
+        }
+
+        if (contents !== ''
+                && contents.indexOf('<p>') === -1
+                && contents.startsWith('<') === false
+                && contents.startsWith('>') === false) {
+          contents = `<p>${contents}</p>`
+        }
+        
+        if (lastChangedContents === contents) {
+          return false
+        }
+
+        clearTimeout(triggerChangeTimer)
+        triggerChangeTimer = setTimeout(() => {
+          this.context.triggerEvent('change', contents);
+          lastChangedContents = contents
+        }, 0)
+          
+      }
+      
       /**
        * redo
        */
       Editor.prototype.redo = function () {
           this.context.triggerEvent('before.command', this.$editable.html());
           this.history.redo();
-          this.context.triggerEvent('change', this.$editable.html());
+          //this.context.triggerEvent('change', this.$editable.html());
+          this.triggerChangeEvent()
       };
       /**
        * before command
@@ -6379,7 +6457,8 @@ ${links}`
           this.normalizeContent();
           this.history.recordUndo();
           if (!isPreventTrigger) {
-              this.context.triggerEvent('change', this.$editable.html());
+            //this.context.triggerEvent('change', this.$editable.html());
+            this.triggerChangeEvent()
           }
       };
       /**
@@ -7417,7 +7496,7 @@ sel.addRange(range);
               return;
           }
           if (this.options.enableStatusbar === false) {
-            this.$statusbar.hide()
+            this.$statusbar.parent().hide()
           }
           
           this.$statusbar.on('mousedown', function (event) {
@@ -7691,6 +7770,7 @@ sel.addRange(range);
           this.$note = context.layoutInfo.note;
           this.events = {
               'summernote.change': function () {
+                //console.log(context.invoke('code'))
                   _this.$note.val(context.invoke('code'));
               }
           };
@@ -8331,8 +8411,33 @@ sel.addRange(range);
           this.context.memo('button.justifyRight', func.invoke(justifyRight, 'render'));
           this.context.memo('button.justifyFull', func.invoke(justifyFull, 'render'));
           
+          //this.context.memo('button.removeElement', func.invoke(removeElement, 'render'));
+          
           //this.context.memo('button.outdent', func.invoke(outdent, 'render'));
           //this.context.memo('button.indent', func.invoke(indent, 'render'));
+          this.context.memo('button.removeElement', function () {
+              return _this.button({
+                  className: 'note-btn-removeElement',
+                  contents: '⇤',
+                  tooltip: _this.lang.paragraph.removeElement + _this.representShortcut('removeElement'),
+                  click: _this.context.createInvokeHandler('editor.removeElement')
+              }).render();
+          });
+          
+          this.context.memo('button.clearTarget', function () {
+              return _this.button({
+                  className: 'note-btn-clearTarget',
+                  contents: '∅',
+                  tooltip: _this.lang.paragraph.clearTarget,
+                  click: (node) => {
+                    if (window.confirm(_this.lang.paragraph.clearTargetConfirm)) {
+                      _this.context.invoke('code', '')
+                      //console.log('aaa')
+                      //_this.context.createInvokeHandler('editor.code', '')
+                    }
+                  }
+              }).render();
+          });
           
           this.context.memo('button.outdent', function () {
               return _this.button({
@@ -8616,8 +8721,17 @@ sel.addRange(range);
               return _this.button({
                   //contents: _this.ui.icon(_this.options.icons.copy),  // 
                   contents: _this.ui.icon(_this.options.icons.code) + ' ' + _this.lang.link.copy,
-                  tooltip: _this.lang.image.copy,
+                  tooltip: _this.lang.link.copy,
                   click: _this.context.createInvokeHandler('editor.copyLink')
+              }).render();
+          });
+          // Remove Buttons
+          this.context.memo('button.copyRichFormat', function () {
+              return _this.button({
+                  //contents: _this.ui.icon(_this.options.icons.copy),  // 
+                  contents: _this.ui.icon(_this.options.icons.copy),
+                  tooltip: _this.lang.font.copyRichFormat,
+                  click: _this.context.createInvokeHandler('editor.copyRichFormatHTML')
               }).render();
           });
       };
@@ -8857,6 +8971,10 @@ sel.addRange(range);
           if (this.options.followingToolbar) {
               this.$window.on('scroll resize', this.followScroll);
           }
+          
+          if (this.options.toolbarPosition === 'bottom') {
+            this.$toolbar.addClass('bottom')
+          }
       };
       Toolbar.prototype.destroy = function () {
           this.$toolbar.children().remove();
@@ -8866,8 +8984,12 @@ sel.addRange(range);
       };
       Toolbar.prototype.followScroll = function () {
           if (this.$editor.hasClass('fullscreen')) {
-              return false;
+            return false
           }
+          if (this.options.toolbarPosition === 'bottom') {
+            return false
+          }
+          
           var $toolbarWrapper = this.$toolbar.parent('.note-toolbar-wrapper');
           var editorHeight = this.$editor.outerHeight();
           var editorWidth = this.$editor.width();
@@ -10901,6 +11023,7 @@ sel.addRange(range);
             $$1($$1.summernote.options.container).addClass('summernote')
           }
           
+          
           var type = $$1.type(lists.head(arguments));
           var isExternalAPICalled = type === 'string';
           var hasInitOptions = type === 'object';
@@ -10927,6 +11050,11 @@ sel.addRange(range);
                   context.invoke('editor.focus');
               }
           }
+          
+          $$1.summernote.options.container.click(() => {
+            let context = $note.data('summernote');
+            context.invoke('editor.focusin');
+          })
           return this;
       }
   });
@@ -11026,6 +11154,7 @@ sel.addRange(range);
           enableDropImage: true,
           enablePasteImage: true,
           enableStatusbar: true,
+          toolbarPosition: 'top',
           allowEnter: true,
           helpFooter: null,
           blockquoteBreakingLevel: 2,
@@ -11147,6 +11276,7 @@ sel.addRange(range);
                   'CMD+SHIFT+E': 'justifyCenter',
                   'CMD+SHIFT+R': 'justifyRight',
                   'CMD+SHIFT+J': 'justifyFull',
+                  'CMD+BACKSPACE': 'removeElement',
                   'CMD+SHIFT+NUM7': 'insertUnorderedList',
                   'CMD+SHIFT+NUM8': 'insertOrderedList',
                   'CMD+LEFTBRACKET': 'outdent',
@@ -11186,6 +11316,7 @@ sel.addRange(range);
               'circle': 'note-icon-circle',
               'close': 'note-icon-close',
               'code': 'note-icon-code',
+              'copy': 'note-icon-code',
               'eraser': 'note-icon-eraser',
               'font': 'note-icon-font',
               'frame': 'note-icon-frame',
@@ -11214,7 +11345,8 @@ sel.addRange(range);
               'underline': 'note-icon-underline',
               'undo': 'note-icon-undo',
               'unorderedlist': 'note-icon-unorderedlist',
-              'video': 'note-icon-video'
+              'video': 'note-icon-video',
+              'removeElement': 'note-icon-video'
           }
       }
   });

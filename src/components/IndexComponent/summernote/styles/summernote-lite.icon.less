@@ -376,7 +376,8 @@ kbd {
     &> .note-btn-group {
       //margin-top: 0px;
       margin: 0px;
-      padding-bottom: 0;
+      //padding-bottom: 0;
+      padding-bottom: 3px;
       padding-top: 3px;
     }
   }
@@ -385,6 +386,14 @@ kbd {
   }
   &.center {
     text-align: center;
+  }
+  
+  &.bottom {
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    position: fixed;
+    z-index: 99999;
   }
 }
 

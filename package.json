@@ -62,6 +62,7 @@
   },
   "dependencies": {
     "jquery": "^3.5.1",
+    "jquery-node-dragger": "^1.0.2",
     "webpack-bundle-analyzer": "^3.9.0"
   }
 }

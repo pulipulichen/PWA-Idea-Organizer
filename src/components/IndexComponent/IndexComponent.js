@@ -1,6 +1,9 @@
 import $ from 'jquery'
 import './summernote/summernote-lite.webpack.js'
 
+import jqueryNodeDragger from 'jquery-node-dragger'
+jqueryNodeDragger($)
+
 let IndexComponent = {
   props: ['lib', 'status', 'config'],
   data() {    
@@ -11,10 +14,10 @@ let IndexComponent = {
   },
 //  components: {
 //  },
-  computed: {
-  },
-  watch: {
-  },
+//  computed: {
+//  },
+//  watch: {
+//  },
   mounted() {
     setTimeout(() => {
       this.initEditor()
@@ -25,12 +28,18 @@ let IndexComponent = {
       this.editor = $(this.$refs.editor)
       //console.log(this.editor.length, this.editor.summernote)
       this.editor.summernote(this._summernoteOptions())
+      
+      let contents = localStorage.getItem('contents')
+      if (contents !== null) {
+        this.editor.summernote("code", contents)
+      }
     },
     _summernoteOptions () {
       let options = {
         lang: 'zh-TW',
         //airMode: true,
         toolbar: this._summernoteOptionsToolbar(),
+        toolbarPosition: 'bottom',
         popover: {
           air: [
             ['font', ['forecolor', 'backcolor', 'bold', 'underline', 'clear']]
@@ -41,6 +50,8 @@ let IndexComponent = {
         enableStatusbar: false,
         toolbarAlign: 'center',
         toolbarCompact: true,
+        placeholder: '<ul><li>What do you write...</li></ul>',
+        focus: true,
         //container: this.editor.parent(),
         //maxHeight: '5em',
         //disableDragAndDrop: true,
@@ -80,10 +91,18 @@ let IndexComponent = {
       return [
         // [groupName, [list of button]]
         ['list', ['ul', 'ol', 'indent', 'outdent']],
-        ['style', ['forecolor', 'backcolor', 'bold', 'underline', 'clear']],
-        ['insert', ['hr']]
+        ['style', ['forecolor', 'backcolor', 'bold', 'underline', 'clear', 'removeElement']],
+        ['insert', ['hr']],
+        ['manage', ['copyRichFormat', 'clearTarget']]
       ]
-    }
+    },
+    _callbacksOnChange (contents) {
+      //console.log(contents)
+      //console.log('onChange:', contents, $editable);
+      localStorage.setItem('contents', contents)
+    },
+    
+    
   } // methods
 }
 

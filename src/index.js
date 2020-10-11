@@ -9,14 +9,14 @@ import i18n from './i18n/i18n.js'
 
 // ----------------------
 
-
+import './styles/styles.js'
 import template from './index.tpl'
 import config from './config.js'
 
 // --------------------
 // Components or routes
 
-import components from './global-components/index.js'
+import components from './components/index.js'
 
 // -----------------------
 // 確認 baseURL

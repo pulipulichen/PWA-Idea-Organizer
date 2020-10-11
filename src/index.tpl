@@ -1,3 +1,3 @@
 <div class="non-invasive-web-style-framework">
-  OK
+  <index-component></index-component>
 </div>

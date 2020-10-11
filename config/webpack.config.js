@@ -3,7 +3,7 @@
 //const dotenv = require('dotenv');
 //dotenv.config();
 //const baseURL = process.env.PROTOCOL + '//' + process.env.PUBLIC_HOST + ':' + process.env.PORT
-const baseURL = '/'
+//const baseURL = ''
 
 const path = require('path')
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
@@ -32,7 +32,7 @@ module.exports = (env, argv) => {
     output: {
       path: path.resolve(__dirname, '../dist/'),
       filename: '[name].js',
-      publicPath: baseURL + '/dist/'
+      publicPath: './dist/'
     },
     resolve: {
       alias: {

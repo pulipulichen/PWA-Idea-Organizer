@@ -1,0 +1,13 @@
+{
+  "name": "Idea Organizer",
+  "short_name": "IdeaOrg",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A text editor for organizing ideas.",
+  "icons": [{
+    "src": "images/icon128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }]
+}

@@ -16,7 +16,8 @@ import config from './config.js'
 // --------------------
 // Components or routes
 
-import components from './components/index.js'
+//import components from './components/index.js'
+import './components/index.js'
 
 // -----------------------
 // 確認 baseURL
@@ -100,7 +101,7 @@ let VueController = {
   i18n: i18n,
   
   template: template,
-  components: components
+  //components: components
 }
 
 if (typeof(baseURL) === 'string') {

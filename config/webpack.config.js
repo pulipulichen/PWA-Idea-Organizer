@@ -55,9 +55,9 @@ module.exports = (env, argv) => {
             'css-loader?sourceMap', // Step 2再執行這個
             {
               loader: 'less-loader?sourceMap',
-//              options: {
-//                globalVars: require('./webpack-app/styles/style.config.js')
-//              }
+              options: {
+                globalVars: require('../src/styles/style.config.js')
+              }
             }, // Step 1 要先執行這個
           ]
         },
@@ -166,7 +166,7 @@ module.exports = (env, argv) => {
         {
           loader: 'less-loader?sourceMap',
           options: {
-            globalVars: require('./webpack-app/styles/style.config.js')
+            globalVars: require('../src/styles/style.config.js')
           }
         }, // Step 1 要先執行這個
       ]

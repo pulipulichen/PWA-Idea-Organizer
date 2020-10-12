@@ -6201,6 +6201,7 @@ ${links}`
           let lastKeyCode = null
           
           let keydownEvent = function (event) {
+              //console.log(event.keyCode, event.isDefaultPrevented(), _this.options.shortcuts)
               
               _this.context.triggerEvent('keydown', event);
               if (!event.isDefaultPrevented()) {
@@ -6462,9 +6463,13 @@ ${links}`
       Editor.prototype.destroy = function () {
           this.$editable.off();
       };
+      let applyToElementEventNames = [
+        'bold', 'italic', 'underline', 'strikethrough', 'removeFormat'
+      ]
+      
       Editor.prototype.handleKeyMap = function (event) {
           var keyMap = this.options.keyMap[env.isMac ? 'mac' : 'pc'];
-          //console.log(keyMap)
+          //console.log(event.keyCode, keyMap)
           var keys = [];
           if (event.metaKey) {
               keys.push('CMD');
@@ -6489,11 +6494,28 @@ ${links}`
               keys.push(keyName);
           }
           var eventName = keyMap[keys.join('+')];
+          
+          //console.log(eventName)
           //console.log([keys.join('+'), eventName, event.keyCode])
           //console.log(this.context.invoke(eventName))
           if (eventName) {
               //console.log(this.options.buttons)
-              if (this.context.invoke(eventName) !== false) {
+              if (applyToElementEventNames.indexOf(eventName) > -1) {
+                let hasCurrentSelectedRange =  this.context.invoke('editor.hasSelectedRange')
+                if (hasCurrentSelectedRange === false) {
+                  this.context.invoke('editor.saveRange')
+                  this.context.invoke('editor.selectCurrentElement')
+                }
+                
+                if (this.context.invoke(eventName) !== false) {
+                  event.preventDefault();
+                }
+                
+                if (hasCurrentSelectedRange === false) {
+                  this.context.invoke('editor.restoreRange')
+                }
+              }
+              else if (this.context.invoke(eventName) !== false) {
                   event.preventDefault();
               }
               else if (typeof(this.options.buttons) === 'object'
@@ -8464,7 +8486,7 @@ sel.addRange(range);
                               //if (_this.context.invoke('editor.hasSelectedRange')) {
                               //console.log(hasSelectedRange())
                               
-                              console.log($currentButton, eventName, value)
+                              //console.log($currentButton, eventName, value)
                               localStorage.setItem('summernote.recent-color.' + eventName, value)
                               
                               _this.context.invoke('editor.' + eventName, value);
@@ -8651,13 +8673,29 @@ sel.addRange(range);
             'backgroundColorPurple': 'rgb(205, 197, 244)',
           }
           
+          let resetBackgroundColorEvent = _this.context.createRangeInvokeHandlerAndUpdateState('editor.color', {'backColor': 'transparent'})
           Object.keys(backgroundColors).forEach((name) => {
             let color = backgroundColors[name]
             this.context.memo('button.' + name, function () {
+              let clickEvent = _this.context.createRangeInvokeHandlerAndUpdateState('editor.color', {'backColor': color})
+              
               return _this.button({
-                  contents: `<span class="background-color-circle" style="background-color: ${color}"></span>`,
+                  contents: `<span class="background-color-circle" style="background-color: ${color}" backColor="${color}"></span>`,
                   tooltip: _this.lang.font[name],
-                  click: _this.context.createRangeInvokeHandlerAndUpdateState('editor.color', {'backColor': color})
+                  click: (event) => {
+                    let button = $$1(event.currentTarget)
+                    let buttonColor = button.find('span:first').attr('backColor')
+                    //console.log(buttonColor)
+                    
+                    let currentElement = _this.context.invoke('editor.getCurrentElement')
+                    let currentColor = currentElement.css('background-color')
+                    if (buttonColor === currentColor) {
+                      resetBackgroundColorEvent(event)
+                    }
+                    else {
+                      clickEvent(event)
+                    }
+                  }
               }).render();
             });
           })
@@ -9858,7 +9896,7 @@ sel.addRange(range);
       LinkDialog.prototype.showLinkDialog = function (linkInfo) {
           var _this = this;
           
-          console.log('showLinkDialog')
+          //console.log('showLinkDialog')
           
           return $$1.Deferred(function (deferred) {
               var $linkText = _this.$dialog.find('.note-link-text');
@@ -11713,10 +11751,10 @@ sel.addRange(range);
                   'CTRL+ALT+T': 'textify',
                   //'CTRL+SHIFT+E': 'comment',
                   'CTRL+BACKSLASH': 'removeFormat',
-                  'CTRL+SHIFT+L': 'justifyLeft',
-                  'CTRL+SHIFT+E': 'justifyCenter',
-                  'CTRL+SHIFT+R': 'justifyRight',
-                  'CTRL+SHIFT+J': 'justifyFull',
+                  //'CTRL+SHIFT+L': 'justifyLeft',
+                  //'CTRL+SHIFT+E': 'justifyCenter',
+                  //'CTRL+SHIFT+R': 'justifyRight',
+                  //'CTRL+SHIFT+J': 'justifyFull',
                   'CTRL+SHIFT+NUM7': 'insertUnorderedList',
                   'CTRL+SHIFT+NUM8': 'insertOrderedList',
                   'CTRL+LEFTBRACKET': 'outdent',
@@ -11738,8 +11776,10 @@ sel.addRange(range);
                   'ENTER': 'insertParagraph',
                   'CMD+Z': 'undo',
                   'CMD+SHIFT+Z': 'redo',
-                  'TAB': 'tab',
-                  'SHIFT+TAB': 'untab',
+                  //'TAB': 'indent',
+                  //'SHIFT+TAB': 'untab',
+                  'SHIFT+TAB': 'outdent',
+                  'TAB': 'indent',
                   'CMD+B': 'bold',
                   'CMD+I': 'italic',
                   'CMD+U': 'underline',

@@ -90,6 +90,7 @@ let IndexComponent = {
       return [
         // [groupName, [list of button]]
         ['sort', ['toggleSortMode']],
+        ['history', ['undo', 'redo']],
         ['list', ['ul', 'ol', 'indent', 'outdent']],
         ['color', ['forecolor', 'backcolor', 'underline']],
         ['format', ['removeFormat' , 'removeElement']],

@@ -5375,6 +5375,7 @@ ${links}`
             let buttons = _this.$editor.find('.note-toolbar .note-btn-group > .note-btn:not(.note-toggle-sort-mode)')
             
             if (_this.$editable.prop('contentEditable') === 'true') {
+              _this.saveRange()
               _this.$editable.prop('contentEditable', 'false')
               buttons.prop('disabled', 'disabled')
               //console.log(_this.$editor.find('.note-toolbar .note-btn-group > .note-btn:not(.note-toggle-sort-mode)').length)
@@ -5387,7 +5388,6 @@ ${links}`
                 ghostClass: 'blue-background-class'
               });
               */
-              
               
               let lists = _this.$editable.find('ul,ol')
               //console.log(lists.length)
@@ -5413,6 +5413,8 @@ ${links}`
               _this.$editable.prop('contentEditable', 'true')
               _this.$editable.removeClass('sort-mode')
               buttons.prop('disabled', null)
+              //_this.context.invoke('focus');
+              _this.restoreRange()
             }
             return this
           }
@@ -8219,6 +8221,13 @@ sel.addRange(range);
               ]
           }).render();
       };
+      
+      let toolbarScrollToLeft = function (event) {
+        let button = $(event.target)
+        let toolbar = button.parents('.note-toolbar')
+        toolbar.animate({scrollLeft: 0}, 100)
+      }
+      
       Buttons.prototype.addToolbarButtons = function () {
           var _this = this;
           this.context.memo('button.style', function () {
@@ -8565,15 +8574,17 @@ sel.addRange(range);
                   className: 'note-btn-clearTarget',
                   contents: '∅',
                   tooltip: _this.lang.paragraph.clearTarget,
-                  click: (node) => {
+                  click: (event) => {
                     if (window.confirm(_this.lang.paragraph.clearTargetConfirm)) {
                       _this.context.invoke('code', '')
+                      toolbarScrollToLeft(event)
                       //console.log('aaa')
                       //_this.context.createInvokeHandler('editor.code', '')
                     }
                   }
               }).render();
           });
+          
           
           this.context.memo('button.outdent', function () {
               return _this.button({
@@ -8867,7 +8878,10 @@ sel.addRange(range);
                   //contents: _this.ui.icon(_this.options.icons.copy),  // 
                   contents: _this.ui.icon(_this.options.icons.copy),
                   tooltip: _this.lang.font.copyRichFormat,
-                  click: _this.context.createInvokeHandler('editor.copyRichFormatHTML')
+                  click: (event) => {
+                    toolbarScrollToLeft(event)
+                    _this.context.createInvokeHandler('editor.copyRichFormatHTML')(event)
+                  }
               }).render();
           });
           
@@ -11422,10 +11436,10 @@ sel.addRange(range);
                   'CMD+SHIFT+S': 'strikethrough',
                   'CMD+M': 'comment',
                   'CMD+BACKSLASH': 'removeFormat',
-                  'CMD+SHIFT+L': 'justifyLeft',
-                  'CMD+SHIFT+E': 'justifyCenter',
-                  'CMD+SHIFT+R': 'justifyRight',
-                  'CMD+SHIFT+J': 'justifyFull',
+                  //'CMD+SHIFT+L': 'justifyLeft',
+                  //'CMD+SHIFT+E': 'justifyCenter',
+                  //'CMD+SHIFT+R': 'justifyRight',
+                  //'CMD+SHIFT+J': 'justifyFull',
                   'CMD+BACKSPACE': 'removeElement',
                   'CMD+SHIFT+NUM7': 'insertUnorderedList',
                   'CMD+SHIFT+NUM8': 'insertOrderedList',

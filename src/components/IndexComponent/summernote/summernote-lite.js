@@ -3,6 +3,8 @@
 import $ from 'jquery'
 
 import Sortable from "sortablejs"
+
+import getCaretCoordinates from "./vendors/textarea-caret-position/index.js"
 import soundKeyEnterURL from './sound/keyenter.ogg'
 
 import soundKeyAny1 from './sound/office_typewriter-1.ogg'
@@ -6203,7 +6205,10 @@ ${links}`
               }
           })
           .on('input', function (event) {
-              //console.log('input')
+              //console.log(event.target)
+              //var caret = getCaretCoordinates(event.target, event.target.selectionEnd);
+              //console.log('(top, left, height) = (%s, %s, %s)', caret.top, caret.left, caret.height);
+            
               _this.context.triggerEvent('input', event);
           })
           .on('paste', function (event) {

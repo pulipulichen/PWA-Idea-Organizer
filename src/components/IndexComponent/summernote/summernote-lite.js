@@ -1050,7 +1050,12 @@ import soundKeyAny30 from './sound/office_typewriter-30.ogg'
               superscript: 'Superscript',
               size: 'Font Size',
               copyRichFormat: 'Rich Format Copy',
-              toggleSortMode: 'Toggle Sort Mode'
+              toggleSortMode: 'Toggle Sort Mode',
+              'backgroundColorRed': 'Highlight Red',
+              'backgroundColorYellow': 'Highlight Yellow',
+              'backgroundColorGreen': 'Highlight Green',
+              'backgroundColorBlue': 'Highlight Blue',
+              'backgroundColorPurple': 'Highlight Purple',
           },
           image: {
               image: 'Picture',
@@ -8616,6 +8621,27 @@ sel.addRange(range);
                   click: _this.context.createRangeInvokeHandlerAndUpdateState('editor.removeFormat')
               }).render();
           });
+          
+          let backgroundColors = {
+            'backgroundColorRed': 'rgb(250, 136, 161)',
+            'backgroundColorYellow': 'rgb(255, 239, 98)',
+            'backgroundColorGreen': 'rgb(231, 244, 161)',
+            'backgroundColorBlue': 'rgb(176, 223, 250)',
+            'backgroundColorPurple': 'rgb(205, 197, 244)',
+          }
+          
+          Object.keys(backgroundColors).forEach((name) => {
+            let color = backgroundColors[name]
+            this.context.memo('button.' + name, function () {
+              return _this.button({
+                  contents: `<span class="background-color-circle" style="background-color: ${color}"></span>`,
+                  tooltip: _this.lang.font[name],
+                  click: _this.context.createRangeInvokeHandlerAndUpdateState('editor.color', {'backColor': color})
+              }).render();
+            });
+          })
+          
+          
           this.context.memo('button.strikethrough', function () {
               return _this.button({
                   className: 'note-btn-strikethrough',

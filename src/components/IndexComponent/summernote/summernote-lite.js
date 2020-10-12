@@ -8227,15 +8227,27 @@ sel.addRange(range);
                                   foreColor: $button.attr('data-foreColor')
                               });
                           }
-                          else if (backColor) {
-                              _this.context.invoke('editor.color', {
-                                  backColor: $button.attr('data-backColor')
-                              });
-                          }
-                          else if (foreColor) {
-                              _this.context.invoke('editor.color', {
-                                  foreColor: $button.attr('data-foreColor')
-                              });
+                          else {
+                            let hasCurrentSelectedRange =  _this.context.invoke('editor.hasSelectedRange')
+                            if (hasCurrentSelectedRange === false) {
+                              _this.context.invoke('editor.saveRange')
+                              _this.context.invoke('editor.selectCurrentElement')
+                            }
+                            
+                            if (backColor) {
+                                _this.context.invoke('editor.color', {
+                                    backColor: $button.attr('data-backColor')
+                                });
+                            }
+                            else if (foreColor) {
+                                _this.context.invoke('editor.color', {
+                                    foreColor: $button.attr('data-foreColor')
+                                });
+                            }
+                            
+                            if (hasCurrentSelectedRange === false) {
+                              _this.context.invoke('editor.restoreRange')
+                            }
                           }
                       },
                       callback: function ($button) {
@@ -8249,6 +8261,7 @@ sel.addRange(range);
                           }
                           if (foreColor) {
                             $recentColor.css('color', recentColor);
+                            $button.attr('data-foreColor', recentColor);
                           }
                       }
                   }),

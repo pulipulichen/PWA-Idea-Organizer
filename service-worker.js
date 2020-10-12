@@ -14,7 +14,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v202010121914';
+const PRECACHE = 'precache-v202010122349';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
@@ -46,7 +46,36 @@ const PRECACHE_URLS = [
   './dist/asset/outline-icons.woff2',
   './dist/asset/summernote.eot',
   './dist/asset/summernote.ttf',
-  './dist/asset/summernote.woff'
+  './dist/asset/summernote.woff',
+  './dist/asset/keyenter.ogg',
+  './dist/asset/office_typewriter-1.ogg',
+  './dist/asset/office_typewriter-2.ogg',
+  './dist/asset/office_typewriter-3.ogg',
+  './dist/asset/office_typewriter-4.ogg',
+  './dist/asset/office_typewriter-5.ogg',
+  './dist/asset/office_typewriter-6.ogg',
+  './dist/asset/office_typewriter-7.ogg',
+  './dist/asset/office_typewriter-8.ogg',
+  './dist/asset/office_typewriter-9.ogg',
+  './dist/asset/office_typewriter-10.ogg',
+  './dist/asset/office_typewriter-12.ogg',
+  './dist/asset/office_typewriter-13.ogg',
+  './dist/asset/office_typewriter-14.ogg',
+  './dist/asset/office_typewriter-15.ogg',
+  './dist/asset/office_typewriter-16.ogg',
+  './dist/asset/office_typewriter-17.ogg',
+  './dist/asset/office_typewriter-18.ogg',
+  './dist/asset/office_typewriter-19.ogg',
+  './dist/asset/office_typewriter-20.ogg',
+  './dist/asset/office_typewriter-21.ogg',
+  './dist/asset/office_typewriter-22.ogg',
+  './dist/asset/office_typewriter-23.ogg',
+  './dist/asset/office_typewriter-24.ogg',
+  './dist/asset/office_typewriter-25.ogg',
+  './dist/asset/office_typewriter-26.ogg',
+  './dist/asset/office_typewriter-27.ogg',
+  './dist/asset/office_typewriter-29.ogg',
+  './dist/asset/office_typewriter-30.ogg',
 ];
 
 // The install handler takes care of precaching the resources we always need.

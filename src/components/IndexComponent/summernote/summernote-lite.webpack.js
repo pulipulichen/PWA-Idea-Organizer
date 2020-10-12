@@ -3,6 +3,7 @@ import './summernote-lite.js'
 
 import './styles/summernote-lite.dropdown.less'
 import './styles/summernote-lite.editor.less'
+import './styles/summernote-lite.editable.less'
 import './styles/summernote-lite.handle.less'
 import './styles/summernote-lite.icon.less'
 import './styles/summernote-lite.input.less'

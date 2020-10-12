@@ -235,6 +235,24 @@ module.exports = exports;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/IndexComponent/summernote/styles/summernote-lite.editable.less":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/IndexComponent/summernote/styles/summernote-lite.editable.less ***!
+  \****************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(true);
+// Module
+exports.push([module.i, ".summernote .note-editing-area .note-editable ol {\n  counter-reset: item;\n  margin: 0;\n  padding-left: 0;\n}\n.summernote .note-editing-area .note-editable ol > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li:before {\n  background: #ffef62;\n  color: #666;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ol > li:before {\n  content: counter(item);\n  margin-right: 0.7rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: #fa88a1;\n  color: #ddd;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: 1.8rem;\n  width: 2rem;\n  float: left;\n  font-weight: bold;\n  margin-top: 0.4rem;\n  border: 1px solid gray;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n}\n.summernote .note-editing-area .note-editable ul {\n  counter-reset: item;\n  margin: 0;\n  padding-left: 0;\n}\n.summernote .note-editing-area .note-editable ul > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li:before {\n  background: #fa88a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li:before {\n  background: #ffef62;\n  border: 1px solid gray;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li ul > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ul > li:before {\n  content: counter(item);\n  margin-right: 1rem;\n  margin-left: 0.4rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: transparent;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: 1.3rem;\n  width: 1.3rem;\n  float: left;\n  font-weight: bold;\n  margin-top: 0.8rem;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n}\n", "",{"version":3,"sources":["summernote-lite.editable.less"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,SAAS;EACT,eAAe;AACjB;AACA;EACE,uBAAuB;EACvB,uBAAuB;EACvB,aAAa;EACb,gBAAgB;AAClB;AACA;EACE,mBAAmB;EACnB,WAAW;AACb;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,sBAAsB;EACtB,oBAAoB;EACpB,UAAU;EACV,cAAc;EACd,0BAA0B;EAC1B,uBAAuB;EACvB,kBAAkB;EAClB,mBAAmB;EACnB,WAAW;EACX,kBAAkB;EAClB,iBAAiB;EACjB,mBAAmB;EACnB,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,kBAAkB;EAClB,sBAAsB;EACtB,sBAAsB;EACtB,sBAAsB;AACxB;AACA;EACE,mBAAmB;EACnB,SAAS;EACT,eAAe;AACjB;AACA;EACE,uBAAuB;EACvB,uBAAuB;EACvB,aAAa;EACb,gBAAgB;AAClB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;EACnB,sBAAsB;AACxB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,sBAAsB;EACtB,kBAAkB;EAClB,mBAAmB;EACnB,UAAU;EACV,cAAc;EACd,0BAA0B;EAC1B,uBAAuB;EACvB,kBAAkB;EAClB,gBAAgB;EAChB,kBAAkB;EAClB,kBAAkB;EAClB,iBAAiB;EACjB,mBAAmB;EACnB,aAAa;EACb,WAAW;EACX,iBAAiB;EACjB,kBAAkB;EAClB,sBAAsB;EACtB,sBAAsB;AACxB","file":"summernote-lite.editable.less","sourcesContent":[".summernote .note-editing-area .note-editable ol {\n  counter-reset: item;\n  margin: 0;\n  padding-left: 0;\n}\n.summernote .note-editing-area .note-editable ol > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li:before {\n  background: #ffef62;\n  color: #666;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ol > li:before {\n  content: counter(item);\n  margin-right: 0.7rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: #fa88a1;\n  color: #ddd;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: 1.8rem;\n  width: 2rem;\n  float: left;\n  font-weight: bold;\n  margin-top: 0.4rem;\n  border: 1px solid gray;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n}\n.summernote .note-editing-area .note-editable ul {\n  counter-reset: item;\n  margin: 0;\n  padding-left: 0;\n}\n.summernote .note-editing-area .note-editable ul > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li:before {\n  background: #fa88a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li:before {\n  background: #ffef62;\n  border: 1px solid gray;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li ul > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ul > li:before {\n  content: counter(item);\n  margin-right: 1rem;\n  margin-left: 0.4rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: transparent;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: 1.3rem;\n  width: 1.3rem;\n  float: left;\n  font-weight: bold;\n  margin-top: 0.8rem;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n}\n"]}]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/IndexComponent/summernote/styles/summernote-lite.editor.less":
 /*!**************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/IndexComponent/summernote/styles/summernote-lite.editor.less ***!
@@ -27415,6 +27433,27 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./src/components/IndexComponent/summernote/styles/summernote-lite.editable.less":
+/*!***************************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/styles/summernote-lite.editable.less ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.editable.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/IndexComponent/summernote/styles/summernote-lite.editable.less");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("0fac5fc3", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
 /***/ "./src/components/IndexComponent/summernote/styles/summernote-lite.editor.less":
 /*!*************************************************************************************!*\
   !*** ./src/components/IndexComponent/summernote/styles/summernote-lite.editor.less ***!
@@ -39432,19 +39471,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_summernote_lite_dropdown_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_dropdown_less__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _styles_summernote_lite_editor_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/summernote-lite.editor.less */ "./src/components/IndexComponent/summernote/styles/summernote-lite.editor.less");
 /* harmony import */ var _styles_summernote_lite_editor_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_editor_less__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _styles_summernote_lite_handle_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/summernote-lite.handle.less */ "./src/components/IndexComponent/summernote/styles/summernote-lite.handle.less");
-/* harmony import */ var _styles_summernote_lite_handle_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_handle_less__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _styles_summernote_lite_icon_less__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/summernote-lite.icon.less */ "./src/components/IndexComponent/summernote/styles/summernote-lite.icon.less");
-/* harmony import */ var _styles_summernote_lite_icon_less__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_icon_less__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _styles_summernote_lite_input_less__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/summernote-lite.input.less */ "./src/components/IndexComponent/summernote/styles/summernote-lite.input.less");
-/* harmony import */ var _styles_summernote_lite_input_less__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_input_less__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _styles_summernote_lite_modal_less__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/summernote-lite.modal.less */ "./src/components/IndexComponent/summernote/styles/summernote-lite.modal.less");
-/* harmony import */ var _styles_summernote_lite_modal_less__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_modal_less__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _styles_summernote_lite_popover_less__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/summernote-lite.popover.less */ "./src/components/IndexComponent/summernote/styles/summernote-lite.popover.less");
-/* harmony import */ var _styles_summernote_lite_popover_less__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_popover_less__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _lang_summernote_zh_TW_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lang/summernote-zh-TW.js */ "./src/components/IndexComponent/summernote/lang/summernote-zh-TW.js");
+/* harmony import */ var _styles_summernote_lite_editable_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/summernote-lite.editable.less */ "./src/components/IndexComponent/summernote/styles/summernote-lite.editable.less");
+/* harmony import */ var _styles_summernote_lite_editable_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_editable_less__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _styles_summernote_lite_handle_less__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/summernote-lite.handle.less */ "./src/components/IndexComponent/summernote/styles/summernote-lite.handle.less");
+/* harmony import */ var _styles_summernote_lite_handle_less__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_handle_less__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _styles_summernote_lite_icon_less__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/summernote-lite.icon.less */ "./src/components/IndexComponent/summernote/styles/summernote-lite.icon.less");
+/* harmony import */ var _styles_summernote_lite_icon_less__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_icon_less__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _styles_summernote_lite_input_less__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/summernote-lite.input.less */ "./src/components/IndexComponent/summernote/styles/summernote-lite.input.less");
+/* harmony import */ var _styles_summernote_lite_input_less__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_input_less__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _styles_summernote_lite_modal_less__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/summernote-lite.modal.less */ "./src/components/IndexComponent/summernote/styles/summernote-lite.modal.less");
+/* harmony import */ var _styles_summernote_lite_modal_less__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_modal_less__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _styles_summernote_lite_popover_less__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/summernote-lite.popover.less */ "./src/components/IndexComponent/summernote/styles/summernote-lite.popover.less");
+/* harmony import */ var _styles_summernote_lite_popover_less__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_popover_less__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _lang_summernote_zh_TW_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lang/summernote-zh-TW.js */ "./src/components/IndexComponent/summernote/lang/summernote-zh-TW.js");
 
 //import './summernote-lite.less'
+
 
 
 

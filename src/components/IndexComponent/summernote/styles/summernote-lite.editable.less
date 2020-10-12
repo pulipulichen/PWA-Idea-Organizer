@@ -1,0 +1,147 @@
+.summernote .note-editing-area .note-editable  {
+
+  ol {
+    counter-reset:item; 
+    margin:0; 
+    padding-left:0; 
+  }
+  ol > li {
+    counter-increment:item; 
+    list-style:none inside; 
+    margin: 0px 0;
+    overflow: hidden;
+    //font-size: 16px !important;
+    //line-height: 1.3;
+
+    ol > li:before {
+      background: rgb(255, 239, 98);
+      color: #666;
+    }
+
+    ol > li {
+      ol > li:before {
+        background: rgb(231, 244, 161);
+        //color: #666;
+      }
+
+      ol > li {
+        ol > li:before {
+          background: rgb(176, 223, 250);
+          //color: #666;
+        }
+
+        ol > li {
+          ol > li:before {
+            background: rgb(205, 197, 244);
+            ///color: #666;
+          }
+        }
+      }
+    }
+  }
+  ol > li:before {
+    content: counter(item);
+    margin-right: 0.7rem;
+    padding: 0;
+    display: block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    //background: #fe862c;
+    background: rgb(250, 136, 161);
+    color: #ddd;
+    text-align: center; 
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    width: 2rem;
+    //font: 56px 'Lato', Helvetica, Arial, sans-serif;
+    //font-weight: 100;
+    float: left;
+    font-weight: bold;
+    margin-top: 0.4rem;
+    border: 1px solid gray;
+    font-family: system-ui;
+    padding-bottom: 0.1rem;
+  }
+
+  // -------------------------------------
+
+  ul {
+    counter-reset:item; 
+    margin:0; 
+    padding-left:0; 
+  }
+  ul > li {
+    counter-increment:item; 
+    list-style:none inside; 
+    margin: 0px 0;
+    overflow: hidden;
+    //font-size: 16px !important;
+    //line-height: 1.3;
+
+    ul > li:before {
+      background: rgb(250, 136, 161);
+      //color: #666;
+    }
+
+    ul > li {
+
+      ul > li:before {
+        background: rgb(255, 239, 98);
+        //color: #666;
+        border: 1px solid gray;
+      }
+
+      ul > li {
+        ul > li:before {
+          background: rgb(231, 244, 161);
+          //color: #666;
+        }
+
+        ul > li {
+          ul > li:before {
+            background: rgb(176, 223, 250);
+            //color: #666;
+          }
+
+          ul > li {
+            ul > li:before {
+              background: rgb(205, 197, 244);
+              ///color: #666;
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+  ul > li:before {
+    content: counter(item);
+    margin-right: 1rem;
+    margin-left: 0.4rem;
+    padding: 0;
+    display: block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    //background: #fe862c;
+    background: gray;
+    color: transparent;
+    text-align: center; 
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    width: 1.3rem;
+    //font: 56px 'Lato', Helvetica, Arial, sans-serif;
+    //font-weight: 100;
+    float: left;
+    font-weight: bold;
+    margin-top: 0.8rem;
+    //border: 1px solid gray;
+    font-family: system-ui;
+    padding-bottom: 0.1rem;
+  }
+
+}

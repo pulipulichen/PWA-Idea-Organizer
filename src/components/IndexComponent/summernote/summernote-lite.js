@@ -3,6 +3,8 @@
 import $ from 'jquery'
 
 import Sortable from "sortablejs"
+import getCaretCoordinates from './vendors/textarea-caret-position/index.js'
+
 import soundKeyEnterURL from './sound/keyenter.ogg'
 
 import soundKeyAny1 from './sound/office_typewriter-1.ogg'
@@ -6185,6 +6187,34 @@ ${links}`
               }
           }
           
+          let keepScrollVerticalCenter = () => {
+            
+            if (_this.options.editorKeyScrollVerticalCenter !== true) {
+              return false
+            }
+            //if (_this.options.editorKeyScrollVerticalCenter)
+            /*
+            const range = document.createRange();
+            
+            let editable = _this.$editable[0]
+            
+            let r = _this.createRange()
+            //console.log(r)
+            
+            range.setStartBefore(editable, r.so);
+            range.setEndAfter(editable, r.eo);
+            
+            const clientRect = range.getBoundingClientRect();
+              
+              
+              console.log(clientRect.top, clientRect.right)
+            */
+            //console.log(_this.$editable.prop('selectionEnd'))
+           
+            //var caret = getCaretCoordinates(_this.$editable[0], _this.$editable.selectionEnd);
+            //console.log('(top, left, height) = (%s, %s, %s)', caret.top, caret.left, caret.height);
+          }
+          
           this.$editable.on('keydown', keydownEvent)
           //.on('compositionstart', keydownEvent)
           .on('keyup', function (event) {
@@ -6201,7 +6231,12 @@ ${links}`
               }
           })
           .on('input', function (event) {
+              //keepScrollVerticalCenter(event)
               //console.log('input')
+              //console.log(event)
+              //let caret = getCaretCoordinates(event.target, event.target.selectionEnd)
+              //console.log('(top, left, height) = (%s, %s, %s)', caret.top, caret.left, caret.height)
+      
               _this.context.triggerEvent('input', event);
           })
           .on('paste', function (event) {
@@ -11454,6 +11489,7 @@ sel.addRange(range);
           toolbarSize: null,
           toolbarOverflow: false,
           toolbarCompact: false,
+          editorKeyScrollVerticalCenter: true,
           maxHeight: null,
           maximumImageFileSize: null,
           callbacks: {

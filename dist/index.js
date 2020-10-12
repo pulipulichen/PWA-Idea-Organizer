@@ -246,7 +246,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".summernote.note-editor {\n  position: relative;\n}\n.summernote.note-editor .note-dropzone {\n  position: absolute;\n  z-index: 100;\n  display: none;\n  color: #87cefa;\n  background-color: rgba(255, 255, 255, 0.2);\n  pointer-event: none;\n}\n.summernote.note-editor .note-dropzone .note-dropzone-message {\n  display: table-cell;\n  font-size: 28px;\n  font-weight: 700;\n  text-align: center;\n  vertical-align: middle;\n}\n.summernote.note-editor .note-dropzone.hover {\n  color: #098ddf;\n}\n.summernote.note-editor.dragover .note-dropzone {\n  display: table;\n}\n.summernote.note-editor .note-editing-area {\n  position: relative;\n}\n.summernote.note-editor .note-editing-area p {\n  margin: 0 0 10px;\n}\n.summernote.note-editor.mobile .note-editing-area .note-editable {\n  font-size: 1.5rem;\n  line-height: 2.2rem;\n}\n.summernote.note-editor.mobile .note-placeholder {\n  font-size: 1.5rem;\n  line-height: 2.2rem;\n}\n.summernote.note-editor .note-editing-area .note-editable {\n  outline: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"true\"] > *:last-of-type {\n  margin-bottom: 20vh;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] p,\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] li {\n  cursor: pointer;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] .sortable-ghost {\n  background-color: #dff0ff;\n  color: #2185d0;\n  -webkit-box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent;\n  box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] .sortable-selected {\n  background-color: #e1f7f7;\n  color: #10a3a3;\n  -webkit-box-shadow: 0 0 0 1px #10a3a3 inset, 0 0 0 0 transparent;\n  box-shadow: 0 0 0 1px #10a3a3 inset, 0 0 0 0 transparent;\n}\n.summernote.note-editor .note-editing-area .note-editable.sort-mode {\n  user-select: none;\n}\n.summernote.note-editor .note-editing-area .note-editable * {\n  /*color: inherit;*/\n}\n.summernote.note-editor .note-editing-area .note-editable table {\n  width: 100%;\n  border-collapse: collapse;\n}\n.summernote.note-editor .note-editing-area .note-editable table td,\n.summernote.note-editor .note-editing-area .note-editable table th {\n  padding: 5px 3px;\n  /*border: 1px solid #ececec*/\n  border: 1px solid #ccc;\n}\n.summernote.note-editor .note-editing-area .note-editable sup {\n  vertical-align: super;\n}\n.summernote.note-editor .note-editing-area .note-editable sub {\n  vertical-align: sub;\n}\n.summernote.note-editor .note-editing-area .note-editable a {\n  font-family: inherit;\n  font-weight: inherit;\n  color: #337ab7;\n  text-decoration: underline;\n  /*text-decoration: underline !important;*/\n  background-color: inherit;\n}\n.summernote.note-editor .note-editing-area .note-editable a:hover,\n.summernote.note-editor .note-editing-area .note-editable a:focus {\n  color: #23527c;\n  text-decoration: underline;\n  outline: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable figure {\n  margin: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label {\n  outline: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h1::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h2::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h3::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h4::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h5::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h6::before {\n  content: '<H1>';\n  font-size: 0.5rem;\n  border: 1px dotted gray;\n  background-color: gray;\n  color: white;\n  margin-bottom: 5px;\n  clear: both;\n  display: block;\n  line-height: 0.5rem;\n  width: 1.5rem;\n  text-align: center;\n  text-indent: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h2 {\n  font-size: 1.75rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h2::before {\n  content: '<H2>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h3 {\n  font-size: 1.5rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h3::before {\n  content: '<H3>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h4 {\n  font-size: 1.25rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h4::before {\n  content: '<H4>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h5 {\n  font-size: 1rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h5::before {\n  content: '<H5>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h6 {\n  font-size: 1rem;\n  font-style: italic;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h6::before {\n  content: '<H6>';\n}\n.summernote .note-editor .note-editor-comment {\n  border: 1px dotted #ccc;\n  background-color: #D9E778;\n  color: #8a6d3b;\n  border-radius: 4px;\n}\n.summernote.note-editor.note-frame {\n  /* border: 1px solid #a9a9a9; */\n  border-width: 0;\n}\n.summernote.note-editor.note-frame.codeview .note-editing-area .note-editable {\n  display: none;\n}\n.summernote.note-editor.note-frame.codeview .note-editing-area .note-codable {\n  display: block;\n  border-radius: 0.5rem;\n}\n.summernote.note-editor.note-frame .note-editing-area {\n  overflow: hidden;\n}\n.summernote.note-editor.note-frame .note-editing-area .note-editable {\n  padding: 10px;\n  overflow: auto;\n  /* color: #000; */\n  word-wrap: break-word;\n  /* background-color: #fff */\n  background-color: transparent;\n  border-width: 0 1px;\n}\n.summernote.note-editor.note-frame .note-editing-area .note-editable[contenteditable=\"false\"] {\n  background-color: #e5e5e5;\n}\n.summernote.note-editor.note-frame .note-editing-area .note-codable {\n  display: none;\n  width: 100%;\n  padding: 10px;\n  margin-bottom: 0;\n  font-family: Menlo, Monaco, monospace, sans-serif;\n  font-size: 14px;\n  color: #ccc;\n  background-color: #222;\n  border: 0;\n  -webkit-border-radius: 0;\n  -moz-border-radius: 0;\n  border-radius: 0;\n  box-shadow: none;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n  resize: none;\n}\n.summernote.note-editor.note-frame.fullscreen {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1050;\n  width: 100% !important;\n}\n.summernote.note-editor.note-frame.fullscreen .note-editable {\n  background-color: #fff;\n}\n.summernote.note-editor.note-frame.fullscreen .note-resizebar {\n  display: none;\n}\n.summernote.note-editor.note-frame .note-status-output {\n  display: block;\n  width: 100%;\n  height: 20px;\n  margin-bottom: 0;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #000;\n  border: 0;\n  border-top: 1px solid #e2e2e2;\n}\n.summernote.note-editor.note-frame .note-status-output:empty {\n  height: 0;\n  border-top: 0 solid transparent;\n}\n.summernote.note-editor.note-frame .note-status-output .pull-right {\n  float: right !important;\n}\n.summernote.note-editor.note-frame .note-status-output .text-muted {\n  color: #777;\n}\n.summernote.note-editor.note-frame .note-status-output .text-primary {\n  color: #286090;\n}\n.summernote.note-editor.note-frame .note-status-output .text-success {\n  color: #3c763d;\n}\n.summernote.note-editor.note-frame .note-status-output .text-info {\n  color: #31708f;\n}\n.summernote.note-editor.note-frame .note-status-output .text-warning {\n  color: #8a6d3b;\n}\n.summernote.note-editor.note-frame .note-status-output .text-danger {\n  color: #a94442;\n}\n.summernote.note-editor.note-frame .note-status-output .alert {\n  padding: 7px 10px 2px 10px;\n  margin: -7px 0 0 0;\n  color: #000;\n  background-color: #f5f5f5;\n  border-radius: 0;\n}\n.summernote.note-editor.note-frame .note-status-output .alert .note-icon {\n  margin-right: 5px;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-success {\n  color: #3c763d !important;\n  background-color: #dff0d8 !important;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-info {\n  color: #31708f !important;\n  background-color: #d9edf7 !important;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-warning {\n  color: #8a6d3b !important;\n  background-color: #fcf8e3 !important;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-danger {\n  color: #a94442 !important;\n  background-color: #f2dede !important;\n}\n.summernote.note-editor.note-frame .note-statusbar {\n  background-color: #f5f5f5;\n  border-top: 1px solid #ddd;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.summernote.note-editor.note-frame .note-statusbar .note-resizebar {\n  width: 100%;\n  height: 9px;\n  padding-top: 1px;\n  cursor: ns-resize;\n}\n.summernote.note-editor.note-frame .note-statusbar .note-resizebar .note-icon-bar {\n  width: 20px;\n  margin: 1px auto;\n  border-top: 1px solid #a9a9a9;\n}\n.summernote.note-editor.note-frame .note-statusbar.locked .note-resizebar {\n  cursor: default;\n}\n.summernote.note-editor.note-frame .note-statusbar.locked .note-resizebar .note-icon-bar {\n  display: none;\n}\n.summernote.note-editor.note-frame .note-placeholder {\n  padding: 10px;\n}\n", "",{"version":3,"sources":["summernote-lite.editor.less"],"names":[],"mappings":"AAAA;EACE,kBAAkB;AACpB;AACA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,cAAc;EACd,0CAA0C;EAC1C,mBAAmB;AACrB;AACA;EACE,mBAAmB;EACnB,eAAe;EACf,gBAAgB;EAChB,kBAAkB;EAClB,sBAAsB;AACxB;AACA;EACE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,iBAAiB;EACjB,mBAAmB;AACrB;AACA;EACE,iBAAiB;EACjB,mBAAmB;AACrB;AACA;EACE,UAAU;AACZ;AACA;EACE,mBAAmB;AACrB;AACA;;EAEE,eAAe;AACjB;AACA;EACE,yBAAyB;EACzB,cAAc;EACd,gEAAgE;EAChE,wDAAwD;AAC1D;AACA;EACE,yBAAyB;EACzB,cAAc;EACd,gEAAgE;EAChE,wDAAwD;AAC1D;AACA;EACE,iBAAiB;AACnB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,WAAW;EACX,yBAAyB;AAC3B;AACA;;EAEE,gBAAgB;EAChB,4BAA4B;EAC5B,sBAAsB;AACxB;AACA;EACE,qBAAqB;AACvB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,oBAAoB;EACpB,oBAAoB;EACpB,cAAc;EACd,0BAA0B;EAC1B,yCAAyC;EACzC,yBAAyB;AAC3B;AACA;;EAEE,cAAc;EACd,0BAA0B;EAC1B,UAAU;AACZ;AACA;EACE,SAAS;AACX;AACA;EACE,UAAU;AACZ;AACA;;;;;;EAME,eAAe;EACf,iBAAiB;EACjB,uBAAuB;EACvB,sBAAsB;EACtB,YAAY;EACZ,kBAAkB;EAClB,WAAW;EACX,cAAc;EACd,mBAAmB;EACnB,aAAa;EACb,kBAAkB;EAClB,cAAc;AAChB;AACA;EACE,kBAAkB;EAClB,iBAAiB;EACjB,kBAAkB;EAClB,qBAAqB;AACvB;AACA;EACE,eAAe;AACjB;AACA;EACE,iBAAiB;EACjB,iBAAiB;EACjB,kBAAkB;EAClB,qBAAqB;AACvB;AACA;EACE,eAAe;AACjB;AACA;EACE,kBAAkB;EAClB,iBAAiB;EACjB,kBAAkB;EAClB,qBAAqB;AACvB;AACA;EACE,eAAe;AACjB;AACA;EACE,eAAe;EACf,iBAAiB;EACjB,kBAAkB;EAClB,qBAAqB;AACvB;AACA;EACE,eAAe;AACjB;AACA;EACE,eAAe;EACf,kBAAkB;EAClB,kBAAkB;EAClB,qBAAqB;AACvB;AACA;EACE,eAAe;AACjB;AACA;EACE,uBAAuB;EACvB,yBAAyB;EACzB,cAAc;EACd,kBAAkB;AACpB;AACA;EACE,+BAA+B;EAC/B,eAAe;AACjB;AACA;EACE,aAAa;AACf;AACA;EACE,cAAc;EACd,qBAAqB;AACvB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,aAAa;EACb,cAAc;EACd,iBAAiB;EACjB,qBAAqB;EACrB,2BAA2B;EAC3B,6BAA6B;EAC7B,mBAAmB;AACrB;AACA;EACE,yBAAyB;AAC3B;AACA;EACE,aAAa;EACb,WAAW;EACX,aAAa;EACb,gBAAgB;EAChB,iDAAiD;EACjD,eAAe;EACf,WAAW;EACX,sBAAsB;EACtB,SAAS;EACT,wBAAwB;EACxB,qBAAqB;EACrB,gBAAgB;EAChB,gBAAgB;EAChB,8BAA8B;EAC9B,2BAA2B;EAC3B,0BAA0B;EAC1B,sBAAsB;EACtB,YAAY;AACd;AACA;EACE,eAAe;EACf,MAAM;EACN,OAAO;EACP,aAAa;EACb,sBAAsB;AACxB;AACA;EACE,sBAAsB;AACxB;AACA;EACE,aAAa;AACf;AACA;EACE,cAAc;EACd,WAAW;EACX,YAAY;EACZ,gBAAgB;EAChB,eAAe;EACf,uBAAuB;EACvB,WAAW;EACX,SAAS;EACT,6BAA6B;AAC/B;AACA;EACE,SAAS;EACT,+BAA+B;AACjC;AACA;EACE,uBAAuB;AACzB;AACA;EACE,WAAW;AACb;AACA;EACE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;EACE,0BAA0B;EAC1B,kBAAkB;EAClB,WAAW;EACX,yBAAyB;EACzB,gBAAgB;AAClB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,yBAAyB;EACzB,oCAAoC;AACtC;AACA;EACE,yBAAyB;EACzB,oCAAoC;AACtC;AACA;EACE,yBAAyB;EACzB,oCAAoC;AACtC;AACA;EACE,yBAAyB;EACzB,oCAAoC;AACtC;AACA;EACE,yBAAyB;EACzB,0BAA0B;EAC1B,+BAA+B;EAC/B,8BAA8B;AAChC;AACA;EACE,WAAW;EACX,WAAW;EACX,gBAAgB;EAChB,iBAAiB;AACnB;AACA;EACE,WAAW;EACX,gBAAgB;EAChB,6BAA6B;AAC/B;AACA;EACE,eAAe;AACjB;AACA;EACE,aAAa;AACf;AACA;EACE,aAAa;AACf","file":"summernote-lite.editor.less","sourcesContent":[".summernote.note-editor {\n  position: relative;\n}\n.summernote.note-editor .note-dropzone {\n  position: absolute;\n  z-index: 100;\n  display: none;\n  color: #87cefa;\n  background-color: rgba(255, 255, 255, 0.2);\n  pointer-event: none;\n}\n.summernote.note-editor .note-dropzone .note-dropzone-message {\n  display: table-cell;\n  font-size: 28px;\n  font-weight: 700;\n  text-align: center;\n  vertical-align: middle;\n}\n.summernote.note-editor .note-dropzone.hover {\n  color: #098ddf;\n}\n.summernote.note-editor.dragover .note-dropzone {\n  display: table;\n}\n.summernote.note-editor .note-editing-area {\n  position: relative;\n}\n.summernote.note-editor .note-editing-area p {\n  margin: 0 0 10px;\n}\n.summernote.note-editor.mobile .note-editing-area .note-editable {\n  font-size: 1.5rem;\n  line-height: 2.2rem;\n}\n.summernote.note-editor.mobile .note-placeholder {\n  font-size: 1.5rem;\n  line-height: 2.2rem;\n}\n.summernote.note-editor .note-editing-area .note-editable {\n  outline: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"true\"] > *:last-of-type {\n  margin-bottom: 20vh;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] p,\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] li {\n  cursor: pointer;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] .sortable-ghost {\n  background-color: #dff0ff;\n  color: #2185d0;\n  -webkit-box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent;\n  box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] .sortable-selected {\n  background-color: #e1f7f7;\n  color: #10a3a3;\n  -webkit-box-shadow: 0 0 0 1px #10a3a3 inset, 0 0 0 0 transparent;\n  box-shadow: 0 0 0 1px #10a3a3 inset, 0 0 0 0 transparent;\n}\n.summernote.note-editor .note-editing-area .note-editable.sort-mode {\n  user-select: none;\n}\n.summernote.note-editor .note-editing-area .note-editable * {\n  /*color: inherit;*/\n}\n.summernote.note-editor .note-editing-area .note-editable table {\n  width: 100%;\n  border-collapse: collapse;\n}\n.summernote.note-editor .note-editing-area .note-editable table td,\n.summernote.note-editor .note-editing-area .note-editable table th {\n  padding: 5px 3px;\n  /*border: 1px solid #ececec*/\n  border: 1px solid #ccc;\n}\n.summernote.note-editor .note-editing-area .note-editable sup {\n  vertical-align: super;\n}\n.summernote.note-editor .note-editing-area .note-editable sub {\n  vertical-align: sub;\n}\n.summernote.note-editor .note-editing-area .note-editable a {\n  font-family: inherit;\n  font-weight: inherit;\n  color: #337ab7;\n  text-decoration: underline;\n  /*text-decoration: underline !important;*/\n  background-color: inherit;\n}\n.summernote.note-editor .note-editing-area .note-editable a:hover,\n.summernote.note-editor .note-editing-area .note-editable a:focus {\n  color: #23527c;\n  text-decoration: underline;\n  outline: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable figure {\n  margin: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label {\n  outline: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h1::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h2::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h3::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h4::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h5::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h6::before {\n  content: '<H1>';\n  font-size: 0.5rem;\n  border: 1px dotted gray;\n  background-color: gray;\n  color: white;\n  margin-bottom: 5px;\n  clear: both;\n  display: block;\n  line-height: 0.5rem;\n  width: 1.5rem;\n  text-align: center;\n  text-indent: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h2 {\n  font-size: 1.75rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h2::before {\n  content: '<H2>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h3 {\n  font-size: 1.5rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h3::before {\n  content: '<H3>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h4 {\n  font-size: 1.25rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h4::before {\n  content: '<H4>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h5 {\n  font-size: 1rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h5::before {\n  content: '<H5>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h6 {\n  font-size: 1rem;\n  font-style: italic;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h6::before {\n  content: '<H6>';\n}\n.summernote .note-editor .note-editor-comment {\n  border: 1px dotted #ccc;\n  background-color: #D9E778;\n  color: #8a6d3b;\n  border-radius: 4px;\n}\n.summernote.note-editor.note-frame {\n  /* border: 1px solid #a9a9a9; */\n  border-width: 0;\n}\n.summernote.note-editor.note-frame.codeview .note-editing-area .note-editable {\n  display: none;\n}\n.summernote.note-editor.note-frame.codeview .note-editing-area .note-codable {\n  display: block;\n  border-radius: 0.5rem;\n}\n.summernote.note-editor.note-frame .note-editing-area {\n  overflow: hidden;\n}\n.summernote.note-editor.note-frame .note-editing-area .note-editable {\n  padding: 10px;\n  overflow: auto;\n  /* color: #000; */\n  word-wrap: break-word;\n  /* background-color: #fff */\n  background-color: transparent;\n  border-width: 0 1px;\n}\n.summernote.note-editor.note-frame .note-editing-area .note-editable[contenteditable=\"false\"] {\n  background-color: #e5e5e5;\n}\n.summernote.note-editor.note-frame .note-editing-area .note-codable {\n  display: none;\n  width: 100%;\n  padding: 10px;\n  margin-bottom: 0;\n  font-family: Menlo, Monaco, monospace, sans-serif;\n  font-size: 14px;\n  color: #ccc;\n  background-color: #222;\n  border: 0;\n  -webkit-border-radius: 0;\n  -moz-border-radius: 0;\n  border-radius: 0;\n  box-shadow: none;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n  resize: none;\n}\n.summernote.note-editor.note-frame.fullscreen {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1050;\n  width: 100% !important;\n}\n.summernote.note-editor.note-frame.fullscreen .note-editable {\n  background-color: #fff;\n}\n.summernote.note-editor.note-frame.fullscreen .note-resizebar {\n  display: none;\n}\n.summernote.note-editor.note-frame .note-status-output {\n  display: block;\n  width: 100%;\n  height: 20px;\n  margin-bottom: 0;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #000;\n  border: 0;\n  border-top: 1px solid #e2e2e2;\n}\n.summernote.note-editor.note-frame .note-status-output:empty {\n  height: 0;\n  border-top: 0 solid transparent;\n}\n.summernote.note-editor.note-frame .note-status-output .pull-right {\n  float: right !important;\n}\n.summernote.note-editor.note-frame .note-status-output .text-muted {\n  color: #777;\n}\n.summernote.note-editor.note-frame .note-status-output .text-primary {\n  color: #286090;\n}\n.summernote.note-editor.note-frame .note-status-output .text-success {\n  color: #3c763d;\n}\n.summernote.note-editor.note-frame .note-status-output .text-info {\n  color: #31708f;\n}\n.summernote.note-editor.note-frame .note-status-output .text-warning {\n  color: #8a6d3b;\n}\n.summernote.note-editor.note-frame .note-status-output .text-danger {\n  color: #a94442;\n}\n.summernote.note-editor.note-frame .note-status-output .alert {\n  padding: 7px 10px 2px 10px;\n  margin: -7px 0 0 0;\n  color: #000;\n  background-color: #f5f5f5;\n  border-radius: 0;\n}\n.summernote.note-editor.note-frame .note-status-output .alert .note-icon {\n  margin-right: 5px;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-success {\n  color: #3c763d !important;\n  background-color: #dff0d8 !important;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-info {\n  color: #31708f !important;\n  background-color: #d9edf7 !important;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-warning {\n  color: #8a6d3b !important;\n  background-color: #fcf8e3 !important;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-danger {\n  color: #a94442 !important;\n  background-color: #f2dede !important;\n}\n.summernote.note-editor.note-frame .note-statusbar {\n  background-color: #f5f5f5;\n  border-top: 1px solid #ddd;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.summernote.note-editor.note-frame .note-statusbar .note-resizebar {\n  width: 100%;\n  height: 9px;\n  padding-top: 1px;\n  cursor: ns-resize;\n}\n.summernote.note-editor.note-frame .note-statusbar .note-resizebar .note-icon-bar {\n  width: 20px;\n  margin: 1px auto;\n  border-top: 1px solid #a9a9a9;\n}\n.summernote.note-editor.note-frame .note-statusbar.locked .note-resizebar {\n  cursor: default;\n}\n.summernote.note-editor.note-frame .note-statusbar.locked .note-resizebar .note-icon-bar {\n  display: none;\n}\n.summernote.note-editor.note-frame .note-placeholder {\n  padding: 10px;\n}\n"]}]);
+exports.push([module.i, ".summernote.note-editor {\n  position: relative;\n}\n.summernote.note-editor .note-dropzone {\n  position: absolute;\n  z-index: 100;\n  display: none;\n  color: #87cefa;\n  background-color: rgba(255, 255, 255, 0.2);\n  pointer-event: none;\n}\n.summernote.note-editor .note-dropzone .note-dropzone-message {\n  display: table-cell;\n  font-size: 28px;\n  font-weight: 700;\n  text-align: center;\n  vertical-align: middle;\n}\n.summernote.note-editor .note-dropzone.hover {\n  color: #098ddf;\n}\n.summernote.note-editor.dragover .note-dropzone {\n  display: table;\n}\n.summernote.note-editor .note-editing-area {\n  position: relative;\n}\n.summernote.note-editor .note-editing-area p {\n  margin: 0 0 10px;\n}\n.summernote.note-editor.mobile .note-editing-area .note-editable {\n  font-size: 1.5rem;\n  line-height: 2.2rem;\n}\n.summernote.note-editor.mobile .note-placeholder {\n  font-size: 1.5rem;\n  line-height: 2.2rem;\n}\n.summernote.note-editor .note-editing-area .note-editable {\n  outline: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"true\"] {\n  padding-bottom: 20vh !important;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] p,\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] li {\n  cursor: pointer;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] .sortable-ghost {\n  background-color: #dff0ff;\n  color: #2185d0;\n  -webkit-box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent;\n  box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] .sortable-selected {\n  background-color: #e1f7f7;\n  color: #10a3a3;\n  -webkit-box-shadow: 0 0 0 1px #10a3a3 inset, 0 0 0 0 transparent;\n  box-shadow: 0 0 0 1px #10a3a3 inset, 0 0 0 0 transparent;\n}\n.summernote.note-editor .note-editing-area .note-editable.sort-mode {\n  user-select: none;\n}\n.summernote.note-editor .note-editing-area .note-editable * {\n  /*color: inherit;*/\n}\n.summernote.note-editor .note-editing-area .note-editable table {\n  width: 100%;\n  border-collapse: collapse;\n}\n.summernote.note-editor .note-editing-area .note-editable table td,\n.summernote.note-editor .note-editing-area .note-editable table th {\n  padding: 5px 3px;\n  /*border: 1px solid #ececec*/\n  border: 1px solid #ccc;\n}\n.summernote.note-editor .note-editing-area .note-editable sup {\n  vertical-align: super;\n}\n.summernote.note-editor .note-editing-area .note-editable sub {\n  vertical-align: sub;\n}\n.summernote.note-editor .note-editing-area .note-editable a {\n  font-family: inherit;\n  font-weight: inherit;\n  color: #337ab7;\n  text-decoration: underline;\n  /*text-decoration: underline !important;*/\n  background-color: inherit;\n}\n.summernote.note-editor .note-editing-area .note-editable a:hover,\n.summernote.note-editor .note-editing-area .note-editable a:focus {\n  color: #23527c;\n  text-decoration: underline;\n  outline: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable figure {\n  margin: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label {\n  outline: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h1::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h2::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h3::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h4::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h5::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h6::before {\n  content: '<H1>';\n  font-size: 0.5rem;\n  border: 1px dotted gray;\n  background-color: gray;\n  color: white;\n  margin-bottom: 5px;\n  clear: both;\n  display: block;\n  line-height: 0.5rem;\n  width: 1.5rem;\n  text-align: center;\n  text-indent: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h2 {\n  font-size: 1.75rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h2::before {\n  content: '<H2>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h3 {\n  font-size: 1.5rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h3::before {\n  content: '<H3>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h4 {\n  font-size: 1.25rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h4::before {\n  content: '<H4>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h5 {\n  font-size: 1rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h5::before {\n  content: '<H5>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h6 {\n  font-size: 1rem;\n  font-style: italic;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h6::before {\n  content: '<H6>';\n}\n.summernote .note-editor .note-editor-comment {\n  border: 1px dotted #ccc;\n  background-color: #D9E778;\n  color: #8a6d3b;\n  border-radius: 4px;\n}\n.summernote.note-editor.note-frame {\n  /* border: 1px solid #a9a9a9; */\n  border-width: 0;\n}\n.summernote.note-editor.note-frame.codeview .note-editing-area .note-editable {\n  display: none;\n}\n.summernote.note-editor.note-frame.codeview .note-editing-area .note-codable {\n  display: block;\n  border-radius: 0.5rem;\n}\n.summernote.note-editor.note-frame .note-editing-area {\n  overflow: hidden;\n}\n.summernote.note-editor.note-frame .note-editing-area .note-editable {\n  padding: 10px;\n  overflow: auto;\n  /* color: #000; */\n  word-wrap: break-word;\n  /* background-color: #fff */\n  background-color: transparent;\n  border-width: 0 1px;\n}\n.summernote.note-editor.note-frame .note-editing-area .note-editable[contenteditable=\"false\"] {\n  background-color: #e5e5e5;\n}\n.summernote.note-editor.note-frame .note-editing-area .note-codable {\n  display: none;\n  width: 100%;\n  padding: 10px;\n  margin-bottom: 0;\n  font-family: Menlo, Monaco, monospace, sans-serif;\n  font-size: 14px;\n  color: #ccc;\n  background-color: #222;\n  border: 0;\n  -webkit-border-radius: 0;\n  -moz-border-radius: 0;\n  border-radius: 0;\n  box-shadow: none;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n  resize: none;\n}\n.summernote.note-editor.note-frame.fullscreen {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1050;\n  width: 100% !important;\n}\n.summernote.note-editor.note-frame.fullscreen .note-editable {\n  background-color: #fff;\n}\n.summernote.note-editor.note-frame.fullscreen .note-resizebar {\n  display: none;\n}\n.summernote.note-editor.note-frame .note-status-output {\n  display: block;\n  width: 100%;\n  height: 20px;\n  margin-bottom: 0;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #000;\n  border: 0;\n  border-top: 1px solid #e2e2e2;\n}\n.summernote.note-editor.note-frame .note-status-output:empty {\n  height: 0;\n  border-top: 0 solid transparent;\n}\n.summernote.note-editor.note-frame .note-status-output .pull-right {\n  float: right !important;\n}\n.summernote.note-editor.note-frame .note-status-output .text-muted {\n  color: #777;\n}\n.summernote.note-editor.note-frame .note-status-output .text-primary {\n  color: #286090;\n}\n.summernote.note-editor.note-frame .note-status-output .text-success {\n  color: #3c763d;\n}\n.summernote.note-editor.note-frame .note-status-output .text-info {\n  color: #31708f;\n}\n.summernote.note-editor.note-frame .note-status-output .text-warning {\n  color: #8a6d3b;\n}\n.summernote.note-editor.note-frame .note-status-output .text-danger {\n  color: #a94442;\n}\n.summernote.note-editor.note-frame .note-status-output .alert {\n  padding: 7px 10px 2px 10px;\n  margin: -7px 0 0 0;\n  color: #000;\n  background-color: #f5f5f5;\n  border-radius: 0;\n}\n.summernote.note-editor.note-frame .note-status-output .alert .note-icon {\n  margin-right: 5px;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-success {\n  color: #3c763d !important;\n  background-color: #dff0d8 !important;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-info {\n  color: #31708f !important;\n  background-color: #d9edf7 !important;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-warning {\n  color: #8a6d3b !important;\n  background-color: #fcf8e3 !important;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-danger {\n  color: #a94442 !important;\n  background-color: #f2dede !important;\n}\n.summernote.note-editor.note-frame .note-statusbar {\n  background-color: #f5f5f5;\n  border-top: 1px solid #ddd;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.summernote.note-editor.note-frame .note-statusbar .note-resizebar {\n  width: 100%;\n  height: 9px;\n  padding-top: 1px;\n  cursor: ns-resize;\n}\n.summernote.note-editor.note-frame .note-statusbar .note-resizebar .note-icon-bar {\n  width: 20px;\n  margin: 1px auto;\n  border-top: 1px solid #a9a9a9;\n}\n.summernote.note-editor.note-frame .note-statusbar.locked .note-resizebar {\n  cursor: default;\n}\n.summernote.note-editor.note-frame .note-statusbar.locked .note-resizebar .note-icon-bar {\n  display: none;\n}\n.summernote.note-editor.note-frame .note-placeholder {\n  padding: 10px;\n}\n", "",{"version":3,"sources":["summernote-lite.editor.less"],"names":[],"mappings":"AAAA;EACE,kBAAkB;AACpB;AACA;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,cAAc;EACd,0CAA0C;EAC1C,mBAAmB;AACrB;AACA;EACE,mBAAmB;EACnB,eAAe;EACf,gBAAgB;EAChB,kBAAkB;EAClB,sBAAsB;AACxB;AACA;EACE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,iBAAiB;EACjB,mBAAmB;AACrB;AACA;EACE,iBAAiB;EACjB,mBAAmB;AACrB;AACA;EACE,UAAU;AACZ;AACA;EACE,+BAA+B;AACjC;AACA;;EAEE,eAAe;AACjB;AACA;EACE,yBAAyB;EACzB,cAAc;EACd,gEAAgE;EAChE,wDAAwD;AAC1D;AACA;EACE,yBAAyB;EACzB,cAAc;EACd,gEAAgE;EAChE,wDAAwD;AAC1D;AACA;EACE,iBAAiB;AACnB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,WAAW;EACX,yBAAyB;AAC3B;AACA;;EAEE,gBAAgB;EAChB,4BAA4B;EAC5B,sBAAsB;AACxB;AACA;EACE,qBAAqB;AACvB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,oBAAoB;EACpB,oBAAoB;EACpB,cAAc;EACd,0BAA0B;EAC1B,yCAAyC;EACzC,yBAAyB;AAC3B;AACA;;EAEE,cAAc;EACd,0BAA0B;EAC1B,UAAU;AACZ;AACA;EACE,SAAS;AACX;AACA;EACE,UAAU;AACZ;AACA;;;;;;EAME,eAAe;EACf,iBAAiB;EACjB,uBAAuB;EACvB,sBAAsB;EACtB,YAAY;EACZ,kBAAkB;EAClB,WAAW;EACX,cAAc;EACd,mBAAmB;EACnB,aAAa;EACb,kBAAkB;EAClB,cAAc;AAChB;AACA;EACE,kBAAkB;EAClB,iBAAiB;EACjB,kBAAkB;EAClB,qBAAqB;AACvB;AACA;EACE,eAAe;AACjB;AACA;EACE,iBAAiB;EACjB,iBAAiB;EACjB,kBAAkB;EAClB,qBAAqB;AACvB;AACA;EACE,eAAe;AACjB;AACA;EACE,kBAAkB;EAClB,iBAAiB;EACjB,kBAAkB;EAClB,qBAAqB;AACvB;AACA;EACE,eAAe;AACjB;AACA;EACE,eAAe;EACf,iBAAiB;EACjB,kBAAkB;EAClB,qBAAqB;AACvB;AACA;EACE,eAAe;AACjB;AACA;EACE,eAAe;EACf,kBAAkB;EAClB,kBAAkB;EAClB,qBAAqB;AACvB;AACA;EACE,eAAe;AACjB;AACA;EACE,uBAAuB;EACvB,yBAAyB;EACzB,cAAc;EACd,kBAAkB;AACpB;AACA;EACE,+BAA+B;EAC/B,eAAe;AACjB;AACA;EACE,aAAa;AACf;AACA;EACE,cAAc;EACd,qBAAqB;AACvB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,aAAa;EACb,cAAc;EACd,iBAAiB;EACjB,qBAAqB;EACrB,2BAA2B;EAC3B,6BAA6B;EAC7B,mBAAmB;AACrB;AACA;EACE,yBAAyB;AAC3B;AACA;EACE,aAAa;EACb,WAAW;EACX,aAAa;EACb,gBAAgB;EAChB,iDAAiD;EACjD,eAAe;EACf,WAAW;EACX,sBAAsB;EACtB,SAAS;EACT,wBAAwB;EACxB,qBAAqB;EACrB,gBAAgB;EAChB,gBAAgB;EAChB,8BAA8B;EAC9B,2BAA2B;EAC3B,0BAA0B;EAC1B,sBAAsB;EACtB,YAAY;AACd;AACA;EACE,eAAe;EACf,MAAM;EACN,OAAO;EACP,aAAa;EACb,sBAAsB;AACxB;AACA;EACE,sBAAsB;AACxB;AACA;EACE,aAAa;AACf;AACA;EACE,cAAc;EACd,WAAW;EACX,YAAY;EACZ,gBAAgB;EAChB,eAAe;EACf,uBAAuB;EACvB,WAAW;EACX,SAAS;EACT,6BAA6B;AAC/B;AACA;EACE,SAAS;EACT,+BAA+B;AACjC;AACA;EACE,uBAAuB;AACzB;AACA;EACE,WAAW;AACb;AACA;EACE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;EACE,cAAc;AAChB;AACA;EACE,0BAA0B;EAC1B,kBAAkB;EAClB,WAAW;EACX,yBAAyB;EACzB,gBAAgB;AAClB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,yBAAyB;EACzB,oCAAoC;AACtC;AACA;EACE,yBAAyB;EACzB,oCAAoC;AACtC;AACA;EACE,yBAAyB;EACzB,oCAAoC;AACtC;AACA;EACE,yBAAyB;EACzB,oCAAoC;AACtC;AACA;EACE,yBAAyB;EACzB,0BAA0B;EAC1B,+BAA+B;EAC/B,8BAA8B;AAChC;AACA;EACE,WAAW;EACX,WAAW;EACX,gBAAgB;EAChB,iBAAiB;AACnB;AACA;EACE,WAAW;EACX,gBAAgB;EAChB,6BAA6B;AAC/B;AACA;EACE,eAAe;AACjB;AACA;EACE,aAAa;AACf;AACA;EACE,aAAa;AACf","file":"summernote-lite.editor.less","sourcesContent":[".summernote.note-editor {\n  position: relative;\n}\n.summernote.note-editor .note-dropzone {\n  position: absolute;\n  z-index: 100;\n  display: none;\n  color: #87cefa;\n  background-color: rgba(255, 255, 255, 0.2);\n  pointer-event: none;\n}\n.summernote.note-editor .note-dropzone .note-dropzone-message {\n  display: table-cell;\n  font-size: 28px;\n  font-weight: 700;\n  text-align: center;\n  vertical-align: middle;\n}\n.summernote.note-editor .note-dropzone.hover {\n  color: #098ddf;\n}\n.summernote.note-editor.dragover .note-dropzone {\n  display: table;\n}\n.summernote.note-editor .note-editing-area {\n  position: relative;\n}\n.summernote.note-editor .note-editing-area p {\n  margin: 0 0 10px;\n}\n.summernote.note-editor.mobile .note-editing-area .note-editable {\n  font-size: 1.5rem;\n  line-height: 2.2rem;\n}\n.summernote.note-editor.mobile .note-placeholder {\n  font-size: 1.5rem;\n  line-height: 2.2rem;\n}\n.summernote.note-editor .note-editing-area .note-editable {\n  outline: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"true\"] {\n  padding-bottom: 20vh !important;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] p,\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] li {\n  cursor: pointer;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] .sortable-ghost {\n  background-color: #dff0ff;\n  color: #2185d0;\n  -webkit-box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent;\n  box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent;\n}\n.summernote.note-editor .note-editing-area .note-editable[contenteditable=\"false\"] .sortable-selected {\n  background-color: #e1f7f7;\n  color: #10a3a3;\n  -webkit-box-shadow: 0 0 0 1px #10a3a3 inset, 0 0 0 0 transparent;\n  box-shadow: 0 0 0 1px #10a3a3 inset, 0 0 0 0 transparent;\n}\n.summernote.note-editor .note-editing-area .note-editable.sort-mode {\n  user-select: none;\n}\n.summernote.note-editor .note-editing-area .note-editable * {\n  /*color: inherit;*/\n}\n.summernote.note-editor .note-editing-area .note-editable table {\n  width: 100%;\n  border-collapse: collapse;\n}\n.summernote.note-editor .note-editing-area .note-editable table td,\n.summernote.note-editor .note-editing-area .note-editable table th {\n  padding: 5px 3px;\n  /*border: 1px solid #ececec*/\n  border: 1px solid #ccc;\n}\n.summernote.note-editor .note-editing-area .note-editable sup {\n  vertical-align: super;\n}\n.summernote.note-editor .note-editing-area .note-editable sub {\n  vertical-align: sub;\n}\n.summernote.note-editor .note-editing-area .note-editable a {\n  font-family: inherit;\n  font-weight: inherit;\n  color: #337ab7;\n  text-decoration: underline;\n  /*text-decoration: underline !important;*/\n  background-color: inherit;\n}\n.summernote.note-editor .note-editing-area .note-editable a:hover,\n.summernote.note-editor .note-editing-area .note-editable a:focus {\n  color: #23527c;\n  text-decoration: underline;\n  outline: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable figure {\n  margin: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label {\n  outline: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h1::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h2::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h3::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h4::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h5::before,\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h6::before {\n  content: '<H1>';\n  font-size: 0.5rem;\n  border: 1px dotted gray;\n  background-color: gray;\n  color: white;\n  margin-bottom: 5px;\n  clear: both;\n  display: block;\n  line-height: 0.5rem;\n  width: 1.5rem;\n  text-align: center;\n  text-indent: 0;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h2 {\n  font-size: 1.75rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h2::before {\n  content: '<H2>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h3 {\n  font-size: 1.5rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h3::before {\n  content: '<H3>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h4 {\n  font-size: 1.25rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h4::before {\n  content: '<H4>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h5 {\n  font-size: 1rem;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h5::before {\n  content: '<H5>';\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h6 {\n  font-size: 1rem;\n  font-style: italic;\n  margin-top: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n.summernote.note-editor .note-editing-area .note-editable.show-heading-label h6::before {\n  content: '<H6>';\n}\n.summernote .note-editor .note-editor-comment {\n  border: 1px dotted #ccc;\n  background-color: #D9E778;\n  color: #8a6d3b;\n  border-radius: 4px;\n}\n.summernote.note-editor.note-frame {\n  /* border: 1px solid #a9a9a9; */\n  border-width: 0;\n}\n.summernote.note-editor.note-frame.codeview .note-editing-area .note-editable {\n  display: none;\n}\n.summernote.note-editor.note-frame.codeview .note-editing-area .note-codable {\n  display: block;\n  border-radius: 0.5rem;\n}\n.summernote.note-editor.note-frame .note-editing-area {\n  overflow: hidden;\n}\n.summernote.note-editor.note-frame .note-editing-area .note-editable {\n  padding: 10px;\n  overflow: auto;\n  /* color: #000; */\n  word-wrap: break-word;\n  /* background-color: #fff */\n  background-color: transparent;\n  border-width: 0 1px;\n}\n.summernote.note-editor.note-frame .note-editing-area .note-editable[contenteditable=\"false\"] {\n  background-color: #e5e5e5;\n}\n.summernote.note-editor.note-frame .note-editing-area .note-codable {\n  display: none;\n  width: 100%;\n  padding: 10px;\n  margin-bottom: 0;\n  font-family: Menlo, Monaco, monospace, sans-serif;\n  font-size: 14px;\n  color: #ccc;\n  background-color: #222;\n  border: 0;\n  -webkit-border-radius: 0;\n  -moz-border-radius: 0;\n  border-radius: 0;\n  box-shadow: none;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n  resize: none;\n}\n.summernote.note-editor.note-frame.fullscreen {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1050;\n  width: 100% !important;\n}\n.summernote.note-editor.note-frame.fullscreen .note-editable {\n  background-color: #fff;\n}\n.summernote.note-editor.note-frame.fullscreen .note-resizebar {\n  display: none;\n}\n.summernote.note-editor.note-frame .note-status-output {\n  display: block;\n  width: 100%;\n  height: 20px;\n  margin-bottom: 0;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #000;\n  border: 0;\n  border-top: 1px solid #e2e2e2;\n}\n.summernote.note-editor.note-frame .note-status-output:empty {\n  height: 0;\n  border-top: 0 solid transparent;\n}\n.summernote.note-editor.note-frame .note-status-output .pull-right {\n  float: right !important;\n}\n.summernote.note-editor.note-frame .note-status-output .text-muted {\n  color: #777;\n}\n.summernote.note-editor.note-frame .note-status-output .text-primary {\n  color: #286090;\n}\n.summernote.note-editor.note-frame .note-status-output .text-success {\n  color: #3c763d;\n}\n.summernote.note-editor.note-frame .note-status-output .text-info {\n  color: #31708f;\n}\n.summernote.note-editor.note-frame .note-status-output .text-warning {\n  color: #8a6d3b;\n}\n.summernote.note-editor.note-frame .note-status-output .text-danger {\n  color: #a94442;\n}\n.summernote.note-editor.note-frame .note-status-output .alert {\n  padding: 7px 10px 2px 10px;\n  margin: -7px 0 0 0;\n  color: #000;\n  background-color: #f5f5f5;\n  border-radius: 0;\n}\n.summernote.note-editor.note-frame .note-status-output .alert .note-icon {\n  margin-right: 5px;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-success {\n  color: #3c763d !important;\n  background-color: #dff0d8 !important;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-info {\n  color: #31708f !important;\n  background-color: #d9edf7 !important;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-warning {\n  color: #8a6d3b !important;\n  background-color: #fcf8e3 !important;\n}\n.summernote.note-editor.note-frame .note-status-output .alert-danger {\n  color: #a94442 !important;\n  background-color: #f2dede !important;\n}\n.summernote.note-editor.note-frame .note-statusbar {\n  background-color: #f5f5f5;\n  border-top: 1px solid #ddd;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.summernote.note-editor.note-frame .note-statusbar .note-resizebar {\n  width: 100%;\n  height: 9px;\n  padding-top: 1px;\n  cursor: ns-resize;\n}\n.summernote.note-editor.note-frame .note-statusbar .note-resizebar .note-icon-bar {\n  width: 20px;\n  margin: 1px auto;\n  border-top: 1px solid #a9a9a9;\n}\n.summernote.note-editor.note-frame .note-statusbar.locked .note-resizebar {\n  cursor: default;\n}\n.summernote.note-editor.note-frame .note-statusbar.locked .note-resizebar .note-icon-bar {\n  display: none;\n}\n.summernote.note-editor.note-frame .note-placeholder {\n  padding: 10px;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -27075,6 +27075,347 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/components/IndexComponent/summernote/sound/keyenter.ogg":
+/*!*********************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/keyenter.ogg ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/keyenter.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-1.ogg":
+/*!********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-1.ogg ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-1.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-10.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-10.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-10.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-11.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-11.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-11.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-12.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-12.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-12.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-13.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-13.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-13.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-14.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-14.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-14.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-15.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-15.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-15.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-16.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-16.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-16.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-17.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-17.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-17.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-18.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-18.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-18.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-19.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-19.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-19.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-2.ogg":
+/*!********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-2.ogg ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-2.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-20.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-20.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-20.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-21.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-21.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-21.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-22.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-22.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-22.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-23.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-23.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-23.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-24.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-24.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-24.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-25.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-25.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-25.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-26.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-26.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-26.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-27.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-27.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-27.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-28enter.ogg":
+/*!**************************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-28enter.ogg ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-28enter.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-29.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-29.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-29.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-3.ogg":
+/*!********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-3.ogg ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-3.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-30.ogg":
+/*!*********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-30.ogg ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-30.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-4.ogg":
+/*!********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-4.ogg ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-4.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-5.ogg":
+/*!********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-5.ogg ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-5.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-6.ogg":
+/*!********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-6.ogg ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-6.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-7.ogg":
+/*!********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-7.ogg ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-7.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-8.ogg":
+/*!********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-8.ogg ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-8.ogg";
+
+/***/ }),
+
+/***/ "./src/components/IndexComponent/summernote/sound/office_typewriter-9.ogg":
+/*!********************************************************************************!*\
+  !*** ./src/components/IndexComponent/summernote/sound/office_typewriter-9.ogg ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/office_typewriter-9.ogg";
+
+/***/ }),
+
 /***/ "./src/components/IndexComponent/summernote/styles/summernote-lite.dropdown.less":
 /*!***************************************************************************************!*\
   !*** ./src/components/IndexComponent/summernote/styles/summernote-lite.dropdown.less ***!
@@ -27234,7 +27575,101 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var sortablejs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sortablejs */ "./node_modules/sortablejs/modular/sortable.complete.esm.js");
+/* harmony import */ var _sound_keyenter_ogg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sound/keyenter.ogg */ "./src/components/IndexComponent/summernote/sound/keyenter.ogg");
+/* harmony import */ var _sound_keyenter_ogg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_sound_keyenter_ogg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _sound_office_typewriter_1_ogg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sound/office_typewriter-1.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-1.ogg");
+/* harmony import */ var _sound_office_typewriter_1_ogg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_1_ogg__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _sound_office_typewriter_2_ogg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sound/office_typewriter-2.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-2.ogg");
+/* harmony import */ var _sound_office_typewriter_2_ogg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_2_ogg__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _sound_office_typewriter_3_ogg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sound/office_typewriter-3.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-3.ogg");
+/* harmony import */ var _sound_office_typewriter_3_ogg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_3_ogg__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _sound_office_typewriter_4_ogg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sound/office_typewriter-4.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-4.ogg");
+/* harmony import */ var _sound_office_typewriter_4_ogg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_4_ogg__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _sound_office_typewriter_5_ogg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./sound/office_typewriter-5.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-5.ogg");
+/* harmony import */ var _sound_office_typewriter_5_ogg__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_5_ogg__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _sound_office_typewriter_6_ogg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./sound/office_typewriter-6.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-6.ogg");
+/* harmony import */ var _sound_office_typewriter_6_ogg__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_6_ogg__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _sound_office_typewriter_7_ogg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./sound/office_typewriter-7.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-7.ogg");
+/* harmony import */ var _sound_office_typewriter_7_ogg__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_7_ogg__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _sound_office_typewriter_8_ogg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./sound/office_typewriter-8.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-8.ogg");
+/* harmony import */ var _sound_office_typewriter_8_ogg__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_8_ogg__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _sound_office_typewriter_9_ogg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./sound/office_typewriter-9.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-9.ogg");
+/* harmony import */ var _sound_office_typewriter_9_ogg__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_9_ogg__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _sound_office_typewriter_10_ogg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./sound/office_typewriter-10.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-10.ogg");
+/* harmony import */ var _sound_office_typewriter_10_ogg__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_10_ogg__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _sound_office_typewriter_11_ogg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./sound/office_typewriter-11.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-11.ogg");
+/* harmony import */ var _sound_office_typewriter_11_ogg__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_11_ogg__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _sound_office_typewriter_12_ogg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./sound/office_typewriter-12.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-12.ogg");
+/* harmony import */ var _sound_office_typewriter_12_ogg__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_12_ogg__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _sound_office_typewriter_13_ogg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./sound/office_typewriter-13.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-13.ogg");
+/* harmony import */ var _sound_office_typewriter_13_ogg__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_13_ogg__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _sound_office_typewriter_14_ogg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./sound/office_typewriter-14.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-14.ogg");
+/* harmony import */ var _sound_office_typewriter_14_ogg__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_14_ogg__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _sound_office_typewriter_15_ogg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./sound/office_typewriter-15.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-15.ogg");
+/* harmony import */ var _sound_office_typewriter_15_ogg__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_15_ogg__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _sound_office_typewriter_16_ogg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./sound/office_typewriter-16.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-16.ogg");
+/* harmony import */ var _sound_office_typewriter_16_ogg__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_16_ogg__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _sound_office_typewriter_17_ogg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./sound/office_typewriter-17.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-17.ogg");
+/* harmony import */ var _sound_office_typewriter_17_ogg__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_17_ogg__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _sound_office_typewriter_18_ogg__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./sound/office_typewriter-18.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-18.ogg");
+/* harmony import */ var _sound_office_typewriter_18_ogg__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_18_ogg__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _sound_office_typewriter_19_ogg__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./sound/office_typewriter-19.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-19.ogg");
+/* harmony import */ var _sound_office_typewriter_19_ogg__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_19_ogg__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var _sound_office_typewriter_20_ogg__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./sound/office_typewriter-20.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-20.ogg");
+/* harmony import */ var _sound_office_typewriter_20_ogg__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_20_ogg__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var _sound_office_typewriter_21_ogg__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./sound/office_typewriter-21.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-21.ogg");
+/* harmony import */ var _sound_office_typewriter_21_ogg__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_21_ogg__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var _sound_office_typewriter_22_ogg__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./sound/office_typewriter-22.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-22.ogg");
+/* harmony import */ var _sound_office_typewriter_22_ogg__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_22_ogg__WEBPACK_IMPORTED_MODULE_24__);
+/* harmony import */ var _sound_office_typewriter_23_ogg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./sound/office_typewriter-23.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-23.ogg");
+/* harmony import */ var _sound_office_typewriter_23_ogg__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_23_ogg__WEBPACK_IMPORTED_MODULE_25__);
+/* harmony import */ var _sound_office_typewriter_24_ogg__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./sound/office_typewriter-24.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-24.ogg");
+/* harmony import */ var _sound_office_typewriter_24_ogg__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_24_ogg__WEBPACK_IMPORTED_MODULE_26__);
+/* harmony import */ var _sound_office_typewriter_25_ogg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./sound/office_typewriter-25.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-25.ogg");
+/* harmony import */ var _sound_office_typewriter_25_ogg__WEBPACK_IMPORTED_MODULE_27___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_25_ogg__WEBPACK_IMPORTED_MODULE_27__);
+/* harmony import */ var _sound_office_typewriter_26_ogg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./sound/office_typewriter-26.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-26.ogg");
+/* harmony import */ var _sound_office_typewriter_26_ogg__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_26_ogg__WEBPACK_IMPORTED_MODULE_28__);
+/* harmony import */ var _sound_office_typewriter_27_ogg__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./sound/office_typewriter-27.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-27.ogg");
+/* harmony import */ var _sound_office_typewriter_27_ogg__WEBPACK_IMPORTED_MODULE_29___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_27_ogg__WEBPACK_IMPORTED_MODULE_29__);
+/* harmony import */ var _sound_office_typewriter_28enter_ogg__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./sound/office_typewriter-28enter.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-28enter.ogg");
+/* harmony import */ var _sound_office_typewriter_28enter_ogg__WEBPACK_IMPORTED_MODULE_30___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_28enter_ogg__WEBPACK_IMPORTED_MODULE_30__);
+/* harmony import */ var _sound_office_typewriter_29_ogg__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./sound/office_typewriter-29.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-29.ogg");
+/* harmony import */ var _sound_office_typewriter_29_ogg__WEBPACK_IMPORTED_MODULE_31___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_29_ogg__WEBPACK_IMPORTED_MODULE_31__);
+/* harmony import */ var _sound_office_typewriter_30_ogg__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./sound/office_typewriter-30.ogg */ "./src/components/IndexComponent/summernote/sound/office_typewriter-30.ogg");
+/* harmony import */ var _sound_office_typewriter_30_ogg__WEBPACK_IMPORTED_MODULE_32___default = /*#__PURE__*/__webpack_require__.n(_sound_office_typewriter_30_ogg__WEBPACK_IMPORTED_MODULE_32__);
 /* global define */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -33298,6 +33733,43 @@ ${links}`
       Editor.prototype.initialize = function () {
           var _this = this;
           // bind custom events
+          
+          let soundKeyAny = [
+            _sound_office_typewriter_1_ogg__WEBPACK_IMPORTED_MODULE_3___default.a,
+            _sound_office_typewriter_2_ogg__WEBPACK_IMPORTED_MODULE_4___default.a,
+            _sound_office_typewriter_3_ogg__WEBPACK_IMPORTED_MODULE_5___default.a,
+            _sound_office_typewriter_4_ogg__WEBPACK_IMPORTED_MODULE_6___default.a,
+            _sound_office_typewriter_5_ogg__WEBPACK_IMPORTED_MODULE_7___default.a,
+            _sound_office_typewriter_6_ogg__WEBPACK_IMPORTED_MODULE_8___default.a,
+            _sound_office_typewriter_7_ogg__WEBPACK_IMPORTED_MODULE_9___default.a,
+            _sound_office_typewriter_8_ogg__WEBPACK_IMPORTED_MODULE_10___default.a,
+            _sound_office_typewriter_9_ogg__WEBPACK_IMPORTED_MODULE_11___default.a,
+            _sound_office_typewriter_10_ogg__WEBPACK_IMPORTED_MODULE_12___default.a,
+            _sound_office_typewriter_11_ogg__WEBPACK_IMPORTED_MODULE_13___default.a,
+            _sound_office_typewriter_12_ogg__WEBPACK_IMPORTED_MODULE_14___default.a,
+            _sound_office_typewriter_13_ogg__WEBPACK_IMPORTED_MODULE_15___default.a,
+            _sound_office_typewriter_14_ogg__WEBPACK_IMPORTED_MODULE_16___default.a,
+            _sound_office_typewriter_15_ogg__WEBPACK_IMPORTED_MODULE_17___default.a,
+            _sound_office_typewriter_16_ogg__WEBPACK_IMPORTED_MODULE_18___default.a,
+            _sound_office_typewriter_17_ogg__WEBPACK_IMPORTED_MODULE_19___default.a,
+            _sound_office_typewriter_18_ogg__WEBPACK_IMPORTED_MODULE_20___default.a,
+            _sound_office_typewriter_19_ogg__WEBPACK_IMPORTED_MODULE_21___default.a,
+            _sound_office_typewriter_20_ogg__WEBPACK_IMPORTED_MODULE_22___default.a,
+            _sound_office_typewriter_21_ogg__WEBPACK_IMPORTED_MODULE_23___default.a,
+            _sound_office_typewriter_22_ogg__WEBPACK_IMPORTED_MODULE_24___default.a,
+            _sound_office_typewriter_23_ogg__WEBPACK_IMPORTED_MODULE_25___default.a,
+            _sound_office_typewriter_24_ogg__WEBPACK_IMPORTED_MODULE_26___default.a,
+            _sound_office_typewriter_25_ogg__WEBPACK_IMPORTED_MODULE_27___default.a,
+            _sound_office_typewriter_26_ogg__WEBPACK_IMPORTED_MODULE_28___default.a,
+            _sound_office_typewriter_27_ogg__WEBPACK_IMPORTED_MODULE_29___default.a,
+            _sound_office_typewriter_28enter_ogg__WEBPACK_IMPORTED_MODULE_30___default.a,
+            _sound_office_typewriter_29_ogg__WEBPACK_IMPORTED_MODULE_31___default.a,
+            _sound_office_typewriter_30_ogg__WEBPACK_IMPORTED_MODULE_32___default.a
+          ]
+          
+          let soundKeyAnyIndex = 0
+          let lastKeyCode = null
+          
           let keydownEvent = function (event) {
               
               _this.context.triggerEvent('keydown', event);
@@ -33332,6 +33804,24 @@ ${links}`
               }
               */
               // 
+              
+              if (_this.context.options.enableTypeWriterSoundEffect) {
+                if (event.keyCode === key.code.ENTER) {
+                  //console.log('play enter')
+                  let audioEnter = new Audio(_sound_keyenter_ogg__WEBPACK_IMPORTED_MODULE_2___default.a)
+                  audioEnter.play()
+                }
+                else {
+                  //console.log('play type')
+                  if (event.keyCode !== lastKeyCode) {
+                    soundKeyAnyIndex = (soundKeyAnyIndex + 1) % soundKeyAny.length
+                  }
+                  
+                  let soundKeyAnyURL = soundKeyAny[soundKeyAnyIndex]
+                  let audioAny = new Audio(soundKeyAnyURL)
+                  audioAny.play()
+                }
+              }
           }
           
           this.$editable.on('keydown', keydownEvent)
@@ -38548,6 +39038,7 @@ sel.addRange(range);
           enableDropImage: true,
           enablePasteImage: true,
           enableStatusbar: true,
+          enableTypeWriterSoundEffect: true,
           toolbarPosition: 'top',
           allowEnter: true,
           helpFooter: null,

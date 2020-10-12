@@ -4,7 +4,6 @@ import $ from 'jquery'
 
 import Sortable from "sortablejs"
 
-import getCaretCoordinates from "./vendors/textarea-caret-position/index.js"
 import soundKeyEnterURL from './sound/keyenter.ogg'
 
 import soundKeyAny1 from './sound/office_typewriter-1.ogg'
@@ -6187,6 +6186,51 @@ ${links}`
                   audioAny.play()
                 }
               }
+              
+              //console.log(event.target)
+              //var caret = getCaretCoordinates(event.target, event.target.selectionEnd);
+              //console.log('(top, left, height) = (%s, %s, %s)', caret.top, caret.left, caret.height);
+              scrollVerticalCenter()
+            
+          }
+          
+          let scrollVerticalCenter = function () {
+            if (_this.options.enableScrollVerticalCenter !== true) {
+              return false
+            }
+            
+            let range = _this.createRange()
+            
+            let scElement = $(range.sc).parent()
+            let y = getElementVerticalCenterY(scElement)
+            
+            if (range.sc !== range.ec) {
+              let ecElement = $(range.ec).parent()
+              let yEC = getElementVerticalCenterY(ecElement)
+              y = Math.round((y + yEC) / 2)
+            }
+            //console.log(range.sc, range.ec, range.sc === range.ec, $(range.sc).parent()[0])
+            //console.log(y)
+            
+            let verticalCenterY = getElementVerticalCenterY(_this.$editable)
+            
+            let scrollTopY = _this.$editable[0].scrollTop
+            let scrollTopTo = scrollTopY + (y - verticalCenterY)
+            // -------------------
+            //console.log(y, verticalCenterY, scrollTopY, scrollTopTo)
+            
+            
+            //_this.$editable[0].scrollTop(y, {method: 'smooth'})
+            if (scrollTopTo < 0 || scrollTopTo > _this.$editable[0].scrollHeight) {
+              return false
+            }
+            _this.$editable.animate({scrollTop: scrollTopTo}, 300)
+          }
+          
+          let getElementVerticalCenterY = function (element) {
+            let rect = element[0].getBoundingClientRect()
+            //console.log(rect)
+            return Math.round(rect.top + (rect.height / 2))
           }
           
           this.$editable.on('keydown', keydownEvent)
@@ -6205,10 +6249,6 @@ ${links}`
               }
           })
           .on('input', function (event) {
-              //console.log(event.target)
-              //var caret = getCaretCoordinates(event.target, event.target.selectionEnd);
-              //console.log('(top, left, height) = (%s, %s, %s)', caret.top, caret.left, caret.height);
-            
               _this.context.triggerEvent('input', event);
           })
           .on('paste', function (event) {
@@ -11410,6 +11450,7 @@ sel.addRange(range);
           enableDropImage: true,
           enablePasteImage: true,
           enableStatusbar: true,
+          enableScrollVerticalCenter: true,
           enableTypeWriterSoundEffect: true,
           toolbarPosition: 'top',
           allowEnter: true,

@@ -26661,6 +26661,7 @@ let IndexComponent = {
       let contents = localStorage.getItem('contents')
       if (contents !== null) {
         this.editor.summernote("code", contents)
+        this.setDocumentTitle(contents)
       }
     },
     _summernoteOptions () {
@@ -26732,7 +26733,53 @@ let IndexComponent = {
     _callbacksOnChange (contents) {
       //console.log(contents)
       //console.log('onChange:', contents, $editable);
+      this.setDocumentTitle(contents)
       localStorage.setItem('contents', contents)
+    },
+    _getTextArrayFromHTMLString (string) {
+      let elements = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div>' + string + '</div>').find('*')
+      for (let i = 0; i < elements.length; i++) {
+        let element = elements.eq(i)
+        let nodes = element.contents()
+        for (let n = 0; n < nodes.length; n++) {
+          let node = nodes[n]
+          if (node.nodeType !== Node.TEXT_NODE) {
+            continue
+          }
+          output.push(node.textContent)
+        }
+      }
+      return output
+    },
+    setDocumentTitle(contents) {
+      let output = []
+      let title = ''
+      let titleLimit = 50
+      
+      let elements = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div>' + contents + '</div>').find('*')
+      for (let i = 0; i < elements.length; i++) {
+        let element = elements.eq(i)
+        let nodes = element.contents()
+        for (let n = 0; n < nodes.length; n++) {
+          let node = nodes[n]
+          if (node.nodeType !== Node.TEXT_NODE) {
+            continue
+          }
+          output.push(node.textContent)
+          title = output.join(' ')
+          if (title.length > titleLimit) {
+            break
+          }
+        }
+        
+        if (title.length > titleLimit) {
+          break
+        }
+      }
+      
+      if (title.length > 0) {
+        document.title = title
+      }
     },
     _onImageUpload () {
       
@@ -31665,10 +31712,31 @@ __webpack_require__.r(__webpack_exports__);
       Bullet.prototype.insertUnorderedList = function (editable) {
           this.toggleList('UL', editable);
       };
+      
+      Bullet.prototype._isIndentable = function () {
+        let currentElement = this.context.invoke('editor.getCurrentElement')
+        //console.log(currentElement)
+        if (currentElement.prop('tagName').toLowerCase() === 'li') {
+          let list = currentElement.parent()
+          let items = list.children()
+          if (items.length < 2
+                  || items.index(currentElement) === 0) {
+            return false
+          } 
+        }
+        return true
+      }
+      
       /**
        * indent
        */
       Bullet.prototype.indent = function (editable) {
+        if (this._isIndentable() === false) {
+          return false
+        }
+        //console.log(currentElement.prop('tagName'))
+        //return false
+        
           var _this = this;
           var rng = range.create(editable).wrapBodyInlineWithPara();
           var paras = rng.nodes(dom.isPara, { includeAncestor: true });

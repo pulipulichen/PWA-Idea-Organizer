@@ -4013,10 +4013,31 @@ import soundKeyAny30 from './sound/office_typewriter-30.ogg'
       Bullet.prototype.insertUnorderedList = function (editable) {
           this.toggleList('UL', editable);
       };
+      
+      Bullet.prototype._isIndentable = function () {
+        let currentElement = this.context.invoke('editor.getCurrentElement')
+        //console.log(currentElement)
+        if (currentElement.prop('tagName').toLowerCase() === 'li') {
+          let list = currentElement.parent()
+          let items = list.children()
+          if (items.length < 2
+                  || items.index(currentElement) === 0) {
+            return false
+          } 
+        }
+        return true
+      }
+      
       /**
        * indent
        */
       Bullet.prototype.indent = function (editable) {
+        if (this._isIndentable() === false) {
+          return false
+        }
+        //console.log(currentElement.prop('tagName'))
+        //return false
+        
           var _this = this;
           var rng = range.create(editable).wrapBodyInlineWithPara();
           var paras = rng.nodes(dom.isPara, { includeAncestor: true });

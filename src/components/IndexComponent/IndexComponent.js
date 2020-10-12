@@ -30,6 +30,7 @@ let IndexComponent = {
       let contents = localStorage.getItem('contents')
       if (contents !== null) {
         this.editor.summernote("code", contents)
+        this.setDocumentTitle(contents)
       }
     },
     _summernoteOptions () {
@@ -101,7 +102,53 @@ let IndexComponent = {
     _callbacksOnChange (contents) {
       //console.log(contents)
       //console.log('onChange:', contents, $editable);
+      this.setDocumentTitle(contents)
       localStorage.setItem('contents', contents)
+    },
+    _getTextArrayFromHTMLString (string) {
+      let elements = $('<div>' + string + '</div>').find('*')
+      for (let i = 0; i < elements.length; i++) {
+        let element = elements.eq(i)
+        let nodes = element.contents()
+        for (let n = 0; n < nodes.length; n++) {
+          let node = nodes[n]
+          if (node.nodeType !== Node.TEXT_NODE) {
+            continue
+          }
+          output.push(node.textContent)
+        }
+      }
+      return output
+    },
+    setDocumentTitle(contents) {
+      let output = []
+      let title = ''
+      let titleLimit = 50
+      
+      let elements = $('<div>' + contents + '</div>').find('*')
+      for (let i = 0; i < elements.length; i++) {
+        let element = elements.eq(i)
+        let nodes = element.contents()
+        for (let n = 0; n < nodes.length; n++) {
+          let node = nodes[n]
+          if (node.nodeType !== Node.TEXT_NODE) {
+            continue
+          }
+          output.push(node.textContent)
+          title = output.join(' ')
+          if (title.length > titleLimit) {
+            break
+          }
+        }
+        
+        if (title.length > titleLimit) {
+          break
+        }
+      }
+      
+      if (title.length > 0) {
+        document.title = title
+      }
     },
     _onImageUpload () {
       

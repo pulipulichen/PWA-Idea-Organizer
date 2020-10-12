@@ -3,8 +3,6 @@
 import $ from 'jquery'
 
 import Sortable from "sortablejs"
-import getCaretCoordinates from './vendors/textarea-caret-position/index.js'
-
 import soundKeyEnterURL from './sound/keyenter.ogg'
 
 import soundKeyAny1 from './sound/office_typewriter-1.ogg'
@@ -17,7 +15,7 @@ import soundKeyAny7 from './sound/office_typewriter-7.ogg'
 import soundKeyAny8 from './sound/office_typewriter-8.ogg'
 import soundKeyAny9 from './sound/office_typewriter-9.ogg'
 import soundKeyAny10 from './sound/office_typewriter-10.ogg'
-import soundKeyAny11 from './sound/office_typewriter-11.ogg'
+//import soundKeyAny11 from './sound/office_typewriter-11.ogg'
 import soundKeyAny12 from './sound/office_typewriter-12.ogg'
 import soundKeyAny13 from './sound/office_typewriter-13.ogg'
 import soundKeyAny14 from './sound/office_typewriter-14.ogg'
@@ -34,7 +32,7 @@ import soundKeyAny24 from './sound/office_typewriter-24.ogg'
 import soundKeyAny25 from './sound/office_typewriter-25.ogg'
 import soundKeyAny26 from './sound/office_typewriter-26.ogg'
 import soundKeyAny27 from './sound/office_typewriter-27.ogg'
-import soundKeyAny28 from './sound/office_typewriter-28enter.ogg'
+//import soundKeyAny28 from './sound/office_typewriter-28enter.ogg'
 import soundKeyAny29 from './sound/office_typewriter-29.ogg'
 import soundKeyAny30 from './sound/office_typewriter-30.ogg'
 
@@ -6108,7 +6106,7 @@ ${links}`
             soundKeyAny8,
             soundKeyAny9,
             soundKeyAny10,
-            soundKeyAny11,
+            //soundKeyAny11,
             soundKeyAny12,
             soundKeyAny13,
             soundKeyAny14,
@@ -6125,7 +6123,7 @@ ${links}`
             soundKeyAny25,
             soundKeyAny26,
             soundKeyAny27,
-            soundKeyAny28,
+            //soundKeyAny28,
             soundKeyAny29,
             soundKeyAny30
           ]
@@ -6180,39 +6178,13 @@ ${links}`
                     soundKeyAnyIndex = (soundKeyAnyIndex + 1) % soundKeyAny.length
                   }
                   
+                  
                   let soundKeyAnyURL = soundKeyAny[soundKeyAnyIndex]
+                  //console.log(soundKeyAnyURL)
                   let audioAny = new Audio(soundKeyAnyURL)
                   audioAny.play()
                 }
               }
-          }
-          
-          let keepScrollVerticalCenter = () => {
-            
-            if (_this.options.editorKeyScrollVerticalCenter !== true) {
-              return false
-            }
-            //if (_this.options.editorKeyScrollVerticalCenter)
-            /*
-            const range = document.createRange();
-            
-            let editable = _this.$editable[0]
-            
-            let r = _this.createRange()
-            //console.log(r)
-            
-            range.setStartBefore(editable, r.so);
-            range.setEndAfter(editable, r.eo);
-            
-            const clientRect = range.getBoundingClientRect();
-              
-              
-              console.log(clientRect.top, clientRect.right)
-            */
-            //console.log(_this.$editable.prop('selectionEnd'))
-           
-            //var caret = getCaretCoordinates(_this.$editable[0], _this.$editable.selectionEnd);
-            //console.log('(top, left, height) = (%s, %s, %s)', caret.top, caret.left, caret.height);
           }
           
           this.$editable.on('keydown', keydownEvent)
@@ -6231,12 +6203,7 @@ ${links}`
               }
           })
           .on('input', function (event) {
-              //keepScrollVerticalCenter(event)
               //console.log('input')
-              //console.log(event)
-              //let caret = getCaretCoordinates(event.target, event.target.selectionEnd)
-              //console.log('(top, left, height) = (%s, %s, %s)', caret.top, caret.left, caret.height)
-      
               _this.context.triggerEvent('input', event);
           })
           .on('paste', function (event) {
@@ -11489,7 +11456,6 @@ sel.addRange(range);
           toolbarSize: null,
           toolbarOverflow: false,
           toolbarCompact: false,
-          editorKeyScrollVerticalCenter: true,
           maxHeight: null,
           maximumImageFileSize: null,
           callbacks: {

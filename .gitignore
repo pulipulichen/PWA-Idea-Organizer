@@ -2,3 +2,4 @@
 /[[]document/
 .env
 /node_modules/
+/dist/*.tmp

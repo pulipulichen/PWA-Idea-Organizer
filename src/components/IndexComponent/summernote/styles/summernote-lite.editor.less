@@ -58,6 +58,10 @@
 &.note-editor .note-editing-area .note-editable {
   outline: 0;
   
+  &[contenteditable="true"]> *:last-of-type {
+    margin-bottom: 20vh;
+  }
+  
   &[contenteditable="false"] {
     p,li {
       cursor: pointer;

@@ -1,11 +1,13 @@
+@toolbarHeight: 4rem;
+
 .editor-container {
-  height: calc(100vh - 2rem);
+  height: calc(100vh - @toolbarHeight);
 }
 
 .editor-container ::v-deep {
   .note-editable {
-    height: calc(100vh - 2rem);
-    max-height: calc(100vh - 2rem);
+    height: calc(100vh - @toolbarHeight);
+    max-height: calc(100vh - @toolbarHeight);
   }
   
   .note-editable, .note-placeholder {

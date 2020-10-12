@@ -455,10 +455,10 @@ import soundKeyAny30 from './sound/office_typewriter-30.ogg'
           var item = $a.data('item');
           var value = $a.data('value');
           if (item.click) {
-              item.click($a);
+            item.click($a);
           }
           else if (options.itemClick) {
-              options.itemClick(e, item, value);
+            options.itemClick(e, item, value);
           }
           //console.log('set color')
       });
@@ -632,6 +632,13 @@ import soundKeyAny30 from './sound/office_typewriter-30.ogg'
       });
   });
   var colorDropdownButton = function (opt, type) {
+      let recentBackgroundColor = localStorage.getItem('summernote.recent-color.backColor')
+      //console.log(recentBackgroundColor)
+      if (!recentBackgroundColor) {
+        recentBackgroundColor = '#FFFF00'
+      }
+      //console.log(recentBackgroundColor)
+      
       return buttonGroup({
           className: 'note-color',
           children: [
@@ -643,8 +650,8 @@ import soundKeyAny30 from './sound/office_typewriter-30.ogg'
                   callback: function ($button) {
                       var $recentColor = $button.find('.note-recent-color');
                       if (type !== 'foreColor') {
-                          $recentColor.css('background-color', '#FFFF00');
-                          $button.attr('data-backColor', '#FFFF00');
+                          $recentColor.css('background-color', recentBackgroundColor);
+                          $button.attr('data-backColor', recentBackgroundColor);
                       }
                       
                       //console.log('ok')
@@ -713,7 +720,8 @@ import soundKeyAny30 from './sound/office_typewriter-30.ogg'
                       }
                   },
                   click: function (event) {
-                    //console.log('set color')
+                      //console.log('set color')  // 好像不是這裡
+                      //console.log('設定最近的顏色？')
                     
                       var $button = $(event.target);
                       var eventName = $button.data('event');
@@ -6047,6 +6055,40 @@ ${links}`
             return !(rng.sc === rng.ec && rng.so === rng.eo)
           }
           
+          this.getCurrentElement = function () {
+            let range = _this.createRange()
+            
+            let element = range.sc
+            //.log(element, element.nodeType)
+            if (element.nodeType === 3) {
+              element = $$1(element).parent()
+            }
+            else {
+              element = $$1(element)
+            }
+            
+            if (element.hasClass('note-editable')) {
+              return undefined
+            }
+            else {
+              return element
+            }
+          }
+          
+          this.selectCurrentElement = function () {
+            let currentElement = _this.getCurrentElement()
+            //console.log(currentElement)
+            if (!currentElement) {
+              return false
+            }
+            
+            let selection = window.getSelection();
+            var range = document.createRange();
+            range.selectNodeContents(currentElement[0]);
+            selection.removeAllRanges()
+            selection.addRange(range)
+          }
+          
           this.getSelectedNodeAndRemove = function () {
             if (this.hasSelectedRange() === false) {
               return ''
@@ -6166,46 +6208,57 @@ ${links}`
               }
               */
               // 
-              
-              if (_this.context.options.enableTypeWriterSoundEffect) {
-                if (event.keyCode === key.code.ENTER) {
-                  //console.log('play enter')
-                  let audioEnter = new Audio(soundKeyEnterURL)
-                  audioEnter.play()
-                }
-                else {
-                  //console.log('play type')
-                  if (event.keyCode !== lastKeyCode) {
-                    soundKeyAnyIndex = (soundKeyAnyIndex + 1) % soundKeyAny.length
-                  }
-                  
-                  
-                  let soundKeyAnyURL = soundKeyAny[soundKeyAnyIndex]
-                  //console.log(soundKeyAnyURL)
-                  let audioAny = new Audio(soundKeyAnyURL)
-                  audioAny.play()
-                }
-              }
+              playTypeWriterSound(event)
               
               //console.log(event.target)
               //var caret = getCaretCoordinates(event.target, event.target.selectionEnd);
               //console.log('(top, left, height) = (%s, %s, %s)', caret.top, caret.left, caret.height);
-              scrollVerticalCenter()
+              scrollVerticalCenter(event)
             
           }
           
-          let scrollVerticalCenter = function () {
-            if (_this.options.enableScrollVerticalCenter !== true) {
+          let playTypeWriterSound = function (event) {
+            if (_this.options.enableTypeWriterSoundEffect !== true
+                    || scrollVerticalCenterSkipKeyCode.indexOf(event.keyCode) > -1) {
+              return false
+            }
+            
+            if (event.keyCode === key.code.ENTER) {
+              //console.log('play enter')
+              let audioEnter = new Audio(soundKeyEnterURL)
+              audioEnter.play()
+            }
+            else {
+              //console.log('play type')
+              if (event.keyCode !== lastKeyCode) {
+                soundKeyAnyIndex = (soundKeyAnyIndex + 1) % soundKeyAny.length
+              }
+
+
+              let soundKeyAnyURL = soundKeyAny[soundKeyAnyIndex]
+              //console.log(soundKeyAnyURL)
+              let audioAny = new Audio(soundKeyAnyURL)
+              audioAny.play()
+            }
+          }
+          
+          let scrollVerticalCenterTimer = null
+          let scrollVerticalCenterSkipKeyCode = [
+            33,34,35,36,37,38,39,40,45,112,113,114,115,116,117,118,119,120,121,122,123,27,9,20,16,17,18,144,145,19,93,91
+          ]
+          let scrollVerticalCenter = function (event) {
+            if (_this.options.enableScrollVerticalCenter !== true
+                    || scrollVerticalCenterSkipKeyCode.indexOf(event.keyCode) > -1) {
               return false
             }
             
             let range = _this.createRange()
             
-            let scElement = $(range.sc).parent()
+            let scElement = range.sc
             let y = getElementVerticalCenterY(scElement)
             
             if (range.sc !== range.ec) {
-              let ecElement = $(range.ec).parent()
+              let ecElement = range.ec
               let yEC = getElementVerticalCenterY(ecElement)
               y = Math.round((y + yEC) / 2)
             }
@@ -6224,10 +6277,26 @@ ${links}`
             if (scrollTopTo < 0 || scrollTopTo > _this.$editable[0].scrollHeight) {
               return false
             }
-            _this.$editable.animate({scrollTop: scrollTopTo}, 300)
+            
+            clearTimeout(scrollVerticalCenterTimer)
+            scrollVerticalCenterTimer = setTimeout(() => {
+              _this.$editable.animate({scrollTop: scrollTopTo}, 300)
+            }, 10)
           }
           
           let getElementVerticalCenterY = function (element) {
+            //console.log(element.nodeType)
+            if (element.nodeType === 3) {
+              element = $(element).parent()
+            }
+            else {
+              element = $(element)
+            }
+            
+            if (!element) {
+              return false
+            }
+            
             let rect = element[0].getBoundingClientRect()
             //console.log(rect)
             return Math.round(rect.top + (rect.height / 2))
@@ -8132,6 +8201,16 @@ sel.addRange(range);
           return ((name !== '') && this.isFontInstalled(name) && ($$1.inArray(name, genericFamilies) === -1));
       };
       Buttons.prototype.colorPalette = function (className, tooltip, backColor, foreColor) {
+        let recentColorKey = 'summernote.recent-color.backColor'
+        if (foreColor === true) {
+          recentColorKey = 'summernote.recent-color.foreColor'
+        }
+        let recentColor = localStorage.getItem(recentColorKey)
+        //console.log(recentBackgroundColor)
+        if (!recentColor && backColor) {
+          recentColor = '#FFFF00'
+        }
+        
           var _this = this;
           return this.ui.buttonGroup({
               className: 'note-color ' + className,
@@ -8162,11 +8241,14 @@ sel.addRange(range);
                       callback: function ($button) {
                           var $recentColor = $button.find('.note-recent-color');
                           if (backColor) {
-                              $recentColor.css('background-color', '#FFFF00');
-                              $button.attr('data-backColor', '#FFFF00');
+                              $recentColor.css('background-color', recentColor);
+                              $button.attr('data-backColor', recentColor);
                           }
                           if (!foreColor) {
                               $recentColor.css('color', 'transparent');
+                          }
+                          if (foreColor) {
+                            $recentColor.css('color', recentColor);
                           }
                       }
                   }),
@@ -8276,7 +8358,12 @@ sel.addRange(range);
                           });
                       }, 
                       click: function (event) {
-                          //console.log('set color')
+                        let hasCurrentSelectedRange =  _this.context.invoke('editor.hasSelectedRange')
+                        if (hasCurrentSelectedRange === false) {
+                          _this.context.invoke('editor.saveRange')
+                          _this.context.invoke('editor.selectCurrentElement')
+                        }
+                          //console.log('set color') // 這裡才對，這裡是調色盤的按鈕
                           
                           event.stopPropagation()
                           event.preventDefault()
@@ -8303,10 +8390,10 @@ sel.addRange(range);
                               event.preventDefault()
                           }
                           else if (eventName === 'removeFormat') {
-                            if (hasSelectedRange() === false) {
-                              event.preventDefault()
-                              return false
-                            }
+                            //if (hasSelectedRange() === false) {
+                            //  event.preventDefault()
+                            //  return false
+                            //}
                               
                             let color = 'inherit'
                             /*
@@ -8323,10 +8410,10 @@ sel.addRange(range);
                             $currentButton.attr('data-' + value, color);
                           }
                           else if (lists.contains(['backColor', 'foreColor'], eventName)) {
-                              if (hasSelectedRange() === false) {
-                                event.preventDefault()
-                                return false
-                              }
+                              //if (hasSelectedRange() === false) {
+                              //  event.preventDefault()
+                              //  return false
+                              //}
                             
                               let key = eventName === 'backColor' ? 'background-color' : 'color';
                               let $color = $button.closest('.note-color').find('.note-recent-color');
@@ -8337,6 +8424,9 @@ sel.addRange(range);
                               //console.log(_this.context.layoutInfo.editor)
                               //if (_this.context.invoke('editor.hasSelectedRange')) {
                               //console.log(hasSelectedRange())
+                              
+                              console.log($currentButton, eventName, value)
+                              localStorage.setItem('summernote.recent-color.' + eventName, value)
                               
                               _this.context.invoke('editor.' + eventName, value);
                               
@@ -8350,7 +8440,11 @@ sel.addRange(range);
                           //$button.parents('.note-dropdown-menu:first').hide()
                           //console.log($button.parents('.note-btn-group.open:first').length)
                           $button.parents('.note-btn-group.open:first').removeClass('open')
-                      }
+                          
+                          if (hasCurrentSelectedRange === false) {
+                            _this.context.invoke('editor.restoreRange')
+                          }
+                      } // click
                   })
               ]
           }).render();
@@ -8476,7 +8570,7 @@ sel.addRange(range);
                   className: 'note-btn-bold',
                   contents: _this.ui.icon(_this.options.icons.bold),
                   tooltip: _this.lang.font.bold + _this.representShortcut('bold'),
-                  click: _this.context.createInvokeHandlerAndUpdateState('editor.bold')
+                  click: _this.context.createRangeInvokeHandlerAndUpdateState('editor.bold')
               }).render();
           });
           this.context.memo('button.italic', function () {
@@ -8484,7 +8578,7 @@ sel.addRange(range);
                   className: 'note-btn-italic',
                   contents: _this.ui.icon(_this.options.icons.italic),
                   tooltip: _this.lang.font.italic + _this.representShortcut('italic'),
-                  click: _this.context.createInvokeHandlerAndUpdateState('editor.italic')
+                  click: _this.context.createRangeInvokeHandlerAndUpdateState('editor.italic')
               }).render();
           });
           this.context.memo('button.underline', function () {
@@ -8492,21 +8586,21 @@ sel.addRange(range);
                   className: 'note-btn-underline',
                   contents: _this.ui.icon(_this.options.icons.underline),
                   tooltip: _this.lang.font.underline + _this.representShortcut('underline'),
-                  click: _this.context.createInvokeHandlerAndUpdateState('editor.underline')
+                  click: _this.context.createRangeInvokeHandlerAndUpdateState('editor.underline')
               }).render();
           });
           this.context.memo('button.clear', function () {
               return _this.button({
                   contents: _this.ui.icon(_this.options.icons.eraser),
                   tooltip: _this.lang.font.clear + _this.representShortcut('removeFormat'),
-                  click: _this.context.createInvokeHandler('editor.removeFormat')
+                  click: _this.context.createRangeInvokeHandlerAndUpdateState('editor.removeFormat')
               }).render();
           });
           this.context.memo('button.removeFormat', function () {
               return _this.button({
                   contents: _this.ui.icon(_this.options.icons.eraser),
                   tooltip: _this.lang.font.clear + _this.representShortcut('removeFormat'),
-                  click: _this.context.createInvokeHandler('editor.removeFormat')
+                  click: _this.context.createRangeInvokeHandlerAndUpdateState('editor.removeFormat')
               }).render();
           });
           this.context.memo('button.strikethrough', function () {
@@ -8514,7 +8608,7 @@ sel.addRange(range);
                   className: 'note-btn-strikethrough',
                   contents: _this.ui.icon(_this.options.icons.strikethrough),
                   tooltip: _this.lang.font.strikethrough + _this.representShortcut('strikethrough'),
-                  click: _this.context.createInvokeHandlerAndUpdateState('editor.strikethrough')
+                  click: _this.context.createRangeInvokeHandlerAndUpdateState('editor.strikethrough')
               }).render();
           });
           this.context.memo('button.comment', function () {
@@ -8609,7 +8703,7 @@ sel.addRange(range);
                       template: function (item) {
                           return '<span style="font-family: \'' + item + '\'">' + item + '</span>';
                       },
-                      click: _this.context.createInvokeHandlerAndUpdateState('editor.fontName')
+                      click: _this.context.createRangeInvokeHandlerAndUpdateState('editor.fontName')
                   })
               ]).render();
           });
@@ -8628,7 +8722,7 @@ sel.addRange(range);
                       checkClassName: _this.options.icons.menuCheck,
                       items: _this.options.fontSizes,
                       title: _this.lang.font.size,
-                      click: _this.context.createInvokeHandlerAndUpdateState('editor.fontSize')
+                      click: _this.context.createRangeInvokeHandlerAndUpdateState('editor.fontSize')
                   })
               ]).render();
           });
@@ -11264,6 +11358,26 @@ sel.addRange(range);
               _this.createInvokeHandler(namespace, value)(event);
               _this.invoke('buttons.updateCurrentStyle');
           };
+      };
+      Context.prototype.createRangeInvokeHandlerAndUpdateState = function (namespace, value) {
+          var _this = this;
+          let callback = this.createInvokeHandlerAndUpdateState(namespace, value)
+          
+          return function (event) {
+            let hasSelectedRange =  _this.invoke('editor.hasSelectedRange')
+            
+            if (hasSelectedRange === false) {
+              _this.invoke('editor.saveRange')
+              _this.invoke('editor.selectCurrentElement')
+            }
+            //console.log('偵測現在有沒有選取', _this.invoke('editor.hasSelectedRange'))
+            
+            callback(event)
+            
+            if (hasSelectedRange === false) {
+              _this.invoke('editor.restoreRange')
+            }
+          }
       };
       Context.prototype.createInvokeHandler = function (namespace, value) {
           var _this = this;

@@ -92,7 +92,7 @@ let IndexComponent = {
         ['sort', ['toggleSortMode']],
         ['history', ['undo', 'redo']],
         ['list', ['ul', 'ol', 'indent', 'outdent']],
-        ['color', ['forecolor', 'backcolor', 'underline']],
+        ['color', ['forecolor', 'backcolor', 'strikethrough', 'underline']],
         ['format', ['removeFormat' , 'removeElement']],
         ['insert', ['hr']],
         ['manage', ['copyRichFormat', 'clearTarget']]

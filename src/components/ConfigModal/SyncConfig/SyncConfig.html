@@ -1,0 +1,19 @@
+<div class="ui segment">
+  <h2>
+    {{ $t('Sync') }}
+  </h2>
+
+  <div class="field">
+    <label>
+      {{ $t('Sync URL') }}
+      <a href="https://github.com/pulipulichen/PWA-Idea-Organizer/wiki/Setup-Sync"
+         target="_blank">
+        ({{ $t('How to setup a sync url?') }})
+      </a>
+    </label>
+    <input 
+      type="url"
+      v-model="clientConfig.googleSheetAPIURL"
+      placeholder="https://script.google.com/macros/s/..." />
+  </div>
+</div>

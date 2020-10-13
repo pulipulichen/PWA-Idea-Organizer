@@ -1,18 +1,22 @@
 import $ from 'jquery'
 
+import SyncConfig from './SyncConfig/SyncConfig.vue'
+import StyleConfig from './StyleConfig/StyleConfig.vue'
+import Author from './Author/Author.vue'
+
 let ConfigModal = {
-  props: ['config', 'utils'],
+  props: ['config', 'utils', 'clientConfig', 'syncConfig'],
   data() {    
     this.$i18n.locale = this.config.locale
     return {
       modal: null,
-      userConfig: {
-        googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
-      }
     }
   },
-//  components: {
-//  },
+  components: {
+    'sync-config': SyncConfig,
+    'style-config': StyleConfig,
+    'author': Author,
+  },
 //  computed: {
 //  },
 //  watch: {

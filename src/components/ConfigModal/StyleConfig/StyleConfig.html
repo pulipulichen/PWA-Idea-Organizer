@@ -1,0 +1,26 @@
+<div class="ui segment">
+  <h2>
+    {{ $t('Style') }}
+  </h2>
+
+  <div class="inline field">
+    <div class="ui checkbox">
+      <input 
+        type="checkbox" 
+        tabindex="0" 
+        class="hidden"
+        v-model="syncConfig.enableSound" />
+      <label>
+        {{ $t('Enable Sound') }}
+      </label>
+    </div>
+  </div>
+  <div class="field">
+    <label>
+      {{ $t('Custom Style') }}
+    </label>
+    <textarea 
+      v-model="syncConfig.customStyle"
+      ></textarea>
+  </div>
+</div>

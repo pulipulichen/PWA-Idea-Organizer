@@ -6,7 +6,7 @@ export default function (Index) {
   Index.methods.initEditor = async function () {
     await (() => import(/* webpackChunkName: "vendors/summernote" */ './vendors/summernote/summernote-lite.webpack.js'))()
     this.editor = $(this.$refs.editor)
-    let contents = await this._loadData()
+    let contents = this.contents
 
     this.editor.summernote(this._summernoteOptions())
     if (contents !== null) {
@@ -19,31 +19,6 @@ export default function (Index) {
       this.enableChange = true
     }, 100)
     
-    this.loading = false
-  }
-  
-  Index.methods._loadData = async function () {
-    if (!this.clientConfig.googleSheetAPIURL) {
-      return localStorage.getItem('contents')
-    }
-    
-    return new Promise((resolve) => {
-      window.googleDocCallback = function () { return true; };
-      $.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
-        //console.log(contents)
-        //console.log(c)
-        let contents = data.contents
-        
-        let configs = data.configs
-        if (typeof(configs) === 'object') {
-          Object.keys(configs).forEach(key => {
-            this.syncConfig = configs[key]
-          })
-        }
-        
-        resolve(contents)
-      })
-    })
   }
   
   Index.methods._summernoteOptions = function () {
@@ -125,26 +100,10 @@ export default function (Index) {
     //console.log('onChange:', contents, $editable);
     this.setDocumentTitle(contents)
     localStorage.setItem('contents', contents)
-    this.saveToCloud(contents)
+    //this.saveToCloud(contents)
+    this.contents = contents
   }
-  Index.methods.saveToCloud = function (contents) {
-    //console.log(contents)
-    if (!contents || contents === ''
-            || !this.clientConfig.googleSheetAPIURL) {
-      return false
-    }
-
-    if (this.saveToCloudTimer !== null) {
-      clearTimeout(this.saveToCloudTimer)
-    }
-
-    this.saveToCloudTimer = setTimeout(() => {
-      $.post(this.clientConfig.googleSheetAPIURL, {
-        contents
-      })
-      //console.log('儲存：', contents)
-    }, 3000)
-  }
+  
   
   Index.methods._getTextArrayFromHTMLString = function (string) {
     let output = []

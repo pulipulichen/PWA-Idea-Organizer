@@ -77,7 +77,7 @@ let VueController = {
   data: {
     config: config,
     syncConfig: {
-      customStyle: '',
+      customStyle: 'AAA',
       enableSound: config.enableSound
     },
     clientConfig: {

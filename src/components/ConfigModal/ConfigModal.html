@@ -1,6 +1,35 @@
 <div class="ui modal" ref="modal">
-  <div class="header">Header</div>
+  <div class="header">
+    {{ $t('Configuration') }}
+  </div>
   <div class="content">
-    {{ userConfig.googleSheetAPIURL }}
+    <form class="ui form">
+      <sync-config 
+        v-bind:config="config"
+        v-bind:utils="utils"
+        v-bind:clientConfig="clientConfig"
+        v-bind:syncConfig="syncConfig">
+      </sync-config>
+        
+      <style-config 
+        v-bind:config="config"
+        v-bind:utils="utils"
+        v-bind:clientConfig="clientConfig"
+        v-bind:syncConfig="syncConfig">
+      </style-config>
+      
+      <author 
+        v-bind:config="config"
+        v-bind:utils="utils"
+        v-bind:clientConfig="clientConfig"
+        v-bind:syncConfig="syncConfig">
+      </author>
+    </form>
+  </div>
+  <div class="actions">
+    <div class="ui button"
+         v-on:click="hide">
+        {{ $t('Close') }}
+    </div>
   </div>
 </div>

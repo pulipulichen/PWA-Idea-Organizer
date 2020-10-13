@@ -1,13 +1,31 @@
 {
   "elements": {
-    "style": {},
-    "i18n": {},
+    "sync-config": {},
+    "style": {
+      "attributes": {
+        "scoped": {},
+        "src": {},
+        "lang": {}
+      }
+    },
+    "style-config": {},
+    "i18n": {
+      "attributes": {
+        "src": {},
+        "lang": {}
+      }
+    },
     "example": {}
   },
   "attributes": {
     "v-bind:class": {},
     "ref": {
       "context": "div"
+    },
+    "v-on:click": {},
+    "v-bind:src": {},
+    "v-model": {
+      "context": "input"
     }
   }
 }

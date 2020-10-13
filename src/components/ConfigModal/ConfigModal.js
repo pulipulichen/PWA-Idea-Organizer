@@ -2,6 +2,8 @@ import $ from 'jquery'
 
 import SyncConfig from './SyncConfig/SyncConfig.vue'
 import StyleConfig from './StyleConfig/StyleConfig.vue'
+import TableOfContents from './TableOfContents/TableOfContents.vue'
+
 import Author from './Author/Author.vue'
 
 let ConfigModal = {
@@ -16,6 +18,7 @@ let ConfigModal = {
     'sync-config': SyncConfig,
     'style-config': StyleConfig,
     'author': Author,
+    'table-of-contents': TableOfContents
   },
 //  computed: {
 //  },

@@ -3,7 +3,14 @@
     {{ $t('Configuration') }}
   </div>
   <div class="content">
+    <table-of-contents 
+      v-bind:config="config"
+      headings="h2"
+      ref='toc'>
+    </table-of-contents>
+    
     <form class="ui form">
+      
       <sync-config 
         v-bind:config="config"
         v-bind:utils="utils"

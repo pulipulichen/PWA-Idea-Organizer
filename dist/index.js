@@ -26488,17 +26488,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _IndexEditor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./IndexEditor.js */ "./src/components/IndexEditor.js");
 /* global Node */
-
-
-//import './summernote/summernote-lite.webpack.js'
-let summernoteLoader = () => Promise.all(/*! import() | vendors/summernote */[__webpack_require__.e("vendors~vendors/summernote"), __webpack_require__.e("vendors/summernote")]).then(__webpack_require__.bind(null, /*! ./vendors/summernote/summernote-lite.webpack.js */ "./src/components/vendors/summernote/summernote-lite.webpack.js"))
 
 //let summernoteLoader = () => import('./summernote/summernote-lite.webpack.js')
 
-let IndexComponent = {
+let Index = {
   props: ['config'],
   data () {    
     this.$i18n.locale = this.config.locale
@@ -26509,9 +26504,6 @@ let IndexComponent = {
       enableChange: false,
       saveToCloudTimer: null,
       googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
-      //count: 22
-      //saveToCloudTimer: null,
-      //googleSheetAPIURL: 
     }
   },
 //  components: {
@@ -26529,189 +26521,13 @@ let IndexComponent = {
     //summernoteLoader()
     this.initEditor()
   },
-  methods: {
-    async initEditor () {
-      await summernoteLoader()
-      this.editor = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.editor)
-      
-      /*
-      let contents = localStorage.getItem('contents')
-      if (contents !== null) {
-        this.editor.summernote("code", contents)
-        this.setDocumentTitle(contents)
-      }
-      */
-      //console.log(this.googleSheetAPIURL)
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(this.googleSheetAPIURL, (data) => {
-        //console.log(contents)
-        //console.log(c)
-        let contents = data.contents
-        //console.log(contents)
-        
-        if (contents !== null) {
-          //console.log(this.editor.length, this.editor.summernote)
-          this.editor.summernote(this._summernoteOptions())
-
-          this.editor.summernote("code", contents)
-          this.setDocumentTitle(contents)
-          
-          setTimeout(() => {
-            this.enableChange = true
-            this.loading = false
-          }, 100)
-        }
-      })
-    },
-    _summernoteOptions () {
-      let options = {
-        lang: 'zh-TW',
-        //airMode: true,
-        toolbar: this._summernoteOptionsToolbar(),
-        toolbarPosition: 'bottom',
-        popover: {
-          air: [
-            ['font', ['forecolor', 'backcolor', 'bold', 'underline', 'clear']]
-            //['font', ['bold', 'underline']]
-          ]
-        },
-        //enableAirPopover: this._summernoteOptionsEnableAirPopover(),
-        enableStatusbar: false,
-        toolbarAlign: 'right',
-        toolbarCompact: true,
-        toolbarOverflow: true,
-        placeholder: '<ul><li>What do you write...</li></ul>',
-        focus: true,
-        //container: this.editor.parent(),
-        //maxHeight: '5em',
-        //disableDragAndDrop: true,
-        callbacks: {
-          onImageUpload: async (files) => {
-            this._onImageUpload(files)
-          },
-          onChange: this._callbacksOnChange
-        },
-        // https://flatuicolors.com/palette/defo
-        foreColors: [
-          ["#2c3e50", "#7f8c8d", "#bdc3c7", "#8e44ad", "#2980b9"], 
-          ["#c0392b", "#d35400", "#27ae60", "#16a085", "#f39c12"]
-        ],
-        foreColorsName: [
-          ["MIDNIGHT BLUE", "ASBESTOS", "SILVER", "WISTERIA", "POMERANATE"], 
-          ["BELIZE HOLE", "PUMPKIN", "NEPHRITIS", "ORANGE", "GREEN SEA"]
-        ],
-        backColors: [
-          ["#34495e", "#95a5a6", "#ecf0f1", "#9b59b6", "#e74c3c"], 
-          ["#3498db", "#e67e22", "#2ecc71", "#f1c40f", "#1abc9c"]
-        ],
-        backColorsName: [
-          ["WET ASPHALT", "CONCRETE", "CLOUDS", "AMETHYST", "ALIZARIN"], 
-          ["PETER RIVER", "CARROT", "EMERALD", "SUN FLOWER", "TURQUOISE"]
-        ],
-        enableCustomColors: false
-      }
-
-      if (typeof (this.placeholder) === 'string') {
-        options.placeholder = this.placeholder
-      }
-
-      return options
-    },
-    _summernoteOptionsToolbar () {
-      return [
-        // [groupName, [list of button]]
-        ['sort', ['toggleSortMode']],
-        ['history', ['undo', 'redo', 'removeElement']],
-        ['list', ['ul', 'ol', 'indent', 'outdent']],
-        ['style', ['strikethrough', 'underline', 'backgroundColorRed', 'backgroundColorYellow', 'backgroundColorGreen', 'backgroundColorBlue', 'backgroundColorPurple']],
-        ['format', ['removeFormat']],
-        ['insert', ['hr']],
-        ['manage', ['copyRichFormat', 'clearTarget']]
-      ]
-    },
-    _callbacksOnChange (contents) {
-      //console.log(enableChange)
-      if (this.enableChange === false) {
-        return false
-      }
-      
-      //console.log(contents)
-      //console.log('onChange:', contents, $editable);
-      this.setDocumentTitle(contents)
-      localStorage.setItem('contents', contents)
-      this.saveToCloud(contents)
-    },
-    saveToCloud (contents) {
-      //console.log(contents)
-      if (!contents || contents === '') {
-        return false
-      }
-      
-      if (this.saveToCloudTimer !== null) {
-        clearTimeout(this.saveToCloudTimer)
-      }
-      
-      this.saveToCloudTimer = setTimeout(() => {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.post(this.googleSheetAPIURL, {
-          contents
-        })
-        //console.log('儲存：', contents)
-      }, 3000)
-    },
-    _getTextArrayFromHTMLString (string) {
-      let output = []
-      let elements = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div>' + string + '</div>').find('*')
-      for (let i = 0; i < elements.length; i++) {
-        let element = elements.eq(i)
-        let nodes = element.contents()
-        for (let n = 0; n < nodes.length; n++) {
-          let node = nodes[n]
-          if (node.nodeType !== Node.TEXT_NODE) {
-            continue
-          }
-          output.push(node.textContent)
-        }
-      }
-      return output
-    },
-    setDocumentTitle(contents) {
-      let output = []
-      let title = ''
-      let titleLimit = 50
-      
-      let elements = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div>' + contents + '</div>').find('*')
-      for (let i = 0; i < elements.length; i++) {
-        let element = elements.eq(i)
-        let nodes = element.contents()
-        for (let n = 0; n < nodes.length; n++) {
-          let node = nodes[n]
-          if (node.nodeType !== Node.TEXT_NODE) {
-            continue
-          }
-          output.push(node.textContent)
-          title = output.join(' ')
-          if (title.length > titleLimit) {
-            break
-          }
-        }
-        
-        if (title.length > titleLimit) {
-          break
-        }
-      }
-      
-      if (title.length > 0) {
-        document.title = title
-      }
-    },
-    _onImageUpload () { 
-    }
-    
-  } // methods
+  methods: {}
 }
 
-window.googleDocCallback = function () { return true; };
 
-/* harmony default export */ __webpack_exports__["default"] = (IndexComponent);
+Object(_IndexEditor_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Index)
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
@@ -26804,6 +26620,209 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_Index_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CIndex_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_kazupon_vue_i18n_loader_lib_index_js_Index_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CIndex_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_kazupon_vue_i18n_loader_lib_index_js_Index_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CIndex_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_kazupon_vue_i18n_loader_lib_index_js_Index_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CIndex_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_node_modules_kazupon_vue_i18n_loader_lib_index_js_Index_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CIndex_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./src/components/IndexEditor.js":
+/*!***************************************!*\
+  !*** ./src/components/IndexEditor.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function (Index) {
+  Index.methods.initEditor = async function () {
+    await (() => Promise.all(/*! import() | vendors/summernote */[__webpack_require__.e("vendors~vendors/summernote"), __webpack_require__.e("vendors/summernote")]).then(__webpack_require__.bind(null, /*! ./vendors/summernote/summernote-lite.webpack.js */ "./src/components/vendors/summernote/summernote-lite.webpack.js")))()
+    this.editor = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.editor)
+
+    /*
+    let contents = localStorage.getItem('contents')
+    if (contents !== null) {
+      this.editor.summernote("code", contents)
+      this.setDocumentTitle(contents)
+    }
+    */
+    //console.log(this.googleSheetAPIURL)
+
+    window.googleDocCallback = function () { return true; };
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(this.googleSheetAPIURL, (data) => {
+      //console.log(contents)
+      //console.log(c)
+      let contents = data.contents
+      //console.log(contents)
+
+      if (contents !== null) {
+        //console.log(this.editor.length, this.editor.summernote)
+        this.editor.summernote(this._summernoteOptions())
+
+        this.editor.summernote("code", contents)
+        this.setDocumentTitle(contents)
+
+        setTimeout(() => {
+          this.enableChange = true
+          this.loading = false
+        }, 100)
+      }
+    })
+  }
+  
+  Index.methods._summernoteOptions = function () {
+    let options = {
+      //lang: 'zh-TW',
+      lang: this.config.locale,
+      //airMode: true,
+      toolbar: this._summernoteOptionsToolbar(),
+      toolbarPosition: 'bottom',
+      popover: {
+        air: [
+          ['font', ['forecolor', 'backcolor', 'bold', 'underline', 'clear']]
+          //['font', ['bold', 'underline']]
+        ]
+      },
+      //enableAirPopover: this._summernoteOptionsEnableAirPopover(),
+      enableStatusbar: false,
+      toolbarAlign: 'right',
+      toolbarCompact: true,
+      toolbarOverflow: true,
+      placeholder: '<ul><li>What do you write...</li></ul>',
+      focus: true,
+      //container: this.editor.parent(),
+      //maxHeight: '5em',
+      //disableDragAndDrop: true,
+      callbacks: {
+        onImageUpload: async (files) => {
+          this._onImageUpload(files)
+        },
+        onChange: this._callbacksOnChange
+      },
+      // https://flatuicolors.com/palette/defo
+      foreColors: [
+        ["#2c3e50", "#7f8c8d", "#bdc3c7", "#8e44ad", "#2980b9"], 
+        ["#c0392b", "#d35400", "#27ae60", "#16a085", "#f39c12"]
+      ],
+      foreColorsName: [
+        ["MIDNIGHT BLUE", "ASBESTOS", "SILVER", "WISTERIA", "POMERANATE"], 
+        ["BELIZE HOLE", "PUMPKIN", "NEPHRITIS", "ORANGE", "GREEN SEA"]
+      ],
+      backColors: [
+        ["#34495e", "#95a5a6", "#ecf0f1", "#9b59b6", "#e74c3c"], 
+        ["#3498db", "#e67e22", "#2ecc71", "#f1c40f", "#1abc9c"]
+      ],
+      backColorsName: [
+        ["WET ASPHALT", "CONCRETE", "CLOUDS", "AMETHYST", "ALIZARIN"], 
+        ["PETER RIVER", "CARROT", "EMERALD", "SUN FLOWER", "TURQUOISE"]
+      ],
+      enableCustomColors: false
+    }
+
+    if (typeof (this.placeholder) === 'string') {
+      options.placeholder = this.placeholder
+    }
+
+    return options
+  }
+  
+  Index.methods._summernoteOptionsToolbar = function () {
+    return [
+      // [groupName, [list of button]]
+      ['sort', ['toggleSortMode']],
+      ['history', ['undo', 'redo', 'removeElement']],
+      ['list', ['ul', 'ol', 'indent', 'outdent']],
+      ['style', ['strikethrough', 'underline', 'backgroundColorRed', 'backgroundColorYellow', 'backgroundColorGreen', 'backgroundColorBlue', 'backgroundColorPurple']],
+      ['format', ['removeFormat']],
+      ['insert', ['hr']],
+      ['manage', ['copyRichFormat', 'clearTarget']]
+    ]
+  }
+  Index.methods._callbacksOnChange = function (contents) {
+    //console.log(enableChange)
+    if (this.enableChange === false) {
+      return false
+    }
+
+    //console.log(contents)
+    //console.log('onChange:', contents, $editable);
+    this.setDocumentTitle(contents)
+    localStorage.setItem('contents', contents)
+    this.saveToCloud(contents)
+  }
+  Index.methods.saveToCloud = function (contents) {
+    //console.log(contents)
+    if (!contents || contents === '') {
+      return false
+    }
+
+    if (this.saveToCloudTimer !== null) {
+      clearTimeout(this.saveToCloudTimer)
+    }
+
+    this.saveToCloudTimer = setTimeout(() => {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.post(this.googleSheetAPIURL, {
+        contents
+      })
+      //console.log('儲存：', contents)
+    }, 3000)
+  }
+  
+  Index.methods._getTextArrayFromHTMLString = function (string) {
+    let output = []
+    let elements = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div>' + string + '</div>').find('*')
+    for (let i = 0; i < elements.length; i++) {
+      let element = elements.eq(i)
+      let nodes = element.contents()
+      for (let n = 0; n < nodes.length; n++) {
+        let node = nodes[n]
+        if (node.nodeType !== Node.TEXT_NODE) {
+          continue
+        }
+        output.push(node.textContent)
+      }
+    }
+    return output
+  }
+    
+  Index.methods.setDocumentTitle = function (contents) {
+    let output = []
+    let title = ''
+    let titleLimit = 50
+
+    let elements = jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div>' + contents + '</div>').find('*')
+    for (let i = 0; i < elements.length; i++) {
+      let element = elements.eq(i)
+      let nodes = element.contents()
+      for (let n = 0; n < nodes.length; n++) {
+        let node = nodes[n]
+        if (node.nodeType !== Node.TEXT_NODE) {
+          continue
+        }
+        output.push(node.textContent)
+        title = output.join(' ')
+        if (title.length > titleLimit) {
+          break
+        }
+      }
+
+      if (title.length > titleLimit) {
+        break
+      }
+    }
+
+    if (title.length > 0) {
+      document.title = title
+    }
+  }
+  
+  Index.methods._onImageUpload = function () { 
+    // do nothin
+  }
+});
 
 /***/ }),
 

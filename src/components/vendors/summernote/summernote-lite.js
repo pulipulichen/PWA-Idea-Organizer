@@ -6161,6 +6161,12 @@ ${links}`
           }
           
           let {soundKeyEnterURL, soundKeyAny} = soundKeys
+          let audioEnterObject = new Audio(soundKeyEnterURL)
+          
+          let audioObjects = []
+          for (let i = 0; i < soundKeyAny.length; i++) {
+            audioObjects.push(new Audio(soundKeyAny[i]))
+          }
           
           let playTypeWriterSound = function (event) {
             if (_this.options.enableTypeWriterSoundEffect !== true
@@ -6170,8 +6176,13 @@ ${links}`
             
             if (event.keyCode === key.code.ENTER) {
               //console.log('play enter')
-              let audioEnter = new Audio(soundKeyEnterURL)
-              audioEnter.play()
+              let audioEnter = audioEnterObject
+              if (!audioEnter.paused) {
+                audioEnter.currentTime = 0
+              }
+              else {
+                audioEnter.play()
+              }
             }
             else {
               //console.log('play type')
@@ -6182,15 +6193,19 @@ ${links}`
 
               let soundKeyAnyURL = soundKeyAny[soundKeyAnyIndex]
               //console.log(soundKeyAnyURL)
-              let audioAny = new Audio(soundKeyAnyURL)
-              audioAny.play()
+              let audioAny = audioObjects[soundKeyAnyIndex]
+              //audioAny.play()
+              if (!audioAny.paused) {
+                audioAny.currentTime = 0
+              }
+              else {
+                audioAny.play()
+              }
             }
           }
           
           let scrollVerticalCenterTimer = null
-          let scrollVerticalCenterSkipKeyCode = [
-            33,34,35,36,37,38,39,40,45,112,113,114,115,116,117,118,119,120,121,122,123,27,9,20,16,17,18,144,145,19,93,91
-          ]
+          let scrollVerticalCenterSkipKeyCode = _this.options.scrollVerticalCenterSkipKeyCode
           let scrollVerticalCenter = function (event) {
             if (_this.options.enableScrollVerticalCenter !== true
                     || scrollVerticalCenterSkipKeyCode.indexOf(event.keyCode) > -1) {

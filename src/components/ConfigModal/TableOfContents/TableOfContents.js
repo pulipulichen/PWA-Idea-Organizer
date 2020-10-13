@@ -9,7 +9,8 @@ let TableOfContent = {
     return {
       inited: false,
       rootContainer: null,
-      container: null
+      container: null,
+      $toc: null
     }
   },
   /*
@@ -62,11 +63,12 @@ let TableOfContent = {
         tocSelector: '.js-toc',
         // Where to grab the headings to build the table of contents.
         contentSelector: this.contentSelector,
-        scrollContainer: this.contentSelector,
+        scrollContainer: this.rootContainer,
         // Which headings to grab inside of the contentSelector element.
         headingSelector: this.headings,
         // For headings inside relative or absolute positioned containers within content.
         hasInnerContainers: true,
+        disableTocScrollSync: true,
         //fixedSidebarOffset: height,
         //hasInnerContainers: true,
       }
@@ -80,10 +82,88 @@ let TableOfContent = {
       return defaultOptions
     },
     setStyle () {
-      $(this.$refs.toc).css({
+      this.$toc = $(this.$refs.toc)
+      
+      this.$toc.css({
         width: this.width,
         top: this.top
       })
+      setTimeout(() => {
+        //console.log('ok嗎？')
+        let activeLiClassName = 'is-active-li'
+        this.$toc.find('.' + activeLiClassName).removeClass(activeLiClassName)
+        this.$toc.find('li:first').addClass(activeLiClassName)
+        //console.log(this.$toc.find('.' + activeLiClassName).text())
+        
+        let activeLinkClassName = 'is-active-link'
+        this.$toc.find('.' + activeLinkClassName).removeClass(activeLinkClassName)
+        this.$toc.find('a:first').addClass(activeLinkClassName)
+        //console.log(this.$toc.find('.' + activeLiClassName).text())
+      }, 0)  
+    },
+    getHeadingOffsets: function () {
+      let offsets = {}
+      let rootTop = this.rootContainer.offset().top
+      
+      let headings = this.rootContainer.find(this.headings)
+      for (let i = 0; i < headings.length; i++) {
+        let heading = headings.eq(i)
+        let top = heading.offset().top - rootTop
+        let id = heading.attr('id')
+        offsets[id] = top
+      }
+      return offsets
+      //console.log(headings)
+    },
+    activeLink: function (id) {
+      let activeLiClassName = 'is-active-li'
+      this.$toc.find('.' + activeLiClassName).removeClass(activeLiClassName)
+      
+      let activeLinkClassName = 'is-active-link'
+      this.$toc.find('.' + activeLinkClassName).removeClass(activeLinkClassName)
+      
+      let a = this.$toc.find(`a[href="#${id}"]`).addClass(activeLinkClassName)
+      a.parents('li:first').addClass(activeLiClassName)
+      //console.log(this.$toc.find('.' + activeLiClassName).text())
+    },
+    updateActiveLink: function (event) {
+      //console.log(event)
+      let scrollTop = event.target.scrollTop
+      let scrollHeight = event.target.scrollHeight
+      let containerHeight = event.target.clientHeight
+      //console.log(scrollTop + containerHeight, scrollHeight)
+      let headingOffsets = this.getHeadingOffsets()
+      //console.log(headingOffsets)
+      let lastHeading = {}
+      let idList = Object.keys(headingOffsets)
+      
+      if (scrollTop + containerHeight > scrollHeight - 10) {
+        let id = idList.slice(-1)
+        return this.activeLink(id)
+      }
+      
+      for (let i = 0; i < idList.length; i++) {
+        let id = idList[i]
+        let top = headingOffsets[id]
+        if (i === 0 && top > 0) {
+          return this.activeLink(id)
+        }
+        
+        if (top < 0) {
+          lastHeading = {id, top}
+        }
+        else {
+          let lastTop = Math.abs(lastHeading.top)
+          if (lastTop < top) {
+            return this.activeLink(lastHeading.id)
+          }
+          else {
+            return this.activeLink(id)
+          }
+        }
+      }
+      
+      return this.activeLink(lastHeading.id)
     },
     initContainer: function () {
       //this.container = window.$(this.$refs.toc)
@@ -92,6 +172,10 @@ let TableOfContent = {
       //this.rootContainer = $(this.$refs.toc).parent()
       this.rootContainer = $(this.contentSelector)
       this.rootContainer.addClass('tocbot')
+      
+      this.rootContainer.bind('scroll', (event) => {
+        this.updateActiveLink(event)
+      })
     },
     removeContainer: function () {
       //this.container.remove()

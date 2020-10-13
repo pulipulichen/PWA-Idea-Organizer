@@ -1557,8 +1557,12 @@ __webpack_require__.r(__webpack_exports__);
           $tooltip.addClass(placement);
           $tooltip.addClass('in');
           $tooltip.find('.note-tooltip-content').text(title);
-          $tooltip.appendTo(this.options.target);
-          //console.log($tooltip.prop('outerHTML'))
+          
+          $tooltip.appendTo($node.parents('.summernote:first'))
+          //$tooltip.appendTo(this.context.options.target);
+          //console.log(this.context.options.target)
+          //console.log($tooltip.prop('outerHTML')) // 檢查提示
+          //
           //console.log($node)
           
           var nodeWidth = $node.outerWidth();
@@ -1604,6 +1608,7 @@ __webpack_require__.r(__webpack_exports__);
           }
       };
       TooltipUI.prototype.hide = function () {
+          //return false  // 暫時停止隱藏
           this.$tooltip.removeClass('in');
           this.$tooltip.remove();
       };

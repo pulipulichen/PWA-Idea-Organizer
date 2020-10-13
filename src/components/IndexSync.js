@@ -22,7 +22,7 @@ export default function (Index) {
       //console.log('離開了')
     })
     
-    let minInterval = 3 * 60 * 1000
+    let minInterval = 30 * 60 * 1000
     //let minInterval = 3 * 1000
     $window.bind('focus', () => {
       let time = (new Date()).getTime()
@@ -147,5 +147,35 @@ export default function (Index) {
       
       //console.log('儲存：', contents)
     }, 3000)
+  }
+  
+  Index.methods.setCustomStyle = function () {
+    if (this.styleNode) {
+      $(this.styleNode).remove()
+    }
+    //console.log('aaa')
+    
+    let styles = this.syncConfig.customStyle
+    
+    //console.log(styles)
+    if (!styles || styles.trim() === '') {
+      return false
+    }
+    
+    let css = document.createElement('style'); 
+    css.type = 'text/css'; 
+    //console.log(1)
+    if (css.styleSheet) {
+      //console.log(1.5)
+      css.styleSheet.cssText = styles; 
+    }
+    else { 
+      //console.log(1.7)
+      css.appendChild(document.createTextNode(styles))
+    }
+    //console.log(2)
+    document.getElementsByTagName("head")[0].appendChild(css)
+    //console.log(3)
+    this.styleNode = css
   }
 }

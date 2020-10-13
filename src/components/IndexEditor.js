@@ -180,6 +180,7 @@ export default function (Index) {
     //tooltip = tooltip + this.getHotkey(name)
     
     let button = ui.button({
+      className: 'note-btn-bold',
       contents: contents,
       tooltip: tooltip, // `<span>${tooltip}</span>`,
       click: click

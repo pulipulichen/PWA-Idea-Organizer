@@ -16,6 +16,7 @@ let Index = {
       enableChange: false,
       saveToCloudTimer: null,
       configSaveToCloudTimer: null,
+      styleNode: null
       //googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
     }
   },
@@ -42,6 +43,10 @@ let Index = {
       this.startSyncConfig()
     },
     'syncConfig.customStyle' () {
+      if (this.loading === true) {
+        return false
+      }
+      this.setCustomStyle()
       //console.log('watch customStyle')
       this.startSyncConfig()
     }
@@ -62,6 +67,7 @@ let Index = {
     
     await this.initData()
     await this.initEditor()
+    this.setCustomStyle()
     //this.$refs.ConfigModal.show()
     
     this.loading = false

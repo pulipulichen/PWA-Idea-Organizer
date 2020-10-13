@@ -28193,6 +28193,7 @@ let Index = {
       enableChange: false,
       saveToCloudTimer: null,
       configSaveToCloudTimer: null,
+      styleNode: null
       //googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
     }
   },
@@ -28219,6 +28220,10 @@ let Index = {
       this.startSyncConfig()
     },
     'syncConfig.customStyle' () {
+      if (this.loading === true) {
+        return false
+      }
+      this.setCustomStyle()
       //console.log('watch customStyle')
       this.startSyncConfig()
     }
@@ -28239,6 +28244,7 @@ let Index = {
     
     await this.initData()
     await this.initEditor()
+    this.setCustomStyle()
     //this.$refs.ConfigModal.show()
     
     this.loading = false
@@ -28526,6 +28532,7 @@ __webpack_require__.r(__webpack_exports__);
     //tooltip = tooltip + this.getHotkey(name)
     
     let button = ui.button({
+      className: 'note-btn-bold',
       contents: contents,
       tooltip: tooltip, // `<span>${tooltip}</span>`,
       click: click
@@ -28609,7 +28616,7 @@ __webpack_require__.r(__webpack_exports__);
       //console.log('離開了')
     })
     
-    let minInterval = 3 * 60 * 1000
+    let minInterval = 30 * 60 * 1000
     //let minInterval = 3 * 1000
     $window.bind('focus', () => {
       let time = (new Date()).getTime()
@@ -28734,6 +28741,36 @@ __webpack_require__.r(__webpack_exports__);
       
       //console.log('儲存：', contents)
     }, 3000)
+  }
+  
+  Index.methods.setCustomStyle = function () {
+    if (this.styleNode) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.styleNode).remove()
+    }
+    //console.log('aaa')
+    
+    let styles = this.syncConfig.customStyle
+    
+    //console.log(styles)
+    if (!styles || styles.trim() === '') {
+      return false
+    }
+    
+    let css = document.createElement('style'); 
+    css.type = 'text/css'; 
+    //console.log(1)
+    if (css.styleSheet) {
+      //console.log(1.5)
+      css.styleSheet.cssText = styles; 
+    }
+    else { 
+      //console.log(1.7)
+      css.appendChild(document.createTextNode(styles))
+    }
+    //console.log(2)
+    document.getElementsByTagName("head")[0].appendChild(css)
+    //console.log(3)
+    this.styleNode = css
   }
 });
 

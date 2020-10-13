@@ -34,6 +34,7 @@ const PRECACHE_URLS = [
   './dist/asset/brand-icons.woff',
   './dist/asset/brand-icons.woff2',
   './dist/asset/flags.png',
+  './dist/asset/loading.gif',
   './dist/asset/icons.eot',
   './dist/asset/icons.svg',
   './dist/asset/icons.ttf',

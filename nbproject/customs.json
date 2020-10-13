@@ -5,6 +5,7 @@
     "example": {}
   },
   "attributes": {
+    "v-bind:class": {},
     "ref": {
       "context": "div"
     }

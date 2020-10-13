@@ -1,3 +1,5 @@
+/* global Node */
+
 import $ from 'jquery'
 //import './summernote/summernote-lite.webpack.js'
 let summernoteLoader = () => import(/* webpackChunkName: "vendors/summernote" */ './vendors/summernote/summernote-lite.webpack.js')
@@ -99,19 +101,19 @@ let IndexComponent = {
         // https://flatuicolors.com/palette/defo
         foreColors: [
           ["#2c3e50", "#7f8c8d", "#bdc3c7", "#8e44ad", "#2980b9"], 
-          ["#c0392b", "#d35400", "#27ae60", "#16a085", "#f39c12"], 
+          ["#c0392b", "#d35400", "#27ae60", "#16a085", "#f39c12"]
         ],
         foreColorsName: [
           ["MIDNIGHT BLUE", "ASBESTOS", "SILVER", "WISTERIA", "POMERANATE"], 
-          ["BELIZE HOLE", "PUMPKIN", "NEPHRITIS", "ORANGE", "GREEN SEA"], 
+          ["BELIZE HOLE", "PUMPKIN", "NEPHRITIS", "ORANGE", "GREEN SEA"]
         ],
         backColors: [
           ["#34495e", "#95a5a6", "#ecf0f1", "#9b59b6", "#e74c3c"], 
-          ["#3498db", "#e67e22", "#2ecc71", "#f1c40f", "#1abc9c"], 
+          ["#3498db", "#e67e22", "#2ecc71", "#f1c40f", "#1abc9c"]
         ],
         backColorsName: [
           ["WET ASPHALT", "CONCRETE", "CLOUDS", "AMETHYST", "ALIZARIN"], 
-          ["PETER RIVER", "CARROT", "EMERALD", "SUN FLOWER", "TURQUOISE"], 
+          ["PETER RIVER", "CARROT", "EMERALD", "SUN FLOWER", "TURQUOISE"]
         ],
         enableCustomColors: false
       }
@@ -164,6 +166,7 @@ let IndexComponent = {
       }, 3000)
     },
     _getTextArrayFromHTMLString (string) {
+      let output = []
       let elements = $('<div>' + string + '</div>').find('*')
       for (let i = 0; i < elements.length; i++) {
         let element = elements.eq(i)

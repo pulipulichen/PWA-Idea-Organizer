@@ -301,7 +301,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ./loading.gif */ "./
 exports = ___CSS_LOADER_API_IMPORT___(true);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, ".loading-overlay[data-v-82b7485c] {\n  width: 100vw;\n  height: 100vh;\n  cursor: wait;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  transition: opacity 1s;\n  opacity: 0;\n  transition-delay: z-index 1s;\n  z-index: -1;\n}\n.loading-overlay.loading[data-v-82b7485c] {\n  opacity: 1;\n  cursor: wait;\n  z-index: 1000;\n}\n", "",{"version":3,"sources":["IndexLoading.less"],"names":[],"mappings":"AAAA;EACE,YAAY;EACZ,aAAa;EACb,YAAY;EACZ,yDAAsC;EACtC,4BAA4B;EAC5B,kCAAkC;EAClC,eAAe;EACf,MAAM;EACN,OAAO;EACP,sBAAsB;EACtB,UAAU;EACV,4BAA4B;EAC5B,WAAW;AACb;AACA;EACE,UAAU;EACV,YAAY;EACZ,aAAa;AACf","file":"IndexLoading.less","sourcesContent":[".loading-overlay[data-v-82b7485c] {\n  width: 100vw;\n  height: 100vh;\n  cursor: wait;\n  background-image: url(\"./loading.gif\");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  transition: opacity 1s;\n  opacity: 0;\n  transition-delay: z-index 1s;\n  z-index: -1;\n}\n.loading-overlay.loading[data-v-82b7485c] {\n  opacity: 1;\n  cursor: wait;\n  z-index: 1000;\n}\n"]}]);
+exports.push([module.i, ".loading-overlay[data-v-82b7485c] {\n  width: 100vw;\n  height: 100vh;\n  cursor: wait;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  transition: opacity 0.3s;\n  opacity: 0;\n  transition-delay: z-index 1s;\n  z-index: -1;\n}\n.loading-overlay.loading[data-v-82b7485c] {\n  opacity: 1;\n  cursor: wait;\n  z-index: 1000;\n}\n", "",{"version":3,"sources":["IndexLoading.less"],"names":[],"mappings":"AAAA;EACE,YAAY;EACZ,aAAa;EACb,YAAY;EACZ,yDAAsC;EACtC,4BAA4B;EAC5B,kCAAkC;EAClC,eAAe;EACf,MAAM;EACN,OAAO;EACP,wBAAwB;EACxB,UAAU;EACV,4BAA4B;EAC5B,WAAW;AACb;AACA;EACE,UAAU;EACV,YAAY;EACZ,aAAa;AACf","file":"IndexLoading.less","sourcesContent":[".loading-overlay[data-v-82b7485c] {\n  width: 100vw;\n  height: 100vh;\n  cursor: wait;\n  background-image: url(\"./loading.gif\");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  transition: opacity 0.3s;\n  opacity: 0;\n  transition-delay: z-index 1s;\n  z-index: -1;\n}\n.loading-overlay.loading[data-v-82b7485c] {\n  opacity: 1;\n  cursor: wait;\n  z-index: 1000;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -14025,11 +14025,26 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "ui segment" }, [
-    _vm._v("\r\n  Template\r\n")
+  return _c("div", { ref: "modal", staticClass: "ui modal" }, [
+    _c("div", { staticClass: "header" }, [_vm._v("Header")]),
+    _vm._v(" "),
+    _vm._m(0)
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "content" }, [
+      _c("p", [_vm._v("aaa")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("bvvv")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("ccc")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -14051,14 +14066,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "editor-container" }, [
-    _c("div", {
-      staticClass: "loading-overlay",
-      class: { loading: _vm.loading }
-    }),
-    _vm._v(" "),
-    _c("div", { ref: "editor" })
-  ])
+  return _c(
+    "div",
+    { staticClass: "editor-container" },
+    [
+      _c("div", {
+        staticClass: "loading-overlay",
+        class: { loading: _vm.loading }
+      }),
+      _vm._v(" "),
+      _c("div", { ref: "editor" }),
+      _vm._v(" "),
+      _c("config-modal", {
+        ref: "ConfigModal",
+        attrs: { config: _vm.config, utils: _vm.utils }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -26572,26 +26597,50 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-let Template = {
-  props: ['lib', 'status', 'config'],
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+
+let ConfigModal = {
+  props: ['config', 'utils'],
   data() {    
     this.$i18n.locale = this.config.locale
     return {
+      modal: null
     }
   },
 //  components: {
 //  },
-  computed: {
-  },
-  watch: {
-  },
-  mounted() {
-  },
+//  computed: {
+//  },
+//  watch: {
+//  },
+//  mounted() {
+//  },
   methods: {
+    getModal: async function () {
+      if (!this.modal) {
+        while (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.modal).length === 0) {
+          console.log('找不到')
+          await this.utils.AsyncUtils.sleep()
+        }
+        await this.utils.AsyncUtils.sleep()
+        this.modal = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.modal)
+      }
+      return this.modal
+    },
+    show: async function () {
+      let modal = await this.getModal()
+      modal.modal('show')
+    },
+    hide: async function () {
+      let modal = await this.getModal()
+      modal.modal('hide')
+    },
   } // methods
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Template);
+/* harmony default export */ __webpack_exports__["default"] = (ConfigModal);
 
 /***/ }),
 
@@ -26720,7 +26769,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let Index = {
-  props: ['config'],
+  props: ['config', 'utils'],
   data () {    
     this.$i18n.locale = this.config.locale
     return {
@@ -26746,7 +26795,12 @@ let Index = {
     
     //console.log(this)
     //summernoteLoader()
-    this.initEditor()
+    this.loading = false
+    
+    //setTimeout(() => {
+      this.$refs.ConfigModal.show()
+    //}, 1000)
+    //this.initEditor()
   },
   methods: {}
 }
@@ -27317,9 +27371,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_tpl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.tpl */ "./src/index.tpl");
 /* harmony import */ var _index_tpl__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_tpl__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./config.js */ "./src/config.js");
-/* harmony import */ var _components_Index_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Index.vue */ "./src/components/Index.vue");
-/* harmony import */ var _service_worker_loader_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./service-worker-loader.js */ "./src/service-worker-loader.js");
-/* harmony import */ var _service_worker_loader_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_service_worker_loader_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _utils_utils_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/utils.js */ "./src/utils/utils.js");
+/* harmony import */ var _components_Index_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Index.vue */ "./src/components/Index.vue");
+/* harmony import */ var _service_worker_loader_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./service-worker-loader.js */ "./src/service-worker-loader.js");
+/* harmony import */ var _service_worker_loader_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_service_worker_loader_js__WEBPACK_IMPORTED_MODULE_7__);
 /* global __webpack_public_path__ */
 
 
@@ -27330,6 +27385,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // ----------------------
+
+
 
 
 
@@ -27397,10 +27454,11 @@ let VueController = {
   data: {
     config: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"],
     errors: [],
+    utils: _utils_utils_js__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   i18n: _i18n_i18n_js__WEBPACK_IMPORTED_MODULE_1__["default"],
   components: {
-    'index': _components_Index_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+    'index': _components_Index_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   }
 }
 
@@ -27421,7 +27479,7 @@ if (typeof(baseURL) === 'string') {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"non-invasive-web-style-framework\">\r\n  <index v-bind:config=\"config\"></index>\r\n</div>";
+module.exports = "<div class=\"non-invasive-web-style-framework\">\r\n  <index \r\n    v-bind:config=\"config\"\r\n    v-bind:utils=\"utils\"></index>\r\n</div>";
 
 /***/ }),
 
@@ -27523,6 +27581,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _global_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_global_less__WEBPACK_IMPORTED_MODULE_1__);
 
 
+
+/***/ }),
+
+/***/ "./src/utils/AsyncUtils.js":
+/*!*********************************!*\
+  !*** ./src/utils/AsyncUtils.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+    sleep: function (ms = 500) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+});
+
+/***/ }),
+
+/***/ "./src/utils/utils.js":
+/*!****************************!*\
+  !*** ./src/utils/utils.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AsyncUtils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AsyncUtils.js */ "./src/utils/AsyncUtils.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  AsyncUtils: _AsyncUtils_js__WEBPACK_IMPORTED_MODULE_0__["default"]
+});
 
 /***/ })
 

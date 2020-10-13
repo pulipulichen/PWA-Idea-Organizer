@@ -1,3 +1,5 @@
 <div class="non-invasive-web-style-framework">
-  <index v-bind:config="config"></index>
+  <index 
+    v-bind:config="config"
+    v-bind:utils="utils"></index>
 </div>

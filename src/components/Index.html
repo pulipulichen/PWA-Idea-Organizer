@@ -3,5 +3,10 @@
        v-bind:class="{loading: loading}"
        ></div>
   <div ref="editor"></div>
+  <config-modal 
+    ref="ConfigModal"
+    v-bind:config="config"
+    v-bind:utils="utils"
+    ></config-modal>
 </div>
   

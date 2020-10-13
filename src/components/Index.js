@@ -4,7 +4,7 @@
 import ConfigModal from './ConfigModal/ConfigModal.vue'
 
 let Index = {
-  props: ['config'],
+  props: ['config', 'utils'],
   data () {    
     this.$i18n.locale = this.config.locale
     return {
@@ -30,7 +30,12 @@ let Index = {
     
     //console.log(this)
     //summernoteLoader()
-    this.initEditor()
+    this.loading = false
+    
+    //setTimeout(() => {
+      this.$refs.ConfigModal.show()
+    //}, 1000)
+    //this.initEditor()
   },
   methods: {}
 }

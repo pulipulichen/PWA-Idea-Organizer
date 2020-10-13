@@ -13,6 +13,8 @@ import './styles/styles.js'
 import template from './index.tpl'
 import config from './config.js'
 
+import utils from './utils/utils.js'
+
 // --------------------
 // Components or routes
 
@@ -75,6 +77,7 @@ let VueController = {
   data: {
     config: config,
     errors: [],
+    utils: utils
   },
   i18n: i18n,
   components: {

@@ -1,0 +1,24 @@
+.loading-overlay {
+
+  width: 100vw;
+  height: 100vh;
+  cursor: wait;
+  background-image: url("./loading.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  transition: opacity 1s;
+  opacity: 0;
+  transition-delay: z-index 1s;
+  z-index: -1;
+  
+  &.loading {
+    opacity: 1;
+    cursor: wait;
+    z-index: 1000;
+  }
+}
+

@@ -23,10 +23,14 @@ const PRECACHE_URLS = [
   
   //'./dist/', // Alias for index.html
   
-  //'./dist/index.js',
-  //'./dist/index.js.map',
-  //'./dist/vendors/semantic-ui-niwsf.js',
-  //'./dist/vendors/semantic-ui-niwsf.js.map',
+  './dist/index.js',
+  './dist/index.js.map',
+  './dist/vendors/semantic-ui-niwsf.js',
+  './dist/vendors/semantic-ui-niwsf.js.map',
+  './dist/vendors/summernote.js',
+  './dist/vendors/summernote.js.map',
+  './dist/vendors~vendors/summernote.js',
+  './dist/vendors~vendors/summernote.js.map',
   
   './dist/asset/brand-icons.eot',
   './dist/asset/brand-icons.svg',

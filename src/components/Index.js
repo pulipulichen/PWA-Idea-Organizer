@@ -1,6 +1,7 @@
 /* global Node */
 
 //let summernoteLoader = () => import('./summernote/summernote-lite.webpack.js')
+import ConfigModal from './ConfigModal/ConfigModal.vue'
 
 let Index = {
   props: ['config'],
@@ -15,8 +16,9 @@ let Index = {
       googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
     }
   },
-//  components: {
-//  },
+  components: {
+    'config-modal': ConfigModal
+  },
 //  computed: {
 //  },
 //  watch: {

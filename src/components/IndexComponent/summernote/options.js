@@ -262,7 +262,7 @@ export default {
     'video': 'note-icon-video',
     'removeElement': 'note-icon-video'
   },
-  keyMap: {
+  KEY_MAP: {
       'BACKSPACE': 8,
       'TAB': 9,
       'ENTER': 13,

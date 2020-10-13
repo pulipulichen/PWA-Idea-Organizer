@@ -3,7 +3,8 @@
 import $ from 'jquery'
 
 import Sortable from "sortablejs"
-import {soundKeyEnterURL, soundKeyAny} from './sound/soundKeys.js'
+import soundKeys from './sound/soundKeys.js'
+
 import summerNoteOptions from './options.js'
 
 /**
@@ -1671,7 +1672,7 @@ import summerNoteOptions from './options.js'
    * If you want to map new key, please check if the key code you want in following list.
    * @type {Object}
    */
-  var KEY_MAP = summerNoteOptions.keyMap;
+  var KEY_MAP = summerNoteOptions.KEY_MAP;
   
   /**
    * @class core.key
@@ -6141,6 +6142,8 @@ ${links}`
               scrollVerticalCenter(event)
             
           }
+          
+          let {soundKeyEnterURL, soundKeyAny} = soundKeys
           
           let playTypeWriterSound = function (event) {
             if (_this.options.enableTypeWriterSoundEffect !== true

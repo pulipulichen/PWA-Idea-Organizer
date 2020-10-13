@@ -1,6 +1,7 @@
 import $ from 'jquery'
-import './summernote/summernote-lite.webpack.js'
-//let summernoteLoader = () => import(/* webpackChunkName: "summernote" */ './summernote/summernote-lite.webpack.js')
+//import './summernote/summernote-lite.webpack.js'
+let summernoteLoader = () => import(/* webpackChunkName: "vendors/summernote" */ './summernote/summernote-lite.webpack.js')
+
 //let summernoteLoader = () => import('./summernote/summernote-lite.webpack.js')
 
 let IndexComponent = {
@@ -35,8 +36,10 @@ let IndexComponent = {
     this.initEditor()
   },
   methods: {
-    initEditor () {
+    async initEditor () {
+      await summernoteLoader()
       this.editor = $(this.$refs.editor)
+      
       //console.log(this.editor.length, this.editor.summernote)
       this.editor.summernote(this._summernoteOptions())
       
@@ -47,7 +50,7 @@ let IndexComponent = {
         this.setDocumentTitle(contents)
       }
       */
-     console.log(this.googleSheetAPIURL)
+      //console.log(this.googleSheetAPIURL)
       $.getJSON(this.googleSheetAPIURL, (data) => {
         //console.log(contents)
         //console.log(c)

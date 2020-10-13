@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["vendors/summernote"],{
 
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.dropdown.less":
-/*!*******************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/Index/summernote/styles/summernote-lite.dropdown.less ***!
-  \*******************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.dropdown.less":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/vendors/summernote/styles/summernote-lite.dropdown.less ***!
+  \*********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18,10 +18,10 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.editable.less":
-/*!*******************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/Index/summernote/styles/summernote-lite.editable.less ***!
-  \*******************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.editable.less":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/vendors/summernote/styles/summernote-lite.editable.less ***!
+  \*********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36,10 +36,10 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.editor.less":
-/*!*****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/Index/summernote/styles/summernote-lite.editor.less ***!
-  \*****************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.editor.less":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/vendors/summernote/styles/summernote-lite.editor.less ***!
+  \*******************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -54,10 +54,10 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.handle.less":
-/*!*****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/Index/summernote/styles/summernote-lite.handle.less ***!
-  \*****************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.handle.less":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/vendors/summernote/styles/summernote-lite.handle.less ***!
+  \*******************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -72,36 +72,36 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.icon.less":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/Index/summernote/styles/summernote-lite.icon.less ***!
-  \***************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.icon.less":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/vendors/summernote/styles/summernote-lite.icon.less ***!
+  \*****************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b */ "./src/components/Index/summernote/font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b");
-var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(/*! ../font/summernote.woff?4c7e83314b68cfa6a0d18a8b4690044b */ "./src/components/Index/summernote/font/summernote.woff?4c7e83314b68cfa6a0d18a8b4690044b");
-var ___CSS_LOADER_URL_IMPORT_2___ = __webpack_require__(/*! ../font/summernote.ttf?4c7e83314b68cfa6a0d18a8b4690044b */ "./src/components/Index/summernote/font/summernote.ttf?4c7e83314b68cfa6a0d18a8b4690044b");
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b */ "./src/components/vendors/summernote/font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b");
+var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(/*! ../font/summernote.woff?4c7e83314b68cfa6a0d18a8b4690044b */ "./src/components/vendors/summernote/font/summernote.woff?4c7e83314b68cfa6a0d18a8b4690044b");
+var ___CSS_LOADER_URL_IMPORT_2___ = __webpack_require__(/*! ../font/summernote.ttf?4c7e83314b68cfa6a0d18a8b4690044b */ "./src/components/vendors/summernote/font/summernote.ttf?4c7e83314b68cfa6a0d18a8b4690044b");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___, { hash: "#iefix" });
 var ___CSS_LOADER_URL_REPLACEMENT_2___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
 var ___CSS_LOADER_URL_REPLACEMENT_3___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_2___);
 // Module
-exports.push([module.i, "@font-face {\n  font-family: \"summernote\";\n  font-style: normal;\n  font-weight: normal;\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format(\"embedded-opentype\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format(\"woff\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ") format(\"truetype\");\n}\n.summernote [class^=\"note-icon-\"]:before,\n.summernote [class*=\" note-icon-\"]:before {\n  display: inline-block;\n  font: normal normal normal 14px summernote;\n  font-size: inherit;\n  -webkit-font-smoothing: antialiased;\n  text-decoration: inherit;\n  text-rendering: auto;\n  text-transform: none;\n  vertical-align: middle;\n  speak: none;\n  -moz-osx-font-smoothing: grayscale;\n}\n.summernote .note-icon-align-center:before,\n.summernote .note-icon-align-indent:before,\n.summernote .note-icon-align-justify:before,\n.summernote .note-icon-align-left:before,\n.summernote .note-icon-align-outdent:before,\n.summernote .note-icon-align-right:before,\n.summernote .note-icon-align:before,\n.summernote .note-icon-arrow-circle-down:before,\n.summernote .note-icon-arrow-circle-left:before,\n.summernote .note-icon-arrow-circle-right:before,\n.summernote .note-icon-arrow-circle-up:before,\n.summernote .note-icon-arrows-alt:before,\n.summernote .note-icon-arrows-h:before,\n.summernote .note-icon-arrows-v:before,\n.summernote .note-icon-bold:before,\n.summernote .note-icon-caret:before,\n.summernote .note-icon-chain-broken:before,\n.summernote .note-icon-circle:before,\n.summernote .note-icon-close:before,\n.summernote .note-icon-code:before,\n.summernote .note-icon-col-after:before,\n.summernote .note-icon-col-before:before,\n.summernote .note-icon-col-remove:before,\n.summernote .note-icon-eraser:before,\n.summernote .note-icon-font:before,\n.summernote .note-icon-frame:before,\n.summernote .note-icon-italic:before,\n.summernote .note-icon-link:before,\n.summernote .note-icon-magic:before,\n.summernote .note-icon-menu-check:before,\n.summernote .note-icon-minus:before,\n.summernote .note-icon-orderedlist:before,\n.summernote .note-icon-pencil:before,\n.summernote .note-icon-picture:before,\n.summernote .note-icon-question:before,\n.summernote .note-icon-redo:before,\n.summernote .note-icon-row-above:before,\n.summernote .note-icon-row-below:before,\n.summernote .note-icon-row-remove:before,\n.summernote .note-icon-special-character:before,\n.summernote .note-icon-square:before,\n.summernote .note-icon-strikethrough:before,\n.summernote .note-icon-subscript:before,\n.summernote .note-icon-summernote:before,\n.summernote .note-icon-superscript:before,\n.summernote .note-icon-table:before,\n.summernote .note-icon-text-height:before,\n.summernote .note-icon-trash:before,\n.summernote .note-icon-underline:before,\n.summernote .note-icon-undo:before,\n.summernote .note-icon-unorderedlist:before,\n.summernote .note-icon-video:before {\n  display: inline-block;\n  font-family: \"summernote\";\n  font-style: normal;\n  font-weight: normal;\n  text-decoration: inherit;\n}\n.summernote .note-icon-align-center:before {\n  content: \"\\f101\";\n}\n.summernote .note-icon-align-indent:before {\n  content: \"\\f102\";\n}\n.summernote .note-icon-align-justify:before {\n  content: \"\\f103\";\n}\n.summernote .note-icon-align-left:before {\n  content: \"\\f104\";\n}\n.summernote .note-icon-align-outdent:before {\n  content: \"\\f105\";\n}\n.summernote .note-icon-align-right:before {\n  content: \"\\f106\";\n}\n.summernote .note-icon-align:before {\n  content: \"\\f107\";\n}\n.summernote .note-icon-arrow-circle-down:before {\n  content: \"\\f108\";\n}\n.summernote .note-icon-arrow-circle-left:before {\n  content: \"\\f109\";\n}\n.summernote .note-icon-arrow-circle-right:before {\n  content: \"\\f10a\";\n}\n.summernote .note-icon-arrow-circle-up:before {\n  content: \"\\f10b\";\n}\n.summernote .note-icon-arrows-alt:before {\n  content: \"\\f10c\";\n}\n.summernote .note-icon-arrows-h:before {\n  content: \"\\f10d\";\n}\n.summernote .note-icon-arrows-v:before {\n  content: \"\\f10e\";\n}\n.summernote .note-icon-bold:before {\n  content: \"\\f10f\";\n}\n.summernote .note-icon-caret:before {\n  content: \"\\f110\";\n}\n.summernote .note-icon-chain-broken:before {\n  content: \"\\f111\";\n}\n.summernote .note-icon-circle:before {\n  content: \"\\f112\";\n}\n.summernote .note-icon-close:before {\n  content: \"\\f113\";\n}\n.summernote .note-icon-code:before {\n  content: \"\\f114\";\n}\n.summernote .note-icon-col-after:before {\n  content: \"\\f115\";\n}\n.summernote .note-icon-col-before:before {\n  content: \"\\f116\";\n}\n.summernote .note-icon-col-remove:before {\n  content: \"\\f117\";\n}\n.summernote .note-icon-eraser:before {\n  content: \"\\f118\";\n}\n.summernote .note-icon-font:before {\n  content: \"\\f119\";\n}\n.summernote .note-icon-frame:before {\n  content: \"\\f11a\";\n}\n.summernote .note-btn-formatBlock {\n  padding: 0 !important;\n}\n.summernote .note-btn-formatBlock > * {\n  line-height: 9px !important;\n  padding: 5px 10px !important;\n  margin: 0 !important;\n  height: 29px !important;\n  text-indent: 0 !important;\n  background-color: transparent;\n  border-width: 0;\n  border-radius: inherit;\n  color: #000;\n}\n.summernote .note-btn-formatBlock > *:before {\n  content: \"<H1>\";\n  font-size: 14px !important;\n  font-weight: bold;\n  line-height: 20px;\n}\n.summernote .note-btn-formatBlock > h1,\n.summernote .note-btn-formatBlock > h2 {\n  line-height: 0 !important;\n}\n.summernote .note-btn-formatBlock > h2:before {\n  content: \"<H2>\" !important;\n}\n.summernote .note-btn-formatBlock > h3:before {\n  content: \"<H3>\" !important;\n}\n.summernote .note-btn-formatBlock > h4:before {\n  content: \"<H4>\" !important;\n}\n.summernote .note-btn-formatBlock > h5:before {\n  content: \"<H5>\" !important;\n}\n.summernote .note-btn-formatBlock > h6:before {\n  content: \"<H6>\" !important;\n}\n.summernote .note-btn-formatBlock > p:before {\n  content: \"<P>\" !important;\n  font-weight: normal;\n}\n.summernote .note-btn-formatBlock > code:before {\n  content: \"<CODE>\" !important;\n  font-weight: normal;\n  line-height: 29px;\n}\n.summernote .note-icon-italic:before {\n  content: \"\\f11b\";\n}\n.summernote .note-icon-link:before {\n  content: \"\\f11c\";\n}\n.summernote .note-icon-magic:before {\n  content: \"\\f11d\";\n}\n.summernote .note-icon-menu-check:before {\n  content: \"\\f11e\";\n}\n.summernote .note-icon-minus:before {\n  content: \"\\f11f\";\n}\n.summernote .note-icon-orderedlist:before {\n  content: \"\\f120\";\n}\n.summernote .note-icon-pencil:before {\n  content: \"\\f121\";\n}\n.summernote .note-icon-picture:before {\n  content: \"\\f122\";\n}\n.summernote .note-icon-question:before {\n  content: \"\\f123\";\n}\n.summernote .note-icon-redo:before {\n  content: \"\\f124\";\n}\n.summernote .note-icon-row-above:before {\n  content: \"\\f125\";\n}\n.summernote .note-icon-row-below:before {\n  content: \"\\f126\";\n}\n.summernote .note-icon-row-remove:before {\n  content: \"\\f127\";\n}\n.summernote .note-icon-special-character:before {\n  content: \"\\f128\";\n}\n.summernote .note-icon-square:before {\n  content: \"\\f129\";\n}\n.summernote .note-icon-strikethrough:before {\n  content: \"\\f12a\";\n}\n.summernote .note-icon-subscript:before {\n  content: \"\\f12b\";\n}\n.summernote .note-icon-summernote:before {\n  content: \"\\f12c\";\n}\n.summernote .note-icon-superscript:before {\n  content: \"\\f12d\";\n}\n.summernote .note-icon-table:before {\n  content: \"\\f12e\";\n}\n.summernote .note-icon-text-height:before {\n  content: \"\\f12f\";\n}\n.summernote .note-icon-trash:before {\n  content: \"\\f130\";\n}\n.summernote .note-icon-underline:before {\n  content: \"\\f131\";\n}\n.summernote .note-icon-undo:before {\n  content: \"\\f132\";\n}\n.summernote .note-icon-unorderedlist:before {\n  content: \"\\f133\";\n}\n.summernote .note-icon-video:before {\n  content: \"\\f134\";\n}\n.summernote .note-frame * {\n  /* color: #000; */\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.summernote p {\n  margin: 0 0 10px;\n}\n.summernote kbd {\n  padding: 3px 5px;\n  font-weight: 700;\n  color: #fff;\n  background-color: #000;\n  border-radius: 2px;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.summernote .note-toolbar {\n  padding: 10px 5px;\n  border-bottom: 1px solid #e2e2e2;\n}\n.summernote .note-toolbar.enable-overflow {\n  white-space: nowrap;\n  overflow-x: scroll;\n  padding-bottom: 1rem;\n}\n.summernote .note-toolbar.enable-overflow.compact {\n  padding-bottom: 1rem;\n}\n.summernote .note-toolbar.enable-overflow.show-dropdown {\n  overflow-x: visible;\n  padding-bottom: 10px;\n}\n.summernote .note-toolbar.compact {\n  padding: 0;\n}\n.summernote .note-toolbar.compact > .note-btn-group {\n  margin: 0px;\n  padding-bottom: 3px;\n  padding-top: 3px;\n}\n.summernote .note-toolbar.right {\n  text-align: right;\n}\n.summernote .note-toolbar.center {\n  text-align: center;\n}\n.summernote .note-toolbar.bottom {\n  bottom: 0;\n  width: 100vw;\n  left: 0;\n  position: fixed;\n  z-index: 99999;\n}\n.summernote .note-btn-group {\n  position: relative;\n  display: inline-block;\n  margin-right: 8px;\n}\n.summernote .note-btn-group > .note-btn-group {\n  margin-right: 0;\n}\n.summernote .note-btn-group > .note-btn,\n.summernote .note-btn-group > .note-btn-group {\n  margin-left: 0;\n  border-radius: 0;\n}\n.summernote .note-btn-group > .note-btn.focus,\n.summernote .note-btn-group > .note-btn-group.focus,\n.summernote .note-btn-group > .note-btn.active,\n.summernote .note-btn-group > .note-btn-group.active {\n  border-radius: 0;\n}\n.summernote .note-btn-group > .note-btn:first-child,\n.summernote .note-btn-group > .note-btn-group:first-child {\n  margin-left: 0;\n  border-bottom-left-radius: 1px;\n  border-top-left-radius: 1px;\n}\n.summernote .note-btn-group > .note-btn:first-child.focus,\n.summernote .note-btn-group > .note-btn-group:first-child.focus,\n.summernote .note-btn-group > .note-btn:first-child.active,\n.summernote .note-btn-group > .note-btn-group:first-child.active {\n  border-bottom-left-radius: 1px;\n  border-top-left-radius: 1px;\n}\n.summernote .note-btn-group > .note-btn:last-child:not(.note-dropdown),\n.summernote .note-btn-group > .note-btn-group:last-child:not(.note-dropdown) {\n  border-top-right-radius: 1px;\n  border-bottom-right-radius: 1px;\n}\n.summernote .note-btn-group > .note-btn:last-child:not(.note-dropdown).focus,\n.summernote .note-btn-group > .note-btn-group:last-child:not(.note-dropdown).focus,\n.summernote .note-btn-group > .note-btn:last-child:not(.note-dropdown).active,\n.summernote .note-btn-group > .note-btn-group:last-child:not(.note-dropdown).active {\n  border-top-right-radius: 1px;\n  border-bottom-right-radius: 1px;\n}\n.summernote .note-btn-group.open > .note-dropdown {\n  display: block;\n}\n.summernote .note-btn {\n  display: inline-block;\n  padding: 5px 10px;\n  margin-bottom: 0;\n  font-size: 1.5rem;\n  font-weight: 400;\n  line-height: 1.4;\n  color: #333;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  cursor: pointer;\n  background-color: #fff;\n  background-image: none;\n  /* border: 1px solid #fff; */\n  border: 1px solid transparent;\n  border-color: #fff;\n  border-radius: 1px;\n  outline: 0;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  touch-action: manipulation;\n}\n.summernote .note-btn:focus,\n.summernote .note-btn.focus {\n  color: #333;\n  background-color: #ebebeb;\n  /*border-color: #fff;*/\n  border-color: transparent;\n}\n.summernote .note-btn:hover {\n  color: #333;\n  background-color: #ebebeb;\n  /*border-color: #fff;*/\n  border-color: transparent;\n}\n.summernote .note-btn.disabled:focus,\n.summernote .note-btn[disabled]:focus,\n.summernote fieldset[disabled] .note-btn:focus,\n.summernote .note-btn.disabled.focus,\n.summernote .note-btn[disabled].focus,\n.summernote fieldset[disabled] .note-btn.focus {\n  background-color: #fff;\n  border-color: #fff;\n}\n.summernote .note-btn:hover,\n.summernote .note-btn:focus,\n.summernote .note-btn.focus {\n  color: #333;\n  text-decoration: none;\n  background-color: #ebebeb;\n  border: 1px solid #fff;\n  -webkit-border-radius: 1px;\n  -moz-border-radius: 1px;\n  border-radius: 1px;\n  outline: 0;\n}\n.summernote .note-btn:active,\n.summernote .note-btn.active {\n  background-image: none;\n  outline: 0;\n}\n.summernote .note-btn.disabled,\n.summernote .note-btn[disabled],\n.summernote fieldset[disabled] .note-btn {\n  cursor: not-allowed;\n  -webkit-opacity: 0.65;\n  -khtml-opacity: 0.65;\n  -moz-opacity: 0.65;\n  opacity: 0.65;\n  -ms-filter: alpha(opacity=65);\n  filter: alpha(opacity=65);\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n}\n.summernote .note-btn-primary {\n  color: #fff;\n  background: #fa6362;\n}\n.summernote .note-btn-primary:hover,\n.summernote .note-btn-primary:focus,\n.summernote .note-btn-primary.focus {\n  color: #fff;\n  text-decoration: none;\n  background-color: #fa6362;\n  border: 1px solid #fff;\n  -webkit-border-radius: 1px;\n  -moz-border-radius: 1px;\n  border-radius: 1px;\n}\n.summernote .note-btn-block {\n  display: block;\n  width: 100%;\n}\n.summernote .note-btn-block + .note-btn-block {\n  margin-top: 5px;\n}\n.summernote input[type=\"submit\"].note-btn-block,\n.summernote input[type=\"reset\"].note-btn-block,\n.summernote input[type=\"button\"].note-btn-block {\n  width: 100%;\n}\n.summernote button.close {\n  padding: 0;\n  cursor: pointer;\n  background: transparent;\n  border: 0;\n  -webkit-appearance: none;\n}\n.summernote .close {\n  float: right;\n  font-size: 21px;\n  line-height: 1;\n  color: #000;\n  opacity: 0.2;\n}\n.summernote .close:hover {\n  -webkit-opacity: 1;\n  -khtml-opacity: 1;\n  -moz-opacity: 1;\n  opacity: 1;\n  -ms-filter: alpha(opacity=100);\n  filter: alpha(opacity=100);\n}\n.summernote .background-color-circle {\n  width: 1rem;\n  height: 1rem;\n  border-radius: 0.75rem;\n  display: inline-block;\n  border: 2px solid gray;\n}\n", "",{"version":3,"sources":["summernote-lite.icon.less"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,kBAAkB;EAClB,mBAAmB;EACnB,4CAAmE;EACnE,4LAAwQ;AAC1Q;AACA;;EAEE,qBAAqB;EACrB,0CAA0C;EAC1C,kBAAkB;EAClB,mCAAmC;EACnC,wBAAwB;EACxB,oBAAoB;EACpB,oBAAoB;EACpB,sBAAsB;EACtB,WAAW;EACX,kCAAkC;AACpC;AACA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAoDE,qBAAqB;EACrB,yBAAyB;EACzB,kBAAkB;EAClB,mBAAmB;EACnB,wBAAwB;AAC1B;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,qBAAqB;AACvB;AACA;EACE,2BAA2B;EAC3B,4BAA4B;EAC5B,oBAAoB;EACpB,uBAAuB;EACvB,yBAAyB;EACzB,6BAA6B;EAC7B,eAAe;EACf,sBAAsB;EACtB,WAAW;AACb;AACA;EACE,eAAe;EACf,0BAA0B;EAC1B,iBAAiB;EACjB,iBAAiB;AACnB;AACA;;EAEE,yBAAyB;AAC3B;AACA;EACE,0BAA0B;AAC5B;AACA;EACE,0BAA0B;AAC5B;AACA;EACE,0BAA0B;AAC5B;AACA;EACE,0BAA0B;AAC5B;AACA;EACE,0BAA0B;AAC5B;AACA;EACE,yBAAyB;EACzB,mBAAmB;AACrB;AACA;EACE,4BAA4B;EAC5B,mBAAmB;EACnB,iBAAiB;AACnB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,iBAAiB;EACjB,8BAA8B;EAC9B,2BAA2B;EAC3B,sBAAsB;AACxB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;EAChB,gBAAgB;EAChB,WAAW;EACX,sBAAsB;EACtB,kBAAkB;EAClB,8BAA8B;EAC9B,2BAA2B;EAC3B,0BAA0B;EAC1B,sBAAsB;AACxB;AACA;EACE,iBAAiB;EACjB,gCAAgC;AAClC;AACA;EACE,mBAAmB;EACnB,kBAAkB;EAClB,oBAAoB;AACtB;AACA;EACE,oBAAoB;AACtB;AACA;EACE,mBAAmB;EACnB,oBAAoB;AACtB;AACA;EACE,UAAU;AACZ;AACA;EACE,WAAW;EACX,mBAAmB;EACnB,gBAAgB;AAClB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,SAAS;EACT,YAAY;EACZ,OAAO;EACP,eAAe;EACf,cAAc;AAChB;AACA;EACE,kBAAkB;EAClB,qBAAqB;EACrB,iBAAiB;AACnB;AACA;EACE,eAAe;AACjB;AACA;;EAEE,cAAc;EACd,gBAAgB;AAClB;AACA;;;;EAIE,gBAAgB;AAClB;AACA;;EAEE,cAAc;EACd,8BAA8B;EAC9B,2BAA2B;AAC7B;AACA;;;;EAIE,8BAA8B;EAC9B,2BAA2B;AAC7B;AACA;;EAEE,4BAA4B;EAC5B,+BAA+B;AACjC;AACA;;;;EAIE,4BAA4B;EAC5B,+BAA+B;AACjC;AACA;EACE,cAAc;AAChB;AACA;EACE,qBAAqB;EACrB,iBAAiB;EACjB,gBAAgB;EAChB,iBAAiB;EACjB,gBAAgB;EAChB,gBAAgB;EAChB,WAAW;EACX,kBAAkB;EAClB,mBAAmB;EACnB,sBAAsB;EACtB,eAAe;EACf,sBAAsB;EACtB,sBAAsB;EACtB,4BAA4B;EAC5B,6BAA6B;EAC7B,kBAAkB;EAClB,kBAAkB;EAClB,UAAU;EACV,yBAAyB;EACzB,sBAAsB;EACtB,qBAAqB;EACrB,iBAAiB;EACjB,0BAA0B;AAC5B;AACA;;EAEE,WAAW;EACX,yBAAyB;EACzB,sBAAsB;EACtB,yBAAyB;AAC3B;AACA;EACE,WAAW;EACX,yBAAyB;EACzB,sBAAsB;EACtB,yBAAyB;AAC3B;AACA;;;;;;EAME,sBAAsB;EACtB,kBAAkB;AACpB;AACA;;;EAGE,WAAW;EACX,qBAAqB;EACrB,yBAAyB;EACzB,sBAAsB;EACtB,0BAA0B;EAC1B,uBAAuB;EACvB,kBAAkB;EAClB,UAAU;AACZ;AACA;;EAEE,sBAAsB;EACtB,UAAU;AACZ;AACA;;;EAGE,mBAAmB;EACnB,qBAAqB;EACrB,oBAAoB;EACpB,kBAAkB;EAClB,aAAa;EACb,6BAA6B;EAC7B,yBAAyB;EACzB,wBAAwB;EACxB,qBAAqB;EACrB,gBAAgB;AAClB;AACA;EACE,WAAW;EACX,mBAAmB;AACrB;AACA;;;EAGE,WAAW;EACX,qBAAqB;EACrB,yBAAyB;EACzB,sBAAsB;EACtB,0BAA0B;EAC1B,uBAAuB;EACvB,kBAAkB;AACpB;AACA;EACE,cAAc;EACd,WAAW;AACb;AACA;EACE,eAAe;AACjB;AACA;;;EAGE,WAAW;AACb;AACA;EACE,UAAU;EACV,eAAe;EACf,uBAAuB;EACvB,SAAS;EACT,wBAAwB;AAC1B;AACA;EACE,YAAY;EACZ,eAAe;EACf,cAAc;EACd,WAAW;EACX,YAAY;AACd;AACA;EACE,kBAAkB;EAClB,iBAAiB;EACjB,eAAe;EACf,UAAU;EACV,8BAA8B;EAC9B,0BAA0B;AAC5B;AACA;EACE,WAAW;EACX,YAAY;EACZ,sBAAsB;EACtB,qBAAqB;EACrB,sBAAsB;AACxB","file":"summernote-lite.icon.less","sourcesContent":["@font-face {\n  font-family: \"summernote\";\n  font-style: normal;\n  font-weight: normal;\n  src: url(\"../font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b\");\n  src: url(\"../font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b#iefix\") format(\"embedded-opentype\"), url(\"../font/summernote.woff?4c7e83314b68cfa6a0d18a8b4690044b\") format(\"woff\"), url(\"../font/summernote.ttf?4c7e83314b68cfa6a0d18a8b4690044b\") format(\"truetype\");\n}\n.summernote [class^=\"note-icon-\"]:before,\n.summernote [class*=\" note-icon-\"]:before {\n  display: inline-block;\n  font: normal normal normal 14px summernote;\n  font-size: inherit;\n  -webkit-font-smoothing: antialiased;\n  text-decoration: inherit;\n  text-rendering: auto;\n  text-transform: none;\n  vertical-align: middle;\n  speak: none;\n  -moz-osx-font-smoothing: grayscale;\n}\n.summernote .note-icon-align-center:before,\n.summernote .note-icon-align-indent:before,\n.summernote .note-icon-align-justify:before,\n.summernote .note-icon-align-left:before,\n.summernote .note-icon-align-outdent:before,\n.summernote .note-icon-align-right:before,\n.summernote .note-icon-align:before,\n.summernote .note-icon-arrow-circle-down:before,\n.summernote .note-icon-arrow-circle-left:before,\n.summernote .note-icon-arrow-circle-right:before,\n.summernote .note-icon-arrow-circle-up:before,\n.summernote .note-icon-arrows-alt:before,\n.summernote .note-icon-arrows-h:before,\n.summernote .note-icon-arrows-v:before,\n.summernote .note-icon-bold:before,\n.summernote .note-icon-caret:before,\n.summernote .note-icon-chain-broken:before,\n.summernote .note-icon-circle:before,\n.summernote .note-icon-close:before,\n.summernote .note-icon-code:before,\n.summernote .note-icon-col-after:before,\n.summernote .note-icon-col-before:before,\n.summernote .note-icon-col-remove:before,\n.summernote .note-icon-eraser:before,\n.summernote .note-icon-font:before,\n.summernote .note-icon-frame:before,\n.summernote .note-icon-italic:before,\n.summernote .note-icon-link:before,\n.summernote .note-icon-magic:before,\n.summernote .note-icon-menu-check:before,\n.summernote .note-icon-minus:before,\n.summernote .note-icon-orderedlist:before,\n.summernote .note-icon-pencil:before,\n.summernote .note-icon-picture:before,\n.summernote .note-icon-question:before,\n.summernote .note-icon-redo:before,\n.summernote .note-icon-row-above:before,\n.summernote .note-icon-row-below:before,\n.summernote .note-icon-row-remove:before,\n.summernote .note-icon-special-character:before,\n.summernote .note-icon-square:before,\n.summernote .note-icon-strikethrough:before,\n.summernote .note-icon-subscript:before,\n.summernote .note-icon-summernote:before,\n.summernote .note-icon-superscript:before,\n.summernote .note-icon-table:before,\n.summernote .note-icon-text-height:before,\n.summernote .note-icon-trash:before,\n.summernote .note-icon-underline:before,\n.summernote .note-icon-undo:before,\n.summernote .note-icon-unorderedlist:before,\n.summernote .note-icon-video:before {\n  display: inline-block;\n  font-family: \"summernote\";\n  font-style: normal;\n  font-weight: normal;\n  text-decoration: inherit;\n}\n.summernote .note-icon-align-center:before {\n  content: \"\\f101\";\n}\n.summernote .note-icon-align-indent:before {\n  content: \"\\f102\";\n}\n.summernote .note-icon-align-justify:before {\n  content: \"\\f103\";\n}\n.summernote .note-icon-align-left:before {\n  content: \"\\f104\";\n}\n.summernote .note-icon-align-outdent:before {\n  content: \"\\f105\";\n}\n.summernote .note-icon-align-right:before {\n  content: \"\\f106\";\n}\n.summernote .note-icon-align:before {\n  content: \"\\f107\";\n}\n.summernote .note-icon-arrow-circle-down:before {\n  content: \"\\f108\";\n}\n.summernote .note-icon-arrow-circle-left:before {\n  content: \"\\f109\";\n}\n.summernote .note-icon-arrow-circle-right:before {\n  content: \"\\f10a\";\n}\n.summernote .note-icon-arrow-circle-up:before {\n  content: \"\\f10b\";\n}\n.summernote .note-icon-arrows-alt:before {\n  content: \"\\f10c\";\n}\n.summernote .note-icon-arrows-h:before {\n  content: \"\\f10d\";\n}\n.summernote .note-icon-arrows-v:before {\n  content: \"\\f10e\";\n}\n.summernote .note-icon-bold:before {\n  content: \"\\f10f\";\n}\n.summernote .note-icon-caret:before {\n  content: \"\\f110\";\n}\n.summernote .note-icon-chain-broken:before {\n  content: \"\\f111\";\n}\n.summernote .note-icon-circle:before {\n  content: \"\\f112\";\n}\n.summernote .note-icon-close:before {\n  content: \"\\f113\";\n}\n.summernote .note-icon-code:before {\n  content: \"\\f114\";\n}\n.summernote .note-icon-col-after:before {\n  content: \"\\f115\";\n}\n.summernote .note-icon-col-before:before {\n  content: \"\\f116\";\n}\n.summernote .note-icon-col-remove:before {\n  content: \"\\f117\";\n}\n.summernote .note-icon-eraser:before {\n  content: \"\\f118\";\n}\n.summernote .note-icon-font:before {\n  content: \"\\f119\";\n}\n.summernote .note-icon-frame:before {\n  content: \"\\f11a\";\n}\n.summernote .note-btn-formatBlock {\n  padding: 0 !important;\n}\n.summernote .note-btn-formatBlock > * {\n  line-height: 9px !important;\n  padding: 5px 10px !important;\n  margin: 0 !important;\n  height: 29px !important;\n  text-indent: 0 !important;\n  background-color: transparent;\n  border-width: 0;\n  border-radius: inherit;\n  color: #000;\n}\n.summernote .note-btn-formatBlock > *:before {\n  content: \"<H1>\";\n  font-size: 14px !important;\n  font-weight: bold;\n  line-height: 20px;\n}\n.summernote .note-btn-formatBlock > h1,\n.summernote .note-btn-formatBlock > h2 {\n  line-height: 0 !important;\n}\n.summernote .note-btn-formatBlock > h2:before {\n  content: \"<H2>\" !important;\n}\n.summernote .note-btn-formatBlock > h3:before {\n  content: \"<H3>\" !important;\n}\n.summernote .note-btn-formatBlock > h4:before {\n  content: \"<H4>\" !important;\n}\n.summernote .note-btn-formatBlock > h5:before {\n  content: \"<H5>\" !important;\n}\n.summernote .note-btn-formatBlock > h6:before {\n  content: \"<H6>\" !important;\n}\n.summernote .note-btn-formatBlock > p:before {\n  content: \"<P>\" !important;\n  font-weight: normal;\n}\n.summernote .note-btn-formatBlock > code:before {\n  content: \"<CODE>\" !important;\n  font-weight: normal;\n  line-height: 29px;\n}\n.summernote .note-icon-italic:before {\n  content: \"\\f11b\";\n}\n.summernote .note-icon-link:before {\n  content: \"\\f11c\";\n}\n.summernote .note-icon-magic:before {\n  content: \"\\f11d\";\n}\n.summernote .note-icon-menu-check:before {\n  content: \"\\f11e\";\n}\n.summernote .note-icon-minus:before {\n  content: \"\\f11f\";\n}\n.summernote .note-icon-orderedlist:before {\n  content: \"\\f120\";\n}\n.summernote .note-icon-pencil:before {\n  content: \"\\f121\";\n}\n.summernote .note-icon-picture:before {\n  content: \"\\f122\";\n}\n.summernote .note-icon-question:before {\n  content: \"\\f123\";\n}\n.summernote .note-icon-redo:before {\n  content: \"\\f124\";\n}\n.summernote .note-icon-row-above:before {\n  content: \"\\f125\";\n}\n.summernote .note-icon-row-below:before {\n  content: \"\\f126\";\n}\n.summernote .note-icon-row-remove:before {\n  content: \"\\f127\";\n}\n.summernote .note-icon-special-character:before {\n  content: \"\\f128\";\n}\n.summernote .note-icon-square:before {\n  content: \"\\f129\";\n}\n.summernote .note-icon-strikethrough:before {\n  content: \"\\f12a\";\n}\n.summernote .note-icon-subscript:before {\n  content: \"\\f12b\";\n}\n.summernote .note-icon-summernote:before {\n  content: \"\\f12c\";\n}\n.summernote .note-icon-superscript:before {\n  content: \"\\f12d\";\n}\n.summernote .note-icon-table:before {\n  content: \"\\f12e\";\n}\n.summernote .note-icon-text-height:before {\n  content: \"\\f12f\";\n}\n.summernote .note-icon-trash:before {\n  content: \"\\f130\";\n}\n.summernote .note-icon-underline:before {\n  content: \"\\f131\";\n}\n.summernote .note-icon-undo:before {\n  content: \"\\f132\";\n}\n.summernote .note-icon-unorderedlist:before {\n  content: \"\\f133\";\n}\n.summernote .note-icon-video:before {\n  content: \"\\f134\";\n}\n.summernote .note-frame * {\n  /* color: #000; */\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.summernote p {\n  margin: 0 0 10px;\n}\n.summernote kbd {\n  padding: 3px 5px;\n  font-weight: 700;\n  color: #fff;\n  background-color: #000;\n  border-radius: 2px;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.summernote .note-toolbar {\n  padding: 10px 5px;\n  border-bottom: 1px solid #e2e2e2;\n}\n.summernote .note-toolbar.enable-overflow {\n  white-space: nowrap;\n  overflow-x: scroll;\n  padding-bottom: 1rem;\n}\n.summernote .note-toolbar.enable-overflow.compact {\n  padding-bottom: 1rem;\n}\n.summernote .note-toolbar.enable-overflow.show-dropdown {\n  overflow-x: visible;\n  padding-bottom: 10px;\n}\n.summernote .note-toolbar.compact {\n  padding: 0;\n}\n.summernote .note-toolbar.compact > .note-btn-group {\n  margin: 0px;\n  padding-bottom: 3px;\n  padding-top: 3px;\n}\n.summernote .note-toolbar.right {\n  text-align: right;\n}\n.summernote .note-toolbar.center {\n  text-align: center;\n}\n.summernote .note-toolbar.bottom {\n  bottom: 0;\n  width: 100vw;\n  left: 0;\n  position: fixed;\n  z-index: 99999;\n}\n.summernote .note-btn-group {\n  position: relative;\n  display: inline-block;\n  margin-right: 8px;\n}\n.summernote .note-btn-group > .note-btn-group {\n  margin-right: 0;\n}\n.summernote .note-btn-group > .note-btn,\n.summernote .note-btn-group > .note-btn-group {\n  margin-left: 0;\n  border-radius: 0;\n}\n.summernote .note-btn-group > .note-btn.focus,\n.summernote .note-btn-group > .note-btn-group.focus,\n.summernote .note-btn-group > .note-btn.active,\n.summernote .note-btn-group > .note-btn-group.active {\n  border-radius: 0;\n}\n.summernote .note-btn-group > .note-btn:first-child,\n.summernote .note-btn-group > .note-btn-group:first-child {\n  margin-left: 0;\n  border-bottom-left-radius: 1px;\n  border-top-left-radius: 1px;\n}\n.summernote .note-btn-group > .note-btn:first-child.focus,\n.summernote .note-btn-group > .note-btn-group:first-child.focus,\n.summernote .note-btn-group > .note-btn:first-child.active,\n.summernote .note-btn-group > .note-btn-group:first-child.active {\n  border-bottom-left-radius: 1px;\n  border-top-left-radius: 1px;\n}\n.summernote .note-btn-group > .note-btn:last-child:not(.note-dropdown),\n.summernote .note-btn-group > .note-btn-group:last-child:not(.note-dropdown) {\n  border-top-right-radius: 1px;\n  border-bottom-right-radius: 1px;\n}\n.summernote .note-btn-group > .note-btn:last-child:not(.note-dropdown).focus,\n.summernote .note-btn-group > .note-btn-group:last-child:not(.note-dropdown).focus,\n.summernote .note-btn-group > .note-btn:last-child:not(.note-dropdown).active,\n.summernote .note-btn-group > .note-btn-group:last-child:not(.note-dropdown).active {\n  border-top-right-radius: 1px;\n  border-bottom-right-radius: 1px;\n}\n.summernote .note-btn-group.open > .note-dropdown {\n  display: block;\n}\n.summernote .note-btn {\n  display: inline-block;\n  padding: 5px 10px;\n  margin-bottom: 0;\n  font-size: 1.5rem;\n  font-weight: 400;\n  line-height: 1.4;\n  color: #333;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  cursor: pointer;\n  background-color: #fff;\n  background-image: none;\n  /* border: 1px solid #fff; */\n  border: 1px solid transparent;\n  border-color: #fff;\n  border-radius: 1px;\n  outline: 0;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  touch-action: manipulation;\n}\n.summernote .note-btn:focus,\n.summernote .note-btn.focus {\n  color: #333;\n  background-color: #ebebeb;\n  /*border-color: #fff;*/\n  border-color: transparent;\n}\n.summernote .note-btn:hover {\n  color: #333;\n  background-color: #ebebeb;\n  /*border-color: #fff;*/\n  border-color: transparent;\n}\n.summernote .note-btn.disabled:focus,\n.summernote .note-btn[disabled]:focus,\n.summernote fieldset[disabled] .note-btn:focus,\n.summernote .note-btn.disabled.focus,\n.summernote .note-btn[disabled].focus,\n.summernote fieldset[disabled] .note-btn.focus {\n  background-color: #fff;\n  border-color: #fff;\n}\n.summernote .note-btn:hover,\n.summernote .note-btn:focus,\n.summernote .note-btn.focus {\n  color: #333;\n  text-decoration: none;\n  background-color: #ebebeb;\n  border: 1px solid #fff;\n  -webkit-border-radius: 1px;\n  -moz-border-radius: 1px;\n  border-radius: 1px;\n  outline: 0;\n}\n.summernote .note-btn:active,\n.summernote .note-btn.active {\n  background-image: none;\n  outline: 0;\n}\n.summernote .note-btn.disabled,\n.summernote .note-btn[disabled],\n.summernote fieldset[disabled] .note-btn {\n  cursor: not-allowed;\n  -webkit-opacity: 0.65;\n  -khtml-opacity: 0.65;\n  -moz-opacity: 0.65;\n  opacity: 0.65;\n  -ms-filter: alpha(opacity=65);\n  filter: alpha(opacity=65);\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n}\n.summernote .note-btn-primary {\n  color: #fff;\n  background: #fa6362;\n}\n.summernote .note-btn-primary:hover,\n.summernote .note-btn-primary:focus,\n.summernote .note-btn-primary.focus {\n  color: #fff;\n  text-decoration: none;\n  background-color: #fa6362;\n  border: 1px solid #fff;\n  -webkit-border-radius: 1px;\n  -moz-border-radius: 1px;\n  border-radius: 1px;\n}\n.summernote .note-btn-block {\n  display: block;\n  width: 100%;\n}\n.summernote .note-btn-block + .note-btn-block {\n  margin-top: 5px;\n}\n.summernote input[type=\"submit\"].note-btn-block,\n.summernote input[type=\"reset\"].note-btn-block,\n.summernote input[type=\"button\"].note-btn-block {\n  width: 100%;\n}\n.summernote button.close {\n  padding: 0;\n  cursor: pointer;\n  background: transparent;\n  border: 0;\n  -webkit-appearance: none;\n}\n.summernote .close {\n  float: right;\n  font-size: 21px;\n  line-height: 1;\n  color: #000;\n  opacity: 0.2;\n}\n.summernote .close:hover {\n  -webkit-opacity: 1;\n  -khtml-opacity: 1;\n  -moz-opacity: 1;\n  opacity: 1;\n  -ms-filter: alpha(opacity=100);\n  filter: alpha(opacity=100);\n}\n.summernote .background-color-circle {\n  width: 1rem;\n  height: 1rem;\n  border-radius: 0.75rem;\n  display: inline-block;\n  border: 2px solid gray;\n}\n"]}]);
+exports.push([module.i, "@font-face {\n  font-family: \"summernote\";\n  font-style: normal;\n  font-weight: normal;\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format(\"embedded-opentype\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format(\"woff\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ") format(\"truetype\");\n}\n.summernote [class^=\"note-icon-\"]:before,\n.summernote [class*=\" note-icon-\"]:before {\n  display: inline-block;\n  font: normal normal normal 14px summernote;\n  font-size: inherit;\n  -webkit-font-smoothing: antialiased;\n  text-decoration: inherit;\n  text-rendering: auto;\n  text-transform: none;\n  vertical-align: middle;\n  speak: none;\n  -moz-osx-font-smoothing: grayscale;\n}\n.summernote .note-icon-align-center:before,\n.summernote .note-icon-align-indent:before,\n.summernote .note-icon-align-justify:before,\n.summernote .note-icon-align-left:before,\n.summernote .note-icon-align-outdent:before,\n.summernote .note-icon-align-right:before,\n.summernote .note-icon-align:before,\n.summernote .note-icon-arrow-circle-down:before,\n.summernote .note-icon-arrow-circle-left:before,\n.summernote .note-icon-arrow-circle-right:before,\n.summernote .note-icon-arrow-circle-up:before,\n.summernote .note-icon-arrows-alt:before,\n.summernote .note-icon-arrows-h:before,\n.summernote .note-icon-arrows-v:before,\n.summernote .note-icon-bold:before,\n.summernote .note-icon-caret:before,\n.summernote .note-icon-chain-broken:before,\n.summernote .note-icon-circle:before,\n.summernote .note-icon-close:before,\n.summernote .note-icon-code:before,\n.summernote .note-icon-col-after:before,\n.summernote .note-icon-col-before:before,\n.summernote .note-icon-col-remove:before,\n.summernote .note-icon-eraser:before,\n.summernote .note-icon-font:before,\n.summernote .note-icon-frame:before,\n.summernote .note-icon-italic:before,\n.summernote .note-icon-link:before,\n.summernote .note-icon-magic:before,\n.summernote .note-icon-menu-check:before,\n.summernote .note-icon-minus:before,\n.summernote .note-icon-orderedlist:before,\n.summernote .note-icon-pencil:before,\n.summernote .note-icon-picture:before,\n.summernote .note-icon-question:before,\n.summernote .note-icon-redo:before,\n.summernote .note-icon-row-above:before,\n.summernote .note-icon-row-below:before,\n.summernote .note-icon-row-remove:before,\n.summernote .note-icon-special-character:before,\n.summernote .note-icon-square:before,\n.summernote .note-icon-strikethrough:before,\n.summernote .note-icon-subscript:before,\n.summernote .note-icon-summernote:before,\n.summernote .note-icon-superscript:before,\n.summernote .note-icon-table:before,\n.summernote .note-icon-text-height:before,\n.summernote .note-icon-trash:before,\n.summernote .note-icon-underline:before,\n.summernote .note-icon-undo:before,\n.summernote .note-icon-unorderedlist:before,\n.summernote .note-icon-video:before {\n  display: inline-block;\n  font-family: \"summernote\";\n  font-style: normal;\n  font-weight: normal;\n  text-decoration: inherit;\n}\n.summernote .note-icon-align-center:before {\n  content: \"\\f101\";\n}\n.summernote .note-icon-align-indent:before {\n  content: \"\\f102\";\n}\n.summernote .note-icon-align-justify:before {\n  content: \"\\f103\";\n}\n.summernote .note-icon-align-left:before {\n  content: \"\\f104\";\n}\n.summernote .note-icon-align-outdent:before {\n  content: \"\\f105\";\n}\n.summernote .note-icon-align-right:before {\n  content: \"\\f106\";\n}\n.summernote .note-icon-align:before {\n  content: \"\\f107\";\n}\n.summernote .note-icon-arrow-circle-down:before {\n  content: \"\\f108\";\n}\n.summernote .note-icon-arrow-circle-left:before {\n  content: \"\\f109\";\n}\n.summernote .note-icon-arrow-circle-right:before {\n  content: \"\\f10a\";\n}\n.summernote .note-icon-arrow-circle-up:before {\n  content: \"\\f10b\";\n}\n.summernote .note-icon-arrows-alt:before {\n  content: \"\\f10c\";\n}\n.summernote .note-icon-arrows-h:before {\n  content: \"\\f10d\";\n}\n.summernote .note-icon-arrows-v:before {\n  content: \"\\f10e\";\n}\n.summernote .note-icon-bold:before {\n  content: \"\\f10f\";\n}\n.summernote .note-icon-caret:before {\n  content: \"\\f110\";\n}\n.summernote .note-icon-chain-broken:before {\n  content: \"\\f111\";\n}\n.summernote .note-icon-circle:before {\n  content: \"\\f112\";\n}\n.summernote .note-icon-close:before {\n  content: \"\\f113\";\n}\n.summernote .note-icon-code:before {\n  content: \"\\f114\";\n}\n.summernote .note-icon-col-after:before {\n  content: \"\\f115\";\n}\n.summernote .note-icon-col-before:before {\n  content: \"\\f116\";\n}\n.summernote .note-icon-col-remove:before {\n  content: \"\\f117\";\n}\n.summernote .note-icon-eraser:before {\n  content: \"\\f118\";\n}\n.summernote .note-icon-font:before {\n  content: \"\\f119\";\n}\n.summernote .note-icon-frame:before {\n  content: \"\\f11a\";\n}\n.summernote .note-btn-formatBlock {\n  padding: 0 !important;\n}\n.summernote .note-btn-formatBlock > * {\n  line-height: 9px !important;\n  padding: 5px 10px !important;\n  margin: 0 !important;\n  height: 29px !important;\n  text-indent: 0 !important;\n  background-color: transparent;\n  border-width: 0;\n  border-radius: inherit;\n  color: #000;\n}\n.summernote .note-btn-formatBlock > *:before {\n  content: \"<H1>\";\n  font-size: 14px !important;\n  font-weight: bold;\n  line-height: 20px;\n}\n.summernote .note-btn-formatBlock > h1,\n.summernote .note-btn-formatBlock > h2 {\n  line-height: 0 !important;\n}\n.summernote .note-btn-formatBlock > h2:before {\n  content: \"<H2>\" !important;\n}\n.summernote .note-btn-formatBlock > h3:before {\n  content: \"<H3>\" !important;\n}\n.summernote .note-btn-formatBlock > h4:before {\n  content: \"<H4>\" !important;\n}\n.summernote .note-btn-formatBlock > h5:before {\n  content: \"<H5>\" !important;\n}\n.summernote .note-btn-formatBlock > h6:before {\n  content: \"<H6>\" !important;\n}\n.summernote .note-btn-formatBlock > p:before {\n  content: \"<P>\" !important;\n  font-weight: normal;\n}\n.summernote .note-btn-formatBlock > code:before {\n  content: \"<CODE>\" !important;\n  font-weight: normal;\n  line-height: 29px;\n}\n.summernote .note-icon-italic:before {\n  content: \"\\f11b\";\n}\n.summernote .note-icon-link:before {\n  content: \"\\f11c\";\n}\n.summernote .note-icon-magic:before {\n  content: \"\\f11d\";\n}\n.summernote .note-icon-menu-check:before {\n  content: \"\\f11e\";\n}\n.summernote .note-icon-minus:before {\n  content: \"\\f11f\";\n}\n.summernote .note-icon-orderedlist:before {\n  content: \"\\f120\";\n}\n.summernote .note-icon-pencil:before {\n  content: \"\\f121\";\n}\n.summernote .note-icon-picture:before {\n  content: \"\\f122\";\n}\n.summernote .note-icon-question:before {\n  content: \"\\f123\";\n}\n.summernote .note-icon-redo:before {\n  content: \"\\f124\";\n}\n.summernote .note-icon-row-above:before {\n  content: \"\\f125\";\n}\n.summernote .note-icon-row-below:before {\n  content: \"\\f126\";\n}\n.summernote .note-icon-row-remove:before {\n  content: \"\\f127\";\n}\n.summernote .note-icon-special-character:before {\n  content: \"\\f128\";\n}\n.summernote .note-icon-square:before {\n  content: \"\\f129\";\n}\n.summernote .note-icon-strikethrough:before {\n  content: \"\\f12a\";\n}\n.summernote .note-icon-subscript:before {\n  content: \"\\f12b\";\n}\n.summernote .note-icon-summernote:before {\n  content: \"\\f12c\";\n}\n.summernote .note-icon-superscript:before {\n  content: \"\\f12d\";\n}\n.summernote .note-icon-table:before {\n  content: \"\\f12e\";\n}\n.summernote .note-icon-text-height:before {\n  content: \"\\f12f\";\n}\n.summernote .note-icon-trash:before {\n  content: \"\\f130\";\n}\n.summernote .note-icon-underline:before {\n  content: \"\\f131\";\n}\n.summernote .note-icon-undo:before {\n  content: \"\\f132\";\n}\n.summernote .note-icon-unorderedlist:before {\n  content: \"\\f133\";\n}\n.summernote .note-icon-video:before {\n  content: \"\\f134\";\n}\n.summernote .note-frame * {\n  /* color: #000; */\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.summernote p {\n  margin: 0 0 10px;\n}\n.summernote kbd {\n  padding: 3px 5px;\n  font-weight: 700;\n  color: #fff;\n  background-color: #000;\n  border-radius: 2px;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.summernote .note-btn-group {\n  position: relative;\n  display: inline-block;\n  margin-right: 8px;\n}\n.summernote .note-btn-group > .note-btn-group {\n  margin-right: 0;\n}\n.summernote .note-btn-group > .note-btn,\n.summernote .note-btn-group > .note-btn-group {\n  margin-left: 0;\n  border-radius: 0;\n}\n.summernote .note-btn-group > .note-btn.focus,\n.summernote .note-btn-group > .note-btn-group.focus,\n.summernote .note-btn-group > .note-btn.active,\n.summernote .note-btn-group > .note-btn-group.active {\n  border-radius: 0;\n}\n.summernote .note-btn-group > .note-btn:first-child,\n.summernote .note-btn-group > .note-btn-group:first-child {\n  margin-left: 0;\n  border-bottom-left-radius: 1px;\n  border-top-left-radius: 1px;\n}\n.summernote .note-btn-group > .note-btn:first-child.focus,\n.summernote .note-btn-group > .note-btn-group:first-child.focus,\n.summernote .note-btn-group > .note-btn:first-child.active,\n.summernote .note-btn-group > .note-btn-group:first-child.active {\n  border-bottom-left-radius: 1px;\n  border-top-left-radius: 1px;\n}\n.summernote .note-btn-group > .note-btn:last-child:not(.note-dropdown),\n.summernote .note-btn-group > .note-btn-group:last-child:not(.note-dropdown) {\n  border-top-right-radius: 1px;\n  border-bottom-right-radius: 1px;\n}\n.summernote .note-btn-group > .note-btn:last-child:not(.note-dropdown).focus,\n.summernote .note-btn-group > .note-btn-group:last-child:not(.note-dropdown).focus,\n.summernote .note-btn-group > .note-btn:last-child:not(.note-dropdown).active,\n.summernote .note-btn-group > .note-btn-group:last-child:not(.note-dropdown).active {\n  border-top-right-radius: 1px;\n  border-bottom-right-radius: 1px;\n}\n.summernote .note-btn-group.open > .note-dropdown {\n  display: block;\n}\n.summernote .note-btn {\n  display: inline-block;\n  padding: 5px 10px;\n  margin-bottom: 0;\n  font-size: 1.5rem;\n  font-weight: 400;\n  line-height: 1.4;\n  color: #333;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  cursor: pointer;\n  background-color: #fff;\n  background-image: none;\n  /* border: 1px solid #fff; */\n  border: 1px solid transparent;\n  border-color: #fff;\n  border-radius: 1px;\n  outline: 0;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  touch-action: manipulation;\n}\n.summernote .note-btn:focus,\n.summernote .note-btn.focus {\n  color: #333;\n  background-color: #ebebeb;\n  /*border-color: #fff;*/\n  border-color: transparent;\n}\n.summernote .note-btn:hover {\n  color: #333;\n  background-color: #ebebeb;\n  /*border-color: #fff;*/\n  border-color: transparent;\n}\n.summernote .note-btn.disabled:focus,\n.summernote .note-btn[disabled]:focus,\n.summernote fieldset[disabled] .note-btn:focus,\n.summernote .note-btn.disabled.focus,\n.summernote .note-btn[disabled].focus,\n.summernote fieldset[disabled] .note-btn.focus {\n  background-color: #fff;\n  border-color: #fff;\n}\n.summernote .note-btn:hover,\n.summernote .note-btn:focus,\n.summernote .note-btn.focus {\n  color: #333;\n  text-decoration: none;\n  background-color: #ebebeb;\n  border: 1px solid #fff;\n  -webkit-border-radius: 1px;\n  -moz-border-radius: 1px;\n  border-radius: 1px;\n  outline: 0;\n}\n.summernote .note-btn:active,\n.summernote .note-btn.active {\n  background-image: none;\n  outline: 0;\n}\n.summernote .note-btn.disabled,\n.summernote .note-btn[disabled],\n.summernote fieldset[disabled] .note-btn {\n  cursor: not-allowed;\n  -webkit-opacity: 0.65;\n  -khtml-opacity: 0.65;\n  -moz-opacity: 0.65;\n  opacity: 0.65;\n  -ms-filter: alpha(opacity=65);\n  filter: alpha(opacity=65);\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n}\n.summernote .note-btn-primary {\n  color: #fff;\n  background: #fa6362;\n}\n.summernote .note-btn-primary:hover,\n.summernote .note-btn-primary:focus,\n.summernote .note-btn-primary.focus {\n  color: #fff;\n  text-decoration: none;\n  background-color: #fa6362;\n  border: 1px solid #fff;\n  -webkit-border-radius: 1px;\n  -moz-border-radius: 1px;\n  border-radius: 1px;\n}\n.summernote .note-btn-block {\n  display: block;\n  width: 100%;\n}\n.summernote .note-btn-block + .note-btn-block {\n  margin-top: 5px;\n}\n.summernote input[type=\"submit\"].note-btn-block,\n.summernote input[type=\"reset\"].note-btn-block,\n.summernote input[type=\"button\"].note-btn-block {\n  width: 100%;\n}\n.summernote button.close {\n  padding: 0;\n  cursor: pointer;\n  background: transparent;\n  border: 0;\n  -webkit-appearance: none;\n}\n.summernote .close {\n  float: right;\n  font-size: 21px;\n  line-height: 1;\n  color: #000;\n  opacity: 0.2;\n}\n.summernote .close:hover {\n  -webkit-opacity: 1;\n  -khtml-opacity: 1;\n  -moz-opacity: 1;\n  opacity: 1;\n  -ms-filter: alpha(opacity=100);\n  filter: alpha(opacity=100);\n}\n.summernote .background-color-circle {\n  width: 1rem;\n  height: 1rem;\n  border-radius: 0.75rem;\n  display: inline-block;\n  border: 2px solid gray;\n}\n", "",{"version":3,"sources":["summernote-lite.icon.less"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,kBAAkB;EAClB,mBAAmB;EACnB,4CAAmE;EACnE,4LAAwQ;AAC1Q;AACA;;EAEE,qBAAqB;EACrB,0CAA0C;EAC1C,kBAAkB;EAClB,mCAAmC;EACnC,wBAAwB;EACxB,oBAAoB;EACpB,oBAAoB;EACpB,sBAAsB;EACtB,WAAW;EACX,kCAAkC;AACpC;AACA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAoDE,qBAAqB;EACrB,yBAAyB;EACzB,kBAAkB;EAClB,mBAAmB;EACnB,wBAAwB;AAC1B;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,qBAAqB;AACvB;AACA;EACE,2BAA2B;EAC3B,4BAA4B;EAC5B,oBAAoB;EACpB,uBAAuB;EACvB,yBAAyB;EACzB,6BAA6B;EAC7B,eAAe;EACf,sBAAsB;EACtB,WAAW;AACb;AACA;EACE,eAAe;EACf,0BAA0B;EAC1B,iBAAiB;EACjB,iBAAiB;AACnB;AACA;;EAEE,yBAAyB;AAC3B;AACA;EACE,0BAA0B;AAC5B;AACA;EACE,0BAA0B;AAC5B;AACA;EACE,0BAA0B;AAC5B;AACA;EACE,0BAA0B;AAC5B;AACA;EACE,0BAA0B;AAC5B;AACA;EACE,yBAAyB;EACzB,mBAAmB;AACrB;AACA;EACE,4BAA4B;EAC5B,mBAAmB;EACnB,iBAAiB;AACnB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,iBAAiB;EACjB,8BAA8B;EAC9B,2BAA2B;EAC3B,sBAAsB;AACxB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;EAChB,gBAAgB;EAChB,WAAW;EACX,sBAAsB;EACtB,kBAAkB;EAClB,8BAA8B;EAC9B,2BAA2B;EAC3B,0BAA0B;EAC1B,sBAAsB;AACxB;AACA;EACE,kBAAkB;EAClB,qBAAqB;EACrB,iBAAiB;AACnB;AACA;EACE,eAAe;AACjB;AACA;;EAEE,cAAc;EACd,gBAAgB;AAClB;AACA;;;;EAIE,gBAAgB;AAClB;AACA;;EAEE,cAAc;EACd,8BAA8B;EAC9B,2BAA2B;AAC7B;AACA;;;;EAIE,8BAA8B;EAC9B,2BAA2B;AAC7B;AACA;;EAEE,4BAA4B;EAC5B,+BAA+B;AACjC;AACA;;;;EAIE,4BAA4B;EAC5B,+BAA+B;AACjC;AACA;EACE,cAAc;AAChB;AACA;EACE,qBAAqB;EACrB,iBAAiB;EACjB,gBAAgB;EAChB,iBAAiB;EACjB,gBAAgB;EAChB,gBAAgB;EAChB,WAAW;EACX,kBAAkB;EAClB,mBAAmB;EACnB,sBAAsB;EACtB,eAAe;EACf,sBAAsB;EACtB,sBAAsB;EACtB,4BAA4B;EAC5B,6BAA6B;EAC7B,kBAAkB;EAClB,kBAAkB;EAClB,UAAU;EACV,yBAAyB;EACzB,sBAAsB;EACtB,qBAAqB;EACrB,iBAAiB;EACjB,0BAA0B;AAC5B;AACA;;EAEE,WAAW;EACX,yBAAyB;EACzB,sBAAsB;EACtB,yBAAyB;AAC3B;AACA;EACE,WAAW;EACX,yBAAyB;EACzB,sBAAsB;EACtB,yBAAyB;AAC3B;AACA;;;;;;EAME,sBAAsB;EACtB,kBAAkB;AACpB;AACA;;;EAGE,WAAW;EACX,qBAAqB;EACrB,yBAAyB;EACzB,sBAAsB;EACtB,0BAA0B;EAC1B,uBAAuB;EACvB,kBAAkB;EAClB,UAAU;AACZ;AACA;;EAEE,sBAAsB;EACtB,UAAU;AACZ;AACA;;;EAGE,mBAAmB;EACnB,qBAAqB;EACrB,oBAAoB;EACpB,kBAAkB;EAClB,aAAa;EACb,6BAA6B;EAC7B,yBAAyB;EACzB,wBAAwB;EACxB,qBAAqB;EACrB,gBAAgB;AAClB;AACA;EACE,WAAW;EACX,mBAAmB;AACrB;AACA;;;EAGE,WAAW;EACX,qBAAqB;EACrB,yBAAyB;EACzB,sBAAsB;EACtB,0BAA0B;EAC1B,uBAAuB;EACvB,kBAAkB;AACpB;AACA;EACE,cAAc;EACd,WAAW;AACb;AACA;EACE,eAAe;AACjB;AACA;;;EAGE,WAAW;AACb;AACA;EACE,UAAU;EACV,eAAe;EACf,uBAAuB;EACvB,SAAS;EACT,wBAAwB;AAC1B;AACA;EACE,YAAY;EACZ,eAAe;EACf,cAAc;EACd,WAAW;EACX,YAAY;AACd;AACA;EACE,kBAAkB;EAClB,iBAAiB;EACjB,eAAe;EACf,UAAU;EACV,8BAA8B;EAC9B,0BAA0B;AAC5B;AACA;EACE,WAAW;EACX,YAAY;EACZ,sBAAsB;EACtB,qBAAqB;EACrB,sBAAsB;AACxB","file":"summernote-lite.icon.less","sourcesContent":["@font-face {\n  font-family: \"summernote\";\n  font-style: normal;\n  font-weight: normal;\n  src: url(\"../font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b\");\n  src: url(\"../font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b#iefix\") format(\"embedded-opentype\"), url(\"../font/summernote.woff?4c7e83314b68cfa6a0d18a8b4690044b\") format(\"woff\"), url(\"../font/summernote.ttf?4c7e83314b68cfa6a0d18a8b4690044b\") format(\"truetype\");\n}\n.summernote [class^=\"note-icon-\"]:before,\n.summernote [class*=\" note-icon-\"]:before {\n  display: inline-block;\n  font: normal normal normal 14px summernote;\n  font-size: inherit;\n  -webkit-font-smoothing: antialiased;\n  text-decoration: inherit;\n  text-rendering: auto;\n  text-transform: none;\n  vertical-align: middle;\n  speak: none;\n  -moz-osx-font-smoothing: grayscale;\n}\n.summernote .note-icon-align-center:before,\n.summernote .note-icon-align-indent:before,\n.summernote .note-icon-align-justify:before,\n.summernote .note-icon-align-left:before,\n.summernote .note-icon-align-outdent:before,\n.summernote .note-icon-align-right:before,\n.summernote .note-icon-align:before,\n.summernote .note-icon-arrow-circle-down:before,\n.summernote .note-icon-arrow-circle-left:before,\n.summernote .note-icon-arrow-circle-right:before,\n.summernote .note-icon-arrow-circle-up:before,\n.summernote .note-icon-arrows-alt:before,\n.summernote .note-icon-arrows-h:before,\n.summernote .note-icon-arrows-v:before,\n.summernote .note-icon-bold:before,\n.summernote .note-icon-caret:before,\n.summernote .note-icon-chain-broken:before,\n.summernote .note-icon-circle:before,\n.summernote .note-icon-close:before,\n.summernote .note-icon-code:before,\n.summernote .note-icon-col-after:before,\n.summernote .note-icon-col-before:before,\n.summernote .note-icon-col-remove:before,\n.summernote .note-icon-eraser:before,\n.summernote .note-icon-font:before,\n.summernote .note-icon-frame:before,\n.summernote .note-icon-italic:before,\n.summernote .note-icon-link:before,\n.summernote .note-icon-magic:before,\n.summernote .note-icon-menu-check:before,\n.summernote .note-icon-minus:before,\n.summernote .note-icon-orderedlist:before,\n.summernote .note-icon-pencil:before,\n.summernote .note-icon-picture:before,\n.summernote .note-icon-question:before,\n.summernote .note-icon-redo:before,\n.summernote .note-icon-row-above:before,\n.summernote .note-icon-row-below:before,\n.summernote .note-icon-row-remove:before,\n.summernote .note-icon-special-character:before,\n.summernote .note-icon-square:before,\n.summernote .note-icon-strikethrough:before,\n.summernote .note-icon-subscript:before,\n.summernote .note-icon-summernote:before,\n.summernote .note-icon-superscript:before,\n.summernote .note-icon-table:before,\n.summernote .note-icon-text-height:before,\n.summernote .note-icon-trash:before,\n.summernote .note-icon-underline:before,\n.summernote .note-icon-undo:before,\n.summernote .note-icon-unorderedlist:before,\n.summernote .note-icon-video:before {\n  display: inline-block;\n  font-family: \"summernote\";\n  font-style: normal;\n  font-weight: normal;\n  text-decoration: inherit;\n}\n.summernote .note-icon-align-center:before {\n  content: \"\\f101\";\n}\n.summernote .note-icon-align-indent:before {\n  content: \"\\f102\";\n}\n.summernote .note-icon-align-justify:before {\n  content: \"\\f103\";\n}\n.summernote .note-icon-align-left:before {\n  content: \"\\f104\";\n}\n.summernote .note-icon-align-outdent:before {\n  content: \"\\f105\";\n}\n.summernote .note-icon-align-right:before {\n  content: \"\\f106\";\n}\n.summernote .note-icon-align:before {\n  content: \"\\f107\";\n}\n.summernote .note-icon-arrow-circle-down:before {\n  content: \"\\f108\";\n}\n.summernote .note-icon-arrow-circle-left:before {\n  content: \"\\f109\";\n}\n.summernote .note-icon-arrow-circle-right:before {\n  content: \"\\f10a\";\n}\n.summernote .note-icon-arrow-circle-up:before {\n  content: \"\\f10b\";\n}\n.summernote .note-icon-arrows-alt:before {\n  content: \"\\f10c\";\n}\n.summernote .note-icon-arrows-h:before {\n  content: \"\\f10d\";\n}\n.summernote .note-icon-arrows-v:before {\n  content: \"\\f10e\";\n}\n.summernote .note-icon-bold:before {\n  content: \"\\f10f\";\n}\n.summernote .note-icon-caret:before {\n  content: \"\\f110\";\n}\n.summernote .note-icon-chain-broken:before {\n  content: \"\\f111\";\n}\n.summernote .note-icon-circle:before {\n  content: \"\\f112\";\n}\n.summernote .note-icon-close:before {\n  content: \"\\f113\";\n}\n.summernote .note-icon-code:before {\n  content: \"\\f114\";\n}\n.summernote .note-icon-col-after:before {\n  content: \"\\f115\";\n}\n.summernote .note-icon-col-before:before {\n  content: \"\\f116\";\n}\n.summernote .note-icon-col-remove:before {\n  content: \"\\f117\";\n}\n.summernote .note-icon-eraser:before {\n  content: \"\\f118\";\n}\n.summernote .note-icon-font:before {\n  content: \"\\f119\";\n}\n.summernote .note-icon-frame:before {\n  content: \"\\f11a\";\n}\n.summernote .note-btn-formatBlock {\n  padding: 0 !important;\n}\n.summernote .note-btn-formatBlock > * {\n  line-height: 9px !important;\n  padding: 5px 10px !important;\n  margin: 0 !important;\n  height: 29px !important;\n  text-indent: 0 !important;\n  background-color: transparent;\n  border-width: 0;\n  border-radius: inherit;\n  color: #000;\n}\n.summernote .note-btn-formatBlock > *:before {\n  content: \"<H1>\";\n  font-size: 14px !important;\n  font-weight: bold;\n  line-height: 20px;\n}\n.summernote .note-btn-formatBlock > h1,\n.summernote .note-btn-formatBlock > h2 {\n  line-height: 0 !important;\n}\n.summernote .note-btn-formatBlock > h2:before {\n  content: \"<H2>\" !important;\n}\n.summernote .note-btn-formatBlock > h3:before {\n  content: \"<H3>\" !important;\n}\n.summernote .note-btn-formatBlock > h4:before {\n  content: \"<H4>\" !important;\n}\n.summernote .note-btn-formatBlock > h5:before {\n  content: \"<H5>\" !important;\n}\n.summernote .note-btn-formatBlock > h6:before {\n  content: \"<H6>\" !important;\n}\n.summernote .note-btn-formatBlock > p:before {\n  content: \"<P>\" !important;\n  font-weight: normal;\n}\n.summernote .note-btn-formatBlock > code:before {\n  content: \"<CODE>\" !important;\n  font-weight: normal;\n  line-height: 29px;\n}\n.summernote .note-icon-italic:before {\n  content: \"\\f11b\";\n}\n.summernote .note-icon-link:before {\n  content: \"\\f11c\";\n}\n.summernote .note-icon-magic:before {\n  content: \"\\f11d\";\n}\n.summernote .note-icon-menu-check:before {\n  content: \"\\f11e\";\n}\n.summernote .note-icon-minus:before {\n  content: \"\\f11f\";\n}\n.summernote .note-icon-orderedlist:before {\n  content: \"\\f120\";\n}\n.summernote .note-icon-pencil:before {\n  content: \"\\f121\";\n}\n.summernote .note-icon-picture:before {\n  content: \"\\f122\";\n}\n.summernote .note-icon-question:before {\n  content: \"\\f123\";\n}\n.summernote .note-icon-redo:before {\n  content: \"\\f124\";\n}\n.summernote .note-icon-row-above:before {\n  content: \"\\f125\";\n}\n.summernote .note-icon-row-below:before {\n  content: \"\\f126\";\n}\n.summernote .note-icon-row-remove:before {\n  content: \"\\f127\";\n}\n.summernote .note-icon-special-character:before {\n  content: \"\\f128\";\n}\n.summernote .note-icon-square:before {\n  content: \"\\f129\";\n}\n.summernote .note-icon-strikethrough:before {\n  content: \"\\f12a\";\n}\n.summernote .note-icon-subscript:before {\n  content: \"\\f12b\";\n}\n.summernote .note-icon-summernote:before {\n  content: \"\\f12c\";\n}\n.summernote .note-icon-superscript:before {\n  content: \"\\f12d\";\n}\n.summernote .note-icon-table:before {\n  content: \"\\f12e\";\n}\n.summernote .note-icon-text-height:before {\n  content: \"\\f12f\";\n}\n.summernote .note-icon-trash:before {\n  content: \"\\f130\";\n}\n.summernote .note-icon-underline:before {\n  content: \"\\f131\";\n}\n.summernote .note-icon-undo:before {\n  content: \"\\f132\";\n}\n.summernote .note-icon-unorderedlist:before {\n  content: \"\\f133\";\n}\n.summernote .note-icon-video:before {\n  content: \"\\f134\";\n}\n.summernote .note-frame * {\n  /* color: #000; */\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.summernote p {\n  margin: 0 0 10px;\n}\n.summernote kbd {\n  padding: 3px 5px;\n  font-weight: 700;\n  color: #fff;\n  background-color: #000;\n  border-radius: 2px;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.summernote .note-btn-group {\n  position: relative;\n  display: inline-block;\n  margin-right: 8px;\n}\n.summernote .note-btn-group > .note-btn-group {\n  margin-right: 0;\n}\n.summernote .note-btn-group > .note-btn,\n.summernote .note-btn-group > .note-btn-group {\n  margin-left: 0;\n  border-radius: 0;\n}\n.summernote .note-btn-group > .note-btn.focus,\n.summernote .note-btn-group > .note-btn-group.focus,\n.summernote .note-btn-group > .note-btn.active,\n.summernote .note-btn-group > .note-btn-group.active {\n  border-radius: 0;\n}\n.summernote .note-btn-group > .note-btn:first-child,\n.summernote .note-btn-group > .note-btn-group:first-child {\n  margin-left: 0;\n  border-bottom-left-radius: 1px;\n  border-top-left-radius: 1px;\n}\n.summernote .note-btn-group > .note-btn:first-child.focus,\n.summernote .note-btn-group > .note-btn-group:first-child.focus,\n.summernote .note-btn-group > .note-btn:first-child.active,\n.summernote .note-btn-group > .note-btn-group:first-child.active {\n  border-bottom-left-radius: 1px;\n  border-top-left-radius: 1px;\n}\n.summernote .note-btn-group > .note-btn:last-child:not(.note-dropdown),\n.summernote .note-btn-group > .note-btn-group:last-child:not(.note-dropdown) {\n  border-top-right-radius: 1px;\n  border-bottom-right-radius: 1px;\n}\n.summernote .note-btn-group > .note-btn:last-child:not(.note-dropdown).focus,\n.summernote .note-btn-group > .note-btn-group:last-child:not(.note-dropdown).focus,\n.summernote .note-btn-group > .note-btn:last-child:not(.note-dropdown).active,\n.summernote .note-btn-group > .note-btn-group:last-child:not(.note-dropdown).active {\n  border-top-right-radius: 1px;\n  border-bottom-right-radius: 1px;\n}\n.summernote .note-btn-group.open > .note-dropdown {\n  display: block;\n}\n.summernote .note-btn {\n  display: inline-block;\n  padding: 5px 10px;\n  margin-bottom: 0;\n  font-size: 1.5rem;\n  font-weight: 400;\n  line-height: 1.4;\n  color: #333;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  cursor: pointer;\n  background-color: #fff;\n  background-image: none;\n  /* border: 1px solid #fff; */\n  border: 1px solid transparent;\n  border-color: #fff;\n  border-radius: 1px;\n  outline: 0;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  touch-action: manipulation;\n}\n.summernote .note-btn:focus,\n.summernote .note-btn.focus {\n  color: #333;\n  background-color: #ebebeb;\n  /*border-color: #fff;*/\n  border-color: transparent;\n}\n.summernote .note-btn:hover {\n  color: #333;\n  background-color: #ebebeb;\n  /*border-color: #fff;*/\n  border-color: transparent;\n}\n.summernote .note-btn.disabled:focus,\n.summernote .note-btn[disabled]:focus,\n.summernote fieldset[disabled] .note-btn:focus,\n.summernote .note-btn.disabled.focus,\n.summernote .note-btn[disabled].focus,\n.summernote fieldset[disabled] .note-btn.focus {\n  background-color: #fff;\n  border-color: #fff;\n}\n.summernote .note-btn:hover,\n.summernote .note-btn:focus,\n.summernote .note-btn.focus {\n  color: #333;\n  text-decoration: none;\n  background-color: #ebebeb;\n  border: 1px solid #fff;\n  -webkit-border-radius: 1px;\n  -moz-border-radius: 1px;\n  border-radius: 1px;\n  outline: 0;\n}\n.summernote .note-btn:active,\n.summernote .note-btn.active {\n  background-image: none;\n  outline: 0;\n}\n.summernote .note-btn.disabled,\n.summernote .note-btn[disabled],\n.summernote fieldset[disabled] .note-btn {\n  cursor: not-allowed;\n  -webkit-opacity: 0.65;\n  -khtml-opacity: 0.65;\n  -moz-opacity: 0.65;\n  opacity: 0.65;\n  -ms-filter: alpha(opacity=65);\n  filter: alpha(opacity=65);\n  -webkit-box-shadow: none;\n  -moz-box-shadow: none;\n  box-shadow: none;\n}\n.summernote .note-btn-primary {\n  color: #fff;\n  background: #fa6362;\n}\n.summernote .note-btn-primary:hover,\n.summernote .note-btn-primary:focus,\n.summernote .note-btn-primary.focus {\n  color: #fff;\n  text-decoration: none;\n  background-color: #fa6362;\n  border: 1px solid #fff;\n  -webkit-border-radius: 1px;\n  -moz-border-radius: 1px;\n  border-radius: 1px;\n}\n.summernote .note-btn-block {\n  display: block;\n  width: 100%;\n}\n.summernote .note-btn-block + .note-btn-block {\n  margin-top: 5px;\n}\n.summernote input[type=\"submit\"].note-btn-block,\n.summernote input[type=\"reset\"].note-btn-block,\n.summernote input[type=\"button\"].note-btn-block {\n  width: 100%;\n}\n.summernote button.close {\n  padding: 0;\n  cursor: pointer;\n  background: transparent;\n  border: 0;\n  -webkit-appearance: none;\n}\n.summernote .close {\n  float: right;\n  font-size: 21px;\n  line-height: 1;\n  color: #000;\n  opacity: 0.2;\n}\n.summernote .close:hover {\n  -webkit-opacity: 1;\n  -khtml-opacity: 1;\n  -moz-opacity: 1;\n  opacity: 1;\n  -ms-filter: alpha(opacity=100);\n  filter: alpha(opacity=100);\n}\n.summernote .background-color-circle {\n  width: 1rem;\n  height: 1rem;\n  border-radius: 0.75rem;\n  display: inline-block;\n  border: 2px solid gray;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.input.less":
-/*!****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/Index/summernote/styles/summernote-lite.input.less ***!
-  \****************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.input.less":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/vendors/summernote/styles/summernote-lite.input.less ***!
+  \******************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -116,10 +116,10 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.modal.less":
-/*!****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/Index/summernote/styles/summernote-lite.modal.less ***!
-  \****************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.modal.less":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/vendors/summernote/styles/summernote-lite.modal.less ***!
+  \******************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -134,10 +134,10 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.popover.less":
-/*!******************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/Index/summernote/styles/summernote-lite.popover.less ***!
-  \******************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.popover.less":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/vendors/summernote/styles/summernote-lite.popover.less ***!
+  \********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -152,10 +152,28 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b":
-/*!**********************************************************************************************!*\
-  !*** ./src/components/Index/summernote/font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b ***!
-  \**********************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.toolbar.less":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/vendors/summernote/styles/summernote-lite.toolbar.less ***!
+  \********************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(true);
+// Module
+exports.push([module.i, ".summernote .note-toolbar {\n  padding: 10px 5px;\n  border-bottom: 1px solid #e2e2e2;\n}\n.summernote .note-toolbar.enable-overflow {\n  white-space: nowrap;\n  overflow-x: scroll;\n  padding-bottom: 1rem;\n}\n.summernote .note-toolbar.enable-overflow.show-dropdown {\n  overflow-x: visible;\n  padding-bottom: 10px;\n}\n.summernote .note-toolbar.compact {\n  padding: 0;\n}\n.summernote .note-toolbar.compact > .note-btn-group {\n  margin: 0px;\n  padding-bottom: 3px;\n  padding-top: 3px;\n}\n.summernote .note-toolbar.right {\n  text-align: right;\n}\n.summernote .note-toolbar.center {\n  text-align: center;\n}\n.summernote .note-toolbar.bottom {\n  bottom: 0;\n  width: 100vw;\n  left: 0;\n  position: fixed;\n  z-index: 99999;\n}\n", "",{"version":3,"sources":["summernote-lite.toolbar.less"],"names":[],"mappings":"AAAA;EACE,iBAAiB;EACjB,gCAAgC;AAClC;AACA;EACE,mBAAmB;EACnB,kBAAkB;EAClB,oBAAoB;AACtB;AACA;EACE,mBAAmB;EACnB,oBAAoB;AACtB;AACA;EACE,UAAU;AACZ;AACA;EACE,WAAW;EACX,mBAAmB;EACnB,gBAAgB;AAClB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,SAAS;EACT,YAAY;EACZ,OAAO;EACP,eAAe;EACf,cAAc;AAChB","file":"summernote-lite.toolbar.less","sourcesContent":[".summernote .note-toolbar {\n  padding: 10px 5px;\n  border-bottom: 1px solid #e2e2e2;\n}\n.summernote .note-toolbar.enable-overflow {\n  white-space: nowrap;\n  overflow-x: scroll;\n  padding-bottom: 1rem;\n}\n.summernote .note-toolbar.enable-overflow.show-dropdown {\n  overflow-x: visible;\n  padding-bottom: 10px;\n}\n.summernote .note-toolbar.compact {\n  padding: 0;\n}\n.summernote .note-toolbar.compact > .note-btn-group {\n  margin: 0px;\n  padding-bottom: 3px;\n  padding-top: 3px;\n}\n.summernote .note-toolbar.right {\n  text-align: right;\n}\n.summernote .note-toolbar.center {\n  text-align: center;\n}\n.summernote .note-toolbar.bottom {\n  bottom: 0;\n  width: 100vw;\n  left: 0;\n  position: fixed;\n  z-index: 99999;\n}\n"]}]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./src/components/vendors/summernote/font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b":
+/*!************************************************************************************************!*\
+  !*** ./src/components/vendors/summernote/font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -163,10 +181,10 @@ module.exports = "./dist/asset/summernote.eot";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/font/summernote.ttf?4c7e83314b68cfa6a0d18a8b4690044b":
-/*!**********************************************************************************************!*\
-  !*** ./src/components/Index/summernote/font/summernote.ttf?4c7e83314b68cfa6a0d18a8b4690044b ***!
-  \**********************************************************************************************/
+/***/ "./src/components/vendors/summernote/font/summernote.ttf?4c7e83314b68cfa6a0d18a8b4690044b":
+/*!************************************************************************************************!*\
+  !*** ./src/components/vendors/summernote/font/summernote.ttf?4c7e83314b68cfa6a0d18a8b4690044b ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -174,10 +192,10 @@ module.exports = "./dist/asset/summernote.ttf";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/font/summernote.woff?4c7e83314b68cfa6a0d18a8b4690044b":
-/*!***********************************************************************************************!*\
-  !*** ./src/components/Index/summernote/font/summernote.woff?4c7e83314b68cfa6a0d18a8b4690044b ***!
-  \***********************************************************************************************/
+/***/ "./src/components/vendors/summernote/font/summernote.woff?4c7e83314b68cfa6a0d18a8b4690044b":
+/*!*************************************************************************************************!*\
+  !*** ./src/components/vendors/summernote/font/summernote.woff?4c7e83314b68cfa6a0d18a8b4690044b ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -185,10 +203,10 @@ module.exports = "./dist/asset/summernote.woff";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/lang/summernote-zh-TW.js":
-/*!******************************************************************!*\
-  !*** ./src/components/Index/summernote/lang/summernote-zh-TW.js ***!
-  \******************************************************************/
+/***/ "./src/components/vendors/summernote/lang/summernote-zh-TW.js":
+/*!********************************************************************!*\
+  !*** ./src/components/vendors/summernote/lang/summernote-zh-TW.js ***!
+  \********************************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -410,10 +428,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/options.js":
-/*!****************************************************!*\
-  !*** ./src/components/Index/summernote/options.js ***!
-  \****************************************************/
+/***/ "./src/components/vendors/summernote/options.js":
+/*!******************************************************!*\
+  !*** ./src/components/vendors/summernote/options.js ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -733,10 +751,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/keyenter.ogg":
-/*!************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/keyenter.ogg ***!
-  \************************************************************/
+/***/ "./src/components/vendors/summernote/sound/keyenter.ogg":
+/*!**************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/keyenter.ogg ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -744,10 +762,10 @@ module.exports = "./dist/asset/keyenter.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-1.ogg":
-/*!***********************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-1.ogg ***!
-  \***********************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-1.ogg":
+/*!*************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-1.ogg ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -755,10 +773,10 @@ module.exports = "./dist/asset/office_typewriter-1.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-10.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-10.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-10.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-10.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -766,10 +784,10 @@ module.exports = "./dist/asset/office_typewriter-10.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-12.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-12.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-12.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-12.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -777,10 +795,10 @@ module.exports = "./dist/asset/office_typewriter-12.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-13.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-13.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-13.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-13.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -788,10 +806,10 @@ module.exports = "./dist/asset/office_typewriter-13.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-14.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-14.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-14.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-14.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -799,10 +817,10 @@ module.exports = "./dist/asset/office_typewriter-14.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-15.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-15.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-15.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-15.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -810,10 +828,10 @@ module.exports = "./dist/asset/office_typewriter-15.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-16.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-16.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-16.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-16.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -821,10 +839,10 @@ module.exports = "./dist/asset/office_typewriter-16.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-17.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-17.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-17.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-17.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -832,10 +850,10 @@ module.exports = "./dist/asset/office_typewriter-17.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-18.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-18.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-18.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-18.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -843,10 +861,10 @@ module.exports = "./dist/asset/office_typewriter-18.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-19.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-19.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-19.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-19.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -854,10 +872,10 @@ module.exports = "./dist/asset/office_typewriter-19.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-2.ogg":
-/*!***********************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-2.ogg ***!
-  \***********************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-2.ogg":
+/*!*************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-2.ogg ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -865,10 +883,10 @@ module.exports = "./dist/asset/office_typewriter-2.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-20.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-20.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-20.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-20.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -876,10 +894,10 @@ module.exports = "./dist/asset/office_typewriter-20.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-21.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-21.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-21.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-21.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -887,10 +905,10 @@ module.exports = "./dist/asset/office_typewriter-21.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-22.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-22.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-22.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-22.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -898,10 +916,10 @@ module.exports = "./dist/asset/office_typewriter-22.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-23.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-23.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-23.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-23.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -909,10 +927,10 @@ module.exports = "./dist/asset/office_typewriter-23.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-24.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-24.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-24.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-24.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -920,10 +938,10 @@ module.exports = "./dist/asset/office_typewriter-24.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-25.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-25.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-25.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-25.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -931,10 +949,10 @@ module.exports = "./dist/asset/office_typewriter-25.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-26.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-26.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-26.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-26.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -942,10 +960,10 @@ module.exports = "./dist/asset/office_typewriter-26.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-27.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-27.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-27.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-27.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -953,10 +971,10 @@ module.exports = "./dist/asset/office_typewriter-27.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-29.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-29.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-29.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-29.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -964,10 +982,10 @@ module.exports = "./dist/asset/office_typewriter-29.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-3.ogg":
-/*!***********************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-3.ogg ***!
-  \***********************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-3.ogg":
+/*!*************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-3.ogg ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -975,10 +993,10 @@ module.exports = "./dist/asset/office_typewriter-3.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-30.ogg":
-/*!************************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-30.ogg ***!
-  \************************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-30.ogg":
+/*!**************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-30.ogg ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -986,10 +1004,10 @@ module.exports = "./dist/asset/office_typewriter-30.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-4.ogg":
-/*!***********************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-4.ogg ***!
-  \***********************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-4.ogg":
+/*!*************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-4.ogg ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -997,10 +1015,10 @@ module.exports = "./dist/asset/office_typewriter-4.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-5.ogg":
-/*!***********************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-5.ogg ***!
-  \***********************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-5.ogg":
+/*!*************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-5.ogg ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1008,10 +1026,10 @@ module.exports = "./dist/asset/office_typewriter-5.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-6.ogg":
-/*!***********************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-6.ogg ***!
-  \***********************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-6.ogg":
+/*!*************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-6.ogg ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1019,10 +1037,10 @@ module.exports = "./dist/asset/office_typewriter-6.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-7.ogg":
-/*!***********************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-7.ogg ***!
-  \***********************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-7.ogg":
+/*!*************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-7.ogg ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1030,10 +1048,10 @@ module.exports = "./dist/asset/office_typewriter-7.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-8.ogg":
-/*!***********************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-8.ogg ***!
-  \***********************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-8.ogg":
+/*!*************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-8.ogg ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1041,10 +1059,10 @@ module.exports = "./dist/asset/office_typewriter-8.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/office_typewriter-9.ogg":
-/*!***********************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/office_typewriter-9.ogg ***!
-  \***********************************************************************/
+/***/ "./src/components/vendors/summernote/sound/office_typewriter-9.ogg":
+/*!*************************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/office_typewriter-9.ogg ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1052,72 +1070,72 @@ module.exports = "./dist/asset/office_typewriter-9.ogg";
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/sound/soundKeys.js":
-/*!************************************************************!*\
-  !*** ./src/components/Index/summernote/sound/soundKeys.js ***!
-  \************************************************************/
+/***/ "./src/components/vendors/summernote/sound/soundKeys.js":
+/*!**************************************************************!*\
+  !*** ./src/components/vendors/summernote/sound/soundKeys.js ***!
+  \**************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _keyenter_ogg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./keyenter.ogg */ "./src/components/Index/summernote/sound/keyenter.ogg");
+/* harmony import */ var _keyenter_ogg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./keyenter.ogg */ "./src/components/vendors/summernote/sound/keyenter.ogg");
 /* harmony import */ var _keyenter_ogg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_keyenter_ogg__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _office_typewriter_1_ogg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./office_typewriter-1.ogg */ "./src/components/Index/summernote/sound/office_typewriter-1.ogg");
+/* harmony import */ var _office_typewriter_1_ogg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./office_typewriter-1.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-1.ogg");
 /* harmony import */ var _office_typewriter_1_ogg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_1_ogg__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _office_typewriter_2_ogg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./office_typewriter-2.ogg */ "./src/components/Index/summernote/sound/office_typewriter-2.ogg");
+/* harmony import */ var _office_typewriter_2_ogg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./office_typewriter-2.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-2.ogg");
 /* harmony import */ var _office_typewriter_2_ogg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_2_ogg__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _office_typewriter_3_ogg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./office_typewriter-3.ogg */ "./src/components/Index/summernote/sound/office_typewriter-3.ogg");
+/* harmony import */ var _office_typewriter_3_ogg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./office_typewriter-3.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-3.ogg");
 /* harmony import */ var _office_typewriter_3_ogg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_3_ogg__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _office_typewriter_4_ogg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./office_typewriter-4.ogg */ "./src/components/Index/summernote/sound/office_typewriter-4.ogg");
+/* harmony import */ var _office_typewriter_4_ogg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./office_typewriter-4.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-4.ogg");
 /* harmony import */ var _office_typewriter_4_ogg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_4_ogg__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _office_typewriter_5_ogg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./office_typewriter-5.ogg */ "./src/components/Index/summernote/sound/office_typewriter-5.ogg");
+/* harmony import */ var _office_typewriter_5_ogg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./office_typewriter-5.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-5.ogg");
 /* harmony import */ var _office_typewriter_5_ogg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_5_ogg__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _office_typewriter_6_ogg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./office_typewriter-6.ogg */ "./src/components/Index/summernote/sound/office_typewriter-6.ogg");
+/* harmony import */ var _office_typewriter_6_ogg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./office_typewriter-6.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-6.ogg");
 /* harmony import */ var _office_typewriter_6_ogg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_6_ogg__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _office_typewriter_7_ogg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./office_typewriter-7.ogg */ "./src/components/Index/summernote/sound/office_typewriter-7.ogg");
+/* harmony import */ var _office_typewriter_7_ogg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./office_typewriter-7.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-7.ogg");
 /* harmony import */ var _office_typewriter_7_ogg__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_7_ogg__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _office_typewriter_8_ogg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./office_typewriter-8.ogg */ "./src/components/Index/summernote/sound/office_typewriter-8.ogg");
+/* harmony import */ var _office_typewriter_8_ogg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./office_typewriter-8.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-8.ogg");
 /* harmony import */ var _office_typewriter_8_ogg__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_8_ogg__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _office_typewriter_9_ogg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./office_typewriter-9.ogg */ "./src/components/Index/summernote/sound/office_typewriter-9.ogg");
+/* harmony import */ var _office_typewriter_9_ogg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./office_typewriter-9.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-9.ogg");
 /* harmony import */ var _office_typewriter_9_ogg__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_9_ogg__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _office_typewriter_10_ogg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./office_typewriter-10.ogg */ "./src/components/Index/summernote/sound/office_typewriter-10.ogg");
+/* harmony import */ var _office_typewriter_10_ogg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./office_typewriter-10.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-10.ogg");
 /* harmony import */ var _office_typewriter_10_ogg__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_10_ogg__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _office_typewriter_12_ogg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./office_typewriter-12.ogg */ "./src/components/Index/summernote/sound/office_typewriter-12.ogg");
+/* harmony import */ var _office_typewriter_12_ogg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./office_typewriter-12.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-12.ogg");
 /* harmony import */ var _office_typewriter_12_ogg__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_12_ogg__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _office_typewriter_13_ogg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./office_typewriter-13.ogg */ "./src/components/Index/summernote/sound/office_typewriter-13.ogg");
+/* harmony import */ var _office_typewriter_13_ogg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./office_typewriter-13.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-13.ogg");
 /* harmony import */ var _office_typewriter_13_ogg__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_13_ogg__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _office_typewriter_14_ogg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./office_typewriter-14.ogg */ "./src/components/Index/summernote/sound/office_typewriter-14.ogg");
+/* harmony import */ var _office_typewriter_14_ogg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./office_typewriter-14.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-14.ogg");
 /* harmony import */ var _office_typewriter_14_ogg__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_14_ogg__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _office_typewriter_15_ogg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./office_typewriter-15.ogg */ "./src/components/Index/summernote/sound/office_typewriter-15.ogg");
+/* harmony import */ var _office_typewriter_15_ogg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./office_typewriter-15.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-15.ogg");
 /* harmony import */ var _office_typewriter_15_ogg__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_15_ogg__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _office_typewriter_16_ogg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./office_typewriter-16.ogg */ "./src/components/Index/summernote/sound/office_typewriter-16.ogg");
+/* harmony import */ var _office_typewriter_16_ogg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./office_typewriter-16.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-16.ogg");
 /* harmony import */ var _office_typewriter_16_ogg__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_16_ogg__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _office_typewriter_17_ogg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./office_typewriter-17.ogg */ "./src/components/Index/summernote/sound/office_typewriter-17.ogg");
+/* harmony import */ var _office_typewriter_17_ogg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./office_typewriter-17.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-17.ogg");
 /* harmony import */ var _office_typewriter_17_ogg__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_17_ogg__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _office_typewriter_18_ogg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./office_typewriter-18.ogg */ "./src/components/Index/summernote/sound/office_typewriter-18.ogg");
+/* harmony import */ var _office_typewriter_18_ogg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./office_typewriter-18.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-18.ogg");
 /* harmony import */ var _office_typewriter_18_ogg__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_18_ogg__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _office_typewriter_19_ogg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./office_typewriter-19.ogg */ "./src/components/Index/summernote/sound/office_typewriter-19.ogg");
+/* harmony import */ var _office_typewriter_19_ogg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./office_typewriter-19.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-19.ogg");
 /* harmony import */ var _office_typewriter_19_ogg__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_19_ogg__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _office_typewriter_20_ogg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./office_typewriter-20.ogg */ "./src/components/Index/summernote/sound/office_typewriter-20.ogg");
+/* harmony import */ var _office_typewriter_20_ogg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./office_typewriter-20.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-20.ogg");
 /* harmony import */ var _office_typewriter_20_ogg__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_20_ogg__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _office_typewriter_21_ogg__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./office_typewriter-21.ogg */ "./src/components/Index/summernote/sound/office_typewriter-21.ogg");
+/* harmony import */ var _office_typewriter_21_ogg__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./office_typewriter-21.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-21.ogg");
 /* harmony import */ var _office_typewriter_21_ogg__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_21_ogg__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var _office_typewriter_22_ogg__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./office_typewriter-22.ogg */ "./src/components/Index/summernote/sound/office_typewriter-22.ogg");
+/* harmony import */ var _office_typewriter_22_ogg__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./office_typewriter-22.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-22.ogg");
 /* harmony import */ var _office_typewriter_22_ogg__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_22_ogg__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _office_typewriter_23_ogg__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./office_typewriter-23.ogg */ "./src/components/Index/summernote/sound/office_typewriter-23.ogg");
+/* harmony import */ var _office_typewriter_23_ogg__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./office_typewriter-23.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-23.ogg");
 /* harmony import */ var _office_typewriter_23_ogg__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_23_ogg__WEBPACK_IMPORTED_MODULE_22__);
-/* harmony import */ var _office_typewriter_24_ogg__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./office_typewriter-24.ogg */ "./src/components/Index/summernote/sound/office_typewriter-24.ogg");
+/* harmony import */ var _office_typewriter_24_ogg__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./office_typewriter-24.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-24.ogg");
 /* harmony import */ var _office_typewriter_24_ogg__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_24_ogg__WEBPACK_IMPORTED_MODULE_23__);
-/* harmony import */ var _office_typewriter_25_ogg__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./office_typewriter-25.ogg */ "./src/components/Index/summernote/sound/office_typewriter-25.ogg");
+/* harmony import */ var _office_typewriter_25_ogg__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./office_typewriter-25.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-25.ogg");
 /* harmony import */ var _office_typewriter_25_ogg__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_25_ogg__WEBPACK_IMPORTED_MODULE_24__);
-/* harmony import */ var _office_typewriter_26_ogg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./office_typewriter-26.ogg */ "./src/components/Index/summernote/sound/office_typewriter-26.ogg");
+/* harmony import */ var _office_typewriter_26_ogg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./office_typewriter-26.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-26.ogg");
 /* harmony import */ var _office_typewriter_26_ogg__WEBPACK_IMPORTED_MODULE_25___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_26_ogg__WEBPACK_IMPORTED_MODULE_25__);
-/* harmony import */ var _office_typewriter_27_ogg__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./office_typewriter-27.ogg */ "./src/components/Index/summernote/sound/office_typewriter-27.ogg");
+/* harmony import */ var _office_typewriter_27_ogg__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./office_typewriter-27.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-27.ogg");
 /* harmony import */ var _office_typewriter_27_ogg__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_27_ogg__WEBPACK_IMPORTED_MODULE_26__);
-/* harmony import */ var _office_typewriter_29_ogg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./office_typewriter-29.ogg */ "./src/components/Index/summernote/sound/office_typewriter-29.ogg");
+/* harmony import */ var _office_typewriter_29_ogg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./office_typewriter-29.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-29.ogg");
 /* harmony import */ var _office_typewriter_29_ogg__WEBPACK_IMPORTED_MODULE_27___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_29_ogg__WEBPACK_IMPORTED_MODULE_27__);
-/* harmony import */ var _office_typewriter_30_ogg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./office_typewriter-30.ogg */ "./src/components/Index/summernote/sound/office_typewriter-30.ogg");
+/* harmony import */ var _office_typewriter_30_ogg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./office_typewriter-30.ogg */ "./src/components/vendors/summernote/sound/office_typewriter-30.ogg");
 /* harmony import */ var _office_typewriter_30_ogg__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(_office_typewriter_30_ogg__WEBPACK_IMPORTED_MODULE_28__);
 
 
@@ -1191,9 +1209,51 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/styles/summernote-lite.dropdown.less":
+/***/ "./src/components/vendors/summernote/styles/summernote-lite.dropdown.less":
+/*!********************************************************************************!*\
+  !*** ./src/components/vendors/summernote/styles/summernote-lite.dropdown.less ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.dropdown.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.dropdown.less");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("56bd8a95", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/vendors/summernote/styles/summernote-lite.editable.less":
+/*!********************************************************************************!*\
+  !*** ./src/components/vendors/summernote/styles/summernote-lite.editable.less ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.editable.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.editable.less");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("d1c9c096", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/vendors/summernote/styles/summernote-lite.editor.less":
 /*!******************************************************************************!*\
-  !*** ./src/components/Index/summernote/styles/summernote-lite.dropdown.less ***!
+  !*** ./src/components/vendors/summernote/styles/summernote-lite.editor.less ***!
   \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -1201,20 +1261,20 @@ __webpack_require__.r(__webpack_exports__);
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.dropdown.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.dropdown.less");
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.editor.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.editor.less");
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
-var update = add("20881a9c", content, false, {});
+var update = add("29711dd5", content, false, {});
 // Hot Module Replacement
 if(false) {}
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/styles/summernote-lite.editable.less":
+/***/ "./src/components/vendors/summernote/styles/summernote-lite.handle.less":
 /*!******************************************************************************!*\
-  !*** ./src/components/Index/summernote/styles/summernote-lite.editable.less ***!
+  !*** ./src/components/vendors/summernote/styles/summernote-lite.handle.less ***!
   \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -1222,20 +1282,20 @@ if(false) {}
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.editable.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.editable.less");
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.handle.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.handle.less");
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
-var update = add("17510f08", content, false, {});
+var update = add("64c4acb5", content, false, {});
 // Hot Module Replacement
 if(false) {}
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/styles/summernote-lite.editor.less":
+/***/ "./src/components/vendors/summernote/styles/summernote-lite.icon.less":
 /*!****************************************************************************!*\
-  !*** ./src/components/Index/summernote/styles/summernote-lite.editor.less ***!
+  !*** ./src/components/vendors/summernote/styles/summernote-lite.icon.less ***!
   \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -1243,104 +1303,20 @@ if(false) {}
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.editor.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.editor.less");
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.icon.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.icon.less");
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
-var update = add("048b2a9c", content, false, {});
+var update = add("0bd84915", content, false, {});
 // Hot Module Replacement
 if(false) {}
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/styles/summernote-lite.handle.less":
-/*!****************************************************************************!*\
-  !*** ./src/components/Index/summernote/styles/summernote-lite.handle.less ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.handle.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.handle.less");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
-var update = add("653d2c3c", content, false, {});
-// Hot Module Replacement
-if(false) {}
-
-/***/ }),
-
-/***/ "./src/components/Index/summernote/styles/summernote-lite.icon.less":
-/*!**************************************************************************!*\
-  !*** ./src/components/Index/summernote/styles/summernote-lite.icon.less ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.icon.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.icon.less");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
-var update = add("d8e322c8", content, false, {});
-// Hot Module Replacement
-if(false) {}
-
-/***/ }),
-
-/***/ "./src/components/Index/summernote/styles/summernote-lite.input.less":
-/*!***************************************************************************!*\
-  !*** ./src/components/Index/summernote/styles/summernote-lite.input.less ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.input.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.input.less");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
-var update = add("180777e4", content, false, {});
-// Hot Module Replacement
-if(false) {}
-
-/***/ }),
-
-/***/ "./src/components/Index/summernote/styles/summernote-lite.modal.less":
-/*!***************************************************************************!*\
-  !*** ./src/components/Index/summernote/styles/summernote-lite.modal.less ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.modal.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.modal.less");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
-var update = add("27cef508", content, false, {});
-// Hot Module Replacement
-if(false) {}
-
-/***/ }),
-
-/***/ "./src/components/Index/summernote/styles/summernote-lite.popover.less":
+/***/ "./src/components/vendors/summernote/styles/summernote-lite.input.less":
 /*!*****************************************************************************!*\
-  !*** ./src/components/Index/summernote/styles/summernote-lite.popover.less ***!
+  !*** ./src/components/vendors/summernote/styles/summernote-lite.input.less ***!
   \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -1348,21 +1324,84 @@ if(false) {}
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.popover.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/Index/summernote/styles/summernote-lite.popover.less");
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.input.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.input.less");
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
-var update = add("4a244f98", content, false, {});
+var update = add("a93b7616", content, false, {});
 // Hot Module Replacement
 if(false) {}
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/summernote-lite.js":
-/*!************************************************************!*\
-  !*** ./src/components/Index/summernote/summernote-lite.js ***!
-  \************************************************************/
+/***/ "./src/components/vendors/summernote/styles/summernote-lite.modal.less":
+/*!*****************************************************************************!*\
+  !*** ./src/components/vendors/summernote/styles/summernote-lite.modal.less ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.modal.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.modal.less");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("20ad6aaf", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/vendors/summernote/styles/summernote-lite.popover.less":
+/*!*******************************************************************************!*\
+  !*** ./src/components/vendors/summernote/styles/summernote-lite.popover.less ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.popover.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.popover.less");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("77f8557f", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/vendors/summernote/styles/summernote-lite.toolbar.less":
+/*!*******************************************************************************!*\
+  !*** ./src/components/vendors/summernote/styles/summernote-lite.toolbar.less ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.toolbar.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.toolbar.less");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("5aca6f5a", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/components/vendors/summernote/summernote-lite.js":
+/*!**************************************************************!*\
+  !*** ./src/components/vendors/summernote/summernote-lite.js ***!
+  \**************************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1371,8 +1410,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var sortablejs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sortablejs */ "./node_modules/sortablejs/modular/sortable.complete.esm.js");
-/* harmony import */ var _sound_soundKeys_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sound/soundKeys.js */ "./src/components/Index/summernote/sound/soundKeys.js");
-/* harmony import */ var _options_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./options.js */ "./src/components/Index/summernote/options.js");
+/* harmony import */ var _sound_soundKeys_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sound/soundKeys.js */ "./src/components/vendors/summernote/sound/soundKeys.js");
+/* harmony import */ var _options_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./options.js */ "./src/components/vendors/summernote/options.js");
 /* global define */
 
 
@@ -12886,35 +12925,38 @@ sel.addRange(range);
 
 /***/ }),
 
-/***/ "./src/components/Index/summernote/summernote-lite.webpack.js":
-/*!********************************************************************!*\
-  !*** ./src/components/Index/summernote/summernote-lite.webpack.js ***!
-  \********************************************************************/
+/***/ "./src/components/vendors/summernote/summernote-lite.webpack.js":
+/*!**********************************************************************!*\
+  !*** ./src/components/vendors/summernote/summernote-lite.webpack.js ***!
+  \**********************************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _summernote_lite_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./summernote-lite.js */ "./src/components/Index/summernote/summernote-lite.js");
-/* harmony import */ var _styles_summernote_lite_dropdown_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/summernote-lite.dropdown.less */ "./src/components/Index/summernote/styles/summernote-lite.dropdown.less");
+/* harmony import */ var _summernote_lite_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./summernote-lite.js */ "./src/components/vendors/summernote/summernote-lite.js");
+/* harmony import */ var _styles_summernote_lite_dropdown_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/summernote-lite.dropdown.less */ "./src/components/vendors/summernote/styles/summernote-lite.dropdown.less");
 /* harmony import */ var _styles_summernote_lite_dropdown_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_dropdown_less__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _styles_summernote_lite_editor_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/summernote-lite.editor.less */ "./src/components/Index/summernote/styles/summernote-lite.editor.less");
+/* harmony import */ var _styles_summernote_lite_editor_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/summernote-lite.editor.less */ "./src/components/vendors/summernote/styles/summernote-lite.editor.less");
 /* harmony import */ var _styles_summernote_lite_editor_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_editor_less__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _styles_summernote_lite_editable_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/summernote-lite.editable.less */ "./src/components/Index/summernote/styles/summernote-lite.editable.less");
+/* harmony import */ var _styles_summernote_lite_editable_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/summernote-lite.editable.less */ "./src/components/vendors/summernote/styles/summernote-lite.editable.less");
 /* harmony import */ var _styles_summernote_lite_editable_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_editable_less__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _styles_summernote_lite_handle_less__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/summernote-lite.handle.less */ "./src/components/Index/summernote/styles/summernote-lite.handle.less");
+/* harmony import */ var _styles_summernote_lite_handle_less__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/summernote-lite.handle.less */ "./src/components/vendors/summernote/styles/summernote-lite.handle.less");
 /* harmony import */ var _styles_summernote_lite_handle_less__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_handle_less__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _styles_summernote_lite_icon_less__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/summernote-lite.icon.less */ "./src/components/Index/summernote/styles/summernote-lite.icon.less");
+/* harmony import */ var _styles_summernote_lite_icon_less__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/summernote-lite.icon.less */ "./src/components/vendors/summernote/styles/summernote-lite.icon.less");
 /* harmony import */ var _styles_summernote_lite_icon_less__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_icon_less__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _styles_summernote_lite_input_less__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/summernote-lite.input.less */ "./src/components/Index/summernote/styles/summernote-lite.input.less");
+/* harmony import */ var _styles_summernote_lite_input_less__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/summernote-lite.input.less */ "./src/components/vendors/summernote/styles/summernote-lite.input.less");
 /* harmony import */ var _styles_summernote_lite_input_less__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_input_less__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _styles_summernote_lite_modal_less__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/summernote-lite.modal.less */ "./src/components/Index/summernote/styles/summernote-lite.modal.less");
+/* harmony import */ var _styles_summernote_lite_modal_less__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/summernote-lite.modal.less */ "./src/components/vendors/summernote/styles/summernote-lite.modal.less");
 /* harmony import */ var _styles_summernote_lite_modal_less__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_modal_less__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _styles_summernote_lite_popover_less__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/summernote-lite.popover.less */ "./src/components/Index/summernote/styles/summernote-lite.popover.less");
+/* harmony import */ var _styles_summernote_lite_popover_less__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/summernote-lite.popover.less */ "./src/components/vendors/summernote/styles/summernote-lite.popover.less");
 /* harmony import */ var _styles_summernote_lite_popover_less__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_popover_less__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _lang_summernote_zh_TW_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lang/summernote-zh-TW.js */ "./src/components/Index/summernote/lang/summernote-zh-TW.js");
+/* harmony import */ var _styles_summernote_lite_toolbar_less__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./styles/summernote-lite.toolbar.less */ "./src/components/vendors/summernote/styles/summernote-lite.toolbar.less");
+/* harmony import */ var _styles_summernote_lite_toolbar_less__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_toolbar_less__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _lang_summernote_zh_TW_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./lang/summernote-zh-TW.js */ "./src/components/vendors/summernote/lang/summernote-zh-TW.js");
 
 //import './summernote-lite.less'
+
 
 
 

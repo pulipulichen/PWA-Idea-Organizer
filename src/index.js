@@ -9,7 +9,7 @@ import i18n from './i18n/i18n.js'
 
 // ----------------------
 
-//import './styles/styles.js'
+import './styles/styles.js'
 import template from './index.tpl'
 import config from './config.js'
 
@@ -17,7 +17,7 @@ import config from './config.js'
 // Components or routes
 
 //import components from './components/index.js'
-import Index from './components/Index/Index.vue'
+import Index from './components/Index.vue'
 
 // -----------------------
 // 確認 baseURL

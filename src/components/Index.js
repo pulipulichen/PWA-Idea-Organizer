@@ -1,6 +1,6 @@
 import $ from 'jquery'
 //import './summernote/summernote-lite.webpack.js'
-let summernoteLoader = () => import(/* webpackChunkName: "vendors/summernote" */ './summernote/summernote-lite.webpack.js')
+let summernoteLoader = () => import(/* webpackChunkName: "vendors/summernote" */ './vendors/summernote/summernote-lite.webpack.js')
 
 //let summernoteLoader = () => import('./summernote/summernote-lite.webpack.js')
 
@@ -40,9 +40,6 @@ let IndexComponent = {
       await summernoteLoader()
       this.editor = $(this.$refs.editor)
       
-      //console.log(this.editor.length, this.editor.summernote)
-      this.editor.summernote(this._summernoteOptions())
-      
       /*
       let contents = localStorage.getItem('contents')
       if (contents !== null) {
@@ -58,6 +55,9 @@ let IndexComponent = {
         //console.log(contents)
         
         if (contents !== null) {
+          //console.log(this.editor.length, this.editor.summernote)
+          this.editor.summernote(this._summernoteOptions())
+
           this.editor.summernote("code", contents)
           this.setDocumentTitle(contents)
           

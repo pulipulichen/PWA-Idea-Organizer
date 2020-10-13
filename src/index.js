@@ -17,7 +17,7 @@ import config from './config.js'
 // Components or routes
 
 //import components from './components/index.js'
-import IndexComponent from './components/IndexComponent/IndexComponent.vue'
+import Index from './components/Index/Index.vue'
 
 // -----------------------
 // 確認 baseURL
@@ -78,7 +78,7 @@ let VueController = {
   },
   i18n: i18n,
   components: {
-    'index-component': IndexComponent
+    'index': Index
   }
 }
 

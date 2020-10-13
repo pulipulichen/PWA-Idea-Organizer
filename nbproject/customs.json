@@ -1,5 +1,9 @@
 {
-  "elements": {},
+  "elements": {
+    "style": {},
+    "i18n": {},
+    "example": {}
+  },
   "attributes": {
     "ref": {
       "context": "div"

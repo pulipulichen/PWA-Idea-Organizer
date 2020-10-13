@@ -6093,6 +6093,8 @@ ${links}`
               element = $$1(element)
             }
             
+            
+            
             if (element.hasClass('note-editable')) {
               return undefined
             }
@@ -6110,7 +6112,7 @@ ${links}`
             
             let selection = window.getSelection();
             var range = document.createRange();
-            range.selectNodeContents(currentElement[0]);
+            range.selectNodeContents(currentElement.contents()[0]);
             selection.removeAllRanges()
             selection.addRange(range)
           }
@@ -6301,12 +6303,18 @@ ${links}`
             
             
             //_this.$editable[0].scrollTop(y, {method: 'smooth'})
-            if (scrollTopTo < 0 || scrollTopTo > _this.$editable[0].scrollHeight) {
-              return false
+            //console.log(scrollTopTo, _this.$editable[0].scrollHeight)
+            if (scrollTopTo < 0) {
+              scrollTopTo = 0
+            } 
+            if (scrollTopTo > _this.$editable[0].scrollHeight) {
+              scrollTopTo = _this.$editable[0].scrollHeight
             }
             
             clearTimeout(scrollVerticalCenterTimer)
             scrollVerticalCenterTimer = setTimeout(() => {
+              _this.$editable.clearQueue()
+              _this.$editable.stop()
               _this.$editable.animate({scrollTop: scrollTopTo}, 300)
             }, 10)
           }

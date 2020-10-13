@@ -1,14 +1,20 @@
-import $ from 'jquery'
-import './summernote/summernote-lite.webpack.js'
+//import $ from 'jquery'
+//import './summernote/summernote-lite.webpack.js'
 //let summernoteLoader = () => import(/* webpackChunkName: "summernote" */ './summernote/summernote-lite.webpack.js')
 //let summernoteLoader = () => import('./summernote/summernote-lite.webpack.js')
 
+let enableChange = false
+
 let IndexComponent = {
-  props: ['lib', 'status', 'config'],
-  data() {    
+  //props: ['lib', 'status', 'config'],
+  data () {    
     this.$i18n.locale = this.config.locale
     return {
-      editor: null
+      //test: 'aaa',
+      editor: null,
+      count: 0
+      //saveToCloudTimer: null,
+      //googleSheetAPIURL: 
     }
   },
 //  components: {
@@ -17,9 +23,15 @@ let IndexComponent = {
 //  },
 //  watch: {
 //  },
-  async mounted() {
+  mounted() {
+    /*
+    this.saveToCloudTimer = null
+    this.googleSheetAPIURL = 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
+    
+    //console.log(this)
     //summernoteLoader()
     this.initEditor()
+    */
   },
   methods: {
     initEditor () {
@@ -27,11 +39,30 @@ let IndexComponent = {
       //console.log(this.editor.length, this.editor.summernote)
       this.editor.summernote(this._summernoteOptions())
       
+      /*
       let contents = localStorage.getItem('contents')
       if (contents !== null) {
         this.editor.summernote("code", contents)
         this.setDocumentTitle(contents)
       }
+      */
+     console.log(this.googleSheetAPIURL)
+      $.getJSON(this.googleSheetAPIURL, (data) => {
+        //console.log(contents)
+        //console.log(c)
+        let contents = data.contents
+        console.log(contents)
+        
+        if (contents !== null) {
+          this.editor.summernote("code", contents)
+          this.setDocumentTitle(contents)
+          
+          setTimeout(() => {
+            enableChange = true
+            this.loading = false
+          }, 100)
+        }
+      })
     },
     _summernoteOptions () {
       let options = {
@@ -91,19 +122,42 @@ let IndexComponent = {
       return [
         // [groupName, [list of button]]
         ['sort', ['toggleSortMode']],
-        ['history', ['undo', 'redo']],
+        ['history', ['undo', 'redo', 'removeElement']],
         ['list', ['ul', 'ol', 'indent', 'outdent']],
         ['style', ['strikethrough', 'underline', 'backgroundColorRed', 'backgroundColorYellow', 'backgroundColorGreen', 'backgroundColorBlue', 'backgroundColorPurple']],
-        ['format', ['removeFormat' , 'removeElement']],
+        ['format', ['removeFormat']],
         ['insert', ['hr']],
         ['manage', ['copyRichFormat', 'clearTarget']]
       ]
     },
     _callbacksOnChange (contents) {
+      //console.log(enableChange)
+      if (enableChange === false) {
+        return false
+      }
+      
       //console.log(contents)
       //console.log('onChange:', contents, $editable);
       this.setDocumentTitle(contents)
       localStorage.setItem('contents', contents)
+      this.saveToCloud(contents)
+    },
+    saveToCloud (contents) {
+      //console.log(contents)
+      if (!contents || contents === '') {
+        return false
+      }
+      
+      if (this.saveToCloudTimer !== null) {
+        clearTimeout(this.saveToCloudTimer)
+      }
+      
+      this.saveToCloudTimer = setTimeout(() => {
+        $.post(this.googleSheetAPIURL, {
+          contents
+        })
+        console.log('儲存：', contents)
+      }, 3000)
     },
     _getTextArrayFromHTMLString (string) {
       let elements = $('<div>' + string + '</div>').find('*')
@@ -156,5 +210,7 @@ let IndexComponent = {
     
   } // methods
 }
+
+window.googleDocCallback = function () { return true; };
 
 export default IndexComponent

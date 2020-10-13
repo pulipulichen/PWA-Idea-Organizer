@@ -27,7 +27,8 @@ module.exports = (env, argv) => {
     devtool: 'source-map',
     //devtool: false,
     entry: {
-      'index': path.resolve(__dirname, '../src/index.js')
+      'index': path.resolve(__dirname, '../src/index.js'),
+      //'test': path.resolve(__dirname, '../src/test.js'),
     },
     output: {
       path: path.resolve(__dirname, '../dist/'),

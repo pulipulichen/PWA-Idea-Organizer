@@ -17,7 +17,7 @@ import config from './config.js'
 // Components or routes
 
 //import components from './components/index.js'
-import './components/index.js'
+import IndexComponent from './components/IndexComponent/IndexComponent.vue'
 
 // -----------------------
 // 確認 baseURL
@@ -71,6 +71,7 @@ Vue.config.errorHandler  = function(err, vm, info) {
 
 let VueController = {
   data: {
+    test: 'aaa',
     config: config,
     status: {
     },
@@ -101,7 +102,9 @@ let VueController = {
   i18n: i18n,
   
   template: template,
-  //components: components
+  components: {
+    'index-component': IndexComponent
+  }
 }
 
 if (typeof(baseURL) === 'string') {

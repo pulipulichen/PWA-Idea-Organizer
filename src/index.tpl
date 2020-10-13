@@ -1,4 +1,5 @@
 <div class="non-invasive-web-style-framework">
-  {{ aaa }}
-  <index-component></index-component>
+  <index-component 
+    v-bind:config="config"
+    ></index-component>
 </div>

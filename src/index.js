@@ -9,7 +9,7 @@ import i18n from './i18n/i18n.js'
 
 // ----------------------
 
-import './styles/styles.js'
+//import './styles/styles.js'
 import template from './index.tpl'
 import config from './config.js'
 
@@ -70,38 +70,13 @@ Vue.config.errorHandler  = function(err, vm, info) {
 // -----------------------
 
 let VueController = {
-  data: {
-    test: 'aaa',
-    config: config,
-    status: {
-    },
-    progress: {
-    },
-    lib: {
-    },
-    errors: [],
-    persistAttrs: [
-    ]
-  },
-//  computed: { },
-//  watch: {},
-  //created: function () {
-  //},
-  mounted: function () {
-//    
-//    //console.log(this.lib.auth.nextStep)
-    this.lib.Main = this.$refs.Main
-  },
-  
-  //methods: { }, // methods: {
-  
-  
-  // --------------------------
-  // Basic configuration
   el: '#app',
-  i18n: i18n,
-  
   template: template,
+  data: {
+    config: config,
+    errors: [],
+  },
+  i18n: i18n,
   components: {
     'index-component': IndexComponent
   }
@@ -110,22 +85,7 @@ let VueController = {
 if (typeof(baseURL) === 'string') {
   setTimeout(() => {
     new Vue(VueController)
-    //$('body > #TestMessage').remove()
   }, 0)
 }
 
-// @Test
-//window.VueController = VueController
-
-if ('serviceWorker' in navigator && false) {  // 不使用service-worker快取，這樣會無法安裝
-//if ('serviceWorker' in navigator) {  
-  navigator.serviceWorker.register('./service-worker.js')
-    .then(function (registration) {
-      // Registration was successful
-      //console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function (err) {
-
-      // registration failed
-      console.log('ServiceWorker registration failed: ', err);
-    });
-}
+import './service-worker-loader.js'

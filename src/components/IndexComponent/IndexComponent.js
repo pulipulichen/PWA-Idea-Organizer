@@ -1,18 +1,20 @@
-//import $ from 'jquery'
-//import './summernote/summernote-lite.webpack.js'
+import $ from 'jquery'
+import './summernote/summernote-lite.webpack.js'
 //let summernoteLoader = () => import(/* webpackChunkName: "summernote" */ './summernote/summernote-lite.webpack.js')
 //let summernoteLoader = () => import('./summernote/summernote-lite.webpack.js')
 
-let enableChange = false
-
 let IndexComponent = {
-  //props: ['lib', 'status', 'config'],
+  props: ['config'],
   data () {    
     this.$i18n.locale = this.config.locale
     return {
       //test: 'aaa',
       editor: null,
-      count: 0
+      loading: true,
+      enableChange: false,
+      saveToCloudTimer: null,
+      googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
+      //count: 22
       //saveToCloudTimer: null,
       //googleSheetAPIURL: 
     }
@@ -24,14 +26,13 @@ let IndexComponent = {
 //  watch: {
 //  },
   mounted() {
-    /*
-    this.saveToCloudTimer = null
-    this.googleSheetAPIURL = 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
+    
+    //this.saveToCloudTimer = null
+    //this.googleSheetAPIURL = 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
     
     //console.log(this)
     //summernoteLoader()
     this.initEditor()
-    */
   },
   methods: {
     initEditor () {
@@ -51,14 +52,14 @@ let IndexComponent = {
         //console.log(contents)
         //console.log(c)
         let contents = data.contents
-        console.log(contents)
+        //console.log(contents)
         
         if (contents !== null) {
           this.editor.summernote("code", contents)
           this.setDocumentTitle(contents)
           
           setTimeout(() => {
-            enableChange = true
+            this.enableChange = true
             this.loading = false
           }, 100)
         }
@@ -132,7 +133,7 @@ let IndexComponent = {
     },
     _callbacksOnChange (contents) {
       //console.log(enableChange)
-      if (enableChange === false) {
+      if (this.enableChange === false) {
         return false
       }
       
@@ -156,7 +157,7 @@ let IndexComponent = {
         $.post(this.googleSheetAPIURL, {
           contents
         })
-        console.log('儲存：', contents)
+        //console.log('儲存：', contents)
       }, 3000)
     },
     _getTextArrayFromHTMLString (string) {
@@ -204,8 +205,7 @@ let IndexComponent = {
         document.title = title
       }
     },
-    _onImageUpload () {
-      
+    _onImageUpload () { 
     }
     
   } // methods

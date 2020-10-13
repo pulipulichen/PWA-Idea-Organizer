@@ -1,8 +1,8 @@
-@TopMenuHeight: 40px;
+@TopMenuHeight: 0px;
 @TocbotWidth: 200px;
 
 #tocbotNavContainer {
-  padding-top: calc(@TopMenuHeight + 1rem);
+  //padding-top: calc(@TopMenuHeight + 1rem);
   right: 1rem;
   max-height: calc(100vh - @TopMenuHeight - 1rem);
   width: @TocbotWidth;
@@ -38,9 +38,9 @@
     max-height:0
   }
   &.is-position-fixed {
-    //position:fixed;
+    position:fixed;
     top:0;
-    right: 0;
+    left: 0;
     z-index: 1;
   }
   .is-active-link{

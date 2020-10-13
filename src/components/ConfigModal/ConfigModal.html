@@ -2,10 +2,13 @@
   <div class="header">
     {{ $t('Configuration') }}
   </div>
-  <div class="content">
+  <div class="content config-modal-content">
     <table-of-contents 
       v-bind:config="config"
       headings="h2"
+      contentSelector=".config-modal-content"
+      top="5rem"
+      width="10rem"
       ref='toc'>
     </table-of-contents>
     

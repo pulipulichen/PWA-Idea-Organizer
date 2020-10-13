@@ -7,12 +7,60 @@ export default function (Index) {
     return true
   }
   let $window = $(window)
+  let $document = $(document)
+  
+  let lastBlurTime = null
+  let checkSyncDataTimer = null
+  
+  Index.methods.initCheckSyncData = function () {
+    if (!this.enableSync) {
+      return false
+    }
+    //console.log('初始化了嗎？')
+    $window.bind('blur', () => {
+      lastBlurTime = (new Date()).getTime()
+      //console.log('離開了')
+    })
     
-  Index.methods.loadData = async function () {
+    let minInterval = 3 * 60 * 1000
+    //let minInterval = 3 * 1000
+    $window.bind('focus', () => {
+      let time = (new Date()).getTime()
+      if (lastBlurTime + minInterval > time) {
+        return false
+      }
+      
+      this.loading = true
+      //return false
+      //console.log('嘗試讀取')
+      $.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
+        //console.log(contents)
+        //console.log(c)
+        let contents = data.contents
+        if (this.contents !== contents) {
+          this.editor.summernote("code", contents)
+          this.contents = contents
+        }
+
+        let configs = data.configs
+        configs = JSON.parse(configs)
+        //console.log(data)
+        if (typeof(configs) === 'object') {
+          Object.keys(configs).forEach(key => {
+            this.syncConfig[key] = configs[key]
+          })
+        }
+        this.loading = false
+      })
+    })
+  }
+    
+  Index.methods.initData = async function () {
     if (!this.enableSync) {
       this.contents = localStorage.getItem('contents')
     }
 
+    this.initCheckSyncData()
     return new Promise((resolve) => {
       window.googleDocCallback = function () { return true; };
       $.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {

@@ -403,7 +403,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ./loading.gif */ "./
 exports = ___CSS_LOADER_API_IMPORT___(true);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, ".loading-overlay[data-v-82b7485c] {\n  width: 100vw;\n  height: 100vh;\n  cursor: wait;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  transition: opacity 0.3s;\n  opacity: 0;\n  transition-delay: z-index 1s;\n  z-index: -1;\n}\n.loading-overlay.loading[data-v-82b7485c] {\n  opacity: 1;\n  cursor: wait;\n  z-index: 1000;\n}\n", "",{"version":3,"sources":["IndexLoading.less"],"names":[],"mappings":"AAAA;EACE,YAAY;EACZ,aAAa;EACb,YAAY;EACZ,yDAAsC;EACtC,4BAA4B;EAC5B,kCAAkC;EAClC,eAAe;EACf,MAAM;EACN,OAAO;EACP,wBAAwB;EACxB,UAAU;EACV,4BAA4B;EAC5B,WAAW;AACb;AACA;EACE,UAAU;EACV,YAAY;EACZ,aAAa;AACf","file":"IndexLoading.less","sourcesContent":[".loading-overlay[data-v-82b7485c] {\n  width: 100vw;\n  height: 100vh;\n  cursor: wait;\n  background-image: url(\"./loading.gif\");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  transition: opacity 0.3s;\n  opacity: 0;\n  transition-delay: z-index 1s;\n  z-index: -1;\n}\n.loading-overlay.loading[data-v-82b7485c] {\n  opacity: 1;\n  cursor: wait;\n  z-index: 1000;\n}\n"]}]);
+exports.push([module.i, ".loading-overlay[data-v-82b7485c] {\n  width: 100vw;\n  height: 100vh;\n  cursor: wait;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  transition: opacity 0.3s;\n  opacity: 0;\n  transition-delay: z-index 1s;\n  z-index: -1;\n  background-color: rgba(255, 255, 255, 0.7);\n}\n.loading-overlay.loading[data-v-82b7485c] {\n  opacity: 1;\n  cursor: wait;\n  z-index: 1000;\n}\n", "",{"version":3,"sources":["IndexLoading.less"],"names":[],"mappings":"AAAA;EACE,YAAY;EACZ,aAAa;EACb,YAAY;EACZ,yDAAsC;EACtC,4BAA4B;EAC5B,kCAAkC;EAClC,eAAe;EACf,MAAM;EACN,OAAO;EACP,wBAAwB;EACxB,UAAU;EACV,4BAA4B;EAC5B,WAAW;EACX,0CAA0C;AAC5C;AACA;EACE,UAAU;EACV,YAAY;EACZ,aAAa;AACf","file":"IndexLoading.less","sourcesContent":[".loading-overlay[data-v-82b7485c] {\n  width: 100vw;\n  height: 100vh;\n  cursor: wait;\n  background-image: url(\"./loading.gif\");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  transition: opacity 0.3s;\n  opacity: 0;\n  transition-delay: z-index 1s;\n  z-index: -1;\n  background-color: rgba(255, 255, 255, 0.7);\n}\n.loading-overlay.loading[data-v-82b7485c] {\n  opacity: 1;\n  cursor: wait;\n  z-index: 1000;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -27720,9 +27720,9 @@ let Index = {
     //}, 1000)
     
     
-    await this.loadData()
+    await this.initData()
     await this.initEditor()
-    this.$refs.ConfigModal.show()
+    //this.$refs.ConfigModal.show()
     
     this.loading = false
   },
@@ -28041,12 +28041,60 @@ __webpack_require__.r(__webpack_exports__);
     return true
   }
   let $window = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window)
+  let $document = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document)
+  
+  let lastBlurTime = null
+  let checkSyncDataTimer = null
+  
+  Index.methods.initCheckSyncData = function () {
+    if (!this.enableSync) {
+      return false
+    }
+    //console.log('初始化了嗎？')
+    $window.bind('blur', () => {
+      lastBlurTime = (new Date()).getTime()
+      //console.log('離開了')
+    })
     
-  Index.methods.loadData = async function () {
+    let minInterval = 3 * 60 * 1000
+    //let minInterval = 3 * 1000
+    $window.bind('focus', () => {
+      let time = (new Date()).getTime()
+      if (lastBlurTime + minInterval > time) {
+        return false
+      }
+      
+      this.loading = true
+      //return false
+      //console.log('嘗試讀取')
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
+        //console.log(contents)
+        //console.log(c)
+        let contents = data.contents
+        if (this.contents !== contents) {
+          this.editor.summernote("code", contents)
+          this.contents = contents
+        }
+
+        let configs = data.configs
+        configs = JSON.parse(configs)
+        //console.log(data)
+        if (typeof(configs) === 'object') {
+          Object.keys(configs).forEach(key => {
+            this.syncConfig[key] = configs[key]
+          })
+        }
+        this.loading = false
+      })
+    })
+  }
+    
+  Index.methods.initData = async function () {
     if (!this.enableSync) {
       this.contents = localStorage.getItem('contents')
     }
 
+    this.initCheckSyncData()
     return new Promise((resolve) => {
       window.googleDocCallback = function () { return true; };
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {

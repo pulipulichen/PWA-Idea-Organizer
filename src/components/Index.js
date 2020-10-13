@@ -53,9 +53,9 @@ let Index = {
     //}, 1000)
     
     
-    await this.loadData()
+    await this.initData()
     await this.initEditor()
-    this.$refs.ConfigModal.show()
+    //this.$refs.ConfigModal.show()
     
     this.loading = false
   },

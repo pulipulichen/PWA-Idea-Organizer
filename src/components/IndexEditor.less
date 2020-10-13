@@ -1,13 +1,16 @@
 @toolbarHeight: 5rem;
+@edtiableHeight: calc(var(--vh, 1vh) * 100 - @toolbarHeight);
 
 .editor-container {
-  height: calc(100vh - @toolbarHeight);
+  height: @edtiableHeight;
+  overscroll-behavior-y: contain;
 }
 
 .editor-container ::v-deep {
   .note-editable {
-    height: calc(100vh - @toolbarHeight);
-    max-height: calc(100vh - @toolbarHeight);
+    height: @edtiableHeight;
+    max-height: @edtiableHeight;
+    overscroll-behavior-y: contain;
   }
   
   .note-editable, .note-placeholder {

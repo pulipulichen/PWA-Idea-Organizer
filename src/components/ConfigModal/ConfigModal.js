@@ -36,6 +36,7 @@ let ConfigModal = {
         await this.utils.AsyncUtils.sleep()
         this.modal = $(this.$refs.modal).modal({
           duration: 100,
+          autofocus: false,
           onVisible: () => {
             this.$refs.toc.updateActiveLink()
           }

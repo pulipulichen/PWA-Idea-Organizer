@@ -19,7 +19,13 @@ import jQuery from 'jquery'
         htmlify: '轉換為HTML',
         textify: 'HTML轉換為純文字',
         copyRichFormat: '複製',
-        toggleSortMode: '整理模式'
+        toggleSortMode: '整理模式',
+        'backgroundColorRed': '紅色標亮',
+        'backgroundColorYellow': '黃色標亮',
+        'backgroundColorGreen': '綠色標亮',
+        'backgroundColorBlue': '藍色標亮',
+        'backgroundColorPurple': '紫色標亮',
+        pastePlainTextHint: '貼上: Ctrl+Shift+v'
       },
       image: {
         image: '圖片',

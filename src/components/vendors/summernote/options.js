@@ -108,6 +108,13 @@ export default {
     col: 10,
     row: 10
   },
+  backgroundColorButtons: {
+    'backgroundColorRed': 'rgb(250, 136, 161)',
+    'backgroundColorYellow': 'rgb(255, 239, 98)',
+    'backgroundColorGreen': 'rgb(231, 244, 161)',
+    'backgroundColorBlue': 'rgb(176, 223, 250)',
+    'backgroundColorPurple': 'rgb(205, 197, 244)',
+  },
   dialogsInBody: false,
   dialogsFade: false,
   toolbarAlign: 'center',

@@ -3,6 +3,7 @@
   ol {
     counter-reset:item; 
     margin:0; 
+    margin-left: 1rem;
     padding-left:0; 
     clear: both;
   }
@@ -42,6 +43,13 @@
               background: rgb(205, 197, 244);
               ///color: #666;
             }
+            
+            ol > li {
+              ol > li:before {
+                background: #EEE;
+                ///color: #666;
+              }
+            }
           }
         }
       }
@@ -78,6 +86,7 @@
   ul {
     counter-reset:item; 
     margin:0; 
+    margin-left: 1rem;
     padding-left:0; 
     clear: both;
   }
@@ -118,6 +127,13 @@
             ul > li:before {
               background: rgb(205, 197, 244);
               ///color: #666;
+            }
+            
+            ul > li {
+              ul > li:before {
+                background-color: #EEE;
+                ///color: #666;
+              }
             }
           }
         }

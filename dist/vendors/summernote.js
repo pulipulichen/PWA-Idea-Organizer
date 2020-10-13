@@ -29,7 +29,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".summernote .note-editing-area .note-editable ol {\n  counter-reset: item;\n  margin: 0;\n  padding-left: 0;\n  clear: both;\n}\n.summernote .note-editing-area .note-editable ol > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li:before {\n  background: #fa88a1;\n  color: #FFF;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li:before {\n  background: #ffef62;\n  color: #666;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li ol > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ol > li:before {\n  content: counter(item);\n  margin-right: 0.7rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: #FFF;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: 1.8rem;\n  width: 2rem;\n  float: left;\n  font-weight: bold;\n  margin-top: 0.4rem;\n  border: 1px solid gray;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n}\n.summernote .note-editing-area .note-editable ul {\n  counter-reset: item;\n  margin: 0;\n  padding-left: 0;\n  clear: both;\n}\n.summernote .note-editing-area .note-editable ul > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li:before {\n  background: #fa88a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li:before {\n  background: #ffef62;\n  border: 1px solid gray;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li ul > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ul > li:before {\n  content: counter(item);\n  margin-right: 1rem;\n  margin-left: 0.4rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: transparent;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: 1.3rem;\n  width: 1.3rem;\n  float: left;\n  font-weight: bold;\n  margin-top: 0.8rem;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n}\n", "",{"version":3,"sources":["summernote-lite.editable.less"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,SAAS;EACT,eAAe;EACf,WAAW;AACb;AACA;EACE,uBAAuB;EACvB,uBAAuB;EACvB,aAAa;EACb,gBAAgB;AAClB;AACA;EACE,mBAAmB;EACnB,WAAW;AACb;AACA;EACE,mBAAmB;EACnB,WAAW;AACb;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,sBAAsB;EACtB,oBAAoB;EACpB,UAAU;EACV,cAAc;EACd,0BAA0B;EAC1B,uBAAuB;EACvB,kBAAkB;EAClB,gBAAgB;EAChB,WAAW;EACX,kBAAkB;EAClB,iBAAiB;EACjB,mBAAmB;EACnB,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,kBAAkB;EAClB,sBAAsB;EACtB,sBAAsB;EACtB,sBAAsB;AACxB;AACA;EACE,mBAAmB;EACnB,SAAS;EACT,eAAe;EACf,WAAW;AACb;AACA;EACE,uBAAuB;EACvB,uBAAuB;EACvB,aAAa;EACb,gBAAgB;AAClB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;EACnB,sBAAsB;AACxB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,sBAAsB;EACtB,kBAAkB;EAClB,mBAAmB;EACnB,UAAU;EACV,cAAc;EACd,0BAA0B;EAC1B,uBAAuB;EACvB,kBAAkB;EAClB,gBAAgB;EAChB,kBAAkB;EAClB,kBAAkB;EAClB,iBAAiB;EACjB,mBAAmB;EACnB,aAAa;EACb,WAAW;EACX,iBAAiB;EACjB,kBAAkB;EAClB,sBAAsB;EACtB,sBAAsB;AACxB","file":"summernote-lite.editable.less","sourcesContent":[".summernote .note-editing-area .note-editable ol {\n  counter-reset: item;\n  margin: 0;\n  padding-left: 0;\n  clear: both;\n}\n.summernote .note-editing-area .note-editable ol > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li:before {\n  background: #fa88a1;\n  color: #FFF;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li:before {\n  background: #ffef62;\n  color: #666;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li ol > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ol > li:before {\n  content: counter(item);\n  margin-right: 0.7rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: #FFF;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: 1.8rem;\n  width: 2rem;\n  float: left;\n  font-weight: bold;\n  margin-top: 0.4rem;\n  border: 1px solid gray;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n}\n.summernote .note-editing-area .note-editable ul {\n  counter-reset: item;\n  margin: 0;\n  padding-left: 0;\n  clear: both;\n}\n.summernote .note-editing-area .note-editable ul > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li:before {\n  background: #fa88a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li:before {\n  background: #ffef62;\n  border: 1px solid gray;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li ul > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ul > li:before {\n  content: counter(item);\n  margin-right: 1rem;\n  margin-left: 0.4rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: transparent;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: 1.3rem;\n  width: 1.3rem;\n  float: left;\n  font-weight: bold;\n  margin-top: 0.8rem;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n}\n"]}]);
+exports.push([module.i, ".summernote .note-editing-area .note-editable ol {\n  counter-reset: item;\n  margin: 0;\n  margin-left: 1rem;\n  padding-left: 0;\n  clear: both;\n}\n.summernote .note-editing-area .note-editable ol > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li:before {\n  background: #fa88a1;\n  color: #FFF;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li:before {\n  background: #ffef62;\n  color: #666;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li ol > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li ol > li ol > li:before {\n  background: #EEE;\n}\n.summernote .note-editing-area .note-editable ol > li:before {\n  content: counter(item);\n  margin-right: 0.7rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: #FFF;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: 1.8rem;\n  width: 2rem;\n  float: left;\n  font-weight: bold;\n  margin-top: 0.4rem;\n  border: 1px solid gray;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n}\n.summernote .note-editing-area .note-editable ul {\n  counter-reset: item;\n  margin: 0;\n  margin-left: 1rem;\n  padding-left: 0;\n  clear: both;\n}\n.summernote .note-editing-area .note-editable ul > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li:before {\n  background: #fa88a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li:before {\n  background: #ffef62;\n  border: 1px solid gray;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li ul > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li ul > li ul > li:before {\n  background-color: #EEE;\n}\n.summernote .note-editing-area .note-editable ul > li:before {\n  content: counter(item);\n  margin-right: 1rem;\n  margin-left: 0.4rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: transparent;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: 1.3rem;\n  width: 1.3rem;\n  float: left;\n  font-weight: bold;\n  margin-top: 0.8rem;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n}\n", "",{"version":3,"sources":["summernote-lite.editable.less"],"names":[],"mappings":"AAAA;EACE,mBAAmB;EACnB,SAAS;EACT,iBAAiB;EACjB,eAAe;EACf,WAAW;AACb;AACA;EACE,uBAAuB;EACvB,uBAAuB;EACvB,aAAa;EACb,gBAAgB;AAClB;AACA;EACE,mBAAmB;EACnB,WAAW;AACb;AACA;EACE,mBAAmB;EACnB,WAAW;AACb;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,sBAAsB;EACtB,oBAAoB;EACpB,UAAU;EACV,cAAc;EACd,0BAA0B;EAC1B,uBAAuB;EACvB,kBAAkB;EAClB,gBAAgB;EAChB,WAAW;EACX,kBAAkB;EAClB,iBAAiB;EACjB,mBAAmB;EACnB,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,kBAAkB;EAClB,sBAAsB;EACtB,sBAAsB;EACtB,sBAAsB;AACxB;AACA;EACE,mBAAmB;EACnB,SAAS;EACT,iBAAiB;EACjB,eAAe;EACf,WAAW;AACb;AACA;EACE,uBAAuB;EACvB,uBAAuB;EACvB,aAAa;EACb,gBAAgB;AAClB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;EACnB,sBAAsB;AACxB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,sBAAsB;AACxB;AACA;EACE,sBAAsB;EACtB,kBAAkB;EAClB,mBAAmB;EACnB,UAAU;EACV,cAAc;EACd,0BAA0B;EAC1B,uBAAuB;EACvB,kBAAkB;EAClB,gBAAgB;EAChB,kBAAkB;EAClB,kBAAkB;EAClB,iBAAiB;EACjB,mBAAmB;EACnB,aAAa;EACb,WAAW;EACX,iBAAiB;EACjB,kBAAkB;EAClB,sBAAsB;EACtB,sBAAsB;AACxB","file":"summernote-lite.editable.less","sourcesContent":[".summernote .note-editing-area .note-editable ol {\n  counter-reset: item;\n  margin: 0;\n  margin-left: 1rem;\n  padding-left: 0;\n  clear: both;\n}\n.summernote .note-editing-area .note-editable ol > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li:before {\n  background: #fa88a1;\n  color: #FFF;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li:before {\n  background: #ffef62;\n  color: #666;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li ol > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li ol > li ol > li:before {\n  background: #EEE;\n}\n.summernote .note-editing-area .note-editable ol > li:before {\n  content: counter(item);\n  margin-right: 0.7rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: #FFF;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: 1.8rem;\n  width: 2rem;\n  float: left;\n  font-weight: bold;\n  margin-top: 0.4rem;\n  border: 1px solid gray;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n}\n.summernote .note-editing-area .note-editable ul {\n  counter-reset: item;\n  margin: 0;\n  margin-left: 1rem;\n  padding-left: 0;\n  clear: both;\n}\n.summernote .note-editing-area .note-editable ul > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li:before {\n  background: #fa88a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li:before {\n  background: #ffef62;\n  border: 1px solid gray;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li ul > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li ul > li ul > li:before {\n  background-color: #EEE;\n}\n.summernote .note-editing-area .note-editable ul > li:before {\n  content: counter(item);\n  margin-right: 1rem;\n  margin-left: 0.4rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: transparent;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: 1.3rem;\n  width: 1.3rem;\n  float: left;\n  font-weight: bold;\n  margin-top: 0.8rem;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -163,7 +163,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".summernote .note-toolbar {\n  padding: 10px 5px;\n  border-bottom: 1px solid #e2e2e2;\n}\n.summernote .note-toolbar.enable-overflow {\n  white-space: nowrap;\n  overflow-x: scroll;\n  padding-bottom: 1rem;\n}\n.summernote .note-toolbar.enable-overflow.show-dropdown {\n  overflow-x: visible;\n  padding-bottom: 10px;\n}\n.summernote .note-toolbar.compact {\n  padding: 0;\n}\n.summernote .note-toolbar.compact > .note-btn-group {\n  margin: 0px;\n  padding-bottom: 3px;\n  padding-top: 3px;\n}\n.summernote .note-toolbar.right {\n  text-align: right;\n}\n.summernote .note-toolbar.center {\n  text-align: center;\n}\n.summernote .note-toolbar.bottom {\n  bottom: 0;\n  width: 100vw;\n  left: 0;\n  position: fixed;\n}\n", "",{"version":3,"sources":["summernote-lite.toolbar.less"],"names":[],"mappings":"AAAA;EACE,iBAAiB;EACjB,gCAAgC;AAClC;AACA;EACE,mBAAmB;EACnB,kBAAkB;EAClB,oBAAoB;AACtB;AACA;EACE,mBAAmB;EACnB,oBAAoB;AACtB;AACA;EACE,UAAU;AACZ;AACA;EACE,WAAW;EACX,mBAAmB;EACnB,gBAAgB;AAClB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,SAAS;EACT,YAAY;EACZ,OAAO;EACP,eAAe;AACjB","file":"summernote-lite.toolbar.less","sourcesContent":[".summernote .note-toolbar {\n  padding: 10px 5px;\n  border-bottom: 1px solid #e2e2e2;\n}\n.summernote .note-toolbar.enable-overflow {\n  white-space: nowrap;\n  overflow-x: scroll;\n  padding-bottom: 1rem;\n}\n.summernote .note-toolbar.enable-overflow.show-dropdown {\n  overflow-x: visible;\n  padding-bottom: 10px;\n}\n.summernote .note-toolbar.compact {\n  padding: 0;\n}\n.summernote .note-toolbar.compact > .note-btn-group {\n  margin: 0px;\n  padding-bottom: 3px;\n  padding-top: 3px;\n}\n.summernote .note-toolbar.right {\n  text-align: right;\n}\n.summernote .note-toolbar.center {\n  text-align: center;\n}\n.summernote .note-toolbar.bottom {\n  bottom: 0;\n  width: 100vw;\n  left: 0;\n  position: fixed;\n}\n"]}]);
+exports.push([module.i, ".summernote .note-toolbar {\n  padding: 10px 5px;\n  border-bottom: 1px solid #e2e2e2;\n}\n.summernote .note-toolbar.enable-overflow {\n  white-space: nowrap;\n  overflow-x: scroll;\n  padding-bottom: 1rem;\n}\n.summernote .note-toolbar.enable-overflow.show-dropdown {\n  overflow-x: visible;\n  padding-bottom: 10px;\n}\n.summernote .note-toolbar.compact {\n  padding: 0;\n}\n.summernote .note-toolbar.compact > .note-btn-group {\n  margin: 0px;\n  padding-bottom: 3px;\n  padding-top: 3px;\n}\n.summernote .note-toolbar.right {\n  text-align: right;\n}\n.summernote .note-toolbar.center {\n  text-align: center;\n}\n.summernote .note-toolbar.bottom {\n  bottom: 0;\n  width: 100vw;\n  left: 0;\n  position: fixed;\n  z-index: 1;\n}\n", "",{"version":3,"sources":["summernote-lite.toolbar.less"],"names":[],"mappings":"AAAA;EACE,iBAAiB;EACjB,gCAAgC;AAClC;AACA;EACE,mBAAmB;EACnB,kBAAkB;EAClB,oBAAoB;AACtB;AACA;EACE,mBAAmB;EACnB,oBAAoB;AACtB;AACA;EACE,UAAU;AACZ;AACA;EACE,WAAW;EACX,mBAAmB;EACnB,gBAAgB;AAClB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,SAAS;EACT,YAAY;EACZ,OAAO;EACP,eAAe;EACf,UAAU;AACZ","file":"summernote-lite.toolbar.less","sourcesContent":[".summernote .note-toolbar {\n  padding: 10px 5px;\n  border-bottom: 1px solid #e2e2e2;\n}\n.summernote .note-toolbar.enable-overflow {\n  white-space: nowrap;\n  overflow-x: scroll;\n  padding-bottom: 1rem;\n}\n.summernote .note-toolbar.enable-overflow.show-dropdown {\n  overflow-x: visible;\n  padding-bottom: 10px;\n}\n.summernote .note-toolbar.compact {\n  padding: 0;\n}\n.summernote .note-toolbar.compact > .note-btn-group {\n  margin: 0px;\n  padding-bottom: 3px;\n  padding-top: 3px;\n}\n.summernote .note-toolbar.right {\n  text-align: right;\n}\n.summernote .note-toolbar.center {\n  text-align: center;\n}\n.summernote .note-toolbar.bottom {\n  bottom: 0;\n  width: 100vw;\n  left: 0;\n  position: fixed;\n  z-index: 1;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -203,6 +203,222 @@ module.exports = "./dist/asset/summernote.woff";
 
 /***/ }),
 
+/***/ "./src/components/vendors/summernote/lang.en-US.js":
+/*!*********************************************************!*\
+  !*** ./src/components/vendors/summernote/lang.en-US.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  font: {
+    bold: 'Bold',
+    italic: 'Italic',
+    underline: 'Underline',
+    clear: 'Remove Font Style',
+    height: 'Line Height',
+    name: 'Font Family',
+    strikethrough: 'Strikethrough',
+    comment: 'Comment',
+    uncomment: 'Uncomment',
+    htmlify: 'Htmlify',
+    textify: 'Textify',
+    iframe: 'Iframe',
+    subscript: 'Subscript',
+    superscript: 'Superscript',
+    size: 'Font Size',
+    copyRichFormat: 'Rich Format Copy',
+    toggleSortMode: 'Toggle Sort Mode',
+    'backgroundColorRed': 'Highlight Red',
+    'backgroundColorYellow': 'Highlight Yellow',
+    'backgroundColorGreen': 'Highlight Green',
+    'backgroundColorBlue': 'Highlight Blue',
+    'backgroundColorPurple': 'Highlight Purple',
+    pastePlainTextHint: 'Paste: Ctrl+Shift+v'
+  },
+  image: {
+    image: 'Picture',
+    insert: 'Insert Image',
+    resizeFull: 'Resize Full',
+    resizeHalf: 'Resize Half',
+    resizeQuarter: 'Resize Quarter',
+    floatLeft: 'Float Left',
+    floatRight: 'Float Right',
+    floatNone: 'Float None',
+    shapeRounded: 'Shape: Rounded',
+    shapeCircle: 'Shape: Circle',
+    shapeThumbnail: 'Shape: Thumbnail',
+    shapeNone: 'Shape: None',
+    dragImageHere: 'Drag image or text here',
+    dropImage: 'Drop image or Text',
+    selectFromFiles: 'Select from files',
+    maximumFileSize: 'Maximum file size',
+    maximumFileSizeError: 'Maximum file size exceeded.',
+    url: 'Image URL',
+    remove: 'Remove Image',
+    open: 'Open Image',
+    save: 'Save Image',
+    copy: 'Copy URL',
+    original: 'Original'
+  },
+  video: {
+    video: 'Video',
+    videoLink: 'Video Link',
+    insert: 'Insert Video',
+    url: 'Video URL',
+    providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion or Youku)'
+  },
+  link: {
+    link: 'Link',
+    insert: 'Insert Link',
+    unlink: 'Unlink',
+    edit: 'Edit',
+    textToDisplay: 'Text to display',
+    url: 'To what URL should this link go?',
+    title: 'Link title (optional)',
+    openInCurrentWindow: 'Open in current window',
+    openInNewWindow: 'Open in new window',
+    openInPopup: 'Open in popup',
+    remove: 'Remove'
+  },
+  comment: {
+    dialogTitle: 'Edit Comment',
+    remove: 'Remove',
+    update: 'Update'
+  },
+  table: {
+    table: 'Table',
+    addRowAbove: 'Add row above',
+    addRowBelow: 'Add row below',
+    addColLeft: 'Add column left',
+    addColRight: 'Add column right',
+    delRow: 'Delete row',
+    delCol: 'Delete column',
+    delTable: 'Delete table'
+  },
+  hr: {
+    insert: 'Insert Horizontal Rule'
+  },
+  style: {
+    style: 'Style',
+    p: 'Normal',
+    blockquote: 'Quote',
+    pre: 'pre',
+    code: 'Code',
+    h1: 'Header 1',
+    h2: 'Header 2',
+    h3: 'Header 3',
+    h4: 'Header 4',
+    h5: 'Header 5',
+    h6: 'Header 6',
+    formatPara: "Format as <p>",
+    formatCode: "Format as <code>",
+    formatH1: "Format as <h1>",
+    formatH2: "Format as <h2>",
+    formatH3: "Format as <h3>",
+    formatH4: "Format as <h4>",
+    formatH5: "Format as <h5>",
+    formatH6: "Format as <h6>",
+  },
+  lists: {
+    unordered: 'Unordered list',
+    ordered: 'Ordered list'
+  },
+  options: {
+    help: 'Help',
+    fullscreen: 'Full Screen',
+    codeview: 'Code View'
+  },
+  paragraph: {
+    paragraph: 'Paragraph',
+    outdent: 'Outdent',
+    indent: 'Indent',
+    left: 'Align left',
+    center: 'Align center',
+    right: 'Align right',
+    justify: 'Justify full',
+    removeElement: 'Remove Element',
+    clearTarget: 'Clear Target',
+    clearTargetConfirm: 'Are you sure?',
+  },
+  color: {
+    recent: 'Recent Color',
+    more: 'More Color',
+    background: 'Background Color',
+    foreground: 'Foreground Color',
+    transparent: 'Transparent',
+    setTransparent: 'Set transparent',
+    reset: 'Reset',
+    resetToDefault: 'Reset to default',
+    cpSelect: 'Select'
+  },
+  shortcut: {
+    shortcuts: 'Keyboard shortcuts',
+    close: 'Close',
+    textFormatting: 'Text formatting',
+    action: 'Action',
+    paragraphFormatting: 'Paragraph formatting',
+    documentStyle: 'Document Style',
+    extraKeys: 'Extra keys'
+  },
+  help: {
+    'insertParagraph': 'Insert Paragraph',
+    'undo': 'Undoes the last command',
+    'redo': 'Redoes the last command',
+    'tab': 'Tab',
+    'untab': 'Untab',
+    'bold': 'Set a bold style',
+    'italic': 'Set a italic style',
+    'underline': 'Set a underline style',
+    'strikethrough': 'Set a strikethrough style',
+    'comment': 'Add a comment',
+    'uncomment': 'Remove comments',
+    'htmlify': 'Convert selection to html',
+    'textify': 'Convert selection to text',
+    'SaveSnippet': 'Cut selected text as a snippet',
+    'removeFormat': 'Clean a style',
+    'justifyLeft': 'Set left align',
+    'justifyCenter': 'Set center align',
+    'justifyRight': 'Set right align',
+    'justifyFull': 'Set full align',
+    'removeElement': 'Remove current element',
+    'insertUnorderedList': 'Toggle unordered list',
+    'insertOrderedList': 'Toggle ordered list',
+    'outdent': 'Outdent on current paragraph',
+    'indent': 'Indent on current paragraph',
+    'formatPara': 'Change current block\'s format as a paragraph(P tag)',
+    'formatH1': 'Change current block\'s format as H1',
+    'formatH2': 'Change current block\'s format as H2',
+    'formatH3': 'Change current block\'s format as H3',
+    'formatH4': 'Change current block\'s format as H4',
+    'formatH5': 'Change current block\'s format as H5',
+    'formatH6': 'Change current block\'s format as H6',
+    'insertHorizontalRule': 'Insert horizontal rule',
+    'linkDialog.show': 'Show Link Dialog',
+    'iframeDialog.show': 'Show Iframe Dialog',
+    'commentDialog.show': 'Show Comment Dialog'
+  },
+  history: {
+    undo: 'Undo',
+    redo: 'Redo'
+  },
+  specialChar: {
+    specialChar: 'SPECIAL CHARACTERS',
+    select: 'Select Special characters'
+  },
+  iframe: {
+    title: "Title (optional)",
+    url: "URL",
+    insert: "Insert iframe",
+    newWindow: "Open in new window",
+    popupWindow: "Open in popup window"
+  }
+});
+
+/***/ }),
+
 /***/ "./src/components/vendors/summernote/lang/summernote-zh-TW.js":
 /*!********************************************************************!*\
   !*** ./src/components/vendors/summernote/lang/summernote-zh-TW.js ***!
@@ -235,7 +451,13 @@ __webpack_require__.r(__webpack_exports__);
         htmlify: '轉換為HTML',
         textify: 'HTML轉換為純文字',
         copyRichFormat: '複製',
-        toggleSortMode: '整理模式'
+        toggleSortMode: '整理模式',
+        'backgroundColorRed': '紅色標亮',
+        'backgroundColorYellow': '黃色標亮',
+        'backgroundColorGreen': '綠色標亮',
+        'backgroundColorBlue': '藍色標亮',
+        'backgroundColorPurple': '紫色標亮',
+        pastePlainTextHint: '貼上: Ctrl+Shift+v'
       },
       image: {
         image: '圖片',
@@ -546,6 +768,13 @@ __webpack_require__.r(__webpack_exports__);
   insertTableMaxSize: {
     col: 10,
     row: 10
+  },
+  backgroundColorButtons: {
+    'backgroundColorRed': 'rgb(250, 136, 161)',
+    'backgroundColorYellow': 'rgb(255, 239, 98)',
+    'backgroundColorGreen': 'rgb(231, 244, 161)',
+    'backgroundColorBlue': 'rgb(176, 223, 250)',
+    'backgroundColorPurple': 'rgb(205, 197, 244)',
   },
   dialogsInBody: false,
   dialogsFade: false,
@@ -1415,7 +1644,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sortablejs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sortablejs */ "./node_modules/sortablejs/modular/sortable.complete.esm.js");
 /* harmony import */ var _sound_soundKeys_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sound/soundKeys.js */ "./src/components/vendors/summernote/sound/soundKeys.js");
 /* harmony import */ var _options_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./options.js */ "./src/components/vendors/summernote/options.js");
+/* harmony import */ var _lang_en_US_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lang.en-US.js */ "./src/components/vendors/summernote/lang.en-US.js");
 /* global define */
+
 
 
 
@@ -2424,209 +2655,7 @@ __webpack_require__.r(__webpack_exports__);
       lang: {}
   };
   $$1.extend($$1.summernote.lang, {
-      'en-US': {
-          font: {
-              bold: 'Bold',
-              italic: 'Italic',
-              underline: 'Underline',
-              clear: 'Remove Font Style',
-              height: 'Line Height',
-              name: 'Font Family',
-              strikethrough: 'Strikethrough',
-              comment: 'Comment',
-              uncomment: 'Uncomment',
-              htmlify: 'Htmlify',
-              textify: 'Textify',
-              iframe: 'Iframe',
-              subscript: 'Subscript',
-              superscript: 'Superscript',
-              size: 'Font Size',
-              copyRichFormat: 'Rich Format Copy',
-              toggleSortMode: 'Toggle Sort Mode',
-              'backgroundColorRed': 'Highlight Red',
-              'backgroundColorYellow': 'Highlight Yellow',
-              'backgroundColorGreen': 'Highlight Green',
-              'backgroundColorBlue': 'Highlight Blue',
-              'backgroundColorPurple': 'Highlight Purple',
-          },
-          image: {
-              image: 'Picture',
-              insert: 'Insert Image',
-              resizeFull: 'Resize Full',
-              resizeHalf: 'Resize Half',
-              resizeQuarter: 'Resize Quarter',
-              floatLeft: 'Float Left',
-              floatRight: 'Float Right',
-              floatNone: 'Float None',
-              shapeRounded: 'Shape: Rounded',
-              shapeCircle: 'Shape: Circle',
-              shapeThumbnail: 'Shape: Thumbnail',
-              shapeNone: 'Shape: None',
-              dragImageHere: 'Drag image or text here',
-              dropImage: 'Drop image or Text',
-              selectFromFiles: 'Select from files',
-              maximumFileSize: 'Maximum file size',
-              maximumFileSizeError: 'Maximum file size exceeded.',
-              url: 'Image URL',
-              remove: 'Remove Image',
-              open: 'Open Image',
-              save: 'Save Image',
-              copy: 'Copy URL',
-              original: 'Original'
-          },
-          video: {
-              video: 'Video',
-              videoLink: 'Video Link',
-              insert: 'Insert Video',
-              url: 'Video URL',
-              providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion or Youku)'
-          },
-          link: {
-              link: 'Link',
-              insert: 'Insert Link',
-              unlink: 'Unlink',
-              edit: 'Edit',
-              textToDisplay: 'Text to display',
-              url: 'To what URL should this link go?',
-              title: 'Link title (optional)',
-              openInCurrentWindow: 'Open in current window',
-              openInNewWindow: 'Open in new window',
-              openInPopup: 'Open in popup',
-              remove: 'Remove'
-          },
-          comment: {
-              dialogTitle: 'Edit Comment',
-              remove: 'Remove',
-              update: 'Update'
-          },
-          table: {
-              table: 'Table',
-              addRowAbove: 'Add row above',
-              addRowBelow: 'Add row below',
-              addColLeft: 'Add column left',
-              addColRight: 'Add column right',
-              delRow: 'Delete row',
-              delCol: 'Delete column',
-              delTable: 'Delete table'
-          },
-          hr: {
-              insert: 'Insert Horizontal Rule'
-          },
-          style: {
-              style: 'Style',
-              p: 'Normal',
-              blockquote: 'Quote',
-              pre: 'pre',
-              code: 'Code',
-              h1: 'Header 1',
-              h2: 'Header 2',
-              h3: 'Header 3',
-              h4: 'Header 4',
-              h5: 'Header 5',
-              h6: 'Header 6',
-              formatPara: "Format as <p>",
-              formatCode: "Format as <code>",
-              formatH1: "Format as <h1>",
-              formatH2: "Format as <h2>",
-              formatH3: "Format as <h3>",
-              formatH4: "Format as <h4>",
-              formatH5: "Format as <h5>",
-              formatH6: "Format as <h6>",
-          },
-          lists: {
-              unordered: 'Unordered list',
-              ordered: 'Ordered list'
-          },
-          options: {
-              help: 'Help',
-              fullscreen: 'Full Screen',
-              codeview: 'Code View'
-          },
-          paragraph: {
-              paragraph: 'Paragraph',
-              outdent: 'Outdent',
-              indent: 'Indent',
-              left: 'Align left',
-              center: 'Align center',
-              right: 'Align right',
-              justify: 'Justify full',
-              removeElement: 'Remove Element',
-              clearTarget: 'Clear Target',
-              clearTargetConfirm: 'Are you sure?',
-          },
-          color: {
-              recent: 'Recent Color',
-              more: 'More Color',
-              background: 'Background Color',
-              foreground: 'Foreground Color',
-              transparent: 'Transparent',
-              setTransparent: 'Set transparent',
-              reset: 'Reset',
-              resetToDefault: 'Reset to default',
-              cpSelect: 'Select'
-          },
-          shortcut: {
-              shortcuts: 'Keyboard shortcuts',
-              close: 'Close',
-              textFormatting: 'Text formatting',
-              action: 'Action',
-              paragraphFormatting: 'Paragraph formatting',
-              documentStyle: 'Document Style',
-              extraKeys: 'Extra keys'
-          },
-          help: {
-              'insertParagraph': 'Insert Paragraph',
-              'undo': 'Undoes the last command',
-              'redo': 'Redoes the last command',
-              'tab': 'Tab',
-              'untab': 'Untab',
-              'bold': 'Set a bold style',
-              'italic': 'Set a italic style',
-              'underline': 'Set a underline style',
-              'strikethrough': 'Set a strikethrough style',
-              'comment': 'Add a comment',
-              'uncomment': 'Remove comments',
-              'htmlify': 'Convert selection to html',
-              'textify': 'Convert selection to text',
-              'SaveSnippet': 'Cut selected text as a snippet',
-              'removeFormat': 'Clean a style',
-              'justifyLeft': 'Set left align',
-              'justifyCenter': 'Set center align',
-              'justifyRight': 'Set right align',
-              'justifyFull': 'Set full align',
-              'removeElement': 'Remove current element',
-              'insertUnorderedList': 'Toggle unordered list',
-              'insertOrderedList': 'Toggle ordered list',
-              'outdent': 'Outdent on current paragraph',
-              'indent': 'Indent on current paragraph',
-              'formatPara': 'Change current block\'s format as a paragraph(P tag)',
-              'formatH1': 'Change current block\'s format as H1',
-              'formatH2': 'Change current block\'s format as H2',
-              'formatH3': 'Change current block\'s format as H3',
-              'formatH4': 'Change current block\'s format as H4',
-              'formatH5': 'Change current block\'s format as H5',
-              'formatH6': 'Change current block\'s format as H6',
-              'insertHorizontalRule': 'Insert horizontal rule',
-              'linkDialog.show': 'Show Link Dialog',
-              'iframeDialog.show': 'Show Iframe Dialog',
-              'commentDialog.show': 'Show Comment Dialog'
-          },
-          history: {
-              undo: 'Undo',
-              redo: 'Redo'
-          },
-          specialChar: {
-              specialChar: 'SPECIAL CHARACTERS',
-              select: 'Select Special characters'
-          },
-          iframe: {
-            title: "Title (optional)",
-            url: "URL",
-            insert: "Insert iframe",
-            newWindow: "Open in new window",
-            popupWindow: "Open in popup window"
-          }
-      }
+      'en-US': _lang_en_US_js__WEBPACK_IMPORTED_MODULE_4__["default"]
   });
 
   var isSupportAmd = typeof define === 'function' && __webpack_require__(/*! !webpack amd options */ "./node_modules/webpack/buildin/amd-options.js"); // eslint-disable-line
@@ -10016,13 +10045,7 @@ sel.addRange(range);
               }).render();
           });
           
-          let backgroundColors = {
-            'backgroundColorRed': 'rgb(250, 136, 161)',
-            'backgroundColorYellow': 'rgb(255, 239, 98)',
-            'backgroundColorGreen': 'rgb(231, 244, 161)',
-            'backgroundColorBlue': 'rgb(176, 223, 250)',
-            'backgroundColorPurple': 'rgb(205, 197, 244)',
-          }
+          let backgroundColors = this.context.options.backgroundColorButtons
           
           let resetBackgroundColorEvent = _this.context.createRangeInvokeHandlerAndUpdateState('editor.color', {'backColor': 'transparent'})
           Object.keys(backgroundColors).forEach((name) => {
@@ -10095,7 +10118,7 @@ sel.addRange(range);
           this.context.memo('button.pastePlainTextHint', function () {
               return _this.button({
                   className: 'note-btn-pastePlainTextHint',
-                  contents: '貼上: Ctrl+Shift+v',
+                  contents: _this.lang.font.pastePlainTextHint,  
                   tooltip: _this.lang.font.pastePlainText + _this.representShortcut('pastePlainTextHint'),
                   click: () => {}
               }).render();

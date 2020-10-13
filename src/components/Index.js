@@ -71,6 +71,11 @@ let Index = {
     //this.$refs.ConfigModal.show()
     
     this.loading = false
+    
+    //var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    //alert(height)
+    //var addressBarSize = parseFloat(getComputedStyle(document.documentElement).perspective) - document.documentElement.clientHeight
+    //alert(addressBarSize)
   },
   methods: {
   }

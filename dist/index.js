@@ -326,7 +326,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, "body {\n  overscroll-behavior-y: contain;\n  padding: 0;\n  margin: 0;\n}\nbody > .non-invasive-web-style-framework.dimmable {\n  overflow-x: initial !important;\n}\n/*\nwindow, body {\n  width: 100vw;\n  height: 100vh;\n}\n*/\n", "",{"version":3,"sources":["global.less"],"names":[],"mappings":"AAAA;EACE,8BAA8B;EAC9B,UAAU;EACV,SAAS;AACX;AACA;EACE,8BAA8B;AAChC;AACA;;;;;CAKC","file":"global.less","sourcesContent":["body {\n  overscroll-behavior-y: contain;\n  padding: 0;\n  margin: 0;\n}\nbody > .non-invasive-web-style-framework.dimmable {\n  overflow-x: initial !important;\n}\n/*\nwindow, body {\n  width: 100vw;\n  height: 100vh;\n}\n*/\n"]}]);
+exports.push([module.i, "body {\n  overscroll-behavior-y: contain;\n  padding: 0;\n  margin: 0;\n}\nbody > .non-invasive-web-style-framework.dimmable {\n  overflow-x: initial !important;\n}\n/*\nwindow, body {\n  width: 100vw;\n  height: 100vh;\n}\n*/\nbody {\n  min-height: 100vh !important;\n  min-height: -webkit-fill-available !important;\n}\nhtml {\n  height: -webkit-fill-available !important;\n}\n", "",{"version":3,"sources":["global.less"],"names":[],"mappings":"AAAA;EACE,8BAA8B;EAC9B,UAAU;EACV,SAAS;AACX;AACA;EACE,8BAA8B;AAChC;AACA;;;;;CAKC;AACD;EACE,4BAA4B;EAC5B,6CAA6C;AAC/C;AACA;EACE,yCAAyC;AAC3C","file":"global.less","sourcesContent":["body {\n  overscroll-behavior-y: contain;\n  padding: 0;\n  margin: 0;\n}\nbody > .non-invasive-web-style-framework.dimmable {\n  overflow-x: initial !important;\n}\n/*\nwindow, body {\n  width: 100vw;\n  height: 100vh;\n}\n*/\nbody {\n  min-height: 100vh !important;\n  min-height: -webkit-fill-available !important;\n}\nhtml {\n  height: -webkit-fill-available !important;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -434,7 +434,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".editor-container[data-v-82b7485c] {\n  height: calc(100vh - 5rem);\n}\n.editor-container[data-v-82b7485c]  .note-editable {\n  height: calc(100vh - 5rem);\n  max-height: calc(100vh - 5rem);\n}\n.editor-container[data-v-82b7485c]  .note-editable,\n.editor-container[data-v-82b7485c]  .note-placeholder {\n  font-size: 2rem;\n  line-height: 2.5rem;\n}\n.editor-container[data-v-82b7485c]  .note-editable ul,\n.editor-container[data-v-82b7485c]  .note-placeholder ul,\n.editor-container[data-v-82b7485c]  .note-editable ol,\n.editor-container[data-v-82b7485c]  .note-placeholder ol,\n.editor-container[data-v-82b7485c]  .note-editable li,\n.editor-container[data-v-82b7485c]  .note-placeholder li {\n  margin-left: 1rem;\n  padding-left: 0rem;\n  margin-top: 0rem;\n  margin-bottom: 0rem;\n}\n.editor-container[data-v-82b7485c]  .note-editable li,\n.editor-container[data-v-82b7485c]  .note-placeholder li {\n  margin-top: 0rem;\n  margin-bottom: 0rem;\n  padding-top: 0rem;\n  padding-bottom: 0rem;\n}\n", "",{"version":3,"sources":["IndexEditor.less"],"names":[],"mappings":"AAAA;EACE,0BAA0B;AAC5B;AACA;EACE,0BAA0B;EAC1B,8BAA8B;AAChC;AACA;;EAEE,eAAe;EACf,mBAAmB;AACrB;AACA;;;;;;EAME,iBAAiB;EACjB,kBAAkB;EAClB,gBAAgB;EAChB,mBAAmB;AACrB;AACA;;EAEE,gBAAgB;EAChB,mBAAmB;EACnB,iBAAiB;EACjB,oBAAoB;AACtB","file":"IndexEditor.less","sourcesContent":[".editor-container[data-v-82b7485c] {\n  height: calc(100vh - 5rem);\n}\n.editor-container[data-v-82b7485c]  .note-editable {\n  height: calc(100vh - 5rem);\n  max-height: calc(100vh - 5rem);\n}\n.editor-container[data-v-82b7485c]  .note-editable,\n.editor-container[data-v-82b7485c]  .note-placeholder {\n  font-size: 2rem;\n  line-height: 2.5rem;\n}\n.editor-container[data-v-82b7485c]  .note-editable ul,\n.editor-container[data-v-82b7485c]  .note-placeholder ul,\n.editor-container[data-v-82b7485c]  .note-editable ol,\n.editor-container[data-v-82b7485c]  .note-placeholder ol,\n.editor-container[data-v-82b7485c]  .note-editable li,\n.editor-container[data-v-82b7485c]  .note-placeholder li {\n  margin-left: 1rem;\n  padding-left: 0rem;\n  margin-top: 0rem;\n  margin-bottom: 0rem;\n}\n.editor-container[data-v-82b7485c]  .note-editable li,\n.editor-container[data-v-82b7485c]  .note-placeholder li {\n  margin-top: 0rem;\n  margin-bottom: 0rem;\n  padding-top: 0rem;\n  padding-bottom: 0rem;\n}\n"]}]);
+exports.push([module.i, ".editor-container[data-v-82b7485c] {\n  height: calc(var(--vh, 1vh) * 100 - 5rem);\n  overscroll-behavior-y: contain;\n}\n.editor-container[data-v-82b7485c]  .note-editable {\n  height: calc(var(--vh, 1vh) * 100 - 5rem);\n  max-height: calc(var(--vh, 1vh) * 100 - 5rem);\n  overscroll-behavior-y: contain;\n}\n.editor-container[data-v-82b7485c]  .note-editable,\n.editor-container[data-v-82b7485c]  .note-placeholder {\n  font-size: 2rem;\n  line-height: 2.5rem;\n}\n.editor-container[data-v-82b7485c]  .note-editable ul,\n.editor-container[data-v-82b7485c]  .note-placeholder ul,\n.editor-container[data-v-82b7485c]  .note-editable ol,\n.editor-container[data-v-82b7485c]  .note-placeholder ol,\n.editor-container[data-v-82b7485c]  .note-editable li,\n.editor-container[data-v-82b7485c]  .note-placeholder li {\n  margin-left: 1rem;\n  padding-left: 0rem;\n  margin-top: 0rem;\n  margin-bottom: 0rem;\n}\n.editor-container[data-v-82b7485c]  .note-editable li,\n.editor-container[data-v-82b7485c]  .note-placeholder li {\n  margin-top: 0rem;\n  margin-bottom: 0rem;\n  padding-top: 0rem;\n  padding-bottom: 0rem;\n}\n", "",{"version":3,"sources":["IndexEditor.less"],"names":[],"mappings":"AAAA;EACE,yCAAyC;EACzC,8BAA8B;AAChC;AACA;EACE,yCAAyC;EACzC,6CAA6C;EAC7C,8BAA8B;AAChC;AACA;;EAEE,eAAe;EACf,mBAAmB;AACrB;AACA;;;;;;EAME,iBAAiB;EACjB,kBAAkB;EAClB,gBAAgB;EAChB,mBAAmB;AACrB;AACA;;EAEE,gBAAgB;EAChB,mBAAmB;EACnB,iBAAiB;EACjB,oBAAoB;AACtB","file":"IndexEditor.less","sourcesContent":[".editor-container[data-v-82b7485c] {\n  height: calc(var(--vh, 1vh) * 100 - 5rem);\n  overscroll-behavior-y: contain;\n}\n.editor-container[data-v-82b7485c]  .note-editable {\n  height: calc(var(--vh, 1vh) * 100 - 5rem);\n  max-height: calc(var(--vh, 1vh) * 100 - 5rem);\n  overscroll-behavior-y: contain;\n}\n.editor-container[data-v-82b7485c]  .note-editable,\n.editor-container[data-v-82b7485c]  .note-placeholder {\n  font-size: 2rem;\n  line-height: 2.5rem;\n}\n.editor-container[data-v-82b7485c]  .note-editable ul,\n.editor-container[data-v-82b7485c]  .note-placeholder ul,\n.editor-container[data-v-82b7485c]  .note-editable ol,\n.editor-container[data-v-82b7485c]  .note-placeholder ol,\n.editor-container[data-v-82b7485c]  .note-editable li,\n.editor-container[data-v-82b7485c]  .note-placeholder li {\n  margin-left: 1rem;\n  padding-left: 0rem;\n  margin-top: 0rem;\n  margin-bottom: 0rem;\n}\n.editor-container[data-v-82b7485c]  .note-editable li,\n.editor-container[data-v-82b7485c]  .note-placeholder li {\n  margin-top: 0rem;\n  margin-bottom: 0rem;\n  padding-top: 0rem;\n  padding-bottom: 0rem;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -14212,7 +14212,8 @@ var render = function() {
           {
             staticClass: "ui basic button",
             attrs: {
-              href: "https://github.com/pulipulichen/PWA-Idea-Organizer"
+              href: "https://github.com/pulipulichen/PWA-Idea-Organizer",
+              target: "_blank"
             }
           },
           [
@@ -14225,7 +14226,7 @@ var render = function() {
           "a",
           {
             staticClass: "ui basic button",
-            attrs: { href: "https://blog.pulipuli.info/" }
+            attrs: { href: "https://blog.pulipuli.info/", target: "_blank" }
           },
           [
             _c("i", { staticClass: "blogger icon" }),
@@ -27373,6 +27374,7 @@ let ConfigModal = {
         await this.utils.AsyncUtils.sleep()
         this.modal = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.modal).modal({
           duration: 100,
+          autofocus: false,
           onVisible: () => {
             this.$refs.toc.updateActiveLink()
           }
@@ -28248,6 +28250,11 @@ let Index = {
     //this.$refs.ConfigModal.show()
     
     this.loading = false
+    
+    //var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    //alert(height)
+    //var addressBarSize = parseFloat(getComputedStyle(document.documentElement).perspective) - document.documentElement.clientHeight
+    //alert(addressBarSize)
   },
   methods: {
   }
@@ -29190,6 +29197,35 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./src/styles/intMobileHeight.js":
+/*!***************************************!*\
+  !*** ./src/styles/intMobileHeight.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*
+.fullheight {
+  height: calc(var (--vh, 1vh) * 100);
+}
+*/
+
+function setDocHeight() {
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight / 100}px`);
+}
+;
+
+window.addEventListener('resize', function () {
+  setDocHeight();
+});
+window.addEventListener('orientationchange', function () {
+  setDocHeight();
+});
+
+setDocHeight();
+
+/***/ }),
+
 /***/ "./src/styles/semantic-ui.js":
 /*!***********************************!*\
   !*** ./src/styles/semantic-ui.js ***!
@@ -29242,6 +29278,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _semantic_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./semantic-ui */ "./src/styles/semantic-ui.js");
 /* harmony import */ var _global_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./global.less */ "./src/styles/global.less");
 /* harmony import */ var _global_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_global_less__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _intMobileHeight_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./intMobileHeight.js */ "./src/styles/intMobileHeight.js");
+/* harmony import */ var _intMobileHeight_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_intMobileHeight_js__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 

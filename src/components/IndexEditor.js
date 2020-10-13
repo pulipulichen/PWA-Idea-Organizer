@@ -22,33 +22,37 @@ export default function (Index) {
   }
   
   Index.methods._summernoteOptions = function () {
+    let buttons = {
+      ConfigModal: this.buildConfigModalButton()
+    }
+    
     let options = {
       //lang: 'zh-TW',
       lang: this.config.locale,
       //airMode: true,
       toolbar: this._summernoteOptionsToolbar(),
       toolbarPosition: 'bottom',
-      popover: {
-        air: [
-          ['font', ['forecolor', 'backcolor', 'bold', 'underline', 'clear']]
-          //['font', ['bold', 'underline']]
-        ]
-      },
+//      popover: {
+//        air: [
+//          ['font', ['forecolor', 'backcolor', 'bold', 'underline', 'clear']]
+//          //['font', ['bold', 'underline']]
+//        ]
+//      },
       //enableAirPopover: this._summernoteOptionsEnableAirPopover(),
       enableStatusbar: false,
       toolbarAlign: 'right',
       toolbarCompact: true,
       toolbarOverflow: true,
       enableTypeWriterSoundEffect: this.syncConfig.enableSound,
-      placeholder: '<ul><li>What do you write...</li></ul>',
+      placeholder: '<ul><li>' + this.$t('What do you write...') + '</li></ul>',
       focus: true,
       //container: this.editor.parent(),
       //maxHeight: '5em',
       //disableDragAndDrop: true,
       callbacks: {
-        onImageUpload: async (files) => {
-          this._onImageUpload(files)
-        },
+//        onImageUpload: (files) => {
+//          this._onImageUpload(files)
+//        },
         onChange: this._callbacksOnChange
       },
       // https://flatuicolors.com/palette/defo
@@ -68,7 +72,8 @@ export default function (Index) {
         ["WET ASPHALT", "CONCRETE", "CLOUDS", "AMETHYST", "ALIZARIN"], 
         ["PETER RIVER", "CARROT", "EMERALD", "SUN FLOWER", "TURQUOISE"]
       ],
-      enableCustomColors: false
+      enableCustomColors: false,
+      buttons
     }
 
     if (typeof (this.placeholder) === 'string') {
@@ -87,7 +92,7 @@ export default function (Index) {
       ['style', ['strikethrough', 'underline', 'backgroundColorRed', 'backgroundColorYellow', 'backgroundColorGreen', 'backgroundColorBlue', 'backgroundColorPurple']],
       ['format', ['removeFormat']],
       ['insert', ['hr']],
-      ['manage', ['copyRichFormat', 'clearTarget']]
+      ['manage', ['copyRichFormat', 'ConfigModal', 'clearTarget']]
     ]
   }
   Index.methods._callbacksOnChange = function (contents) {
@@ -151,6 +156,37 @@ export default function (Index) {
     if (title.length > 0) {
       document.title = title
     }
+  }
+  
+  Index.methods.buildConfigModalButton = function () {
+    //console.log('buildConfigModalButton')
+    //return null
+    let contents = '<i class="cog icon"></i>'
+    let tooltip = this.$t('Configuration')
+    let click = () => {
+      this.$refs.ConfigModal.show()
+    }
+    //console.log('buildConfigModalButton')
+    return this.buildButton(contents, tooltip, click)
+  }
+  
+  Index.methods.buildButton = function ( contents, tooltip, click) {
+    let ui = $.summernote.ui
+    // create button
+    
+    if (typeof(tooltip) !== 'string') {
+      tooltip = '' + tooltip
+    }
+    //tooltip = tooltip + this.getHotkey(name)
+    
+    let button = ui.button({
+      contents: contents,
+      tooltip: tooltip, // `<span>${tooltip}</span>`,
+      click: click
+    });
+    
+    let result = button.render(); 
+    return result
   }
   
   Index.methods._onImageUpload = function () { 

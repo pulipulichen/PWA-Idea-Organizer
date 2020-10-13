@@ -6650,6 +6650,18 @@ ${links}`
             
               return _this.fontStyling('font-size', value + 'px');
           });
+          
+          this.setOption = this.wrapCommand(function (name, value) {
+            if (name && value) {
+              this.context.options[name] = value
+            }
+            else if (typeof(name) === 'object') {
+              Object.keys(name).forEach(key => {
+                this.context.options[key] = name[key]
+              })
+            }
+          });
+          
           for (var idx = 1; idx <= 6; idx++) {
               this['formatH' + idx] = (function (idx) {
                   return function () {

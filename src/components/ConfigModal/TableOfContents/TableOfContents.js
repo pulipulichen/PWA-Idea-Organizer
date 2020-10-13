@@ -128,9 +128,10 @@ let TableOfContent = {
     },
     updateActiveLink: function (event) {
       //console.log(event)
-      let scrollTop = event.target.scrollTop
-      let scrollHeight = event.target.scrollHeight
-      let containerHeight = event.target.clientHeight
+      let target = this.rootContainer[0]
+      let scrollTop = target.scrollTop
+      let scrollHeight = target.scrollHeight
+      let containerHeight = target.clientHeight
       //console.log(scrollTop + containerHeight, scrollHeight)
       let headingOffsets = this.getHeadingOffsets()
       //console.log(headingOffsets)

@@ -32,6 +32,13 @@ let Index = {
       this.startSyncContents()
     },
     'syncConfig.enableSound' () {
+      if (this.loading === true) {
+        return false
+      }
+      this.editor.summernote('setOption', {
+        enableTypeWriterSoundEffect: this.syncConfig.enableSound
+      })
+      
       this.startSyncConfig()
     },
     'syncConfig.customStyle' () {
@@ -55,7 +62,7 @@ let Index = {
     
     await this.initData()
     await this.initEditor()
-    this.$refs.ConfigModal.show()
+    //this.$refs.ConfigModal.show()
     
     this.loading = false
   },

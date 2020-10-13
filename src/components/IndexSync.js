@@ -130,7 +130,7 @@ export default function (Index) {
       clearTimeout(this.saveToCloudTimer)
     }
     else {
-      console.log('開始綁定')
+      //console.log('開始綁定')
       $window.bind('beforeunload', preventUnloadEvent)
     }
     
@@ -141,7 +141,7 @@ export default function (Index) {
       
       setTimeout(() => {
         this.saveToCloudTimer = null
-        console.log('取消綁定')
+        //console.log('取消綁定')
         $window.unbind('beforeunload', preventUnloadEvent)
       }, 1000)
       

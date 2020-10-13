@@ -1,4 +1,5 @@
-<div class="ui segment">
+<div class="ui segment"
+     ref="main">
   <h2 id="StyleConfig">
     {{ $t('Style') }}
   </h2>
@@ -8,18 +9,19 @@
       <input 
         type="checkbox" 
         tabindex="0" 
+        id="configEnableSound"
         class="hidden"
         v-model="syncConfig.enableSound" />
-      <label>
+      <label for="configEnableSound">
         {{ $t('Enable Sound') }}
       </label>
     </div>
   </div>
   <div class="field">
-    <label>
+    <label for="configCustomStyle">
       {{ $t('Custom Style') }}
     </label>
-    <textarea 
+    <textarea id="configCustomStyle" 
       v-model="syncConfig.customStyle"
       ></textarea>
   </div>

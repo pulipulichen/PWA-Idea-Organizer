@@ -34,7 +34,12 @@ let ConfigModal = {
           await this.utils.AsyncUtils.sleep()
         }
         await this.utils.AsyncUtils.sleep()
-        this.modal = $(this.$refs.modal)
+        this.modal = $(this.$refs.modal).modal({
+          duration: 100,
+          onVisible: () => {
+            this.$refs.toc.updateActiveLink()
+          }
+        })
       }
       return this.modal
     },

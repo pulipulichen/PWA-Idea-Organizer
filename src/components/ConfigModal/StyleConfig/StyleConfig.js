@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 let StyleConfig = {
   props: ['config', 'utils', 'clientConfig', 'syncConfig'],
   data() {    
@@ -14,6 +16,9 @@ let StyleConfig = {
   mounted() {
   },
   methods: {
+    initCheckbox () {
+      $(this.$refs.main).checkbox()
+    }
   } // methods
 }
 

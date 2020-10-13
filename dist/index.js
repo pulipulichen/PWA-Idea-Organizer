@@ -14344,7 +14344,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "ui segment" }, [
+  return _c("div", { ref: "main", staticClass: "ui segment" }, [
     _c("h2", { attrs: { id: "StyleConfig" } }, [
       _vm._v("\r\n    " + _vm._s(_vm.$t("Style")) + "\r\n  ")
     ]),
@@ -14361,7 +14361,7 @@ var render = function() {
             }
           ],
           staticClass: "hidden",
-          attrs: { type: "checkbox", tabindex: "0" },
+          attrs: { type: "checkbox", tabindex: "0", id: "configEnableSound" },
           domProps: {
             checked: Array.isArray(_vm.syncConfig.enableSound)
               ? _vm._i(_vm.syncConfig.enableSound, null) > -1
@@ -14393,14 +14393,14 @@ var render = function() {
           }
         }),
         _vm._v(" "),
-        _c("label", [
+        _c("label", { attrs: { for: "configEnableSound" } }, [
           _vm._v("\r\n        " + _vm._s(_vm.$t("Enable Sound")) + "\r\n      ")
         ])
       ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "field" }, [
-      _c("label", [
+      _c("label", { attrs: { for: "configCustomStyle" } }, [
         _vm._v("\r\n      " + _vm._s(_vm.$t("Custom Style")) + "\r\n    ")
       ]),
       _vm._v(" "),
@@ -14413,6 +14413,7 @@ var render = function() {
             expression: "syncConfig.customStyle"
           }
         ],
+        attrs: { id: "configCustomStyle" },
         domProps: { value: _vm.syncConfig.customStyle },
         on: {
           input: function($event) {
@@ -27370,7 +27371,12 @@ let ConfigModal = {
           await this.utils.AsyncUtils.sleep()
         }
         await this.utils.AsyncUtils.sleep()
-        this.modal = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.modal)
+        this.modal = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.modal).modal({
+          duration: 100,
+          onVisible: () => {
+            this.$refs.toc.updateActiveLink()
+          }
+        })
       }
       return this.modal
     },
@@ -27520,6 +27526,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+
 let StyleConfig = {
   props: ['config', 'utils', 'clientConfig', 'syncConfig'],
   data() {    
@@ -27536,6 +27546,9 @@ let StyleConfig = {
   mounted() {
   },
   methods: {
+    initCheckbox () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.main).checkbox()
+    }
   } // methods
 }
 
@@ -27919,9 +27932,10 @@ let TableOfContent = {
     },
     updateActiveLink: function (event) {
       //console.log(event)
-      let scrollTop = event.target.scrollTop
-      let scrollHeight = event.target.scrollHeight
-      let containerHeight = event.target.clientHeight
+      let target = this.rootContainer[0]
+      let scrollTop = target.scrollTop
+      let scrollHeight = target.scrollHeight
+      let containerHeight = target.clientHeight
       //console.log(scrollTop + containerHeight, scrollHeight)
       let headingOffsets = this.getHeadingOffsets()
       //console.log(headingOffsets)
@@ -28195,6 +28209,13 @@ let Index = {
       this.startSyncContents()
     },
     'syncConfig.enableSound' () {
+      if (this.loading === true) {
+        return false
+      }
+      this.editor.summernote('setOption', {
+        enableTypeWriterSoundEffect: this.syncConfig.enableSound
+      })
+      
       this.startSyncConfig()
     },
     'syncConfig.customStyle' () {
@@ -28218,7 +28239,7 @@ let Index = {
     
     await this.initData()
     await this.initEditor()
-    this.$refs.ConfigModal.show()
+    //this.$refs.ConfigModal.show()
     
     this.loading = false
   },
@@ -28347,33 +28368,37 @@ __webpack_require__.r(__webpack_exports__);
   }
   
   Index.methods._summernoteOptions = function () {
+    let buttons = {
+      ConfigModal: this.buildConfigModalButton()
+    }
+    
     let options = {
       //lang: 'zh-TW',
       lang: this.config.locale,
       //airMode: true,
       toolbar: this._summernoteOptionsToolbar(),
       toolbarPosition: 'bottom',
-      popover: {
-        air: [
-          ['font', ['forecolor', 'backcolor', 'bold', 'underline', 'clear']]
-          //['font', ['bold', 'underline']]
-        ]
-      },
+//      popover: {
+//        air: [
+//          ['font', ['forecolor', 'backcolor', 'bold', 'underline', 'clear']]
+//          //['font', ['bold', 'underline']]
+//        ]
+//      },
       //enableAirPopover: this._summernoteOptionsEnableAirPopover(),
       enableStatusbar: false,
       toolbarAlign: 'right',
       toolbarCompact: true,
       toolbarOverflow: true,
       enableTypeWriterSoundEffect: this.syncConfig.enableSound,
-      placeholder: '<ul><li>What do you write...</li></ul>',
+      placeholder: '<ul><li>' + this.$t('What do you write...') + '</li></ul>',
       focus: true,
       //container: this.editor.parent(),
       //maxHeight: '5em',
       //disableDragAndDrop: true,
       callbacks: {
-        onImageUpload: async (files) => {
-          this._onImageUpload(files)
-        },
+//        onImageUpload: (files) => {
+//          this._onImageUpload(files)
+//        },
         onChange: this._callbacksOnChange
       },
       // https://flatuicolors.com/palette/defo
@@ -28393,7 +28418,8 @@ __webpack_require__.r(__webpack_exports__);
         ["WET ASPHALT", "CONCRETE", "CLOUDS", "AMETHYST", "ALIZARIN"], 
         ["PETER RIVER", "CARROT", "EMERALD", "SUN FLOWER", "TURQUOISE"]
       ],
-      enableCustomColors: false
+      enableCustomColors: false,
+      buttons
     }
 
     if (typeof (this.placeholder) === 'string') {
@@ -28412,7 +28438,7 @@ __webpack_require__.r(__webpack_exports__);
       ['style', ['strikethrough', 'underline', 'backgroundColorRed', 'backgroundColorYellow', 'backgroundColorGreen', 'backgroundColorBlue', 'backgroundColorPurple']],
       ['format', ['removeFormat']],
       ['insert', ['hr']],
-      ['manage', ['copyRichFormat', 'clearTarget']]
+      ['manage', ['copyRichFormat', 'ConfigModal', 'clearTarget']]
     ]
   }
   Index.methods._callbacksOnChange = function (contents) {
@@ -28476,6 +28502,37 @@ __webpack_require__.r(__webpack_exports__);
     if (title.length > 0) {
       document.title = title
     }
+  }
+  
+  Index.methods.buildConfigModalButton = function () {
+    //console.log('buildConfigModalButton')
+    //return null
+    let contents = '<i class="cog icon"></i>'
+    let tooltip = this.$t('Configuration')
+    let click = () => {
+      this.$refs.ConfigModal.show()
+    }
+    //console.log('buildConfigModalButton')
+    return this.buildButton(contents, tooltip, click)
+  }
+  
+  Index.methods.buildButton = function ( contents, tooltip, click) {
+    let ui = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.summernote.ui
+    // create button
+    
+    if (typeof(tooltip) !== 'string') {
+      tooltip = '' + tooltip
+    }
+    //tooltip = tooltip + this.getHotkey(name)
+    
+    let button = ui.button({
+      contents: contents,
+      tooltip: tooltip, // `<span>${tooltip}</span>`,
+      click: click
+    });
+    
+    let result = button.render(); 
+    return result
   }
   
   Index.methods._onImageUpload = function () { 
@@ -28660,7 +28717,7 @@ __webpack_require__.r(__webpack_exports__);
       clearTimeout(this.saveToCloudTimer)
     }
     else {
-      console.log('開始綁定')
+      //console.log('開始綁定')
       $window.bind('beforeunload', preventUnloadEvent)
     }
     
@@ -28671,7 +28728,7 @@ __webpack_require__.r(__webpack_exports__);
       
       setTimeout(() => {
         this.saveToCloudTimer = null
-        console.log('取消綁定')
+        //console.log('取消綁定')
         $window.unbind('beforeunload', preventUnloadEvent)
       }, 1000)
       

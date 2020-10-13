@@ -76,6 +76,13 @@ let VueController = {
   template: template,
   data: {
     config: config,
+    syncConfig: {
+      customStyle: '',
+      enableSound: config.enableSound
+    },
+    clientConfig: {
+      googleSheetAPIURL: config.googleSheetAPIURL
+    },
     errors: [],
     utils: utils
   },

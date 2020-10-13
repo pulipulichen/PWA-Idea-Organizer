@@ -1,39 +1,48 @@
+/* global Node */
+
 import $ from 'jquery'
 
 export default function (Index) {
   Index.methods.initEditor = async function () {
     await (() => import(/* webpackChunkName: "vendors/summernote" */ './vendors/summernote/summernote-lite.webpack.js'))()
     this.editor = $(this.$refs.editor)
+    let contents = await this._loadData()
 
-    /*
-    let contents = localStorage.getItem('contents')
+    this.editor.summernote(this._summernoteOptions())
     if (contents !== null) {
+      //console.log(this.editor.length, this.editor.summernote)
       this.editor.summernote("code", contents)
       this.setDocumentTitle(contents)
     }
-    */
-    //console.log(this.googleSheetAPIURL)
 
-    window.googleDocCallback = function () { return true; };
-
-    $.getJSON(this.googleSheetAPIURL, (data) => {
-      //console.log(contents)
-      //console.log(c)
-      let contents = data.contents
-      //console.log(contents)
-
-      if (contents !== null) {
-        //console.log(this.editor.length, this.editor.summernote)
-        this.editor.summernote(this._summernoteOptions())
-
-        this.editor.summernote("code", contents)
-        this.setDocumentTitle(contents)
-
-        setTimeout(() => {
-          this.enableChange = true
-          this.loading = false
-        }, 100)
-      }
+    setTimeout(() => {
+      this.enableChange = true
+    }, 100)
+    
+    this.loading = false
+  }
+  
+  Index.methods._loadData = async function () {
+    if (!this.clientConfig.googleSheetAPIURL) {
+      return localStorage.getItem('contents')
+    }
+    
+    return new Promise((resolve) => {
+      window.googleDocCallback = function () { return true; };
+      $.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
+        //console.log(contents)
+        //console.log(c)
+        let contents = data.contents
+        
+        let configs = data.configs
+        if (typeof(configs) === 'object') {
+          Object.keys(configs).forEach(key => {
+            this.syncConfig = configs[key]
+          })
+        }
+        
+        resolve(contents)
+      })
     })
   }
   
@@ -55,6 +64,7 @@ export default function (Index) {
       toolbarAlign: 'right',
       toolbarCompact: true,
       toolbarOverflow: true,
+      enableTypeWriterSoundEffect: this.syncConfig.enableSound,
       placeholder: '<ul><li>What do you write...</li></ul>',
       focus: true,
       //container: this.editor.parent(),
@@ -119,7 +129,8 @@ export default function (Index) {
   }
   Index.methods.saveToCloud = function (contents) {
     //console.log(contents)
-    if (!contents || contents === '') {
+    if (!contents || contents === ''
+            || !this.clientConfig.googleSheetAPIURL) {
       return false
     }
 
@@ -128,7 +139,7 @@ export default function (Index) {
     }
 
     this.saveToCloudTimer = setTimeout(() => {
-      $.post(this.googleSheetAPIURL, {
+      $.post(this.clientConfig.googleSheetAPIURL, {
         contents
       })
       //console.log('儲存：', contents)

@@ -262,7 +262,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, "", "",{"version":3,"sources":[],"names":[],"mappings":"","file":"ConfigModal.less"}]);
+exports.push([module.i, ".ui.modal[data-v-df46b932] {\n  display: none;\n}\n", "",{"version":3,"sources":["ConfigModal.less"],"names":[],"mappings":"AAAA;EACE,aAAa;AACf","file":"ConfigModal.less","sourcesContent":[".ui.modal[data-v-df46b932] {\n  display: none;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -14028,23 +14028,12 @@ var render = function() {
   return _c("div", { ref: "modal", staticClass: "ui modal" }, [
     _c("div", { staticClass: "header" }, [_vm._v("Header")]),
     _vm._v(" "),
-    _vm._m(0)
+    _c("div", { staticClass: "content" }, [
+      _vm._v("\r\n    " + _vm._s(_vm.userConfig.googleSheetAPIURL) + "\r\n  ")
+    ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content" }, [
-      _c("p", [_vm._v("aaa")]),
-      _vm._v(" "),
-      _c("p", [_vm._v("bvvv")]),
-      _vm._v(" "),
-      _c("p", [_vm._v("ccc")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -14079,7 +14068,12 @@ var render = function() {
       _vm._v(" "),
       _c("config-modal", {
         ref: "ConfigModal",
-        attrs: { config: _vm.config, utils: _vm.utils }
+        attrs: {
+          config: _vm.config,
+          utils: _vm.utils,
+          syncConfig: _vm.syncConfig,
+          userConfig: _vm.userConfig
+        }
       })
     ],
     1
@@ -26606,7 +26600,10 @@ let ConfigModal = {
   data() {    
     this.$i18n.locale = this.config.locale
     return {
-      modal: null
+      modal: null,
+      userConfig: {
+        googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
+      }
     }
   },
 //  components: {
@@ -26769,7 +26766,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let Index = {
-  props: ['config', 'utils'],
+  props: ['config', 'utils', 'syncConfig', 'clientConfig'],
   data () {    
     this.$i18n.locale = this.config.locale
     return {
@@ -26778,14 +26775,17 @@ let Index = {
       loading: true,
       enableChange: false,
       saveToCloudTimer: null,
-      googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
+      //googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
     }
   },
   components: {
     'config-modal': _ConfigModal_ConfigModal_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-//  computed: {
-//  },
+  computed: {
+    enableSync () {
+      return (typeof(this.clientConfig.googleSheetAPIURL) === 'string')
+    }
+  },
 //  watch: {
 //  },
   mounted() {
@@ -26795,12 +26795,12 @@ let Index = {
     
     //console.log(this)
     //summernoteLoader()
-    this.loading = false
+    //this.loading = false
     
     //setTimeout(() => {
-      this.$refs.ConfigModal.show()
+      //this.$refs.ConfigModal.show()
     //}, 1000)
-    //this.initEditor()
+    this.initEditor()
   },
   methods: {}
 }
@@ -26899,42 +26899,51 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* global Node */
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (Index) {
   Index.methods.initEditor = async function () {
     await (() => Promise.all(/*! import() | vendors/summernote */[__webpack_require__.e("vendors~vendors/summernote"), __webpack_require__.e("vendors/summernote")]).then(__webpack_require__.bind(null, /*! ./vendors/summernote/summernote-lite.webpack.js */ "./src/components/vendors/summernote/summernote-lite.webpack.js")))()
     this.editor = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.editor)
+    let contents = await this._loadData()
 
-    /*
-    let contents = localStorage.getItem('contents')
+    this.editor.summernote(this._summernoteOptions())
     if (contents !== null) {
+      //console.log(this.editor.length, this.editor.summernote)
       this.editor.summernote("code", contents)
       this.setDocumentTitle(contents)
     }
-    */
-    //console.log(this.googleSheetAPIURL)
 
-    window.googleDocCallback = function () { return true; };
-
-    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(this.googleSheetAPIURL, (data) => {
-      //console.log(contents)
-      //console.log(c)
-      let contents = data.contents
-      //console.log(contents)
-
-      if (contents !== null) {
-        //console.log(this.editor.length, this.editor.summernote)
-        this.editor.summernote(this._summernoteOptions())
-
-        this.editor.summernote("code", contents)
-        this.setDocumentTitle(contents)
-
-        setTimeout(() => {
-          this.enableChange = true
-          this.loading = false
-        }, 100)
-      }
+    setTimeout(() => {
+      this.enableChange = true
+    }, 100)
+    
+    this.loading = false
+  }
+  
+  Index.methods._loadData = async function () {
+    if (!this.clientConfig.googleSheetAPIURL) {
+      return localStorage.getItem('contents')
+    }
+    
+    return new Promise((resolve) => {
+      window.googleDocCallback = function () { return true; };
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
+        //console.log(contents)
+        //console.log(c)
+        let contents = data.contents
+        
+        let configs = data.configs
+        if (typeof(configs) === 'object') {
+          Object.keys(configs).forEach(key => {
+            this.syncConfig = configs[key]
+          })
+        }
+        
+        resolve(contents)
+      })
     })
   }
   
@@ -26956,6 +26965,7 @@ __webpack_require__.r(__webpack_exports__);
       toolbarAlign: 'right',
       toolbarCompact: true,
       toolbarOverflow: true,
+      enableTypeWriterSoundEffect: this.syncConfig.enableSound,
       placeholder: '<ul><li>What do you write...</li></ul>',
       focus: true,
       //container: this.editor.parent(),
@@ -27020,7 +27030,8 @@ __webpack_require__.r(__webpack_exports__);
   }
   Index.methods.saveToCloud = function (contents) {
     //console.log(contents)
-    if (!contents || contents === '') {
+    if (!contents || contents === ''
+            || !this.clientConfig.googleSheetAPIURL) {
       return false
     }
 
@@ -27029,7 +27040,7 @@ __webpack_require__.r(__webpack_exports__);
     }
 
     this.saveToCloudTimer = setTimeout(() => {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.post(this.googleSheetAPIURL, {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.post(this.clientConfig.googleSheetAPIURL, {
         contents
       })
       //console.log('儲存：', contents)
@@ -27153,6 +27164,9 @@ let config = {
     }
   },
   locale: 'zh-TW',
+  
+  googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec',
+  enableSound: true
 }
 
 
@@ -27453,6 +27467,13 @@ let VueController = {
   template: _index_tpl__WEBPACK_IMPORTED_MODULE_3___default.a,
   data: {
     config: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"],
+    syncConfig: {
+      customStyle: '',
+      enableSound: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].enableSound
+    },
+    clientConfig: {
+      googleSheetAPIURL: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].googleSheetAPIURL
+    },
     errors: [],
     utils: _utils_utils_js__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
@@ -27479,7 +27500,7 @@ if (typeof(baseURL) === 'string') {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"non-invasive-web-style-framework\">\r\n  <index \r\n    v-bind:config=\"config\"\r\n    v-bind:utils=\"utils\"></index>\r\n</div>";
+module.exports = "<div class=\"non-invasive-web-style-framework\">\r\n  <index \r\n    v-bind:config=\"config\"\r\n    v-bind:utils=\"utils\"\r\n    v-bind:syncConfig=\"syncConfig\"\r\n    v-bind:clientConfig=\"clientConfig\"></index>\r\n</div>";
 
 /***/ }),
 

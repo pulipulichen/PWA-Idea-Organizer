@@ -4,7 +4,7 @@
 import ConfigModal from './ConfigModal/ConfigModal.vue'
 
 let Index = {
-  props: ['config', 'utils'],
+  props: ['config', 'utils', 'syncConfig', 'clientConfig'],
   data () {    
     this.$i18n.locale = this.config.locale
     return {
@@ -13,14 +13,17 @@ let Index = {
       loading: true,
       enableChange: false,
       saveToCloudTimer: null,
-      googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
+      //googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
     }
   },
   components: {
     'config-modal': ConfigModal
   },
-//  computed: {
-//  },
+  computed: {
+    enableSync () {
+      return (typeof(this.clientConfig.googleSheetAPIURL) === 'string')
+    }
+  },
 //  watch: {
 //  },
   mounted() {
@@ -30,12 +33,12 @@ let Index = {
     
     //console.log(this)
     //summernoteLoader()
-    this.loading = false
+    //this.loading = false
     
     //setTimeout(() => {
-      this.$refs.ConfigModal.show()
+      //this.$refs.ConfigModal.show()
     //}, 1000)
-    //this.initEditor()
+    this.initEditor()
   },
   methods: {}
 }

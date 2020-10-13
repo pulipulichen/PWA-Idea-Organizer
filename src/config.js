@@ -5,6 +5,9 @@ let config = {
     }
   },
   locale: 'zh-TW',
+  
+  googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec',
+  enableSound: true
 }
 
 import styleConfig from './styles/style.config.js'

@@ -5,7 +5,10 @@ let ConfigModal = {
   data() {    
     this.$i18n.locale = this.config.locale
     return {
-      modal: null
+      modal: null,
+      userConfig: {
+        googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
+      }
     }
   },
 //  components: {

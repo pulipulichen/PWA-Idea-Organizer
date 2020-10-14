@@ -313,6 +313,22 @@ module.exports = function (Component) {
 
 /***/ }),
 
+/***/ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CTomatoTimer%5CYouTubePlayer%5CYouTubePlayer.vue&lang=yaml":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@kazupon/vue-i18n-loader/lib!./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CTomatoTimer%5CYouTubePlayer%5CYouTubePlayer.vue&lang=yaml ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function (Component) {
+  Component.options.__i18n = Component.options.__i18n || []
+  Component.options.__i18n.push('{"en":{"TEST_MESSAGE":"Test Message"},"zh-TW":{"TEST_MESSAGE":"測試訊息"}}')
+  delete Component.options._Ctor
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/base64-js/index.js":
 /*!*****************************************!*\
   !*** ./node_modules/base64-js/index.js ***!
@@ -2473,7 +2489,25 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".bgm-container[data-v-49f015f2] {\n  position: fixed;\n  height: 1px;\n  width: 1px;\n  top: -100vh;\n}\n.TomatoTimer[data-v-49f015f2] {\n  position: fixed;\n  top: 1rem;\n  right: 1rem;\n  z-index: 10;\n  line-height: 1 !important;\n  /*\n  .container {\n    position: relative;\n    top: 30px;\n    width: 300px;\n    margin: 0 auto;\n    \n  }\n  */\n}\n@media only screen and (max-width: 767px) {\n.TomatoTimer[data-v-49f015f2] {\n    display: none;\n}\n}\n.TomatoTimer button[data-setter][data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  font-family: 'Roboto';\n  font-weight: 300;\n  font-size: 18px;\n  width: 25px;\n  height: 30px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer button[data-setter][data-v-49f015f2]:hover {\n  opacity: 0.5;\n}\n.TomatoTimer .setters[data-v-49f015f2] {\n  position: absolute;\n  left: 60px;\n  top: 50px;\n  z-index: 11;\n}\n.TomatoTimer .minutes-set[data-v-49f015f2] {\n  float: left;\n  margin-right: 28px;\n  cursor: pointer;\n}\n.TomatoTimer .seconds-set[data-v-49f015f2] {\n  cursor: pointer;\n  float: right;\n}\n.TomatoTimer .controlls[data-v-49f015f2] {\n  position: absolute;\n  left: 50px;\n  top: 80px;\n  text-align: center;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2] {\n  font-family: 'Roboto';\n  font-weight: 100;\n  font-size: 65px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer #pause[data-v-49f015f2],\n.TomatoTimer .reset[data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  margin-top: 10px;\n  width: 50px;\n  height: 50px;\n  position: relative;\n  cursor: pointer;\n}\n.TomatoTimer .play[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 16px;\n  border-top: 15px solid transparent;\n  border-bottom: 15px solid transparent;\n  border-left: 22px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .reset[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 16px;\n  border: 15px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .pause[data-v-49f015f2]::after {\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 12px;\n  width: 15px;\n  height: 30px;\n  background-color: transparent;\n  border-radius: 1px;\n  border: 5px solid #F7958E;\n  border-top: none;\n  border-bottom: none;\n  cursor: pointer;\n}\n.TomatoTimer #pause[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer .e-c-base[data-v-49f015f2] {\n  fill: none;\n  stroke: #B6B6B6;\n  stroke-width: 4px;\n}\n.TomatoTimer .e-c-progress[data-v-49f015f2] {\n  fill: none;\n  stroke: #F7958E;\n  stroke-width: 4px;\n  transition: stroke-dashoffset 0.7s;\n}\n.TomatoTimer .e-c-pointer[data-v-49f015f2] {\n  fill: #FFF;\n  stroke: #F7958E;\n  stroke-width: 2px;\n}\n.TomatoTimer #e-pointer[data-v-49f015f2] {\n  transition: transform 0.7s;\n}\n", "",{"version":3,"sources":["TomatoTimer.less"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,WAAW;EACX,UAAU;EACV,WAAW;AACb;AACA;EACE,eAAe;EACf,SAAS;EACT,WAAW;EACX,WAAW;EACX,yBAAyB;EACzB;;;;;;;;GAQC;AACH;AACA;AACA;IACI,aAAa;AACjB;AACA;AACA;EACE,aAAa;EACb,uBAAuB;EACvB,YAAY;EACZ,qBAAqB;EACrB,gBAAgB;EAChB,eAAe;EACf,WAAW;EACX,YAAY;EACZ,cAAc;EACd,eAAe;AACjB;AACA;EACE,YAAY;AACd;AACA;EACE,kBAAkB;EAClB,UAAU;EACV,SAAS;EACT,WAAW;AACb;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,eAAe;AACjB;AACA;EACE,eAAe;EACf,YAAY;AACd;AACA;EACE,kBAAkB;EAClB,UAAU;EACV,SAAS;EACT,kBAAkB;AACpB;AACA;EACE,qBAAqB;EACrB,gBAAgB;EAChB,eAAe;EACf,cAAc;EACd,eAAe;AACjB;AACA;EACE,YAAY;AACd;AACA;;EAEE,aAAa;EACb,uBAAuB;EACvB,YAAY;EACZ,gBAAgB;EAChB,WAAW;EACX,YAAY;EACZ,kBAAkB;EAClB,eAAe;AACjB;AACA;EACE,cAAc;EACd,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,UAAU;EACV,kCAAkC;EAClC,qCAAqC;EACrC,+BAA+B;EAC/B,eAAe;AACjB;AACA;EACE,cAAc;EACd,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,UAAU;EACV,0BAA0B;EAC1B,eAAe;AACjB;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,UAAU;EACV,WAAW;EACX,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,yBAAyB;EACzB,gBAAgB;EAChB,mBAAmB;EACnB,eAAe;AACjB;AACA;EACE,YAAY;AACd;AACA;EACE,UAAU;EACV,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,UAAU;EACV,eAAe;EACf,iBAAiB;EACjB,kCAAkC;AACpC;AACA;EACE,UAAU;EACV,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,0BAA0B;AAC5B","file":"TomatoTimer.less","sourcesContent":[".bgm-container[data-v-49f015f2] {\n  position: fixed;\n  height: 1px;\n  width: 1px;\n  top: -100vh;\n}\n.TomatoTimer[data-v-49f015f2] {\n  position: fixed;\n  top: 1rem;\n  right: 1rem;\n  z-index: 10;\n  line-height: 1 !important;\n  /*\n  .container {\n    position: relative;\n    top: 30px;\n    width: 300px;\n    margin: 0 auto;\n    \n  }\n  */\n}\n@media only screen and (max-width: 767px) {\n.TomatoTimer[data-v-49f015f2] {\n    display: none;\n}\n}\n.TomatoTimer button[data-setter][data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  font-family: 'Roboto';\n  font-weight: 300;\n  font-size: 18px;\n  width: 25px;\n  height: 30px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer button[data-setter][data-v-49f015f2]:hover {\n  opacity: 0.5;\n}\n.TomatoTimer .setters[data-v-49f015f2] {\n  position: absolute;\n  left: 60px;\n  top: 50px;\n  z-index: 11;\n}\n.TomatoTimer .minutes-set[data-v-49f015f2] {\n  float: left;\n  margin-right: 28px;\n  cursor: pointer;\n}\n.TomatoTimer .seconds-set[data-v-49f015f2] {\n  cursor: pointer;\n  float: right;\n}\n.TomatoTimer .controlls[data-v-49f015f2] {\n  position: absolute;\n  left: 50px;\n  top: 80px;\n  text-align: center;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2] {\n  font-family: 'Roboto';\n  font-weight: 100;\n  font-size: 65px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer #pause[data-v-49f015f2],\n.TomatoTimer .reset[data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  margin-top: 10px;\n  width: 50px;\n  height: 50px;\n  position: relative;\n  cursor: pointer;\n}\n.TomatoTimer .play[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 16px;\n  border-top: 15px solid transparent;\n  border-bottom: 15px solid transparent;\n  border-left: 22px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .reset[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 16px;\n  border: 15px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .pause[data-v-49f015f2]::after {\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 12px;\n  width: 15px;\n  height: 30px;\n  background-color: transparent;\n  border-radius: 1px;\n  border: 5px solid #F7958E;\n  border-top: none;\n  border-bottom: none;\n  cursor: pointer;\n}\n.TomatoTimer #pause[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer .e-c-base[data-v-49f015f2] {\n  fill: none;\n  stroke: #B6B6B6;\n  stroke-width: 4px;\n}\n.TomatoTimer .e-c-progress[data-v-49f015f2] {\n  fill: none;\n  stroke: #F7958E;\n  stroke-width: 4px;\n  transition: stroke-dashoffset 0.7s;\n}\n.TomatoTimer .e-c-pointer[data-v-49f015f2] {\n  fill: #FFF;\n  stroke: #F7958E;\n  stroke-width: 2px;\n}\n.TomatoTimer #e-pointer[data-v-49f015f2] {\n  transition: transform 0.7s;\n}\n"]}]);
+exports.push([module.i, ".TomatoTimer[data-v-49f015f2] {\n  position: fixed;\n  top: 1rem;\n  right: 1rem;\n  z-index: 10;\n  line-height: 1 !important;\n  /*\n  .container {\n    position: relative;\n    top: 30px;\n    width: 300px;\n    margin: 0 auto;\n    \n  }\n  */\n}\n@media only screen and (max-width: 767px) {\n.TomatoTimer[data-v-49f015f2] {\n    display: none;\n}\n}\n.TomatoTimer button[data-setter][data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  font-family: 'Roboto';\n  font-weight: 300;\n  font-size: 18px;\n  width: 25px;\n  height: 30px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer button[data-setter][data-v-49f015f2]:hover {\n  opacity: 0.5;\n}\n.TomatoTimer .setters[data-v-49f015f2] {\n  position: absolute;\n  left: 60px;\n  top: 40px;\n  z-index: 11;\n}\n.TomatoTimer .minutes-set[data-v-49f015f2] {\n  float: left;\n  margin-right: 28px;\n  cursor: pointer;\n}\n.TomatoTimer .seconds-set[data-v-49f015f2] {\n  cursor: pointer;\n  float: right;\n}\n.TomatoTimer .controlls[data-v-49f015f2] {\n  position: absolute;\n  left: 50px;\n  top: 65px;\n  text-align: center;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2] {\n  font-family: 'Roboto';\n  font-weight: 100;\n  font-size: 65px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer #pause[data-v-49f015f2],\n.TomatoTimer .reset[data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  margin-top: 10px;\n  width: 50px;\n  height: 50px;\n  position: relative;\n  cursor: pointer;\n}\n.TomatoTimer .play[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 16px;\n  border-top: 15px solid transparent;\n  border-bottom: 15px solid transparent;\n  border-left: 22px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .reset[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 16px;\n  border: 15px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .pause[data-v-49f015f2]::after {\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 12px;\n  width: 15px;\n  height: 30px;\n  background-color: transparent;\n  border-radius: 1px;\n  border: 5px solid #F7958E;\n  border-top: none;\n  border-bottom: none;\n  cursor: pointer;\n}\n.TomatoTimer #pause[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer .e-c-base[data-v-49f015f2] {\n  fill: none;\n  stroke: #B6B6B6;\n  stroke-width: 4px;\n}\n.TomatoTimer .e-c-progress[data-v-49f015f2] {\n  fill: none;\n  stroke: #F7958E;\n  stroke-width: 4px;\n  transition: stroke-dashoffset 0.7s;\n}\n.TomatoTimer .e-c-pointer[data-v-49f015f2] {\n  fill: #FFF;\n  stroke: #F7958E;\n  stroke-width: 2px;\n}\n.TomatoTimer #e-pointer[data-v-49f015f2] {\n  transition: transform 0.7s;\n}\n.volume-container input[type=\"range\"][data-v-49f015f2] {\n  width: 50%;\n  -webkit-appearance: none;\n  border-radius: 2px;\n  height: 3px;\n  background-image: -webkit-linear-gradient(left, #f22 0%, #f22 50%, #fff 50%, #fff 100%);\n  box-shadow: inset #ebb 0 0 5px;\n  outline: none;\n  transition: 0.1s;\n}\n.volume-container input[type=\"range\"][data-v-49f015f2]::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  width: 10px;\n  height: 10px;\n  background: #f22;\n  border-radius: 50%;\n  transition: 0.1s;\n}\n.volume-container input[type=\"range\"][data-v-49f015f2]::-webkit-slider-thumb:hover,\n.volume-container input[type=\"range\"][data-v-49f015f2]::-webkit-slider-thumb:active {\n  width: 16px;\n  height: 16px;\n}\n", "",{"version":3,"sources":["TomatoTimer.less"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,SAAS;EACT,WAAW;EACX,WAAW;EACX,yBAAyB;EACzB;;;;;;;;GAQC;AACH;AACA;AACA;IACI,aAAa;AACjB;AACA;AACA;EACE,aAAa;EACb,uBAAuB;EACvB,YAAY;EACZ,qBAAqB;EACrB,gBAAgB;EAChB,eAAe;EACf,WAAW;EACX,YAAY;EACZ,cAAc;EACd,eAAe;AACjB;AACA;EACE,YAAY;AACd;AACA;EACE,kBAAkB;EAClB,UAAU;EACV,SAAS;EACT,WAAW;AACb;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,eAAe;AACjB;AACA;EACE,eAAe;EACf,YAAY;AACd;AACA;EACE,kBAAkB;EAClB,UAAU;EACV,SAAS;EACT,kBAAkB;AACpB;AACA;EACE,qBAAqB;EACrB,gBAAgB;EAChB,eAAe;EACf,cAAc;EACd,eAAe;AACjB;AACA;EACE,YAAY;AACd;AACA;;EAEE,aAAa;EACb,uBAAuB;EACvB,YAAY;EACZ,gBAAgB;EAChB,WAAW;EACX,YAAY;EACZ,kBAAkB;EAClB,eAAe;AACjB;AACA;EACE,cAAc;EACd,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,UAAU;EACV,kCAAkC;EAClC,qCAAqC;EACrC,+BAA+B;EAC/B,eAAe;AACjB;AACA;EACE,cAAc;EACd,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,UAAU;EACV,0BAA0B;EAC1B,eAAe;AACjB;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,UAAU;EACV,WAAW;EACX,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,yBAAyB;EACzB,gBAAgB;EAChB,mBAAmB;EACnB,eAAe;AACjB;AACA;EACE,YAAY;AACd;AACA;EACE,UAAU;EACV,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,UAAU;EACV,eAAe;EACf,iBAAiB;EACjB,kCAAkC;AACpC;AACA;EACE,UAAU;EACV,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,0BAA0B;AAC5B;AACA;EACE,UAAU;EACV,wBAAwB;EACxB,kBAAkB;EAClB,WAAW;EACX,uFAAuF;EACvF,8BAA8B;EAC9B,aAAa;EACb,gBAAgB;AAClB;AACA;EACE,wBAAwB;EACxB,WAAW;EACX,YAAY;EACZ,gBAAgB;EAChB,kBAAkB;EAClB,gBAAgB;AAClB;AACA;;EAEE,WAAW;EACX,YAAY;AACd","file":"TomatoTimer.less","sourcesContent":[".TomatoTimer[data-v-49f015f2] {\n  position: fixed;\n  top: 1rem;\n  right: 1rem;\n  z-index: 10;\n  line-height: 1 !important;\n  /*\n  .container {\n    position: relative;\n    top: 30px;\n    width: 300px;\n    margin: 0 auto;\n    \n  }\n  */\n}\n@media only screen and (max-width: 767px) {\n.TomatoTimer[data-v-49f015f2] {\n    display: none;\n}\n}\n.TomatoTimer button[data-setter][data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  font-family: 'Roboto';\n  font-weight: 300;\n  font-size: 18px;\n  width: 25px;\n  height: 30px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer button[data-setter][data-v-49f015f2]:hover {\n  opacity: 0.5;\n}\n.TomatoTimer .setters[data-v-49f015f2] {\n  position: absolute;\n  left: 60px;\n  top: 40px;\n  z-index: 11;\n}\n.TomatoTimer .minutes-set[data-v-49f015f2] {\n  float: left;\n  margin-right: 28px;\n  cursor: pointer;\n}\n.TomatoTimer .seconds-set[data-v-49f015f2] {\n  cursor: pointer;\n  float: right;\n}\n.TomatoTimer .controlls[data-v-49f015f2] {\n  position: absolute;\n  left: 50px;\n  top: 65px;\n  text-align: center;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2] {\n  font-family: 'Roboto';\n  font-weight: 100;\n  font-size: 65px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer #pause[data-v-49f015f2],\n.TomatoTimer .reset[data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  margin-top: 10px;\n  width: 50px;\n  height: 50px;\n  position: relative;\n  cursor: pointer;\n}\n.TomatoTimer .play[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 16px;\n  border-top: 15px solid transparent;\n  border-bottom: 15px solid transparent;\n  border-left: 22px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .reset[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 16px;\n  border: 15px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .pause[data-v-49f015f2]::after {\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 12px;\n  width: 15px;\n  height: 30px;\n  background-color: transparent;\n  border-radius: 1px;\n  border: 5px solid #F7958E;\n  border-top: none;\n  border-bottom: none;\n  cursor: pointer;\n}\n.TomatoTimer #pause[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer .e-c-base[data-v-49f015f2] {\n  fill: none;\n  stroke: #B6B6B6;\n  stroke-width: 4px;\n}\n.TomatoTimer .e-c-progress[data-v-49f015f2] {\n  fill: none;\n  stroke: #F7958E;\n  stroke-width: 4px;\n  transition: stroke-dashoffset 0.7s;\n}\n.TomatoTimer .e-c-pointer[data-v-49f015f2] {\n  fill: #FFF;\n  stroke: #F7958E;\n  stroke-width: 2px;\n}\n.TomatoTimer #e-pointer[data-v-49f015f2] {\n  transition: transform 0.7s;\n}\n.volume-container input[type=\"range\"][data-v-49f015f2] {\n  width: 50%;\n  -webkit-appearance: none;\n  border-radius: 2px;\n  height: 3px;\n  background-image: -webkit-linear-gradient(left, #f22 0%, #f22 50%, #fff 50%, #fff 100%);\n  box-shadow: inset #ebb 0 0 5px;\n  outline: none;\n  transition: 0.1s;\n}\n.volume-container input[type=\"range\"][data-v-49f015f2]::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  width: 10px;\n  height: 10px;\n  background: #f22;\n  border-radius: 50%;\n  transition: 0.1s;\n}\n.volume-container input[type=\"range\"][data-v-49f015f2]::-webkit-slider-thumb:hover,\n.volume-container input[type=\"range\"][data-v-49f015f2]::-webkit-slider-thumb:active {\n  width: 16px;\n  height: 16px;\n}\n"]}]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/less-loader/dist/cjs.js?!./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.less?vue&type=style&index=0&id=1325bdc5&lang=less&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.less?vue&type=style&index=0&id=1325bdc5&lang=less&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(true);
+// Module
+exports.push([module.i, ".YouTubePlayer[data-v-1325bdc5] {\n  position: fixed;\n  top: 0;\n  left: 0;\n}\n.YouTubePlayer.hidden[data-v-1325bdc5] {\n  top: -100vh;\n  /*\n    height: 1px;\n    width: 1px;\n\n    top: -100vh;\n    */\n}\n", "",{"version":3,"sources":["YouTubePlayer.less"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,MAAM;EACN,OAAO;AACT;AACA;EACE,WAAW;EACX;;;;;KAKG;AACL","file":"YouTubePlayer.less","sourcesContent":[".YouTubePlayer[data-v-1325bdc5] {\n  position: fixed;\n  top: 0;\n  left: 0;\n}\n.YouTubePlayer.hidden[data-v-1325bdc5] {\n  top: -100vh;\n  /*\n    height: 1px;\n    width: 1px;\n\n    top: -100vh;\n    */\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -22355,123 +22389,180 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "TomatoTimer" }, [
-    _c("div", {
-      ref: "BGMContainer",
-      staticClass: "bgm-container",
-      attrs: { id: "BGMContainer" }
-    }),
-    _vm._v(" "),
-    _c("div", { staticClass: "container" }, [
-      _vm.isStarted === false
-        ? _c("div", { staticClass: "setters" }, [
-            _c("div", { staticClass: "minutes-set" }, [
-              _c(
-                "button",
-                {
-                  ref: "DataSetterButtons",
-                  attrs: { "data-setter": "minutes-plus" },
-                  on: { click: _vm.onSetterButtonClick }
-                },
-                [_vm._v("+")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  ref: "DataSetterButtons",
-                  attrs: { "data-setter": "minutes-minus" },
-                  on: { click: _vm.onSetterButtonClick }
-                },
-                [_vm._v("-")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "seconds-set" }, [
-              _c(
-                "button",
-                {
-                  ref: "DataSetterButtons",
-                  attrs: { "data-setter": "seconds-plus" },
-                  on: { click: _vm.onSetterButtonClick }
-                },
-                [_vm._v("+")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  ref: "DataSetterButtons",
-                  attrs: { "data-setter": "seconds-minus" },
-                  on: { click: _vm.onSetterButtonClick }
-                },
-                [_vm._v("-")]
-              )
-            ])
-          ])
-        : _vm._e(),
+  return _c(
+    "div",
+    { staticClass: "TomatoTimer" },
+    [
+      _c("youtube-player", {
+        ref: "BGMPlayer",
+        attrs: {
+          youtubeURL: _vm.syncConfig.musicURL,
+          display: false,
+          volume: _vm.BGMVolume
+        }
+      }),
       _vm._v(" "),
-      _c("div", { staticClass: "circle" }, [
-        _c(
-          "svg",
-          {
-            attrs: {
-              width: "250",
-              viewBox: "0 0 220 220",
-              xmlns: "http://www.w3.org/2000/svg"
-            }
-          },
-          [
-            _c("g", { attrs: { transform: "translate(110,110)" } }, [
-              _c("circle", { staticClass: "e-c-base", attrs: { r: "100" } }),
-              _vm._v(" "),
-              _c("g", { attrs: { transform: "rotate(-90)" } }, [
-                _c("circle", {
-                  ref: "Progress",
-                  staticClass: "e-c-progress",
-                  attrs: { r: "100" }
-                }),
+      _c("div", { staticClass: "container" }, [
+        _vm.isStarted === false
+          ? _c("div", { staticClass: "setters" }, [
+              _c("div", { staticClass: "minutes-set" }, [
+                _c(
+                  "button",
+                  {
+                    ref: "DataSetterButtons",
+                    attrs: { "data-setter": "minutes-plus" },
+                    on: { click: _vm.onSetterButtonClick }
+                  },
+                  [_vm._v("+")]
+                ),
                 _vm._v(" "),
-                _c("g", { attrs: { id: "e-pointer" } }, [
-                  _c("circle", {
-                    ref: "Pointer",
-                    staticClass: "e-c-pointer",
-                    attrs: { cx: "100", cy: "0", r: "8" }
-                  })
-                ])
+                _c(
+                  "button",
+                  {
+                    ref: "DataSetterButtons",
+                    attrs: { "data-setter": "minutes-minus" },
+                    on: { click: _vm.onSetterButtonClick }
+                  },
+                  [_vm._v("-")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "seconds-set" }, [
+                _c(
+                  "button",
+                  {
+                    ref: "DataSetterButtons",
+                    attrs: { "data-setter": "seconds-plus" },
+                    on: { click: _vm.onSetterButtonClick }
+                  },
+                  [_vm._v("+")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    ref: "DataSetterButtons",
+                    attrs: { "data-setter": "seconds-minus" },
+                    on: { click: _vm.onSetterButtonClick }
+                  },
+                  [_vm._v("-")]
+                )
               ])
             ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "controlls" }, [
-        _c(
-          "div",
-          {
-            ref: "DisplayRemainTime",
-            staticClass: "display-remain-time",
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "circle" }, [
+          _c(
+            "svg",
+            {
+              attrs: {
+                width: "250",
+                viewBox: "0 0 220 220",
+                xmlns: "http://www.w3.org/2000/svg"
+              }
+            },
+            [
+              _c("g", { attrs: { transform: "translate(110,110)" } }, [
+                _c("circle", { staticClass: "e-c-base", attrs: { r: "100" } }),
+                _vm._v(" "),
+                _c("g", { attrs: { transform: "rotate(-90)" } }, [
+                  _c("circle", {
+                    ref: "Progress",
+                    staticClass: "e-c-progress",
+                    attrs: { r: "100" }
+                  }),
+                  _vm._v(" "),
+                  _c("g", { attrs: { id: "e-pointer" } }, [
+                    _c("circle", {
+                      ref: "Pointer",
+                      staticClass: "e-c-pointer",
+                      attrs: { cx: "100", cy: "0", r: "8" }
+                    })
+                  ])
+                ])
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "controlls" }, [
+          _c(
+            "div",
+            {
+              ref: "DisplayRemainTime",
+              staticClass: "display-remain-time",
+              on: { click: _vm.pauseTimer }
+            },
+            [_vm._v("00:25")]
+          ),
+          _vm._v(" "),
+          _c("button", {
+            ref: "Pause",
+            staticClass: "play",
+            attrs: { id: "pause" },
             on: { click: _vm.pauseTimer }
-          },
-          [_vm._v("00:25")]
-        ),
-        _vm._v(" "),
-        _c("button", {
-          ref: "Pause",
-          staticClass: "play",
-          attrs: { id: "pause" },
-          on: { click: _vm.pauseTimer }
-        }),
-        _vm._v(" "),
-        _vm.isPaused
-          ? _c("button", {
-              staticClass: "reset",
-              on: { click: _vm.resetTimer }
+          }),
+          _vm._v(" "),
+          _vm.isPaused
+            ? _c("button", {
+                staticClass: "reset",
+                on: { click: _vm.resetTimer }
+              })
+            : _vm._e(),
+          _vm._v(" "),
+          _c("div", { staticClass: "volume-container" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.BGMVolume,
+                  expression: "BGMVolume"
+                }
+              ],
+              ref: "VolumeSlider",
+              attrs: { type: "range", min: "0", max: "100" },
+              domProps: { value: _vm.BGMVolume },
+              on: {
+                __r: function($event) {
+                  _vm.BGMVolume = $event.target.value
+                }
+              }
             })
-          : _vm._e()
+          ])
+        ])
       ])
-    ])
-  ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.html?vue&type=template&id=1325bdc5&scoped=true&":
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.html?vue&type=template&id=1325bdc5&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "YouTubePlayer", class: { hidden: _vm.display === false } },
+    [_c("div", { ref: "Main" })]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22755,6 +22846,27 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__(/*! ../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
 var update = add("2e8bfa0c", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/less-loader/dist/cjs.js?!./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.less?vue&type=style&index=0&id=1325bdc5&lang=less&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader!./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.less?vue&type=style&index=0&id=1325bdc5&lang=less&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./YouTubePlayer.less?vue&type=style&index=0&id=1325bdc5&lang=less&scoped=true& */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/less-loader/dist/cjs.js?!./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.less?vue&type=style&index=0&id=1325bdc5&lang=less&scoped=true&");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("7878c416", content, false, {});
 // Hot Module Replacement
 if(false) {}
 
@@ -36794,14 +36906,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _vendors_youtube_iframe_player_api_iframe_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vendors/youtube-iframe-player-api/iframe_api.js */ "./src/components/TomatoTimer/vendors/youtube-iframe-player-api/iframe_api.js");
-/* harmony import */ var _vendors_youtube_iframe_player_api_iframe_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_vendors_youtube_iframe_player_api_iframe_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _YouTubePlayer_YouTubePlayer_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./YouTubePlayer/YouTubePlayer.vue */ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.vue");
 
 //import './vendors/jQuery.YoutubeBackground/jquery.youtubebackground.js'
 
 
 let TomatoTimer = {
-  props: ['config', 'utils', 'clientConfig', 'syncConfig', 'defaultSeconds', 'bgm'],
+  props: ['config', 'utils', 'clientConfig', 'syncConfig', 'defaultSeconds'],
   data() {
     this.$i18n.locale = this.config.locale
     return {
@@ -36820,11 +36931,12 @@ let TomatoTimer = {
       //wholeTime: 25,
       progressLength: Math.PI * 2 * 100,
       BGMPlayer: null,
-      BGMPlayerState: null
+      BGMVolume: 100
     }
   },
-//  components: {
-//  },
+  components: {
+    'youtube-player': _YouTubePlayer_YouTubePlayer_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
 //  computed: {
 //  },
   watch: {
@@ -36834,13 +36946,11 @@ let TomatoTimer = {
       }
       
       //console.log('pause', this.isPaused, this.BGMPlayerState, this.BGMPlayer)
-      if (this.isPaused === true
-              && this.BGMPlayerState === 1) {
-        this.BGMPlayer.pauseVideo()
+      if (this.isPaused === true) {
+        this.BGMPlayer.pause()
       }
-      else if (this.isPaused === false
-              && this.BGMPlayerState === 2) {
-        this.BGMPlayer.playVideo()
+      else if (this.isPaused === false) {
+        this.BGMPlayer.play()
       }
     },
     isStarted () {
@@ -36850,15 +36960,11 @@ let TomatoTimer = {
       }
       
       //this.BGMPlayer.playVideo()
-      if (this.isStarted === true
-              && (this.BGMPlayerState === 1
-              || this.BGMPlayerState === -1
-              || this.BGMPlayerState === 2)) {
-        this.BGMPlayer.playVideo()
+      if (this.isStarted === true) {
+        this.BGMPlayer.play()
       }
-      else if (this.isStarted === false
-              && this.BGMPlayerState === 2) {
-        this.BGMPlayer.pauseVideo()
+      else if (this.isStarted === false) {
+        this.BGMPlayer.pause()
       }
     }
   },
@@ -36888,73 +36994,12 @@ let TomatoTimer = {
     //this.displayTimeLeft(this.wholeTime)
     
     //console.log('有嗎？')
-    await this.initBGM()
+    this.BGMPlayer = this.$refs.BGMPlayer
+    this.initSlider()
     this.inited = true
   },
   methods: {
-    initBGM() {
-      return new Promise(async (resolve) => {
-        let inited = false
-        //console.log(111)
-        let onYouTubeIframeAPIReady = () => {
-          //console.log(122)
-           this.BGMPlayer = new window.YT.Player('BGMContainer', {
-            //height: '1',
-            //width: '1',
-            height: '60',
-            width: '100',
-            playerVars: { 
-              'autoplay': 0, 
-              'controls': 0,
-              showinfo: 0,
-              branding: 0,
-              rel: 0,
-            },
-            //videoId: 'M7lc1UVf-VE',
-            videoId: 'I1-zm1H4VvA',
-            events: {
-              'onReady': onPlayerReady,
-              'onStateChange': onPlayerStateChange
-            }
-          })
-          //console.log(222)
-        }
-
-        // 4. The API will call this function when the video player is ready.
-        let onPlayerReady = (event) => {
-          //console.log(333)
-          event.target.setVolume(0)
-          event.target.playVideo()
-        }
-
-        // 5. The API calls this function when the player's state changes.
-        //    The function indicates that when playing a video (state=1),
-        //    the player should play for six seconds and then stop.
-        //var done = false;
-        let onPlayerStateChange = (event) => {
-          //console.log(this.BGMPlayerState)
-          this.BGMPlayerState = event.data
-          if (inited === false && event.data === 1) {
-            setTimeout(() => {
-              inited = true
-              setTimeout(() => {
-                event.target.pauseVideo()
-                event.target.setLoop(true)
-                event.target.setVolume(100)
-                //this.BGMPlayer = event.target
-                //console.log(this.BGMPlayer)
-                resolve(true)
-              }, 0)
-            }, 0)
-          }
-        }
-        
-        onYouTubeIframeAPIReady()
-      })
-    },
-    sleep(ms = 100) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    },
+    
     changeWholeTime(seconds) {
       if ((this.wholeTime + seconds) > 0) {
         this.wholeTime += seconds;
@@ -37011,7 +37056,7 @@ let TomatoTimer = {
     pauseTimer(event) {
       
       if (this.isStarted === false) {
-        console.log(this.wholeTime)
+        //console.log(this.wholeTime)
         this.timer(this.wholeTime);
         this.isStarted = true;
         
@@ -37059,7 +37104,7 @@ let TomatoTimer = {
       this.pauseBtn.classList.add('play');
       
       if (this.BGMPlayer) {
-        this.BGMPlayer.seekTo(0)
+        this.BGMPlayer.reset()
       }
     },
     displayTimeLeft(timeLeft) { //displays time on the input
@@ -37068,6 +37113,27 @@ let TomatoTimer = {
       let displayString = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
       this.displayOutput.textContent = displayString;
       this.update(timeLeft, this.wholeTime);
+    },
+    initSlider() {
+      let bg = function (n) {
+        //console.log(n)
+        r.css({
+          'background-image': '-webkit-linear-gradient(left ,#f22 0%,#f22 ' + n + '%,#fff ' + n + '%, #fff 100%)'
+        });
+      }
+      var r = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.VolumeSlider)
+      bg(r.val())
+      r.on('mouseenter', function () {
+        var p = r.val();
+        r.on('click', function () {
+          p = r.val();
+          bg(p);
+        });
+        r.on('mousemove', function () {
+          p = r.val();
+          bg(p);
+        });
+      });
     }
   } // methods
 }
@@ -37152,10 +37218,317 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/components/TomatoTimer/vendors/youtube-iframe-player-api/iframe_api.js":
-/*!************************************************************************************!*\
-  !*** ./src/components/TomatoTimer/vendors/youtube-iframe-player-api/iframe_api.js ***!
-  \************************************************************************************/
+/***/ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.html?vue&type=template&id=1325bdc5&scoped=true&":
+/*!****************************************************************************************************************!*\
+  !*** ./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.html?vue&type=template&id=1325bdc5&scoped=true& ***!
+  \****************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_YouTubePlayer_html_vue_type_template_id_1325bdc5_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./YouTubePlayer.html?vue&type=template&id=1325bdc5&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.html?vue&type=template&id=1325bdc5&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_YouTubePlayer_html_vue_type_template_id_1325bdc5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_YouTubePlayer_html_vue_type_template_id_1325bdc5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.js?vue&type=script&lang=js&?0201":
+/*!********************************************************************************************!*\
+  !*** ./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.js?vue&type=script&lang=js& ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vendors_youtube_iframe_player_api_iframe_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendors/youtube-iframe-player-api/iframe_api.js */ "./src/components/TomatoTimer/YouTubePlayer/vendors/youtube-iframe-player-api/iframe_api.js");
+/* harmony import */ var _vendors_youtube_iframe_player_api_iframe_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendors_youtube_iframe_player_api_iframe_api_js__WEBPACK_IMPORTED_MODULE_0__);
+
+
+let YoutubePlayer = {
+  props: ['display', 'youtubeURL', 'volume'],
+  data() {    
+    //this.$i18n.locale = this.config.locale
+    return {
+      waitAction: null,
+      inited: false,
+      player: null,
+      state: null,
+      playerID: null
+    }
+  },
+//  components: {
+//  },
+  computed: {
+    volumeNumber () {
+      if (isNaN(this.volume)) {
+        return 100
+      }
+      return Number(this.volume)
+    }
+  },
+  watch: {
+    volume () {
+      if (this.inited === false) {
+        return false
+      }
+      
+      this.player.setVolume(this.volumeNumber)
+    }
+  },
+/*
+  watch: {
+    inited () {
+      console.log(this.inited)
+      if (this.inited === true) {
+        console.log(this.waitAction)
+        if (this.waitAction === 'play') {
+          this.play()
+        }
+        else if (this.waitAction === 'pause') {
+          this.pause()
+        }
+      }
+    }
+  }, 
+ */
+  mounted () {
+    this.init()
+  },
+  methods: {
+    init() {
+      let _this = this
+      return new Promise(async (resolve) => {
+        let id 
+        let inited = false
+        while (true) {
+          id = 'YouTubePlayer' + (new Date).getTime()
+          if (!document.getElementById(id)) {
+            break
+          }
+          else {
+            await this.sleep()
+          }
+        }
+        
+        this.$refs.Main.id = id
+           
+        //console.log(111)
+        let onYouTubeIframeAPIReady = () => {
+          //console.log(122)
+           
+           this.player = new window.YT.Player(id, {
+            height: '1',
+            width: '1',
+            //height: '150',
+            //width: '300',
+            playerVars: { 
+              'autoplay': 0, 
+              'controls': 1,
+              showinfo: 0,
+              branding: 0,
+              rel: 0,
+            },
+            //videoId: 'M7lc1UVf-VE',
+            videoId: 'I1-zm1H4VvA',
+            events: {
+              'onReady': onPlayerReady,
+              'onStateChange': onPlayerStateChange
+            }
+          })
+          //console.log(222)
+        }
+
+        // 4. The API will call this function when the video player is ready.
+        let onPlayerReady = (event) => {
+          //console.log(333)
+          event.target.setVolume(0)
+          event.target.setLoop(true)
+          
+          event.target.playVideo()
+        }
+
+        // 5. The API calls this function when the player's state changes.
+        //    The function indicates that when playing a video (state=1),
+        //    the player should play for six seconds and then stop.
+        //var done = false;
+        let onPlayerStateChange = (event) => {
+          //console.log(this.BGMPlayerState)
+          this.state = event.data
+          if (inited === false && event.data === 1) {
+            inited = true
+            //setTimeout(() => {
+              event.target.pauseVideo()
+              //console.log(1)
+              
+              //setTimeout(() => {
+                event.target.setVolume(this.volumeNumber)
+                event.target.unMute()
+                //console.log(2)
+                
+                //this.BGMPlayer = event.target
+                //console.log(this.BGMPlayer)
+                //setTimeout(() => {
+                  //console.log(3)
+                  //event.target.setVolume(100)
+                  //event.target.unMute()
+                  _this.inited = true
+                  _this.checkWaitAction()
+                  resolve(true)
+                //}, 0)
+              //}, 0)
+            //}, 0)
+          }
+        }
+        
+        onYouTubeIframeAPIReady()
+      })
+    },
+    checkWaitAction () {
+      //console.log(this.inited)
+      if (this.inited === true) {
+        //console.log(this.waitAction)
+        if (this.waitAction === 'play') {
+          this.play()
+        }
+        else if (this.waitAction === 'pause') {
+          this.pause()
+        }
+      }
+    },
+    sleep(ms = 100) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    },
+    play () {
+      //console.log('play', this.inited)
+      if (this.inited !== true) {
+        this.waitAction = 'play'
+        return false
+      }
+      
+      this.player.setVolume(this.volumeNumber)
+      this.player.unMute()
+      this.player.playVideo()
+    },
+    pause () {
+      if (this.inited !== true) {
+        this.waitAction = 'pause'
+        return false
+      }
+      this.player.pauseVideo()
+    },
+    reset () {
+      this.pause()
+      
+      if (this.player) {
+        this.player.seekTo(0)
+      }
+    }
+  } // methods
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (YoutubePlayer);
+
+/***/ }),
+
+/***/ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.js?vue&type=script&lang=js&?eff6":
+/*!********************************************************************************************!*\
+  !*** ./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.js?vue&type=script&lang=js& ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _YouTubePlayer_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./YouTubePlayer.js?vue&type=script&lang=js& */ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.js?vue&type=script&lang=js&?0201");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_YouTubePlayer_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.less?vue&type=style&index=0&id=1325bdc5&lang=less&scoped=true&":
+/*!*******************************************************************************************************************************!*\
+  !*** ./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.less?vue&type=style&index=0&id=1325bdc5&lang=less&scoped=true& ***!
+  \*******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_sourceMap_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_less_loader_dist_cjs_js_ref_1_2_YouTubePlayer_less_vue_type_style_index_0_id_1325bdc5_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-style-loader!../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./YouTubePlayer.less?vue&type=style&index=0&id=1325bdc5&lang=less&scoped=true& */ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/less-loader/dist/cjs.js?!./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.less?vue&type=style&index=0&id=1325bdc5&lang=less&scoped=true&");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_sourceMap_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_less_loader_dist_cjs_js_ref_1_2_YouTubePlayer_less_vue_type_style_index_0_id_1325bdc5_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_sourceMap_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_less_loader_dist_cjs_js_ref_1_2_YouTubePlayer_less_vue_type_style_index_0_id_1325bdc5_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_sourceMap_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_less_loader_dist_cjs_js_ref_1_2_YouTubePlayer_less_vue_type_style_index_0_id_1325bdc5_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_sourceMap_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_less_loader_dist_cjs_js_ref_1_2_YouTubePlayer_less_vue_type_style_index_0_id_1325bdc5_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_sourceMap_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_less_loader_dist_cjs_js_ref_1_2_YouTubePlayer_less_vue_type_style_index_0_id_1325bdc5_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.vue":
+/*!********************************************************************!*\
+  !*** ./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.vue ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _YouTubePlayer_html_vue_type_template_id_1325bdc5_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./YouTubePlayer.html?vue&type=template&id=1325bdc5&scoped=true& */ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.html?vue&type=template&id=1325bdc5&scoped=true&");
+/* harmony import */ var _YouTubePlayer_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./YouTubePlayer.js?vue&type=script&lang=js& */ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.js?vue&type=script&lang=js&?eff6");
+/* empty/unused harmony star reexport *//* harmony import */ var _YouTubePlayer_less_vue_type_style_index_0_id_1325bdc5_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./YouTubePlayer.less?vue&type=style&index=0&id=1325bdc5&lang=less&scoped=true& */ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.less?vue&type=style&index=0&id=1325bdc5&lang=less&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _YouTubePlayer_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CTomatoTimer_5CYouTubePlayer_5CYouTubePlayer_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./YouTubePlayer.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CTomatoTimer%5CYouTubePlayer%5CYouTubePlayer.vue&lang=yaml */ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CTomatoTimer%5CYouTubePlayer%5CYouTubePlayer.vue&lang=yaml");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _YouTubePlayer_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _YouTubePlayer_html_vue_type_template_id_1325bdc5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _YouTubePlayer_html_vue_type_template_id_1325bdc5_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "1325bdc5",
+  null
+  
+)
+
+/* custom blocks */
+
+if (typeof _YouTubePlayer_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CTomatoTimer_5CYouTubePlayer_5CYouTubePlayer_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__["default"] === 'function') Object(_YouTubePlayer_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CTomatoTimer_5CYouTubePlayer_5CYouTubePlayer_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__["default"])(component)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CTomatoTimer%5CYouTubePlayer%5CYouTubePlayer.vue&lang=yaml":
+/*!******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CTomatoTimer%5CYouTubePlayer%5CYouTubePlayer.vue&lang=yaml ***!
+  \******************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_YouTubePlayer_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CTomatoTimer_5CYouTubePlayer_5CYouTubePlayer_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/@kazupon/vue-i18n-loader/lib!./YouTubePlayer.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CTomatoTimer%5CYouTubePlayer%5CYouTubePlayer.vue&lang=yaml */ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CTomatoTimer%5CYouTubePlayer%5CYouTubePlayer.vue&lang=yaml");
+/* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_YouTubePlayer_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CTomatoTimer_5CYouTubePlayer_5CYouTubePlayer_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_kazupon_vue_i18n_loader_lib_index_js_YouTubePlayer_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CTomatoTimer_5CYouTubePlayer_5CYouTubePlayer_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_kazupon_vue_i18n_loader_lib_index_js_YouTubePlayer_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CTomatoTimer_5CYouTubePlayer_5CYouTubePlayer_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_kazupon_vue_i18n_loader_lib_index_js_YouTubePlayer_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CTomatoTimer_5CYouTubePlayer_5CYouTubePlayer_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_kazupon_vue_i18n_loader_lib_index_js_YouTubePlayer_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CTomatoTimer_5CYouTubePlayer_5CYouTubePlayer_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./src/components/TomatoTimer/YouTubePlayer/vendors/youtube-iframe-player-api/iframe_api.js":
+/*!**************************************************************************************************!*\
+  !*** ./src/components/TomatoTimer/YouTubePlayer/vendors/youtube-iframe-player-api/iframe_api.js ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -37198,7 +37571,8 @@ let config = {
   googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec',
   enableSound: true,
   enableTomatoTimer: true,
-  tomatoTimerSeconds: 25
+  tomatoTimerSeconds: 25,
+  musicURL: 'https://www.youtube.com/watch?v=I1-zm1H4VvA',
 }
 
 
@@ -37504,6 +37878,7 @@ let VueController = {
       enableSound: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].enableSound,
       enableTomatoTimer: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].enableTomatoTimer,
       tomatoTimerSeconds: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].tomatoTimerSeconds,
+      musicURL: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].musicURL
     },
     clientConfig: {
       googleSheetAPIURL: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].googleSheetAPIURL

@@ -1,13 +1,5 @@
 @baseZIndex: 10;
 
-.bgm-container {
-  position: fixed;
-  height: 1px;
-  width: 1px;
-  
-  top: -100vh;
-}
-
 .TomatoTimer {
   position: fixed;
   top: 1rem;
@@ -52,7 +44,7 @@
   .setters {
     position: absolute;
     left: 60px;
-    top: 50px;
+    top: 40px;
     z-index: @baseZIndex + 1;
   }
 
@@ -70,7 +62,7 @@
   .controlls {
     position: absolute;
     left: 50px;
-    top: 80px;
+    top: 65px;
     text-align: center;
   }
 
@@ -167,3 +159,30 @@
   
 }
 
+.volume-container input[type="range"] {
+  width: 50%;
+  
+  
+  -webkit-appearance: none;
+  border-radius:2px;
+  height:3px;
+  background-image:-webkit-linear-gradient(left ,#f22 0%,#f22 50%,#fff 50%, #fff 100%);
+  box-shadow:inset #ebb 0 0 5px;
+  outline : none;
+  transition:.1s;
+  
+  &::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width:10px;
+    height:10px;
+    background:#f22;
+    border-radius:50%;
+    transition:.1s;
+  }
+  
+  &::-webkit-slider-thumb:hover,
+  &::-webkit-slider-thumb:active{
+    width:16px;
+    height:16px;
+  }
+}

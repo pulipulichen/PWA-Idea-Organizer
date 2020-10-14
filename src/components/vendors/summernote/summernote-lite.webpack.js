@@ -11,4 +11,7 @@ import './styles/summernote-lite.modal.less'
 import './styles/summernote-lite.popover.less'
 import './styles/summernote-lite.toolbar.less'
 
+// https://semantic-ui.com/elements/icon.html
+import './styles/semantic.niwsf.icon.less'
+
 import './lang/summernote-zh-TW.js'

@@ -5356,12 +5356,28 @@ ${links}`
            * paste HTML
            * @param {String} markup
            */
-          this.pasteHTML = this.wrapCommand(function (markup) {
-              if (_this.isLimited(markup.length)) {
-                  return;
+          this.pasteHTML = this.wrapCommand(async function (markup) {
+            //console.trace(markup)
+            
+            if (typeof(markup) !== 'string') {
+              if (!navigator.clipboard) {
+                window.alert('Only work in HTTPS!')
+                return false
               }
-              var contents = _this.createRange().pasteHTML(markup);
-              range.createFromNodeAfter(lists.last(contents)).select();
+              markup = await navigator.clipboard.readText()
+            }
+            
+            //console.log(markup)
+            
+            if (!markup) {
+              return false
+            }
+
+            if (_this.isLimited(markup.length)) {
+                return;
+            }
+            var contents = _this.createRange().pasteHTML(markup);
+            range.createFromNodeAfter(lists.last(contents)).select();
           });
           
           /**
@@ -8448,6 +8464,15 @@ sel.addRange(range);
                   click: _this.context.createInvokeHandler('editor.formatBlock', 'H6')
               }).render();
           });
+          this.context.memo('button.pasteHTML', function () {
+              return _this.button({
+                  className: 'note-btn-paste',
+                  //contents: '貼上',
+                  contents: `<i class="paste icon"></i>`,
+                  tooltip: _this.lang.font.pasteHTML,
+                  click: _this.context.createInvokeHandler('editor.pasteHTML')
+              }).render();
+          });
           this.context.memo('button.bold', function () {
               return _this.button({
                   className: 'note-btn-bold',
@@ -11321,7 +11346,8 @@ sel.addRange(range);
           return function (event) {
               event.preventDefault();
               var $target = $$1(event.target);
-              _this.invoke(namespace, value || $target.closest('[data-value]').data('value'), $target);
+              //let dataValue = $target.closest('[data-value]').data('value')
+              _this.invoke(namespace, value || $target.closest('[data-value]').data('value') || event, $target);
           };
       };
       Context.prototype.invoke = function () {

@@ -28449,9 +28449,16 @@ __webpack_require__.r(__webpack_exports__);
   }
   
   Index.methods._summernoteOptionsToolbar = function () {
+    let sort = ['toggleSortMode', 'pasteHTML']
+    if (location.protocol !== 'https:' 
+            && location.hostname !== 'localhost'
+            && location.hostname !== '127.0.0.1') {
+      sort = ['toggleSortMode']
+    }
+    
     return [
       // [groupName, [list of button]]
-      ['sort', ['toggleSortMode', 'saveHTML']],
+      ['sort', sort],
       ['history', ['undo', 'redo', 'removeElement']],
       ['list', ['ul', 'ol', 'indent', 'outdent']],
       ['style', ['strikethrough', 'underline', 'backgroundColorRed', 'backgroundColorYellow', 'backgroundColorGreen', 'backgroundColorBlue', 'backgroundColorPurple']],

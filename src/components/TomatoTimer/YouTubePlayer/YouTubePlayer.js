@@ -1,4 +1,5 @@
 import './vendors/youtube-iframe-player-api/iframe_api.js'
+import YouTubeVideoIDParser from './youtube-video-id-parser.js'
 
 let YoutubePlayer = {
   props: ['display', 'youtubeURL', 'volume'],
@@ -20,6 +21,13 @@ let YoutubePlayer = {
         return 100
       }
       return Number(this.volume)
+    },
+    videoID () {
+      let id = YouTubeVideoIDParser(this.youtubeURL)
+      if (id === false) {
+        id = 'I1-zm1H4VvA'
+      }
+      return id
     }
   },
   watch: {
@@ -29,8 +37,23 @@ let YoutubePlayer = {
       }
       
       this.player.setVolume(this.volumeNumber)
+    },
+    youtubeURL () {
+      this.player.destroy()
+      this.state = null
+      this.inited = false
+      //this.waitAction = null
+      
+      this.init()
+    },
+    state () {
+      //console.log(this.state)
+      if (this.state === 0) {
+        this.play()
+      }
     }
   },
+  
 /*
   watch: {
     inited () {
@@ -47,6 +70,7 @@ let YoutubePlayer = {
     }
   }, 
  */
+ 
   mounted () {
     this.init()
   },
@@ -85,7 +109,7 @@ let YoutubePlayer = {
               rel: 0,
             },
             //videoId: 'M7lc1UVf-VE',
-            videoId: 'I1-zm1H4VvA',
+            videoId: this.videoID,
             events: {
               'onReady': onPlayerReady,
               'onStateChange': onPlayerStateChange
@@ -156,8 +180,9 @@ let YoutubePlayer = {
     },
     play () {
       //console.log('play', this.inited)
+      this.waitAction = 'play'
       if (this.inited !== true) {
-        this.waitAction = 'play'
+        
         return false
       }
       
@@ -166,8 +191,8 @@ let YoutubePlayer = {
       this.player.playVideo()
     },
     pause () {
+      this.waitAction = 'pause'
       if (this.inited !== true) {
-        this.waitAction = 'pause'
         return false
       }
       this.player.pauseVideo()

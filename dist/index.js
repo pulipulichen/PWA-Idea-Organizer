@@ -22176,6 +22176,38 @@ var render = function() {
       : _vm._e(),
     _vm._v(" "),
     _c("div", { staticClass: "field" }, [
+      _c("label", [
+        _vm._v(
+          "\r\n      " + _vm._s(_vm.$t("Music URL (YouTube)")) + "\r\n    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.syncConfig.musicURL,
+            expression: "syncConfig.musicURL"
+          }
+        ],
+        attrs: {
+          type: "url",
+          placeholder: "https://www.youtube.com/watch?v=..."
+        },
+        domProps: { value: _vm.syncConfig.musicURL },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.$set(_vm.syncConfig, "musicURL", $event.target.value)
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
       _c("label", { attrs: { for: "configCustomStyle" } }, [
         _vm._v("\r\n      " + _vm._s(_vm.$t("Custom Style")) + "\r\n    ")
       ]),
@@ -36274,6 +36306,12 @@ let Index = {
       //console.log('watch customStyle')
       this.startSyncConfig()
     },
+    'syncConfig.musicURL' () {
+      if (this.inited === false) {
+        return false
+      }
+      this.startSyncConfig()
+    },
     'syncConfig.enableTomatoTimer' () {
       if (this.inited === false) {
         return false
@@ -37247,6 +37285,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendors_youtube_iframe_player_api_iframe_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendors/youtube-iframe-player-api/iframe_api.js */ "./src/components/TomatoTimer/YouTubePlayer/vendors/youtube-iframe-player-api/iframe_api.js");
 /* harmony import */ var _vendors_youtube_iframe_player_api_iframe_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_vendors_youtube_iframe_player_api_iframe_api_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _youtube_video_id_parser_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./youtube-video-id-parser.js */ "./src/components/TomatoTimer/YouTubePlayer/youtube-video-id-parser.js");
+/* harmony import */ var _youtube_video_id_parser_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_youtube_video_id_parser_js__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 let YoutubePlayer = {
@@ -37269,6 +37310,13 @@ let YoutubePlayer = {
         return 100
       }
       return Number(this.volume)
+    },
+    videoID () {
+      let id = _youtube_video_id_parser_js__WEBPACK_IMPORTED_MODULE_1___default()(this.youtubeURL)
+      if (id === false) {
+        id = 'I1-zm1H4VvA'
+      }
+      return id
     }
   },
   watch: {
@@ -37278,8 +37326,23 @@ let YoutubePlayer = {
       }
       
       this.player.setVolume(this.volumeNumber)
+    },
+    youtubeURL () {
+      this.player.destroy()
+      this.state = null
+      this.inited = false
+      //this.waitAction = null
+      
+      this.init()
+    },
+    state () {
+      //console.log(this.state)
+      if (this.state === 0) {
+        this.play()
+      }
     }
   },
+  
 /*
   watch: {
     inited () {
@@ -37296,6 +37359,7 @@ let YoutubePlayer = {
     }
   }, 
  */
+ 
   mounted () {
     this.init()
   },
@@ -37334,7 +37398,7 @@ let YoutubePlayer = {
               rel: 0,
             },
             //videoId: 'M7lc1UVf-VE',
-            videoId: 'I1-zm1H4VvA',
+            videoId: this.videoID,
             events: {
               'onReady': onPlayerReady,
               'onStateChange': onPlayerStateChange
@@ -37405,8 +37469,9 @@ let YoutubePlayer = {
     },
     play () {
       //console.log('play', this.inited)
+      this.waitAction = 'play'
       if (this.inited !== true) {
-        this.waitAction = 'play'
+        
         return false
       }
       
@@ -37415,8 +37480,8 @@ let YoutubePlayer = {
       this.player.playVideo()
     },
     pause () {
+      this.waitAction = 'pause'
       if (this.inited !== true) {
-        this.waitAction = 'pause'
         return false
       }
       this.player.pauseVideo()
@@ -37534,6 +37599,64 @@ __webpack_require__.r(__webpack_exports__);
 
 
 if (!window['YT']) {var YT = {loading: 0,loaded: 0};}if (!window['YTConfig']) {var YTConfig = {'host': 'http://www.youtube.com'};}if (!YT.loading) {YT.loading = 1;(function(){var l = [];YT.ready = function(f) {if (YT.loaded) {f();} else {l.push(f);}};window.onYTReady = function() {YT.loaded = 1;for (var i = 0; i < l.length; i++) {try {l[i]();} catch (e) {}}};YT.setConfig = function(c) {for (var k in c) {if (c.hasOwnProperty(k)) {YTConfig[k] = c[k];}}};var a = document.createElement('script');a.type = 'text/javascript';a.id = 'www-widgetapi-script';a.src = 'https://s.ytimg.com/yts/jsbin/www-widgetapi-vfln5nzZR/www-widgetapi.js';a.async = true;var c = document.currentScript;if (c) {var n = c.nonce || c.getAttribute('nonce');if (n) {a.setAttribute('nonce', n);}}var b = document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a, b);})();}
+
+/***/ }),
+
+/***/ "./src/components/TomatoTimer/YouTubePlayer/youtube-video-id-parser.js":
+/*!*****************************************************************************!*\
+  !*** ./src/components/TomatoTimer/YouTubePlayer/youtube-video-id-parser.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * https://gist.github.com/rodrigoborgesdeoliveira/987683cfbfcc8d800192da1e73adc486
+ */
+module.exports = function (url) {
+
+  if (!url) {
+    return undefined
+  }
+
+  if (url.indexOf('user/', 5) === 0) { // 1.
+    return false
+  }
+
+  //if ( preg_match('/^[a-zA-Z0-9\-\_]{11}$/', $url)) { // 2.
+  //return $url;
+  if (/^[a-zA-Z0-9\-\_]{11}$/.test(url)) {
+    return url
+  }
+
+  let matchResult
+  matchResult = url.match(/(?:watch\?v=|v\/|embed\/|ytscreeningroom\?v=|\?v=|\?vi=|e\/|watch\?.*vi?=|\?feature=[a-z_]*&v=|vi\/)([a-zA-Z0-9\-\_]{11})/)
+  if (matchResult) {
+    return matchResult[1]
+  }
+
+  matchResult = url.match(/([a-zA-Z0-9\-\_]{11})(?:\?[a-z]|\&[a-z])/)
+  if (matchResult) {
+    return matchResult[1]
+  }
+  
+  matchResult = url.match(/u\/1\/([a-zA-Z0-9\-\_]{11})(?:\?rel=0)?$/)
+  if (matchResult) {
+    return false
+  }
+  
+  matchResult = url.match(/(?:watch%3Fv%3D|watch\?v%3D)([a-zA-Z0-9\-\_]{11})[%&]/)
+  if (matchResult) {
+    return matchResult[1]
+  }
+
+  // 7. Rules for special cases
+  matchResult = url.match(/watchv=([a-zA-Z0-9\-\_]{11})&list=/)
+  if (matchResult) {
+    return matchResult[1]
+  }
+
+  return false
+}
 
 /***/ }),
 

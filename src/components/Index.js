@@ -57,6 +57,12 @@ let Index = {
       //console.log('watch customStyle')
       this.startSyncConfig()
     },
+    'syncConfig.musicURL' () {
+      if (this.inited === false) {
+        return false
+      }
+      this.startSyncConfig()
+    },
     'syncConfig.enableTomatoTimer' () {
       if (this.inited === false) {
         return false

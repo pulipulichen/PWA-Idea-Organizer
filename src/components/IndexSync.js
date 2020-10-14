@@ -112,7 +112,7 @@ export default function (Index) {
       }, 1000)
       
       //console.log('儲存：', contents)
-    }, 3000)
+    }, 6000)
   }
   
   Index.methods.startSyncContents = function () {
@@ -146,7 +146,7 @@ export default function (Index) {
       }, 1000)
       
       //console.log('儲存：', contents)
-    }, 3000)
+    }, 6000)
   }
   
   Index.methods.setCustomStyle = function () {

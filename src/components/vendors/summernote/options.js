@@ -153,6 +153,7 @@ export default {
       'CTRL+U': 'underline',
       'CTRL+SHIFT+S': 'strikethrough',
       'CTRL+M': 'comment',
+      'CTRL+S': 'saveHTML',
       'CTRL+ALT+M': 'uncomment',
       'CTRL+ALT+H': 'htmlify',
       'CTRL+ALT+T': 'textify',
@@ -177,7 +178,8 @@ export default {
       'CTRL+NUM6': 'formatH6',
       'CTRL+ENTER': 'insertHorizontalRule',
       'CTRL+K': 'linkDialog.show',
-      'CTRL+L': 'linkDialog.show'
+      'CTRL+L': 'linkDialog.show',
+      'CTRL+BACKSPACE': 'removeElement',
     },
     mac: {
       'ENTER': 'insertParagraph',
@@ -190,6 +192,7 @@ export default {
       'CMD+B': 'bold',
       'CMD+I': 'italic',
       'CMD+U': 'underline',
+      'CMD+S': 'saveHTML',
       'CMD+SHIFT+S': 'strikethrough',
       'CMD+M': 'comment',
       'CMD+BACKSLASH': 'removeFormat',

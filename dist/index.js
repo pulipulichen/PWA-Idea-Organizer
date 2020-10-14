@@ -27848,7 +27848,9 @@ let TableOfContent = {
       setTimeout(() => {
         //console.log(options)
         _tocbot_tocbot_webpack_js__WEBPACK_IMPORTED_MODULE_0__["default"].init(options)
+        this.updateActiveLink()
         this.setStyle()
+        
         //console.trace('inited')
       }, 0)
     },
@@ -27922,6 +27924,10 @@ let TableOfContent = {
       //console.log(headings)
     },
     activeLink: function (id) {
+      if (!this.$toc) {
+        return false
+      }
+      
       let activeLiClassName = 'is-active-li'
       this.$toc.find('.' + activeLiClassName).removeClass(activeLiClassName)
       
@@ -28445,7 +28451,7 @@ __webpack_require__.r(__webpack_exports__);
   Index.methods._summernoteOptionsToolbar = function () {
     return [
       // [groupName, [list of button]]
-      ['sort', ['toggleSortMode']],
+      ['sort', ['toggleSortMode', 'saveHTML']],
       ['history', ['undo', 'redo', 'removeElement']],
       ['list', ['ul', 'ol', 'indent', 'outdent']],
       ['style', ['strikethrough', 'underline', 'backgroundColorRed', 'backgroundColorYellow', 'backgroundColorGreen', 'backgroundColorBlue', 'backgroundColorPurple']],
@@ -28713,7 +28719,7 @@ __webpack_require__.r(__webpack_exports__);
       }, 1000)
       
       //console.log('儲存：', contents)
-    }, 3000)
+    }, 6000)
   }
   
   Index.methods.startSyncContents = function () {
@@ -28747,7 +28753,7 @@ __webpack_require__.r(__webpack_exports__);
       }, 1000)
       
       //console.log('儲存：', contents)
-    }, 3000)
+    }, 6000)
   }
   
   Index.methods.setCustomStyle = function () {

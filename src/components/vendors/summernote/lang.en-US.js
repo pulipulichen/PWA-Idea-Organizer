@@ -22,7 +22,8 @@ export default {
     'backgroundColorGreen': 'Highlight Green',
     'backgroundColorBlue': 'Highlight Blue',
     'backgroundColorPurple': 'Highlight Purple',
-    pastePlainTextHint: 'Paste: Ctrl+Shift+v'
+    pastePlainTextHint: 'Paste: Ctrl+Shift+v',
+    saveHTML: 'Save'
   },
   image: {
     image: 'Picture',

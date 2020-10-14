@@ -86,7 +86,7 @@ export default function (Index) {
   Index.methods._summernoteOptionsToolbar = function () {
     return [
       // [groupName, [list of button]]
-      ['sort', ['toggleSortMode']],
+      ['sort', ['toggleSortMode', 'saveHTML']],
       ['history', ['undo', 'redo', 'removeElement']],
       ['list', ['ul', 'ol', 'indent', 'outdent']],
       ['style', ['strikethrough', 'underline', 'backgroundColorRed', 'backgroundColorYellow', 'backgroundColorGreen', 'backgroundColorBlue', 'backgroundColorPurple']],

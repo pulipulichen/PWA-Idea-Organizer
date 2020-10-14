@@ -25,7 +25,8 @@ import jQuery from 'jquery'
         'backgroundColorGreen': '綠色標亮',
         'backgroundColorBlue': '藍色標亮',
         'backgroundColorPurple': '紫色標亮',
-        pastePlainTextHint: '貼上: Ctrl+Shift+v'
+        pastePlainTextHint: '貼上: Ctrl+Shift+v',
+        saveHTML: '儲存'
       },
       image: {
         image: '圖片',

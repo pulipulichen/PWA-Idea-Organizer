@@ -42,7 +42,9 @@ let TableOfContent = {
       setTimeout(() => {
         //console.log(options)
         tocbot.init(options)
+        this.updateActiveLink()
         this.setStyle()
+        
         //console.trace('inited')
       }, 0)
     },
@@ -116,6 +118,10 @@ let TableOfContent = {
       //console.log(headings)
     },
     activeLink: function (id) {
+      if (!this.$toc) {
+        return false
+      }
+      
       let activeLiClassName = 'is-active-li'
       this.$toc.find('.' + activeLiClassName).removeClass(activeLiClassName)
       

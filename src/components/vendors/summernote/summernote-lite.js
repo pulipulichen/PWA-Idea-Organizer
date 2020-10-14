@@ -4910,9 +4910,6 @@ import langEnUS from './lang.en-US.js'
               }
               //html = html.slice(sel.anchorOffset, sel.extentOffset)
               
-              
-              
-              
               if (html !== '') {
                 let range = sel.getRangeAt(0);
                 range.deleteContents();
@@ -4940,7 +4937,7 @@ import langEnUS from './lang.en-US.js'
               console.log(text)
             })
             .catch(err => {
-              console.log('Something went wrong', err);
+              window.alert('Something went wrong', err);
             })
             return this
           }
@@ -5075,6 +5072,7 @@ ${links}`
           this.outdent = this.wrapCommand(function () {
               _this.bullet.outdent(_this.editable);
           });
+          
           /**
            * insertNode
            * insert node
@@ -5176,6 +5174,91 @@ ${links}`
               fallbackTolerance: 3, // So that we can select items on mobile
             })
             sortableObjects[tagName].push(sortable)
+          }
+          
+          let titleLimitation = 10
+          /**
+           * obj.summernote('editor.copyRichFormatHTML')
+           * @author Pulipuli Chen 20190624
+           * @returns {summernote-liteL#16.summernote-liteL#16#Editor.Editor}
+           */
+          this.saveHTML = function (event) {
+            event.preventDefault()
+            event.stopPropagation()
+            
+            let html = _this.$editable.html()
+            html = this.formatHTMLString(html)
+            
+            let title = document.title.trim()
+            if (title.length > titleLimitation) {
+              title = title.slice(0, titleLimitation).trim()
+            }
+            title = title + '-' + this.getYYYYMMDDHHMMSS() + '.html'
+            
+            //console.log(html)
+            this.downloadFile(title, html)
+          }
+          
+          /**
+           * https://stackoverflow.com/a/60338028/6645399
+           * @param {type} html
+           * @returns {String}
+           */
+          this.formatHTMLString = function (html) {
+    var tab = '\t';
+    var result = '';
+    var indent= '';
+
+    html.split(/>\s*</).forEach(function(element) {
+        if (element.match( /^\/\w/ )) {
+            indent = indent.substring(tab.length);
+        }
+
+        result += indent + '<' + element + '>\r\n';
+
+        if (element.match( /^<?\w[^>]*[^\/]$/ )) { 
+            indent += tab;              
+        }
+    });
+
+    return result.substring(1, result.length-3);
+}
+          
+          /**
+           * https://stackoverflow.com/a/18197511/6645399
+           * @param {String} filename
+           * @param {String} text
+           * @returns {undefined}
+           */
+          this.downloadFile = function (filename, text) {
+            var pom = document.createElement('a');
+            pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            pom.setAttribute('download', filename);
+
+            if (document.createEvent) {
+              var event = document.createEvent('MouseEvents');
+              event.initEvent('click', true, true);
+              pom.dispatchEvent(event);
+            } else {
+              pom.click();
+            }
+          }
+          
+          let datePad2 = function (n) {  // always returns a string
+            return (n < 10 ? '0' : '') + n;
+          }
+            
+          this.getYYYYMMDDHHMMSS = function () {
+            let date = new Date()
+          
+
+            return date.getFullYear() +
+                    datePad2(date.getMonth() + 1) +
+                    datePad2(date.getDate()) +
+                    '-' + 
+                    datePad2(date.getHours()) +
+                    datePad2(date.getMinutes()) +
+                    datePad2(date.getSeconds())
           }
           
           /**
@@ -5757,6 +5840,7 @@ ${links}`
               document.body.appendChild(a)
               //console.log(a)
               a.click()
+              
               document.body.removeChild(a)
           });
           
@@ -6252,8 +6336,9 @@ ${links}`
                   this.context.invoke('editor.restoreRange')
                 }
               }
-              else if (this.context.invoke(eventName) !== false) {
+              else if (this.context.invoke(eventName, event) !== false) {
                   event.preventDefault();
+                  event.stopPropagation()
               }
               else if (typeof(this.options.buttons) === 'object'
                       && typeof(this.options.buttons[eventName]) === 'function') {
@@ -8942,6 +9027,16 @@ sel.addRange(range);
               }).render();
           });
           
+          // Remove Buttons
+          this.context.memo('button.saveHTML', function () {
+              return _this.button({
+                  //contents: _this.ui.icon(_this.options.icons.copy),  // 
+                  //contents: _this.ui.icon(_this.options.icons.save),
+                  contents: _this.lang.font.saveHTML,
+                  tooltip: _this.lang.font.saveHTML,
+                  click: _this.context.createInvokeHandlerAndResetToolbar('editor.saveHTML')
+              }).render();
+          });
           
           // Remove Buttons
           this.context.memo('button.toggleSortMode', function () {
@@ -11186,6 +11281,19 @@ sel.addRange(range);
           return function (event) {
               _this.createInvokeHandler(namespace, value)(event);
               _this.invoke('buttons.updateCurrentStyle');
+          };
+      };
+      /**
+       * Some buttons need to change their visual style immediately once they get pressed
+       */
+      Context.prototype.createInvokeHandlerAndResetToolbar = function (namespace, value) {
+          var _this = this;
+          return function (event) {
+              let button = $(event.target)
+              let toolbar = button.parents('.note-toolbar')
+              toolbar.animate({scrollLeft: 0}, 100)
+              console.log('reset')
+              _this.createInvokeHandler(namespace, value)(event);
           };
       };
       Context.prototype.createRangeInvokeHandlerAndUpdateState = function (namespace, value) {

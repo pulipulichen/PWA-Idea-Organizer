@@ -10,5 +10,14 @@
     v-bind:syncConfig="syncConfig"
     v-bind:clientConfig="clientConfig"
     ></config-modal>
+  <tomato-timer
+    ref="TomatoTimer"
+    v-if="syncConfig.enableTomatoTimer"
+    v-bind:defaultSeconds="1500"
+    v-bind:config="config"
+    v-bind:utils="utils"
+    v-bind:syncConfig="syncConfig"
+    v-bind:clientConfig="clientConfig"
+    ></tomato-timer>
 </div>
   

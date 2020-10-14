@@ -77,8 +77,9 @@ let VueController = {
   data: {
     config: config,
     syncConfig: {
-      customStyle: 'AAA',
-      enableSound: config.enableSound
+      customStyle: '',
+      enableSound: config.enableSound,
+      enableTomatoTimer: config.enableTomatoTimer
     },
     clientConfig: {
       googleSheetAPIURL: config.googleSheetAPIURL

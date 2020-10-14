@@ -1,0 +1,31 @@
+<div class="TomatoTimer">
+  <div class="container">
+    <div class="setters">
+      <div class="minutes-set">
+        <button data-setter="minutes-plus" ref="DataSetterButtons" v-bind:click="onSetterButtonClick">+</button>
+        <button data-setter="minutes-minus" ref="DataSetterButtons" v-bind:click="onSetterButtonClick">-</button>
+      </div>
+      <div class="seconds-set">
+        <button data-setter="seconds-plus" ref="DataSetterButtons" v-bind:click="onSetterButtonClick">+</button>
+        <button data-setter="seconds-minus" ref="DataSetterButtons" v-bind:click="onSetterButtonClick">-</button>
+      </div>
+    </div>
+    <div class="circle"> 
+      <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(110,110)">
+          <circle r="100" class="e-c-base"/>
+          <g transform="rotate(-90)">
+            <circle r="100" class="e-c-progress" ref="Progress"/>
+            <g id="e-pointer">
+              <circle cx="100" cy="0" r="8" class="e-c-pointer" ref="Pointer"/>
+            </g>
+          </g>
+        </g>
+      </svg> 
+    </div>
+    <div class="controlls">
+      <div class="display-remain-time" ref="DisplayRemainTime">00:25</div>
+      <button class="play" id="pause" ref="Pause" v-on:click="pauseTimer"></button>
+    </div>
+  </div>
+</div>

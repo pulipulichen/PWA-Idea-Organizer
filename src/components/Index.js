@@ -3,6 +3,7 @@ import $ from 'jquery'
 
 //let summernoteLoader = () => import('./summernote/summernote-lite.webpack.js')
 import ConfigModal from './ConfigModal/ConfigModal.vue'
+import TomatoTimer from './TomatoTimer/TomatoTimer.vue'
 
 let Index = {
   props: ['config', 'utils', 'syncConfig', 'clientConfig'],
@@ -21,7 +22,8 @@ let Index = {
     }
   },
   components: {
-    'config-modal': ConfigModal
+    'config-modal': ConfigModal,
+    'tomato-timer': TomatoTimer
   },
   computed: {
     enableSync () {

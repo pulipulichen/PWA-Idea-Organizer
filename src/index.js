@@ -79,7 +79,8 @@ let VueController = {
     syncConfig: {
       customStyle: '',
       enableSound: config.enableSound,
-      enableTomatoTimer: config.enableTomatoTimer
+      enableTomatoTimer: config.enableTomatoTimer,
+      tomatoTimerSeconds: config.tomatoTimerSeconds,
     },
     clientConfig: {
       googleSheetAPIURL: config.googleSheetAPIURL

@@ -6,11 +6,16 @@
   overscroll-behavior-y: contain;
 }
 
-.editor-container ::v-deep {
+.non-invasive-web-style-framework .editor-container ::v-deep {
   .note-editable {
     height: @edtiableHeight;
     max-height: @edtiableHeight;
     overscroll-behavior-y: contain;
+    
+    * {
+      font-family: '微軟正黑體' !important;
+    }
+    
   }
   
   .note-editable, .note-placeholder {

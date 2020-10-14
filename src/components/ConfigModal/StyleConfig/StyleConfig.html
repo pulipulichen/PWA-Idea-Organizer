@@ -17,6 +17,26 @@
       </label>
     </div>
   </div>
+  <div class="inline field">
+    <div class="ui checkbox">
+      <input 
+        type="checkbox" 
+        tabindex="0" 
+        id="configEnableTomatoTimer"
+        class="hidden"
+        v-model="syncConfig.enableTomatoTimer" />
+      <label for="configEnableTomatoTimer">
+        {{ $t('Enable Tomato Timer') }}
+      </label>
+    </div>
+  </div>
+  
+  <div class="inline field"
+       v-if="syncConfig.enableTomatoTimer">
+    <label>{{ $t('Tomato Timer Default Seconds') }}</label>
+    <input type="number" step="10" v-model="syncConfig.tomatoTimerSeconds" min="0">
+  </div>
+  
   <div class="field">
     <label for="configCustomStyle">
       {{ $t('Custom Style') }}

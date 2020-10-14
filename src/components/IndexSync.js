@@ -26,7 +26,7 @@ export default function (Index) {
     //let minInterval = 3 * 1000
     $window.bind('focus', () => {
       let time = (new Date()).getTime()
-      if (lastBlurTime + minInterval > time) {
+      if (!lastBlurTime || lastBlurTime + minInterval > time) {
         return false
       }
       

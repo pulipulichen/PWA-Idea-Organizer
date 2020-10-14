@@ -1,8 +1,12 @@
+@baseZIndex: 10;
+
 .TomatoTimer {
   position: fixed;
   top: 1rem;
   right: 1rem;
-  z-index: 10;
+  z-index: @baseZIndex;
+  
+  line-height: 1 !important;
   
   @media only screen and (max-width: 767px) {
     display: none;
@@ -25,30 +29,38 @@
 
   button[data-setter]:hover { opacity: 0.5; }
 
+  /*
   .container {
     position: relative;
     top: 30px;
     width: 300px;
     margin: 0 auto;
+    
   }
+  */
 
   .setters {
     position: absolute;
-    left: 85px;
-    top: 75px;
+    left: 60px;
+    top: 50px;
+    z-index: @baseZIndex + 1;
   }
 
   .minutes-set {
     float: left;
     margin-right: 28px;
+    cursor: pointer;
   }
 
-  .seconds-set { float: right; }
+  .seconds-set { 
+    cursor: pointer;
+    float: right; 
+  }
 
   .controlls {
     position: absolute;
-    left: 75px;
-    top: 105px;
+    left: 50px;
+    top: 80px;
     text-align: center;
   }
 
@@ -59,7 +71,8 @@
     color: #F7958E;
   }
 
-  #pause {
+  #pause,
+  .reset {
     outline: none;
     background: transparent;
     border: none;
@@ -78,6 +91,15 @@
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-left: 22px solid #F7958E;
+  }
+  
+  .reset::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    border: 15px solid #F7958E;
   }
 
   .pause::after {

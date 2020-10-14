@@ -14,6 +14,7 @@ let TomatoTimer = {
       isPaused: false,
       isStarted: false,
       wholeTime: this.defaultSeconds,
+      //wholeTime: 25,
       progressLength: Math.PI * 2 * 100
     }
   },
@@ -44,9 +45,9 @@ let TomatoTimer = {
     //let isPaused = false;
     //let isStarted = false;
 
-
-    this.update(this.wholeTime, this.wholeTime); //refreshes progress bar
-    this.displayTimeLeft(this.wholeTime)
+    this.resetTimer()
+    //this.update(this.wholeTime, this.wholeTime); //refreshes progress bar
+    //this.displayTimeLeft(this.wholeTime)
     
     //console.log('有嗎？')
   },
@@ -54,7 +55,7 @@ let TomatoTimer = {
     changeWholeTime(seconds) {
       if ((this.wholeTime + seconds) > 0) {
         this.wholeTime += seconds;
-        update(this.wholeTime, this.wholeTime);
+        this.update(this.wholeTime, this.wholeTime);
       }
     },
     update(value, timePercent) {
@@ -63,7 +64,8 @@ let TomatoTimer = {
       this.pointer.style.transform = `rotate(${360 * value / (timePercent)}deg)`;
     }, 
     onSetterButtonClick (event) {
-      var param = event.target.dataset.setter;
+      var param = event.target.dataset.setter
+      //console.log(param)
       switch (param) {
         case 'minutes-plus':
           this.changeWholeTime(1 * 60);
@@ -82,23 +84,25 @@ let TomatoTimer = {
     },
     timer(seconds) { //counts time, takes seconds
       let remainTime = Date.now() + (seconds * 1000);
-      displayTimeLeft(seconds);
+      this.displayTimeLeft(seconds);
 
-      this.intervalTimer = setInterval(function () {
+      this.intervalTimer = setInterval(() => {
         this.timeLeft = Math.round((remainTime - Date.now()) / 1000);
-        if (timeLeft < 0) {
+        if (this.timeLeft < 0) {
           clearInterval(this.intervalTimer);
           this.isStarted = false;
-          this.setterBtns.forEach(function (btn) {
-            btn.disabled = false;
-            btn.style.opacity = 1;
-          });
-          this.displayTimeLeft(wholeTime);
+          //this.setterBtns.forEach(function (btn) {
+          //  btn.disabled = false;
+          //  btn.style.opacity = 1;
+          //});
+          this.displayTimeLeft(this.wholeTime);
           this.pauseBtn.classList.remove('pause');
           this.pauseBtn.classList.add('play');
+          
+          this.$emit('timeout')
           return;
         }
-        this.displayTimeLeft(timeLeft);
+        this.displayTimeLeft(this.timeLeft);
       }, 1000)
     },
     pauseTimer(event) {
@@ -130,6 +134,22 @@ let TomatoTimer = {
         clearInterval(this.intervalTimer);
         this.isPaused = this.isPaused ? false : true;
       }
+    },
+    resetTimer (time) {
+      clearInterval(this.intervalTimer)
+      
+      if (typeof(time) === 'number') {
+        this.wholeTime = time
+      }
+      
+      this.update(this.wholeTime, this.wholeTime); //refreshes progress bar
+      this.displayTimeLeft(this.wholeTime)
+      
+      this.isStarted = false
+      this.isPaused = false
+      
+      this.pauseBtn.classList.remove('pause');
+      this.pauseBtn.classList.add('play');
     },
     displayTimeLeft(timeLeft) { //displays time on the input
       let minutes = Math.floor(timeLeft / 60);

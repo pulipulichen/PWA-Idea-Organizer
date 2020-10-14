@@ -416,7 +416,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, "#tocbotNavContainer.is-position-fixed[data-v-2cbfd4aa] {\n  background-color: white;\n}\n", "",{"version":3,"sources":["TableOfContents.less"],"names":[],"mappings":"AAAA;EACE,uBAAuB;AACzB","file":"TableOfContents.less","sourcesContent":["#tocbotNavContainer.is-position-fixed[data-v-2cbfd4aa] {\n  background-color: white;\n}\n"]}]);
+exports.push([module.i, "#tocbotNavContainer.is-position-fixed[data-v-2cbfd4aa] {\n  background-color: white;\n}\n@media only screen and (max-width: 767px) {\n#tocbotNavContainer[data-v-2cbfd4aa] {\n    display: none;\n}\n}\n", "",{"version":3,"sources":["TableOfContents.less"],"names":[],"mappings":"AAAA;EACE,uBAAuB;AACzB;AACA;AACA;IACI,aAAa;AACjB;AACA","file":"TableOfContents.less","sourcesContent":["#tocbotNavContainer.is-position-fixed[data-v-2cbfd4aa] {\n  background-color: white;\n}\n@media only screen and (max-width: 767px) {\n#tocbotNavContainer[data-v-2cbfd4aa] {\n    display: none;\n}\n}\n"]}]);
 // Exports
 module.exports = exports;
 

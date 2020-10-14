@@ -95,7 +95,7 @@ export default function (Index) {
       // [groupName, [list of button]]
       ['sort', sort],
       ['history', ['undo', 'redo', 'removeElement']],
-      ['list', ['ul', 'ol', 'indent', 'outdent']],
+      ['list', ['indent', 'outdent', 'ul', 'ol']],
       ['style', ['strikethrough', 'underline', 'backgroundColorRed', 'backgroundColorYellow', 'backgroundColorGreen', 'backgroundColorBlue', 'backgroundColorPurple']],
       ['format', ['removeFormat']],
       ['insert', ['hr']],

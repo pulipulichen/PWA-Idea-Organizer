@@ -17,7 +17,7 @@
       </label>
     </div>
   </div>
-  <div class="inline field">
+  <div class="inline field hidden-in-small-screen">
     <div class="ui checkbox">
       <input 
         type="checkbox" 
@@ -31,7 +31,7 @@
     </div>
   </div>
   
-  <div class="inline field"
+  <div class="inline field hidden-in-small-screen"
        v-if="syncConfig.enableTomatoTimer">
     <label>{{ $t('Tomato Timer Default Seconds') }}</label>
     <input type="number" step="10" v-model="syncConfig.tomatoTimerSeconds" min="0">

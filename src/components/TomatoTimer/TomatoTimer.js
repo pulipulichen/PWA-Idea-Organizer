@@ -138,6 +138,10 @@ let TomatoTimer = {
     resetTimer (time) {
       clearInterval(this.intervalTimer)
       
+      //console.log(time, typeof(time))
+      if (isNaN(time) === false) {
+        time = Number(time)
+      }
       if (typeof(time) === 'number') {
         this.wholeTime = time
       }

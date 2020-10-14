@@ -6160,7 +6160,7 @@ ${links}`
             scrollVerticalCenterTimer = setTimeout(() => {
               _this.$editable.clearQueue()
               _this.$editable.stop()
-              _this.$editable.animate({scrollTop: scrollTopTo}, 300)
+              _this.$editable.animate({scrollTop: scrollTopTo}, 100)
             }, 10)
           }
           
@@ -6198,6 +6198,8 @@ ${links}`
               }
           })
           .on('input', function (event) {
+//            playTypeWriterSound(event)
+//            scrollVerticalCenter(event)
               _this.context.triggerEvent('input', event);
           })
           .on('paste', function (event) {
@@ -6224,9 +6226,11 @@ ${links}`
                 _this.context.triggerEvent('paste', event);
               }
           })
-          //.on('compositionstart', function (event) {
-          //    console.log('compositionstart')
-          //})
+//          .on('compositionstart', function (event) {
+//              //console.log('compositionstart')
+//              playTypeWriterSound(event)
+//              scrollVerticalCenter(event)
+//          })
           //.on('compositionend', function (event) {
           //    console.log('compositionend')
           //    _this.context.triggerEvent('compositionend', event);
@@ -6271,6 +6275,11 @@ ${links}`
           }).on('scroll', function (event) {
               _this.context.triggerEvent('scroll', event);
           })
+          
+//          this.$editable[0].addEventListener('compositionstart', (event) => {
+//            playTypeWriterSound(event)
+//            scrollVerticalCenter(event)
+//          })
                   
           $$1(window).on('dragstart', function (event) {
               //_this.context.triggerEvent('scroll', event);

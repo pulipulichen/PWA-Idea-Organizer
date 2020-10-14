@@ -25,7 +25,9 @@
       </svg> 
     </div>
     <div class="controlls">
-      <div class="display-remain-time" ref="DisplayRemainTime">00:25</div>
+      <div class="display-remain-time" 
+           ref="DisplayRemainTime"
+           v-on:click="pauseTimer">00:25</div>
       <button class="play" id="pause" ref="Pause" v-on:click="pauseTimer"></button>
       <button class="reset" v-on:click="resetTimer" v-if="isPaused"></button>
     </div>

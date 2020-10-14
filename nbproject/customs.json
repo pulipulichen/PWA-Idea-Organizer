@@ -22,6 +22,7 @@
     "ref": {
       "context": "div"
     },
+    "v-if": {},
     "v-on:click": {},
     "v-bind:src": {},
     "v-model": {

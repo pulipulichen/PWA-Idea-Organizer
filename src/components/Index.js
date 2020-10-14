@@ -22,6 +22,7 @@ let Index = {
       configSaveToCloudTimer: null,
       styleNode: null,
       toastr: null,
+      inited: false,
       //googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
     }
   },
@@ -39,7 +40,7 @@ let Index = {
       this.startSyncContents()
     },
     'syncConfig.enableSound' () {
-      if (this.loading === true) {
+      if (this.inited === false) {
         return false
       }
       this.editor.summernote('setOption', {
@@ -49,19 +50,31 @@ let Index = {
       this.startSyncConfig()
     },
     'syncConfig.customStyle' () {
-      if (this.loading === true) {
+      if (this.inited === false) {
         return false
       }
       this.setCustomStyle()
       //console.log('watch customStyle')
       this.startSyncConfig()
     },
+    'syncConfig.enableTomatoTimer' () {
+      if (this.inited === false) {
+        return false
+      }
+      this.startSyncConfig()
+    },
     'syncConfig.tomatoTimerSeconds' (tomatoTimerSeconds) {
+      if (this.inited === false) {
+        return false
+      }
       if (!this.$refs.TomatoTimer) {
         return false
       }
       
+      //console.log(tomatoTimerSeconds)
       this.$refs.TomatoTimer.resetTimer(tomatoTimerSeconds)
+      
+      this.startSyncConfig()
     }
   },
   async mounted () {
@@ -83,8 +96,6 @@ let Index = {
     this.setCustomStyle()
     //this.$refs.ConfigModal.show()
     
-    this.loading = false
-    
     //var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
     //alert(height)
     //var addressBarSize = parseFloat(getComputedStyle(document.documentElement).perspective) - document.documentElement.clientHeight
@@ -93,6 +104,9 @@ let Index = {
     this.toastr = new Toastr({
       "positionClass": "toast-bottom-right"
     })
+    
+    this.loading = false
+    this.inited = true
   },
   methods: {
     onTomatoTimerTimeour () {

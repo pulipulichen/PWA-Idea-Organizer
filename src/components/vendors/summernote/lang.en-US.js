@@ -25,6 +25,7 @@ export default {
     pastePlainTextHint: 'Paste: Ctrl+Shift+v',
     saveHTML: 'Save',
     pasteHTML: 'Paste',
+    copied: 'Copied'
   },
   image: {
     image: 'Picture',

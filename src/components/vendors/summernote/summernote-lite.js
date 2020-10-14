@@ -8,6 +8,9 @@ import soundKeys from './sound/soundKeys.js'
 import summerNoteOptions from './options.js'
 import langEnUS from './lang.en-US.js'
 
+import Toastr from 'toastr2';
+import 'toastr2/dist/toastr.min.css';
+
 /**
  * Super simple wysiwyg editor v0.8.11
  * https://summernote.org
@@ -26,7 +29,7 @@ import langEnUS from './lang.en-US.js'
   
 }(this, (function ($$1) { 
   //'use strict';
-
+  
   $$1 = $$1 && $$1.hasOwnProperty('default') ? $$1['default'] : $$1;
   
   var Renderer = /** @class */ (function () {
@@ -4751,6 +4754,14 @@ import langEnUS from './lang.en-US.js'
           this.context.memo('help.SaveSnippet', this.lang.help.SaveSnippet);
           this.context.memo('help.htmlify', this.lang.help.htmlify);
           
+          let toastrOptions = {}
+          if (this.options.toolbarPosition === 'bottom') {
+            toastrOptions = {
+              "positionClass": "toast-bottom-right"
+            }
+          }
+          this.toastr = new Toastr(toastrOptions);
+          
           // native commands(with execCommand), generate function for execCommand
           var commands = [
               'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript',
@@ -5153,6 +5164,10 @@ ${links}`
             let code = _this.context.invoke('code');
             //console.log(code)
             copyRichFormat(code)
+            
+            // Display a success toast, with a title
+            this.toastr.success(_this.lang.font.copied)
+            
             return this
           }
           
@@ -9043,7 +9058,7 @@ sel.addRange(range);
           this.context.memo('button.copyRichFormat', function () {
               return _this.button({
                   //contents: _this.ui.icon(_this.options.icons.copy),  // 
-                  contents: _this.ui.icon(_this.options.icons.copy),
+                  contents: `<i class="copy icon"></i>`,
                   tooltip: _this.lang.font.copyRichFormat,
                   click: (event) => {
                     toolbarScrollToLeft(event)

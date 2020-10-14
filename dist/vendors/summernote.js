@@ -222,6 +222,24 @@ module.exports = exports;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/toastr.less":
+/*!***************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/vendors/summernote/styles/toastr.less ***!
+  \***************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(true);
+// Module
+exports.push([module.i, ".toast-bottom-right {\n  bottom: 5rem !important;\n  margin-right: 1rem !important;\n  max-width: calc(100vw - 3rem) !important;\n}\n", "",{"version":3,"sources":["toastr.less"],"names":[],"mappings":"AAAA;EACE,uBAAuB;EACvB,6BAA6B;EAC7B,wCAAwC;AAC1C","file":"toastr.less","sourcesContent":[".toast-bottom-right {\n  bottom: 5rem !important;\n  margin-right: 1rem !important;\n  max-width: calc(100vw - 3rem) !important;\n}\n"]}]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "./src/components/vendors/summernote/font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b":
 /*!************************************************************************************************!*\
   !*** ./src/components/vendors/summernote/font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b ***!
@@ -291,6 +309,7 @@ __webpack_require__.r(__webpack_exports__);
     pastePlainTextHint: 'Paste: Ctrl+Shift+v',
     saveHTML: 'Save',
     pasteHTML: 'Paste',
+    copied: 'Copied'
   },
   image: {
     image: 'Picture',
@@ -512,7 +531,8 @@ __webpack_require__.r(__webpack_exports__);
         'backgroundColorBlue': '藍色標亮',
         'backgroundColorPurple': '紫色標亮',
         pastePlainTextHint: '貼上: Ctrl+Shift+v',
-        saveHTML: '儲存'
+        saveHTML: '儲存',
+        copied: '已複製'
       },
       image: {
         image: '圖片',
@@ -1874,6 +1894,27 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./src/components/vendors/summernote/styles/toastr.less":
+/*!**************************************************************!*\
+  !*** ./src/components/vendors/summernote/styles/toastr.less ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./toastr.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/toastr.less");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("404243d6", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
 /***/ "./src/components/vendors/summernote/summernote-lite.js":
 /*!**************************************************************!*\
   !*** ./src/components/vendors/summernote/summernote-lite.js ***!
@@ -1889,7 +1930,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sound_soundKeys_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sound/soundKeys.js */ "./src/components/vendors/summernote/sound/soundKeys.js");
 /* harmony import */ var _options_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./options.js */ "./src/components/vendors/summernote/options.js");
 /* harmony import */ var _lang_en_US_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lang.en-US.js */ "./src/components/vendors/summernote/lang.en-US.js");
+/* harmony import */ var toastr2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! toastr2 */ "./node_modules/toastr2/dist/toastr.es5.js");
+/* harmony import */ var toastr2_dist_toastr_min_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! toastr2/dist/toastr.min.css */ "./node_modules/toastr2/dist/toastr.min.css");
+/* harmony import */ var toastr2_dist_toastr_min_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(toastr2_dist_toastr_min_css__WEBPACK_IMPORTED_MODULE_6__);
 /* global define */
+
+
+
 
 
 
@@ -1917,7 +1964,7 @@ __webpack_require__.r(__webpack_exports__);
   
 }(undefined, (function ($$1) { 
   //'use strict';
-
+  
   $$1 = $$1 && $$1.hasOwnProperty('default') ? $$1['default'] : $$1;
   
   var Renderer = /** @class */ (function () {
@@ -6642,6 +6689,14 @@ __webpack_require__.r(__webpack_exports__);
           this.context.memo('help.SaveSnippet', this.lang.help.SaveSnippet);
           this.context.memo('help.htmlify', this.lang.help.htmlify);
           
+          let toastrOptions = {}
+          if (this.options.toolbarPosition === 'bottom') {
+            toastrOptions = {
+              "positionClass": "toast-bottom-right"
+            }
+          }
+          this.toastr = new toastr2__WEBPACK_IMPORTED_MODULE_5__["default"](toastrOptions);
+          
           // native commands(with execCommand), generate function for execCommand
           var commands = [
               'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript',
@@ -7044,6 +7099,10 @@ ${links}`
             let code = _this.context.invoke('code');
             //console.log(code)
             copyRichFormat(code)
+            
+            // Display a success toast, with a title
+            this.toastr.success(_this.lang.font.copied)
+            
             return this
           }
           
@@ -10930,7 +10989,7 @@ sel.addRange(range);
           this.context.memo('button.copyRichFormat', function () {
               return _this.button({
                   //contents: _this.ui.icon(_this.options.icons.copy),  // 
-                  contents: _this.ui.icon(_this.options.icons.copy),
+                  contents: `<i class="copy icon"></i>`,
                   tooltip: _this.lang.font.copyRichFormat,
                   click: (event) => {
                     toolbarScrollToLeft(event)
@@ -13391,7 +13450,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_summernote_lite_toolbar_less__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_toolbar_less__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _styles_semantic_niwsf_icon_less__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles/semantic.niwsf.icon.less */ "./src/components/vendors/summernote/styles/semantic.niwsf.icon.less");
 /* harmony import */ var _styles_semantic_niwsf_icon_less__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_styles_semantic_niwsf_icon_less__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _lang_summernote_zh_TW_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./lang/summernote-zh-TW.js */ "./src/components/vendors/summernote/lang/summernote-zh-TW.js");
+/* harmony import */ var _styles_toastr_less__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./styles/toastr.less */ "./src/components/vendors/summernote/styles/toastr.less");
+/* harmony import */ var _styles_toastr_less__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_styles_toastr_less__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _lang_summernote_zh_TW_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./lang/summernote-zh-TW.js */ "./src/components/vendors/summernote/lang/summernote-zh-TW.js");
 
 //import './summernote-lite.less'
 
@@ -13406,6 +13467,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // https://semantic-ui.com/elements/icon.html
+
+
+// https://www.npmjs.com/package/toastr2
 
 
 

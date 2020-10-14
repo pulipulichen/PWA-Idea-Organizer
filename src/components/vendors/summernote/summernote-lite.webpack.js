@@ -14,4 +14,7 @@ import './styles/summernote-lite.toolbar.less'
 // https://semantic-ui.com/elements/icon.html
 import './styles/semantic.niwsf.icon.less'
 
+// https://www.npmjs.com/package/toastr2
+import './styles/toastr.less'
+
 import './lang/summernote-zh-TW.js'

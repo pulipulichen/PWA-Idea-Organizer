@@ -1,0 +1,29 @@
+@mainColor: #F7958E;
+
+.volume-container input[type="range"] {
+  width: 50%;
+  
+  
+  -webkit-appearance: none;
+  border-radius:2px;
+  height:3px;
+  background-image:-webkit-linear-gradient(left ,@mainColor 0%,@mainColor 50%,#fff 50%, #fff 100%);
+  box-shadow:inset #ebb 0 0 5px;
+  outline : none;
+  transition:.1s;
+  
+  &::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width:10px;
+    height:10px;
+    background:@mainColor;
+    border-radius:50%;
+    transition:.1s;
+  }
+  
+  &::-webkit-slider-thumb:hover,
+  &::-webkit-slider-thumb:active{
+    width:16px;
+    height:16px;
+  }
+}

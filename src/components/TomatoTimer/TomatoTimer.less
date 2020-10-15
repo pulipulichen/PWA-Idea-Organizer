@@ -2,7 +2,7 @@
 
 .TomatoTimer {
   position: fixed;
-  top: 1rem;
+  bottom: 4rem;
   right: 1rem;
   z-index: @baseZIndex;
   
@@ -157,32 +157,4 @@
   //h1 { margin-top:150px; text-align:center;}
   //body { background-color:#f7f7f7;}
   
-}
-
-.volume-container input[type="range"] {
-  width: 50%;
-  
-  
-  -webkit-appearance: none;
-  border-radius:2px;
-  height:3px;
-  background-image:-webkit-linear-gradient(left ,#f22 0%,#f22 50%,#fff 50%, #fff 100%);
-  box-shadow:inset #ebb 0 0 5px;
-  outline : none;
-  transition:.1s;
-  
-  &::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    width:10px;
-    height:10px;
-    background:#f22;
-    border-radius:50%;
-    transition:.1s;
-  }
-  
-  &::-webkit-slider-thumb:hover,
-  &::-webkit-slider-thumb:active{
-    width:16px;
-    height:16px;
-  }
 }

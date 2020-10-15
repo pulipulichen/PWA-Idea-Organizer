@@ -13,7 +13,6 @@
   <tomato-timer
     ref="TomatoTimer"
     v-if="syncConfig.enableTomatoTimer && inited"
-    v-bind:defaultSeconds="syncConfig.tomatoTimerSeconds"
     v-bind:config="config"
     v-bind:utils="utils"
     v-bind:syncConfig="syncConfig"

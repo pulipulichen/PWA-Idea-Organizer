@@ -3,7 +3,7 @@ import $ from 'jquery'
 import YouTubePlayer from './YouTubePlayer/YouTubePlayer.vue'
 
 let TomatoTimer = {
-  props: ['config', 'utils', 'clientConfig', 'syncConfig', 'defaultSeconds'],
+  props: ['config', 'utils', 'clientConfig', 'syncConfig'],
   data() {
     this.$i18n.locale = this.config.locale
     return {
@@ -18,11 +18,11 @@ let TomatoTimer = {
       timeLeft: null,
       isPaused: false,
       isStarted: false,
-      wholeTime: this.defaultSeconds,
+      wholeTime: Number(this.syncConfig.tomatoTimerSeconds),
       //wholeTime: 25,
       progressLength: Math.PI * 2 * 100,
       BGMPlayer: null,
-      BGMVolume: 100
+      BGMVolume: 50
     }
   },
   components: {
@@ -92,9 +92,11 @@ let TomatoTimer = {
   methods: {
     
     changeWholeTime(seconds) {
+      //console.log(typeof(seconds), typeof(this.wholeTime))
       if ((this.wholeTime + seconds) > 0) {
         this.wholeTime += seconds;
         this.update(this.wholeTime, this.wholeTime);
+        this.syncConfig.tomatoTimerSeconds = this.wholeTime
       }
     },
     update(value, timePercent) {
@@ -206,10 +208,11 @@ let TomatoTimer = {
       this.update(timeLeft, this.wholeTime);
     },
     initSlider() {
+      let mainColor = '#F7958E'
       let bg = function (n) {
         //console.log(n)
         r.css({
-          'background-image': '-webkit-linear-gradient(left ,#f22 0%,#f22 ' + n + '%,#fff ' + n + '%, #fff 100%)'
+          'background-image': `-webkit-linear-gradient(left ,${mainColor} 0%,${mainColor} ' + n + '%,#fff ' + n + '%, #fff 100%)`
         });
       }
       var r = $(this.$refs.VolumeSlider)

@@ -22200,29 +22200,40 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.syncConfig.musicURL,
-            expression: "syncConfig.musicURL"
-          }
-        ],
-        attrs: {
-          type: "url",
-          placeholder: "https://www.youtube.com/watch?v=..."
-        },
-        domProps: { value: _vm.syncConfig.musicURL },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+      _c("div", { staticClass: "ui action input" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.syncConfig.musicURL,
+              expression: "syncConfig.musicURL"
             }
-            _vm.$set(_vm.syncConfig, "musicURL", $event.target.value)
+          ],
+          attrs: {
+            type: "url",
+            placeholder: "https://www.youtube.com/watch?v=..."
+          },
+          domProps: { value: _vm.syncConfig.musicURL },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.syncConfig, "musicURL", $event.target.value)
+            }
           }
-        }
-      })
+        }),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "ui button",
+            attrs: { target: "_blank", href: _vm.syncConfig.musicURL }
+          },
+          [_c("i", { staticClass: "external alternate icon" })]
+        )
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "field" }, [

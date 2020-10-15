@@ -24,6 +24,9 @@
     },
     "v-if": {},
     "v-on:click": {},
+    "v-bind:href": {
+      "context": "a"
+    },
     "v-bind:src": {},
     "v-model": {
       "context": "input"

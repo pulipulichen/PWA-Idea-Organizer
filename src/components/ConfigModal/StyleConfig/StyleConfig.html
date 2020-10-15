@@ -41,10 +41,18 @@
     <label>
       {{ $t('Music URL (YouTube)') }}
     </label>
-    <input 
-      type="url"
-      v-model="syncConfig.musicURL"
-      placeholder="https://www.youtube.com/watch?v=..." />
+    <div class="ui action input">
+      <input 
+        type="url"
+        v-model="syncConfig.musicURL"
+        placeholder="https://www.youtube.com/watch?v=..." />
+      <a class="ui button"
+         target="_blank"
+         v-bind:href="syncConfig.musicURL">
+        <i class="external alternate icon"></i>
+      </a>
+    </div>
+      
   </div>
   
   <div class="field">

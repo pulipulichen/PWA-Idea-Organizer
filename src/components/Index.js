@@ -113,6 +113,7 @@ let Index = {
     
     this.loading = false
     this.inited = true
+    $(document.body).addClass('inited')
   },
   methods: {
     onTomatoTimerTimeour () {

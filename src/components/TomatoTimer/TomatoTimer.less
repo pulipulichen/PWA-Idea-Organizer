@@ -2,11 +2,14 @@
 
 .TomatoTimer {
   position: fixed;
-  bottom: 5rem;
-  right: 1rem;
+  bottom: 2rem;
+  right: 0rem;
   z-index: @baseZIndex;
   
   line-height: 1 !important;
+  
+  transform: scale(0.5);
+  user-select: none;
   
   @media only screen and (max-width: 767px) {
     display: none;
@@ -140,9 +143,10 @@
   #pause:hover { opacity: 0.8; }
 
   .e-c-base {
-    fill: none;
+    //fill: none;
+    fill: white;
     stroke: #B6B6B6;
-    stroke-width: 4px
+    stroke-width: 4px;
   }
 
   .e-c-progress {

@@ -57,9 +57,20 @@ let TomatoTimer = {
       else if (this.isStarted === false) {
         this.BGMPlayer.pause()
       }
+    },
+    BGMVolume () {
+      localStorage.setItem('BGMVolume', this.BGMVolume)
     }
   },
   async mounted () {
+    this.BGMVolume = localStorage.getItem('BGMVolume')
+    if (isNaN(this.BGMVolume) === false && typeof(this.BGMVolume) === 'string') {
+      this.BGMVolume = Number(this.BGMVolume)
+    }
+    else {
+      this.BGMVolume = 50
+    }
+    
     //circle start
     this.progressBar = this.$refs.Progress
     this.indicator = this.$refs.Indicator //  document.getElementById('e-indicator'); // 不知道為什麼找不到這個 
@@ -208,15 +219,20 @@ let TomatoTimer = {
       this.update(timeLeft, this.wholeTime);
     },
     initSlider() {
+      
       let mainColor = '#F7958E'
       let bg = function (n) {
         //console.log(n)
         r.css({
-          'background-image': `-webkit-linear-gradient(left ,${mainColor} 0%,${mainColor} ' + n + '%,#fff ' + n + '%, #fff 100%)`
+          'background-image': `-webkit-linear-gradient(left ,${mainColor} 0%,${mainColor} ` + n + '%,#fff ' + n + '%, #fff 100%)'
         });
       }
       var r = $(this.$refs.VolumeSlider)
-      bg(r.val())
+      
+      setTimeout(() => {
+        bg(r.val())
+      }, 0)
+      
       r.on('mouseenter', function () {
         var p = r.val();
         r.on('click', function () {
@@ -228,6 +244,7 @@ let TomatoTimer = {
           bg(p);
         });
       });
+      
     }
   } // methods
 }

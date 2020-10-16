@@ -84,7 +84,8 @@
     color: transparent;
     width: @fontSizeBase * 0.5;
     height: @fontSizeBase * 0.5;
-    //margin-top: @fontSizeBase / 4;  // 這應該要修改lineHeight
+    //margin
+    -top: @fontSizeBase / 4;  // 這應該要修改lineHeight
     margin-right: calc((@fontSizeBase * 1.3) + (@fontSizeBase / 8) - 1px);
     margin-top: (@fontSizeBase / 2) - (@fontSizeBase / 4) + (@fontSizeBase / 8);
     
@@ -136,8 +137,12 @@
       margin-top: @lineMargin;
     }
     
-    ul, ol {
-      margin-left: -2.5rem;
+    ol {
+      margin-left: @fontSizeBase * -1.5;
+    }
+    
+    ul {
+      margin-left: (@fontSizeBase * -1) + (@fontSizeBase * 0.25);
     }
   }
   

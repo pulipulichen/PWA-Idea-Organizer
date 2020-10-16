@@ -4169,25 +4169,40 @@ import 'toastr2/dist/toastr.min.css';
           }
           range.create(nextPara, 0).normalize().select().scrollIntoView(editable);
           
-          if (nextPara) {
-            let $nextPara = $$1(nextPara)
-            if ($nextPara.hasClass('highlight')) {
-              $nextPara.removeClass('highlight')
-              $nextPara.removeAttr('style')
-            }
-            
-            if ($nextPara.children().length === 1
-                    && $nextPara.children().eq(0).hasClass('highlight')) {
-              let children = $nextPara.children().eq(0)
-              children.contents().appendTo($nextPara)
-              children.remove()
-            }
-            else {
-              $nextPara.children().filter('.highlight').removeAttr('style').removeClass('highlight')
-            }
-            //console.log(1, nextPara)
-          }
+          this.insertParagraphRemoveStlye(nextPara)
       };
+      
+      Typing.prototype.insertParagraphRemoveStlye = function (nextPara) {
+        if (!nextPara) {
+          return false
+        }
+        
+        let $nextPara = $$1(nextPara)
+        if ($nextPara.hasClass('highlight')) {
+          $nextPara.removeClass('highlight')
+          $nextPara.removeAttr('style')
+        }
+
+        if ($nextPara.children().length === 1
+                && $nextPara.children().eq(0).hasClass('highlight')) {
+          let children = $nextPara.children().eq(0)
+          children.contents().appendTo($nextPara)
+          children.remove()
+        }
+        else {
+          $nextPara.children().filter('.highlight').removeAttr('style').removeClass('highlight')
+        }
+        
+        if ($nextPara.text().trim() === ''
+                && $nextPara.children().length === 1
+                && $nextPara.children().prop('tagName').toLowerCase() !== 'br') {
+          let children = $nextPara.children().eq(0)
+          children.contents().appendTo($nextPara)
+          children.remove()
+        } 
+        console.log(nextPara)
+      }
+      
       return Typing;
   }());
 

@@ -81,7 +81,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".summernote .note-editing-area .note-editable > p {\n  text-indent: 2rem;\n  margin-bottom: 1rem;\n}\n.summernote .note-editing-area .note-editable ol {\n  counter-reset: item;\n  margin: 0;\n  padding-left: 0;\n  clear: both;\n  margin-left: -1rem;\n}\n.summernote .note-editing-area .note-editable ol > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n  padding-left: 2.7rem;\n  text-indent: -2rem;\n  margin-left: 1rem;\n}\n.summernote .note-editing-area .note-editable ol > li ul,\n.summernote .note-editing-area .note-editable ol > li ol {\n  margin-left: -2.5rem;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li:before {\n  background: #fa88a1;\n  color: #FFF;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li:before {\n  background: #ffef62;\n  color: #666;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li ol > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li ol > li ol > li:before {\n  background: #EEE;\n}\n.summernote .note-editing-area .note-editable ol > li:before {\n  content: counter(item);\n  margin-right: 0.7rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: #FFF;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: calc(2rem - 2px);\n  width: 2rem;\n  float: left;\n  clear: both;\n  font-weight: bold;\n  margin-top: 0.3rem;\n  border: 1px solid gray;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n  margin-left: -2.7rem;\n  margin-right: 2.7rem;\n  padding-left: calc(2rem - 2px);\n}\n.summernote .note-editing-area .note-editable ul {\n  counter-reset: item;\n  margin: 0;\n  padding-left: 0;\n  clear: both;\n  margin-left: -1rem;\n}\n.summernote .note-editing-area .note-editable ul > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n  padding-left: 2.7rem;\n  text-indent: -2rem;\n  margin-left: 1rem;\n}\n.summernote .note-editing-area .note-editable ul > li ul,\n.summernote .note-editing-area .note-editable ul > li ol {\n  margin-left: -2.5rem;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li:before {\n  background: #fa88a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li:before {\n  background: #ffef62;\n  border: 1px solid gray;\n  line-height: calc(1.3rem - 2px);\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li ul > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li ul > li ul > li:before {\n  background-color: #EEE;\n}\n.summernote .note-editing-area .note-editable ul > li:before {\n  content: '';\n  margin-right: 1rem;\n  margin-left: 0.4rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: transparent;\n  text-align: center;\n  font-size: 1.3rem;\n  height: 1.3rem;\n  width: 1.3rem;\n  float: left;\n  clear: both;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n  margin-left: -2.7rem;\n  margin-right: 3.3rem;\n}\n", "",{"version":3,"sources":["summernote-lite.editable.less"],"names":[],"mappings":"AAAA;EACE,iBAAiB;EACjB,mBAAmB;AACrB;AACA;EACE,mBAAmB;EACnB,SAAS;EACT,eAAe;EACf,WAAW;EACX,kBAAkB;AACpB;AACA;EACE,uBAAuB;EACvB,uBAAuB;EACvB,aAAa;EACb,gBAAgB;EAChB,oBAAoB;EACpB,kBAAkB;EAClB,iBAAiB;AACnB;AACA;;EAEE,oBAAoB;AACtB;AACA;EACE,mBAAmB;EACnB,WAAW;AACb;AACA;EACE,mBAAmB;EACnB,WAAW;AACb;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,sBAAsB;EACtB,oBAAoB;EACpB,UAAU;EACV,cAAc;EACd,0BAA0B;EAC1B,uBAAuB;EACvB,kBAAkB;EAClB,gBAAgB;EAChB,WAAW;EACX,kBAAkB;EAClB,iBAAiB;EACjB,6BAA6B;EAC7B,WAAW;EACX,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,kBAAkB;EAClB,sBAAsB;EACtB,sBAAsB;EACtB,sBAAsB;EACtB,oBAAoB;EACpB,oBAAoB;EACpB,8BAA8B;AAChC;AACA;EACE,mBAAmB;EACnB,SAAS;EACT,eAAe;EACf,WAAW;EACX,kBAAkB;AACpB;AACA;EACE,uBAAuB;EACvB,uBAAuB;EACvB,aAAa;EACb,gBAAgB;EAChB,oBAAoB;EACpB,kBAAkB;EAClB,iBAAiB;AACnB;AACA;;EAEE,oBAAoB;AACtB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;EACnB,sBAAsB;EACtB,+BAA+B;AACjC;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,mBAAmB;AACrB;AACA;EACE,sBAAsB;AACxB;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,mBAAmB;EACnB,UAAU;EACV,cAAc;EACd,0BAA0B;EAC1B,uBAAuB;EACvB,kBAAkB;EAClB,gBAAgB;EAChB,kBAAkB;EAClB,kBAAkB;EAClB,iBAAiB;EACjB,cAAc;EACd,aAAa;EACb,WAAW;EACX,WAAW;EACX,iBAAiB;EACjB,kBAAkB;EAClB,sBAAsB;EACtB,sBAAsB;EACtB,oBAAoB;EACpB,oBAAoB;AACtB","file":"summernote-lite.editable.less","sourcesContent":[".summernote .note-editing-area .note-editable > p {\n  text-indent: 2rem;\n  margin-bottom: 1rem;\n}\n.summernote .note-editing-area .note-editable ol {\n  counter-reset: item;\n  margin: 0;\n  padding-left: 0;\n  clear: both;\n  margin-left: -1rem;\n}\n.summernote .note-editing-area .note-editable ol > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n  padding-left: 2.7rem;\n  text-indent: -2rem;\n  margin-left: 1rem;\n}\n.summernote .note-editing-area .note-editable ol > li ul,\n.summernote .note-editing-area .note-editable ol > li ol {\n  margin-left: -2.5rem;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li:before {\n  background: #fa88a1;\n  color: #FFF;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li:before {\n  background: #ffef62;\n  color: #666;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li ol > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ol > li ol > li ol > li ol > li ol > li ol > li ol > li:before {\n  background: #EEE;\n}\n.summernote .note-editing-area .note-editable ol > li:before {\n  content: counter(item);\n  margin-right: 0.7rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: #FFF;\n  text-align: center;\n  font-size: 1.3rem;\n  line-height: calc(2rem - 2px);\n  width: 2rem;\n  float: left;\n  clear: both;\n  font-weight: bold;\n  margin-top: 0.3rem;\n  border: 1px solid gray;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n  margin-left: -2.7rem;\n  margin-right: 2.7rem;\n  padding-left: calc(2rem - 2px);\n}\n.summernote .note-editing-area .note-editable ul {\n  counter-reset: item;\n  margin: 0;\n  padding-left: 0;\n  clear: both;\n  margin-left: -1rem;\n}\n.summernote .note-editing-area .note-editable ul > li {\n  counter-increment: item;\n  list-style: none inside;\n  margin: 0px 0;\n  overflow: hidden;\n  padding-left: 2.7rem;\n  text-indent: -2rem;\n  margin-left: 1rem;\n}\n.summernote .note-editing-area .note-editable ul > li ul,\n.summernote .note-editing-area .note-editable ul > li ol {\n  margin-left: -2.5rem;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li:before {\n  background: #fa88a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li:before {\n  background: #ffef62;\n  border: 1px solid gray;\n  line-height: calc(1.3rem - 2px);\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li:before {\n  background: #e7f4a1;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li:before {\n  background: #b0dffa;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li ul > li:before {\n  background: #cdc5f4;\n}\n.summernote .note-editing-area .note-editable ul > li ul > li ul > li ul > li ul > li ul > li ul > li:before {\n  background-color: #EEE;\n}\n.summernote .note-editing-area .note-editable ul > li:before {\n  content: '';\n  margin-right: 1rem;\n  margin-left: 0.4rem;\n  padding: 0;\n  display: block;\n  -webkit-border-radius: 50%;\n  -moz-border-radius: 50%;\n  border-radius: 50%;\n  background: gray;\n  color: transparent;\n  text-align: center;\n  font-size: 1.3rem;\n  height: 1.3rem;\n  width: 1.3rem;\n  float: left;\n  clear: both;\n  font-weight: bold;\n  margin-top: 0.5rem;\n  font-family: system-ui;\n  padding-bottom: 0.1rem;\n  margin-left: -2.7rem;\n  margin-right: 3.3rem;\n}\n"]}]);
+exports.push([module.i, ".summernote .note-editing-area .note-editable .highlight {\n  border-radius: 0.5rem;\n}\n", "",{"version":3,"sources":["summernote-lite.editable.less"],"names":[],"mappings":"AAAA;EACE,qBAAqB;AACvB","file":"summernote-lite.editable.less","sourcesContent":[".summernote .note-editing-area .note-editable .highlight {\n  border-radius: 0.5rem;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -6104,25 +6104,40 @@ __webpack_require__.r(__webpack_exports__);
           }
           range.create(nextPara, 0).normalize().select().scrollIntoView(editable);
           
-          if (nextPara) {
-            let $nextPara = $$1(nextPara)
-            if ($nextPara.hasClass('highlight')) {
-              $nextPara.removeClass('highlight')
-              $nextPara.removeAttr('style')
-            }
-            
-            if ($nextPara.children().length === 1
-                    && $nextPara.children().eq(0).hasClass('highlight')) {
-              let children = $nextPara.children().eq(0)
-              children.contents().appendTo($nextPara)
-              children.remove()
-            }
-            else {
-              $nextPara.children().filter('.highlight').removeAttr('style').removeClass('highlight')
-            }
-            //console.log(1, nextPara)
-          }
+          this.insertParagraphRemoveStlye(nextPara)
       };
+      
+      Typing.prototype.insertParagraphRemoveStlye = function (nextPara) {
+        if (!nextPara) {
+          return false
+        }
+        
+        let $nextPara = $$1(nextPara)
+        if ($nextPara.hasClass('highlight')) {
+          $nextPara.removeClass('highlight')
+          $nextPara.removeAttr('style')
+        }
+
+        if ($nextPara.children().length === 1
+                && $nextPara.children().eq(0).hasClass('highlight')) {
+          let children = $nextPara.children().eq(0)
+          children.contents().appendTo($nextPara)
+          children.remove()
+        }
+        else {
+          $nextPara.children().filter('.highlight').removeAttr('style').removeClass('highlight')
+        }
+        
+        if ($nextPara.text().trim() === ''
+                && $nextPara.children().length === 1
+                && $nextPara.children().prop('tagName').toLowerCase() !== 'br') {
+          let children = $nextPara.children().eq(0)
+          children.contents().appendTo($nextPara)
+          children.remove()
+        } 
+        console.log(nextPara)
+      }
+      
       return Typing;
   }());
 

@@ -45,7 +45,7 @@ export default function (Index) {
       toolbarCompact: true,
       toolbarOverflow: true,
       enableTypeWriterSoundEffect: this.syncConfig.enableSound,
-      placeholder: '<ul><li>' + this.$t('What do you write...') + '</li></ul>',
+      placeholder: '<ul><li>' + this.$t('Start wrirting...') + '</li></ul>',
       focus: true,
       //container: this.editor.parent(),
       //maxHeight: '5em',

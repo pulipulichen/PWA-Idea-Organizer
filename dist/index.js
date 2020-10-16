@@ -21945,7 +21945,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "extra content" }, [
-      _c("div", { staticClass: "ui two buttons" }, [
+      _c("div", { staticClass: "ui three buttons" }, [
         _c(
           "a",
           {
@@ -21970,6 +21970,22 @@ var render = function() {
           [
             _c("i", { staticClass: "blogger icon" }),
             _vm._v("\r\n          " + _vm._s(_vm.$t("Blog")) + "\r\n        ")
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "ui basic warning button",
+            attrs: {
+              href:
+                "https://github.com/pulipulichen/PWA-Idea-Organizer/issues/new",
+              target: "_blank"
+            }
+          },
+          [
+            _c("i", { staticClass: "bug icon" }),
+            _vm._v("\r\n          " + _vm._s(_vm.$t("Issue")) + "\r\n        ")
           ]
         )
       ])
@@ -22134,7 +22150,11 @@ var render = function() {
         }),
         _vm._v(" "),
         _c("label", { attrs: { for: "configEnableSound" } }, [
-          _vm._v("\r\n        " + _vm._s(_vm.$t("Enable Sound")) + "\r\n      ")
+          _vm._v(
+            "\r\n        " +
+              _vm._s(_vm.$t("Enable type writer sound effect")) +
+              "\r\n      "
+          )
         ])
       ])
     ]),
@@ -22194,7 +22214,7 @@ var render = function() {
         _c("label", { attrs: { for: "configEnableTomatoTimer" } }, [
           _vm._v(
             "\r\n        " +
-              _vm._s(_vm.$t("Enable Tomato Timer")) +
+              _vm._s(_vm.$t("Enable tomato timer")) +
               "\r\n      "
           )
         ])
@@ -22232,7 +22252,7 @@ var render = function() {
         ])
       : _vm._e(),
     _vm._v(" "),
-    _c("div", { staticClass: "field hidden-in-small-screen" }, [
+    _c("div", { staticClass: "field" }, [
       _c("label", [
         _vm._v(
           "\r\n      " + _vm._s(_vm.$t("Music URL (YouTube)")) + "\r\n    "
@@ -35731,16 +35751,25 @@ let StyleConfig = {
   },
 //  components: {
 //  },
-  computed: {
-  },
-  watch: {
-  },
-  mounted() {
-  },
+//  computed: {
+//    sharable() {
+//      return (typeof(window.navigator.share) === 'object')
+//    }
+//  },
+//  watch: {
+//  },
+//  mounted() {
+//  },
   methods: {
     initCheckbox () {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.main).checkbox()
-    }
+    },
+//    async shareYouTubeURL() {
+//      await window.navigator.share({
+//        titile: 'youtube music',
+//        url: this.syncConfig.musicURL
+//      })
+//    }
   } // methods
 }
 
@@ -37544,6 +37573,7 @@ let YoutubePlayer = {
     state () {
       //console.log(this.state)
       if (this.state === 0) {
+        // 自動重播
         this.play()
       }
     }
@@ -37617,6 +37647,7 @@ let YoutubePlayer = {
         let onPlayerReady = (event) => {
           //console.log(333)
           event.target.setVolume(0)
+          event.target.mute()
           event.target.setLoop(true)
           
           event.target.playVideo()

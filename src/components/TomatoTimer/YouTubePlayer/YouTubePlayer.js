@@ -49,6 +49,7 @@ let YoutubePlayer = {
     state () {
       //console.log(this.state)
       if (this.state === 0) {
+        // 自動重播
         this.play()
       }
     }
@@ -122,6 +123,7 @@ let YoutubePlayer = {
         let onPlayerReady = (event) => {
           //console.log(333)
           event.target.setVolume(0)
+          event.target.mute()
           event.target.setLoop(true)
           
           event.target.playVideo()

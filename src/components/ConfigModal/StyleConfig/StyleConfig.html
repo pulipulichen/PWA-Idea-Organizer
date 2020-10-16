@@ -13,7 +13,7 @@
         class="hidden"
         v-model="syncConfig.enableSound" />
       <label for="configEnableSound">
-        {{ $t('Enable Sound') }}
+        {{ $t('Enable type writer sound effect') }}
       </label>
     </div>
   </div>
@@ -26,7 +26,7 @@
         class="hidden"
         v-model="syncConfig.enableTomatoTimer" />
       <label for="configEnableTomatoTimer">
-        {{ $t('Enable Tomato Timer') }}
+        {{ $t('Enable tomato timer') }}
       </label>
     </div>
   </div>
@@ -37,7 +37,7 @@
     <input type="number" step="10" v-model="syncConfig.tomatoTimerSeconds" min="0">
   </div>
   
-  <div class="field hidden-in-small-screen">
+  <div class="field">
     <label>
       {{ $t('Music URL (YouTube)') }}
     </label>
@@ -51,6 +51,13 @@
          v-bind:href="syncConfig.musicURL">
         <i class="external alternate icon"></i>
       </a>
+      <!--
+      <a class="ui button"
+         v-on:click="shareYouTubeURL"
+         v-else>
+        <i class="external alternate icon"></i>
+      </a>
+      -->
     </div>
       
   </div>

@@ -9,16 +9,25 @@ let StyleConfig = {
   },
 //  components: {
 //  },
-  computed: {
-  },
-  watch: {
-  },
-  mounted() {
-  },
+//  computed: {
+//    sharable() {
+//      return (typeof(window.navigator.share) === 'object')
+//    }
+//  },
+//  watch: {
+//  },
+//  mounted() {
+//  },
   methods: {
     initCheckbox () {
       $(this.$refs.main).checkbox()
-    }
+    },
+//    async shareYouTubeURL() {
+//      await window.navigator.share({
+//        titile: 'youtube music',
+//        url: this.syncConfig.musicURL
+//      })
+//    }
   } // methods
 }
 

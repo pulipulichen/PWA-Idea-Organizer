@@ -10739,7 +10739,7 @@ sel.addRange(range);
           this.context.memo('button.clearTarget', function () {
               return _this.button({
                   className: 'note-btn-clearTarget',
-                  contents: '∅',
+                  contents: '<i class="trash icon"></i>',
                   tooltip: _this.lang.paragraph.clearTarget,
                   click: (event) => {
                     if (window.confirm(_this.lang.paragraph.clearTargetConfirm)) {

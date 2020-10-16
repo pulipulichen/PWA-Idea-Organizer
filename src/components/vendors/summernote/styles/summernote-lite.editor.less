@@ -53,39 +53,6 @@
   font-size: 1.5rem;
   line-height: 2.2rem;
 }
-    
-
-&.note-editor .note-editing-area .note-editable {
-  outline: 0;
-  
-  &[contenteditable="true"] {
-    padding-bottom: 20vh !important;
-  }
-  
-  &[contenteditable="false"] {
-    p,li {
-      cursor: pointer;
-    }
-    
-    .sortable-ghost {
-      background-color: #dff0ff;
-      color: #2185d0;
-      -webkit-box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent;
-      box-shadow: 0 0 0 1px #2185d0 inset, 0 0 0 0 transparent;
-    }
-
-    .sortable-selected {
-      background-color: #e1f7f7;
-      color: #10a3a3;
-      -webkit-box-shadow: 0 0 0 1px #10a3a3 inset, 0 0 0 0 transparent;
-      box-shadow: 0 0 0 1px #10a3a3 inset, 0 0 0 0 transparent;
-    }
-  }
-}
-
-&.note-editor .note-editing-area .note-editable.sort-mode {
-  user-select: none;
-}
 
 &.note-editor .note-editing-area .note-editable * {
   /*color: inherit;*/

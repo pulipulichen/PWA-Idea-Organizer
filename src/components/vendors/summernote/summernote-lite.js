@@ -9137,7 +9137,7 @@ sel.addRange(range);
               return _this.button({
                   //contents: _this.ui.icon(_this.options.icons.copy),  // 
                   className: 'note-toggle-sort-mode',
-                  contents: '⇅',
+                  contents: '<i class="arrows alternate icon"></i>',
                   tooltip: _this.lang.font.toggleSortMode,
                   click: _this.context.createInvokeHandler('editor.toggleSortMode')
               }).render();

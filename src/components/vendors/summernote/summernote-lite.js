@@ -6,7 +6,7 @@ import Sortable from "sortablejs"
 import soundKeys from './sound/soundKeys.js'
 
 import summerNoteOptions from './options.js'
-import langEnUS from './lang.en-US.js'
+import langEnUS from './lang/summernote-en-US.js'
 
 import Toastr from 'toastr2';
 import 'toastr2/dist/toastr.min.css';
@@ -4792,10 +4792,11 @@ import 'toastr2/dist/toastr.min.css';
           let toastrOptions = {}
           if (this.options.toolbarPosition === 'bottom') {
             toastrOptions = {
-              "positionClass": "toast-bottom-right"
+              "positionClass": "toast-bottom-right summernote-toast"
             }
           }
           this.toastr = new Toastr(toastrOptions);
+          this.toastr.$container.id = 'summernoteToast'
           
           // native commands(with execCommand), generate function for execCommand
           var commands = [
@@ -5319,7 +5320,6 @@ ${links}`
           this.toggleSortMode = function () {
             //console.log('aaa', _this.$editable.prop('contentEditable'))
             let buttons = _this.$editor.find('.note-toolbar .note-btn-group > .note-btn:not(.note-toggle-sort-mode)')
-            
             if (_this.$editable.prop('contentEditable') === 'true') {
               _this.saveRange()
               _this.$editable.prop('contentEditable', 'false')
@@ -5334,14 +5334,17 @@ ${links}`
                 ghostClass: 'blue-background-class'
               });
               */
-              
+             
+              this.toastr.info(_this.lang.font.enableSortMote)
+            
               let lists = _this.$editable.find('ul,ol')
               //console.log(lists.length)
               for (let i = 0; i < lists.length; i++) {
                 let ele = lists.eq(i)
                 //console.log(ele[0])
                 if (ele.children('li').length === 0) {
-                  return false
+                  //return false
+                  continue
                 }
                 setupSotable(ele[0], 'li')
               }
@@ -5349,8 +5352,13 @@ ${links}`
               setupSotable(_this.$editable[0], 'root')
               
               _this.$editable.addClass('sort-mode')
+              
+              //_this.toastr.success('拖曳模式啟動：您可以自由搬移文字的段落')
+              
             }
             else {
+              this.toastr.info(_this.lang.font.disableSortMote)
+              
               Object.keys(sortableObjects).forEach(tag => {
                 sortableObjects[tag].forEach(s => s.destroy())
               })

@@ -36516,8 +36516,11 @@ let Index = {
     //alert(addressBarSize)
     
     this.toastr = new toastr2__WEBPACK_IMPORTED_MODULE_3__["default"]({
-      "positionClass": "toast-bottom-right"
+      "positionClass": "toast-bottom-right index-toast"
     })
+    //this.toastr.prop('id', 'indexToast')
+    this.toastr.$container.id = 'indexToast'
+    //console.log()
     
     this.loading = false
     this.inited = true

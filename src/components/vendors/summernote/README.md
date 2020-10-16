@@ -14,3 +14,6 @@ toolbar: [
               ['view', ['fullscreen', 'codeview', 'help']]
           ],
 ````
+
+toastr
+https://github.com/CodeSeven/toastr

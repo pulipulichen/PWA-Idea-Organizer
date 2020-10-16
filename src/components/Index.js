@@ -108,8 +108,11 @@ let Index = {
     //alert(addressBarSize)
     
     this.toastr = new Toastr({
-      "positionClass": "toast-bottom-right"
+      "positionClass": "toast-bottom-right index-toast"
     })
+    //this.toastr.prop('id', 'indexToast')
+    this.toastr.$container.id = 'indexToast'
+    //console.log()
     
     this.loading = false
     this.inited = true

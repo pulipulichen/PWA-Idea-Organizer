@@ -25,7 +25,9 @@ export default {
     pastePlainTextHint: 'Paste: Ctrl+Shift+v',
     saveHTML: 'Save',
     pasteHTML: 'Paste',
-    copied: 'Copied'
+    copied: 'Copied',
+    enableSortMote: 'Sort mode is enabled: You can move paragraphs by drag',
+    disableSortMote: 'Sort mode is disabled',
   },
   image: {
     image: 'Picture',

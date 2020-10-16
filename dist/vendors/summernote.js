@@ -291,10 +291,10 @@ module.exports = "./dist/asset/summernote.woff";
 
 /***/ }),
 
-/***/ "./src/components/vendors/summernote/lang.en-US.js":
-/*!*********************************************************!*\
-  !*** ./src/components/vendors/summernote/lang.en-US.js ***!
-  \*********************************************************/
+/***/ "./src/components/vendors/summernote/lang/summernote-en-US.js":
+/*!********************************************************************!*\
+  !*** ./src/components/vendors/summernote/lang/summernote-en-US.js ***!
+  \********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -327,7 +327,9 @@ __webpack_require__.r(__webpack_exports__);
     pastePlainTextHint: 'Paste: Ctrl+Shift+v',
     saveHTML: 'Save',
     pasteHTML: 'Paste',
-    copied: 'Copied'
+    copied: 'Copied',
+    enableSortMote: 'Sort mode is enabled: You can move paragraphs by drag',
+    disableSortMote: 'Sort mode is disabled',
   },
   image: {
     image: 'Picture',
@@ -550,7 +552,9 @@ __webpack_require__.r(__webpack_exports__);
         'backgroundColorPurple': '紫色標亮',
         pastePlainTextHint: '貼上: Ctrl+Shift+v',
         saveHTML: '儲存',
-        copied: '已複製'
+        copied: '已複製',
+        enableSortMote: '拖曳模式啟動：您可以開始任意移動文字段落',
+        disableSortMote: '拖曳模式關閉',
       },
       image: {
         image: '圖片',
@@ -1968,7 +1972,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sortablejs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sortablejs */ "./node_modules/sortablejs/modular/sortable.complete.esm.js");
 /* harmony import */ var _sound_soundKeys_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sound/soundKeys.js */ "./src/components/vendors/summernote/sound/soundKeys.js");
 /* harmony import */ var _options_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./options.js */ "./src/components/vendors/summernote/options.js");
-/* harmony import */ var _lang_en_US_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lang.en-US.js */ "./src/components/vendors/summernote/lang.en-US.js");
+/* harmony import */ var _lang_summernote_en_US_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lang/summernote-en-US.js */ "./src/components/vendors/summernote/lang/summernote-en-US.js");
 /* harmony import */ var toastr2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! toastr2 */ "./node_modules/toastr2/dist/toastr.es5.js");
 /* harmony import */ var toastr2_dist_toastr_min_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! toastr2/dist/toastr.min.css */ "./node_modules/toastr2/dist/toastr.min.css");
 /* harmony import */ var toastr2_dist_toastr_min_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(toastr2_dist_toastr_min_css__WEBPACK_IMPORTED_MODULE_6__);
@@ -2985,7 +2989,7 @@ __webpack_require__.r(__webpack_exports__);
       lang: {}
   };
   $$1.extend($$1.summernote.lang, {
-      'en-US': _lang_en_US_js__WEBPACK_IMPORTED_MODULE_4__["default"]
+      'en-US': _lang_summernote_en_US_js__WEBPACK_IMPORTED_MODULE_4__["default"]
   });
 
   var isSupportAmd = typeof define === 'function' && __webpack_require__(/*! !webpack amd options */ "./node_modules/webpack/buildin/amd-options.js"); // eslint-disable-line
@@ -6766,10 +6770,11 @@ __webpack_require__.r(__webpack_exports__);
           let toastrOptions = {}
           if (this.options.toolbarPosition === 'bottom') {
             toastrOptions = {
-              "positionClass": "toast-bottom-right"
+              "positionClass": "toast-bottom-right summernote-toast"
             }
           }
           this.toastr = new toastr2__WEBPACK_IMPORTED_MODULE_5__["default"](toastrOptions);
+          this.toastr.$container.id = 'summernoteToast'
           
           // native commands(with execCommand), generate function for execCommand
           var commands = [
@@ -7293,7 +7298,6 @@ ${links}`
           this.toggleSortMode = function () {
             //console.log('aaa', _this.$editable.prop('contentEditable'))
             let buttons = _this.$editor.find('.note-toolbar .note-btn-group > .note-btn:not(.note-toggle-sort-mode)')
-            
             if (_this.$editable.prop('contentEditable') === 'true') {
               _this.saveRange()
               _this.$editable.prop('contentEditable', 'false')
@@ -7308,14 +7312,17 @@ ${links}`
                 ghostClass: 'blue-background-class'
               });
               */
-              
+             
+              this.toastr.info(_this.lang.font.enableSortMote)
+            
               let lists = _this.$editable.find('ul,ol')
               //console.log(lists.length)
               for (let i = 0; i < lists.length; i++) {
                 let ele = lists.eq(i)
                 //console.log(ele[0])
                 if (ele.children('li').length === 0) {
-                  return false
+                  //return false
+                  continue
                 }
                 setupSotable(ele[0], 'li')
               }
@@ -7323,8 +7330,13 @@ ${links}`
               setupSotable(_this.$editable[0], 'root')
               
               _this.$editable.addClass('sort-mode')
+              
+              //_this.toastr.success('拖曳模式啟動：您可以自由搬移文字的段落')
+              
             }
             else {
+              this.toastr.info(_this.lang.font.disableSortMote)
+              
               Object.keys(sortableObjects).forEach(tag => {
                 sortableObjects[tag].forEach(s => s.destroy())
               })

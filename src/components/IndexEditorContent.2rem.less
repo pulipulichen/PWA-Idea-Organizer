@@ -1,6 +1,6 @@
 @toolbarHeight: 5rem;
 @edtiableHeight: calc(var(--vh, 1vh) * 100 - @toolbarHeight);
-@fontSizeBase: 1rem;
+@fontSizeBase: 2rem;
 @lineMargin: @fontSizeBase / 4;
 
 .editor-container {
@@ -24,12 +24,12 @@
   }
   
   font-size: @fontSizeBase;
-  line-height: @fontSizeBase * 1.5;
+  line-height: @fontSizeBase * 1.25;
 
   * {
     //font-family: '微軟正黑體' !important;
     font-family: Lato,Helvetica,sans-serif !important;
-    line-height: @fontSizeBase * 1.5;
+    line-height: @fontSizeBase * 1.25;
   }
 
   &> p,div {
@@ -48,13 +48,11 @@
   }
   
   ol {
-    //margin-left: (@fontSizeBase * -1) + (@fontSizeBase / 8);
-    margin-left: (@fontSizeBase * -0.75);
+    margin-left: (@fontSizeBase * -1) + (@fontSizeBase / 8);
   }
   
   ul {
-    margin-left: calc(@fontSizeBase / -8 - 1px);
-    //margin-left: calc(1rem * -0.5 + 1px);
+    margin-left: @fontSizeBase / -8;
   }
   
   // ------------------------------------
@@ -141,38 +139,20 @@
     }
     
     ol {
-      margin-left: calc((@fontSizeBase * -1) - 2px);
+      margin-left: @fontSizeBase * -1.5;
     }
     
     ul {
-      margin-left: calc(((@fontSizeBase * -1) + (@fontSizeBase * 0.75)) - 2px);
+      margin-left: (@fontSizeBase * -1) + (@fontSizeBase * 0.25);
     }
   }
   
   ol > li {
     margin-left: @fontSizeBase / 2;
-    text-indent: calc(@fontSizeBase * -1 - 1px);
-    
-    &> ol {
-      margin-left: calc((@fontSizeBase * -0.75) - 1px);
-    }
-    &> ul {
-      margin-left: calc(((@fontSizeBase * -0.5) + (@fontSizeBase * 0.5)));
-    }
   }
   
   ul > li {
     // 暫時...沒有其他想法
-    //text-indent: calc(@fontSizeBase * -1);
-    text-indent: calc(@fontSizeBase * -0.75 - 1px);
-    
-    &> ol {
-      margin-left: calc((@fontSizeBase * -0.75) - 1px);
-    }
-    &> ul {
-      //margin-left: calc(((@fontSizeBase * -0.5) + (@fontSizeBase * 0.5)));
-      margin-left: @fontSizeBase * -0.25;
-    }
   }
   
   // ------------------------------------

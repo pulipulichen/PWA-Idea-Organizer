@@ -4182,6 +4182,8 @@ import 'toastr2/dist/toastr.min.css';
           $nextPara.removeClass('highlight')
           $nextPara.removeAttr('style')
         }
+        
+        $nextPara.removeAttr('style')
 
         if ($nextPara.children().length === 1
                 && $nextPara.children().eq(0).hasClass('highlight')) {
@@ -4200,7 +4202,18 @@ import 'toastr2/dist/toastr.min.css';
           children.contents().appendTo($nextPara)
           children.remove()
         } 
-        console.log(nextPara)
+        
+        // 清理空的li
+        if ($nextPara.prop('tagName').toLowerCase() === 'li') {
+          $nextPara.parent().children('li').each((i, ele) => {
+            let li = $$1(ele)
+            if (li.contents().length === 0) {
+              li.remove()
+            }
+          })
+          
+        }
+        //console.log(nextPara)
       }
       
       return Typing;
@@ -6223,7 +6236,7 @@ ${links}`
               element = $(element)
             }
             
-            if (!element) {
+            if (!element || !element[0].getBoundingClientRect) {
               return false
             }
             

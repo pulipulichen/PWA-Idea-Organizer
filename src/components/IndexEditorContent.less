@@ -1,5 +1,6 @@
 @toolbarHeight: 5rem;
 @edtiableHeight: calc(var(--vh, 1vh) * 100 - @toolbarHeight);
+@lineMargin: 0.5rem;
 
 .editor-container {
   height: @edtiableHeight;
@@ -24,7 +25,7 @@
 
   &> p {
     text-indent: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: @lineMargin;
   } 
 
   ol {
@@ -47,7 +48,12 @@
     padding-left: 2.7rem;
     text-indent: -2rem;
     margin-left: 1rem;
+    margin-bottom: @lineMargin;
 
+    &> ul, ol {
+      margin-top: @lineMargin;
+    }
+    
     ul, ol {
       margin-left: -2.5rem;
     }
@@ -144,7 +150,13 @@
 
     padding-left: 2.7rem;
     text-indent: -2rem;
-    margin-left: 1rem;
+    margin-left: @lineMargin;
+    
+    &> ul,ol {
+      margin-top: @lineMargin;
+    }
+    
+    margin-bottom: 1rem;
 
     ul, ol {
       margin-left: -2.5rem;

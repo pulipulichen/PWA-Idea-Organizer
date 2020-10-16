@@ -6030,6 +6030,7 @@ __webpack_require__.r(__webpack_exports__);
        *   2 - Break all blockquotes, so that the new paragraph is not quoted (this is the default)
        */
       Typing.prototype.insertParagraph = function (editable, rng) {
+        
           rng = rng || range.create(editable);
           // deleteContents on range.
           rng = rng.deleteContents();
@@ -6102,6 +6103,25 @@ __webpack_require__.r(__webpack_exports__);
               }
           }
           range.create(nextPara, 0).normalize().select().scrollIntoView(editable);
+          
+          if (nextPara) {
+            let $nextPara = $$1(nextPara)
+            if ($nextPara.hasClass('highlight')) {
+              $nextPara.removeClass('highlight')
+              $nextPara.removeAttr('style')
+            }
+            
+            if ($nextPara.children().length === 1
+                    && $nextPara.children().eq(0).hasClass('highlight')) {
+              let children = $nextPara.children().eq(0)
+              children.contents().appendTo($nextPara)
+              children.remove()
+            }
+            else {
+              $nextPara.children().filter('.highlight').removeAttr('style').removeClass('highlight')
+            }
+            //console.log(1, nextPara)
+          }
       };
       return Typing;
   }());
@@ -7600,11 +7620,18 @@ ${links}`
               
               var foreColor = colorInfo.foreColor;
               var backColor = colorInfo.backColor;
+              var className = colorInfo.className;
+              
               if (foreColor) {
                   document.execCommand('foreColor', false, foreColor);
               }
               if (backColor) {
                   document.execCommand('backColor', false, backColor);
+              }
+              
+              if (className && (foreColor || backColor)) {
+                let element = _this.getCurrentElement()
+                element.addClass(className)
               }
           });
           /**
@@ -10473,7 +10500,10 @@ sel.addRange(range);
           Object.keys(backgroundColors).forEach((name) => {
             let color = backgroundColors[name]
             this.context.memo('button.' + name, function () {
-              let clickEvent = _this.context.createRangeInvokeHandlerAndUpdateState('editor.color', {'backColor': color})
+              let clickEvent = _this.context.createRangeInvokeHandlerAndUpdateState('editor.color', {
+                className: 'highlight',
+                'backColor': color
+              })
               
               return _this.button({
                   contents: `<span class="background-color-circle" style="background-color: ${color}" backColor="${color}"></span>`,
@@ -10685,7 +10715,7 @@ sel.addRange(range);
           this.context.memo('button.removeElement', function () {
               return _this.button({
                   className: 'note-btn-removeElement',
-                  contents: '⇤',
+                  contents: '<i class="step backward icon"></i>',
                   tooltip: _this.lang.paragraph.removeElement + _this.representShortcut('removeElement'),
                   click: _this.context.createInvokeHandler('editor.removeElement')
               }).render();
@@ -10824,7 +10854,7 @@ sel.addRange(range);
               return _this.button({
                   contents: _this.ui.icon(_this.options.icons.minus),
                   tooltip: _this.lang.hr.insert + _this.representShortcut('insertHorizontalRule'),
-                  click: _this.context.createInvokeHandler('editor.insertHorizontalRule')
+                  click: _this.context.createInvokeHandlerAndResetToolbar('editor.insertHorizontalRule')
               }).render();
           });
           this.context.memo('button.fullscreen', function () {

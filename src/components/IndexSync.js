@@ -95,7 +95,8 @@ export default function (Index) {
     }
     else {
       //console.log('開始綁定')
-      $window.bind('beforeunload', preventUnloadEvent)
+      //$window.bind('beforeunload', preventUnloadEvent)
+      this.isBlockExit = true
     }
 
     
@@ -108,7 +109,8 @@ export default function (Index) {
       setTimeout(() => {
         this.configSaveToCloudTimer = null
         //console.log('取消綁定')
-        $window.unbind('beforeunload', preventUnloadEvent)
+        //$window.unbind('beforeunload', preventUnloadEvent)
+        this.isBlockExit = false
       }, 1000)
       
       //console.log('儲存：', contents)
@@ -131,7 +133,8 @@ export default function (Index) {
     }
     else {
       //console.log('開始綁定')
-      $window.bind('beforeunload', preventUnloadEvent)
+      //$window.bind('beforeunload', preventUnloadEvent)
+      this.isBlockExit = true
     }
     
     this.saveToCloudTimer = setTimeout(() => {
@@ -142,7 +145,8 @@ export default function (Index) {
       setTimeout(() => {
         this.saveToCloudTimer = null
         //console.log('取消綁定')
-        $window.unbind('beforeunload', preventUnloadEvent)
+        //$window.unbind('beforeunload', preventUnloadEvent)
+        this.isBlockExit = false
       }, 1000)
       
       //console.log('儲存：', contents)

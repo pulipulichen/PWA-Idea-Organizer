@@ -4,6 +4,7 @@ import $ from 'jquery'
 //let summernoteLoader = () => import('./summernote/summernote-lite.webpack.js')
 import ConfigModal from './ConfigModal/ConfigModal.vue'
 import TomatoTimer from './TomatoTimer/TomatoTimer.vue'
+import ExitBlocker from './ExitBlocker/ExitBlocker.vue'
 
 import Toastr from 'toastr2';
 import 'toastr2/dist/toastr.min.css';
@@ -23,12 +24,14 @@ let Index = {
       styleNode: null,
       toastr: null,
       inited: false,
+      isBlockExit: false,
       //googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
     }
   },
   components: {
     'config-modal': ConfigModal,
-    'tomato-timer': TomatoTimer
+    'tomato-timer': TomatoTimer,
+    'exit-blocker': ExitBlocker
   },
   computed: {
     enableSync () {

@@ -1,4 +1,4 @@
-/* global Node */
+/* global Node, fetch */
 
 import $ from 'jquery'
 
@@ -24,16 +24,17 @@ export default function (Index) {
     
     let minInterval = 30 * 60 * 1000
     //let minInterval = 3 * 1000
-    $window.bind('focus', () => {
+    $window.bind('focus', async () => {
       let time = (new Date()).getTime()
       if (!lastBlurTime || lastBlurTime + minInterval > time) {
         return false
       }
       
       this.loading = true
+      let data = await this.getDataFromGoogleSheet()
       //return false
       //console.log('嘗試讀取')
-      $.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
+      //$.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
         //console.log(contents)
         //console.log(c)
         let contents = data.contents
@@ -51,34 +52,104 @@ export default function (Index) {
           })
         }
         this.loading = false
-      })
+      //})
     })
   }
-    
+  
+  Index.methods.getDataFromGoogleSheet = function () {
+    return new Promise(resolve => {
+      fetch(this.clientConfig.googleSheetAPIURL)
+              .then(async response => {
+                //console.log(await response.json())
+                let data = await response.json()
+                resolve(data)
+              })
+              .catch(error => console.error("Error", error))
+    })
+  }
+  
+  Index.methods.postDataToGoogleSheet = async function (data) {
+    try {
+      $.post(this.clientConfig.googleSheetAPIURL, data).fail(() => {}).error(() => {})
+      /*
+      $.ajax({
+        type: 'POST',
+        crossDomain: true,
+        headers: {  'Access-Control-Allow-Origin': location.origin },
+        data: data,
+        //dataType: 'jsonp',
+        url: this.clientConfig.googleSheetAPIURL,
+        success: function(jsondata){
+
+        }
+     })
+     */
+    }
+    catch (e) {
+      
+    }
+    //axios.post(this.clientConfig.googleSheetAPIURL, data)
+    /*
+    var options = {
+      'method' : 'post',
+      'payload' : data
+    };
+    await UrlFetchApp.fetch(this.clientConfig.googleSheetAPIURL, options)
+    */
+    /*
+    return new Promise(resolve => {
+      fetch(this.clientConfig.googleSheetAPIURL, {
+        //method: 'POST',
+        body: JSON.stringify(data),
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: '*', // include, same-origin, *omit
+        headers: {
+          'user-agent': 'Mozilla/4.0 MDN Example',
+          'content-type': 'application/json'
+        },
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+        redirect: 'follow', // manual, *follow, error
+        referrer: 'no-referrer', // *client, no-referrer
+      })
+      .then(async response => {
+        //console.log(await response.json())
+        let data = await response.json()
+        resolve(data)
+      })
+      .catch(error => console.error("Error", error))
+    })
+     */
+  }
+  
   Index.methods.initData = async function () {
     if (!this.enableSync) {
       this.contents = localStorage.getItem('contents')
     }
 
     this.initCheckSyncData()
-    return new Promise((resolve) => {
+    return new Promise(async (resolve) => {
       window.googleDocCallback = function () { return true; };
-      $.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
-        //console.log(contents)
-        //console.log(c)
-        let contents = data.contents
+      let data = await this.getDataFromGoogleSheet()
+      
+          //console.log(contents)
+          //console.log(c)
+          let contents = data.contents
 
-        let configs = data.configs
-        configs = JSON.parse(configs)
-        //console.log(data)
-        if (typeof(configs) === 'object') {
-          Object.keys(configs).forEach(key => {
-            this.syncConfig[key] = configs[key]
-          })
-        }
-        resolve(contents)
-        this.contents = contents
-      })
+          let configs = data.configs
+          configs = JSON.parse(configs)
+          //console.log(data)
+          if (typeof(configs) === 'object') {
+            Object.keys(configs).forEach(key => {
+              this.syncConfig[key] = configs[key]
+            })
+          }
+          
+          this.contents = contents
+      resolve(contents)
+      //$.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
+        
+      //})
     })
   }
   Index.methods.startSyncConfig = function () {
@@ -102,7 +173,10 @@ export default function (Index) {
     
     this.configSaveToCloudTimer = setTimeout(() => {
       //console.log('startSyncConfig')
-      $.post(this.clientConfig.googleSheetAPIURL, {
+      //$.post(this.clientConfig.googleSheetAPIURL, {
+      //  configs: JSON.stringify(this.syncConfig)
+      //})
+      this.postDataToGoogleSheet({
         configs: JSON.stringify(this.syncConfig)
       })
       
@@ -138,7 +212,8 @@ export default function (Index) {
     }
     
     this.saveToCloudTimer = setTimeout(() => {
-      $.post(this.clientConfig.googleSheetAPIURL, {
+      this.postDataToGoogleSheet({
+        //configs: JSON.stringify(this.syncConfig)
         contents: this.contents
       })
       
@@ -150,7 +225,8 @@ export default function (Index) {
       }, 1000)
       
       //console.log('儲存：', contents)
-    }, 6000)
+    //}, 6000)
+    }, 1000)
   }
   
   Index.methods.setCustomStyle = function () {

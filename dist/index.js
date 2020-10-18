@@ -37129,7 +37129,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* global Node */
+/* global Node, fetch */
 
 
 
@@ -37155,16 +37155,17 @@ __webpack_require__.r(__webpack_exports__);
     
     let minInterval = 30 * 60 * 1000
     //let minInterval = 3 * 1000
-    $window.bind('focus', () => {
+    $window.bind('focus', async () => {
       let time = (new Date()).getTime()
       if (!lastBlurTime || lastBlurTime + minInterval > time) {
         return false
       }
       
       this.loading = true
+      let data = await this.getDataFromGoogleSheet()
       //return false
       //console.log('嘗試讀取')
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
+      //$.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
         //console.log(contents)
         //console.log(c)
         let contents = data.contents
@@ -37182,34 +37183,104 @@ __webpack_require__.r(__webpack_exports__);
           })
         }
         this.loading = false
-      })
+      //})
     })
   }
-    
+  
+  Index.methods.getDataFromGoogleSheet = function () {
+    return new Promise(resolve => {
+      fetch(this.clientConfig.googleSheetAPIURL)
+              .then(async response => {
+                //console.log(await response.json())
+                let data = await response.json()
+                resolve(data)
+              })
+              .catch(error => console.error("Error", error))
+    })
+  }
+  
+  Index.methods.postDataToGoogleSheet = async function (data) {
+    try {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.post(this.clientConfig.googleSheetAPIURL, data).fail(() => {}).error(() => {})
+      /*
+      $.ajax({
+        type: 'POST',
+        crossDomain: true,
+        headers: {  'Access-Control-Allow-Origin': location.origin },
+        data: data,
+        //dataType: 'jsonp',
+        url: this.clientConfig.googleSheetAPIURL,
+        success: function(jsondata){
+
+        }
+     })
+     */
+    }
+    catch (e) {
+      
+    }
+    //axios.post(this.clientConfig.googleSheetAPIURL, data)
+    /*
+    var options = {
+      'method' : 'post',
+      'payload' : data
+    };
+    await UrlFetchApp.fetch(this.clientConfig.googleSheetAPIURL, options)
+    */
+    /*
+    return new Promise(resolve => {
+      fetch(this.clientConfig.googleSheetAPIURL, {
+        //method: 'POST',
+        body: JSON.stringify(data),
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: '*', // include, same-origin, *omit
+        headers: {
+          'user-agent': 'Mozilla/4.0 MDN Example',
+          'content-type': 'application/json'
+        },
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+        redirect: 'follow', // manual, *follow, error
+        referrer: 'no-referrer', // *client, no-referrer
+      })
+      .then(async response => {
+        //console.log(await response.json())
+        let data = await response.json()
+        resolve(data)
+      })
+      .catch(error => console.error("Error", error))
+    })
+     */
+  }
+  
   Index.methods.initData = async function () {
     if (!this.enableSync) {
       this.contents = localStorage.getItem('contents')
     }
 
     this.initCheckSyncData()
-    return new Promise((resolve) => {
+    return new Promise(async (resolve) => {
       window.googleDocCallback = function () { return true; };
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
-        //console.log(contents)
-        //console.log(c)
-        let contents = data.contents
+      let data = await this.getDataFromGoogleSheet()
+      
+          //console.log(contents)
+          //console.log(c)
+          let contents = data.contents
 
-        let configs = data.configs
-        configs = JSON.parse(configs)
-        //console.log(data)
-        if (typeof(configs) === 'object') {
-          Object.keys(configs).forEach(key => {
-            this.syncConfig[key] = configs[key]
-          })
-        }
-        resolve(contents)
-        this.contents = contents
-      })
+          let configs = data.configs
+          configs = JSON.parse(configs)
+          //console.log(data)
+          if (typeof(configs) === 'object') {
+            Object.keys(configs).forEach(key => {
+              this.syncConfig[key] = configs[key]
+            })
+          }
+          
+          this.contents = contents
+      resolve(contents)
+      //$.getJSON(this.clientConfig.googleSheetAPIURL, (data) => {
+        
+      //})
     })
   }
   Index.methods.startSyncConfig = function () {
@@ -37233,7 +37304,10 @@ __webpack_require__.r(__webpack_exports__);
     
     this.configSaveToCloudTimer = setTimeout(() => {
       //console.log('startSyncConfig')
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.post(this.clientConfig.googleSheetAPIURL, {
+      //$.post(this.clientConfig.googleSheetAPIURL, {
+      //  configs: JSON.stringify(this.syncConfig)
+      //})
+      this.postDataToGoogleSheet({
         configs: JSON.stringify(this.syncConfig)
       })
       
@@ -37269,7 +37343,8 @@ __webpack_require__.r(__webpack_exports__);
     }
     
     this.saveToCloudTimer = setTimeout(() => {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.post(this.clientConfig.googleSheetAPIURL, {
+      this.postDataToGoogleSheet({
+        //configs: JSON.stringify(this.syncConfig)
         contents: this.contents
       })
       
@@ -37281,7 +37356,8 @@ __webpack_require__.r(__webpack_exports__);
       }, 1000)
       
       //console.log('儲存：', contents)
-    }, 6000)
+    //}, 6000)
+    }, 1000)
   }
   
   Index.methods.setCustomStyle = function () {
@@ -38053,8 +38129,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
-if (!window['YT']) {var YT = {loading: 0,loaded: 0};}if (!window['YTConfig']) {var YTConfig = {'host': 'http://www.youtube.com'};}if (!YT.loading) {YT.loading = 1;(function(){var l = [];YT.ready = function(f) {if (YT.loaded) {f();} else {l.push(f);}};window.onYTReady = function() {YT.loaded = 1;for (var i = 0; i < l.length; i++) {try {l[i]();} catch (e) {}}};YT.setConfig = function(c) {for (var k in c) {if (c.hasOwnProperty(k)) {YTConfig[k] = c[k];}}};var a = document.createElement('script');a.type = 'text/javascript';a.id = 'www-widgetapi-script';a.src = 'https://s.ytimg.com/yts/jsbin/www-widgetapi-vfln5nzZR/www-widgetapi.js';a.async = true;var c = document.currentScript;if (c) {var n = c.nonce || c.getAttribute('nonce');if (n) {a.setAttribute('nonce', n);}}var b = document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a, b);})();}
+if (!window['YT']) {var YT = {loading: 0,loaded: 0};}if (!window['YTConfig']) {var YTConfig = {'host': 'https://www.youtube.com'};}if (!YT.loading) {YT.loading = 1;(function(){var l = [];YT.ready = function(f) {if (YT.loaded) {f();} else {l.push(f);}};window.onYTReady = function() {YT.loaded = 1;for (var i = 0; i < l.length; i++) {try {l[i]();} catch (e) {}}};YT.setConfig = function(c) {for (var k in c) {if (c.hasOwnProperty(k)) {YTConfig[k] = c[k];}}};var a = document.createElement('script');a.type = 'text/javascript';a.id = 'www-widgetapi-script';a.src = 'https://s.ytimg.com/yts/jsbin/www-widgetapi-vfln5nzZR/www-widgetapi.js';a.async = true;var c = document.currentScript;if (c) {var n = c.nonce || c.getAttribute('nonce');if (n) {a.setAttribute('nonce', n);}}var b = document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a, b);})();}
 
 /***/ }),
 

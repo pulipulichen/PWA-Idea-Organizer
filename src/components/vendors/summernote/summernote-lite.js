@@ -3753,6 +3753,9 @@ import 'toastr2/dist/toastr.min.css';
       
       Bullet.prototype._isIndentable = function () {
         let currentElement = this.context.invoke('editor.getCurrentElement')
+        if (!currentElement) {
+          return false
+        }
         //console.log(currentElement)
         if (currentElement.prop('tagName').toLowerCase() === 'li') {
           let list = currentElement.parent()
@@ -4936,6 +4939,7 @@ import 'toastr2/dist/toastr.min.css';
                 _this.context.triggerEvent('change', _this.$editable.html());
               }
             }
+            
             return this
           }
           
@@ -5202,6 +5206,7 @@ ${links}`
           
           let titleLimitation = 10
           /**
+           * 
            * obj.summernote('editor.copyRichFormatHTML')
            * @author Pulipuli Chen 20190624
            * @returns {summernote-liteL#16.summernote-liteL#16#Editor.Editor}
@@ -5238,6 +5243,7 @@ ${links}`
                 this.mergeDeletedList($element, nextList)
               }
             }
+            
           }
           
           this.mergeDeletedList = function ($element, nextList) {
@@ -5275,7 +5281,11 @@ ${links}`
           
           this.insertParagraphRemoveStlye = function (nextPara) {
             if (!nextPara) {
-              nextPara = this.getCurrentElement()[0]
+              nextPara = this.getCurrentElement()
+              if (!nextPara) {
+                return false
+              }
+              nextPara = nextPara[0]
               //return false
             }
 
@@ -5617,7 +5627,7 @@ ${links}`
                 ) {
                 //console.log([linkUrl, linkUrl.length])
                 this.unlink()
-                return
+                return undefined
               }
               //console.log(linkInfo)
               var linkText = linkInfo.text;
@@ -5726,7 +5736,7 @@ ${links}`
               }
               if ($comment.length > 0) {
                 $comment.attr('title', title)
-                return
+                return _this
               }
               
               // --------------------------------------
@@ -5761,6 +5771,136 @@ ${links}`
               //console.log(range)
               _this.context.triggerEvent('change', _this.$editable.html());
           });
+          
+          let lastEditedElementClassName = 'last-edited'
+          //this.markLastEditedElementLock = false
+          
+          this.markLastEditedElement = function () {
+            //return false
+            /*
+            console.log(_this.markLastEditedElementLock)
+            if (_this.markLastEditedElementLock === true) {
+              return false
+            }
+            
+            _this.markLastEditedElementLock = true
+            
+            setTimeout(() => {
+              console.log('mark', getCurrentElement())
+              //console.log(_this.getXPath())
+              _this.markLastEditedElementLock = false
+              return false
+            }, 100) 
+            */
+            //console.log(markLastEditedElementLock)
+            //if (markLastEditedElementLock === true) {
+            // return false
+            //}
+            //console.log('mark')
+            //let $element = _this.getCurrentElement()
+            
+            //markLastEditedElementLock = true
+            
+            let $element = _this.getCurrentElement()
+            //console.log('mark', $element[0])
+            if (!$element) {
+              //markLastEditedElementLock = false
+              return _this
+            }
+            if ($element.hasClass(lastEditedElementClassName) === true) {
+              //markLastEditedElementLock = false
+              return _this
+            }
+            let e = $$1(_this.editable).find('.' + lastEditedElementClassName)
+            //console.log(e.length)
+            if (e.length > 0) {
+              e.removeClass(lastEditedElementClassName).each((i, ele) => {
+                if (ele.className === '') {
+                  //ele.removeProp('className')
+                  ele.removeAttribute("class") 
+                }
+                //console.log(ele.className)
+              })
+            }
+            
+            $element.addClass(lastEditedElementClassName)
+            //setTimeout(() => {
+              //markLastEditedElementLock = false
+            //}, 0)
+          }
+          
+          /**
+           * https://stackoverflow.com/a/3454579/6645399
+           */
+          this.getXPath = this.wrapCommand(function (element) {
+            if (!element) {
+              element = _this.getCurrentElement()[0]
+            }
+            console.log(element)
+            var xpath = '';
+            for ( ; element && element.nodeType === 1; element = element.parentNode )
+            {
+                var id = $(element.parentNode).children(element.tagName).index(element) + 1;
+                id > 1 ? (id = '[' + id + ']') : (id = '');
+                xpath = '/' + element.tagName.toLowerCase() + id + xpath;
+            }
+            return xpath;
+          })
+          
+          this.scrollToLastEditedElement = this.wrapCommand(function () {
+            //console.log('scrollToLastEditedElement')
+            if (!_this.editable) {
+              setTimeout(() => {
+                _this.scrollToLastEditedElement()
+              }, 100)
+              return _this
+            }
+            
+            let $element = $$1(_this.editable).find('.' + lastEditedElementClassName)
+            //console.log($element.length)
+            if ($element.length === 0) {
+              return _this
+            }
+            $element[0].scrollIntoView({
+              block: 'center',
+              inline: 'center'
+            })
+            
+            /*
+            $element[0].focus();
+            // select all the content in the element
+            document.execCommand('selectAll', false, null);
+            // collapse selection to the end
+            document.getSelection().collapseToEnd();
+            */
+            let selection = window.getSelection();
+            var range = document.createRange();
+            range.collapse(true);
+            //range.selectNodeContents($element.contents()[0]);
+            let len = $element.contents()[0].length
+            range.setStart($element.contents()[0], len)
+            selection.removeAllRanges()
+            selection.addRange(range)
+            
+            /*
+            let range = document.createRange();
+            let sel = window.getSelection();
+            //range.setStart(_this.$editable.children(':last')[0], 1);
+            //range.setStart(_this.editable.children(':last')[0], 1);
+            //console.log(_this.editable.childNodes[0].length)
+            let len = $element[0].childNodes[0].length
+            console.log(len, $element[0])
+            range.setStart($element[0], len)
+            range.collapse(true)
+            sel.removeAllRanges()
+            sel.addRange(range)
+            */
+          })
+          
+          setTimeout(() => {
+            //console.log('HELLO')
+            this.scrollToLastEditedElement()
+          }, 0)
           
           /**
            * updateComment (command)
@@ -6089,16 +6229,14 @@ ${links}`
             let range = _this.createRange()
             
             let element = range.sc
-            //.log(element, element.nodeType)
+            //console.log(element, element.nodeType)
             if (element.nodeType === 3) {
               element = $$1(element).parent()
             }
             else {
               element = $$1(element)
             }
-            
-            
-            
+            //console.log(element)
             if (element.hasClass('note-editable')) {
               return undefined
             }
@@ -6107,7 +6245,7 @@ ${links}`
             }
           }
           
-          this.selectCurrentElement = function () {
+          this.selectCurrentElement = this.wrapCommand(function () {
             let currentElement = _this.getCurrentElement()
             //console.log(currentElement)
             if (!currentElement) {
@@ -6119,9 +6257,9 @@ ${links}`
             range.selectNodeContents(currentElement.contents()[0]);
             selection.removeAllRanges()
             selection.addRange(range)
-          }
+          })
           
-          this.getSelectedNodeAndRemove = function () {
+          this.getSelectedNodeAndRemove = this.wrapCommand(function () {
             if (this.hasSelectedRange() === false) {
               return ''
             }
@@ -6160,7 +6298,7 @@ ${links}`
             
             _this.context.triggerEvent('change', _this.$editable.html());
             return html.join('\n')
-          }
+          })
           
           if (this.options.showHeadingLabel === false) {
             this.$editable.removeClass('show-heading-label')
@@ -6825,6 +6963,7 @@ ${links}`
       let lastChangedContents = null
       let triggerChangeTimer = null
       Editor.prototype.triggerChangeEvent = function () {
+        this.markLastEditedElement()
         let contents = this.$editable.html()
         
         if (contents === '<p><br></p>'
@@ -6848,6 +6987,7 @@ ${links}`
         }
 
         clearTimeout(triggerChangeTimer)
+        
         triggerChangeTimer = setTimeout(() => {
           this.context.triggerEvent('change', contents);
           lastChangedContents = contents

@@ -6086,6 +6086,7 @@ __webpack_require__.r(__webpack_exports__);
           // a Bullet instance to toggle lists off
           this.bullet = new Bullet(context);
           this.options = context.options;
+          this.context = context
       }
       /**
        * insert tab
@@ -6186,52 +6187,9 @@ __webpack_require__.r(__webpack_exports__);
           }
           range.create(nextPara, 0).normalize().select().scrollIntoView(editable);
           
-          this.insertParagraphRemoveStlye(nextPara)
+          this.context.invoke('insertParagraphRemoveStlye', nextPara)
       };
       
-      Typing.prototype.insertParagraphRemoveStlye = function (nextPara) {
-        if (!nextPara) {
-          return false
-        }
-        
-        let $nextPara = $$1(nextPara)
-        if ($nextPara.hasClass('highlight')) {
-          $nextPara.removeClass('highlight')
-          $nextPara.removeAttr('style')
-        }
-        
-        $nextPara.removeAttr('style')
-
-        if ($nextPara.children().length === 1
-                && $nextPara.children().eq(0).hasClass('highlight')) {
-          let children = $nextPara.children().eq(0)
-          children.contents().appendTo($nextPara)
-          children.remove()
-        }
-        else {
-          $nextPara.children().filter('.highlight').removeAttr('style').removeClass('highlight')
-        }
-        
-        if ($nextPara.text().trim() === ''
-                && $nextPara.children().length === 1
-                && $nextPara.children().prop('tagName').toLowerCase() !== 'br') {
-          let children = $nextPara.children().eq(0)
-          children.contents().appendTo($nextPara)
-          children.remove()
-        } 
-        
-        // 清理空的li
-        if ($nextPara.prop('tagName').toLowerCase() === 'li') {
-          $nextPara.parent().children('li').each((i, ele) => {
-            let li = $$1(ele)
-            if (li.contents().length === 0) {
-              li.remove()
-            }
-          })
-          
-        }
-        //console.log(nextPara)
-      }
       
       return Typing;
   }());
@@ -6941,7 +6899,7 @@ __webpack_require__.r(__webpack_exports__);
             if (typeof(sel.focusNode) === 'object') {
               let html = sel.toString()
               if (typeof(html) !== 'string') {
-                return
+                return undefined
               }
               else {
                 html = html.trim()
@@ -7150,6 +7108,8 @@ ${links}`
               _this.bullet.outdent(_this.editable);
           });
           
+          
+          
           /**
            * insertNode
            * insert node
@@ -7279,6 +7239,122 @@ ${links}`
             //console.log(html)
             this.downloadFile(title, html)
           }
+          
+          this.deleteParagraphReformat = function () {
+            let $element = this.getCurrentElement()
+            
+            let tagName = $element.prop('tagName').toLowerCase()
+            if (tagName === 'li') {
+              //console.log($element)
+              let lists = $element.parents("ul,ol,li")
+              //console.log(lists.length)
+              for (let l = 0; l < lists.length; l++) {
+                let nextList = lists.eq(l).next()
+                if (nextList.length === 0) {
+                  continue
+                }
+                
+                //console.log(nextList)
+                let nextListTagName = nextList.prop('tagName').toLowerCase()
+                //console.log(nextListTagName)
+                
+                let nextLi
+                if (nextListTagName === 'ol' || nextListTagName === 'ul') {
+                  let li = nextList.children(':first')
+                  if (li.prop('tagName').toLowerCase() === 'li') {
+                    nextLi = li
+                  }
+                }
+                else if (nextListTagName === 'li') {
+                  nextLi = nextList
+                }
+                  
+                if (nextLi 
+                        && nextLi.children('br').length === 0
+                        && nextLi.children().length > 0) {
+                  let child = nextLi.children().eq(0)
+                  //console.log(child)
+                  let childTagName = child.prop('tagName').toLowerCase()
+                  if (childTagName === 'ul' || childTagName === 'ol') {
+                    $element.append(child)
+                    nextList.remove()
+                  }
+                }
+              }
+              
+                
+            }
+          }
+          
+          this.insertParagraphRemoveStlye = function (nextPara) {
+            if (!nextPara) {
+              nextPara = this.getCurrentElement()[0]
+              //return false
+            }
+
+            //console.log(nextPara)
+
+            let $nextPara = $$1(nextPara)
+
+            //$nextPara.removeClass('MsoNormal')
+
+            if ($nextPara.hasClass('highlight')) {
+              $nextPara.removeClass('highlight')
+              $nextPara.removeAttr('style')
+            }
+
+            $nextPara.removeAttr('style')
+
+            if ($nextPara.children().length === 1
+                    && $nextPara.children().eq(0).hasClass('highlight')) {
+              let children = $nextPara.children().eq(0)
+              children.contents().appendTo($nextPara)
+              children.remove()
+            } else {
+              $nextPara.children().filter('.highlight').removeAttr('style').removeClass('highlight')
+            }
+
+            if ($nextPara.text().trim() === ''
+                    && $nextPara.children().length === 1
+                    && $nextPara.children().prop('tagName').toLowerCase() !== 'br') {
+              let children = $nextPara.children().eq(0)
+              children.contents().appendTo($nextPara)
+              children.remove()
+            }
+
+            // 清理空的li
+            if ($nextPara.prop('tagName').toLowerCase() === 'li') {
+              $nextPara.parent().children('li').each((i, ele) => {
+                let li = $$1(ele)
+                if (li.contents().length === 0) {
+                  li.remove()
+                }
+              })
+
+              }
+            //console.log(nextPara)
+
+            // 清理空的br
+            let children = $nextPara.children()
+            if ($nextPara.contents().length > 1) {
+              for (let i = 0; i < children.length; i++) {
+                let child = children.eq(i)
+                let subChildren = child.children()
+                if (subChildren.length === 0) {
+                  child.remove()
+                }
+                else if (subChildren.length === 1 
+                        && subChildren.eq(0).text().trim() === '') {
+                  child.remove()
+                }
+              }
+
+              if ($nextPara.contents().length === 0) {
+                $nextPara.append(blankHTML)
+              }
+            }
+      } // Typing.prototype.insertParagraphRemoveStlye = function (nextPara) {
+      
           
           /**
            * https://stackoverflow.com/a/60338028/6645399
@@ -8127,10 +8203,17 @@ ${links}`
               }
               
               if (_this.options.allowEnter === false) {
-                if (event.keyCode === 13) {
+                if (event.keyCode === _this.options.KEY_MAP.ENTER) {
                   event.preventDefault()
                   event.stopPropagation()
                 }
+              }
+              
+              if (event.keyCode === _this.options.KEY_MAP.DELETE) {
+                setTimeout(() => {
+                  _this.context.invoke('editor.insertParagraphRemoveStlye')
+                  _this.context.invoke('editor.deleteParagraphReformat')
+                }, 0)
               }
               
               // hint
@@ -8304,7 +8387,11 @@ ${links}`
                 }
               }
               else {
+                //console.log('paste event', event)
                 _this.context.triggerEvent('paste', event);
+                setTimeout(() => {
+                  _this.clearPasteContent()
+                }, 0)
               }
           })
 //          .on('compositionstart', function (event) {
@@ -8357,6 +8444,43 @@ ${links}`
               _this.context.triggerEvent('scroll', event);
           })
           
+          this.clearPasteContent = function () {
+            //console.log('clearPasteContent')
+            
+            let currentElement = this.context.invoke('editor.getCurrentElement')
+            this.clearPasteContentElement(currentElement)
+            //let children = currentElement.children()
+            //console.log(children.length)
+            //for (let i = 0; i < children.length; i++) {
+            //  this.clearPasteContentElement(children.eq(i))
+            //}
+            
+            //console.log(currentElement[0])
+          }
+          
+          this.clearPasteContentElement = function (element) {
+            element.removeClass('MsoNormal')
+            element.removeAttr('lang')
+            element.css({
+              'font-family': '',
+              'font-size': '',
+              'text-indent': '',
+            })
+            
+            let children = element.children()
+            for (let i = 0; i < children.length; i++) {
+              this.clearPasteContentElement(children.eq(i))
+            }
+            
+            if (element.parent().children().length > 1) {
+              let last = element.parent().children().last()
+              if (last.prop('tagName').toLowerCase() === 'br') {
+                last.remove()
+              }
+            }
+            
+            //console.log(element[0])
+          }
 //          this.$editable[0].addEventListener('compositionstart', (event) => {
 //            playTypeWriterSound(event)
 //            scrollVerticalCenter(event)

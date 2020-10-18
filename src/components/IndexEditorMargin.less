@@ -1,9 +1,24 @@
 @toolbarHeight: 5rem;
 
+.non-invasive-web-style-framework .editor-container ::v-deep .summernote.note-editor {
+    
+    .note-editing-area {
+    
+      .note-editable {
+        max-height: calc(100vh - @toolbarHeight) !important;
+      }
+    }
+  }
+
 //@media only screen and (min-width: 992px) and (min-height: 700px) {
 @media only screen and (min-width: 992px) and (min-height: 640px) {
-  .non-invasive-web-style-framework .editor-container ::v-deep .summernote.note-editor.note-frame {
+  .non-invasive-web-style-framework .editor-container ::v-deep .summernote.note-editor {
     height: calc(100vh);
+    
+    .note-editable {
+      //max-height: calc(100% - 1rem);
+      max-height: calc(100vh - 10rem) !important;
+    }
 
     .note-editing-area {
 
@@ -18,7 +33,6 @@
 
       width: calc(100vw - 5rem);
       max-width: 767px;
-      max-height: calc(100vh - 10rem);
       background-color: white;
 
       border: 1px solid #CCC;
@@ -27,6 +41,8 @@
       
       .note-editable {
         max-height: calc(100% - 1rem);
+        max-height: calc(100vh - 10rem) !important;
+
       }
     }
   }

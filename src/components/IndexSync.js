@@ -225,8 +225,8 @@ export default function (Index) {
       }, 1000)
       
       //console.log('儲存：', contents)
-    //}, 6000)
-    }, 1000)
+    }, 5000)
+    //}, 1000)
   }
   
   Index.methods.setCustomStyle = function () {

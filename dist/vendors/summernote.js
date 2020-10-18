@@ -8351,7 +8351,8 @@ ${links}`
                 }
               }
               
-              if (event.keyCode === _this.options.KEY_MAP.DELETE) {
+              if (event.keyCode === _this.options.KEY_MAP.DELETE
+                      || event.keyCode === _this.options.KEY_MAP.BACKSPACE) {
                 setTimeout(() => {
                   _this.context.invoke('editor.insertParagraphRemoveStlye')
                   _this.context.invoke('editor.deleteParagraphReformat')

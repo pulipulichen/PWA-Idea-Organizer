@@ -37134,14 +37134,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (Index) {
-  let preventUnloadEvent = function () {
-    return true
-  }
+//  let preventUnloadEvent = function () {
+//    return true
+//  }
   let $window = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window)
   let $document = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document)
   
   let lastBlurTime = null
   let checkSyncDataTimer = null
+  let syncWait = 100
+  let syncEnable = true
   
   Index.methods.initCheckSyncData = function () {
     if (!this.enableSync) {
@@ -37342,6 +37344,11 @@ __webpack_require__.r(__webpack_exports__);
       this.isBlockExit = true
     }
     
+    if (syncEnable === false) {
+      this.isBlockExit = false
+      return false
+    }
+    
     this.saveToCloudTimer = setTimeout(() => {
       this.postDataToGoogleSheet({
         //configs: JSON.stringify(this.syncConfig)
@@ -37356,7 +37363,7 @@ __webpack_require__.r(__webpack_exports__);
       }, 1000)
       
       //console.log('儲存：', contents)
-    }, 5000)
+    }, syncWait)
     //}, 1000)
   }
   

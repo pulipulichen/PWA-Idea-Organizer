@@ -5266,15 +5266,21 @@ ${links}`
               nextLi = nextList
             }
 
+            //console.log(nextLi)
             if (nextLi 
                     && nextLi.children('br').length === 0
-                    && nextLi.children().length > 0) {
-              let child = nextLi.children().eq(0)
+                    && nextLi.contents().length > 0) {
+              let child = nextLi.contents().eq(0)
               //console.log(child)
-              let childTagName = child.prop('tagName').toLowerCase()
-              if (childTagName === 'ul' || childTagName === 'ol') {
-                $element.append(child)
-                nextList.remove()
+              if (child.prop("tagName")) {
+                //console.log(child)
+                let childTagName = child.prop("tagName").toLowerCase()
+                if (childTagName === 'ul' || childTagName === 'ol') {
+                  //console.log('準備移除')
+                  //console.log(child)
+                  $element.append(child)
+                  nextList.remove()
+                }
               }
             }
           }
@@ -5333,7 +5339,8 @@ ${links}`
 
             // 清理空的br
             let children = $nextPara.children()
-            if ($nextPara.contents().length > 1) {
+            //console.log($nextPara.contents().length)
+            if ($nextPara.contents().length > 2) {
               for (let i = 0; i < children.length; i++) {
                 let child = children.eq(i)
                 let subChildren = child.children()
@@ -5350,7 +5357,19 @@ ${links}`
                 $nextPara.append(blankHTML)
               }
             }
-      } // Typing.prototype.insertParagraphRemoveStlye = function (nextPara) {
+            else if ($nextPara.contents().length === 1) {
+              let child = $nextPara.contents()[0]
+              if (child.nodeType !== 3
+                      && child.tagName) {
+                let tagName = child.tagName.toLowerCase()
+                if (tagName !== 'br') {
+                  let blankHTMLElement = $$1(blankHTML)
+                  $nextPara.prepend(blankHTMLElement)
+                  _this.selectElement(blankHTMLElement)
+                }
+              }
+            }
+          } // Typing.prototype.insertParagraphRemoveStlye = function (nextPara) {
       
           
           /**
@@ -5807,10 +5826,6 @@ ${links}`
               //markLastEditedElementLock = false
               return _this
             }
-            if ($element.hasClass(lastEditedElementClassName) === true) {
-              //markLastEditedElementLock = false
-              return _this
-            }
             let e = $$1(_this.editable).find('.' + lastEditedElementClassName)
             //console.log(e.length)
             if (e.length > 0) {
@@ -5823,6 +5838,10 @@ ${links}`
               })
             }
             
+            if ($element.hasClass(lastEditedElementClassName) === true) {
+              //markLastEditedElementLock = false
+              return _this
+            }
             $element.addClass(lastEditedElementClassName)
             //setTimeout(() => {
               //markLastEditedElementLock = false
@@ -5896,6 +5915,20 @@ ${links}`
             sel.addRange(range)
             */
           })
+          
+          this.selectElement = function (element) {
+            let selection = window.getSelection();
+            var range = document.createRange();
+            range.collapse(true);
+            //range.selectNodeContents($element.contents()[0]);
+            if (!element.contents()[0]) {
+              element = element.parent()
+            }
+            let len = element.contents()[0].length
+            range.setStart(element.contents()[0], len)
+            selection.removeAllRanges()
+            selection.addRange(range)
+          }
           
           setTimeout(() => {
             //console.log('HELLO')

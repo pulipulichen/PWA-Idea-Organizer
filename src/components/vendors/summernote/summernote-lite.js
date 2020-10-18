@@ -6148,6 +6148,7 @@ ${links}`
           let playTypeWriterSound = function (event) {
             if (_this.options.enableTypeWriterSoundEffect !== true
                     || scrollVerticalCenterSkipKeyCode.indexOf(event.keyCode) > -1) {
+              //console.log(event.keyCode)
               return false
             }
             

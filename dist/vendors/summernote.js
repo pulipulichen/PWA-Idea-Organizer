@@ -1095,7 +1095,7 @@ __webpack_require__.r(__webpack_exports__);
     'bold', 'italic', 'underline', 'strikethrough', 'removeFormat'
   ],
   scrollVerticalCenterSkipKeyCode: [
-    33,34,35,36,37,38,39,40,45,112,113,114,115,116,117,118,119,120,121,122,123,27,9,20,16,17,18,144,145,19,93,91,92,24,25
+    33,34,35,36,37,38,39,40,45,112,113,114,115,116,117,118,119,120,121,122,123,27,9,20,16,17,18,144,145,19,93,91,92,24,25,8, 27, 9, 91, 16, 17, 18
   ]
 });
 
@@ -8165,6 +8165,7 @@ ${links}`
           let playTypeWriterSound = function (event) {
             if (_this.options.enableTypeWriterSoundEffect !== true
                     || scrollVerticalCenterSkipKeyCode.indexOf(event.keyCode) > -1) {
+              //console.log(event.keyCode)
               return false
             }
             

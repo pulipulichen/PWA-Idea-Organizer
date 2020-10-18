@@ -5229,43 +5229,47 @@ ${links}`
             let tagName = $element.prop('tagName').toLowerCase()
             if (tagName === 'li') {
               //console.log($element)
+              this.mergeDeletedList($element, $element.next())
+              
               let lists = $element.parents("ul,ol,li")
               //console.log(lists.length)
               for (let l = 0; l < lists.length; l++) {
                 let nextList = lists.eq(l).next()
-                if (nextList.length === 0) {
-                  continue
-                }
-                
-                //console.log(nextList)
-                let nextListTagName = nextList.prop('tagName').toLowerCase()
-                //console.log(nextListTagName)
-                
-                let nextLi
-                if (nextListTagName === 'ol' || nextListTagName === 'ul') {
-                  let li = nextList.children(':first')
-                  if (li.prop('tagName').toLowerCase() === 'li') {
-                    nextLi = li
-                  }
-                }
-                else if (nextListTagName === 'li') {
-                  nextLi = nextList
-                }
-                  
-                if (nextLi 
-                        && nextLi.children('br').length === 0
-                        && nextLi.children().length > 0) {
-                  let child = nextLi.children().eq(0)
-                  //console.log(child)
-                  let childTagName = child.prop('tagName').toLowerCase()
-                  if (childTagName === 'ul' || childTagName === 'ol') {
-                    $element.append(child)
-                    nextList.remove()
-                  }
-                }
+                this.mergeDeletedList($element, nextList)
               }
-              
-                
+            }
+          }
+          
+          this.mergeDeletedList = function ($element, nextList) {
+            if (nextList.length === 0) {
+              return false
+            }
+
+            //console.log(nextList)
+            let nextListTagName = nextList.prop('tagName').toLowerCase()
+            //console.log(nextListTagName)
+
+            let nextLi
+            if (nextListTagName === 'ol' || nextListTagName === 'ul') {
+              let li = nextList.children(':first')
+              if (li.prop('tagName').toLowerCase() === 'li') {
+                nextLi = li
+              }
+            }
+            else if (nextListTagName === 'li') {
+              nextLi = nextList
+            }
+
+            if (nextLi 
+                    && nextLi.children('br').length === 0
+                    && nextLi.children().length > 0) {
+              let child = nextLi.children().eq(0)
+              //console.log(child)
+              let childTagName = child.prop('tagName').toLowerCase()
+              if (childTagName === 'ul' || childTagName === 'ol') {
+                $element.append(child)
+                nextList.remove()
+              }
             }
           }
           

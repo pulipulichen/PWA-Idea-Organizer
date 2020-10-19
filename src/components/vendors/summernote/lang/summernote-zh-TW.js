@@ -30,6 +30,7 @@ import jQuery from 'jquery'
         copied: '已複製',
         enableSortMote: '拖曳模式啟動：您可以開始任意移動文字段落',
         disableSortMote: '拖曳模式關閉',
+        removePinConfirm: '您確定要移除此段嗎？',
       },
       image: {
         image: '圖片',

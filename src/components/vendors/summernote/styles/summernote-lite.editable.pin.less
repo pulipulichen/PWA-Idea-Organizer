@@ -1,0 +1,44 @@
+@pinBarHeight: 2rem;
+
+.summernote {
+  .note-pin {
+    //background-color: red;
+    background-color: #F8E894;
+    border-bottom: 2px dotted gray;
+    height: @pinBarHeight;
+    
+    max-height: @pinBarHeight;
+    overflow-y: auto;
+    padding: 5px;
+    box-shadow: 0rem 0.2rem 0.1rem rgba(0,0,0,0.7);
+    
+    position: absolute;
+    width: calc(100% - 2rem);
+    cursor: pointer;
+    
+    &.extended {
+      max-height: 30vh;
+      height: auto;
+      
+      .handler {
+        .sort.down.icon {
+          display: none;
+        }
+        .sort.up.icon {
+          display: inline-block;
+        }
+      }
+    }
+    
+    .handler {
+      float: right;
+      position: fixed;
+      right: 1rem;
+      padding: 0 1rem;
+      
+      .sort.up.icon {
+        display: none;
+      }
+    }
+  }
+}

@@ -106,6 +106,24 @@ module.exports = exports;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.editable.pin.less":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/vendors/summernote/styles/summernote-lite.editable.pin.less ***!
+  \*************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(true);
+// Module
+exports.push([module.i, ".summernote .note-pin {\n  background-color: #F8E894;\n  border-bottom: 2px dotted gray;\n  height: 2rem;\n  max-height: 2rem;\n  overflow-y: auto;\n  padding: 5px;\n  box-shadow: 0rem 0.2rem 0.1rem rgba(0, 0, 0, 0.7);\n  position: absolute;\n  width: calc(100% - 2rem);\n  cursor: pointer;\n}\n.summernote .note-pin.extended {\n  max-height: 30vh;\n  height: auto;\n}\n.summernote .note-pin.extended .handler .sort.down.icon {\n  display: none;\n}\n.summernote .note-pin.extended .handler .sort.up.icon {\n  display: inline-block;\n}\n.summernote .note-pin .handler {\n  float: right;\n  position: fixed;\n  right: 1rem;\n  padding: 0 1rem;\n}\n.summernote .note-pin .handler .sort.up.icon {\n  display: none;\n}\n", "",{"version":3,"sources":["summernote-lite.editable.pin.less"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,8BAA8B;EAC9B,YAAY;EACZ,gBAAgB;EAChB,gBAAgB;EAChB,YAAY;EACZ,iDAAiD;EACjD,kBAAkB;EAClB,wBAAwB;EACxB,eAAe;AACjB;AACA;EACE,gBAAgB;EAChB,YAAY;AACd;AACA;EACE,aAAa;AACf;AACA;EACE,qBAAqB;AACvB;AACA;EACE,YAAY;EACZ,eAAe;EACf,WAAW;EACX,eAAe;AACjB;AACA;EACE,aAAa;AACf","file":"summernote-lite.editable.pin.less","sourcesContent":[".summernote .note-pin {\n  background-color: #F8E894;\n  border-bottom: 2px dotted gray;\n  height: 2rem;\n  max-height: 2rem;\n  overflow-y: auto;\n  padding: 5px;\n  box-shadow: 0rem 0.2rem 0.1rem rgba(0, 0, 0, 0.7);\n  position: absolute;\n  width: calc(100% - 2rem);\n  cursor: pointer;\n}\n.summernote .note-pin.extended {\n  max-height: 30vh;\n  height: auto;\n}\n.summernote .note-pin.extended .handler .sort.down.icon {\n  display: none;\n}\n.summernote .note-pin.extended .handler .sort.up.icon {\n  display: inline-block;\n}\n.summernote .note-pin .handler {\n  float: right;\n  position: fixed;\n  right: 1rem;\n  padding: 0 1rem;\n}\n.summernote .note-pin .handler .sort.up.icon {\n  display: none;\n}\n"]}]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.editable.sort-mode.less":
 /*!*******************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/vendors/summernote/styles/summernote-lite.editable.sort-mode.less ***!
@@ -348,6 +366,7 @@ __webpack_require__.r(__webpack_exports__);
     copied: 'Copied',
     enableSortMote: 'Sort mode is enabled: You can move paragraphs by drag',
     disableSortMote: 'Sort mode is disabled',
+    removePinConfirm: 'Are you sure to remove it?',
   },
   image: {
     image: 'Picture',
@@ -573,6 +592,7 @@ __webpack_require__.r(__webpack_exports__);
         copied: '已複製',
         enableSortMote: '拖曳模式啟動：您可以開始任意移動文字段落',
         disableSortMote: '拖曳模式關閉',
+        removePinConfirm: '您確定要移除此段嗎？',
       },
       image: {
         image: '圖片',
@@ -1808,6 +1828,27 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./src/components/vendors/summernote/styles/summernote-lite.editable.pin.less":
+/*!************************************************************************************!*\
+  !*** ./src/components/vendors/summernote/styles/summernote-lite.editable.pin.less ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./summernote-lite.editable.pin.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/less-loader/dist/cjs.js?!./src/components/vendors/summernote/styles/summernote-lite.editable.pin.less");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("48f99bd5", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
 /***/ "./src/components/vendors/summernote/styles/summernote-lite.editable.sort-mode.less":
 /*!******************************************************************************************!*\
   !*** ./src/components/vendors/summernote/styles/summernote-lite.editable.sort-mode.less ***!
@@ -2356,6 +2397,7 @@ __webpack_require__.r(__webpack_exports__);
   
   var editingArea = renderer.create('<div class="note-editing-area"/>');
   var codable = renderer.create('<textarea class="note-codable" role="textbox" aria-multiline="true"/>');
+  var pin = renderer.create('<div class="note-pin show-heading-label" role="textbox" aria-multiline="true"><div class="handler"><i class="sort down icon"></i><i class="sort up icon"></i></div></div>');
   var editable = renderer.create('<div class="note-editable show-heading-label" contentEditable="true" role="textbox" aria-multiline="true" />');
   var statusbar = renderer.create([
       '<output class="note-status-output" role="status" aria-live="polite"/>',
@@ -2895,6 +2937,7 @@ __webpack_require__.r(__webpack_exports__);
       editor: editor,
       toolbar: toolbar,
       editingArea: editingArea,
+      pin: pin,
       codable: codable,
       editable: editable,
       statusbar: statusbar,
@@ -2968,6 +3011,7 @@ __webpack_require__.r(__webpack_exports__);
           ]) : ui.editor([
               ui.toolbar(),
               ui.editingArea([
+                  ui.pin(),
                   ui.codable(),
                   ui.editable()
               ]),
@@ -3011,6 +3055,7 @@ __webpack_require__.r(__webpack_exports__);
               editor: $editor,
               toolbar: $editor.find('.note-toolbar'),
               editingArea: $editor.find('.note-editing-area'),
+              pin: $editor.find('.note-pin'),
               editable: $editor.find('.note-editable'),
               codable: $editor.find('.note-codable'),
               statusbar: $editor.find('.note-statusbar')
@@ -6751,6 +6796,7 @@ __webpack_require__.r(__webpack_exports__);
           this.$note = context.layoutInfo.note;
           this.$editor = context.layoutInfo.editor;
           this.$editable = context.layoutInfo.editable;
+          this.$pin = context.layoutInfo.pin;
           this.options = context.options;
           this.lang = this.options.langInfo;
           this.editable = this.$editable[0];
@@ -7269,7 +7315,6 @@ ${links}`
             if (nextList.length === 0) {
               return false
             }
-
             //console.log(nextList)
             let nextListTagName = nextList.prop('tagName').toLowerCase()
             //console.log(nextListTagName)
@@ -7315,6 +7360,7 @@ ${links}`
             }
 
             //console.log(nextPara)
+            //return false
 
             let $nextPara = $$1(nextPara)
 
@@ -7362,12 +7408,19 @@ ${links}`
             if ($nextPara.contents().length > 2) {
               for (let i = 0; i < children.length; i++) {
                 let child = children.eq(i)
+                if (child.text().trim() !== '') {
+                  continue
+                }
+                //console.log(child[0])
                 let subChildren = child.children()
                 if (subChildren.length === 0) {
+                  //console.log(children)
+                  //console.log('a', child)
                   child.remove()
                 }
                 else if (subChildren.length === 1 
                         && subChildren.eq(0).text().trim() === '') {
+                  //console.log('b', child)
                   child.remove()
                 }
               }
@@ -7378,10 +7431,14 @@ ${links}`
             }
             else if ($nextPara.contents().length === 1) {
               let child = $nextPara.contents()[0]
+              //console.log(child)
               if (child.nodeType !== 3
                       && child.tagName) {
                 let tagName = child.tagName.toLowerCase()
-                if (tagName !== 'br') {
+                
+                $$1(child).removeAttr('style')
+                
+                if (tagName !== 'br' && tagName !== 'span') {
                   let blankHTMLElement = $$1(blankHTML)
                   $nextPara.prepend(blankHTMLElement)
                   _this.selectElement(blankHTMLElement)
@@ -7397,24 +7454,24 @@ ${links}`
            * @returns {String}
            */
           this.formatHTMLString = function (html) {
-    var tab = '\t';
-    var result = '';
-    var indent= '';
+            var tab = '\t';
+            var result = '';
+            var indent = '';
 
-    html.split(/>\s*</).forEach(function(element) {
-        if (element.match( /^\/\w/ )) {
-            indent = indent.substring(tab.length);
-        }
+            html.split(/>\s*</).forEach(function (element) {
+              if (element.match(/^\/\w/)) {
+                indent = indent.substring(tab.length);
+              }
 
-        result += indent + '<' + element + '>\r\n';
+              result += indent + '<' + element + '>\r\n';
 
-        if (element.match( /^<?\w[^>]*[^\/]$/ )) { 
-            indent += tab;              
-        }
-    });
+              if (element.match(/^<?\w[^>]*[^\/]$/)) {
+                indent += tab;
+              }
+            });
 
-    return result.substring(1, result.length-3);
-}
+            return result.substring(1, result.length - 3);
+          }
           
           /**
            * https://stackoverflow.com/a/18197511/6645399
@@ -7451,6 +7508,16 @@ ${links}`
                     datePad2(date.getHours()) +
                     datePad2(date.getMinutes()) +
                     datePad2(date.getSeconds())
+          }
+          
+          let handler = _this.$pin.find('.handler:first')
+          let pinEvent = function () {
+            let pinElement = $$1(this).clone()
+            pinElement.dblclick(function() {
+              _this.removePin($$1(this))
+            })
+            handler.after(pinElement)
+            _this.savePin()
           }
           
           /**
@@ -7493,11 +7560,12 @@ ${links}`
               setupSotable(_this.$editable[0], 'root')
               
               _this.$editable.addClass('sort-mode')
-              
+              _this.$editable.children().bind('dblclick', pinEvent)
               //_this.toastr.success('拖曳模式啟動：您可以自由搬移文字的段落')
               
             }
             else {
+              _this.$editable.children().unbind('dblclick', pinEvent)
               this.toastr.info(_this.lang.font.disableSortMote)
               
               Object.keys(sortableObjects).forEach(tag => {
@@ -7915,6 +7983,9 @@ ${links}`
             var range = document.createRange();
             range.collapse(true);
             //range.selectNodeContents($element.contents()[0]);
+            if (!$element.contents()[0]) {
+              return false
+            }
             let len = $element.contents()[0].length
             range.setStart($element.contents()[0], len)
             selection.removeAllRanges()
@@ -8355,6 +8426,42 @@ ${links}`
           if (this.options.showHeadingLabel === false) {
             this.$editable.removeClass('show-heading-label')
           }
+          
+          this.initPin = () => {
+            this.$pin.find('.handler').click(() => {
+              this.$pin.toggleClass('extended')
+            })
+            //console.log(1)
+            // 把歷史元素中的pin拿回來
+            let pinned = localStorage.getItem('summernote.pinned')
+            if (pinned) {
+              this.$pin.append(pinned)
+            }
+            //console.log(2)
+            this.$pin.children(':not(.handler)').dblclick(function () {
+              _this.removePin($$1(this))
+            })
+            //console.log(3)
+          }
+          
+          this.removePin = (element) => {
+            if (window.confirm(this.lang.font.removePinConfirm)) {
+              element.remove()
+              this.savePin()
+            }
+          }
+          
+          this.savePin = () => {
+            let pinned = this.$pin.clone()
+            pinned.find('.handler').remove()
+            //pinned.find('.inited').removeClass('inited')
+            let pinnedHTML = pinned.html()
+            localStorage.setItem('summernote.pinned', pinnedHTML)
+          }
+          
+          this.initPin()
+          
+            
       }
       Editor.prototype.initialize = function () {
           var _this = this;
@@ -13914,13 +14021,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_summernote_lite_editable_sort_mode_less__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_editable_sort_mode_less__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _styles_summernote_lite_editable_mobile_less__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./styles/summernote-lite.editable.mobile.less */ "./src/components/vendors/summernote/styles/summernote-lite.editable.mobile.less");
 /* harmony import */ var _styles_summernote_lite_editable_mobile_less__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_editable_mobile_less__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _styles_semantic_niwsf_icon_less__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./styles/semantic.niwsf.icon.less */ "./src/components/vendors/summernote/styles/semantic.niwsf.icon.less");
-/* harmony import */ var _styles_semantic_niwsf_icon_less__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_styles_semantic_niwsf_icon_less__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _styles_toastr_less__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./styles/toastr.less */ "./src/components/vendors/summernote/styles/toastr.less");
-/* harmony import */ var _styles_toastr_less__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_styles_toastr_less__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _lang_summernote_zh_TW_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./lang/summernote-zh-TW.js */ "./src/components/vendors/summernote/lang/summernote-zh-TW.js");
+/* harmony import */ var _styles_summernote_lite_editable_pin_less__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./styles/summernote-lite.editable.pin.less */ "./src/components/vendors/summernote/styles/summernote-lite.editable.pin.less");
+/* harmony import */ var _styles_summernote_lite_editable_pin_less__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_styles_summernote_lite_editable_pin_less__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _styles_semantic_niwsf_icon_less__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./styles/semantic.niwsf.icon.less */ "./src/components/vendors/summernote/styles/semantic.niwsf.icon.less");
+/* harmony import */ var _styles_semantic_niwsf_icon_less__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_styles_semantic_niwsf_icon_less__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _styles_toastr_less__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./styles/toastr.less */ "./src/components/vendors/summernote/styles/toastr.less");
+/* harmony import */ var _styles_toastr_less__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_styles_toastr_less__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _lang_summernote_zh_TW_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./lang/summernote-zh-TW.js */ "./src/components/vendors/summernote/lang/summernote-zh-TW.js");
 
 //import './summernote-lite.less'
+
 
 
 

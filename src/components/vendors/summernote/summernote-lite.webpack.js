@@ -13,6 +13,7 @@ import './styles/summernote-lite.toolbar.less'
 import './styles/summernote-lite.editable.less'
 import './styles/summernote-lite.editable.sort-mode.less'
 import './styles/summernote-lite.editable.mobile.less'
+import './styles/summernote-lite.editable.pin.less'
 
 // https://semantic-ui.com/elements/icon.html
 import './styles/semantic.niwsf.icon.less'

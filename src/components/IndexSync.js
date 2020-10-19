@@ -11,7 +11,7 @@ export default function (Index) {
   
   let lastBlurTime = null
   let checkSyncDataTimer = null
-  let syncWait = 100
+  let syncWait = 5000
   let syncEnable = true
   
   Index.methods.initCheckSyncData = function () {

@@ -339,6 +339,7 @@ import 'toastr2/dist/toastr.min.css';
   
   var editingArea = renderer.create('<div class="note-editing-area"/>');
   var codable = renderer.create('<textarea class="note-codable" role="textbox" aria-multiline="true"/>');
+  var pin = renderer.create('<div class="note-pin show-heading-label" role="textbox" aria-multiline="true"><div class="handler"><i class="sort down icon"></i><i class="sort up icon"></i></div></div>');
   var editable = renderer.create('<div class="note-editable show-heading-label" contentEditable="true" role="textbox" aria-multiline="true" />');
   var statusbar = renderer.create([
       '<output class="note-status-output" role="status" aria-live="polite"/>',
@@ -878,6 +879,7 @@ import 'toastr2/dist/toastr.min.css';
       editor: editor,
       toolbar: toolbar,
       editingArea: editingArea,
+      pin: pin,
       codable: codable,
       editable: editable,
       statusbar: statusbar,
@@ -951,6 +953,7 @@ import 'toastr2/dist/toastr.min.css';
           ]) : ui.editor([
               ui.toolbar(),
               ui.editingArea([
+                  ui.pin(),
                   ui.codable(),
                   ui.editable()
               ]),
@@ -994,6 +997,7 @@ import 'toastr2/dist/toastr.min.css';
               editor: $editor,
               toolbar: $editor.find('.note-toolbar'),
               editingArea: $editor.find('.note-editing-area'),
+              pin: $editor.find('.note-pin'),
               editable: $editor.find('.note-editable'),
               codable: $editor.find('.note-codable'),
               statusbar: $editor.find('.note-statusbar')
@@ -4734,6 +4738,7 @@ import 'toastr2/dist/toastr.min.css';
           this.$note = context.layoutInfo.note;
           this.$editor = context.layoutInfo.editor;
           this.$editable = context.layoutInfo.editable;
+          this.$pin = context.layoutInfo.pin;
           this.options = context.options;
           this.lang = this.options.langInfo;
           this.editable = this.$editable[0];
@@ -5252,7 +5257,6 @@ ${links}`
             if (nextList.length === 0) {
               return false
             }
-
             //console.log(nextList)
             let nextListTagName = nextList.prop('tagName').toLowerCase()
             //console.log(nextListTagName)
@@ -5298,6 +5302,7 @@ ${links}`
             }
 
             //console.log(nextPara)
+            //return false
 
             let $nextPara = $$1(nextPara)
 
@@ -5345,12 +5350,19 @@ ${links}`
             if ($nextPara.contents().length > 2) {
               for (let i = 0; i < children.length; i++) {
                 let child = children.eq(i)
+                if (child.text().trim() !== '') {
+                  continue
+                }
+                //console.log(child[0])
                 let subChildren = child.children()
                 if (subChildren.length === 0) {
+                  //console.log(children)
+                  //console.log('a', child)
                   child.remove()
                 }
                 else if (subChildren.length === 1 
                         && subChildren.eq(0).text().trim() === '') {
+                  //console.log('b', child)
                   child.remove()
                 }
               }
@@ -5361,10 +5373,14 @@ ${links}`
             }
             else if ($nextPara.contents().length === 1) {
               let child = $nextPara.contents()[0]
+              //console.log(child)
               if (child.nodeType !== 3
                       && child.tagName) {
                 let tagName = child.tagName.toLowerCase()
-                if (tagName !== 'br') {
+                
+                $$1(child).removeAttr('style')
+                
+                if (tagName !== 'br' && tagName !== 'span') {
                   let blankHTMLElement = $$1(blankHTML)
                   $nextPara.prepend(blankHTMLElement)
                   _this.selectElement(blankHTMLElement)
@@ -5380,24 +5396,24 @@ ${links}`
            * @returns {String}
            */
           this.formatHTMLString = function (html) {
-    var tab = '\t';
-    var result = '';
-    var indent= '';
+            var tab = '\t';
+            var result = '';
+            var indent = '';
 
-    html.split(/>\s*</).forEach(function(element) {
-        if (element.match( /^\/\w/ )) {
-            indent = indent.substring(tab.length);
-        }
+            html.split(/>\s*</).forEach(function (element) {
+              if (element.match(/^\/\w/)) {
+                indent = indent.substring(tab.length);
+              }
 
-        result += indent + '<' + element + '>\r\n';
+              result += indent + '<' + element + '>\r\n';
 
-        if (element.match( /^<?\w[^>]*[^\/]$/ )) { 
-            indent += tab;              
-        }
-    });
+              if (element.match(/^<?\w[^>]*[^\/]$/)) {
+                indent += tab;
+              }
+            });
 
-    return result.substring(1, result.length-3);
-}
+            return result.substring(1, result.length - 3);
+          }
           
           /**
            * https://stackoverflow.com/a/18197511/6645399
@@ -5434,6 +5450,16 @@ ${links}`
                     datePad2(date.getHours()) +
                     datePad2(date.getMinutes()) +
                     datePad2(date.getSeconds())
+          }
+          
+          let handler = _this.$pin.find('.handler:first')
+          let pinEvent = function () {
+            let pinElement = $$1(this).clone()
+            pinElement.dblclick(function() {
+              _this.removePin($$1(this))
+            })
+            handler.after(pinElement)
+            _this.savePin()
           }
           
           /**
@@ -5476,11 +5502,12 @@ ${links}`
               setupSotable(_this.$editable[0], 'root')
               
               _this.$editable.addClass('sort-mode')
-              
+              _this.$editable.children().bind('dblclick', pinEvent)
               //_this.toastr.success('拖曳模式啟動：您可以自由搬移文字的段落')
               
             }
             else {
+              _this.$editable.children().unbind('dblclick', pinEvent)
               this.toastr.info(_this.lang.font.disableSortMote)
               
               Object.keys(sortableObjects).forEach(tag => {
@@ -5898,6 +5925,9 @@ ${links}`
             var range = document.createRange();
             range.collapse(true);
             //range.selectNodeContents($element.contents()[0]);
+            if (!$element.contents()[0]) {
+              return false
+            }
             let len = $element.contents()[0].length
             range.setStart($element.contents()[0], len)
             selection.removeAllRanges()
@@ -6338,6 +6368,42 @@ ${links}`
           if (this.options.showHeadingLabel === false) {
             this.$editable.removeClass('show-heading-label')
           }
+          
+          this.initPin = () => {
+            this.$pin.find('.handler').click(() => {
+              this.$pin.toggleClass('extended')
+            })
+            //console.log(1)
+            // 把歷史元素中的pin拿回來
+            let pinned = localStorage.getItem('summernote.pinned')
+            if (pinned) {
+              this.$pin.append(pinned)
+            }
+            //console.log(2)
+            this.$pin.children(':not(.handler)').dblclick(function () {
+              _this.removePin($$1(this))
+            })
+            //console.log(3)
+          }
+          
+          this.removePin = (element) => {
+            if (window.confirm(this.lang.font.removePinConfirm)) {
+              element.remove()
+              this.savePin()
+            }
+          }
+          
+          this.savePin = () => {
+            let pinned = this.$pin.clone()
+            pinned.find('.handler').remove()
+            //pinned.find('.inited').removeClass('inited')
+            let pinnedHTML = pinned.html()
+            localStorage.setItem('summernote.pinned', pinnedHTML)
+          }
+          
+          this.initPin()
+          
+            
       }
       Editor.prototype.initialize = function () {
           var _this = this;

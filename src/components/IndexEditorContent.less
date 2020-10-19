@@ -1,5 +1,5 @@
 @toolbarHeight: 5rem;
-@edtiableHeight: calc(var(--vh, 1vh) * 100 - @toolbarHeight);
+@edtiableHeight: calc(var(--vh, 1vh) * 100 - (@toolbarHeight * 1));
 @fontSizeBase: 1rem;
 @lineMargin: @fontSizeBase / 4;
 
@@ -15,14 +15,14 @@
   //overflow: auto !important;
 }
 
-.non-invasive-web-style-framework .editor-container ::v-deep .note-editing-area {  
-
-  .note-placeholder {
-    ol,ul {
-      margin-top: @fontSizeBase * 0.25;
-    }
+.non-invasive-web-style-framework .editor-container ::v-deep .note-placeholder {
+  ol,ul {
+    margin-top: @fontSizeBase * 0.25;
   }
+}
   
+.non-invasive-web-style-framework .editor-container ::v-deep .note-editable {  
+
   font-size: @fontSizeBase;
   line-height: @fontSizeBase * 1.5;
 
@@ -37,12 +37,17 @@
     margin-bottom: @lineMargin;
   }
   
+  strike {
+    color: #999;
+  }
+  
   ol,ul {
     counter-reset:item; 
     margin:0; 
     //margin-left: 1rem;
     padding-left:0; 
     clear: both;
+    color: #2980b9;
 
     //margin-left: -1rem;
   }

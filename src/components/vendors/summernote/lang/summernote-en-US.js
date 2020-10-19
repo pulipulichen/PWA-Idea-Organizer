@@ -28,6 +28,7 @@ export default {
     copied: 'Copied',
     enableSortMote: 'Sort mode is enabled: You can move paragraphs by drag',
     disableSortMote: 'Sort mode is disabled',
+    removePinConfirm: 'Are you sure to remove it?',
   },
   image: {
     image: 'Picture',

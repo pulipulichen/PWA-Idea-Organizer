@@ -1,11 +1,13 @@
 @toolbarHeight: 5rem;
+@styleEdtiableHeight: calc(var(--vh, 1vh) * 100 - (@toolbarHeight * 1.5));
+@pinBarHeight: 2rem;
 
 .non-invasive-web-style-framework .editor-container ::v-deep .summernote.note-editor {
     
     .note-editing-area {
     
       .note-editable {
-        max-height: calc(100vh - @toolbarHeight) !important;
+        max-height: calc(100vh - @toolbarHeight - @pinBarHeight) !important;
       }
     }
   }
@@ -18,16 +20,19 @@
     .note-editable {
       //max-height: calc(100% - 1rem);
       max-height: calc(100vh - 10rem) !important;
+      padding-right: 1.5rem;
     }
 
     .note-editing-area {
+      height: @styleEdtiableHeight;
+      max-height: @styleEdtiableHeight;
 
       margin: 0;
       position: absolute;
       top: 50%;
       left: 50%;
       -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -55%);
+      transform: translate(-50%, calc(-50% - (@toolbarHeight / 2)));
 
       padding: 1rem;
 
@@ -39,10 +44,11 @@
 
       box-shadow: 0.2rem 0.2rem 0.1rem rgba(0,0,0,0.7);
       
-      .note-editable {
-        max-height: calc(100% - 1rem);
-        max-height: calc(100vh - 10rem) !important;
-
+      .note-editable,
+      .note-placeholder {
+        //max-height: calc(100% - 1rem);
+        margin-top: @pinBarHeight;
+        max-height: calc(100vh - (@toolbarHeight * 2) - @pinBarHeight) !important;
       }
     }
   }

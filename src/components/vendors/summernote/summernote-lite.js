@@ -1084,9 +1084,11 @@ import 'toastr2/dist/toastr.min.css';
       }
       */
   }
+  
   var isSupportTouch = (('ontouchstart' in window) ||
       (navigator.MaxTouchPoints > 0) ||
       (navigator.msMaxTouchPoints > 0));
+  //isSupportTouch = true
   // [workaround] IE doesn't have input events for contentEditable
   // - see: https://goo.gl/4bfIvA
   var inputEventName = (isMSIE || isEdge) ? 'DOMCharacterDataModified DOMSubtreeModified DOMNodeInserted' : 'input';

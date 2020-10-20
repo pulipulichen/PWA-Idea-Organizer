@@ -117,7 +117,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".summernote .note-pin {\n  background-color: #F8E894;\n  border-bottom: 2px dotted gray;\n  min-height: 2rem;\n  max-height: 2rem;\n  overflow-y: auto;\n  padding: 5px;\n  box-shadow: 0rem 0.2rem 0.1rem rgba(0, 0, 0, 0.7);\n  position: absolute;\n  width: calc(100% - 2rem);\n  cursor: pointer;\n}\n.summernote .note-pin.extended {\n  max-height: 30vh;\n}\n.summernote .note-pin.extended .handler .sort.down.icon {\n  display: none;\n}\n.summernote .note-pin.extended .handler .sort.up.icon {\n  display: inline-block;\n}\n.summernote .note-pin .handler {\n  float: right;\n  position: fixed;\n  right: 1rem;\n  padding: 0 1rem;\n}\n.summernote .note-pin .handler .sort.up.icon {\n  display: none;\n}\n", "",{"version":3,"sources":["summernote-lite.editable.pin.less"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,8BAA8B;EAC9B,gBAAgB;EAChB,gBAAgB;EAChB,gBAAgB;EAChB,YAAY;EACZ,iDAAiD;EACjD,kBAAkB;EAClB,wBAAwB;EACxB,eAAe;AACjB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,aAAa;AACf;AACA;EACE,qBAAqB;AACvB;AACA;EACE,YAAY;EACZ,eAAe;EACf,WAAW;EACX,eAAe;AACjB;AACA;EACE,aAAa;AACf","file":"summernote-lite.editable.pin.less","sourcesContent":[".summernote .note-pin {\n  background-color: #F8E894;\n  border-bottom: 2px dotted gray;\n  min-height: 2rem;\n  max-height: 2rem;\n  overflow-y: auto;\n  padding: 5px;\n  box-shadow: 0rem 0.2rem 0.1rem rgba(0, 0, 0, 0.7);\n  position: absolute;\n  width: calc(100% - 2rem);\n  cursor: pointer;\n}\n.summernote .note-pin.extended {\n  max-height: 30vh;\n}\n.summernote .note-pin.extended .handler .sort.down.icon {\n  display: none;\n}\n.summernote .note-pin.extended .handler .sort.up.icon {\n  display: inline-block;\n}\n.summernote .note-pin .handler {\n  float: right;\n  position: fixed;\n  right: 1rem;\n  padding: 0 1rem;\n}\n.summernote .note-pin .handler .sort.up.icon {\n  display: none;\n}\n"]}]);
+exports.push([module.i, ".summernote .note-pin {\n  background-color: #F8E894;\n  border-bottom: 2px dotted gray;\n  min-height: 2rem;\n  max-height: 2rem;\n  overflow-y: auto;\n  padding: 0 10px;\n  box-shadow: 0rem 0.2rem 0.1rem rgba(0, 0, 0, 0.7);\n  position: absolute;\n  width: 100%;\n  cursor: pointer;\n}\n.summernote .note-pin.expanded {\n  max-height: 30vh;\n}\n.summernote .note-pin.expanded .handler .sort.down.icon {\n  display: none;\n}\n.summernote .note-pin.expanded .handler .sort.up.icon {\n  display: inline-block;\n}\n.summernote .note-pin .handler {\n  float: right;\n  position: fixed;\n  right: 0;\n  padding: 0 1rem;\n  text-indent: 0 !important;\n}\n.summernote .note-pin .handler .sort.up.icon {\n  display: none;\n}\n.summernote .note-editing-area.enable-note-pin .note-editable {\n  margin-top: 2.5rem;\n}\n", "",{"version":3,"sources":["summernote-lite.editable.pin.less"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,8BAA8B;EAC9B,gBAAgB;EAChB,gBAAgB;EAChB,gBAAgB;EAChB,eAAe;EACf,iDAAiD;EACjD,kBAAkB;EAClB,WAAW;EACX,eAAe;AACjB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,aAAa;AACf;AACA;EACE,qBAAqB;AACvB;AACA;EACE,YAAY;EACZ,eAAe;EACf,QAAQ;EACR,eAAe;EACf,yBAAyB;AAC3B;AACA;EACE,aAAa;AACf;AACA;EACE,kBAAkB;AACpB","file":"summernote-lite.editable.pin.less","sourcesContent":[".summernote .note-pin {\n  background-color: #F8E894;\n  border-bottom: 2px dotted gray;\n  min-height: 2rem;\n  max-height: 2rem;\n  overflow-y: auto;\n  padding: 0 10px;\n  box-shadow: 0rem 0.2rem 0.1rem rgba(0, 0, 0, 0.7);\n  position: absolute;\n  width: 100%;\n  cursor: pointer;\n}\n.summernote .note-pin.expanded {\n  max-height: 30vh;\n}\n.summernote .note-pin.expanded .handler .sort.down.icon {\n  display: none;\n}\n.summernote .note-pin.expanded .handler .sort.up.icon {\n  display: inline-block;\n}\n.summernote .note-pin .handler {\n  float: right;\n  position: fixed;\n  right: 0;\n  padding: 0 1rem;\n  text-indent: 0 !important;\n}\n.summernote .note-pin .handler .sort.up.icon {\n  display: none;\n}\n.summernote .note-editing-area.enable-note-pin .note-editable {\n  margin-top: 2.5rem;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -367,6 +367,8 @@ __webpack_require__.r(__webpack_exports__);
     enableSortMote: 'Sort mode is enabled: You can move paragraphs by drag',
     disableSortMote: 'Sort mode is disabled',
     removePinConfirm: 'Are you sure to remove it?',
+    addPin1: '"',
+    addPin2: '" is pinned',
   },
   image: {
     image: 'Picture',
@@ -593,6 +595,8 @@ __webpack_require__.r(__webpack_exports__);
         enableSortMote: '拖曳模式啟動：您可以開始任意移動文字段落',
         disableSortMote: '拖曳模式關閉',
         removePinConfirm: '您確定要移除此段嗎？',
+        addPin1: '「',
+        addPin2: '」已經釘選',
       },
       image: {
         image: '圖片',
@@ -2395,7 +2399,7 @@ __webpack_require__.r(__webpack_exports__);
   var editor = renderer.create('<div class="summernote note-editor note-frame"/>');
   var toolbar = renderer.create('<div class="note-toolbar" role="toolbar"/>');
   
-  var editingArea = renderer.create('<div class="note-editing-area"/>');
+  var editingArea = renderer.create('<div class="note-editing-area enable-note-pin"/>');
   var codable = renderer.create('<textarea class="note-codable" role="textbox" aria-multiline="true"/>');
   var pin = renderer.create('<div class="note-pin show-heading-label" role="textbox" aria-multiline="true"><div class="handler"><i class="sort down icon"></i><i class="sort up icon"></i></div></div>');
   var editable = renderer.create('<div class="note-editable show-heading-label" contentEditable="true" role="textbox" aria-multiline="true" />');
@@ -7511,13 +7515,19 @@ ${links}`
           }
           
           let handler = _this.$pin.find('.handler:first')
-          let pinEvent = function () {
+          let addPinEvent = function () {
             let pinElement = $$1(this).clone()
             pinElement.dblclick(function() {
               _this.removePin($$1(this))
             })
+            pinElement.removeClass('last-edited')
+            pinElement.removeAttr('draggable')
             handler.after(pinElement)
             _this.savePin()
+            
+            _this.toastr.info(_this.lang.font.addPin1 
+                    + pinElement.text().trim() 
+                    + _this.lang.font.addPin2)
           }
           
           /**
@@ -7560,12 +7570,12 @@ ${links}`
               setupSotable(_this.$editable[0], 'root')
               
               _this.$editable.addClass('sort-mode')
-              _this.$editable.children().bind('dblclick', pinEvent)
+              _this.$editable.children().bind('dblclick', addPinEvent)
               //_this.toastr.success('拖曳模式啟動：您可以自由搬移文字的段落')
               
             }
             else {
-              _this.$editable.children().unbind('dblclick', pinEvent)
+              _this.$editable.children().unbind('dblclick', addPinEvent)
               this.toastr.info(_this.lang.font.disableSortMote)
               
               Object.keys(sortableObjects).forEach(tag => {
@@ -8429,7 +8439,7 @@ ${links}`
           
           this.initPin = () => {
             this.$pin.find('.handler').click(() => {
-              this.$pin.toggleClass('extended')
+              this.$pin.toggleClass('expanded')
             })
             //console.log(1)
             // 把歷史元素中的pin拿回來
@@ -8445,8 +8455,12 @@ ${links}`
           }
           
           this.removePin = (element) => {
-            if (window.confirm(this.lang.font.removePinConfirm)) {
+            if (window.confirm(this.lang.font.removePinConfirm + '\n' + element.text())) {
               element.remove()
+              if (this.$pin.hasClass('expanded') 
+                      && this.$pin.children(':not(.handler)').length === 0) {
+                this.$pin.removeClass('expanded')
+              }
               this.savePin()
             }
           }

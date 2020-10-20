@@ -31,6 +31,8 @@ import jQuery from 'jquery'
         enableSortMote: '拖曳模式啟動：您可以開始任意移動文字段落',
         disableSortMote: '拖曳模式關閉',
         removePinConfirm: '您確定要移除此段嗎？',
+        addPin1: '「',
+        addPin2: '」已經釘選',
       },
       image: {
         image: '圖片',

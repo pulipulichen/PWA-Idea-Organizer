@@ -337,7 +337,7 @@ import 'toastr2/dist/toastr.min.css';
   var editor = renderer.create('<div class="summernote note-editor note-frame"/>');
   var toolbar = renderer.create('<div class="note-toolbar" role="toolbar"/>');
   
-  var editingArea = renderer.create('<div class="note-editing-area"/>');
+  var editingArea = renderer.create('<div class="note-editing-area enable-note-pin"/>');
   var codable = renderer.create('<textarea class="note-codable" role="textbox" aria-multiline="true"/>');
   var pin = renderer.create('<div class="note-pin show-heading-label" role="textbox" aria-multiline="true"><div class="handler"><i class="sort down icon"></i><i class="sort up icon"></i></div></div>');
   var editable = renderer.create('<div class="note-editable show-heading-label" contentEditable="true" role="textbox" aria-multiline="true" />');
@@ -5453,13 +5453,19 @@ ${links}`
           }
           
           let handler = _this.$pin.find('.handler:first')
-          let pinEvent = function () {
+          let addPinEvent = function () {
             let pinElement = $$1(this).clone()
             pinElement.dblclick(function() {
               _this.removePin($$1(this))
             })
+            pinElement.removeClass('last-edited')
+            pinElement.removeAttr('draggable')
             handler.after(pinElement)
             _this.savePin()
+            
+            _this.toastr.info(_this.lang.font.addPin1 
+                    + pinElement.text().trim() 
+                    + _this.lang.font.addPin2)
           }
           
           /**
@@ -5502,12 +5508,12 @@ ${links}`
               setupSotable(_this.$editable[0], 'root')
               
               _this.$editable.addClass('sort-mode')
-              _this.$editable.children().bind('dblclick', pinEvent)
+              _this.$editable.children().bind('dblclick', addPinEvent)
               //_this.toastr.success('拖曳模式啟動：您可以自由搬移文字的段落')
               
             }
             else {
-              _this.$editable.children().unbind('dblclick', pinEvent)
+              _this.$editable.children().unbind('dblclick', addPinEvent)
               this.toastr.info(_this.lang.font.disableSortMote)
               
               Object.keys(sortableObjects).forEach(tag => {
@@ -6371,7 +6377,7 @@ ${links}`
           
           this.initPin = () => {
             this.$pin.find('.handler').click(() => {
-              this.$pin.toggleClass('extended')
+              this.$pin.toggleClass('expanded')
             })
             //console.log(1)
             // 把歷史元素中的pin拿回來
@@ -6387,8 +6393,12 @@ ${links}`
           }
           
           this.removePin = (element) => {
-            if (window.confirm(this.lang.font.removePinConfirm)) {
+            if (window.confirm(this.lang.font.removePinConfirm + '\n' + element.text())) {
               element.remove()
+              if (this.$pin.hasClass('expanded') 
+                      && this.$pin.children(':not(.handler)').length === 0) {
+                this.$pin.removeClass('expanded')
+              }
               this.savePin()
             }
           }

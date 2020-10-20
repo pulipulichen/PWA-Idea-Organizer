@@ -5,7 +5,6 @@
 .non-invasive-web-style-framework .editor-container ::v-deep .summernote.note-editor {
     
     .note-editing-area {
-    
       .note-editable {
         max-height: calc(100vh - @toolbarHeight - @pinBarHeight) !important;
       }
@@ -16,6 +15,14 @@
 @media only screen and (min-width: 992px) and (min-height: 640px) {
   .non-invasive-web-style-framework .editor-container ::v-deep .summernote.note-editor {
     height: calc(100vh);
+    
+    .note-pin {
+      width: calc(100% - 2rem);
+      
+      &> .handler {
+        right: 1rem;
+      }
+    }
     
     .note-editable {
       //max-height: calc(100% - 1rem);

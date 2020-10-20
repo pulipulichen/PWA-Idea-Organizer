@@ -29,6 +29,8 @@ export default {
     enableSortMote: 'Sort mode is enabled: You can move paragraphs by drag',
     disableSortMote: 'Sort mode is disabled',
     removePinConfirm: 'Are you sure to remove it?',
+    addPin1: '"',
+    addPin2: '" is pinned',
   },
   image: {
     image: 'Picture',

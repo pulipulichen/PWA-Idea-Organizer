@@ -21,12 +21,13 @@
   }
 }
   
-.non-invasive-web-style-framework .editor-container ::v-deep .note-editable {  
+.non-invasive-web-style-framework .editor-container ::v-deep .note-editable,
+.non-invasive-web-style-framework .editor-container ::v-deep .note-pin {  
 
   font-size: @fontSizeBase;
   line-height: @fontSizeBase * 1.5;
 
-  * {
+  *:not(.icon) {
     //font-family: '微軟正黑體' !important;
     font-family: Lato,Helvetica,sans-serif !important;
     line-height: @fontSizeBase * 1.5;

@@ -17,50 +17,6 @@
       </label>
     </div>
   </div>
-  <div class="inline field hidden-in-small-screen">
-    <div class="ui checkbox">
-      <input 
-        type="checkbox" 
-        tabindex="0" 
-        id="configEnableTomatoTimer"
-        class="hidden"
-        v-model="syncConfig.enableTomatoTimer" />
-      <label for="configEnableTomatoTimer">
-        {{ $t('Enable tomato timer') }}
-      </label>
-    </div>
-  </div>
-  
-  <div class="inline field hidden-in-small-screen"
-       v-if="syncConfig.enableTomatoTimer">
-    <label>{{ $t('Tomato Timer Default Seconds') }}</label>
-    <input type="number" step="10" v-model="syncConfig.tomatoTimerSeconds" min="0">
-  </div>
-  
-  <div class="field">
-    <label>
-      {{ $t('Music URL (YouTube)') }}
-    </label>
-    <div class="ui action input">
-      <input 
-        type="url"
-        v-model="syncConfig.musicURL"
-        placeholder="https://www.youtube.com/watch?v=..." />
-      <a class="ui button"
-         target="_blank"
-         v-bind:href="syncConfig.musicURL">
-        <i class="external alternate icon"></i>
-      </a>
-      <!--
-      <a class="ui button"
-         v-on:click="shareYouTubeURL"
-         v-else>
-        <i class="external alternate icon"></i>
-      </a>
-      -->
-    </div>
-      
-  </div>
   
   <div class="field">
     <label for="configCustomStyle">

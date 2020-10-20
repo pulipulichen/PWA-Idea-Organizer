@@ -10,3 +10,9 @@ https://www.cssscript.com/demo/circular-countdown-timer-javascript-css3/
   v-bind:syncConfig="syncConfig">
 </template>
 ````
+
+endSound.mp3
+https://notificationsounds.com/wake-up-tones/open-your-eyes-and-see-323
+
+good-morning-502.mp3
+https://notificationsounds.com/wake-up-tones/good-morning-502

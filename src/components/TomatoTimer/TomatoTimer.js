@@ -1,6 +1,7 @@
 import $ from 'jquery'
 //import './vendors/jQuery.YoutubeBackground/jquery.youtubebackground.js'
 import YouTubePlayer from './YouTubePlayer/YouTubePlayer.vue'
+import endSound from './good-morning-502.mp3'
 
 let TomatoTimer = {
   props: ['config', 'utils', 'clientConfig', 'syncConfig'],
@@ -22,7 +23,8 @@ let TomatoTimer = {
       //wholeTime: 25,
       progressLength: Math.PI * 2 * 100,
       BGMPlayer: null,
-      BGMVolume: 50
+      BGMVolume: 50,
+      endSoundObject: new Audio(endSound)
     }
   },
   components: {
@@ -151,11 +153,15 @@ let TomatoTimer = {
           this.pauseBtn.classList.remove('pause');
           this.pauseBtn.classList.add('play');
           
-          this.$emit('timeout')
+          this.onTimeout()
           return;
         }
         this.displayTimeLeft(this.timeLeft);
       }, 1000)
+    },
+    onTimeout () {
+      this.endSoundObject.play()
+      this.$emit('timeout')
     },
     pauseTimer(event) {
       

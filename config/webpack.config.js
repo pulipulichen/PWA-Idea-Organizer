@@ -69,7 +69,7 @@ module.exports = (env, argv) => {
           ]
         },
         {
-          test: /\.(eot|woff|woff2|svg|wav|ogg|gif|png|jpg|ttf)([\?]?.*)$/,
+          test: /\.(eot|woff|woff2|svg|wav|ogg|gif|mp3|png|jpg|ttf)([\?]?.*)$/,
           use: [
             {
               loader: 'file-loader',

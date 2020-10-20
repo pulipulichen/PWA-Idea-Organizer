@@ -281,6 +281,22 @@ module.exports = function (Component) {
 
 /***/ }),
 
+/***/ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/ConfigModal/TimerConfig/TimerConfig.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CConfigModal%5CTimerConfig%5CTimerConfig.vue&lang=yaml":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@kazupon/vue-i18n-loader/lib!./src/components/ConfigModal/TimerConfig/TimerConfig.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CConfigModal%5CTimerConfig%5CTimerConfig.vue&lang=yaml ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function (Component) {
+  Component.options.__i18n = Component.options.__i18n || []
+  Component.options.__i18n.push('{"en":null,"zh-TW":{"Sync URL":"同步網址","How to setup a sync url?":"如何設定同步網址"}}')
+  delete Component.options._Ctor
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/ExitBlocker/ExitBlocker.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CExitBlocker%5CExitBlocker.vue&lang=yaml":
 /*!****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/@kazupon/vue-i18n-loader/lib!./src/components/ExitBlocker/ExitBlocker.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CExitBlocker%5CExitBlocker.vue&lang=yaml ***!
@@ -2449,6 +2465,24 @@ var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modul
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
 exports.push([module.i, "#tocbotNavContainer.is-position-fixed[data-v-2cbfd4aa] {\n  background-color: white;\n}\n@media only screen and (max-width: 767px) {\n#tocbotNavContainer[data-v-2cbfd4aa] {\n    display: none;\n}\n}\n", "",{"version":3,"sources":["TableOfContents.less"],"names":[],"mappings":"AAAA;EACE,uBAAuB;AACzB;AACA;AACA;IACI,aAAa;AACjB;AACA","file":"TableOfContents.less","sourcesContent":["#tocbotNavContainer.is-position-fixed[data-v-2cbfd4aa] {\n  background-color: white;\n}\n@media only screen and (max-width: 767px) {\n#tocbotNavContainer[data-v-2cbfd4aa] {\n    display: none;\n}\n}\n"]}]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/less-loader/dist/cjs.js?!./src/components/ConfigModal/TimerConfig/TimerConfig.less?vue&type=style&index=0&id=023f1b0a&lang=less&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/ConfigModal/TimerConfig/TimerConfig.less?vue&type=style&index=0&id=023f1b0a&lang=less&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(true);
+// Module
+exports.push([module.i, "@media only screen and (max-width: 767px) {\n.hidden-in-small-screen[data-v-023f1b0a] {\n    display: none;\n}\n}\n@media only screen and (max-height: 640px) {\n.hidden-in-small-screen[data-v-023f1b0a] {\n    display: none;\n}\n}\n", "",{"version":3,"sources":["TimerConfig.less"],"names":[],"mappings":"AAAA;AACA;IACI,aAAa;AACjB;AACA;AACA;AACA;IACI,aAAa;AACjB;AACA","file":"TimerConfig.less","sourcesContent":["@media only screen and (max-width: 767px) {\n.hidden-in-small-screen[data-v-023f1b0a] {\n    display: none;\n}\n}\n@media only screen and (max-height: 640px) {\n.hidden-in-small-screen[data-v-023f1b0a] {\n    display: none;\n}\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -22054,7 +22088,7 @@ var render = function() {
           "form",
           { staticClass: "ui form" },
           [
-            _c("sync-config", {
+            _c("timer-config", {
               attrs: {
                 config: _vm.config,
                 utils: _vm.utils,
@@ -22064,6 +22098,15 @@ var render = function() {
             }),
             _vm._v(" "),
             _c("style-config", {
+              attrs: {
+                config: _vm.config,
+                utils: _vm.utils,
+                clientConfig: _vm.clientConfig,
+                syncConfig: _vm.syncConfig
+              }
+            }),
+            _vm._v(" "),
+            _c("sync-config", {
               attrs: {
                 config: _vm.config,
                 utils: _vm.utils,
@@ -22173,6 +22216,165 @@ var render = function() {
           )
         ])
       ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", { attrs: { for: "configCustomStyle" } }, [
+        _vm._v("\r\n      " + _vm._s(_vm.$t("Custom Style")) + "\r\n    ")
+      ]),
+      _vm._v(" "),
+      _c("textarea", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.syncConfig.customStyle,
+            expression: "syncConfig.customStyle"
+          }
+        ],
+        attrs: { id: "configCustomStyle" },
+        domProps: { value: _vm.syncConfig.customStyle },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.$set(_vm.syncConfig, "customStyle", $event.target.value)
+          }
+        }
+      })
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./src/components/ConfigModal/SyncConfig/SyncConfig.html?vue&type=template&id=00c9dd6a&scoped=true&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./src/components/ConfigModal/SyncConfig/SyncConfig.html?vue&type=template&id=00c9dd6a&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "ui segment" }, [
+    _c("h2", { attrs: { id: "SyncConfig" } }, [
+      _vm._v("\r\n    " + _vm._s(_vm.$t("Sync")) + "\r\n  ")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("label", [
+        _vm._v("\r\n      " + _vm._s(_vm.$t("Sync URL")) + "\r\n      "),
+        _c(
+          "a",
+          {
+            attrs: {
+              href:
+                "https://github.com/pulipulichen/PWA-Idea-Organizer/wiki/Setup-Sync",
+              target: "_blank"
+            }
+          },
+          [
+            _vm._v(
+              "\r\n        (" +
+                _vm._s(_vm.$t("How to setup a sync url?")) +
+                ")\r\n      "
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.clientConfig.googleSheetAPIURL,
+            expression: "clientConfig.googleSheetAPIURL"
+          }
+        ],
+        attrs: {
+          type: "url",
+          placeholder: "https://script.google.com/macros/s/..."
+        },
+        domProps: { value: _vm.clientConfig.googleSheetAPIURL },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.$set(_vm.clientConfig, "googleSheetAPIURL", $event.target.value)
+          }
+        }
+      })
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./src/components/ConfigModal/TableOfContents/TableOfContents.html?vue&type=template&id=2cbfd4aa&scoped=true&":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./src/components/ConfigModal/TableOfContents/TableOfContents.html?vue&type=template&id=2cbfd4aa&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("nav", {
+    ref: "toc",
+    staticClass:
+      "toc toc-right js-toc relative z-1 transition--300 absolute pa4 is-position-fixed",
+    attrs: { id: "tocbotNavContainer" }
+  })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./src/components/ConfigModal/TimerConfig/TimerConfig.html?vue&type=template&id=023f1b0a&scoped=true&":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./src/components/ConfigModal/TimerConfig/TimerConfig.html?vue&type=template&id=023f1b0a&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { ref: "main", staticClass: "ui segment" }, [
+    _c("h2", { attrs: { id: "Timer" } }, [
+      _vm._v("\r\n    " + _vm._s(_vm.$t("Timer")) + "\r\n  ")
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "inline field hidden-in-small-screen" }, [
@@ -22309,139 +22511,8 @@ var render = function() {
           [_c("i", { staticClass: "external alternate icon" })]
         )
       ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", { attrs: { for: "configCustomStyle" } }, [
-        _vm._v("\r\n      " + _vm._s(_vm.$t("Custom Style")) + "\r\n    ")
-      ]),
-      _vm._v(" "),
-      _c("textarea", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.syncConfig.customStyle,
-            expression: "syncConfig.customStyle"
-          }
-        ],
-        attrs: { id: "configCustomStyle" },
-        domProps: { value: _vm.syncConfig.customStyle },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.$set(_vm.syncConfig, "customStyle", $event.target.value)
-          }
-        }
-      })
     ])
   ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./src/components/ConfigModal/SyncConfig/SyncConfig.html?vue&type=template&id=00c9dd6a&scoped=true&":
-/*!**************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./src/components/ConfigModal/SyncConfig/SyncConfig.html?vue&type=template&id=00c9dd6a&scoped=true& ***!
-  \**************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "ui segment" }, [
-    _c("h2", { attrs: { id: "SyncConfig" } }, [
-      _vm._v("\r\n    " + _vm._s(_vm.$t("Sync")) + "\r\n  ")
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", [
-        _vm._v("\r\n      " + _vm._s(_vm.$t("Sync URL")) + "\r\n      "),
-        _c(
-          "a",
-          {
-            attrs: {
-              href:
-                "https://github.com/pulipulichen/PWA-Idea-Organizer/wiki/Setup-Sync",
-              target: "_blank"
-            }
-          },
-          [
-            _vm._v(
-              "\r\n        (" +
-                _vm._s(_vm.$t("How to setup a sync url?")) +
-                ")\r\n      "
-            )
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.clientConfig.googleSheetAPIURL,
-            expression: "clientConfig.googleSheetAPIURL"
-          }
-        ],
-        attrs: {
-          type: "url",
-          placeholder: "https://script.google.com/macros/s/..."
-        },
-        domProps: { value: _vm.clientConfig.googleSheetAPIURL },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.$set(_vm.clientConfig, "googleSheetAPIURL", $event.target.value)
-          }
-        }
-      })
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./src/components/ConfigModal/TableOfContents/TableOfContents.html?vue&type=template&id=2cbfd4aa&scoped=true&":
-/*!************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./src/components/ConfigModal/TableOfContents/TableOfContents.html?vue&type=template&id=2cbfd4aa&scoped=true& ***!
-  \************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("nav", {
-    ref: "toc",
-    staticClass:
-      "toc toc-right js-toc relative z-1 transition--300 absolute pa4 is-position-fixed",
-    attrs: { id: "tocbotNavContainer" }
-  })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22955,6 +23026,27 @@ if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
 var add = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
 var update = add("3e495bee", content, false, {});
+// Hot Module Replacement
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/less-loader/dist/cjs.js?!./src/components/ConfigModal/TimerConfig/TimerConfig.less?vue&type=style&index=0&id=023f1b0a&lang=less&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-style-loader!./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/less-loader/dist/cjs.js??ref--1-2!./src/components/ConfigModal/TimerConfig/TimerConfig.less?vue&type=style&index=0&id=023f1b0a&lang=less&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./TimerConfig.less?vue&type=style&index=0&id=023f1b0a&lang=less&scoped=true& */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/less-loader/dist/cjs.js?!./src/components/ConfigModal/TimerConfig/TimerConfig.less?vue&type=style&index=0&id=023f1b0a&lang=less&scoped=true&");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__(/*! ../../../../node_modules/vue-style-loader/lib/addStylesClient.js */ "./node_modules/vue-style-loader/lib/addStylesClient.js").default
+var update = add("0226501f", content, false, {});
 // Hot Module Replacement
 if(false) {}
 
@@ -35596,9 +35688,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _SyncConfig_SyncConfig_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SyncConfig/SyncConfig.vue */ "./src/components/ConfigModal/SyncConfig/SyncConfig.vue");
-/* harmony import */ var _StyleConfig_StyleConfig_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./StyleConfig/StyleConfig.vue */ "./src/components/ConfigModal/StyleConfig/StyleConfig.vue");
-/* harmony import */ var _TableOfContents_TableOfContents_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TableOfContents/TableOfContents.vue */ "./src/components/ConfigModal/TableOfContents/TableOfContents.vue");
-/* harmony import */ var _Author_Author_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Author/Author.vue */ "./src/components/ConfigModal/Author/Author.vue");
+/* harmony import */ var _TimerConfig_TimerConfig_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TimerConfig/TimerConfig.vue */ "./src/components/ConfigModal/TimerConfig/TimerConfig.vue");
+/* harmony import */ var _StyleConfig_StyleConfig_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./StyleConfig/StyleConfig.vue */ "./src/components/ConfigModal/StyleConfig/StyleConfig.vue");
+/* harmony import */ var _TableOfContents_TableOfContents_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TableOfContents/TableOfContents.vue */ "./src/components/ConfigModal/TableOfContents/TableOfContents.vue");
+/* harmony import */ var _Author_Author_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Author/Author.vue */ "./src/components/ConfigModal/Author/Author.vue");
+
 
 
 
@@ -35617,9 +35711,10 @@ let ConfigModal = {
   },
   components: {
     'sync-config': _SyncConfig_SyncConfig_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    'style-config': _StyleConfig_StyleConfig_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    'author': _Author_Author_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    'table-of-contents': _TableOfContents_TableOfContents_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    'style-config': _StyleConfig_StyleConfig_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    'author': _Author_Author_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    'table-of-contents': _TableOfContents_TableOfContents_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    'timer-config': _TimerConfig_TimerConfig_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
 //  computed: {
 //  },
@@ -36420,6 +36515,162 @@ __webpack_require__.r(__webpack_exports__);
 //import './styles.css'
 
 /* harmony default export */ __webpack_exports__["default"] = (window.tocbot);
+
+/***/ }),
+
+/***/ "./src/components/ConfigModal/TimerConfig/TimerConfig.html?vue&type=template&id=023f1b0a&scoped=true&":
+/*!************************************************************************************************************!*\
+  !*** ./src/components/ConfigModal/TimerConfig/TimerConfig.html?vue&type=template&id=023f1b0a&scoped=true& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_TimerConfig_html_vue_type_template_id_023f1b0a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./TimerConfig.html?vue&type=template&id=023f1b0a&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./src/components/ConfigModal/TimerConfig/TimerConfig.html?vue&type=template&id=023f1b0a&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_TimerConfig_html_vue_type_template_id_023f1b0a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_TimerConfig_html_vue_type_template_id_023f1b0a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./src/components/ConfigModal/TimerConfig/TimerConfig.js?vue&type=script&lang=js&?1ce5":
+/*!****************************************************************************************!*\
+  !*** ./src/components/ConfigModal/TimerConfig/TimerConfig.js?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+
+let TimerConfig = {
+  props: ['config', 'utils', 'clientConfig', 'syncConfig'],
+  data() {    
+    this.$i18n.locale = this.config.locale
+    return {
+    }
+  },
+//  components: {
+//  },
+//  computed: {
+//    sharable() {
+//      return (typeof(window.navigator.share) === 'object')
+//    }
+//  },
+//  watch: {
+//  },
+//  mounted() {
+//  },
+  methods: {
+    initCheckbox () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.$refs.main).checkbox()
+    },
+//    async shareYouTubeURL() {
+//      await window.navigator.share({
+//        titile: 'youtube music',
+//        url: this.syncConfig.musicURL
+//      })
+//    }
+  } // methods
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (TimerConfig);
+
+/***/ }),
+
+/***/ "./src/components/ConfigModal/TimerConfig/TimerConfig.js?vue&type=script&lang=js&?3dff":
+/*!****************************************************************************************!*\
+  !*** ./src/components/ConfigModal/TimerConfig/TimerConfig.js?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TimerConfig_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./TimerConfig.js?vue&type=script&lang=js& */ "./src/components/ConfigModal/TimerConfig/TimerConfig.js?vue&type=script&lang=js&?1ce5");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_TimerConfig_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/components/ConfigModal/TimerConfig/TimerConfig.less?vue&type=style&index=0&id=023f1b0a&lang=less&scoped=true&":
+/*!***************************************************************************************************************************!*\
+  !*** ./src/components/ConfigModal/TimerConfig/TimerConfig.less?vue&type=style&index=0&id=023f1b0a&lang=less&scoped=true& ***!
+  \***************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_sourceMap_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_less_loader_dist_cjs_js_ref_1_2_TimerConfig_less_vue_type_style_index_0_id_023f1b0a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-style-loader!../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/less-loader/dist/cjs.js??ref--1-2!./TimerConfig.less?vue&type=style&index=0&id=023f1b0a&lang=less&scoped=true& */ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/less-loader/dist/cjs.js?!./src/components/ConfigModal/TimerConfig/TimerConfig.less?vue&type=style&index=0&id=023f1b0a&lang=less&scoped=true&");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_sourceMap_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_less_loader_dist_cjs_js_ref_1_2_TimerConfig_less_vue_type_style_index_0_id_023f1b0a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_sourceMap_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_less_loader_dist_cjs_js_ref_1_2_TimerConfig_less_vue_type_style_index_0_id_023f1b0a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_sourceMap_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_less_loader_dist_cjs_js_ref_1_2_TimerConfig_less_vue_type_style_index_0_id_023f1b0a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_sourceMap_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_less_loader_dist_cjs_js_ref_1_2_TimerConfig_less_vue_type_style_index_0_id_023f1b0a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_node_modules_css_loader_dist_cjs_js_sourceMap_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_less_loader_dist_cjs_js_ref_1_2_TimerConfig_less_vue_type_style_index_0_id_023f1b0a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./src/components/ConfigModal/TimerConfig/TimerConfig.vue":
+/*!****************************************************************!*\
+  !*** ./src/components/ConfigModal/TimerConfig/TimerConfig.vue ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TimerConfig_html_vue_type_template_id_023f1b0a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TimerConfig.html?vue&type=template&id=023f1b0a&scoped=true& */ "./src/components/ConfigModal/TimerConfig/TimerConfig.html?vue&type=template&id=023f1b0a&scoped=true&");
+/* harmony import */ var _TimerConfig_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TimerConfig.js?vue&type=script&lang=js& */ "./src/components/ConfigModal/TimerConfig/TimerConfig.js?vue&type=script&lang=js&?3dff");
+/* empty/unused harmony star reexport *//* harmony import */ var _TimerConfig_less_vue_type_style_index_0_id_023f1b0a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TimerConfig.less?vue&type=style&index=0&id=023f1b0a&lang=less&scoped=true& */ "./src/components/ConfigModal/TimerConfig/TimerConfig.less?vue&type=style&index=0&id=023f1b0a&lang=less&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _TimerConfig_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CConfigModal_5CTimerConfig_5CTimerConfig_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TimerConfig.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CConfigModal%5CTimerConfig%5CTimerConfig.vue&lang=yaml */ "./src/components/ConfigModal/TimerConfig/TimerConfig.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CConfigModal%5CTimerConfig%5CTimerConfig.vue&lang=yaml");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _TimerConfig_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TimerConfig_html_vue_type_template_id_023f1b0a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TimerConfig_html_vue_type_template_id_023f1b0a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "023f1b0a",
+  null
+  
+)
+
+/* custom blocks */
+
+if (typeof _TimerConfig_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CConfigModal_5CTimerConfig_5CTimerConfig_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__["default"] === 'function') Object(_TimerConfig_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CConfigModal_5CTimerConfig_5CTimerConfig_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__["default"])(component)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/components/ConfigModal/TimerConfig/TimerConfig.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/components/ConfigModal/TimerConfig/TimerConfig.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CConfigModal%5CTimerConfig%5CTimerConfig.vue&lang=yaml":
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./src/components/ConfigModal/TimerConfig/TimerConfig.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CConfigModal%5CTimerConfig%5CTimerConfig.vue&lang=yaml ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_TimerConfig_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CConfigModal_5CTimerConfig_5CTimerConfig_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/@kazupon/vue-i18n-loader/lib!./TimerConfig.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CConfigModal%5CTimerConfig%5CTimerConfig.vue&lang=yaml */ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/ConfigModal/TimerConfig/TimerConfig.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=D%3A%5Cxampp%5Chtdocs%5Cprojects-html5%5CPWA-Idea-Organizer%5Csrc%5Ccomponents%5CConfigModal%5CTimerConfig%5CTimerConfig.vue&lang=yaml");
+/* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_TimerConfig_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CConfigModal_5CTimerConfig_5CTimerConfig_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_kazupon_vue_i18n_loader_lib_index_js_TimerConfig_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CConfigModal_5CTimerConfig_5CTimerConfig_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_kazupon_vue_i18n_loader_lib_index_js_TimerConfig_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CConfigModal_5CTimerConfig_5CTimerConfig_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_kazupon_vue_i18n_loader_lib_index_js_TimerConfig_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CConfigModal_5CTimerConfig_5CTimerConfig_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_kazupon_vue_i18n_loader_lib_index_js_TimerConfig_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_D_3A_5Cxampp_5Chtdocs_5Cprojects_html5_5CPWA_Idea_Organizer_5Csrc_5Ccomponents_5CConfigModal_5CTimerConfig_5CTimerConfig_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -37444,8 +37695,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _YouTubePlayer_YouTubePlayer_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./YouTubePlayer/YouTubePlayer.vue */ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.vue");
+/* harmony import */ var _good_morning_502_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./good-morning-502.mp3 */ "./src/components/TomatoTimer/good-morning-502.mp3");
+/* harmony import */ var _good_morning_502_mp3__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_good_morning_502_mp3__WEBPACK_IMPORTED_MODULE_2__);
 
 //import './vendors/jQuery.YoutubeBackground/jquery.youtubebackground.js'
+
 
 
 let TomatoTimer = {
@@ -37468,7 +37722,8 @@ let TomatoTimer = {
       //wholeTime: 25,
       progressLength: Math.PI * 2 * 100,
       BGMPlayer: null,
-      BGMVolume: 50
+      BGMVolume: 50,
+      endSoundObject: new Audio(_good_morning_502_mp3__WEBPACK_IMPORTED_MODULE_2___default.a)
     }
   },
   components: {
@@ -37597,11 +37852,15 @@ let TomatoTimer = {
           this.pauseBtn.classList.remove('pause');
           this.pauseBtn.classList.add('play');
           
-          this.$emit('timeout')
+          this.onTimeout()
           return;
         }
         this.displayTimeLeft(this.timeLeft);
       }, 1000)
+    },
+    onTimeout () {
+      this.endSoundObject.play()
+      this.$emit('timeout')
     },
     pauseTimer(event) {
       
@@ -38198,6 +38457,17 @@ module.exports = function (url) {
 
 /***/ }),
 
+/***/ "./src/components/TomatoTimer/good-morning-502.mp3":
+/*!*********************************************************!*\
+  !*** ./src/components/TomatoTimer/good-morning-502.mp3 ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/good-morning-502.mp3";
+
+/***/ }),
+
 /***/ "./src/components/images/background.jpg":
 /*!**********************************************!*\
   !*** ./src/components/images/background.jpg ***!
@@ -38551,6 +38821,7 @@ let VueController = {
       enableTomatoTimer: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].enableTomatoTimer,
       tomatoTimerSeconds: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].tomatoTimerSeconds,
       musicURL: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].musicURL,
+      musicPlaylist: []
     },
     clientConfig: {
       googleSheetAPIURL: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].googleSheetAPIURL

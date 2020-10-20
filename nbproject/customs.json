@@ -1,6 +1,7 @@
 {
   "elements": {
     "sync-config": {},
+    "author": {},
     "style": {
       "attributes": {
         "scoped": {},

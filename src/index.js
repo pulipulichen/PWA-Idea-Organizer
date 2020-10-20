@@ -82,6 +82,7 @@ let VueController = {
       enableTomatoTimer: config.enableTomatoTimer,
       tomatoTimerSeconds: config.tomatoTimerSeconds,
       musicURL: config.musicURL,
+      musicPlaylist: []
     },
     clientConfig: {
       googleSheetAPIURL: config.googleSheetAPIURL

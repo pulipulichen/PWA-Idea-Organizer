@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import MusicPlaylist from './MusicPlaylist/MusicPlaylist.vue'
 
 let TimerConfig = {
   props: ['config', 'utils', 'clientConfig', 'syncConfig'],
@@ -7,8 +8,9 @@ let TimerConfig = {
     return {
     }
   },
-//  components: {
-//  },
+  components: {
+    "music-playlist": MusicPlaylist
+  },
 //  computed: {
 //    sharable() {
 //      return (typeof(window.navigator.share) === 'object')

@@ -26,8 +26,11 @@ let ConfigModal = {
 //  },
 //  watch: {
 //  },
-//  mounted() {
-//  },
+  mounted() {
+    setTimeout(() => {
+      this.show()
+    }, 1000)
+  },
   methods: {
     getModal: async function () {
       if (!this.modal) {

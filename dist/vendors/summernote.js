@@ -294,6 +294,20 @@ module.exports = exports;
 
 /***/ }),
 
+/***/ "./node_modules/webpack/buildin/amd-options.js":
+/*!****************************************!*\
+  !*** (webpack)/buildin/amd-options.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+module.exports = __webpack_amd_options__;
+
+/* WEBPACK VAR INJECTION */}.call(this, {}))
+
+/***/ }),
+
 /***/ "./src/components/vendors/summernote/font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b":
 /*!************************************************************************************************!*\
   !*** ./src/components/vendors/summernote/font/summernote.eot?4c7e83314b68cfa6a0d18a8b4690044b ***!

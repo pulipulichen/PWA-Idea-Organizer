@@ -24,6 +24,13 @@
     <input type="number" step="10" v-model="syncConfig.tomatoTimerSeconds" min="0">
   </div>
   
+  <music-playlist
+    v-bind:config="config"
+    v-bind:utils="utils"
+    v-bind:clientConfig="clientConfig"
+    v-bind:syncConfig="syncConfig">
+  </music-playlist>
+  
   <div class="field">
     <label>
       {{ $t('Music URL (YouTube)') }}

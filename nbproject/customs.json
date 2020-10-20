@@ -31,6 +31,9 @@
     "v-bind:src": {},
     "v-model": {
       "context": "input"
+    },
+    "v-bind:placeholder": {
+      "context": "input"
     }
   }
 }

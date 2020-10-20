@@ -66,6 +66,7 @@
     "sortablejs": "^1.12.0",
     "toastr": "^2.1.4",
     "toastr2": "^3.0.0-alpha.15",
+    "vuedraggable": "^2.24.2",
     "webpack-bundle-analyzer": "^3.9.0"
   }
 }

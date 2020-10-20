@@ -39,52 +39,7 @@ let Index = {
     }
   },
   watch: {
-    'contents' () {
-      this.startSyncContents()
-    },
-    'syncConfig.enableSound' () {
-      if (this.inited === false) {
-        return false
-      }
-      this.editor.summernote('setOption', {
-        enableTypeWriterSoundEffect: this.syncConfig.enableSound
-      })
-      
-      this.startSyncConfig()
-    },
-    'syncConfig.customStyle' () {
-      if (this.inited === false) {
-        return false
-      }
-      this.setCustomStyle()
-      //console.log('watch customStyle')
-      this.startSyncConfig()
-    },
-    'syncConfig.musicURL' () {
-      if (this.inited === false) {
-        return false
-      }
-      this.startSyncConfig()
-    },
-    'syncConfig.enableTomatoTimer' () {
-      if (this.inited === false) {
-        return false
-      }
-      this.startSyncConfig()
-    },
-    'syncConfig.tomatoTimerSeconds' (tomatoTimerSeconds) {
-      if (this.inited === false) {
-        return false
-      }
-      if (!this.$refs.TomatoTimer) {
-        return false
-      }
-      
-      //console.log(tomatoTimerSeconds)
-      this.$refs.TomatoTimer.resetTimer(tomatoTimerSeconds)
-      
-      this.startSyncConfig()
-    }
+    // 轉移到 IndexWatchSync.js
   },
   async mounted () {
     
@@ -128,6 +83,9 @@ let Index = {
     }
   }
 }
+
+import IndexWatchSync from './IndexWatchSync.js'
+IndexWatchSync(Index)
 
 import IndexEditor from './IndexEditor.js'
 IndexEditor(Index)

@@ -1,5 +1,5 @@
 <div class="MusicPlaylist">
-  
+
   <div class="field">
     <div class="ui fluid input">
       <input type="text" 
@@ -7,47 +7,48 @@
              v-bind:placeholder="$t('Search...')">
     </div>
   </div>
-  
+
   <draggable 
     v-model="syncConfig.musicPlaylist"
     handle=".handle">
     <transition-group>
-        <div v-for="(item, i) in syncConfig.musicPlaylist" 
-             v-bind:key="'mustic-playlist-' + i"
-             v-show="isMatchSearchKeyword(item.title)"
-             class="inline fields">
-          <div class="six wide field">
-            <input 
-              type="text"
-              v-model="item.title"
-              v-bind:placeholder="$t('Music title...')">
-          </div>
-          <div class="ten wide field">
+      <div v-for="(item, i) in syncConfig.musicPlaylist" 
+           v-bind:key="'mustic-playlist-' + i"
+           v-show="isMatchSearchKeyword(item.title)"
+           v-bind:class="{playing: isMatchPlayingURL(item.url)}"
+           class="inline fields playlist-item">
+        <div class="six wide field">
+          <i class="bars handle icon"></i>
+          <input 
+            type="text"
+            v-model="item.title"
+            v-on:change="onMusicPlaylistChange"
+            v-bind:placeholder="$t('Music title...')">
+        </div>
+        <div class="ten wide field">
 
-            <div class="ui action input">
-              <input 
-                type="url" 
-                v-model="item.url"
-                v-bind:placeholder="$t('URL...')">
-              <button 
-                class="ui button"
-                v-on:click="setItem(item.url)">
-                <i class="play circle icon"></i>
-              </button>
-              <button 
-                class="ui button"
-                v-on:click="removeItem(i)">
-                <i class="times icon"></i>
-              </button>
-              <button class="ui button handler">
-                <i class="bars icon"></i>
-              </button>
-            </div>
+          <div class="ui action input">
+            <input 
+              type="url" 
+              v-model="item.url"
+              v-bind:placeholder="$t('URL...')">
+            <button 
+              type="button"
+              class="ui button set-play"
+              v-on:click="setPlay(item.url)"
+              v-bind:class="{green: isMatchPlayingURL(item.url)}"
+              v-bind:disabled="isMatchPlayingURL(item.url)">
+              <i class="play circle icon"></i>
+            </button>
+            <button 
+              type="button"
+              class="ui button"
+              v-on:click="removeItem(i)">
+              <i class="times icon"></i>
+            </button>
           </div>
         </div>
+      </div>
     </transition-group>
-</draggable>
-  
-  
-  
+  </draggable>
 </div>

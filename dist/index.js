@@ -2498,7 +2498,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, "", "",{"version":3,"sources":[],"names":[],"mappings":"","file":"MusicPlaylist.less"}]);
+exports.push([module.i, ".handle[data-v-6df4bd93] {\n  cursor: pointer;\n  user-select: none;\n}\n.playlist-item[data-v-6df4bd93] {\n  user-select: none;\n}\n", "",{"version":3,"sources":["MusicPlaylist.less"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB","file":"MusicPlaylist.less","sourcesContent":[".handle[data-v-6df4bd93] {\n  cursor: pointer;\n  user-select: none;\n}\n.playlist-item[data-v-6df4bd93] {\n  user-select: none;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -2516,7 +2516,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, "@media only screen and (max-width: 767px) {\n.hidden-in-small-screen[data-v-023f1b0a] {\n    display: none;\n}\n}\n@media only screen and (max-height: 640px) {\n.hidden-in-small-screen[data-v-023f1b0a] {\n    display: none;\n}\n}\n", "",{"version":3,"sources":["TimerConfig.less"],"names":[],"mappings":"AAAA;AACA;IACI,aAAa;AACjB;AACA;AACA;AACA;IACI,aAAa;AACjB;AACA","file":"TimerConfig.less","sourcesContent":["@media only screen and (max-width: 767px) {\n.hidden-in-small-screen[data-v-023f1b0a] {\n    display: none;\n}\n}\n@media only screen and (max-height: 640px) {\n.hidden-in-small-screen[data-v-023f1b0a] {\n    display: none;\n}\n}\n"]}]);
+exports.push([module.i, ".music-title[data-v-023f1b0a] {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n}\n@media only screen and (max-width: 767px) {\n.hidden-in-small-screen[data-v-023f1b0a] {\n    display: none;\n}\n}\n@media only screen and (max-height: 640px) {\n.hidden-in-small-screen[data-v-023f1b0a] {\n    display: none;\n}\n}\n", "",{"version":3,"sources":["TimerConfig.less"],"names":[],"mappings":"AAAA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,uBAAuB;AACzB;AACA;AACA;IACI,aAAa;AACjB;AACA;AACA;AACA;IACI,aAAa;AACjB;AACA","file":"TimerConfig.less","sourcesContent":[".music-title[data-v-023f1b0a] {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n}\n@media only screen and (max-width: 767px) {\n.hidden-in-small-screen[data-v-023f1b0a] {\n    display: none;\n}\n}\n@media only screen and (max-height: 640px) {\n.hidden-in-small-screen[data-v-023f1b0a] {\n    display: none;\n}\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -22479,10 +22479,13 @@ var render = function() {
                     }
                   ],
                   key: "mustic-playlist-" + i,
-                  staticClass: "inline fields"
+                  staticClass: "inline fields playlist-item",
+                  class: { playing: _vm.isMatchPlayingURL(item.url) }
                 },
                 [
                   _c("div", { staticClass: "six wide field" }, [
+                    _c("i", { staticClass: "bars handle icon" }),
+                    _vm._v(" "),
                     _c("input", {
                       directives: [
                         {
@@ -22498,6 +22501,7 @@ var render = function() {
                       },
                       domProps: { value: item.title },
                       on: {
+                        change: _vm.onMusicPlaylistChange,
                         input: function($event) {
                           if ($event.target.composing) {
                             return
@@ -22534,10 +22538,15 @@ var render = function() {
                       _c(
                         "button",
                         {
-                          staticClass: "ui button",
+                          staticClass: "ui button set-play",
+                          class: { green: _vm.isMatchPlayingURL(item.url) },
+                          attrs: {
+                            type: "button",
+                            disabled: _vm.isMatchPlayingURL(item.url)
+                          },
                           on: {
                             click: function($event) {
-                              return _vm.setItem(item.url)
+                              return _vm.setPlay(item.url)
                             }
                           }
                         },
@@ -22548,6 +22557,7 @@ var render = function() {
                         "button",
                         {
                           staticClass: "ui button",
+                          attrs: { type: "button" },
                           on: {
                             click: function($event) {
                               return _vm.removeItem(i)
@@ -22555,11 +22565,7 @@ var render = function() {
                           }
                         },
                         [_c("i", { staticClass: "times icon" })]
-                      ),
-                      _vm._v(" "),
-                      _c("button", { staticClass: "ui button handler" }, [
-                        _c("i", { staticClass: "bars icon" })
-                      ])
+                      )
                     ])
                   ])
                 ]
@@ -22708,46 +22714,55 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "field" }, [
-        _c("label", [
-          _vm._v(
-            "\r\n      " + _vm._s(_vm.$t("Music URL (YouTube)")) + "\r\n    "
-          )
+      _c("div", { staticClass: "fields" }, [
+        _c("div", { staticClass: "six wide field music-title" }, [
+          _c("label", [
+            _vm._v(
+              "\r\n        " +
+                _vm._s(_vm.$t("Music URL (YouTube)")) +
+                "\r\n      "
+            )
+          ]),
+          _vm._v("\r\n      " + _vm._s(_vm.playingMusicTitle) + "\r\n    ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "ui action input" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.syncConfig.musicURL,
-                expression: "syncConfig.musicURL"
-              }
-            ],
-            attrs: {
-              type: "url",
-              placeholder: "https://www.youtube.com/watch?v=..."
-            },
-            domProps: { value: _vm.syncConfig.musicURL },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.syncConfig, "musicURL", $event.target.value)
-              }
-            }
-          }),
+        _c("div", { staticClass: "ten wide action input field" }, [
+          _c("label", [_vm._v("\r\n         \r\n      ")]),
           _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "ui button",
-              attrs: { target: "_blank", href: _vm.syncConfig.musicURL }
-            },
-            [_c("i", { staticClass: "external alternate icon" })]
-          )
+          _c("div", { staticClass: "ui action input" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.syncConfig.musicURL,
+                  expression: "syncConfig.musicURL"
+                }
+              ],
+              attrs: {
+                type: "url",
+                placeholder: "https://www.youtube.com/watch?v=..."
+              },
+              domProps: { value: _vm.syncConfig.musicURL },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.syncConfig, "musicURL", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "ui button",
+                attrs: { target: "_blank", href: _vm.syncConfig.musicURL }
+              },
+              [_c("i", { staticClass: "external alternate icon" })]
+            )
+          ])
         ])
       ])
     ],
@@ -39283,21 +39298,7 @@ let MusicPlaylist = {
   data() {    
     this.$i18n.locale = this.config.locale
     return {
-      searchKeyword: '',
-      myArray: [
-        {
-          id: 2,
-          name: 'A',
-        },
-        {
-          id: 1,
-          name: 'B',
-        },
-        {
-          id: 4,
-          name: 'C',
-        },
-      ]
+      searchKeyword: ''
     }
   },
   components: {
@@ -39310,6 +39311,14 @@ let MusicPlaylist = {
   mounted () {
   },
   methods: {
+    isMatchPlayingURL (url) {
+      url = url.trim()
+      if (url === '') {
+        return false
+      }
+      
+      return (this.syncConfig.musicURL === url)
+    },
     isMatchSearchKeyword (keyword) {
       let searchKeyword = this.searchKeyword.trim().toLowerCase()
       if (searchKeyword === '') {
@@ -39318,6 +39327,24 @@ let MusicPlaylist = {
       else {
         return (keyword.toLowerCase().indexOf(searchKeyword) > -1)
       }
+    },
+    removeItem (i) {
+      if (i >= this.syncConfig.musicPlaylist.length) {
+        return false
+      }
+      
+      this.syncConfig.musicPlaylist.splice(i, 1)
+    },
+    setPlay (url) {
+      url = url.trim()
+      if (url === '') {
+        return false
+      }
+      this.syncConfig.musicURL = url
+    },
+    onMusicPlaylistChange () {
+      //console.log('111')
+      this.syncConfig.musicPlaylist = this.syncConfig.musicPlaylist.concat([])
     }
   } // methods
 }
@@ -39459,11 +39486,25 @@ let TimerConfig = {
   components: {
     "music-playlist": _MusicPlaylist_MusicPlaylist_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-//  computed: {
+  computed: {
+    playingMusicTitle () {
+      let url = this.syncConfig.musicURL.trim()
+      if (url === '') {
+        return this.$t('(No title)')
+      }
+      
+      for (let i = 0; i < this.syncConfig.musicPlaylist.length; i++) {
+        let item = this.syncConfig.musicPlaylist[i]
+        if (item.url === url) {
+          return item.title.trim()
+        }
+      }
+      return this.$t('(No title)')
+    }
 //    sharable() {
 //      return (typeof(window.navigator.share) === 'object')
 //    }
-//  },
+  },
 //  watch: {
 //  },
 //  mounted() {
@@ -39765,8 +39806,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var toastr2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! toastr2 */ "./node_modules/toastr2/dist/toastr.es5.js");
 /* harmony import */ var toastr2_dist_toastr_min_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! toastr2/dist/toastr.min.css */ "./node_modules/toastr2/dist/toastr.min.css");
 /* harmony import */ var toastr2_dist_toastr_min_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(toastr2_dist_toastr_min_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _IndexEditor_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./IndexEditor.js */ "./src/components/IndexEditor.js");
-/* harmony import */ var _IndexSync_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./IndexSync.js */ "./src/components/IndexSync.js");
+/* harmony import */ var _IndexWatchSync_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./IndexWatchSync.js */ "./src/components/IndexWatchSync.js");
+/* harmony import */ var _IndexEditor_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./IndexEditor.js */ "./src/components/IndexEditor.js");
+/* harmony import */ var _IndexSync_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./IndexSync.js */ "./src/components/IndexSync.js");
 /* global Node */
 
 
@@ -39808,52 +39850,7 @@ let Index = {
     }
   },
   watch: {
-    'contents' () {
-      this.startSyncContents()
-    },
-    'syncConfig.enableSound' () {
-      if (this.inited === false) {
-        return false
-      }
-      this.editor.summernote('setOption', {
-        enableTypeWriterSoundEffect: this.syncConfig.enableSound
-      })
-      
-      this.startSyncConfig()
-    },
-    'syncConfig.customStyle' () {
-      if (this.inited === false) {
-        return false
-      }
-      this.setCustomStyle()
-      //console.log('watch customStyle')
-      this.startSyncConfig()
-    },
-    'syncConfig.musicURL' () {
-      if (this.inited === false) {
-        return false
-      }
-      this.startSyncConfig()
-    },
-    'syncConfig.enableTomatoTimer' () {
-      if (this.inited === false) {
-        return false
-      }
-      this.startSyncConfig()
-    },
-    'syncConfig.tomatoTimerSeconds' (tomatoTimerSeconds) {
-      if (this.inited === false) {
-        return false
-      }
-      if (!this.$refs.TomatoTimer) {
-        return false
-      }
-      
-      //console.log(tomatoTimerSeconds)
-      this.$refs.TomatoTimer.resetTimer(tomatoTimerSeconds)
-      
-      this.startSyncConfig()
-    }
+    // 轉移到 IndexWatchSync.js
   },
   async mounted () {
     
@@ -39899,10 +39896,13 @@ let Index = {
 }
 
 
-Object(_IndexEditor_js__WEBPACK_IMPORTED_MODULE_6__["default"])(Index)
+Object(_IndexWatchSync_js__WEBPACK_IMPORTED_MODULE_6__["default"])(Index)
 
 
-Object(_IndexSync_js__WEBPACK_IMPORTED_MODULE_7__["default"])(Index)
+Object(_IndexEditor_js__WEBPACK_IMPORTED_MODULE_7__["default"])(Index)
+
+
+Object(_IndexSync_js__WEBPACK_IMPORTED_MODULE_8__["default"])(Index)
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
@@ -40547,6 +40547,82 @@ __webpack_require__.r(__webpack_exports__);
     document.getElementsByTagName("head")[0].appendChild(css)
     //console.log(3)
     this.styleNode = css
+  }
+});
+
+/***/ }),
+
+/***/ "./src/components/IndexWatchSync.js":
+/*!******************************************!*\
+  !*** ./src/components/IndexWatchSync.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* global Node */
+
+/* harmony default export */ __webpack_exports__["default"] = (function (Index) {
+  Index.watch.contents = function () {
+    this.startSyncContents()
+  }
+  
+  Index.watch["syncConfig.enableSound"] = function () {
+    if (this.inited === false) {
+      return false
+    }
+    this.editor.summernote('setOption', {
+      enableTypeWriterSoundEffect: this.syncConfig.enableSound
+    })
+
+    this.startSyncConfig()
+  }
+  
+  Index.watch['syncConfig.customStyle'] = function () {
+    if (this.inited === false) {
+      return false
+    }
+    this.setCustomStyle()
+    //console.log('watch customStyle')
+    this.startSyncConfig()
+  }
+  
+  Index.watch['syncConfig.musicURL'] = function () {
+    if (this.inited === false) {
+      return false
+    }
+    this.startSyncConfig()
+  }
+  
+  Index.watch['syncConfig.enableTomatoTimer'] = function () {
+    if (this.inited === false) {
+      return false
+    }
+    this.startSyncConfig()
+  }
+  
+  Index.watch['syncConfig.tomatoTimerSeconds'] = function (tomatoTimerSeconds) {
+    if (this.inited === false) {
+      return false
+    }
+    if (!this.$refs.TomatoTimer) {
+      return false
+    }
+
+    //console.log(tomatoTimerSeconds)
+    this.$refs.TomatoTimer.resetTimer(tomatoTimerSeconds)
+
+    this.startSyncConfig()
+  }
+  
+  Index.watch['syncConfig.musicPlaylist'] = function () {
+    if (this.inited === false) {
+      return false
+    }
+    console.log(this.syncConfig.musicPlaylist)
+    return false
+    this.startSyncConfig()
   }
 });
 

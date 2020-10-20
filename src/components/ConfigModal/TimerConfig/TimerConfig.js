@@ -11,11 +11,25 @@ let TimerConfig = {
   components: {
     "music-playlist": MusicPlaylist
   },
-//  computed: {
+  computed: {
+    playingMusicTitle () {
+      let url = this.syncConfig.musicURL.trim()
+      if (url === '') {
+        return this.$t('(No title)')
+      }
+      
+      for (let i = 0; i < this.syncConfig.musicPlaylist.length; i++) {
+        let item = this.syncConfig.musicPlaylist[i]
+        if (item.url === url) {
+          return item.title.trim()
+        }
+      }
+      return this.$t('(No title)')
+    }
 //    sharable() {
 //      return (typeof(window.navigator.share) === 'object')
 //    }
-//  },
+  },
 //  watch: {
 //  },
 //  mounted() {

@@ -5,21 +5,7 @@ let MusicPlaylist = {
   data() {    
     this.$i18n.locale = this.config.locale
     return {
-      searchKeyword: '',
-      myArray: [
-        {
-          id: 2,
-          name: 'A',
-        },
-        {
-          id: 1,
-          name: 'B',
-        },
-        {
-          id: 4,
-          name: 'C',
-        },
-      ]
+      searchKeyword: ''
     }
   },
   components: {
@@ -32,6 +18,14 @@ let MusicPlaylist = {
   mounted () {
   },
   methods: {
+    isMatchPlayingURL (url) {
+      url = url.trim()
+      if (url === '') {
+        return false
+      }
+      
+      return (this.syncConfig.musicURL === url)
+    },
     isMatchSearchKeyword (keyword) {
       let searchKeyword = this.searchKeyword.trim().toLowerCase()
       if (searchKeyword === '') {
@@ -40,6 +34,24 @@ let MusicPlaylist = {
       else {
         return (keyword.toLowerCase().indexOf(searchKeyword) > -1)
       }
+    },
+    removeItem (i) {
+      if (i >= this.syncConfig.musicPlaylist.length) {
+        return false
+      }
+      
+      this.syncConfig.musicPlaylist.splice(i, 1)
+    },
+    setPlay (url) {
+      url = url.trim()
+      if (url === '') {
+        return false
+      }
+      this.syncConfig.musicURL = url
+    },
+    onMusicPlaylistChange () {
+      //console.log('111')
+      this.syncConfig.musicPlaylist = this.syncConfig.musicPlaylist.concat([])
     }
   } // methods
 }

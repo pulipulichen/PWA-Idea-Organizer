@@ -2498,7 +2498,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".handle[data-v-6df4bd93] {\n  cursor: pointer;\n  user-select: none;\n}\n.playlist-item[data-v-6df4bd93] {\n  user-select: none;\n}\n", "",{"version":3,"sources":["MusicPlaylist.less"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB","file":"MusicPlaylist.less","sourcesContent":[".handle[data-v-6df4bd93] {\n  cursor: pointer;\n  user-select: none;\n}\n.playlist-item[data-v-6df4bd93] {\n  user-select: none;\n}\n"]}]);
+exports.push([module.i, ".handle[data-v-6df4bd93] {\n  cursor: pointer;\n  user-select: none;\n}\n.playlist-item[data-v-6df4bd93] {\n  user-select: none;\n}\n.playlist[data-v-6df4bd93] {\n  max-height: 10rem;\n  overflow-y: auto;\n  overflow-x: hidden;\n}\n", "",{"version":3,"sources":["MusicPlaylist.less"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,iBAAiB;EACjB,gBAAgB;EAChB,kBAAkB;AACpB","file":"MusicPlaylist.less","sourcesContent":[".handle[data-v-6df4bd93] {\n  cursor: pointer;\n  user-select: none;\n}\n.playlist-item[data-v-6df4bd93] {\n  user-select: none;\n}\n.playlist[data-v-6df4bd93] {\n  max-height: 10rem;\n  overflow-y: auto;\n  overflow-x: hidden;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -22422,163 +22422,227 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "MusicPlaylist" },
-    [
-      _c("div", { staticClass: "field" }, [
-        _c("div", { staticClass: "ui fluid input" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.searchKeyword,
-                expression: "searchKeyword"
-              }
-            ],
-            attrs: { type: "text", placeholder: _vm.$t("Search...") },
-            domProps: { value: _vm.searchKeyword },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.searchKeyword = $event.target.value
-              }
+  return _c("div", { staticClass: "MusicPlaylist" }, [
+    _c("div", { staticClass: "field" }, [
+      _c("div", { staticClass: "ui fluid input" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.searchKeyword,
+              expression: "searchKeyword"
             }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "draggable",
-        {
-          attrs: { handle: ".handle" },
-          model: {
-            value: _vm.syncConfig.musicPlaylist,
-            callback: function($$v) {
-              _vm.$set(_vm.syncConfig, "musicPlaylist", $$v)
-            },
-            expression: "syncConfig.musicPlaylist"
+          ],
+          attrs: { type: "text", placeholder: _vm.$t("Search...") },
+          domProps: { value: _vm.searchKeyword },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.searchKeyword = $event.target.value
+            }
           }
-        },
-        [
-          _c(
-            "transition-group",
-            _vm._l(_vm.syncConfig.musicPlaylist, function(item, i) {
-              return _c(
-                "div",
-                {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.isMatchSearchKeyword(item.title),
-                      expression: "isMatchSearchKeyword(item.title)"
-                    }
-                  ],
-                  key: "mustic-playlist-" + i,
-                  staticClass: "inline fields playlist-item",
-                  class: { playing: _vm.isMatchPlayingURL(item.url) }
-                },
-                [
-                  _c("div", { staticClass: "six wide field" }, [
-                    _c("i", { staticClass: "bars handle icon" }),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: item.title,
-                          expression: "item.title"
-                        }
-                      ],
-                      attrs: {
-                        type: "text",
-                        placeholder: _vm.$t("Music title...")
-                      },
-                      domProps: { value: item.title },
-                      on: {
-                        change: _vm.onMusicPlaylistChange,
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(item, "title", $event.target.value)
-                        }
+        })
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "playlist" },
+      [
+        _c(
+          "draggable",
+          {
+            attrs: { handle: ".handle" },
+            model: {
+              value: _vm.syncConfig.musicPlaylist,
+              callback: function($$v) {
+                _vm.$set(_vm.syncConfig, "musicPlaylist", $$v)
+              },
+              expression: "syncConfig.musicPlaylist"
+            }
+          },
+          [
+            _c(
+              "transition-group",
+              _vm._l(_vm.syncConfig.musicPlaylist, function(item, i) {
+                return _c(
+                  "div",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.isMatchSearchKeyword(item.title),
+                        expression: "isMatchSearchKeyword(item.title)"
                       }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ten wide field" }, [
-                    _c("div", { staticClass: "ui action input" }, [
+                    ],
+                    key: "mustic-playlist-" + i,
+                    staticClass: "inline fields playlist-item",
+                    class: { playing: _vm.isMatchPlayingURL(item.url) }
+                  },
+                  [
+                    _c("div", { staticClass: "six wide field" }, [
+                      _c("i", { staticClass: "bars handle icon" }),
+                      _vm._v(" "),
                       _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: item.url,
-                            expression: "item.url"
+                            value: item.title,
+                            expression: "item.title"
                           }
                         ],
-                        attrs: { type: "url", placeholder: _vm.$t("URL...") },
-                        domProps: { value: item.url },
+                        attrs: {
+                          type: "text",
+                          placeholder: _vm.$t("Music title...")
+                        },
+                        domProps: { value: item.title },
                         on: {
+                          change: _vm.onMusicPlaylistChange,
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(item, "url", $event.target.value)
+                            _vm.$set(item, "title", $event.target.value)
                           }
                         }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "ui button set-play",
-                          class: { green: _vm.isMatchPlayingURL(item.url) },
-                          attrs: {
-                            type: "button",
-                            disabled: _vm.isMatchPlayingURL(item.url)
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "ten wide field" }, [
+                      _c("div", { staticClass: "ui action input" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: item.url,
+                              expression: "item.url"
+                            }
+                          ],
+                          attrs: { type: "url", placeholder: _vm.$t("URL...") },
+                          domProps: { value: item.url },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(item, "url", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "ui button set-play",
+                            class: { green: _vm.isMatchPlayingURL(item.url) },
+                            attrs: {
+                              type: "button",
+                              disabled: _vm.isMatchPlayingURL(item.url)
+                            },
+                            on: {
+                              click: function($event) {
+                                return _vm.setPlay(item.url)
+                              }
+                            }
                           },
-                          on: {
-                            click: function($event) {
-                              return _vm.setPlay(item.url)
+                          [_c("i", { staticClass: "play icon" })]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "ui button",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                return _vm.removeItem(i)
+                              }
                             }
-                          }
-                        },
-                        [_c("i", { staticClass: "play circle icon" })]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "ui button",
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              return _vm.removeItem(i)
-                            }
-                          }
-                        },
-                        [_c("i", { staticClass: "times icon" })]
-                      )
+                          },
+                          [_c("i", { staticClass: "times icon" })]
+                        )
+                      ])
                     ])
-                  ])
-                ]
-              )
-            }),
-            0
+                  ]
+                )
+              }),
+              0
+            )
+          ],
+          1
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "inline fields playlist-item" }, [
+      _c("div", { staticClass: "six wide field" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.addTitle,
+              expression: "addTitle"
+            }
+          ],
+          attrs: { type: "text", placeholder: _vm.$t("Add Music title...") },
+          domProps: { value: _vm.addTitle },
+          on: {
+            change: _vm.onMusicPlaylistChange,
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.addTitle = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ten wide field" }, [
+        _c("div", { staticClass: "ui action input" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.addURL,
+                expression: "addURL"
+              }
+            ],
+            attrs: { type: "url", placeholder: _vm.$t("URL...") },
+            domProps: { value: _vm.addURL },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.addURL = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "ui button",
+              class: { disabled: _vm.isAddable === false },
+              attrs: { type: "button" },
+              on: { click: _vm.addItem }
+            },
+            [_c("i", { staticClass: "plus icon" })]
           )
-        ],
-        1
-      )
-    ],
-    1
-  )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22714,55 +22778,65 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "fields" }, [
-        _c("div", { staticClass: "six wide field music-title" }, [
-          _c("label", [
+      _c("div", { staticClass: "field" }, [
+        _c(
+          "label",
+          { staticClass: "music-title" },
+          [
             _vm._v(
-              "\r\n        " +
+              "\r\n      " +
                 _vm._s(_vm.$t("Music URL (YouTube)")) +
                 "\r\n      "
-            )
-          ]),
-          _vm._v("\r\n      " + _vm._s(_vm.playingMusicTitle) + "\r\n    ")
-        ]),
+            ),
+            _vm.playingMusicTitle
+              ? [
+                  _vm._v("\r\n        :\r\n        "),
+                  _c("strong", [
+                    _vm._v(
+                      "\r\n          " +
+                        _vm._s(_vm.playingMusicTitle) +
+                        "\r\n        "
+                    )
+                  ])
+                ]
+              : _vm._e()
+          ],
+          2
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "ten wide action input field" }, [
-          _c("label", [_vm._v("\r\n         \r\n      ")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "ui action input" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.syncConfig.musicURL,
-                  expression: "syncConfig.musicURL"
-                }
-              ],
-              attrs: {
-                type: "url",
-                placeholder: "https://www.youtube.com/watch?v=..."
-              },
-              domProps: { value: _vm.syncConfig.musicURL },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.syncConfig, "musicURL", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "a",
+        _c("div", { staticClass: "ui action input" }, [
+          _c("input", {
+            directives: [
               {
-                staticClass: "ui button",
-                attrs: { target: "_blank", href: _vm.syncConfig.musicURL }
-              },
-              [_c("i", { staticClass: "external alternate icon" })]
-            )
-          ])
+                name: "model",
+                rawName: "v-model",
+                value: _vm.syncConfig.musicURL,
+                expression: "syncConfig.musicURL"
+              }
+            ],
+            attrs: {
+              type: "url",
+              placeholder: "https://www.youtube.com/watch?v=..."
+            },
+            domProps: { value: _vm.syncConfig.musicURL },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.syncConfig, "musicURL", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "ui button",
+              attrs: { target: "_blank", href: _vm.syncConfig.musicURL }
+            },
+            [_c("i", { staticClass: "external alternate icon" })]
+          )
         ])
       ])
     ],
@@ -39291,6 +39365,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuedraggable */ "./node_modules/vuedraggable/dist/vuedraggable.umd.js");
 /* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuedraggable__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _youtube_video_id_parser_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./youtube-video-id-parser.js */ "./src/components/ConfigModal/TimerConfig/MusicPlaylist/youtube-video-id-parser.js");
+/* harmony import */ var _youtube_video_id_parser_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_youtube_video_id_parser_js__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 let MusicPlaylist = {
@@ -39298,18 +39375,82 @@ let MusicPlaylist = {
   data() {    
     this.$i18n.locale = this.config.locale
     return {
-      searchKeyword: ''
+      searchKeyword: '',
+      addTitle: '',
+      addURL: '',
+      isAddable: false
     }
   },
   components: {
     draggable: (vuedraggable__WEBPACK_IMPORTED_MODULE_0___default()),
   },
+  /*
   computed: {
+    isAddable () {
+      let url = this.addURL.trim()
+      console.log(url, )
+      if (url === ''
+              || url.startsWith('http') === false
+              || url.split('/').length < 4
+              || url.indexOf('youtu') === -1) {
+        console.log('false')
+        return false
+      }
+      
+      let youtubeID = YouTubeVideoIDParser(url)
+      console.log(youtubeID)
+      if (!youtubeID) {
+        return false
+      }
+      
+      for (let i = 0; i < this.syncConfig.musicPlaylist.length; i++) {
+        let itemYouTubeID = YouTubeVideoIDParser(this.syncConfig.musicPlaylist[i].url)
+        console.log(itemYouTubeID)
+        if (itemYouTubeID === youtubeID) {
+          return false
+        }
+      }
+      return true
+    }
   },
+   * 
+   */
   watch: {
+    addURL () {
+      let url = this.addURL.trim()
+      //console.log(url, )
+      if (url === ''
+              || url.startsWith('http') === false
+              || url.split('/').length < 4
+              || url.indexOf('youtu') === -1) {
+        //console.log('false')
+        this.isAddable = false
+        return false
+      }
+      
+      let youtubeID = _youtube_video_id_parser_js__WEBPACK_IMPORTED_MODULE_1___default()(url)
+      if (youtubeID === false) {
+        this.isAddable = false
+        return false
+      }
+      for (let i = 0; i < this.syncConfig.musicPlaylist.length; i++) {
+        //console.log(i)
+        let item = this.syncConfig.musicPlaylist[i]
+        //console.log(item)
+        let itemYouTubeID = _youtube_video_id_parser_js__WEBPACK_IMPORTED_MODULE_1___default()(item.url)
+        //console.log(itemYouTubeID)
+        if (itemYouTubeID === youtubeID) {
+          this.isAddable = false
+          return false
+        }
+      }
+      this.isAddable = true
+      return true
+    }
   },
-  mounted () {
-  },
+//  mounted () {
+//    //console.log(this.syncConfig.musicPlaylist)
+//  },
   methods: {
     isMatchPlayingURL (url) {
       url = url.trim()
@@ -39344,7 +39485,19 @@ let MusicPlaylist = {
     },
     onMusicPlaylistChange () {
       //console.log('111')
+      //console.log(this.syncConfig.musicPlaylist)
       this.syncConfig.musicPlaylist = this.syncConfig.musicPlaylist.concat([])
+      //console.log(this.syncConfig.musicPlaylist)
+    },
+    addItem () {
+      //console.log(this.syncConfig.musicPlaylist)
+      this.syncConfig.musicPlaylist.unshift({
+        title: this.addTitle,
+        url: this.addURL
+      })
+      
+      this.addTitle = ''
+      this.addURL = ''
     }
   } // methods
 }
@@ -39443,6 +39596,64 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/components/ConfigModal/TimerConfig/MusicPlaylist/youtube-video-id-parser.js":
+/*!*****************************************************************************************!*\
+  !*** ./src/components/ConfigModal/TimerConfig/MusicPlaylist/youtube-video-id-parser.js ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * https://gist.github.com/rodrigoborgesdeoliveira/987683cfbfcc8d800192da1e73adc486
+ */
+module.exports = function (url) {
+
+  if (!url) {
+    return undefined
+  }
+
+  if (url.indexOf('user/', 5) === 0) { // 1.
+    return false
+  }
+
+  //if ( preg_match('/^[a-zA-Z0-9\-\_]{11}$/', $url)) { // 2.
+  //return $url;
+  if (/^[a-zA-Z0-9\-\_]{11}$/.test(url)) {
+    return url
+  }
+
+  let matchResult
+  matchResult = url.match(/(?:watch\?v=|v\/|embed\/|ytscreeningroom\?v=|\?v=|\?vi=|e\/|watch\?.*vi?=|\?feature=[a-z_]*&v=|vi\/)([a-zA-Z0-9\-\_]{11})/)
+  if (matchResult) {
+    return matchResult[1]
+  }
+
+  matchResult = url.match(/([a-zA-Z0-9\-\_]{11})(?:\?[a-z]|\&[a-z])/)
+  if (matchResult) {
+    return matchResult[1]
+  }
+  
+  matchResult = url.match(/u\/1\/([a-zA-Z0-9\-\_]{11})(?:\?rel=0)?$/)
+  if (matchResult) {
+    return false
+  }
+  
+  matchResult = url.match(/(?:watch%3Fv%3D|watch\?v%3D)([a-zA-Z0-9\-\_]{11})[%&]/)
+  if (matchResult) {
+    return matchResult[1]
+  }
+
+  // 7. Rules for special cases
+  matchResult = url.match(/watchv=([a-zA-Z0-9\-\_]{11})&list=/)
+  if (matchResult) {
+    return matchResult[1]
+  }
+
+  return false
+}
+
+/***/ }),
+
 /***/ "./src/components/ConfigModal/TimerConfig/TimerConfig.html?vue&type=template&id=023f1b0a&scoped=true&":
 /*!************************************************************************************************************!*\
   !*** ./src/components/ConfigModal/TimerConfig/TimerConfig.html?vue&type=template&id=023f1b0a&scoped=true& ***!
@@ -39490,16 +39701,19 @@ let TimerConfig = {
     playingMusicTitle () {
       let url = this.syncConfig.musicURL.trim()
       if (url === '') {
-        return this.$t('(No title)')
+        //return this.$t('(No title)')
+        return false
       }
       
+      //console.log(this.syncConfig.musicPlaylist)
       for (let i = 0; i < this.syncConfig.musicPlaylist.length; i++) {
         let item = this.syncConfig.musicPlaylist[i]
         if (item.url === url) {
           return item.title.trim()
         }
       }
-      return this.$t('(No title)')
+      //return this.$t('(No title)')
+      return false
     }
 //    sharable() {
 //      return (typeof(window.navigator.share) === 'object')

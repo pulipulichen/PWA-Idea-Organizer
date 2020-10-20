@@ -15,16 +15,19 @@ let TimerConfig = {
     playingMusicTitle () {
       let url = this.syncConfig.musicURL.trim()
       if (url === '') {
-        return this.$t('(No title)')
+        //return this.$t('(No title)')
+        return false
       }
       
+      //console.log(this.syncConfig.musicPlaylist)
       for (let i = 0; i < this.syncConfig.musicPlaylist.length; i++) {
         let item = this.syncConfig.musicPlaylist[i]
         if (item.url === url) {
           return item.title.trim()
         }
       }
-      return this.$t('(No title)')
+      //return this.$t('(No title)')
+      return false
     }
 //    sharable() {
 //      return (typeof(window.navigator.share) === 'object')

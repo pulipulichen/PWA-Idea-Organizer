@@ -17,52 +17,49 @@
       </label>
     </div>
   </div>
-
+  
   <div class="inline field hidden-in-small-screen"
        v-if="syncConfig.enableTomatoTimer">
     <label>{{ $t('Tomato Timer Default Seconds') }}</label>
     <input type="number" step="10" v-model="syncConfig.tomatoTimerSeconds" min="0">
   </div>
-
+  
   <music-playlist
     v-bind:config="config"
     v-bind:utils="utils"
     v-bind:clientConfig="clientConfig"
     v-bind:syncConfig="syncConfig">
   </music-playlist>
-
-  <div class="fields">
-    <div class="six wide field music-title">
-      <label>
-        {{ $t('Music URL (YouTube)') }}
-      </label>
-      {{ playingMusicTitle }}
+  
+  <div class="field">
+    <label class="music-title">
+      {{ $t('Music URL (YouTube)') }}
+      <template v-if="playingMusicTitle">
+        :
+        <strong>
+          {{ playingMusicTitle }}
+        </strong>
+      </template>
+    </label>
+    <div class="ui action input">
+      <input 
+        type="url"
+        v-model="syncConfig.musicURL"
+        placeholder="https://www.youtube.com/watch?v=..." />
+      <a class="ui button"
+         target="_blank"
+         v-bind:href="syncConfig.musicURL">
+        <i class="external alternate icon"></i>
+      </a>
+      <!--
+      <a class="ui button"
+         v-on:click="shareYouTubeURL"
+         v-else>
+        <i class="external alternate icon"></i>
+      </a>
+      -->
     </div>
-    <div class="ten wide action input field">
-
-      <label>
-        &nbsp;
-      </label>
-      <div class="ui action input">
-        <input 
-          type="url"
-          v-model="syncConfig.musicURL"
-          placeholder="https://www.youtube.com/watch?v=..." />
-        <a class="ui button"
-           target="_blank"
-           v-bind:href="syncConfig.musicURL">
-          <i class="external alternate icon"></i>
-        </a>
-        <!--
-        <a class="ui button"
-           v-on:click="shareYouTubeURL"
-           v-else>
-          <i class="external alternate icon"></i>
-        </a>
-        -->
-      </div>
-
-    </div>
+      
   </div>
-
+  
 </div>

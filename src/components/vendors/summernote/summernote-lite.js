@@ -339,7 +339,7 @@ import 'toastr2/dist/toastr.min.css';
   
   var editingArea = renderer.create('<div class="note-editing-area enable-note-pin"/>');
   var codable = renderer.create('<textarea class="note-codable" role="textbox" aria-multiline="true"/>');
-  var pin = renderer.create('<div class="note-pin show-heading-label" role="textbox" aria-multiline="true"><div class="handler"><i class="sort down icon"></i><i class="sort up icon"></i></div></div>');
+  var pin = renderer.create('<div class="note-pin show-heading-label" role="textbox" aria-multiline="true"><div class="handler"><i class="angle down icon"></i><i class="angle up icon"></i></div></div>');
   var editable = renderer.create('<div class="note-editable show-heading-label" contentEditable="true" role="textbox" aria-multiline="true" />');
   var statusbar = renderer.create([
       '<output class="note-status-output" role="status" aria-live="polite"/>',
@@ -5461,13 +5461,23 @@ ${links}`
           }
           
           let handler = _this.$pin.find('.handler:first')
-          let addPinEvent = function () {
+          let addPinEvent = function (event) {
+            event.preventDefault()
+            event.stopPropagation()
+            
             let pinElement = $$1(this).clone()
+            
+            if (pinElement.prop('tagName').toLowerCase() === 'li') {
+              pinElement = $$1(`<ul><li>${pinElement.html()}</li></ul>`)
+            }
+            
             pinElement.dblclick(function() {
               _this.removePin($$1(this))
             })
             pinElement.removeClass('last-edited')
+            pinElement.find('.last-edited').removeClass('last-edited')
             pinElement.removeAttr('draggable')
+            pinElement.find('[draggable]').removeAttr('draggable')
             handler.after(pinElement)
             _this.savePin()
             
@@ -5516,12 +5526,14 @@ ${links}`
               setupSotable(_this.$editable[0], 'root')
               
               _this.$editable.addClass('sort-mode')
-              _this.$editable.children().bind('dblclick', addPinEvent)
+              _this.$editable.children(':not(li)').bind('dblclick', addPinEvent)
+              _this.$editable.find('li').bind('dblclick', addPinEvent)
               //_this.toastr.success('拖曳模式啟動：您可以自由搬移文字的段落')
               
             }
             else {
               _this.$editable.children().unbind('dblclick', addPinEvent)
+              _this.$editable.find('li').unbind('dblclick', addPinEvent)
               this.toastr.info(_this.lang.font.disableSortMote)
               
               Object.keys(sortableObjects).forEach(tag => {

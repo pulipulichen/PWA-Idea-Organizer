@@ -43,6 +43,7 @@ export default function (Index) {
     if (this.inited === false) {
       return false
     }
+    
     if (!this.$refs.TomatoTimer) {
       return false
     }
@@ -57,8 +58,8 @@ export default function (Index) {
     if (this.inited === false) {
       return false
     }
-    console.log(this.syncConfig.musicPlaylist)
-    return false
+    //console.log(this.syncConfig.musicPlaylist)
+    //return false
     this.startSyncConfig()
   }
 }

@@ -6492,10 +6492,13 @@ ${links}`
           
           let playTypeWriterSound = function (event) {
             if (_this.options.enableTypeWriterSoundEffect !== true
+                    || event.ctrlKey
+                    || event.altKey
                     || scrollVerticalCenterSkipKeyCode.indexOf(event.keyCode) > -1) {
               //console.log(event.keyCode)
               return false
             }
+            //console.log(event.keyCode)
             
             if (event.keyCode === key.code.ENTER) {
               //console.log('play enter')
@@ -6592,7 +6595,10 @@ ${links}`
           }
           
           this.$editable.on('keydown', keydownEvent)
-          //.on('compositionstart', keydownEvent)
+//          .on('compositionstart', function (event) {
+//            playTypeWriterSound(event)
+//            _this.context.triggerEvent('compositionstart', event);
+//          })
           .on('keyup', function (event) {
               //console.log('keyup')
               //console.log(event)

@@ -40909,6 +40909,7 @@ __webpack_require__.r(__webpack_exports__);
     if (this.inited === false) {
       return false
     }
+    
     if (!this.$refs.TomatoTimer) {
       return false
     }
@@ -40923,8 +40924,8 @@ __webpack_require__.r(__webpack_exports__);
     if (this.inited === false) {
       return false
     }
-    console.log(this.syncConfig.musicPlaylist)
-    return false
+    //console.log(this.syncConfig.musicPlaylist)
+    //return false
     this.startSyncConfig()
   }
 });
@@ -41400,6 +41401,11 @@ let YoutubePlayer = {
         id = 'I1-zm1H4VvA'
       }
       return id
+    },
+    isReady () {
+      return (this.inited === true 
+              && this.player 
+              && typeof(this.player.setVolume) === 'function')
     }
   },
   watch: {
@@ -41412,11 +41418,15 @@ let YoutubePlayer = {
     },
     youtubeURL () {
       this.player.destroy()
+      this.player = null
       this.state = null
       this.inited = false
       //this.waitAction = null
+      //console.log('youtube url changed', this.waitAction)
+      setTimeout(() => {
+        this.init()
+      }, 100)
       
-      this.init()
     },
     state () {
       //console.log(this.state)
@@ -41450,8 +41460,10 @@ let YoutubePlayer = {
   methods: {
     init() {
       if (this.inited === true) {
+        //console.log('已經初始化了')
         return false
       }
+      //console.log('開始初始化')
       
       let _this = this
       return new Promise(async (resolve) => {
@@ -41560,20 +41572,50 @@ let YoutubePlayer = {
       //console.log('play', this.inited)
       this.waitAction = 'play'
       this.init()
-      if (this.inited !== true) {
+      //console.log(this.inited, this.isReady)
+      if (this.isReady === false) {
         return false
       }
       
+//      if (typeof(this.player.setVolume) !== 'function') {
+//        this.inited = false
+//        this.init()
+//        return false
+//      }
+      if (typeof(this.player.setVolume) !== 'function') {
+        //console.log('play is not ready. wait for restart')
+        setTimeout(() => {
+          this.play()
+        }, 3000)
+        return false
+      }
+      
+      //console.log(this.player)
       this.player.setVolume(this.volumeNumber)
       this.player.unMute()
       this.player.playVideo()
     },
     pause () {
       this.waitAction = 'pause'
-      if (this.inited !== true) {
-        this.init()
+      this.init()
+      if (this.isReady === false) {
         return false
       }
+      
+      if (typeof(this.player.setVolume) !== 'function') {
+        //console.log('play is not ready. wait for restart')
+        setTimeout(() => {
+          this.pause()
+        }, 3000)
+        return false
+      }
+      
+//      if (typeof(this.player.setVolume) !== 'function') {
+//        this.inited = false
+//        this.init()
+//        return false
+//      }
+            
       this.player.pauseVideo()
     },
     reset () {

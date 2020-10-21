@@ -7367,6 +7367,14 @@ ${links}`
             }
           }
           
+          /**
+           * 插入段落之後的處理
+           * 
+           * 如果按下Enter之後，文件內容的表現很奇怪
+           * 請檢查這個函式
+           * @param {type} nextPara
+           * @returns {Boolean}
+           */
           this.insertParagraphRemoveStlye = function (nextPara) {
             if (!nextPara) {
               nextPara = this.getCurrentElement()

@@ -1,0 +1,13 @@
+@toolbarHeight: 5rem;
+@edtiableHeight: calc(var(--vh, 1vh) * 100 - (@toolbarHeight * 1));
+@fontSizeBase: 1rem;
+@lineMargin: @fontSizeBase / 4;
+
+.non-invasive-web-style-framework .editor-container ::v-deep .note-editor.mobile {
+  .note-editable, .note-pin {  
+    //color: red !important;
+    li:before {
+      //margin-top: @fontSizeBase / 2;
+    }
+  }
+} 

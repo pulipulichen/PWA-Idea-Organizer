@@ -345,13 +345,13 @@ import 'toastr2/dist/toastr.min.css';
       '<output class="note-status-output" role="status" aria-live="polite"/>',
       '<div class="note-statusbar" role="resize">',
       '  <div class="note-resizebar" role="seperator" aria-orientation="horizontal" aria-label="resize">',
-      '    <div class="note-icon-bar"/>',
-      '    <div class="note-icon-bar"/>',
-      '    <div class="note-icon-bar"/>',
+      '    <div class="note-icon-bar"></div>',
+      '    <div class="note-icon-bar"></div>',
+      '    <div class="note-icon-bar"></div>',
       '  </div>',
       '</div>'
   ].join(''));
-  var airEditor = renderer.create('<div class="note-editor"/>');
+  var airEditor = renderer.create('<div class="note-editor"></div>');
   var airEditable = renderer.create([
       '<div class="note-editable" contentEditable="true" role="textbox" aria-multiline="true" />',
       '<output class="note-status-output" role="status" aria-live="polite"/>'
@@ -835,8 +835,8 @@ import 'toastr2/dist/toastr.min.css';
   };
   var popover = renderer.create([
       '<div class="summernote note-popover bottom">',
-      '  <div class="note-popover-arrow"/>',
-      '  <div class="popover-content note-popover-content note-children-container"/>',
+      '  <div class="note-popover-arrow"></div>',
+      '  <div class="popover-content note-popover-content note-children-container"></div>',
       '</div>'
   ].join(''), function ($node, options) {
       var direction = typeof options.direction !== 'undefined' ? options.direction : 'bottom';
@@ -873,7 +873,7 @@ import 'toastr2/dist/toastr.min.css';
   });
   var icon = function (iconClassName, tagName) {
       tagName = tagName || 'i';
-      return '<' + tagName + ' class="' + iconClassName + '"/>';
+      return '<' + tagName + ' class="' + iconClassName + '"></i>';
   };
   var ui = {
       editor: editor,
@@ -6662,6 +6662,11 @@ ${links}`
               }, 0)
               _this.context.triggerEvent('focus', event);
           }).on('blur', function (event) {
+              if (_this.context.options.debug.preventPopoverHide === true) {
+                console.log('[DEBUG] prevent popover hide')
+                return false
+              }
+            
               setTimeout(() => {
                 _this.isFocus = false
               }, 0)
@@ -6670,6 +6675,7 @@ ${links}`
               
                 // hide popover
               setTimeout(() => {
+                
                 if ($$1('.note-btn-group.open').length === 0) {
                   //console.log($$1('.note-btn-group.open').length)
                   $$1('.note-popover').fadeOut()
@@ -9519,7 +9525,7 @@ sel.addRange(range);
           this.context.memo('button.copyLink', function () {
               return _this.button({
                   //contents: _this.ui.icon(_this.options.icons.copy),  // 
-                  contents: _this.ui.icon(_this.options.icons.code) + ' ' + _this.lang.link.copy,
+                  contents: `<i class="copy icon"></i>`,
                   tooltip: _this.lang.link.copy,
                   click: _this.context.createInvokeHandler('editor.copyLink')
               }).render();

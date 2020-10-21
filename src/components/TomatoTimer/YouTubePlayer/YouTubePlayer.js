@@ -72,11 +72,15 @@ let YoutubePlayer = {
   }, 
  */
  
-  mounted () {
-    this.init()
-  },
+//  mounted () {
+//    this.init()
+//  },
   methods: {
     init() {
+      if (this.inited === true) {
+        return false
+      }
+      
       let _this = this
       return new Promise(async (resolve) => {
         let id 
@@ -183,8 +187,8 @@ let YoutubePlayer = {
     play () {
       //console.log('play', this.inited)
       this.waitAction = 'play'
+      this.init()
       if (this.inited !== true) {
-        
         return false
       }
       
@@ -195,6 +199,7 @@ let YoutubePlayer = {
     pause () {
       this.waitAction = 'pause'
       if (this.inited !== true) {
+        this.init()
         return false
       }
       this.player.pauseVideo()

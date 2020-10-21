@@ -4,7 +4,7 @@ import YouTubePlayer from './YouTubePlayer/YouTubePlayer.vue'
 import endSound from './good-morning-502.mp3'
 
 let TomatoTimer = {
-  props: ['config', 'utils', 'clientConfig', 'syncConfig'],
+  props: ['config', 'utils', 'clientConfig', 'syncConfig', 'toastr'],
   data() {
     this.$i18n.locale = this.config.locale
     return {
@@ -161,6 +161,13 @@ let TomatoTimer = {
     },
     onTimeout () {
       this.endSoundObject.play()
+      this.toastr.success(this.$t('Time to break'), null, {
+          onclick: () => {
+            //window.alert('aaa')
+            this.endSoundObject.pause()
+            this.endSoundObject.currentTime = 0
+          }
+      })
       this.$emit('timeout')
     },
     pauseTimer(event) {

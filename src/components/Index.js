@@ -79,7 +79,7 @@ let Index = {
   methods: {
     onTomatoTimerTimeour () {
       //window.alert('ok')
-      this.toastr.success(this.$t('Time to break'))
+      //this.toastr.success(this.$t('Time to break'))
     }
   }
 }

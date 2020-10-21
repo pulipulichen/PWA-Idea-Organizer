@@ -2498,7 +2498,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".handle[data-v-6df4bd93] {\n  cursor: pointer;\n  user-select: none;\n}\n.playlist-item[data-v-6df4bd93] {\n  user-select: none;\n}\n.playlist[data-v-6df4bd93] {\n  max-height: 10rem;\n  overflow-y: auto;\n  overflow-x: hidden;\n}\n", "",{"version":3,"sources":["MusicPlaylist.less"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,iBAAiB;EACjB,gBAAgB;EAChB,kBAAkB;AACpB","file":"MusicPlaylist.less","sourcesContent":[".handle[data-v-6df4bd93] {\n  cursor: pointer;\n  user-select: none;\n}\n.playlist-item[data-v-6df4bd93] {\n  user-select: none;\n}\n.playlist[data-v-6df4bd93] {\n  max-height: 10rem;\n  overflow-y: auto;\n  overflow-x: hidden;\n}\n"]}]);
+exports.push([module.i, ".handle[data-v-6df4bd93] {\n  cursor: pointer;\n  user-select: none;\n}\n.playlist-item[data-v-6df4bd93] {\n  user-select: none;\n}\n.playlist[data-v-6df4bd93] {\n  max-height: 10rem;\n  overflow-y: auto;\n  overflow-x: hidden;\n}\n.link-item[data-v-6df4bd93] {\n  display: none !important;\n}\n@media only screen and (max-width: 480px) {\n.item-url[data-v-6df4bd93],\n  .set-play[data-v-6df4bd93],\n  .remove-item[data-v-6df4bd93],\n  .handle[data-v-6df4bd93],\n  .add-item[data-v-6df4bd93] {\n    display: none !important;\n}\n.playlist-item[data-v-6df4bd93]:not(.playable) {\n    display: none !important;\n}\n.link-item[data-v-6df4bd93] {\n    display: inline-block !important;\n}\n}\n", "",{"version":3,"sources":["MusicPlaylist.less"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,iBAAiB;EACjB,gBAAgB;EAChB,kBAAkB;AACpB;AACA;EACE,wBAAwB;AAC1B;AACA;AACA;;;;;IAKI,wBAAwB;AAC5B;AACA;IACI,wBAAwB;AAC5B;AACA;IACI,gCAAgC;AACpC;AACA","file":"MusicPlaylist.less","sourcesContent":[".handle[data-v-6df4bd93] {\n  cursor: pointer;\n  user-select: none;\n}\n.playlist-item[data-v-6df4bd93] {\n  user-select: none;\n}\n.playlist[data-v-6df4bd93] {\n  max-height: 10rem;\n  overflow-y: auto;\n  overflow-x: hidden;\n}\n.link-item[data-v-6df4bd93] {\n  display: none !important;\n}\n@media only screen and (max-width: 480px) {\n.item-url[data-v-6df4bd93],\n  .set-play[data-v-6df4bd93],\n  .remove-item[data-v-6df4bd93],\n  .handle[data-v-6df4bd93],\n  .add-item[data-v-6df4bd93] {\n    display: none !important;\n}\n.playlist-item[data-v-6df4bd93]:not(.playable) {\n    display: none !important;\n}\n.link-item[data-v-6df4bd93] {\n    display: inline-block !important;\n}\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -22434,7 +22434,7 @@ var render = function() {
               expression: "searchKeyword"
             }
           ],
-          attrs: { type: "text", placeholder: _vm.$t("Search...") },
+          attrs: { type: "text", placeholder: _vm.$t("Search playlist...") },
           domProps: { value: _vm.searchKeyword },
           on: {
             input: function($event) {
@@ -22481,36 +22481,52 @@ var render = function() {
                     ],
                     key: "mustic-playlist-" + i,
                     staticClass: "inline fields playlist-item",
-                    class: { playing: _vm.isMatchPlayingURL(item.url) }
+                    class: {
+                      playing: _vm.isMatchPlayingURL(item.url),
+                      playable: _vm.isValidedURL(item.url)
+                    }
                   },
                   [
                     _c("div", { staticClass: "six wide field" }, [
                       _c("i", { staticClass: "bars handle icon" }),
                       _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: item.title,
-                            expression: "item.title"
-                          }
-                        ],
-                        attrs: {
-                          type: "text",
-                          placeholder: _vm.$t("Music title...")
-                        },
-                        domProps: { value: item.title },
-                        on: {
-                          change: _vm.onMusicPlaylistChange,
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                      _c("div", { staticClass: "ui action input" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: item.title,
+                              expression: "item.title"
                             }
-                            _vm.$set(item, "title", $event.target.value)
+                          ],
+                          staticClass: "item-title",
+                          attrs: {
+                            type: "text",
+                            placeholder: _vm.$t("Music title...")
+                          },
+                          domProps: { value: item.title },
+                          on: {
+                            change: _vm.onMusicPlaylistChange,
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(item, "title", $event.target.value)
+                            }
                           }
-                        }
-                      })
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "ui button link-item",
+                            class: { green: _vm.isMatchPlayingURL(item.url) },
+                            attrs: { href: item.url, target: "_blank" }
+                          },
+                          [_c("i", { staticClass: "external alternate icon" })]
+                        )
+                      ])
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "ten wide field" }, [
@@ -22524,6 +22540,7 @@ var render = function() {
                               expression: "item.url"
                             }
                           ],
+                          staticClass: "item-url",
                           attrs: { type: "url", placeholder: _vm.$t("URL...") },
                           domProps: { value: item.url },
                           on: {
@@ -22540,7 +22557,10 @@ var render = function() {
                           "button",
                           {
                             staticClass: "ui button set-play",
-                            class: { green: _vm.isMatchPlayingURL(item.url) },
+                            class: {
+                              green: _vm.isMatchPlayingURL(item.url),
+                              disabled: _vm.isValidedURL(item.url) === false
+                            },
                             attrs: {
                               type: "button",
                               disabled: _vm.isMatchPlayingURL(item.url)
@@ -22557,7 +22577,7 @@ var render = function() {
                         _c(
                           "button",
                           {
-                            staticClass: "ui button",
+                            staticClass: "ui button remove-item",
                             attrs: { type: "button" },
                             on: {
                               click: function($event) {
@@ -22581,7 +22601,7 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "inline fields playlist-item" }, [
+    _c("div", { staticClass: "inline fields playlist-item add-item" }, [
       _c("div", { staticClass: "six wide field" }, [
         _c("input", {
           directives: [
@@ -38536,9 +38556,11 @@ let ConfigModal = {
 //  watch: {
 //  },
   mounted() {
-    setTimeout(() => {
-      this.show()
-    }, 1000)
+    
+    // for test
+//    setTimeout(() => {
+//      this.show()
+//    }, 1000)
   },
   methods: {
     getModal: async function () {
@@ -39498,6 +39520,15 @@ let MusicPlaylist = {
       
       this.addTitle = ''
       this.addURL = ''
+    },
+    isValidedURL (url) {
+      url = url.trim()
+      if (url === '') {
+        return false
+      }
+      let youtubeID = _youtube_video_id_parser_js__WEBPACK_IMPORTED_MODULE_1___default()(url)
+      //console.log(url, youtubeID)
+      return (youtubeID !== false)
     }
   } // methods
 }

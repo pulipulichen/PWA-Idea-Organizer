@@ -129,6 +129,15 @@ let MusicPlaylist = {
       
       this.addTitle = ''
       this.addURL = ''
+    },
+    isValidedURL (url) {
+      url = url.trim()
+      if (url === '') {
+        return false
+      }
+      let youtubeID = YouTubeVideoIDParser(url)
+      //console.log(url, youtubeID)
+      return (youtubeID !== false)
     }
   } // methods
 }

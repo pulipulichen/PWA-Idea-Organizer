@@ -4,7 +4,7 @@
     <div class="ui fluid input">
       <input type="text" 
              v-model="searchKeyword"
-             v-bind:placeholder="$t('Search...')">
+             v-bind:placeholder="$t('Search playlist...')">
     </div>
   </div>
 
@@ -16,33 +16,47 @@
         <div v-for="(item, i) in syncConfig.musicPlaylist" 
              v-bind:key="'mustic-playlist-' + i"
              v-show="isMatchSearchKeyword(item.title)"
-             v-bind:class="{playing: isMatchPlayingURL(item.url)}"
+             v-bind:class="{playing: isMatchPlayingURL(item.url), playable: isValidedURL(item.url)}"
              class="inline fields playlist-item">
           <div class="six wide field">
             <i class="bars handle icon"></i>
+            
+            <div class="ui action input">
             <input 
               type="text"
+              class="item-title"
               v-model="item.title"
               v-on:change="onMusicPlaylistChange"
               v-bind:placeholder="$t('Music title...')">
+            
+              <a 
+                v-bind:href="item.url"
+                target="_blank"
+                class="ui button link-item"
+                v-bind:class="{green: isMatchPlayingURL(item.url)}">
+                <i class="external alternate icon"></i>
+              </a>
+            </div>
           </div>
           <div class="ten wide field">
             <div class="ui action input">
               <input 
-                type="url" 
+                type="url"
+                class="item-url"
                 v-model="item.url"
                 v-bind:placeholder="$t('URL...')">
+              
               <button 
                 type="button"
                 class="ui button set-play"
                 v-on:click="setPlay(item.url)"
-                v-bind:class="{green: isMatchPlayingURL(item.url)}"
+                v-bind:class="{green: isMatchPlayingURL(item.url), disabled: (isValidedURL(item.url) === false)}"
                 v-bind:disabled="isMatchPlayingURL(item.url)">
                 <i class="play icon"></i>
               </button>
               <button 
                 type="button"
-                class="ui button"
+                class="ui button remove-item"
                 v-on:click="removeItem(i)">
                 <i class="times icon"></i>
               </button>
@@ -53,7 +67,7 @@
     </draggable>
 
   </div>
-  <div class="inline fields playlist-item">
+  <div class="inline fields playlist-item add-item">
     <div class="six wide field">
       <input 
         type="text"

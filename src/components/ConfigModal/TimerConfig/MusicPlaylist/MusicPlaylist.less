@@ -12,3 +12,25 @@
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+.link-item {
+  display: none !important; 
+}
+
+@media only screen and (max-width: 480px) {
+  .item-url,
+  .set-play,
+  .remove-item,
+  .handle,
+  .add-item {
+    display: none !important;
+  }
+  
+  .playlist-item:not(.playable) {
+    display: none !important;
+  }
+  
+  .link-item {
+    display: inline-block !important; 
+  }
+}

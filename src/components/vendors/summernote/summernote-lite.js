@@ -5235,12 +5235,18 @@ ${links}`
             this.downloadFile(title, html)
           }
           
+          /**
+           * 如果刪除之後有問題，請檢查這個函數
+           * @returns {undefined}
+           */
           this.deleteParagraphReformat = function () {
+            //return false
             let $element = this.getCurrentElement()
             
             let tagName = $element.prop('tagName').toLowerCase()
             if (tagName === 'li') {
-              //console.log($element)
+              //console.log($element[0])
+              //return false
               this.mergeDeletedList($element, $element.next())
               
               let lists = $element.parents("ul,ol,li")
@@ -5257,7 +5263,7 @@ ${links}`
             if (nextList.length === 0) {
               return false
             }
-            //console.log(nextList)
+            //console.log(nextList[0])
             let nextListTagName = nextList.prop('tagName').toLowerCase()
             //console.log(nextListTagName)
 
@@ -5270,6 +5276,10 @@ ${links}`
             }
             else if (nextListTagName === 'li') {
               nextLi = nextList
+              if (nextLi.text().trim() === '') {
+                nextLi.remove()
+                return false
+              }
             }
 
             //console.log(nextLi)
@@ -5296,6 +5306,9 @@ ${links}`
            * 
            * 如果按下Enter之後，文件內容的表現很奇怪
            * 請檢查這個函式
+           * 
+           * 刪除之後也會用到這個函數
+           * 
            * @param {type} nextPara
            * @returns {Boolean}
            */
@@ -5309,9 +5322,6 @@ ${links}`
               //return false
             }
 
-            //console.log(nextPara)
-            //return false
-
             let $nextPara = $$1(nextPara)
 
             //$nextPara.removeClass('MsoNormal')
@@ -5322,6 +5332,28 @@ ${links}`
             }
 
             $nextPara.removeAttr('style')
+            
+            // -------------------------
+            // 移除空白的元素
+            
+            let blankHTMLElement = $$1(blankHTML)
+            let paraChildren = $nextPara.children()
+            //console.log($nextPara[0])
+            for (let i = 0; i < paraChildren.length; i++) {
+              let child = paraChildren.eq(i)
+              //console.log(child.text(), (child.text().trim() === ''), child[0])
+              //let tagName = child.prop('tagName').toLowerCase()
+              if (child.text().trim() === '') {
+                child.remove()
+              }
+            }
+            if ($nextPara.children().length === 0
+                    && $nextPara.contents().length === 0) {
+              $nextPara.html(blankHTMLElement)
+            }
+            //console.log($nextPara[0].outerHTML)
+
+            // -------------------------
 
             if ($nextPara.children().length === 1
                     && $nextPara.children().eq(0).hasClass('highlight')) {
@@ -5348,9 +5380,28 @@ ${links}`
                   li.remove()
                 }
               })
-
+            }
+            if ($nextPara.children().length > 1 
+                    && $nextPara.children(':not(br)').length === 0) {
+              $nextPara.children(':not(:first)').remove()
+            }
+            if ($nextPara.text().trim() === '') {
+              
+              //console.log('追加br')
+              $nextPara.html(blankHTMLElement)
+            }
+            
+            // -----------------
+            // 處理前一個元素
+            let prevPara = $nextPara.prev()
+            if (prevPara && prevPara.length === 1) {
+              if (prevPara.text().trim() === '') {
+                //console.log('1 追加br')
+                prevPara.html(blankHTMLElement)
               }
-            //console.log(nextPara)
+            }
+            
+            // -----------------
 
             // 清理空的br
             let children = $nextPara.children()
@@ -5376,6 +5427,7 @@ ${links}`
               }
 
               if ($nextPara.contents().length === 0) {
+                //console.log('2 追加br')
                 $nextPara.append(blankHTML)
               }
             }
@@ -5388,8 +5440,8 @@ ${links}`
                 
                 $$1(child).removeAttr('style')
                 
-                if (tagName !== 'br' && tagName !== 'span') {
-                  let blankHTMLElement = $$1(blankHTML)
+                if (_this.context.options.inlineElements.indexOf(tagName) === -1) {
+                  //console.log('3 追加br')
                   $nextPara.prepend(blankHTMLElement)
                   _this.selectElement(blankHTMLElement)
                 }

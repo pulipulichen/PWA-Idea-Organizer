@@ -321,6 +321,9 @@ export default {
   scrollVerticalCenterSkipKeyCode: [
     33,34,35,36,37,38,39,40,45,112,113,114,115,116,117,118,119,120,121,122,123,27,9,20,16,17,18,144,145,19,93,91,92,24,25,8, 27, 8, 91, 16, 17, 18
   ],
+  inlineElements: [
+    "a","abbr","acronym","b","bdo","big","br","button","cite","code","dfn","em","i","img","input","kbd","label","map","object","output","q","samp","script","select","small","span","strong","sub","sup", "strike","textarea","time","tt","var"
+  ],
   debug: {
     preventPopoverHide: false
   }

@@ -172,8 +172,12 @@
 
   .e-c-pointer {
     fill: #FFF;
-    stroke: #F7958E;
+    stroke: black;
     stroke-width: 2px;
+    
+    &.is-playing {
+      stroke: #F7958E;
+    }
   }
 
   #e-pointer { transition: transform 0.7s; }

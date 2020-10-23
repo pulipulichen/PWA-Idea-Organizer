@@ -2421,7 +2421,13 @@ __webpack_require__.r(__webpack_exports__);
   
   var editingArea = renderer.create('<div class="note-editing-area enable-note-pin"/>');
   var codable = renderer.create('<textarea class="note-codable" role="textbox" aria-multiline="true"/>');
-  var pin = renderer.create('<div class="note-pin show-heading-label" role="textbox" aria-multiline="true"><div class="handler"><i class="angle down icon"></i><i class="angle up icon"></i></div></div>');
+  var pin = renderer.create(`<div class="note-pin show-heading-label" role="textbox" aria-multiline="true">
+    <div class="handler">
+      <i class="angle down icon"></i>
+      <i class="angle up icon"></i>
+    </div>
+    <div class="content"></div>
+  </div>`);
   var editable = renderer.create('<div class="note-editable show-heading-label" contentEditable="true" role="textbox" aria-multiline="true" />');
   var statusbar = renderer.create([
       '<output class="note-status-output" role="status" aria-live="polite"/>',
@@ -7594,7 +7600,8 @@ ${links}`
                     datePad2(date.getSeconds())
           }
           
-          let handler = _this.$pin.find('.handler:first')
+          let pinHandler = _this.$pin.find('.handler:first')
+          let pinContent = _this.$pin.find('.content:first')
           let addPinEvent = function (event) {
             event.preventDefault()
             event.stopPropagation()
@@ -7612,12 +7619,14 @@ ${links}`
             pinElement.find('.last-edited').removeClass('last-edited')
             pinElement.removeAttr('draggable')
             pinElement.find('[draggable]').removeAttr('draggable')
-            handler.after(pinElement)
+            
+            pinContent.prepend(pinElement)
             _this.savePin()
             
             _this.toastr.info(_this.lang.font.addPin1 
                     + pinElement.text().trim() 
                     + _this.lang.font.addPin2)
+            
           }
           
           /**
@@ -8550,7 +8559,7 @@ ${links}`
             if (window.confirm(this.lang.font.removePinConfirm + '\n' + element.text())) {
               element.remove()
               if (this.$pin.hasClass('expanded') 
-                      && this.$pin.children(':not(.handler)').length === 0) {
+                      && pinContent.children().length === 0) {
                 this.$pin.removeClass('expanded')
               }
               this.savePin()
@@ -8558,16 +8567,18 @@ ${links}`
           }
           
           this.savePin = () => {
-            let pinned = this.$pin.clone()
-            pinned.find('.handler').remove()
+            //let pinned = this.$pin.clone()
+            //pinned.find('.handler').remove()
             //pinned.find('.inited').removeClass('inited')
-            let pinnedHTML = pinned.html()
+            let pinnedHTML = pinContent.html()
             localStorage.setItem('summernote.pinned', pinnedHTML)
-          }
-          
-          this.initPin()
-          
             
+            //_this.context.triggerEvent('pinChange', pinContent.html());
+            if (typeof(_this.context.options.callbacks.pinChange) === 'function') {
+              _this.context.options.callbacks.pinChange(pinContent.html())
+            }
+          }
+          this.initPin()
       }
       Editor.prototype.initialize = function () {
           var _this = this;

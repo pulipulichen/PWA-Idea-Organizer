@@ -40440,7 +40440,8 @@ __webpack_require__.r(__webpack_exports__);
 //        onImageUpload: (files) => {
 //          this._onImageUpload(files)
 //        },
-        onChange: this._callbacksOnChange
+        onChange: this._callbacksOnChange,
+        pinChange: this._callbacksOnPinChange
       },
       // https://flatuicolors.com/palette/defo
       foreColors: [
@@ -40489,6 +40490,8 @@ __webpack_require__.r(__webpack_exports__);
       ['manage', ['copyRichFormat', 'ConfigModal', 'clearTarget']]
     ]
   }
+  
+  let hasPinned = false
   Index.methods._callbacksOnChange = function (contents) {
     //console.log(enableChange)
     if (this.enableChange === false) {
@@ -40497,12 +40500,35 @@ __webpack_require__.r(__webpack_exports__);
 
     //console.log(contents)
     //console.log('onChange:', contents, $editable);
-    this.setDocumentTitle(contents)
+    if (hasPinned === false) {
+      this.setDocumentTitle(contents)
+    }
     localStorage.setItem('contents', contents)
     //this.saveToCloud(contents)
     this.contents = contents
   }
   
+  Index.methods._callbacksOnPinChange = function (contents) {
+    console.log(contents)
+    
+    //console.log(enableChange)
+    if (this.enableChange === false) {
+      return false
+    }
+
+    if (contents.trim() === '') {
+      hasPinned = false
+      this.setDocumentTitle(this.contents)
+      return false
+    }
+
+    //console.log(contents)
+    //console.log('onChange:', contents, $editable);
+    this.setDocumentTitle(contents)
+    //localStorage.setItem('contents', contents)
+    //this.saveToCloud(contents)
+    //this.contents = contents
+  }
   
   Index.methods._getTextArrayFromHTMLString = function (string) {
     let output = []

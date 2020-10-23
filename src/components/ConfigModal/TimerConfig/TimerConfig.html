@@ -35,6 +35,20 @@
     <input type="number" step="10" v-model="syncConfig.tomatoTimerSeconds" min="0">
   </div>
   
+  <div class="inline field hidden-in-small-screen">
+    <div class="ui checkbox">
+      <input 
+        type="checkbox" 
+        tabindex="0" 
+        id="timerEnableTickingSound"
+        class="hidden"
+        v-model="clientConfig.timerEnableTickingSound" />
+      <label for="timerEnableTickingSound">
+        {{ $t('Enable timer ticking sound effect') }}
+      </label>
+    </div>
+  </div>
+  
   <music-playlist
     v-bind:config="config"
     v-bind:utils="utils"

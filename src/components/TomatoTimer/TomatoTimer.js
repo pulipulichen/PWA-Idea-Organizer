@@ -1,7 +1,9 @@
 import $ from 'jquery'
 //import './vendors/jQuery.YoutubeBackground/jquery.youtubebackground.js'
 import YouTubePlayer from './YouTubePlayer/YouTubePlayer.vue'
-import endSound from './good-morning-502.mp3'
+import endSound from './sounds/good-morning-502.mp3'
+import tickSound1 from './sounds/wood-clock-ticking1.ogg'
+import tickSound2 from './sounds/wood-clock-ticking2.ogg'
 
 let TomatoTimer = {
   props: ['config', 'utils', 'clientConfig', 'syncConfig', 'toastr'],
@@ -24,7 +26,9 @@ let TomatoTimer = {
       progressLength: Math.PI * 2 * 100,
       BGMPlayer: null,
       BGMVolume: 50,
-      endSoundObject: new Audio(endSound)
+      endSoundObject: new Audio(endSound),
+      tickSound1Object: new Audio(tickSound1),
+      tickSound2Object: new Audio(tickSound2),
     }
   },
   components: {
@@ -145,6 +149,15 @@ let TomatoTimer = {
 
       this.intervalTimer = setInterval(() => {
         this.timeLeft = Math.round((remainTime - Date.now()) / 1000);
+        if (this.clientConfig.timerEnableTickingSound) {
+          if (this.timeLeft % 2 === 0) {
+            this.tickSound1Object.play()
+          }
+          else {
+            this.tickSound2Object.play()
+          }
+        }
+        
         if (this.timeLeft < 0) {
           clearInterval(this.intervalTimer);
           this.isStarted = false;

@@ -22873,6 +22873,68 @@ var render = function() {
           ])
         : _vm._e(),
       _vm._v(" "),
+      _c("div", { staticClass: "inline field hidden-in-small-screen" }, [
+        _c("div", { staticClass: "ui checkbox" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.clientConfig.timerEnableTickingSound,
+                expression: "clientConfig.timerEnableTickingSound"
+              }
+            ],
+            staticClass: "hidden",
+            attrs: {
+              type: "checkbox",
+              tabindex: "0",
+              id: "timerEnableTickingSound"
+            },
+            domProps: {
+              checked: Array.isArray(_vm.clientConfig.timerEnableTickingSound)
+                ? _vm._i(_vm.clientConfig.timerEnableTickingSound, null) > -1
+                : _vm.clientConfig.timerEnableTickingSound
+            },
+            on: {
+              change: function($event) {
+                var $$a = _vm.clientConfig.timerEnableTickingSound,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = null,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 &&
+                      _vm.$set(
+                        _vm.clientConfig,
+                        "timerEnableTickingSound",
+                        $$a.concat([$$v])
+                      )
+                  } else {
+                    $$i > -1 &&
+                      _vm.$set(
+                        _vm.clientConfig,
+                        "timerEnableTickingSound",
+                        $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                      )
+                  }
+                } else {
+                  _vm.$set(_vm.clientConfig, "timerEnableTickingSound", $$c)
+                }
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "timerEnableTickingSound" } }, [
+            _vm._v(
+              "\r\n        " +
+                _vm._s(_vm.$t("Enable timer ticking sound effect")) +
+                "\r\n      "
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("music-playlist", {
         attrs: {
           config: _vm.config,
@@ -38466,7 +38528,8 @@ module.exports = g;
 __webpack_require__.r(__webpack_exports__);
 let clientConfig = {
   googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec',
-  timerSize: 'normal'
+  timerSize: 'normal',
+  timerEnableTickingSound: true
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (clientConfig);
@@ -40998,6 +41061,10 @@ __webpack_require__.r(__webpack_exports__);
     this.saveClientConfig()
   }
   
+  Index.watch["clientConfig.timerEnableTickingSound"] = function () {
+    this.saveClientConfig()
+  }
+  
   // -----------------------
   
   Index.methods.saveClientConfig = function () {
@@ -41141,10 +41208,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _YouTubePlayer_YouTubePlayer_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./YouTubePlayer/YouTubePlayer.vue */ "./src/components/TomatoTimer/YouTubePlayer/YouTubePlayer.vue");
-/* harmony import */ var _good_morning_502_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./good-morning-502.mp3 */ "./src/components/TomatoTimer/good-morning-502.mp3");
-/* harmony import */ var _good_morning_502_mp3__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_good_morning_502_mp3__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _sounds_good_morning_502_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sounds/good-morning-502.mp3 */ "./src/components/TomatoTimer/sounds/good-morning-502.mp3");
+/* harmony import */ var _sounds_good_morning_502_mp3__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_sounds_good_morning_502_mp3__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _sounds_wood_clock_ticking1_ogg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sounds/wood-clock-ticking1.ogg */ "./src/components/TomatoTimer/sounds/wood-clock-ticking1.ogg");
+/* harmony import */ var _sounds_wood_clock_ticking1_ogg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_sounds_wood_clock_ticking1_ogg__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _sounds_wood_clock_ticking2_ogg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sounds/wood-clock-ticking2.ogg */ "./src/components/TomatoTimer/sounds/wood-clock-ticking2.ogg");
+/* harmony import */ var _sounds_wood_clock_ticking2_ogg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_sounds_wood_clock_ticking2_ogg__WEBPACK_IMPORTED_MODULE_4__);
 
 //import './vendors/jQuery.YoutubeBackground/jquery.youtubebackground.js'
+
+
 
 
 
@@ -41169,7 +41242,9 @@ let TomatoTimer = {
       progressLength: Math.PI * 2 * 100,
       BGMPlayer: null,
       BGMVolume: 50,
-      endSoundObject: new Audio(_good_morning_502_mp3__WEBPACK_IMPORTED_MODULE_2___default.a)
+      endSoundObject: new Audio(_sounds_good_morning_502_mp3__WEBPACK_IMPORTED_MODULE_2___default.a),
+      tickSound1Object: new Audio(_sounds_wood_clock_ticking1_ogg__WEBPACK_IMPORTED_MODULE_3___default.a),
+      tickSound2Object: new Audio(_sounds_wood_clock_ticking2_ogg__WEBPACK_IMPORTED_MODULE_4___default.a),
     }
   },
   components: {
@@ -41290,6 +41365,15 @@ let TomatoTimer = {
 
       this.intervalTimer = setInterval(() => {
         this.timeLeft = Math.round((remainTime - Date.now()) / 1000);
+        if (this.clientConfig.timerEnableTickingSound) {
+          if (this.timeLeft % 2 === 0) {
+            this.tickSound1Object.play()
+          }
+          else {
+            this.tickSound2Object.play()
+          }
+        }
+        
         if (this.timeLeft < 0) {
           clearInterval(this.intervalTimer);
           this.isStarted = false;
@@ -41959,14 +42043,36 @@ module.exports = function (url) {
 
 /***/ }),
 
-/***/ "./src/components/TomatoTimer/good-morning-502.mp3":
-/*!*********************************************************!*\
-  !*** ./src/components/TomatoTimer/good-morning-502.mp3 ***!
-  \*********************************************************/
+/***/ "./src/components/TomatoTimer/sounds/good-morning-502.mp3":
+/*!****************************************************************!*\
+  !*** ./src/components/TomatoTimer/sounds/good-morning-502.mp3 ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = "./dist/asset/good-morning-502.mp3";
+
+/***/ }),
+
+/***/ "./src/components/TomatoTimer/sounds/wood-clock-ticking1.ogg":
+/*!*******************************************************************!*\
+  !*** ./src/components/TomatoTimer/sounds/wood-clock-ticking1.ogg ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/wood-clock-ticking1.ogg";
+
+/***/ }),
+
+/***/ "./src/components/TomatoTimer/sounds/wood-clock-ticking2.ogg":
+/*!*******************************************************************!*\
+  !*** ./src/components/TomatoTimer/sounds/wood-clock-ticking2.ogg ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "./dist/asset/wood-clock-ticking2.ogg";
 
 /***/ }),
 

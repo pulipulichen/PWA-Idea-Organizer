@@ -5,6 +5,10 @@ export default function (Index) {
     this.saveClientConfig()
   }
   
+  Index.watch["clientConfig.timerEnableTickingSound"] = function () {
+    this.saveClientConfig()
+  }
+  
   // -----------------------
   
   Index.methods.saveClientConfig = function () {

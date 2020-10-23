@@ -12,7 +12,7 @@ export default function (Index) {
   let lastBlurTime = null
   let checkSyncDataTimer = null
   let syncWait = 5000
-  let syncEnable = true
+  //let syncEnable = true
   
   Index.methods.initCheckSyncData = function () {
     if (!this.enableSync) {
@@ -213,7 +213,8 @@ export default function (Index) {
       this.isBlockExit = true
     }
     
-    if (syncEnable === false) {
+    console.log('有嗎？')
+    if (this.config.saveToCloud === false) {
       this.isBlockExit = false
       return false
     }

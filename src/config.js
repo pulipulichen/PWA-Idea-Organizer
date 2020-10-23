@@ -11,6 +11,7 @@ let config = {
   enableTomatoTimer: true,
   tomatoTimerSeconds: 25,
   musicURL: 'https://www.youtube.com/watch?v=I1-zm1H4VvA',
+  saveToCloud: false
 }
 
 import styleConfig from './styles/style.config.js'

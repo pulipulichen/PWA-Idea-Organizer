@@ -2608,11 +2608,11 @@ module.exports = exports;
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ./loading.gif */ "./src/components/loading.gif");
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ./images/loading.gif */ "./src/components/images/loading.gif");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, ".exit-blocker[data-v-82b7485c] {\n  position: fixed;\n  left: 1rem;\n  bottom: 5rem;\n  z-index: 3;\n}\n.loading-overlay[data-v-82b7485c] {\n  width: 100vw;\n  height: 100vh;\n  cursor: wait;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  transition: opacity 0.3s;\n  opacity: 0;\n  transition-delay: z-index 1s;\n  z-index: -1;\n  background-color: rgba(255, 255, 255, 0.7);\n}\n.loading-overlay.loading[data-v-82b7485c] {\n  opacity: 1;\n  cursor: wait;\n  z-index: 1000;\n}\n", "",{"version":3,"sources":["IndexLoading.less"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,UAAU;EACV,YAAY;EACZ,UAAU;AACZ;AACA;EACE,YAAY;EACZ,aAAa;EACb,YAAY;EACZ,yDAAsC;EACtC,4BAA4B;EAC5B,kCAAkC;EAClC,eAAe;EACf,MAAM;EACN,OAAO;EACP,wBAAwB;EACxB,UAAU;EACV,4BAA4B;EAC5B,WAAW;EACX,0CAA0C;AAC5C;AACA;EACE,UAAU;EACV,YAAY;EACZ,aAAa;AACf","file":"IndexLoading.less","sourcesContent":[".exit-blocker[data-v-82b7485c] {\n  position: fixed;\n  left: 1rem;\n  bottom: 5rem;\n  z-index: 3;\n}\n.loading-overlay[data-v-82b7485c] {\n  width: 100vw;\n  height: 100vh;\n  cursor: wait;\n  background-image: url(\"./loading.gif\");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  transition: opacity 0.3s;\n  opacity: 0;\n  transition-delay: z-index 1s;\n  z-index: -1;\n  background-color: rgba(255, 255, 255, 0.7);\n}\n.loading-overlay.loading[data-v-82b7485c] {\n  opacity: 1;\n  cursor: wait;\n  z-index: 1000;\n}\n"]}]);
+exports.push([module.i, ".exit-blocker[data-v-82b7485c] {\n  position: fixed;\n  left: 1rem;\n  bottom: 5rem;\n  z-index: 3;\n}\n.loading-overlay[data-v-82b7485c] {\n  width: 100vw;\n  height: 100vh;\n  cursor: wait;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  transition: opacity 0.3s;\n  opacity: 0;\n  transition-delay: z-index 1s;\n  z-index: -1;\n  background-color: rgba(255, 255, 255, 0.7);\n}\n.loading-overlay.loading[data-v-82b7485c] {\n  opacity: 1;\n  cursor: wait;\n  z-index: 1000;\n}\n.disconnected-state[data-v-82b7485c] {\n  position: fixed;\n  left: 1rem;\n  bottom: 6rem;\n  color: #FF8AA5;\n  z-index: 999;\n}\n.disconnected-state[data-v-82b7485c]:before {\n  cursor: not-allowed;\n}\n", "",{"version":3,"sources":["IndexLoading.less"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,UAAU;EACV,YAAY;EACZ,UAAU;AACZ;AACA;EACE,YAAY;EACZ,aAAa;EACb,YAAY;EACZ,yDAA6C;EAC7C,4BAA4B;EAC5B,kCAAkC;EAClC,eAAe;EACf,MAAM;EACN,OAAO;EACP,wBAAwB;EACxB,UAAU;EACV,4BAA4B;EAC5B,WAAW;EACX,0CAA0C;AAC5C;AACA;EACE,UAAU;EACV,YAAY;EACZ,aAAa;AACf;AACA;EACE,eAAe;EACf,UAAU;EACV,YAAY;EACZ,cAAc;EACd,YAAY;AACd;AACA;EACE,mBAAmB;AACrB","file":"IndexLoading.less","sourcesContent":[".exit-blocker[data-v-82b7485c] {\n  position: fixed;\n  left: 1rem;\n  bottom: 5rem;\n  z-index: 3;\n}\n.loading-overlay[data-v-82b7485c] {\n  width: 100vw;\n  height: 100vh;\n  cursor: wait;\n  background-image: url(\"./images/loading.gif\");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  transition: opacity 0.3s;\n  opacity: 0;\n  transition-delay: z-index 1s;\n  z-index: -1;\n  background-color: rgba(255, 255, 255, 0.7);\n}\n.loading-overlay.loading[data-v-82b7485c] {\n  opacity: 1;\n  cursor: wait;\n  z-index: 1000;\n}\n.disconnected-state[data-v-82b7485c] {\n  position: fixed;\n  left: 1rem;\n  bottom: 6rem;\n  color: #FF8AA5;\n  z-index: 999;\n}\n.disconnected-state[data-v-82b7485c]:before {\n  cursor: not-allowed;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -23081,6 +23081,10 @@ var render = function() {
         class: { loading: _vm.loading }
       }),
       _vm._v(" "),
+      _vm.config.saveToCloud === false
+        ? _c("i", { staticClass: "unlink icon disconnected-state" })
+        : _vm._e(),
+      _vm._v(" "),
       _c("div", { ref: "editor" }),
       _vm._v(" "),
       _c("config-modal", {
@@ -40274,7 +40278,7 @@ let Index = {
   props: ['config', 'utils', 'syncConfig', 'clientConfig'],
   data () {    
     this.$i18n.locale = this.config.locale
-    
+    console.log(this.config.saveToCloud)
     return {
       contents: '',
       //test: 'aaa',
@@ -40793,7 +40797,7 @@ __webpack_require__.r(__webpack_exports__);
   let lastBlurTime = null
   let checkSyncDataTimer = null
   let syncWait = 5000
-  let syncEnable = true
+  //let syncEnable = true
   
   Index.methods.initCheckSyncData = function () {
     if (!this.enableSync) {
@@ -40994,7 +40998,8 @@ __webpack_require__.r(__webpack_exports__);
       this.isBlockExit = true
     }
     
-    if (syncEnable === false) {
+    console.log('有嗎？')
+    if (this.config.saveToCloud === false) {
       this.isBlockExit = false
       return false
     }
@@ -42092,10 +42097,10 @@ module.exports = "./dist/asset/background.jpg";
 
 /***/ }),
 
-/***/ "./src/components/loading.gif":
-/*!************************************!*\
-  !*** ./src/components/loading.gif ***!
-  \************************************/
+/***/ "./src/components/images/loading.gif":
+/*!*******************************************!*\
+  !*** ./src/components/images/loading.gif ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -42128,6 +42133,7 @@ let config = {
   enableTomatoTimer: true,
   tomatoTimerSeconds: 25,
   musicURL: 'https://www.youtube.com/watch?v=I1-zm1H4VvA',
+  saveToCloud: false
 }
 
 

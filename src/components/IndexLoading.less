@@ -10,7 +10,7 @@
   width: 100vw;
   height: 100vh;
   cursor: wait;
-  background-image: url("./loading.gif");
+  background-image: url("./images/loading.gif");
   background-repeat: no-repeat;
   background-position: center center;
   position: fixed;
@@ -28,5 +28,18 @@
     cursor: wait;
     z-index: 1000;
   }
+}
+
+.disconnected-state {
+  position: fixed;
+  left: 1rem;
+  bottom: 6rem;
+  color: #FF8AA5;
+  z-index: 999;
+  
+  &:before {
+    cursor: not-allowed;
+  }
+  
 }
 

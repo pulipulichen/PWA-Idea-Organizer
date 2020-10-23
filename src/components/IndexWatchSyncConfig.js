@@ -5,17 +5,6 @@ export default function (Index) {
     this.startSyncContents()
   }
   
-  Index.watch["syncConfig.enableSound"] = function () {
-    if (this.inited === false) {
-      return false
-    }
-    this.editor.summernote('setOption', {
-      enableTypeWriterSoundEffect: this.syncConfig.enableSound
-    })
-
-    this.startSyncConfig()
-  }
-  
   Index.watch['syncConfig.customStyle'] = function () {
     if (this.inited === false) {
       return false

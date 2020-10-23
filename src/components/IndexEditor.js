@@ -44,7 +44,7 @@ export default function (Index) {
       toolbarAlign: 'center',
       toolbarCompact: true,
       toolbarOverflow: true,
-      enableTypeWriterSoundEffect: this.syncConfig.enableSound,
+      enableTypeWriterSoundEffect: this.clientConfig.enableTypeWriterSound,
       placeholder: '<ul><li>' + this.$t('Start wrirting...') + '</li></ul>',
       focus: true,
       //container: this.editor.parent(),

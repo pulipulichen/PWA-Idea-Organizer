@@ -22255,20 +22255,20 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.syncConfig.enableSound,
-              expression: "syncConfig.enableSound"
+              value: _vm.clientConfig.enableTypeWriterSound,
+              expression: "clientConfig.enableTypeWriterSound"
             }
           ],
           staticClass: "hidden",
           attrs: { type: "checkbox", tabindex: "0", id: "configEnableSound" },
           domProps: {
-            checked: Array.isArray(_vm.syncConfig.enableSound)
-              ? _vm._i(_vm.syncConfig.enableSound, null) > -1
-              : _vm.syncConfig.enableSound
+            checked: Array.isArray(_vm.clientConfig.enableTypeWriterSound)
+              ? _vm._i(_vm.clientConfig.enableTypeWriterSound, null) > -1
+              : _vm.clientConfig.enableTypeWriterSound
           },
           on: {
             change: function($event) {
-              var $$a = _vm.syncConfig.enableSound,
+              var $$a = _vm.clientConfig.enableTypeWriterSound,
                 $$el = $event.target,
                 $$c = $$el.checked ? true : false
               if (Array.isArray($$a)) {
@@ -22276,17 +22276,21 @@ var render = function() {
                   $$i = _vm._i($$a, $$v)
                 if ($$el.checked) {
                   $$i < 0 &&
-                    _vm.$set(_vm.syncConfig, "enableSound", $$a.concat([$$v]))
+                    _vm.$set(
+                      _vm.clientConfig,
+                      "enableTypeWriterSound",
+                      $$a.concat([$$v])
+                    )
                 } else {
                   $$i > -1 &&
                     _vm.$set(
-                      _vm.syncConfig,
-                      "enableSound",
+                      _vm.clientConfig,
+                      "enableTypeWriterSound",
                       $$a.slice(0, $$i).concat($$a.slice($$i + 1))
                     )
                 }
               } else {
-                _vm.$set(_vm.syncConfig, "enableSound", $$c)
+                _vm.$set(_vm.clientConfig, "enableTypeWriterSound", $$c)
               }
             }
           }
@@ -38529,7 +38533,8 @@ __webpack_require__.r(__webpack_exports__);
 let clientConfig = {
   googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec',
   timerSize: 'normal',
-  timerEnableTickingSound: true
+  timerEnableTickingSound: true,
+  enableTypeWriterSound: true,
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (clientConfig);
@@ -40496,7 +40501,7 @@ __webpack_require__.r(__webpack_exports__);
       toolbarAlign: 'center',
       toolbarCompact: true,
       toolbarOverflow: true,
-      enableTypeWriterSoundEffect: this.syncConfig.enableSound,
+      enableTypeWriterSoundEffect: this.clientConfig.enableTypeWriterSound,
       placeholder: '<ul><li>' + this.$t('Start wrirting...') + '</li></ul>',
       focus: true,
       //container: this.editor.parent(),
@@ -41065,6 +41070,17 @@ __webpack_require__.r(__webpack_exports__);
     this.saveClientConfig()
   }
   
+  Index.watch["clientConfig.enableTypeWriterSound"] = function () {
+    if (this.inited === false) {
+      return false
+    }
+    this.editor.summernote('setOption', {
+      enableTypeWriterSoundEffect: this.clientConfig.enableTypeWriterSound
+    })
+
+    this.saveClientConfig()
+  }
+  
   // -----------------------
   
   Index.methods.saveClientConfig = function () {
@@ -41101,17 +41117,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (Index) {
   Index.watch.contents = function () {
     this.startSyncContents()
-  }
-  
-  Index.watch["syncConfig.enableSound"] = function () {
-    if (this.inited === false) {
-      return false
-    }
-    this.editor.summernote('setOption', {
-      enableTypeWriterSoundEffect: this.syncConfig.enableSound
-    })
-
-    this.startSyncConfig()
   }
   
   Index.watch['syncConfig.customStyle'] = function () {
@@ -42601,7 +42606,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 let syncConfig = {
-  enableSound: true,
   enableTomatoTimer: true,
   tomatoTimerSeconds: 25,
   musicURL: 'https://www.youtube.com/watch?v=I1-zm1H4VvA',

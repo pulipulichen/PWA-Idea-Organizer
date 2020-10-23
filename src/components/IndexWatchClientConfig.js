@@ -9,6 +9,17 @@ export default function (Index) {
     this.saveClientConfig()
   }
   
+  Index.watch["clientConfig.enableTypeWriterSound"] = function () {
+    if (this.inited === false) {
+      return false
+    }
+    this.editor.summernote('setOption', {
+      enableTypeWriterSoundEffect: this.clientConfig.enableTypeWriterSound
+    })
+
+    this.saveClientConfig()
+  }
+  
   // -----------------------
   
   Index.methods.saveClientConfig = function () {

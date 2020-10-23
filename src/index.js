@@ -12,6 +12,8 @@ import i18n from './i18n/i18n.js'
 import './styles/styles.js'
 import template from './index.tpl'
 import config from './config.js'
+import clientConfig from './clientConfig.js'
+import syncConfig from './syncConfig.js'
 
 import utils from './utils/utils.js'
 
@@ -76,26 +78,8 @@ let VueController = {
   template: template,
   data: {
     config: config,
-    syncConfig: {
-      customStyle: '',
-      enableSound: config.enableSound,
-      enableTomatoTimer: config.enableTomatoTimer,
-      tomatoTimerSeconds: config.tomatoTimerSeconds,
-      musicURL: config.musicURL,
-      musicPlaylist: [
-        {
-          title: 'AAA',
-          url: 'https://youtu.be/W5QlZ9ldLQQ?list=PL061333C813777C1D'
-        },
-        {
-          title: 'BBB',
-          url: 'https://youtu.be/W5QlZ9ldLQQ?list=PL061333C813777C1D'
-        },
-      ]
-    },
-    clientConfig: {
-      googleSheetAPIURL: config.googleSheetAPIURL
-    },
+    syncConfig,
+    clientConfig,
     errors: [],
     utils: utils
   },

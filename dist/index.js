@@ -2630,7 +2630,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".TomatoTimer[data-v-49f015f2] {\n  position: fixed;\n  bottom: 2rem;\n  right: -3rem;\n  z-index: 10;\n  line-height: 1 !important;\n  transform: scale(0.5);\n  user-select: none;\n  /*\n  .container {\n    position: relative;\n    top: 30px;\n    width: 300px;\n    margin: 0 auto;\n    \n  }\n  */\n}\n@media only screen and (max-width: 767px) {\n.TomatoTimer[data-v-49f015f2] {\n    display: none;\n}\n}\n@media only screen and (max-height: 540px) {\n.TomatoTimer[data-v-49f015f2] {\n    display: none;\n}\n}\n.TomatoTimer svg[data-v-49f015f2] {\n  filter: drop-shadow(3px 7px 7px #333);\n}\n.TomatoTimer button[data-setter][data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  font-family: 'Roboto';\n  font-weight: 300;\n  font-size: 18px;\n  width: 25px;\n  height: 30px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer button[data-setter][data-v-49f015f2]:hover {\n  opacity: 0.5;\n}\n.TomatoTimer .setters[data-v-49f015f2] {\n  position: absolute;\n  left: 60px;\n  top: 40px;\n  z-index: 11;\n}\n.TomatoTimer .minutes-set[data-v-49f015f2] {\n  float: left;\n  margin-right: 28px;\n  cursor: pointer;\n}\n.TomatoTimer .seconds-set[data-v-49f015f2] {\n  cursor: pointer;\n  float: right;\n}\n.TomatoTimer .controlls[data-v-49f015f2] {\n  position: absolute;\n  left: 45px;\n  top: 65px;\n  text-align: center;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2] {\n  font-family: 'Roboto';\n  font-weight: 100;\n  font-size: 65px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer #pause[data-v-49f015f2],\n.TomatoTimer .reset[data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  margin-top: 10px;\n  width: 50px;\n  height: 50px;\n  position: relative;\n  cursor: pointer;\n}\n.TomatoTimer .play[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 16px;\n  border-top: 15px solid transparent;\n  border-bottom: 15px solid transparent;\n  border-left: 22px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .reset[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 6px;\n  border: 15px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .pause[data-v-49f015f2]::after {\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 17px;\n  width: 15px;\n  height: 30px;\n  background-color: transparent;\n  border-radius: 1px;\n  border: 5px solid #F7958E;\n  border-top: none;\n  border-bottom: none;\n  cursor: pointer;\n}\n.TomatoTimer #pause[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer .e-c-base[data-v-49f015f2] {\n  fill: white;\n  stroke: #B6B6B6;\n  stroke-width: 4px;\n}\n.TomatoTimer .e-c-progress[data-v-49f015f2] {\n  fill: none;\n  stroke: #F7958E;\n  stroke-width: 4px;\n  transition: stroke-dashoffset 0.7s;\n}\n.TomatoTimer .e-c-pointer[data-v-49f015f2] {\n  fill: #FFF;\n  stroke: #F7958E;\n  stroke-width: 2px;\n}\n.TomatoTimer #e-pointer[data-v-49f015f2] {\n  transition: transform 0.7s;\n}\n", "",{"version":3,"sources":["TomatoTimer.less"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,YAAY;EACZ,YAAY;EACZ,WAAW;EACX,yBAAyB;EACzB,qBAAqB;EACrB,iBAAiB;EACjB;;;;;;;;GAQC;AACH;AACA;AACA;IACI,aAAa;AACjB;AACA;AACA;AACA;IACI,aAAa;AACjB;AACA;AACA;EACE,qCAAqC;AACvC;AACA;EACE,aAAa;EACb,uBAAuB;EACvB,YAAY;EACZ,qBAAqB;EACrB,gBAAgB;EAChB,eAAe;EACf,WAAW;EACX,YAAY;EACZ,cAAc;EACd,eAAe;AACjB;AACA;EACE,YAAY;AACd;AACA;EACE,kBAAkB;EAClB,UAAU;EACV,SAAS;EACT,WAAW;AACb;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,eAAe;AACjB;AACA;EACE,eAAe;EACf,YAAY;AACd;AACA;EACE,kBAAkB;EAClB,UAAU;EACV,SAAS;EACT,kBAAkB;AACpB;AACA;EACE,qBAAqB;EACrB,gBAAgB;EAChB,eAAe;EACf,cAAc;EACd,eAAe;AACjB;AACA;EACE,YAAY;AACd;AACA;;EAEE,aAAa;EACb,uBAAuB;EACvB,YAAY;EACZ,gBAAgB;EAChB,WAAW;EACX,YAAY;EACZ,kBAAkB;EAClB,eAAe;AACjB;AACA;EACE,cAAc;EACd,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,UAAU;EACV,kCAAkC;EAClC,qCAAqC;EACrC,+BAA+B;EAC/B,eAAe;AACjB;AACA;EACE,cAAc;EACd,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,0BAA0B;EAC1B,eAAe;AACjB;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,UAAU;EACV,WAAW;EACX,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,yBAAyB;EACzB,gBAAgB;EAChB,mBAAmB;EACnB,eAAe;AACjB;AACA;EACE,YAAY;AACd;AACA;EACE,WAAW;EACX,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,UAAU;EACV,eAAe;EACf,iBAAiB;EACjB,kCAAkC;AACpC;AACA;EACE,UAAU;EACV,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,0BAA0B;AAC5B","file":"TomatoTimer.less","sourcesContent":[".TomatoTimer[data-v-49f015f2] {\n  position: fixed;\n  bottom: 2rem;\n  right: -3rem;\n  z-index: 10;\n  line-height: 1 !important;\n  transform: scale(0.5);\n  user-select: none;\n  /*\n  .container {\n    position: relative;\n    top: 30px;\n    width: 300px;\n    margin: 0 auto;\n    \n  }\n  */\n}\n@media only screen and (max-width: 767px) {\n.TomatoTimer[data-v-49f015f2] {\n    display: none;\n}\n}\n@media only screen and (max-height: 540px) {\n.TomatoTimer[data-v-49f015f2] {\n    display: none;\n}\n}\n.TomatoTimer svg[data-v-49f015f2] {\n  filter: drop-shadow(3px 7px 7px #333);\n}\n.TomatoTimer button[data-setter][data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  font-family: 'Roboto';\n  font-weight: 300;\n  font-size: 18px;\n  width: 25px;\n  height: 30px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer button[data-setter][data-v-49f015f2]:hover {\n  opacity: 0.5;\n}\n.TomatoTimer .setters[data-v-49f015f2] {\n  position: absolute;\n  left: 60px;\n  top: 40px;\n  z-index: 11;\n}\n.TomatoTimer .minutes-set[data-v-49f015f2] {\n  float: left;\n  margin-right: 28px;\n  cursor: pointer;\n}\n.TomatoTimer .seconds-set[data-v-49f015f2] {\n  cursor: pointer;\n  float: right;\n}\n.TomatoTimer .controlls[data-v-49f015f2] {\n  position: absolute;\n  left: 45px;\n  top: 65px;\n  text-align: center;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2] {\n  font-family: 'Roboto';\n  font-weight: 100;\n  font-size: 65px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer #pause[data-v-49f015f2],\n.TomatoTimer .reset[data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  margin-top: 10px;\n  width: 50px;\n  height: 50px;\n  position: relative;\n  cursor: pointer;\n}\n.TomatoTimer .play[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 16px;\n  border-top: 15px solid transparent;\n  border-bottom: 15px solid transparent;\n  border-left: 22px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .reset[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 6px;\n  border: 15px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .pause[data-v-49f015f2]::after {\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 17px;\n  width: 15px;\n  height: 30px;\n  background-color: transparent;\n  border-radius: 1px;\n  border: 5px solid #F7958E;\n  border-top: none;\n  border-bottom: none;\n  cursor: pointer;\n}\n.TomatoTimer #pause[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer .e-c-base[data-v-49f015f2] {\n  fill: white;\n  stroke: #B6B6B6;\n  stroke-width: 4px;\n}\n.TomatoTimer .e-c-progress[data-v-49f015f2] {\n  fill: none;\n  stroke: #F7958E;\n  stroke-width: 4px;\n  transition: stroke-dashoffset 0.7s;\n}\n.TomatoTimer .e-c-pointer[data-v-49f015f2] {\n  fill: #FFF;\n  stroke: #F7958E;\n  stroke-width: 2px;\n}\n.TomatoTimer #e-pointer[data-v-49f015f2] {\n  transition: transform 0.7s;\n}\n"]}]);
+exports.push([module.i, ".TomatoTimer[data-v-49f015f2] {\n  position: fixed;\n  bottom: 2rem;\n  right: -3rem;\n  z-index: 10;\n  line-height: 1 !important;\n  transform: scale(0.5);\n  user-select: none;\n  /*\n  .container {\n    position: relative;\n    top: 30px;\n    width: 300px;\n    margin: 0 auto;\n    \n  }\n  */\n}\n@media only screen and (max-width: 767px) {\n.TomatoTimer[data-v-49f015f2] {\n    display: none;\n}\n}\n@media only screen and (max-height: 540px) {\n.TomatoTimer[data-v-49f015f2] {\n    display: none;\n}\n}\n.TomatoTimer svg[data-v-49f015f2] {\n  filter: drop-shadow(3px 7px 7px #333);\n}\n.TomatoTimer button[data-setter][data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  font-family: 'Roboto';\n  font-weight: 300;\n  font-size: 18px;\n  width: 25px;\n  height: 30px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer button[data-setter][data-v-49f015f2]:hover {\n  opacity: 0.5;\n}\n.TomatoTimer .setters[data-v-49f015f2] {\n  position: absolute;\n  left: 60px;\n  top: 40px;\n  z-index: 11;\n}\n.TomatoTimer .minutes-set[data-v-49f015f2] {\n  float: left;\n  margin-right: 28px;\n  cursor: pointer;\n}\n.TomatoTimer .seconds-set[data-v-49f015f2] {\n  cursor: pointer;\n  float: right;\n}\n.TomatoTimer .controlls[data-v-49f015f2] {\n  position: absolute;\n  left: 45px;\n  top: 65px;\n  text-align: center;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2] {\n  font-family: 'Roboto';\n  font-weight: 100;\n  font-size: 65px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer #pause[data-v-49f015f2],\n.TomatoTimer .reset[data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  margin-top: 10px;\n  width: 50px;\n  height: 50px;\n  position: relative;\n  cursor: pointer;\n}\n.TomatoTimer .play[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 16px;\n  border-top: 15px solid transparent;\n  border-bottom: 15px solid transparent;\n  border-left: 22px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .reset[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 6px;\n  border: 15px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .pause[data-v-49f015f2]::after {\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 17px;\n  width: 15px;\n  height: 30px;\n  background-color: transparent;\n  border-radius: 1px;\n  border: 5px solid #F7958E;\n  border-top: none;\n  border-bottom: none;\n  cursor: pointer;\n}\n.TomatoTimer #pause[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer .e-c-base[data-v-49f015f2] {\n  fill: white;\n  stroke: #B6B6B6;\n  stroke-width: 4px;\n}\n.TomatoTimer .e-c-progress[data-v-49f015f2] {\n  fill: none;\n  stroke: black;\n  stroke-width: 4px;\n  transition: stroke-dashoffset 0.7s;\n}\n.TomatoTimer .e-c-progress.is-playing[data-v-49f015f2] {\n  stroke: #F7958E;\n}\n.TomatoTimer .e-c-pointer[data-v-49f015f2] {\n  fill: #FFF;\n  stroke: #F7958E;\n  stroke-width: 2px;\n}\n.TomatoTimer #e-pointer[data-v-49f015f2] {\n  transition: transform 0.7s;\n}\n.TomatoTimer.large[data-v-49f015f2] {\n  transform: scale(1);\n  bottom: 5rem;\n  right: 3rem;\n}\n.TomatoTimer.larger[data-v-49f015f2] {\n  transform: scale(1.5);\n  bottom: 9rem;\n  right: 5rem;\n}\n", "",{"version":3,"sources":["TomatoTimer.less"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,YAAY;EACZ,YAAY;EACZ,WAAW;EACX,yBAAyB;EACzB,qBAAqB;EACrB,iBAAiB;EACjB;;;;;;;;GAQC;AACH;AACA;AACA;IACI,aAAa;AACjB;AACA;AACA;AACA;IACI,aAAa;AACjB;AACA;AACA;EACE,qCAAqC;AACvC;AACA;EACE,aAAa;EACb,uBAAuB;EACvB,YAAY;EACZ,qBAAqB;EACrB,gBAAgB;EAChB,eAAe;EACf,WAAW;EACX,YAAY;EACZ,cAAc;EACd,eAAe;AACjB;AACA;EACE,YAAY;AACd;AACA;EACE,kBAAkB;EAClB,UAAU;EACV,SAAS;EACT,WAAW;AACb;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,eAAe;AACjB;AACA;EACE,eAAe;EACf,YAAY;AACd;AACA;EACE,kBAAkB;EAClB,UAAU;EACV,SAAS;EACT,kBAAkB;AACpB;AACA;EACE,qBAAqB;EACrB,gBAAgB;EAChB,eAAe;EACf,cAAc;EACd,eAAe;AACjB;AACA;EACE,YAAY;AACd;AACA;;EAEE,aAAa;EACb,uBAAuB;EACvB,YAAY;EACZ,gBAAgB;EAChB,WAAW;EACX,YAAY;EACZ,kBAAkB;EAClB,eAAe;AACjB;AACA;EACE,cAAc;EACd,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,UAAU;EACV,kCAAkC;EAClC,qCAAqC;EACrC,+BAA+B;EAC/B,eAAe;AACjB;AACA;EACE,cAAc;EACd,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,0BAA0B;EAC1B,eAAe;AACjB;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,QAAQ;EACR,UAAU;EACV,WAAW;EACX,YAAY;EACZ,6BAA6B;EAC7B,kBAAkB;EAClB,yBAAyB;EACzB,gBAAgB;EAChB,mBAAmB;EACnB,eAAe;AACjB;AACA;EACE,YAAY;AACd;AACA;EACE,WAAW;EACX,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,UAAU;EACV,aAAa;EACb,iBAAiB;EACjB,kCAAkC;AACpC;AACA;EACE,eAAe;AACjB;AACA;EACE,UAAU;EACV,eAAe;EACf,iBAAiB;AACnB;AACA;EACE,0BAA0B;AAC5B;AACA;EACE,mBAAmB;EACnB,YAAY;EACZ,WAAW;AACb;AACA;EACE,qBAAqB;EACrB,YAAY;EACZ,WAAW;AACb","file":"TomatoTimer.less","sourcesContent":[".TomatoTimer[data-v-49f015f2] {\n  position: fixed;\n  bottom: 2rem;\n  right: -3rem;\n  z-index: 10;\n  line-height: 1 !important;\n  transform: scale(0.5);\n  user-select: none;\n  /*\n  .container {\n    position: relative;\n    top: 30px;\n    width: 300px;\n    margin: 0 auto;\n    \n  }\n  */\n}\n@media only screen and (max-width: 767px) {\n.TomatoTimer[data-v-49f015f2] {\n    display: none;\n}\n}\n@media only screen and (max-height: 540px) {\n.TomatoTimer[data-v-49f015f2] {\n    display: none;\n}\n}\n.TomatoTimer svg[data-v-49f015f2] {\n  filter: drop-shadow(3px 7px 7px #333);\n}\n.TomatoTimer button[data-setter][data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  font-family: 'Roboto';\n  font-weight: 300;\n  font-size: 18px;\n  width: 25px;\n  height: 30px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer button[data-setter][data-v-49f015f2]:hover {\n  opacity: 0.5;\n}\n.TomatoTimer .setters[data-v-49f015f2] {\n  position: absolute;\n  left: 60px;\n  top: 40px;\n  z-index: 11;\n}\n.TomatoTimer .minutes-set[data-v-49f015f2] {\n  float: left;\n  margin-right: 28px;\n  cursor: pointer;\n}\n.TomatoTimer .seconds-set[data-v-49f015f2] {\n  cursor: pointer;\n  float: right;\n}\n.TomatoTimer .controlls[data-v-49f015f2] {\n  position: absolute;\n  left: 45px;\n  top: 65px;\n  text-align: center;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2] {\n  font-family: 'Roboto';\n  font-weight: 100;\n  font-size: 65px;\n  color: #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .display-remain-time[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer #pause[data-v-49f015f2],\n.TomatoTimer .reset[data-v-49f015f2] {\n  outline: none;\n  background: transparent;\n  border: none;\n  margin-top: 10px;\n  width: 50px;\n  height: 50px;\n  position: relative;\n  cursor: pointer;\n}\n.TomatoTimer .play[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 16px;\n  border-top: 15px solid transparent;\n  border-bottom: 15px solid transparent;\n  border-left: 22px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .reset[data-v-49f015f2]::before {\n  display: block;\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 6px;\n  border: 15px solid #F7958E;\n  cursor: pointer;\n}\n.TomatoTimer .pause[data-v-49f015f2]::after {\n  content: \"\";\n  position: absolute;\n  top: 8px;\n  left: 17px;\n  width: 15px;\n  height: 30px;\n  background-color: transparent;\n  border-radius: 1px;\n  border: 5px solid #F7958E;\n  border-top: none;\n  border-bottom: none;\n  cursor: pointer;\n}\n.TomatoTimer #pause[data-v-49f015f2]:hover {\n  opacity: 0.8;\n}\n.TomatoTimer .e-c-base[data-v-49f015f2] {\n  fill: white;\n  stroke: #B6B6B6;\n  stroke-width: 4px;\n}\n.TomatoTimer .e-c-progress[data-v-49f015f2] {\n  fill: none;\n  stroke: black;\n  stroke-width: 4px;\n  transition: stroke-dashoffset 0.7s;\n}\n.TomatoTimer .e-c-progress.is-playing[data-v-49f015f2] {\n  stroke: #F7958E;\n}\n.TomatoTimer .e-c-pointer[data-v-49f015f2] {\n  fill: #FFF;\n  stroke: #F7958E;\n  stroke-width: 2px;\n}\n.TomatoTimer #e-pointer[data-v-49f015f2] {\n  transition: transform 0.7s;\n}\n.TomatoTimer.large[data-v-49f015f2] {\n  transform: scale(1);\n  bottom: 5rem;\n  right: 3rem;\n}\n.TomatoTimer.larger[data-v-49f015f2] {\n  transform: scale(1.5);\n  bottom: 9rem;\n  right: 5rem;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -22790,6 +22790,56 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
+      _c("div", { staticClass: "inline field hidden-in-small-screen" }, [
+        _c("label", { attrs: { for: "selectTimerSize" } }, [
+          _vm._v("\r\n      " + _vm._s(_vm.$t("Timer size")) + "\r\n    ")
+        ]),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.clientConfig.timerSize,
+                expression: "clientConfig.timerSize"
+              }
+            ],
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.$set(
+                  _vm.clientConfig,
+                  "timerSize",
+                  $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                )
+              }
+            }
+          },
+          [
+            _c("option", { attrs: { value: "normal" } }, [
+              _vm._v(_vm._s(_vm.$t("Normal")))
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "large" } }, [
+              _vm._v(_vm._s(_vm.$t("Large")))
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "larger" } }, [
+              _vm._v(_vm._s(_vm.$t("Larger")))
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
       _vm.syncConfig.enableTomatoTimer
         ? _c("div", { staticClass: "inline field hidden-in-small-screen" }, [
             _c("label", [
@@ -23018,7 +23068,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "TomatoTimer" },
+    { staticClass: "TomatoTimer", class: _vm.clientConfig.timerSize },
     [
       _c("youtube-player", {
         ref: "BGMPlayer",
@@ -23090,12 +23140,21 @@ var render = function() {
             },
             [
               _c("g", { attrs: { transform: "translate(110,110)" } }, [
-                _c("circle", { staticClass: "e-c-base", attrs: { r: "100" } }),
+                _c("circle", {
+                  staticClass: "e-c-base",
+                  class: {
+                    "is-playing": _vm.isPlaying
+                  },
+                  attrs: { r: "100" }
+                }),
                 _vm._v(" "),
                 _c("g", { attrs: { transform: "rotate(-90)" } }, [
                   _c("circle", {
                     ref: "Progress",
                     staticClass: "e-c-progress",
+                    class: {
+                      "is-playing": _vm.isPlaying
+                    },
                     attrs: { r: "100" }
                   }),
                   _vm._v(" "),
@@ -38393,6 +38452,24 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./src/clientConfig.js":
+/*!*****************************!*\
+  !*** ./src/clientConfig.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+let clientConfig = {
+  googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec',
+  timerSize: 'normal'
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (clientConfig);
+
+/***/ }),
+
 /***/ "./src/components/ConfigModal/Author/Author.html?vue&type=template&id=2fa95a8b&scoped=true&":
 /*!**************************************************************************************************!*\
   !*** ./src/components/ConfigModal/Author/Author.html?vue&type=template&id=2fa95a8b&scoped=true& ***!
@@ -40107,9 +40184,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var toastr2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! toastr2 */ "./node_modules/toastr2/dist/toastr.es5.js");
 /* harmony import */ var toastr2_dist_toastr_min_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! toastr2/dist/toastr.min.css */ "./node_modules/toastr2/dist/toastr.min.css");
 /* harmony import */ var toastr2_dist_toastr_min_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(toastr2_dist_toastr_min_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _IndexWatchSync_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./IndexWatchSync.js */ "./src/components/IndexWatchSync.js");
-/* harmony import */ var _IndexEditor_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./IndexEditor.js */ "./src/components/IndexEditor.js");
-/* harmony import */ var _IndexSync_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./IndexSync.js */ "./src/components/IndexSync.js");
+/* harmony import */ var _IndexWatchSyncConfig_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./IndexWatchSyncConfig.js */ "./src/components/IndexWatchSyncConfig.js");
+/* harmony import */ var _IndexWatchClientConfig_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./IndexWatchClientConfig.js */ "./src/components/IndexWatchClientConfig.js");
+/* harmony import */ var _IndexEditor_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./IndexEditor.js */ "./src/components/IndexEditor.js");
+/* harmony import */ var _IndexSync_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./IndexSync.js */ "./src/components/IndexSync.js");
 /* global Node */
 
 
@@ -40125,6 +40203,7 @@ let Index = {
   props: ['config', 'utils', 'syncConfig', 'clientConfig'],
   data () {    
     this.$i18n.locale = this.config.locale
+    
     return {
       contents: '',
       //test: 'aaa',
@@ -40166,7 +40245,7 @@ let Index = {
       //this.$refs.ConfigModal.show()
     //}, 1000)
     
-    
+    this.restoreClientConfig()
     await this.initData()
     await this.initEditor()
     this.setCustomStyle()
@@ -40197,13 +40276,16 @@ let Index = {
 }
 
 
-Object(_IndexWatchSync_js__WEBPACK_IMPORTED_MODULE_6__["default"])(Index)
+Object(_IndexWatchSyncConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"])(Index)
 
 
-Object(_IndexEditor_js__WEBPACK_IMPORTED_MODULE_7__["default"])(Index)
+Object(_IndexWatchClientConfig_js__WEBPACK_IMPORTED_MODULE_7__["default"])(Index)
 
 
-Object(_IndexSync_js__WEBPACK_IMPORTED_MODULE_8__["default"])(Index)
+Object(_IndexEditor_js__WEBPACK_IMPORTED_MODULE_8__["default"])(Index)
+
+
+Object(_IndexSync_js__WEBPACK_IMPORTED_MODULE_9__["default"])(Index)
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
@@ -40871,10 +40953,48 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/components/IndexWatchSync.js":
-/*!******************************************!*\
-  !*** ./src/components/IndexWatchSync.js ***!
-  \******************************************/
+/***/ "./src/components/IndexWatchClientConfig.js":
+/*!**************************************************!*\
+  !*** ./src/components/IndexWatchClientConfig.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* global Node */
+
+/* harmony default export */ __webpack_exports__["default"] = (function (Index) {
+  Index.watch["clientConfig.timerSize"] = function () {
+    this.saveClientConfig()
+  }
+  
+  // -----------------------
+  
+  Index.methods.saveClientConfig = function () {
+    let config = JSON.stringify(this.clientConfig)
+    localStorage.setItem('clientConfig', config)
+  }
+  
+  Index.methods.restoreClientConfig = function () {
+    let config = localStorage.getItem('clientConfig')
+    if (!config) {
+      return false
+    }
+    
+    config = JSON.parse(config)
+    for (let key in config) {
+      this.clientConfig[key] = config[key]
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./src/components/IndexWatchSyncConfig.js":
+/*!************************************************!*\
+  !*** ./src/components/IndexWatchSyncConfig.js ***!
+  \************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -41026,8 +41146,11 @@ let TomatoTimer = {
   components: {
     'youtube-player': _YouTubePlayer_YouTubePlayer_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-//  computed: {
-//  },
+  computed: {
+    isPlaying () {
+      return (this.isStarted === true && this.isPaused === false)
+    }
+  },
   watch: {
     isPaused () {
       if (!this.BGMPlayer) {
@@ -42083,10 +42206,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_tpl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.tpl */ "./src/index.tpl");
 /* harmony import */ var _index_tpl__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_tpl__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _config_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./config.js */ "./src/config.js");
-/* harmony import */ var _utils_utils_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/utils.js */ "./src/utils/utils.js");
-/* harmony import */ var _components_Index_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Index.vue */ "./src/components/Index.vue");
-/* harmony import */ var _service_worker_loader_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./service-worker-loader.js */ "./src/service-worker-loader.js");
-/* harmony import */ var _service_worker_loader_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_service_worker_loader_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _clientConfig_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./clientConfig.js */ "./src/clientConfig.js");
+/* harmony import */ var _syncConfig_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./syncConfig.js */ "./src/syncConfig.js");
+/* harmony import */ var _utils_utils_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils/utils.js */ "./src/utils/utils.js");
+/* harmony import */ var _components_Index_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Index.vue */ "./src/components/Index.vue");
+/* harmony import */ var _service_worker_loader_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./service-worker-loader.js */ "./src/service-worker-loader.js");
+/* harmony import */ var _service_worker_loader_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_service_worker_loader_js__WEBPACK_IMPORTED_MODULE_9__);
 /* global __webpack_public_path__ */
 
 
@@ -42097,6 +42222,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // ----------------------
+
+
 
 
 
@@ -42165,32 +42292,14 @@ let VueController = {
   template: _index_tpl__WEBPACK_IMPORTED_MODULE_3___default.a,
   data: {
     config: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"],
-    syncConfig: {
-      customStyle: '',
-      enableSound: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].enableSound,
-      enableTomatoTimer: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].enableTomatoTimer,
-      tomatoTimerSeconds: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].tomatoTimerSeconds,
-      musicURL: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].musicURL,
-      musicPlaylist: [
-        {
-          title: 'AAA',
-          url: 'https://youtu.be/W5QlZ9ldLQQ?list=PL061333C813777C1D'
-        },
-        {
-          title: 'BBB',
-          url: 'https://youtu.be/W5QlZ9ldLQQ?list=PL061333C813777C1D'
-        },
-      ]
-    },
-    clientConfig: {
-      googleSheetAPIURL: _config_js__WEBPACK_IMPORTED_MODULE_4__["default"].googleSheetAPIURL
-    },
+    syncConfig: _syncConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"],
+    clientConfig: _clientConfig_js__WEBPACK_IMPORTED_MODULE_5__["default"],
     errors: [],
-    utils: _utils_utils_js__WEBPACK_IMPORTED_MODULE_5__["default"]
+    utils: _utils_utils_js__WEBPACK_IMPORTED_MODULE_7__["default"]
   },
   i18n: _i18n_i18n_js__WEBPACK_IMPORTED_MODULE_1__["default"],
   components: {
-    'index': _components_Index_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+    'index': _components_Index_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
   }
 }
 
@@ -42344,6 +42453,39 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+/***/ }),
+
+/***/ "./src/syncConfig.js":
+/*!***************************!*\
+  !*** ./src/syncConfig.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+let syncConfig = {
+  enableSound: true,
+  enableTomatoTimer: true,
+  tomatoTimerSeconds: 25,
+  musicURL: 'https://www.youtube.com/watch?v=I1-zm1H4VvA',
+  musicPlaylist: []
+  /*
+  musicPlaylist: [
+    {
+      title: 'AAA',
+      url: 'https://youtu.be/W5QlZ9ldLQQ?list=PL061333C813777C1D'
+    },
+    {
+      title: 'BBB',
+      url: 'https://youtu.be/W5QlZ9ldLQQ?list=PL061333C813777C1D'
+    },
+  ]
+   */
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (syncConfig);
 
 /***/ }),
 

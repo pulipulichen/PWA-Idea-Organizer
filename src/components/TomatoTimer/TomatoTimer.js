@@ -30,8 +30,11 @@ let TomatoTimer = {
   components: {
     'youtube-player': YouTubePlayer
   },
-//  computed: {
-//  },
+  computed: {
+    isPlaying () {
+      return (this.isStarted === true && this.isPaused === false)
+    }
+  },
   watch: {
     isPaused () {
       if (!this.BGMPlayer) {

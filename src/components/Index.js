@@ -13,6 +13,7 @@ let Index = {
   props: ['config', 'utils', 'syncConfig', 'clientConfig'],
   data () {    
     this.$i18n.locale = this.config.locale
+    
     return {
       contents: '',
       //test: 'aaa',
@@ -54,7 +55,7 @@ let Index = {
       //this.$refs.ConfigModal.show()
     //}, 1000)
     
-    
+    this.restoreClientConfig()
     await this.initData()
     await this.initEditor()
     this.setCustomStyle()
@@ -84,8 +85,11 @@ let Index = {
   }
 }
 
-import IndexWatchSync from './IndexWatchSync.js'
-IndexWatchSync(Index)
+import IndexWatchSyncConfig from './IndexWatchSyncConfig.js'
+IndexWatchSyncConfig(Index)
+
+import IndexWatchClientConfig from './IndexWatchClientConfig.js'
+IndexWatchClientConfig(Index)
 
 import IndexEditor from './IndexEditor.js'
 IndexEditor(Index)

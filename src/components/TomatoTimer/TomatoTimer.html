@@ -1,4 +1,5 @@
-<div class="TomatoTimer">
+<div class="TomatoTimer"
+     v-bind:class="clientConfig.timerSize">
   <youtube-player 
     ref="BGMPlayer" 
     v-bind:youtubeURL="syncConfig.musicURL"
@@ -20,9 +21,13 @@
     <div class="circle"> 
       <svg width="250" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
         <g transform="translate(110,110)">
-          <circle r="100" class="e-c-base"/>
+          <circle r="100" class="e-c-base" v-bind:class="{
+              'is-playing': isPlaying
+           }" />
           <g transform="rotate(-90)">
-            <circle r="100" class="e-c-progress" ref="Progress"/>
+            <circle r="100" class="e-c-progress" ref="Progress" v-bind:class="{
+              'is-playing': isPlaying
+           }" />
             <g id="e-pointer">
               <circle cx="100" cy="0" r="8" class="e-c-pointer" ref="Pointer"/>
             </g>

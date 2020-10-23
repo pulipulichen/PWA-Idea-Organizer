@@ -152,13 +152,22 @@
     fill: white;
     stroke: #B6B6B6;
     stroke-width: 4px;
+    
+    //&.is-playing {
+      //fill: #FFDBD6;
+      //fill: #ffeaa7;
+    //}
   }
 
   .e-c-progress {
     fill: none;
-    stroke: #F7958E;
+    stroke: black;
     stroke-width: 4px;
     transition: stroke-dashoffset 0.7s;
+    
+    &.is-playing {
+      stroke: #F7958E;
+    }
   }
 
   .e-c-pointer {
@@ -172,4 +181,17 @@
   //h1 { margin-top:150px; text-align:center;}
   //body { background-color:#f7f7f7;}
   
+  &.large {
+    //background-color: red;
+    transform: scale(1);
+    bottom: 5rem;
+    right: 3rem;
+  }
+  
+  &.larger {
+    //background-color: red;
+    transform: scale(1.5);
+    bottom: 9rem;
+    right: 5rem;
+  }
 }

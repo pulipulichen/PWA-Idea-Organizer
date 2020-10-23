@@ -18,6 +18,17 @@
     </div>
   </div>
   
+  <div class="inline field hidden-in-small-screen">
+    <label for="selectTimerSize">
+      {{ $t('Timer size') }}
+    </label>
+    <select v-model="clientConfig.timerSize">
+      <option value="normal">{{ $t('Normal') }}</option>
+      <option value="large">{{ $t('Large') }}</option>
+      <option value="larger">{{ $t('Larger') }}</option>
+    </select>
+  </div>
+  
   <div class="inline field hidden-in-small-screen"
        v-if="syncConfig.enableTomatoTimer">
     <label>{{ $t('Tomato Timer Default Seconds') }}</label>

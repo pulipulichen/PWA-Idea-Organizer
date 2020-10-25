@@ -180,15 +180,25 @@ let TomatoTimer = {
       this.toastr.success(this.$t('Time to break'), null, {
           onclick: () => {
             //window.alert('aaa')
-            this.endSoundObject.pause()
-            this.endSoundObject.currentTime = 0
+            this.stopEndSound()
           }
       })
       this.$emit('timeout')
     },
-    pauseTimer(event) {
+    /**
+     * https://stackoverflow.com/a/14836099/6645399
+     */
+    stopEndSound () {
+      if (this.endSoundObject.currentTime > 0) {
+        this.endSoundObject.pause()
+        this.endSoundObject.currentTime = 0
+      }
+    },
+    playOrPauseTimer(event) {
       
       if (this.isStarted === false) {
+        this.stopEndSound()
+        
         //console.log(this.wholeTime)
         this.timer(this.wholeTime);
         this.isStarted = true;

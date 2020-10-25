@@ -40,8 +40,8 @@
     <div class="controlls">
       <div class="display-remain-time" 
            ref="DisplayRemainTime"
-           v-on:click="pauseTimer">00:25</div>
-      <button class="play" id="pause" ref="Pause" v-on:click="pauseTimer"></button>
+           v-on:click="playOrPauseTimer">00:25</div>
+      <button class="play" id="pause" ref="Pause" v-on:click="playOrPauseTimer"></button>
       <button class="reset" v-on:click="resetTimer" v-if="isPaused"></button>
       <div class="volume-container">
         <input type="range" min="0" max="100" v-model="BGMVolume"

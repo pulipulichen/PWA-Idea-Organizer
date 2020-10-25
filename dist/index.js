@@ -23292,7 +23292,7 @@ var render = function() {
             {
               ref: "DisplayRemainTime",
               staticClass: "display-remain-time",
-              on: { click: _vm.pauseTimer }
+              on: { click: _vm.playOrPauseTimer }
             },
             [_vm._v("00:25")]
           ),
@@ -23301,7 +23301,7 @@ var render = function() {
             ref: "Pause",
             staticClass: "play",
             attrs: { id: "pause" },
-            on: { click: _vm.pauseTimer }
+            on: { click: _vm.playOrPauseTimer }
           }),
           _vm._v(" "),
           _vm.isPaused
@@ -41545,15 +41545,25 @@ let TomatoTimer = {
       this.toastr.success(this.$t('Time to break'), null, {
           onclick: () => {
             //window.alert('aaa')
-            this.endSoundObject.pause()
-            this.endSoundObject.currentTime = 0
+            this.stopEndSound()
           }
       })
       this.$emit('timeout')
     },
-    pauseTimer(event) {
+    /**
+     * https://stackoverflow.com/a/14836099/6645399
+     */
+    stopEndSound () {
+      if (this.endSoundObject.currentTime > 0) {
+        this.endSoundObject.pause()
+        this.endSoundObject.currentTime = 0
+      }
+    },
+    playOrPauseTimer(event) {
       
       if (this.isStarted === false) {
+        this.stopEndSound()
+        
         //console.log(this.wholeTime)
         this.timer(this.wholeTime);
         this.isStarted = true;

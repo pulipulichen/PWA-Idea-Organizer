@@ -7345,6 +7345,7 @@ ${links}`
               }
             }
             
+            this.reformatParagraph()
           }
           
           this.mergeDeletedList = function ($element, nextList) {
@@ -7401,6 +7402,10 @@ ${links}`
            * @returns {Boolean}
            */
           this.insertParagraphRemoveStlye = function (nextPara) {
+            this.reformatParagraph(nextPara)
+          } // Typing.prototype.insertParagraphRemoveStlye = function (nextPara) {
+      
+          this.reformatParagraph = function (nextPara) {
             if (!nextPara) {
               nextPara = this.getCurrentElement()
               if (!nextPara) {
@@ -7411,15 +7416,16 @@ ${links}`
             }
 
             let $nextPara = $$1(nextPara)
+            let isEmpty = ($nextPara.text().trim() === '')
 
             //$nextPara.removeClass('MsoNormal')
 
-            if ($nextPara.hasClass('highlight')) {
+            if (isEmpty) {
               $nextPara.removeClass('highlight')
               $nextPara.removeAttr('style')
             }
 
-            $nextPara.removeAttr('style')
+            //$nextPara.removeAttr('style')
             
             // -------------------------
             // 移除空白的元素
@@ -7535,8 +7541,7 @@ ${links}`
                 }
               }
             }
-          } // Typing.prototype.insertParagraphRemoveStlye = function (nextPara) {
-      
+          }
           
           /**
            * https://stackoverflow.com/a/60338028/6645399
@@ -8613,7 +8618,7 @@ ${links}`
               if (event.keyCode === _this.options.KEY_MAP.DELETE
                       || event.keyCode === _this.options.KEY_MAP.BACKSPACE) {
                 setTimeout(() => {
-                  _this.context.invoke('editor.insertParagraphRemoveStlye')
+                  //_this.context.invoke('editor.insertParagraphRemoveStlye')
                   _this.context.invoke('editor.deleteParagraphReformat')
                 }, 0)
               }

@@ -7,4 +7,5 @@
 
 <style src="./IndexEditorMargin.less" lang="less" scoped></style>
 <style src="./IndexEditorGlobal.less" lang="less"></style>
+<style src="./IndexWaitLoading.less" lang="less"></style>
 <i18n src="./Index.yaml" lang="yaml"></i18n>

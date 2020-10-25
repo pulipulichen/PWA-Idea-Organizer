@@ -13,15 +13,15 @@ let Index = {
   props: ['config', 'utils', 'syncConfig', 'clientConfig'],
   data () {    
     this.$i18n.locale = this.config.locale
-    console.log(this.config.saveToCloud)
+    //console.log(this.config.saveToCloud)
     return {
       contents: '',
       //test: 'aaa',
       editor: null,
       loading: true,
       enableChange: false,
-      saveToCloudTimer: null,
-      configSaveToCloudTimer: null,
+      saveContentsToCloudTimer: null,
+      saveConfigToCloudTimer: null,
       styleNode: null,
       toastr: null,
       inited: false,

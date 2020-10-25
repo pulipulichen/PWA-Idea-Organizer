@@ -1,6 +1,7 @@
 <div class="editor-container">
   <exit-blocker 
     class="exit-blocker"
+    v-on:click="syncNow"
     v-if="isBlockExit"></exit-blocker>
   <div class="loading-overlay"v-bind:class="{loading: loading }"></div>
   <i class="unlink icon disconnected-state" v-if="(config.saveToCloud === false)" />

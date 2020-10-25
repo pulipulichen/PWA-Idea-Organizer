@@ -163,8 +163,8 @@ export default function (Index) {
       return false
     }
 
-    if (this.configSaveToCloudTimer !== null) {
-      clearTimeout(this.configSaveToCloudTimer)
+    if (this.saveConfigToCloudTimer !== null) {
+      clearTimeout(this.saveConfigToCloudTimer)
     }
     else {
       //console.log('開始綁定')
@@ -173,7 +173,7 @@ export default function (Index) {
     }
 
     
-    this.configSaveToCloudTimer = setTimeout(() => {
+    this.saveConfigToCloudTimer = setTimeout(() => {
       //console.log('startSyncConfig')
       //$.post(this.clientConfig.googleSheetAPIURL, {
       //  configs: JSON.stringify(this.syncConfig)
@@ -183,7 +183,7 @@ export default function (Index) {
       })
       
       setTimeout(() => {
-        this.configSaveToCloudTimer = null
+        this.saveConfigToCloudTimer = null
         //console.log('取消綁定')
         //$window.unbind('beforeunload', preventUnloadEvent)
         this.isBlockExit = false
@@ -204,8 +204,8 @@ export default function (Index) {
       return false
     }
 
-    if (this.saveToCloudTimer !== null) {
-      clearTimeout(this.saveToCloudTimer)
+    if (this.saveContentsToCloudTimer !== null) {
+      clearTimeout(this.saveContentsToCloudTimer)
     }
     else {
       //console.log('開始綁定')
@@ -213,28 +213,31 @@ export default function (Index) {
       this.isBlockExit = true
     }
     
-    console.log('有嗎？')
+    //console.log('有嗎？')
     if (this.config.saveToCloud === false) {
       this.isBlockExit = false
       return false
     }
     
-    this.saveToCloudTimer = setTimeout(() => {
-      this.postDataToGoogleSheet({
-        //configs: JSON.stringify(this.syncConfig)
-        contents: this.contents
-      })
-      
-      setTimeout(() => {
-        this.saveToCloudTimer = null
-        //console.log('取消綁定')
-        //$window.unbind('beforeunload', preventUnloadEvent)
-        this.isBlockExit = false
-      }, 1000)
-      
+    this.saveContentsToCloudTimer = setTimeout(() => {
+      this.startSyncContentsPost()
       //console.log('儲存：', contents)
     }, syncWait)
     //}, 1000)
+  }
+  
+  Index.methods.startSyncContentsPost = function () {
+    this.postDataToGoogleSheet({
+      //configs: JSON.stringify(this.syncConfig)
+      contents: this.contents
+    })
+
+    setTimeout(() => {
+      this.saveContentsToCloudTimer = null
+      //console.log('取消綁定')
+      //$window.unbind('beforeunload', preventUnloadEvent)
+      this.isBlockExit = false
+    }, 1000)
   }
   
   Index.methods.setCustomStyle = function () {
@@ -265,5 +268,21 @@ export default function (Index) {
     document.getElementsByTagName("head")[0].appendChild(css)
     //console.log(3)
     this.styleNode = css
+  }
+  
+  Index.methods.syncNow = function () {
+    console.log('ok?')
+    
+    clearTimeout(this.saveConfigToCloudTimer)
+    this.saveConfigToCloudTimer = null
+    clearTimeout(this.saveContentsToCloudTimer)
+    this.saveContentsToCloudTimer = null
+    
+    this.postDataToGoogleSheet({
+      contents: this.contents,
+      configs: JSON.stringify(this.syncConfig)
+    })
+    
+    this.isBlockExit = false
   }
 }

@@ -3580,6 +3580,7 @@ import 'toastr2/dist/toastr.min.css';
        * recorded undo
        */
       History.prototype.recordUndo = function () {
+          console.trace('recordUndo')
           this.stackOffset++;
           // Wash out stack after stackOffset
           if (this.stack.length > this.stackOffset) {
@@ -4805,6 +4806,7 @@ import 'toastr2/dist/toastr.min.css';
            * @author Pulipuli Chen 20190703
            */
           this.comment = this.wrapCommand(function () {
+            _this.history.recordUndo()
             // 要看現在指向的對象有沒有note-editor-comment
             //_this.context.layoutInfo.commentDialog.show()
             
@@ -4834,6 +4836,7 @@ import 'toastr2/dist/toastr.min.css';
            * @author Pulipuli Chen 20190709
            */
           this.uncomment = this.wrapCommand(function () {
+            _this.history.recordUndo()
             // 要看現在指向的對象有沒有note-editor-comment
             //_this.context.layoutInfo.commentDialog.show()
             
@@ -4890,6 +4893,7 @@ import 'toastr2/dist/toastr.min.css';
            * @returns {Editor.Editor}
            */
           this.htmlify = function () {
+            _this.history.recordUndo()
             //var rng = _this.createRange();
             //let text = ''
             //console.log(rng)
@@ -4924,6 +4928,7 @@ import 'toastr2/dist/toastr.min.css';
            * @returns {Editor.Editor}
            */
           this.textify = function () {
+            _this.history.recordUndo()
             //var rng = _this.createRange();
             //let text = ''
             //console.log(rng)
@@ -4993,6 +4998,7 @@ import 'toastr2/dist/toastr.min.css';
           }
           
           this.insertIframe = this.wrapCommand(function (iframeInfo) {
+            _this.history.recordUndo()
             let url
             let enableNewWindow = true
             let enablePopup = true
@@ -5070,7 +5076,7 @@ ${links}`
               return false
             }
             
-              return _this.fontStyling('font-size', value + 'px');
+            return _this.fontStyling('font-size', value + 'px');
           });
           
           this.setOption = this.wrapCommand(function (name, value) {
@@ -5093,22 +5099,24 @@ ${links}`
               this.context.memo('help.formatH' + idx, this.lang.help['formatH' + idx]);
           }
           this.insertParagraph = this.wrapCommand(function () {
-              _this.typing.insertParagraph(_this.editable);
+            _this.typing.insertParagraph(_this.editable);
           });
           this.insertOrderedList = this.wrapCommand(function () {
-              _this.bullet.insertOrderedList(_this.editable);
+            _this.history.recordUndo()
+            _this.bullet.insertOrderedList(_this.editable);
           });
           this.insertUnorderedList = this.wrapCommand(function () {
-              _this.bullet.insertUnorderedList(_this.editable);
+            _this.history.recordUndo()
+            _this.bullet.insertUnorderedList(_this.editable);
           });
           this.indent = this.wrapCommand(function () {
-              _this.bullet.indent(_this.editable);
+            _this.history.recordUndo()
+            _this.bullet.indent(_this.editable);
           });
           this.outdent = this.wrapCommand(function () {
-              _this.bullet.outdent(_this.editable);
+            _this.history.recordUndo()
+            _this.bullet.outdent(_this.editable);
           });
-          
-          
           
           /**
            * insertNode
@@ -5638,6 +5646,8 @@ ${links}`
                   return;
               }
               
+              _this.history.recordUndo()
+              
               //console.log(this.isFocus)
               if (this.isFocus === false) {
                 this.restoreBlurRange()
@@ -5659,6 +5669,8 @@ ${links}`
            */
           this.pasteHTML = this.wrapCommand(async function (markup) {
             //console.trace(markup)
+            
+            _this.history.recordUndo()
             
             if (typeof(markup) !== 'string') {
               if (!navigator.clipboard) {
@@ -5687,6 +5699,8 @@ ${links}`
            * @param {String} tagName
            */
           this.formatBlock = this.wrapCommand(function (tagName, $target) {
+            _this.history.recordUndo()
+            
               var onApplyCustomStyle = _this.options.callbacks.onApplyCustomStyle;
               if (onApplyCustomStyle) {
                   onApplyCustomStyle.call(_this, $target, _this.context, _this.onFormatBlock);
@@ -5700,6 +5714,8 @@ ${links}`
            * insert horizontal rule
            */
           this.insertHorizontalRule = this.wrapCommand(function () {
+              _this.history.recordUndo()
+              
               let hrNode = _this.createRange().insertNode(dom.create('HR'));
               let prev = $(hrNode).prev()
               if (prev.length > 0 && prev.text().trim() === '') {
@@ -5718,6 +5734,8 @@ ${links}`
            * insert horizontal rule
            */
           this.removeElement = this.wrapCommand(function () {
+            _this.history.recordUndo()
+          
             let rng = _this.createRange()
             
             let parent = $(rng.sc)[0]
@@ -5745,9 +5763,10 @@ ${links}`
               return false
             }
             
-              _this.style.stylePara(_this.createRange(), {
-                  lineHeight: value
-              });
+            _this.history.recordUndo()
+            _this.style.stylePara(_this.createRange(), {
+                lineHeight: value
+            });
           });
           
           /**
@@ -5756,6 +5775,8 @@ ${links}`
            * @param {Object} linkInfo
            */
           this.createLink = this.wrapCommand(function (linkInfo) {
+              _this.history.recordUndo()
+              
               var linkUrl = linkInfo.url.trim();
               if (linkUrl.trim() === '' 
                   || !( (linkUrl.startsWith("//") === false && linkUrl.length > 10)
@@ -5851,6 +5872,8 @@ ${links}`
            * @param {Object} linkInfo
            */
           this.updateComment = this.wrapCommand(function (commentInfo) {
+            _this.history.recordUndo()
+            
               var title = commentInfo.title
               
               var rng = commentInfo.range || _this.createRange();
@@ -6066,6 +6089,7 @@ ${links}`
            * @param {Object} linkInfo
            */
           this.removeComment = this.wrapCommand(function (commentInfo) {
+            _this.history.recordUndo()
               var rng = commentInfo.range || _this.createRange();
               
               // 這邊我想要改它的範圍
@@ -6091,6 +6115,7 @@ ${links}`
            * @param {String} sObjColor.backColor background color
            */
           this.color = this.wrapCommand(function (colorInfo) {
+            _this.history.recordUndo()
               //console.log(colorInfo)
               if (this.hasSelectedRange() === false) {
                 return
@@ -6118,11 +6143,12 @@ ${links}`
            * @param {String} colorCode foreground color code
            */
           this.foreColor = this.wrapCommand(function (colorInfo) {
+            
               // 檢查一下是否有選取對象
               if (this.hasSelectedRange() === false) {
-                return
+                return false
               }
-            
+            _this.history.recordUndo()
               document.execCommand('styleWithCSS', false, true);
               document.execCommand('foreColor', false, colorInfo);
           });
@@ -6132,6 +6158,7 @@ ${links}`
            * @param {String} dimension of table (ex : "5x5")
            */
           this.insertTable = this.wrapCommand(function (dim) {
+            _this.history.recordUndo()
               var dimension = dim.split('x');
               var rng = _this.createRange().deleteContents();
               let table = _this.table.createTable(dimension[0], dimension[1], _this.options)
@@ -6142,6 +6169,7 @@ ${links}`
            * remove media object and Figure Elements if media object is img with Figure.
            */
           this.removeMedia = this.wrapCommand(function () {
+            _this.history.recordUndo()
               //console.log('removeMedia')
               var $target = $$1(_this.restoreTarget()).parent();
               //console.log($target.prop("tagName"))
@@ -6188,6 +6216,7 @@ ${links}`
            * @author Pulipuli Chen 20190517
            */
           this.removeLink = this.wrapCommand(function () {
+            _this.history.recordUndo()
               var rng = this.createRange();
               if (rng.isOnAnchor()) {
                   var anchor = dom.ancestor(rng.sc, dom.isAnchor);
@@ -6324,7 +6353,7 @@ ${links}`
             if (this.hasSelectedRange() === false) {
               return false
             }
-            
+            _this.history.recordUndo()
               var $target = $$1(_this.restoreTarget());
               $target.toggleClass('note-float-left', value === 'left');
               $target.toggleClass('note-float-right', value === 'right');
@@ -6335,6 +6364,7 @@ ${links}`
            * @param {String} value
            */
           this.resize = this.wrapCommand(function (value) {
+            
               var $target = $$1(_this.restoreTarget());
               $target.css({
                   width: value * 100 + '%',
@@ -6420,7 +6450,7 @@ ${links}`
             if (this.hasSelectedRange() === false) {
               return ''
             }
-            
+            _this.history.recordUndo()
             let html = []
             let node, nextNode
             let goNext = true
@@ -7230,7 +7260,7 @@ ${links}`
        */
       Editor.prototype.afterCommand = function (isPreventTrigger) {
           this.normalizeContent();
-          this.history.recordUndo();
+          //this.history.recordUndo();
           if (!isPreventTrigger) {
             //this.context.triggerEvent('change', this.$editable.html());
             this.triggerChangeEvent()

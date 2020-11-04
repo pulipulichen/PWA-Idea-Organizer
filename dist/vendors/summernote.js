@@ -117,7 +117,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".summernote .note-pin {\n  background-color: #F8E894;\n  border-bottom: 2px dotted gray;\n  min-height: 2rem;\n  max-height: 2rem;\n  overflow-y: auto;\n  padding: 0 10px;\n  box-shadow: 0rem 0.2rem 0.1rem rgba(0, 0, 0, 0.7);\n  position: absolute;\n  width: 100%;\n  cursor: pointer;\n}\n.summernote .note-pin.expanded {\n  max-height: 30vh;\n}\n.summernote .note-pin.expanded .handler .angle.down.icon {\n  display: none;\n}\n.summernote .note-pin.expanded .handler .angle.up.icon {\n  display: inline-block;\n}\n.summernote .note-pin .handler {\n  float: right;\n  position: fixed;\n  right: 0;\n  padding: 0 1rem;\n  text-indent: 0 !important;\n}\n.summernote .note-pin .handler .angle.up.icon {\n  display: none;\n}\n.summernote .note-editing-area.enable-note-pin .note-editable {\n  margin-top: 2.5rem;\n}\n", "",{"version":3,"sources":["summernote-lite.editable.pin.less"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,8BAA8B;EAC9B,gBAAgB;EAChB,gBAAgB;EAChB,gBAAgB;EAChB,eAAe;EACf,iDAAiD;EACjD,kBAAkB;EAClB,WAAW;EACX,eAAe;AACjB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,aAAa;AACf;AACA;EACE,qBAAqB;AACvB;AACA;EACE,YAAY;EACZ,eAAe;EACf,QAAQ;EACR,eAAe;EACf,yBAAyB;AAC3B;AACA;EACE,aAAa;AACf;AACA;EACE,kBAAkB;AACpB","file":"summernote-lite.editable.pin.less","sourcesContent":[".summernote .note-pin {\n  background-color: #F8E894;\n  border-bottom: 2px dotted gray;\n  min-height: 2rem;\n  max-height: 2rem;\n  overflow-y: auto;\n  padding: 0 10px;\n  box-shadow: 0rem 0.2rem 0.1rem rgba(0, 0, 0, 0.7);\n  position: absolute;\n  width: 100%;\n  cursor: pointer;\n}\n.summernote .note-pin.expanded {\n  max-height: 30vh;\n}\n.summernote .note-pin.expanded .handler .angle.down.icon {\n  display: none;\n}\n.summernote .note-pin.expanded .handler .angle.up.icon {\n  display: inline-block;\n}\n.summernote .note-pin .handler {\n  float: right;\n  position: fixed;\n  right: 0;\n  padding: 0 1rem;\n  text-indent: 0 !important;\n}\n.summernote .note-pin .handler .angle.up.icon {\n  display: none;\n}\n.summernote .note-editing-area.enable-note-pin .note-editable {\n  margin-top: 2.5rem;\n}\n"]}]);
+exports.push([module.i, ".summernote .note-pin {\n  background-color: #F8E894;\n  border-bottom: 2px dotted gray;\n  min-height: 2rem;\n  max-height: 2rem;\n  overflow-y: auto;\n  padding: 0 10px;\n  box-shadow: 0rem 0.2rem 0.1rem rgba(0, 0, 0, 0.7);\n  position: fixed;\n  top: 0;\n  width: 100%;\n  cursor: pointer;\n}\n.summernote .note-pin.expanded {\n  max-height: 30vh;\n}\n.summernote .note-pin.expanded .handler .angle.down.icon {\n  display: none;\n}\n.summernote .note-pin.expanded .handler .angle.up.icon {\n  display: inline-block;\n}\n.summernote .note-pin .handler {\n  float: right;\n  position: fixed;\n  right: 0;\n  padding: 0 1rem;\n  text-indent: 0 !important;\n}\n.summernote .note-pin .handler .angle.up.icon {\n  display: none;\n}\n.summernote .note-editing-area.enable-note-pin .note-editable,\n.summernote .note-editing-area.enable-note-pin .note-placeholder {\n  margin-top: 2.5rem;\n}\n.summernote .note-editing-area.enable-note-pin .note-placeholder {\n  position: absolute;\n}\n", "",{"version":3,"sources":["summernote-lite.editable.pin.less"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,8BAA8B;EAC9B,gBAAgB;EAChB,gBAAgB;EAChB,gBAAgB;EAChB,eAAe;EACf,iDAAiD;EACjD,eAAe;EACf,MAAM;EACN,WAAW;EACX,eAAe;AACjB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,aAAa;AACf;AACA;EACE,qBAAqB;AACvB;AACA;EACE,YAAY;EACZ,eAAe;EACf,QAAQ;EACR,eAAe;EACf,yBAAyB;AAC3B;AACA;EACE,aAAa;AACf;AACA;;EAEE,kBAAkB;AACpB;AACA;EACE,kBAAkB;AACpB","file":"summernote-lite.editable.pin.less","sourcesContent":[".summernote .note-pin {\n  background-color: #F8E894;\n  border-bottom: 2px dotted gray;\n  min-height: 2rem;\n  max-height: 2rem;\n  overflow-y: auto;\n  padding: 0 10px;\n  box-shadow: 0rem 0.2rem 0.1rem rgba(0, 0, 0, 0.7);\n  position: fixed;\n  top: 0;\n  width: 100%;\n  cursor: pointer;\n}\n.summernote .note-pin.expanded {\n  max-height: 30vh;\n}\n.summernote .note-pin.expanded .handler .angle.down.icon {\n  display: none;\n}\n.summernote .note-pin.expanded .handler .angle.up.icon {\n  display: inline-block;\n}\n.summernote .note-pin .handler {\n  float: right;\n  position: fixed;\n  right: 0;\n  padding: 0 1rem;\n  text-indent: 0 !important;\n}\n.summernote .note-pin .handler .angle.up.icon {\n  display: none;\n}\n.summernote .note-editing-area.enable-note-pin .note-editable,\n.summernote .note-editing-area.enable-note-pin .note-placeholder {\n  margin-top: 2.5rem;\n}\n.summernote .note-editing-area.enable-note-pin .note-placeholder {\n  position: absolute;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -5662,7 +5662,7 @@ __webpack_require__.r(__webpack_exports__);
        * recorded undo
        */
       History.prototype.recordUndo = function () {
-          console.trace('recordUndo')
+          //console.trace('recordUndo')
           this.stackOffset++;
           // Wash out stack after stackOffset
           if (this.stack.length > this.stackOffset) {
@@ -7339,17 +7339,20 @@ ${links}`
             //return false
             let $element = this.getCurrentElement()
             
-            let tagName = $element.prop('tagName').toLowerCase()
-            if (tagName === 'li') {
-              //console.log($element[0])
-              //return false
-              this.mergeDeletedList($element, $element.next())
-              
-              let lists = $element.parents("ul,ol,li")
-              //console.log(lists.length)
-              for (let l = 0; l < lists.length; l++) {
-                let nextList = lists.eq(l).next()
-                this.mergeDeletedList($element, nextList)
+            if ($element) {
+              let tagName = $element.prop('tagName')
+              tagName = tagName.toLowerCase()
+              if (tagName === 'li') {
+                //console.log($element[0])
+                //return false
+                this.mergeDeletedList($element, $element.next())
+
+                let lists = $element.parents("ul,ol,li")
+                //console.log(lists.length)
+                for (let l = 0; l < lists.length; l++) {
+                  let nextList = lists.eq(l).next()
+                  this.mergeDeletedList($element, nextList)
+                }
               }
             }
             

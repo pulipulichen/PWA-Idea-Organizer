@@ -271,7 +271,7 @@ export default function (Index) {
   }
   
   Index.methods.syncNow = function () {
-    console.log('ok?')
+    //console.log('ok?')
     
     clearTimeout(this.saveConfigToCloudTimer)
     this.saveConfigToCloudTimer = null

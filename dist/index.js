@@ -41206,7 +41206,7 @@ __webpack_require__.r(__webpack_exports__);
   }
   
   Index.methods.syncNow = function () {
-    console.log('ok?')
+    //console.log('ok?')
     
     clearTimeout(this.saveConfigToCloudTimer)
     this.saveConfigToCloudTimer = null
@@ -42328,7 +42328,7 @@ let config = {
   enableTomatoTimer: true,
   tomatoTimerSeconds: 25,
   musicURL: 'https://www.youtube.com/watch?v=I1-zm1H4VvA',
-  saveToCloud: false
+  saveToCloud: true
 }
 
 

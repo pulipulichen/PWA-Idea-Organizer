@@ -1,6 +1,7 @@
 @pinBarHeight: 2rem;
 
 .summernote {
+  
   .note-pin {
     //background-color: red;
     background-color: #F8E894;
@@ -13,7 +14,9 @@
     padding: 0 10px;
     box-shadow: 0rem 0.2rem 0.1rem rgba(0,0,0,0.7);
     
-    position: absolute;
+    position: fixed;
+    top: 0;
+    
     //width: calc(100% - 2rem);
     width: 100%;
     cursor: pointer;
@@ -47,8 +50,13 @@
   }
   
   .note-editing-area.enable-note-pin {
-    .note-editable {
+    .note-editable,
+    .note-placeholder {
       margin-top: 2.5rem;
+    }
+    
+    .note-placeholder {
+      position: absolute;
     }
   }
 } // .summernote {

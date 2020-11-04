@@ -3580,7 +3580,7 @@ import 'toastr2/dist/toastr.min.css';
        * recorded undo
        */
       History.prototype.recordUndo = function () {
-          console.trace('recordUndo')
+          //console.trace('recordUndo')
           this.stackOffset++;
           // Wash out stack after stackOffset
           if (this.stack.length > this.stackOffset) {
@@ -5257,17 +5257,20 @@ ${links}`
             //return false
             let $element = this.getCurrentElement()
             
-            let tagName = $element.prop('tagName').toLowerCase()
-            if (tagName === 'li') {
-              //console.log($element[0])
-              //return false
-              this.mergeDeletedList($element, $element.next())
-              
-              let lists = $element.parents("ul,ol,li")
-              //console.log(lists.length)
-              for (let l = 0; l < lists.length; l++) {
-                let nextList = lists.eq(l).next()
-                this.mergeDeletedList($element, nextList)
+            if ($element) {
+              let tagName = $element.prop('tagName')
+              tagName = tagName.toLowerCase()
+              if (tagName === 'li') {
+                //console.log($element[0])
+                //return false
+                this.mergeDeletedList($element, $element.next())
+
+                let lists = $element.parents("ul,ol,li")
+                //console.log(lists.length)
+                for (let l = 0; l < lists.length; l++) {
+                  let nextList = lists.eq(l).next()
+                  this.mergeDeletedList($element, nextList)
+                }
               }
             }
             

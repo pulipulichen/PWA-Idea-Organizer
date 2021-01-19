@@ -1,5 +1,7 @@
 
+
 import soundKeyEnterURL from './keyenter.ogg'
+import soundKeyStrikeThroughURL from './strikethrough.mp3'
 
 import soundKeyAny1 from './office_typewriter-1.ogg'
 import soundKeyAny2 from './office_typewriter-2.ogg'
@@ -34,6 +36,7 @@ import soundKeyAny30 from './office_typewriter-30.ogg'
 
 export default {
     soundKeyEnterURL,
+    soundKeyStrikeThroughURL,
     soundKeyAny: [
             soundKeyAny1,
             soundKeyAny2,

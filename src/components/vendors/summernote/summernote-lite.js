@@ -9147,11 +9147,23 @@ sel.addRange(range);
           
           
           this.context.memo('button.strikethrough', function () {
+            //console.log(soundKeys.soundKeyStrikeThroughURL)
+            let sound = new Audio(soundKeys.soundKeyStrikeThroughURL)
+            //window.sound = sound
               return _this.button({
                   className: 'note-btn-strikethrough',
                   contents: _this.ui.icon(_this.options.icons.strikethrough),
                   tooltip: _this.lang.font.strikethrough + _this.representShortcut('strikethrough'),
-                  click: _this.context.createRangeInvokeHandlerAndUpdateState('editor.strikethrough')
+                  click: (event) => {
+                    //console.log('strike', sound.paused)
+                    if (!sound.paused) {
+                      sound.currentTime = 0
+                    }
+                    else {
+                      sound.play()
+                    }
+                    return _this.context.createRangeInvokeHandlerAndUpdateState('editor.strikethrough')(event)
+                  }
               }).render();
           });
           this.context.memo('button.comment', function () {

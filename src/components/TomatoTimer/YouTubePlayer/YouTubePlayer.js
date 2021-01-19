@@ -2,7 +2,7 @@ import './vendors/youtube-iframe-player-api/iframe_api.js'
 import YouTubeVideoIDParser from './youtube-video-id-parser.js'
 
 let YoutubePlayer = {
-  props: ['display', 'youtubeURL', 'volume'],
+  props: ['display', 'youtubeURL', 'volume', 'isMute', 'isPause'],
   data() {    
     //this.$i18n.locale = this.config.locale
     return {
@@ -60,6 +60,25 @@ let YoutubePlayer = {
       if (this.state === 0) {
         // 自動重播
         this.play()
+        setTimeout(() => {
+          this.player.setVolume(this.volumeNumber)
+        }, 0)
+      }
+    },
+    isMute () {
+      if (this.isMute === true) {
+        this.player.mute()
+      }
+      else {
+        this.player.unMute()
+      }
+    },
+    isPause () {
+      if (this.isPause === true) {
+        this.player.pauseVideo()
+      }
+      else {
+        this.player.playVideo()
       }
     }
   },
@@ -251,6 +270,9 @@ let YoutubePlayer = {
       if (this.player) {
         this.player.seekTo(0)
       }
+    },
+    setMute (isMute) {
+      
     }
   } // methods
 }

@@ -21,6 +21,7 @@ let TomatoTimer = {
       timeLeft: null,
       isPaused: false,
       isStarted: false,
+      isVolumeMute: false,
       wholeTime: Number(this.syncConfig.tomatoTimerSeconds),
       //wholeTime: 25,
       progressLength: Math.PI * 2 * 100,
@@ -37,6 +38,13 @@ let TomatoTimer = {
   computed: {
     isPlaying () {
       return (this.isStarted === true && this.isPaused === false)
+    },
+    isBGMPlayerPause () {
+      if (this.isPaused === true) {
+        return true
+      }
+      console.log(this.isPaused)
+      return this.isVolumeMute
     }
   },
   watch: {
@@ -69,6 +77,7 @@ let TomatoTimer = {
     },
     BGMVolume () {
       localStorage.setItem('BGMVolume', this.BGMVolume)
+      this.isVolumeMute = false
     }
   },
   async mounted () {

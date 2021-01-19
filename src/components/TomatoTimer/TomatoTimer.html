@@ -5,6 +5,7 @@
     v-bind:youtubeURL="syncConfig.musicURL"
     v-bind:display="false"
     v-bind:volume="BGMVolume"
+    v-bind:isPause="isBGMPlayerPause"
     ></youTube-player>
   <div class="container">
     <div class="setters"
@@ -41,11 +42,34 @@
       <div class="display-remain-time" 
            ref="DisplayRemainTime"
            v-on:click="playOrPauseTimer">00:25</div>
-      <button class="play" id="pause" ref="Pause" v-on:click="playOrPauseTimer"></button>
-      <button class="reset" v-on:click="resetTimer" v-if="isPaused"></button>
+      
+      <div class="mute-controller" 
+           v-on:click="isVolumeMute = !isVolumeMute">
+        <i class="volume up icon" v-if="isVolumeMute === false"></i>
+        <i class="volume off icon" v-if="isVolumeMute === true"></i>
+      </div>
+      
+      <button type="button" class="play" id="pause" ref="Pause" v-on:click="playOrPauseTimer"></button>
+      <button type="button" class="reset" v-on:click="resetTimer" v-if="isPaused"></button>
       <div class="volume-container">
         <input type="range" min="0" max="100" v-model="BGMVolume"
                ref="VolumeSlider"/>
+        <!--
+        <div class="mute-controller" 
+             style="visibility: hidden;"
+             v-on:click="isVolumeMute = !isVolumeMute">
+          <i class="volume up icon" v-if="isVolumeMute === false"></i>
+          <i class="volume off icon" v-if="isVolumeMute === true"></i>
+        </div>
+        <input type="range" min="0" max="100" v-model="BGMVolume"
+               v-on:change="isVolumeMute = false"
+               ref="VolumeSlider"/>
+        <div class="mute-controller" 
+             v-on:click="isVolumeMute = !isVolumeMute">
+          <i class="volume up icon" v-if="isVolumeMute === false"></i>
+          <i class="volume off icon" v-if="isVolumeMute === true"></i>
+        </div>
+        -->
       </div>
     </div>
     

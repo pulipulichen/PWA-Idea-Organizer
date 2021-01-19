@@ -9155,12 +9155,14 @@ sel.addRange(range);
                   contents: _this.ui.icon(_this.options.icons.strikethrough),
                   tooltip: _this.lang.font.strikethrough + _this.representShortcut('strikethrough'),
                   click: (event) => {
-                    //console.log('strike', sound.paused)
-                    if (!sound.paused) {
-                      sound.currentTime = 0
-                    }
-                    else {
-                      sound.play()
+                    if (_this.options.enableTypeWriterSoundEffect) {
+                      //console.log('strike', sound.paused)
+                      if (!sound.paused) {
+                        sound.currentTime = 0
+                      }
+                      else {
+                        sound.play()
+                      }
                     }
                     return _this.context.createRangeInvokeHandlerAndUpdateState('editor.strikethrough')(event)
                   }

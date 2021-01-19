@@ -31,8 +31,8 @@
   
   <div class="inline field hidden-in-small-screen"
        v-if="syncConfig.enableTomatoTimer">
-    <label>{{ $t('Tomato Timer Default Seconds') }}</label>
-    <input type="number" step="10" v-model="syncConfig.tomatoTimerSeconds" min="0">
+    <label>{{ $t('Tomato Timer Default Minutes') }}</label>
+    <input type="number" step="10" v-model="syncConfig.tomatoTimerMinutes" min="0">
   </div>
   
   <div class="inline field hidden-in-small-screen">

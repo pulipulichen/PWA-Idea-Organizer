@@ -1,6 +1,6 @@
 let syncConfig = {
   enableTomatoTimer: true,
-  tomatoTimerSeconds: 25,
+  tomatoTimerMinutes: 25,
   musicURL: 'https://www.youtube.com/watch?v=I1-zm1H4VvA',
   musicPlaylist: []
   /*

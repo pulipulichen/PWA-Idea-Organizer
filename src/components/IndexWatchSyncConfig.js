@@ -28,7 +28,7 @@ export default function (Index) {
     this.startSyncConfig()
   }
   
-  Index.watch['syncConfig.tomatoTimerSeconds'] = function (tomatoTimerSeconds) {
+  Index.watch['syncConfig.tomatoTimerMinutes'] = function (tomatoTimerMinutes) {
     if (this.inited === false) {
       return false
     }
@@ -38,7 +38,7 @@ export default function (Index) {
     }
 
     //console.log(tomatoTimerSeconds)
-    this.$refs.TomatoTimer.resetTimer(tomatoTimerSeconds)
+    this.$refs.TomatoTimer.resetTimer(tomatoTimerMinutes * 60)
 
     this.startSyncConfig()
   }

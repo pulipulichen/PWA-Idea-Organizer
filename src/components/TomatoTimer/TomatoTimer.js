@@ -22,7 +22,7 @@ let TomatoTimer = {
       isPaused: false,
       isStarted: false,
       isVolumeMute: false,
-      wholeTime: Number(this.syncConfig.tomatoTimerSeconds),
+      wholeTime: Number(this.syncConfig.tomatoTimerMinutes * 60),
       //wholeTime: 25,
       progressLength: Math.PI * 2 * 100,
       BGMPlayer: null,
@@ -43,7 +43,7 @@ let TomatoTimer = {
       if (this.isPaused === true) {
         return true
       }
-      console.log(this.isPaused)
+      //console.log(this.isPaused)
       return this.isVolumeMute
     }
   },
@@ -125,7 +125,8 @@ let TomatoTimer = {
       if ((this.wholeTime + seconds) > 0) {
         this.wholeTime += seconds;
         this.update(this.wholeTime, this.wholeTime);
-        this.syncConfig.tomatoTimerSeconds = this.wholeTime
+        this.syncConfig.tomatoTimerMinutes = Math.floor(this.wholeTime / 60)
+        //console.log(this.syncConfig.tomatoTimerMinutes)
       }
     },
     update(value, timePercent) {

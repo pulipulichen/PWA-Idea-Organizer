@@ -9,7 +9,7 @@ let config = {
   googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec',
   enableSound: true,
   enableTomatoTimer: true,
-  tomatoTimerSeconds: 25,
+  tomatoTimerMinutes: 25,
   musicURL: 'https://www.youtube.com/watch?v=I1-zm1H4VvA',
   saveToCloud: true
 }

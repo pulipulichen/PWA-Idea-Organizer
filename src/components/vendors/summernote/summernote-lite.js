@@ -11,6 +11,10 @@ import langEnUS from './lang/summernote-en-US.js'
 import Toastr from 'toastr2';
 import 'toastr2/dist/toastr.min.css';
 
+//import domtoimage from 'dom-to-image'
+
+// ---------------
+
 /**
  * Super simple wysiwyg editor v0.8.11
  * https://summernote.org
@@ -9145,8 +9149,57 @@ sel.addRange(range);
             });
           })
           
-          
+          function dataURItoBlob(dataURI) {
+              // convert base64/URLEncoded data component to raw binary data held in a string
+              var byteString;
+              if (dataURI.split(',')[0].indexOf('base64') >= 0)
+                  byteString = atob(dataURI.split(',')[1]);
+              else
+                  byteString = unescape(dataURI.split(',')[1]);
+
+              // separate out the mime component
+              var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+              // write the bytes of the string to a typed array
+              var ia = new Uint8Array(byteString.length);
+              for (var i = 0; i < byteString.length; i++) {
+                  ia[i] = byteString.charCodeAt(i);
+              }
+
+              return new Blob([ia], {type:mimeString});
+          }
+//          
+//          let copyDomToImage = function () {
+//            var node = $('.non-invasive-web-style-framework:first')[0]
+//
+//            domtoimage.toBlob(node)
+//                .then(function (blob) {
+////                    var img = new Image();
+////                    img.src = dataUrl;
+//                    //document.body.appendChild(img);
+//                    //console.log(img.src)
+//                    //copyRichFormat(img.outerHTML)
+//                    //console.log(img.outerHTML)
+//                    
+//                    try {
+//                        navigator.clipboard.write([
+//                            new ClipboardItem({
+//                                'image/png': blob
+//                            })
+//                        ]);
+//                        //console.log($)
+//                    } catch (error) {
+//                        console.error(error);
+//                    }
+//                })
+//                .catch(function (error) {
+//                    console.error('oops, something went wrong!', error);
+//                });
+//            
+//          }
+//          
           this.context.memo('button.strikethrough', function () {
+            
             //console.log(soundKeys.soundKeyStrikeThroughURL)
             let sound = new Audio(soundKeys.soundKeyStrikeThroughURL)
             //window.sound = sound
@@ -9164,6 +9217,9 @@ sel.addRange(range);
                         sound.play()
                       }
                     }
+                    
+//                    copyDomToImage()
+                    
                     return _this.context.createRangeInvokeHandlerAndUpdateState('editor.strikethrough')(event)
                   }
               }).render();

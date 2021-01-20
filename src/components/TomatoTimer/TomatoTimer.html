@@ -43,6 +43,12 @@
            ref="DisplayRemainTime"
            v-on:click="playOrPauseTimer">00:25</div>
       
+      <a class="mute-controller" 
+         v-bind:href="syncConfig.musicURL"
+         target="bgm">
+        <i class="music icon"></i>
+      </a>
+      
       <div class="mute-controller" 
            v-on:click="isVolumeMute = !isVolumeMute">
         <i class="volume up icon" v-if="isVolumeMute === false"></i>

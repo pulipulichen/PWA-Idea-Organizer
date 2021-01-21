@@ -45,6 +45,15 @@ let TomatoTimer = {
       }
       //console.log(this.isPaused)
       return this.isVolumeMute
+    },
+    musicTitle () {
+      let url = this.syncConfig.musicURL
+      for (let i = this.syncConfig.musicPlaylist.length; i > 0; i--) {
+        if (url === this.syncConfig.musicPlaylist[i].url) {
+          return this.syncConfig.musicPlaylist[i].title
+        }
+      }
+      return url
     }
   },
   watch: {

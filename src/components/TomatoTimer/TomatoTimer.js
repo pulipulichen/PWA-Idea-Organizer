@@ -48,7 +48,14 @@ let TomatoTimer = {
     },
     musicTitle () {
       let url = this.syncConfig.musicURL
-      for (let i = this.syncConfig.musicPlaylist.length; i > 0; i--) {
+      //console.log(url)
+      //console.log(this.syncConfig.musicPlaylist)
+      if (!this.syncConfig.musicPlaylist) {
+        return url
+      }
+      
+      for (let i = this.syncConfig.musicPlaylist.length - 1; i > -1; i--) {
+        //console.log(i, url, this.syncConfig.musicPlaylist[i].url)
         if (url === this.syncConfig.musicPlaylist[i].url) {
           return this.syncConfig.musicPlaylist[i].title
         }

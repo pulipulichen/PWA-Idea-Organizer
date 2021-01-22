@@ -113,6 +113,7 @@ let MusicPlaylist = {
         return false
       }
       this.syncConfig.musicURL = url
+      this.$parent.$parent.hide()
     },
     onMusicPlaylistChange () {
       //console.log('111')

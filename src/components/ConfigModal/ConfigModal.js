@@ -59,6 +59,10 @@ let ConfigModal = {
       let modal = await this.getModal()
       modal.modal('hide')
     },
+    openMusicPlaylist: async function () {
+      await this.show()
+      this.$refs.TimerConfig.focusMusicPlaylist()
+    }
   } // methods
 }
 

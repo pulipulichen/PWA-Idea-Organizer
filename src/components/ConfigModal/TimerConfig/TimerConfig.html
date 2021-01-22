@@ -50,6 +50,7 @@
   </div>
   
   <music-playlist
+    ref="MusicPlaylist"
     v-bind:config="config"
     v-bind:utils="utils"
     v-bind:clientConfig="clientConfig"
@@ -57,7 +58,7 @@
   </music-playlist>
   
   <div class="field">
-    <label class="music-title">
+    <label class="music-title" ref="TimerConfigMusicTitle">
       {{ $t('Music URL (YouTube)') }}
       <template v-if="playingMusicTitle">
         :

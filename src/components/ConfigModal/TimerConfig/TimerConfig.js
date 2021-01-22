@@ -47,6 +47,9 @@ let TimerConfig = {
 //        url: this.syncConfig.musicURL
 //      })
 //    }
+    focusMusicPlaylist () {
+      this.$refs.MusicPlaylist.$el.scrollIntoView()
+    }
   } // methods
 }
 

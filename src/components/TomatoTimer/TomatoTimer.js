@@ -310,6 +310,12 @@ let TomatoTimer = {
         });
       });
       
+    },
+    openMusicPlaylist (event) {
+      event.preventDefault()
+      event.stopPropagation()
+      
+      this.$parent.$refs.ConfigModal.openMusicPlaylist()
     }
   } // methods
 }

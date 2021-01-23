@@ -130,6 +130,21 @@ let MusicPlaylist = {
       
       this.addTitle = ''
       this.addURL = ''
+      
+      setTimeout(() => {
+        //console.log(this.$refs.MusicPlaylistItem[0], this.$refs.MusicPlaylistItemPlayButton[0])
+        if (this.$refs.MusicPlaylistItem[0]) {
+          this.$refs.MusicPlaylistItem[0].scrollIntoView({
+              behavior: 'auto',
+              block: 'center',
+              inline: 'center'
+          })
+        }
+        if (this.$refs.MusicPlaylistItemPlayButton[0]) {
+          this.$refs.MusicPlaylistItemPlayButton[0].focus()
+        }
+      }, 0)
+        
     },
     isValidedURL (url) {
       url = url.trim()

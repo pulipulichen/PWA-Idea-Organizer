@@ -178,7 +178,9 @@ let YoutubePlayer = {
               
               //setTimeout(() => {
                 event.target.setVolume(this.volumeNumber)
-                event.target.unMute()
+                if (this.isMute === false) {
+                  event.target.unMute()
+                }
                 //console.log(2)
                 
                 //this.BGMPlayer = event.target
@@ -238,7 +240,9 @@ let YoutubePlayer = {
       
       //console.log(this.player)
       this.player.setVolume(this.volumeNumber)
-      this.player.unMute()
+      if (this.isMute === false) {
+        this.player.unMute()
+      }
       this.player.playVideo()
     },
     pause () {

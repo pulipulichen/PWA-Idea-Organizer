@@ -1,4 +1,4 @@
-const PRECACHE = 'precache-v202011122344';
+const PRECACHE = 'precache-v2021-0124-092838'
 /*
  Copyright 2016 Google Inc. All Rights Reserved.
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,77 +12,98 @@ const PRECACHE = 'precache-v202011122344';
  limitations under the License.
  */
 
-/* global self, caches */
+/* global self, caches, Promise, fetch */
 
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
 const RUNTIME = 'runtime';
 
+/**
+ * How to build cache list?
+ * 
+ * 1. FilelistCreator 
+ * 2. String replace
+ */
+
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
-  './index.html',
-  
-  //'./dist/', // Alias for index.html
-  
-  './dist/index.js',
-  './dist/index.js.map',
-  './dist/vendors/semantic-ui-niwsf.js',
-  './dist/vendors/semantic-ui-niwsf.js.map',
-  './dist/vendors/summernote.js',
-  './dist/vendors/summernote.js.map',
-  './dist/vendors~vendors/summernote.js',
-  './dist/vendors~vendors/summernote.js.map',
-  
-  './dist/asset/brand-icons.eot',
-  './dist/asset/brand-icons.svg',
-  './dist/asset/brand-icons.ttf',
-  './dist/asset/brand-icons.woff',
-  './dist/asset/brand-icons.woff2',
-  './dist/asset/flags.png',
-  './dist/asset/loading.gif',
-  './dist/asset/icons.eot',
-  './dist/asset/icons.svg',
-  './dist/asset/icons.ttf',
-  './dist/asset/icons.woff',
-  './dist/asset/icons.woff2',
-  './dist/asset/outline-icons.eot',
-  './dist/asset/outline-icons.svg',
-  './dist/asset/outline-icons.ttf',
-  './dist/asset/outline-icons.woff',
-  './dist/asset/outline-icons.woff2',
-  './dist/asset/summernote.eot',
-  './dist/asset/summernote.ttf',
-  './dist/asset/summernote.woff',
-  './dist/asset/keyenter.ogg',
-  './dist/asset/office_typewriter-1.ogg',
-  './dist/asset/office_typewriter-2.ogg',
-  './dist/asset/office_typewriter-3.ogg',
-  './dist/asset/office_typewriter-4.ogg',
-  './dist/asset/office_typewriter-5.ogg',
-  './dist/asset/office_typewriter-6.ogg',
-  './dist/asset/office_typewriter-7.ogg',
-  './dist/asset/office_typewriter-8.ogg',
-  './dist/asset/office_typewriter-9.ogg',
-  './dist/asset/office_typewriter-10.ogg',
-  './dist/asset/office_typewriter-12.ogg',
-  './dist/asset/office_typewriter-13.ogg',
-  './dist/asset/office_typewriter-14.ogg',
-  './dist/asset/office_typewriter-15.ogg',
-  './dist/asset/office_typewriter-16.ogg',
-  './dist/asset/office_typewriter-17.ogg',
-  './dist/asset/office_typewriter-18.ogg',
-  './dist/asset/office_typewriter-19.ogg',
-  './dist/asset/office_typewriter-20.ogg',
-  './dist/asset/office_typewriter-21.ogg',
-  './dist/asset/office_typewriter-22.ogg',
-  './dist/asset/office_typewriter-23.ogg',
-  './dist/asset/office_typewriter-24.ogg',
-  './dist/asset/office_typewriter-25.ogg',
-  './dist/asset/office_typewriter-26.ogg',
-  './dist/asset/office_typewriter-27.ogg',
-  './dist/asset/office_typewriter-29.ogg',
-  './dist/asset/office_typewriter-30.ogg',
+  'index.html',
+  'manifest.json',
+  'service-worker.js',
+  'dist/commons.js',
+  'dist/index.js',
+  'dist/asset/author.png',
+  'dist/asset/background.jpg',
+  'dist/asset/brand-icons.eot',
+  'dist/asset/brand-icons.svg',
+  'dist/asset/brand-icons.ttf',
+  'dist/asset/brand-icons.woff',
+  'dist/asset/brand-icons.woff2',
+  'dist/asset/clock-ticking1.ogg',
+  'dist/asset/clock-ticking2.ogg',
+  'dist/asset/flags.png',
+  'dist/asset/good-morning-502.mp3',
+  'dist/asset/icons.eot',
+  'dist/asset/icons.svg',
+  'dist/asset/icons.ttf',
+  'dist/asset/icons.woff',
+  'dist/asset/icons.woff2',
+  'dist/asset/keyany.ogg',
+  'dist/asset/keyenter.ogg',
+  'dist/asset/loading.gif',
+  'dist/asset/loading.svg',
+  'dist/asset/office_typewriter-1.ogg',
+  'dist/asset/office_typewriter-10.ogg',
+  'dist/asset/office_typewriter-12.ogg',
+  'dist/asset/office_typewriter-13.ogg',
+  'dist/asset/office_typewriter-14.ogg',
+  'dist/asset/office_typewriter-15.ogg',
+  'dist/asset/office_typewriter-16.ogg',
+  'dist/asset/office_typewriter-17.ogg',
+  'dist/asset/office_typewriter-18.ogg',
+  'dist/asset/office_typewriter-19.ogg',
+  'dist/asset/office_typewriter-2.ogg',
+  'dist/asset/office_typewriter-20.ogg',
+  'dist/asset/office_typewriter-21.ogg',
+  'dist/asset/office_typewriter-22.ogg',
+  'dist/asset/office_typewriter-23.ogg',
+  'dist/asset/office_typewriter-24.ogg',
+  'dist/asset/office_typewriter-25.ogg',
+  'dist/asset/office_typewriter-26.ogg',
+  'dist/asset/office_typewriter-27.ogg',
+  'dist/asset/office_typewriter-29.ogg',
+  'dist/asset/office_typewriter-3.ogg',
+  'dist/asset/office_typewriter-30.ogg',
+  'dist/asset/office_typewriter-4.ogg',
+  'dist/asset/office_typewriter-5.ogg',
+  'dist/asset/office_typewriter-6.ogg',
+  'dist/asset/office_typewriter-7.ogg',
+  'dist/asset/office_typewriter-8.ogg',
+  'dist/asset/office_typewriter-9.ogg',
+  'dist/asset/outline-icons.eot',
+  'dist/asset/outline-icons.svg',
+  'dist/asset/outline-icons.ttf',
+  'dist/asset/outline-icons.woff',
+  'dist/asset/outline-icons.woff2',
+  'dist/asset/strikethrough-boost3.mp3',
+  'dist/asset/strikethrough.mp3',
+  'dist/asset/summernote.eot',
+  'dist/asset/summernote.ttf',
+  'dist/asset/summernote.woff',
+  'dist/asset/wood-clock-ticking1.ogg',
+  'dist/asset/wood-clock-ticking2.ogg',
+  'dist/images/icon.svg',
+  'dist/images/icon128.png',
+  'dist/images/icon144.png',
+  'dist/vendors/ConfigModal.js',
+  'dist/vendors/ExitBlocker.js',
+  'dist/vendors/TomatoTimer.js',
+  'dist/vendors/semantic-ui-niwsf.js',
+  'dist/vendors/summernote.js',
+  'dist/vendors~vendors/ConfigModal.js',
+  'dist/vendors~vendors/summernote.js',
+  'dist/vendors~vendors/ConfigModal~vendors/summernote.js'
 ];
 
 // The install handler takes care of precaching the resources we always need.

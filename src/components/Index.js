@@ -2,9 +2,9 @@
 import $ from 'jquery'
 
 //let summernoteLoader = () => import('./summernote/summernote-lite.webpack.js')
-import ConfigModal from './ConfigModal/ConfigModal.vue'
-import TomatoTimer from './TomatoTimer/TomatoTimer.vue'
-import ExitBlocker from './ExitBlocker/ExitBlocker.vue'
+//import ConfigModal from './ConfigModal/ConfigModal.vue'
+//import TomatoTimer from './TomatoTimer/TomatoTimer.vue'
+//import ExitBlocker from './ExitBlocker/ExitBlocker.vue'
 
 import Toastr from 'toastr2';
 import 'toastr2/dist/toastr.min.css';
@@ -30,9 +30,12 @@ let Index = {
     }
   },
   components: {
-    'config-modal': ConfigModal,
-    'tomato-timer': TomatoTimer,
-    'exit-blocker': ExitBlocker
+    //'config-modal': ConfigModal,
+    'config-modal': () => import(/* webpackChunkName: "vendors/ConfigModal" */ './ConfigModal/ConfigModal.vue'),
+    //'tomato-timer': TomatoTimer,
+    'tomato-timer': () => import(/* webpackChunkName: "vendors/TomatoTimer" */ './TomatoTimer/TomatoTimer.vue'),
+    //'exit-blocker': ExitBlocker
+    'exit-blocker': () => import(/* webpackChunkName: "vendors/ExitBlocker" */ './ExitBlocker/ExitBlocker.vue'),
   },
   computed: {
     enableSync () {

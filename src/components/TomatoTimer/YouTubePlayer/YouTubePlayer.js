@@ -240,7 +240,7 @@ let YoutubePlayer = {
       
       //console.log(this.player)
       this.player.setVolume(this.volumeNumber)
-      console.log(this.isMute)
+      //console.log(this.isMute)
       if (this.isMute === false) {
         this.player.unMute()
       }

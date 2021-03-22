@@ -113,7 +113,22 @@ let MusicPlaylist = {
         return false
       }
       this.syncConfig.musicURL = url
+      
+      // 重新調整順序
+      this.syncConfig.musicPlaylist.sort((a, b) => {
+        if (a.url === url) {
+          return -1
+        }
+        else if (b.url === url) {
+          return 1
+        }
+        else {
+          return 0
+        }
+      })
+      
       this.$parent.$parent.hide()
+      this.$parent.$parent.$parent.$refs.TomatoTimer.playTimer()
     },
     onMusicPlaylistChange () {
       //console.log('111')

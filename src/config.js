@@ -1,4 +1,5 @@
 let config = {
+  version: '20210322-2007',
   debug: {
     ErrorHandler: {
       verbose: true

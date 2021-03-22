@@ -220,6 +220,11 @@ let TomatoTimer = {
         this.endSoundObject.currentTime = 0
       }
     },
+    playTimer(event) {
+      if (this.isStarted === false || this.isPaused) {
+        this.playOrPauseTimer(event)
+      }
+    },
     playOrPauseTimer(event) {
       
       if (this.isStarted === false) {

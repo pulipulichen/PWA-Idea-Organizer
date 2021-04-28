@@ -266,14 +266,21 @@ let YoutubePlayer = {
 //        this.init()
 //        return false
 //      }
-            
+      //console.log('pauseVideo()')   
       this.player.pauseVideo()
     },
     reset () {
       this.pause()
-      
+      //console.log('reset', this.isPause)
       if (this.player) {
         this.player.seekTo(0)
+        
+        if (this.isPause === true) {
+          setTimeout(() => {
+            this.pause()
+          }, 100)
+          
+        }
       }
     },
 //    setMute (isMute) {

@@ -25,11 +25,18 @@ export default function (Index) {
     })
     
     let minInterval = 30 * 60 * 1000
+    let resetTomatoTimerMinInterval = 5 * 60 * 60 * 1000
     //let minInterval = 3 * 1000
     $window.bind('focus', async () => {
       let time = (new Date()).getTime()
+      
+      //console.log(lastBlurTime, minInterval, time)
       if (!lastBlurTime || lastBlurTime + minInterval > time) {
         return false
+      }
+      
+      if (lastBlurTime + resetTomatoTimerMinInterval < time) {
+        this.$refs.TomatoTimer.resetTimer()
       }
       
       this.loading = true

@@ -6595,7 +6595,7 @@ ${links}`
               //console.log(event.target)
               //var caret = getCaretCoordinates(event.target, event.target.selectionEnd);
               //console.log('(top, left, height) = (%s, %s, %s)', caret.top, caret.left, caret.height);
-              scrollVerticalCenter(event)
+              //scrollVerticalCenter(event)
             
           }
           

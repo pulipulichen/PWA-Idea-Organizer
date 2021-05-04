@@ -1,5 +1,30 @@
 <div class="MusicPlaylist">
-
+  
+  <div class="inline fields playlist-item add-item">
+    <div class="six wide field">
+      <input 
+        type="text"
+        v-model="addTitle"
+        v-on:change="onMusicPlaylistChange"
+        v-bind:placeholder="$t('Add Music title...')">
+    </div>
+    <div class="ten wide field">
+      <div class="ui action input">
+        <input 
+          type="url" 
+          v-model="addURL"
+          
+          v-bind:placeholder="$t('URL...')">
+        <button 
+          type="button"
+          class="ui button"
+          v-bind:class="{disabled: (isAddable === false)}"
+          v-on:click="addItem">
+          <i class="plus icon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
   <div class="field">
     <div class="ui fluid input">
       <input type="text" 
@@ -69,29 +94,7 @@
     </draggable>
 
   </div>
-  <div class="inline fields playlist-item add-item">
-    <div class="six wide field">
-      <input 
-        type="text"
-        v-model="addTitle"
-        v-on:change="onMusicPlaylistChange"
-        v-bind:placeholder="$t('Add Music title...')">
-    </div>
-    <div class="ten wide field">
-      <div class="ui action input">
-        <input 
-          type="url" 
-          v-model="addURL"
-          
-          v-bind:placeholder="$t('URL...')">
-        <button 
-          type="button"
-          class="ui button"
-          v-bind:class="{disabled: (isAddable === false)}"
-          v-on:click="addItem">
-          <i class="plus icon"></i>
-        </button>
-      </div>
-    </div>
-  </div>
+  
+  
+  
 </div>

@@ -5210,6 +5210,7 @@ ${links}`
           }
           
           let sortableObjects = {}
+          
           let setupSotable = (ele, group) => {
             let tagName = ele.tagName
             if (!sortableObjects[tagName]) {
@@ -5225,6 +5226,9 @@ ${links}`
               multiDrag: true, // Enable multi-drag
               selectedClass: 'sortable-selected', // The class applied to the selected items
               fallbackTolerance: 3, // So that we can select items on mobile
+              onUpdate: () => {
+                this.context.triggerEvent('change', this.$editable.html());
+              }
             })
             sortableObjects[tagName].push(sortable)
           }
@@ -5575,6 +5579,8 @@ ${links}`
           this.toggleSortMode = function () {
             //console.log('aaa', _this.$editable.prop('contentEditable'))
             let buttons = _this.$editor.find('.note-toolbar .note-btn-group > .note-btn:not(.note-toggle-sort-mode)')
+            
+            // 以下是啟動拖曳模式
             if (_this.$editable.prop('contentEditable') === 'true') {
               _this.saveRange()
               _this.$editable.prop('contentEditable', 'false')

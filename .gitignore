@@ -4,3 +4,4 @@
 /node_modules/
 /dist/*.tmp
 /src/components/[[]trash/
+/src/components/vendors/summernote/.trash/

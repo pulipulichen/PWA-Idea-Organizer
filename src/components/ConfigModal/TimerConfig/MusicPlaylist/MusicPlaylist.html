@@ -83,6 +83,14 @@
               </button>
               <button 
                 type="button"
+                class="ui button set-play"
+                v-on:click="openURL(item.url)"
+                v-bind:class="{disabled: (isValidedURL(item.url) === false)}"
+                ref="MusicPlaylistItemOpenButton">
+                <i class="external square alternate icon"></i>
+              </button>
+              <button 
+                type="button"
                 class="ui button remove-item"
                 v-on:click="removeItem(i)">
                 <i class="times icon"></i>

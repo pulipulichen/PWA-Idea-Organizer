@@ -130,6 +130,9 @@ let MusicPlaylist = {
       this.$parent.$parent.hide()
       this.$parent.$parent.$parent.$refs.TomatoTimer.playTimer()
     },
+    openURL (url) {
+      window.open(url, '_blank')
+    },
     onMusicPlaylistChange () {
       //console.log('111')
       //console.log(this.syncConfig.musicPlaylist)

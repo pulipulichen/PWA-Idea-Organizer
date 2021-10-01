@@ -113,9 +113,12 @@
     width: 38px;
     padding: 0;
     color: #F7958E;
-    position: relative;
-    top: 7px;
+    //position: static;
+    //top: 7px;
     cursor: pointer;
+    
+    position: relative;
+    top: -15px;
   }
 
   #pause,
@@ -123,18 +126,23 @@
     outline: none;
     background: transparent;
     border: none;
-    margin-top: 10px;
+    //margin-top: 10px;
     width: 33px;
     height: 50px;
-    position: relative;
+    //position: relative;
     cursor: pointer;
     padding: 0;
+    display: inline-block;
+  }
+  
+  .controller {
+    //border: 1px solid red;
   }
 
   .play::before {
     display: block;
     content: "";
-    position: absolute;
+    position: static;
     top: 8px;
     left: 0px;
     border-top: 15px solid transparent;
@@ -147,7 +155,7 @@
   .reset::before {
     display: block;
     content: "";
-    position: absolute;
+    position: static;
     top: 8px;
     //left: 16px;
     left: 0px;
@@ -158,7 +166,7 @@
 
   .pause::after {
     content: "";
-    position: absolute;
+    position: static;
     top: 8px;
     //left: 12px;
     left: 0px;

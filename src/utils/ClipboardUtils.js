@@ -34,3 +34,5 @@ ClipboardUtils = {
     document.body.removeChild(textArea);
   },
 }
+
+module.exports = ClipboardUtils

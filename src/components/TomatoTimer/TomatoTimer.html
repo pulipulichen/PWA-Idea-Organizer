@@ -43,8 +43,9 @@
       <div class="display-remain-time" 
            ref="DisplayRemainTime"
            v-on:click="playOrPauseTimer">00:25</div>
-      <div class="controller">
-        <a class="mute-controller" 
+      <div class="controller"
+      v-bind:class="{isPaused: isPaused}">
+        <a class="button play-controller" 
            v-bind:href="syncConfig.musicURL"
            v-bind:title="musicTitle"
            v-on:click="openMusicPlaylist"
@@ -52,14 +53,22 @@
           <i class="music icon"></i>
         </a>
 
-        <div class="mute-controller" 
+        <span class="button copy-controller" 
+           v-bind:title="musicTitle"
+           v-on:click="copyMusicURL">
+          <i class="copy icon"></i>
+        </span>
+
+        <div class="button mute-controller" 
              v-on:click="isVolumeMute = !isVolumeMute">
           <i class="volume up icon" v-if="isVolumeMute === false"></i>
           <i class="volume off icon" v-if="isVolumeMute === true"></i>
         </div>
+        
+        <br />
 
-        <button type="button" class="play" id="pause" ref="Pause" v-on:click="playOrPauseTimer"></button>
-        <button type="button" class="reset" v-on:click="resetTimer" v-if="isPaused"></button>
+        <span class="button play" id="pause" ref="Pause" v-on:click="playOrPauseTimer"></span>
+        <span class="button reset" v-on:click="resetTimer" v-if="isPaused"></span>
       </div>
       
       

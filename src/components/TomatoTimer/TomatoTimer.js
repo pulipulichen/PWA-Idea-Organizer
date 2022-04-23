@@ -321,6 +321,14 @@ let TomatoTimer = {
       event.stopPropagation()
       
       this.$parent.$refs.ConfigModal.openMusicPlaylist()
+    },
+    copyMusicURL () {
+      console.log(this.utils.ClipboardUtils.copyPlainString)
+      let text = `#PULI_WORK
+
+${this.syncConfig.musicURL}`
+
+      this.utils.ClipboardUtils.copyPlainString(text)
     }
   } // methods
 }

@@ -79,9 +79,22 @@ let MusicPlaylist = {
       return true
     }
   },
-//  mounted () {
-//    //console.log(this.syncConfig.musicPlaylist)
-//  },
+  mounted () {
+    //console.log(this.syncConfig.musicPlaylist)
+       // this.init()
+    //console.log('go')
+
+    // let defaultYouTubeLink = 'https://www.youtube.com/watch?v=I1-zm1H4VvA'
+    let defaultYouTubeLink = this.getPlayQuery()
+
+    if (defaultYouTubeLink) {
+      setTimeout(() => {
+        //this.youtubeURL = defaultYouTubeLink
+        //this.play()
+        this.setPlay(defaultYouTubeLink)
+      }, 3000)
+    }
+  },
   methods: {
     isMatchPlayingURL (url) {
       url = url.trim()
@@ -172,6 +185,18 @@ let MusicPlaylist = {
       let youtubeID = YouTubeVideoIDParser(url)
       //console.log(url, youtubeID)
       return (youtubeID !== false)
+    },
+    getPlayQuery () {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      let play = urlParams.get('play')
+      play = decodeURIComponent(play)
+      if (YouTubeVideoIDParser(play)) {
+        return play
+      }
+      else {
+        return false
+      }
     }
   } // methods
 }

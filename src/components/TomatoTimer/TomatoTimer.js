@@ -237,10 +237,12 @@ let TomatoTimer = {
         this.pauseBtn.classList.remove('play');
         this.pauseBtn.classList.add('pause');
 
-        this.setterBtns.forEach(function (btn) {
-          btn.disabled = true;
-          btn.style.opacity = 0.5;
-        });
+        if (this.setterBtns && this.setterBtns.forEach) {
+          this.setterBtns.forEach(function (btn) {
+            btn.disabled = true;
+            btn.style.opacity = 0.5;
+          });
+        }
       } 
       else if (this.isPaused) {
         this.pauseBtn.classList.remove('play');

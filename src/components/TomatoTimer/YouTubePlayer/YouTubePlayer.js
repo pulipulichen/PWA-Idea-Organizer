@@ -100,9 +100,9 @@ let YoutubePlayer = {
   }, 
  */
  
-//  mounted () {
-//    this.init()
-//  },
+  // mounted () {
+ 
+  // },
   methods: {
     init() {
       if (this.inited === true) {
@@ -132,10 +132,10 @@ let YoutubePlayer = {
           //console.log(122)
            
            this.player = new window.YT.Player(id, {
-            height: '1',
-            width: '1',
-            //height: '150',
-            //width: '300',
+            // height: '1',
+            // width: '1',
+            height: '200',
+            width: '320',
             playerVars: { 
               'autoplay': 0, 
               'controls': 1,

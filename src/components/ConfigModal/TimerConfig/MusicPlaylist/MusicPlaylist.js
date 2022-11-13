@@ -120,12 +120,14 @@ let MusicPlaylist = {
       
       this.syncConfig.musicPlaylist.splice(i, 1)
     },
-    setPlay (url) {
+    setPlay (url, start, end) {
       url = url.trim()
       if (url === '') {
         return false
       }
       this.syncConfig.musicURL = url
+      this.syncConfig.musicVideoStart = start
+      this.syncConfig.musicVideoEnd = end
       
       // 重新調整順序
       this.syncConfig.musicPlaylist.sort((a, b) => {

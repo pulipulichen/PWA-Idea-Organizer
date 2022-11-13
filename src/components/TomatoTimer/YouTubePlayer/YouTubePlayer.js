@@ -2,7 +2,7 @@ import './vendors/youtube-iframe-player-api/iframe_api.js'
 import YouTubeVideoIDParser from './youtube-video-id-parser.js'
 
 let YoutubePlayer = {
-  props: ['display', 'youtubeURL', 'volume', 'isMute', 'isPause'],
+  props: ['display', 'youtubeURL', 'volume', 'isMute', 'isPause', 'videoEnd', 'videoStart'],
   data() {    
     //this.$i18n.locale = this.config.locale
     return {
@@ -116,7 +116,7 @@ let YoutubePlayer = {
         let id 
         let inited = false
         while (true) {
-          id = 'YouTubePlayer' + (new Date).getTime()
+          id = 'YouTubePlayer' + (new Date()).getTime()
           if (!document.getElementById(id)) {
             break
           }
@@ -131,7 +131,7 @@ let YoutubePlayer = {
         let onYouTubeIframeAPIReady = () => {
           //console.log(122)
            
-           this.player = new window.YT.Player(id, {
+          let options = {
             // height: '1',
             // width: '1',
             height: '200',
@@ -141,6 +141,7 @@ let YoutubePlayer = {
               'controls': 1,
               showinfo: 0,
               branding: 0,
+              // end: 5,
               rel: 0,
             },
             //videoId: 'M7lc1UVf-VE',
@@ -149,7 +150,17 @@ let YoutubePlayer = {
               'onReady': onPlayerReady,
               'onStateChange': onPlayerStateChange
             }
-          })
+          }
+
+          if (this.videoStart) {
+            options.playerVars.start = Number(this.videoStart)
+          }
+
+          if (this.videoEnd) {
+            options.playerVars.end = Number(this.videoEnd)
+          }
+
+          this.player = new window.YT.Player(id, options)
           //console.log(222)
         }
 
@@ -240,6 +251,11 @@ let YoutubePlayer = {
       
       //console.log(this.player)
       this.player.setVolume(this.volumeNumber)
+      if (this.videoStart) {
+        this.player.seekTo(Number(this.videoStart), true)
+        // console.log(Number(this.videoStart))
+      }
+
       //console.log(this.isMute)
       if (this.isMute === false) {
         this.player.unMute()

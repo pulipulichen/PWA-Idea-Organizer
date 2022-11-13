@@ -43,11 +43,11 @@
              v-show="isMatchSearchKeyword(item.title)"
              v-bind:class="{playing: isMatchPlayingURL(item.url), playable: isValidedURL(item.url)}"
              class="inline fields playlist-item">
-          <div class="six wide field"
+          <div class="four wide field"
                ref="MusicPlaylistItem">
             <i class="bars handle icon"></i>
             
-            <div class="ui action input">
+            <div class="ui input">
             <input 
               type="text"
               class="item-title"
@@ -64,18 +64,33 @@
               </a>
             </div>
           </div>
-          <div class="ten wide field">
-            <div class="ui action input">
+          <div class="twelve wide field">
+            <div class="ui input">
               <input 
                 type="url"
                 class="item-url"
                 v-model="item.url"
-                v-bind:placeholder="$t('URL...')">
-              
+                v-bind:placeholder="$t('URL...')" />
+            </div>
+            <div class="ui input">
+              <input
+                type="number"
+                class="item-video-start"
+                v-model="item.videoStart"
+                v-bind:placeholder="0" />
+            </div>
+            <div class="ui input">
+              <input
+                type="number"
+                class="item-video-end"
+                v-model="item.videoEnd"
+                v-bind:placeholder="-1" />
+            </div>
+            <div class="ui compact buttons">
               <button 
                 type="button"
                 class="ui button set-play"
-                v-on:click="setPlay(item.url)"
+                v-on:click="setPlay(item.url, item.videoStart, item.videoEnd)"
                 v-bind:class="{green: isMatchPlayingURL(item.url), disabled: (isValidedURL(item.url) === false)}"
                 v-bind:disabled="isMatchPlayingURL(item.url)"
                 ref="MusicPlaylistItemPlayButton">

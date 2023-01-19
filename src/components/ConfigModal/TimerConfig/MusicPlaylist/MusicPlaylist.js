@@ -50,16 +50,17 @@ let MusicPlaylist = {
     addURL () {
       let url = this.addURL.trim()
       //console.log(url, )
-      if (url === ''
-              || url.startsWith('http') === false
-              || url.split('/').length < 4
-              || url.indexOf('youtu') === -1) {
-        //console.log('false')
+      if (url === '' || 
+            url.startsWith('http') === false || 
+            url.split('/').length < 4 || 
+            url.indexOf('youtu') === -1) {
+        // console.log('addURL false')
         this.isAddable = false
         return false
       }
       
       let youtubeID = YouTubeVideoIDParser(url)
+      // console.log({youtubeID})
       if (youtubeID === false) {
         this.isAddable = false
         return false
@@ -69,8 +70,9 @@ let MusicPlaylist = {
         let item = this.syncConfig.musicPlaylist[i]
         //console.log(item)
         let itemYouTubeID = YouTubeVideoIDParser(item.url)
-        //console.log(itemYouTubeID)
+        
         if (itemYouTubeID === youtubeID) {
+          // console.log({itemYouTubeID})
           this.isAddable = false
           return false
         }

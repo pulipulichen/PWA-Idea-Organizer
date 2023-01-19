@@ -42,75 +42,89 @@
              v-bind:key="'mustic-playlist-' + i"
              v-show="isMatchSearchKeyword(item.title)"
              v-bind:class="{playing: isMatchPlayingURL(item.url), playable: isValidedURL(item.url)}"
-             class="inline fields playlist-item">
-          <div class="four wide field"
-               ref="MusicPlaylistItem">
-            <i class="bars handle icon"></i>
-            
-            <div class="ui input">
-            <input 
-              type="text"
-              class="item-title"
-              v-model="item.title"
-              v-on:change="onMusicPlaylistChange"
-              v-bind:placeholder="$t('Music title...')">
-            
-              <a 
-                v-bind:href="item.url"
-                target="_blank"
-                class="ui button link-item"
-                v-bind:class="{green: isMatchPlayingURL(item.url)}">
-                <i class="external alternate icon"></i>
-              </a>
+             class="ui grid playlist-item">
+          <div class="row inline field">
+            <div class="one wide field input">
+              <i class="bars handle icon"></i>
+             </div>
+            <div class="eight wide field input"
+                 ref="MusicPlaylistItem">
+              
+              
+              <div class="ui fluid input">
+              <input 
+                type="text"
+                class="item-title"
+                v-model="item.title"
+                v-on:change="onMusicPlaylistChange"
+                v-bind:placeholder="$t('Music title...')">
+              
+                <a 
+                  v-bind:href="item.url"
+                  target="_blank"
+                  class="ui button link-item"
+                  v-bind:class="{green: isMatchPlayingURL(item.url)}">
+                  <i class="external alternate icon"></i>
+                </a>
+              </div>
+            </div>
+            <div class="six wide field ">
+              <div class="ui fluid input">
+                <input 
+                  type="url"
+                  class="item-url"
+                  v-model="item.url"
+                  v-bind:placeholder="$t('URL...')" />
+              </div>
             </div>
           </div>
-          <div class="twelve wide field">
-            <div class="ui input">
-              <input 
-                type="url"
-                class="item-url"
-                v-model="item.url"
-                v-bind:placeholder="$t('URL...')" />
+          <div class="row ">
+            <div class="four wide field">
+              <div class="ui fluid input">
+                  <input
+                    type="text"
+                    class="item-video-start"
+                    v-model="item.videoStart"
+                    v-bind:placeholder="0" />
+                </div>
             </div>
-            <div class="ui input">
-              <input
-                type="number"
-                class="item-video-start"
-                v-model="item.videoStart"
-                v-bind:placeholder="0" />
+            <div class="four wide field">
+              <div class="ui fluid input">
+                  <input
+                    type="text"
+                    class="item-video-end"
+                    v-model="item.videoEnd"
+                    v-bind:placeholder="-1" />
+                </div>
             </div>
-            <div class="ui input">
-              <input
-                type="number"
-                class="item-video-end"
-                v-model="item.videoEnd"
-                v-bind:placeholder="-1" />
+            <div class="eight wide field">
+              <div class="ui fluid compact buttons">
+                <button 
+                  type="button"
+                  class="ui button set-play"
+                  v-on:click="setPlay(item.url, item.videoStart, item.videoEnd)"
+                  v-bind:class="{green: isMatchPlayingURL(item.url), disabled: (isValidedURL(item.url) === false)}"
+                  v-bind:disabled="isMatchPlayingURL(item.url)"
+                  ref="MusicPlaylistItemPlayButton">
+                  <i class="play icon"></i>
+                </button>
+                <button 
+                  type="button"
+                  class="ui button set-play"
+                  v-on:click="openURL(item.url)"
+                  v-bind:class="{disabled: (isValidedURL(item.url) === false)}"
+                  ref="MusicPlaylistItemOpenButton">
+                  <i class="external square alternate icon"></i>
+                </button>
+                <button 
+                  type="button"
+                  class="ui button remove-item"
+                  v-on:click="removeItem(i)">
+                  <i class="times icon"></i>
+                </button>
+              </div>
             </div>
-            <div class="ui compact buttons">
-              <button 
-                type="button"
-                class="ui button set-play"
-                v-on:click="setPlay(item.url, item.videoStart, item.videoEnd)"
-                v-bind:class="{green: isMatchPlayingURL(item.url), disabled: (isValidedURL(item.url) === false)}"
-                v-bind:disabled="isMatchPlayingURL(item.url)"
-                ref="MusicPlaylistItemPlayButton">
-                <i class="play icon"></i>
-              </button>
-              <button 
-                type="button"
-                class="ui button set-play"
-                v-on:click="openURL(item.url)"
-                v-bind:class="{disabled: (isValidedURL(item.url) === false)}"
-                ref="MusicPlaylistItemOpenButton">
-                <i class="external square alternate icon"></i>
-              </button>
-              <button 
-                type="button"
-                class="ui button remove-item"
-                v-on:click="removeItem(i)">
-                <i class="times icon"></i>
-              </button>
-            </div>
+              
           </div>
         </div>
       </transition-group>

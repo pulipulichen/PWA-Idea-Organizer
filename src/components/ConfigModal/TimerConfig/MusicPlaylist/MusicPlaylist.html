@@ -132,6 +132,18 @@
 
   </div>
   
-  
+  <div class="inline field hidden-in-small-screen">
+    <div class="ui checkbox">
+      <input 
+        type="checkbox" 
+        tabindex="0" 
+        id="musicPlayListDisplayVideo"
+        class="hidden"
+        v-model="clientConfig.displayVideo" />
+      <label for="musicPlayListDisplayVideo">
+        {{ $t('Display Video') }}
+      </label>
+    </div>
+  </div>
   
 </div>

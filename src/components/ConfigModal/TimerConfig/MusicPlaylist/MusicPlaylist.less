@@ -10,6 +10,9 @@
 
 .playlist {
   max-height: calc(100vh - 30rem);
+  @media only screen and (max-height: 900px) {
+    max-height: calc(100vh - 20rem);
+  }
   overflow-y: auto;
   overflow-x: hidden;
   margin-bottom: 0.5rem;

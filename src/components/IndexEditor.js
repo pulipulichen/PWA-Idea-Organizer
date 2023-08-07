@@ -208,7 +208,7 @@ export default function (Index) {
   Index.methods.buildToggleWidgetsButton = function () {
     //console.log('buildConfigModalButton')
     //return null
-    let contents = '<i class="cog icon"></i>'
+    let contents = '<i class="clock icon"></i>'
     let tooltip = this.$t('Toggle Widgets')
     let click = () => {
       this.clientConfig.displayWidgets = !this.clientConfig.displayWidgets 

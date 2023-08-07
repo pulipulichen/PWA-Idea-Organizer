@@ -95,9 +95,9 @@ let TomatoTimer = {
       localStorage.setItem('BGMVolume', this.BGMVolume)
       this.isVolumeMute = false
     },
-    'clientConfig.displayWidgets' () {
-      this.resetTimer()
-    }
+    // 'clientConfig.displayWidgets' () {
+    //   this.resetTimer()
+    // }
   },
   async mounted () {
     this.BGMVolume = localStorage.getItem('BGMVolume')

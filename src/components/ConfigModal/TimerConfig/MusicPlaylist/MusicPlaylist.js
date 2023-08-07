@@ -53,30 +53,46 @@ let MusicPlaylist = {
       if (url === '' || 
             url.startsWith('http') === false || 
             url.split('/').length < 4 || 
-            url.indexOf('youtu') === -1) {
+            (url.indexOf('youtu') === -1 && url.indexOf('googl') === -1)) {
         // console.log('addURL false')
         this.isAddable = false
         return false
       }
       
-      let youtubeID = YouTubeVideoIDParser(url)
-      // console.log({youtubeID})
-      if (youtubeID === false) {
-        this.isAddable = false
-        return false
-      }
-      for (let i = 0; i < this.syncConfig.musicPlaylist.length; i++) {
-        //console.log(i)
-        let item = this.syncConfig.musicPlaylist[i]
-        //console.log(item)
-        let itemYouTubeID = YouTubeVideoIDParser(item.url)
-        
-        if (itemYouTubeID === youtubeID) {
-          // console.log({itemYouTubeID})
+      if (url.indexOf('youtu') > -1) {
+        let youtubeID = YouTubeVideoIDParser(url)
+        // console.log({youtubeID})
+        if (youtubeID === false) {
           this.isAddable = false
           return false
         }
+
+        for (let i = 0; i < this.syncConfig.musicPlaylist.length; i++) {
+          //console.log(i)
+          let item = this.syncConfig.musicPlaylist[i]
+          //console.log(item)
+          let itemYouTubeID = YouTubeVideoIDParser(item.url)
+          
+          if (itemYouTubeID === youtubeID) {
+            // console.log({itemYouTubeID})
+            this.isAddable = false
+            return false
+          }
+        }
       }
+      else {
+        for (let i = 0; i < this.syncConfig.musicPlaylist.length; i++) {
+          //console.log(i)
+          let item = this.syncConfig.musicPlaylist[i]
+          
+          if (item.url === url) {
+            // console.log({itemYouTubeID})
+            this.isAddable = false
+            return false
+          }
+        }
+      }
+       
       this.isAddable = true
       return true
     }

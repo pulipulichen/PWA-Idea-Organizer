@@ -26,6 +26,7 @@ let Index = {
       toastr: null,
       inited: false,
       isBlockExit: false,
+      hasPinned: false,
       //googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
     }
   },

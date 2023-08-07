@@ -1,4 +1,5 @@
-<div class="editor-container">
+<div class="editor-container"
+  :class="{pinned: (hasPinned)}">
   <exit-blocker 
     class="exit-blocker"
     v-on:click="syncNow"

@@ -5,6 +5,8 @@
 <style src="./IndexEditorContent.less" lang="less" scoped></style>
 <style src="./IndexEditorContent.mobile.less" lang="less" scoped></style>
 
+<style src="./IndexEditorNotePin.less" lang="less" scoped></style>
+
 <style src="./IndexEditorMargin.less" lang="less" scoped></style>
 <style src="./IndexEditorGlobal.less" lang="less"></style>
 <style src="./IndexWaitLoading.less" lang="less" scoped></style>

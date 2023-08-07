@@ -5551,8 +5551,15 @@ ${links}`
             let pinElement = $$1(this).clone()
             
             if (pinElement.prop('tagName').toLowerCase() === 'li') {
-              pinElement = $$1(`<ul><li>${pinElement.html()}</li></ul>`)
+              pinElement = $$1(`<ul><li>${pinElement.text().trim()}</li></ul>`)
             }
+
+            // console.log(pinContent)
+            // console.log(pinContent.html(), pinElement.html())
+            if (pinContent.html().indexOf(pinElement.html().trim()) > -1) {
+                return false
+            }
+            
             
             pinElement.dblclick(function() {
               _this.removePin($$1(this))
@@ -6522,7 +6529,15 @@ ${links}`
           }
           
           this.removePin = (element) => {
+            if (element.text().trim() === '') {
+                return false
+            }  
             if (window.confirm(this.lang.font.removePinConfirm + '\n' + element.text())) {
+            //   console.log(element)
+            //   return false
+              if (element.prop('tagName').toLowerCase() === 'ul') {
+                element = element.children()
+              }
               element.remove()
               if (this.$pin.hasClass('expanded') 
                       && pinContent.children().length === 0) {
@@ -6541,7 +6556,7 @@ ${links}`
             
             //_this.context.triggerEvent('pinChange', pinContent.html());
             if (typeof(_this.context.options.callbacks.pinChange) === 'function') {
-              _this.context.options.callbacks.pinChange(pinContent.html())
+              _this.context.options.callbacks.pinChange(pinContent.text())
             }
           }
           this.initPin()

@@ -19,6 +19,10 @@ export default function (Index) {
       this.enableChange = true
     }, 100)
     
+    let pinned = localStorage.getItem('summernote.pinned')
+    if ($(pinned).text().trim() !== '') {
+      this.hasPinned = true
+    }
   }
   
   Index.methods._summernoteOptions = function () {
@@ -106,7 +110,7 @@ export default function (Index) {
     ]
   }
   
-  let hasPinned = false
+  
   Index.methods._callbacksOnChange = function (contents) {
     //console.log(enableChange)
     if (this.enableChange === false) {
@@ -115,7 +119,7 @@ export default function (Index) {
 
     //console.log(contents)
     //console.log('onChange:', contents, $editable);
-    if (hasPinned === false) {
+    if (this.hasPinned === false) {
       this.setDocumentTitle(contents)
     }
     localStorage.setItem('contents', contents)
@@ -124,7 +128,7 @@ export default function (Index) {
   }
   
   Index.methods._callbacksOnPinChange = function (contents) {
-    console.log(contents)
+    // console.log(contents)
     
     //console.log(enableChange)
     if (this.enableChange === false) {
@@ -132,9 +136,12 @@ export default function (Index) {
     }
 
     if (contents.trim() === '') {
-      hasPinned = false
+      this.hasPinned = false
       this.setDocumentTitle(this.contents)
       return false
+    }
+    else {
+      this.hasPinned = true
     }
 
     //console.log(contents)

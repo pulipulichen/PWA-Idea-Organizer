@@ -4,7 +4,8 @@ let syncConfig = {
   musicURL: 'https://www.youtube.com/watch?v=I1-zm1H4VvA',
   musicVideoStart: null,
   musicVideoEnd: null,
-  musicPlaylist: []
+  musicPlaylist: [],
+  musicType: 'youtube',
   /*
   musicPlaylist: [
     {

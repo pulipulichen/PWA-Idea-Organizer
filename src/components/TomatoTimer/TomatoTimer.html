@@ -2,7 +2,7 @@
      v-bind:class="clientConfig.timerSize">
   <youtube-player 
     ref="BGMPlayer" 
-    v-if="isYouTubePlayer"
+    v-if="syncConfig.musicType === 'youtube'"
     v-bind:youtubeURL="syncConfig.musicURL"
     v-bind:display="false"
     v-bind:volume="BGMVolume"
@@ -12,14 +12,6 @@
     v-bind:videoEnd="syncConfig.musicVideoEnd"
     v-show="clientConfig.displayVideo"
     ></youTube-player>
-
-  <HTMLVideoPlayer 
-    ref="HTMLVideoPlayer"
-    v-if="isHTMLVideoPlayer"
-    :syncConfig="syncConfig"
-    :clientConfig="clientConfig"
-    v-show="clientConfig.displayVideo">
-  </HTMLVideoPlayer>
   
   <div class="container">
     <div class="setters"
@@ -60,14 +52,20 @@
       v-bind:class="{isPaused: isPaused}">
         <a class="button play-controller" 
            v-bind:href="syncConfig.musicURL"
-           v-bind:title="musicTitle"
+           v-bind:title="$t('Music URL')"
            v-on:click="openMusicPlaylist"
            target="bgm">
           <i class="music icon"></i>
         </a>
 
         <span class="button copy-controller" 
-           v-bind:title="musicTitle"
+           v-bind:title="$t('Open Music URL')"
+           v-on:click="openMusicURL">
+          <i class="external square alternate icon"></i>
+        </span>
+
+        <span class="button copy-controller" 
+           v-bind:title="$t('Copy Music')"
            v-on:click="copyMusicURL">
           <i class="copy icon"></i>
         </span>

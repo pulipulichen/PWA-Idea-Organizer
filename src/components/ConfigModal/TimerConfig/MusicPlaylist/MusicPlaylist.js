@@ -9,6 +9,7 @@ let MusicPlaylist = {
       searchKeyword: '',
       addTitle: '',
       addURL: '',
+      addType: 'youtube',
       isAddable: false
     }
   },
@@ -138,7 +139,7 @@ let MusicPlaylist = {
       
       this.syncConfig.musicPlaylist.splice(i, 1)
     },
-    setPlay (url, start, end) {
+    setPlay (url, start, end, type) {
       url = url.trim()
       if (url === '') {
         return false
@@ -146,6 +147,11 @@ let MusicPlaylist = {
       this.syncConfig.musicURL = url
       this.syncConfig.musicVideoStart = start
       this.syncConfig.musicVideoEnd = end
+
+      if (!type) {
+        type = 'youtube'
+      }
+      this.syncConfig.musicType = type
       
       // 重新調整順序
       this.syncConfig.musicPlaylist.sort((a, b) => {
@@ -168,7 +174,7 @@ let MusicPlaylist = {
     },
     onMusicPlaylistChange () {
       //console.log('111')
-      //console.log(this.syncConfig.musicPlaylist)
+      // console.log(this.syncConfig.musicPlaylist)
       this.syncConfig.musicPlaylist = this.syncConfig.musicPlaylist.concat([])
       //console.log(this.syncConfig.musicPlaylist)
     },
@@ -176,11 +182,13 @@ let MusicPlaylist = {
       //console.log(this.syncConfig.musicPlaylist)
       this.syncConfig.musicPlaylist.unshift({
         title: this.addTitle,
-        url: this.addURL
+        url: this.addURL,
+        type: this.addType
       })
       
       this.addTitle = ''
       this.addURL = ''
+      
       
       setTimeout(() => {
         //console.log(this.$refs.MusicPlaylistItem[0], this.$refs.MusicPlaylistItemPlayButton[0])
@@ -202,9 +210,12 @@ let MusicPlaylist = {
       if (url === '') {
         return false
       }
-      let youtubeID = YouTubeVideoIDParser(url)
-      //console.log(url, youtubeID)
-      return (youtubeID !== false)
+
+      // let youtubeID = YouTubeVideoIDParser(url)
+      // //console.log(url, youtubeID)
+      // return (youtubeID !== false)
+
+      return true
     },
     getPlayQuery () {
       const queryString = window.location.search;

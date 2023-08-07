@@ -247,11 +247,15 @@ export default function(app) {
   }
 
   app.methods.copyMusicURL = function () {
-    console.log(this.utils.ClipboardUtils.copyPlainString)
+    // console.log(this.utils.ClipboardUtils.copyPlainString)
     let text = `#PULI_WORK
 
 ${this.syncConfig.musicURL}`
 
     this.utils.ClipboardUtils.copyPlainString(text)
+  }
+
+  app.methods.openMusicURL = function () {
+    this.utils.PopupUtils.openURLFullscreen(this.syncConfig.musicURL)
   }
 }

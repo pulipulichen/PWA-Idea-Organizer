@@ -1,6 +1,14 @@
 <div class="MusicPlaylist">
   
   <div class="inline fields playlist-item add-item">
+    <div class="four wide field">
+      <select v-model="addType">
+        <option value="youtube">{{ $t('YouTube') }}</option>
+        <option value="video/mp4">{{ $t('video/mp4') }}</option>
+        <option value="audio/mp3">{{ $t('audio/mp3') }}</option>
+        <option value="link">{{ $t('Link') }}</option>
+      </select>
+    </div>
     <div class="six wide field">
       <input 
         type="text"
@@ -8,7 +16,7 @@
         v-on:change="onMusicPlaylistChange"
         v-bind:placeholder="$t('Add Music title...')">
     </div>
-    <div class="ten wide field">
+    <div class="six wide field">
       <div class="ui action input">
         <input 
           type="url" 
@@ -47,7 +55,7 @@
             <div class="one wide field input">
               <i class="bars handle icon"></i>
              </div>
-            <div class="eight wide field input"
+            <div class="six wide field input"
                  ref="MusicPlaylistItem">
               
               
@@ -68,7 +76,7 @@
                 </a>
               </div>
             </div>
-            <div class="six wide field ">
+            <div class="four wide field ">
               <div class="ui fluid input">
                 <input 
                   type="url"
@@ -76,6 +84,15 @@
                   v-model="item.url"
                   v-bind:placeholder="$t('URL...')" />
               </div>
+            </div>
+            <div class="four wide field">
+              <select v-model="item.type"
+                v-on:change="onMusicPlaylistChange">
+                <option value="youtube">{{ $t('YouTube') }}</option>
+                <option value="video/mp4">{{ $t('video/mp4') }}</option>
+                <option value="audio/mp3">{{ $t('audio/mp3') }}</option>
+                <option value="link">{{ $t('Link') }}</option>
+              </select>
             </div>
           </div>
           <div class="row ">
@@ -102,7 +119,7 @@
                 <button 
                   type="button"
                   class="ui button set-play"
-                  v-on:click="setPlay(item.url, item.videoStart, item.videoEnd)"
+                  v-on:click="setPlay(item.url, item.videoStart, item.videoEnd, item.type)"
                   v-bind:class="{green: isMatchPlayingURL(item.url), disabled: (isValidedURL(item.url) === false)}"
                   v-bind:disabled="isMatchPlayingURL(item.url)"
                   ref="MusicPlaylistItemPlayButton">

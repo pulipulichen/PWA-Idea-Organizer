@@ -125,6 +125,10 @@ let YoutubePlayer = {
           }
         }
         
+        if (!this.$refs.Main) {
+          return false
+        }
+
         this.$refs.Main.id = id
            
         //console.log(111)

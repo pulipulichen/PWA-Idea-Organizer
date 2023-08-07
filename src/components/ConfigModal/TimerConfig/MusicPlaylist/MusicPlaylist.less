@@ -6,6 +6,25 @@
 
 .playlist-item {
   user-select: none;
+
+  .ui.fluid.input.labeled {
+    input.item-title {
+      width: calc(100% - 4rem) !important;
+    }
+
+    .ui.label {
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+
+      img {
+        visibility: hidden;
+        max-width: 2rem !important;
+        max-height: 1rem !important;
+        height: auto !important;
+      }
+    }
+  }
 }
 
 .playlist {
@@ -59,4 +78,9 @@ input[type="number"] {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+}
+
+.type-select img {
+  max-height: 1rem;
+  width: auto;
 }

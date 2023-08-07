@@ -59,16 +59,19 @@
              </div>
             <div class="six wide field input"
                  ref="MusicPlaylistItem">
-              
-              
-              <div class="ui fluid input">
-              <input 
-                type="text"
-                class="item-title"
-                v-model="item.title"
-                v-on:change="onMusicPlaylistChange"
-                v-bind:placeholder="$t('Music title...')">
-              
+              <div class="ui fluid input"
+                :class="{labeled: (item.type === 'youtube')}">
+                <div class="ui label"
+                  v-if="(item.type == 'youtube')"
+                  :style="computedUILabelStyle(item.url)">
+                  <img :src="thumbnailURL(item.url)" />
+                </div>
+                <input 
+                  type="text"
+                  class="item-title"
+                  v-model="item.title"
+                  v-on:change="onMusicPlaylistChange"
+                  v-bind:placeholder="$t('Music title...')">
                 <a 
                   v-bind:href="item.url"
                   target="_blank"
@@ -89,6 +92,7 @@
             </div>
             <div class="four wide field">
               <select v-model="item.type"
+                class="type-select"
                 v-on:change="onMusicPlaylistChange">
                 <option value="youtube">{{ $t('YouTube') }}</option>
                 <option value="video/mp4">{{ $t('video/mp4') }}</option>

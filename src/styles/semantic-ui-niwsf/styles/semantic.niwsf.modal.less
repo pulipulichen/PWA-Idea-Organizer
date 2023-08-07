@@ -97,7 +97,10 @@
   //max-height: calc(100vh - 12vh - 2.5rem - 1.6em - 2rem - 1.5em - 1rem);  
   max-height: calc(100vh - @modalTop - @modalBottom - @mobileNavigationBarHeight - 8.5rem - 3.1em);
   overflow-y: auto;
-  
+  @media screen and (min-height: 900px) {
+    max-height: calc(100vh - 9.5rem - 3.1em);
+  }
+
   &> .full, .content-full-height {
     height: calc(100vh - @modalTop - @modalBottom - @mobileNavigationBarHeight - 12rem - 3.1em);
     overflow-x: hidden;

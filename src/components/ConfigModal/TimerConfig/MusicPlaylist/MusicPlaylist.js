@@ -241,6 +241,15 @@ let MusicPlaylist = {
       }
       // console.log(url, name)
       this.utils.PopupUtils.openURLFullscreen(url, name)
+    },
+    thumbnailURL (url) {
+      let youtubeID = YouTubeVideoIDParser(url)
+      return `https://i3.ytimg.com/vi/${youtubeID}/maxresdefault.jpg`
+    },
+    computedUILabelStyle (url) {
+      return {
+        'background-image': `url(${this.thumbnailURL(url)})`,
+      }
     }
   } // methods
 }

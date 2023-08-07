@@ -33,6 +33,8 @@
       </div>
     </div>
   </div>
+
+
   <div class="field">
     <div class="ui fluid input">
       <input type="text" 
@@ -147,6 +149,34 @@
       </transition-group>
     </draggable>
 
+  </div>
+
+  <div class="field converter">
+    <div class="ui input">
+      <input type="text" 
+        :placeholder="$t('Storage URL...')"
+        v-model="syncConfig.linkMusicStorageURL">
+      <div class="ui buttons">
+        <a :href="syncConfig.linkMusicStorageURL"
+          target="MusicStorageURL"
+          class="ui icon button"
+          @click.prevent.stop="popup">
+          <i class="external square alternate icon"></i>
+        </a>
+        <a href="https://yt1s.de/youtube-to-mp3?l=en"
+          target="y2mp3"
+          class="ui text-button button"
+          @click.prevent.stop="popup">
+          {{ $t('To MP3') }}
+        </a>
+        <a href="https://mp3cut.net/tw/"
+          target="cutter"
+          class="ui text-button button"
+          @click.prevent.stop="popup">
+          {{ $t('Cutter') }}
+        </a>
+      </div>
+    </div>
   </div>
   
   <div class="inline field hidden-in-small-screen">

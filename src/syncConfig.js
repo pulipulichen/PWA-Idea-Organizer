@@ -6,6 +6,7 @@ let syncConfig = {
   musicVideoEnd: null,
   musicPlaylist: [],
   musicType: 'youtube',
+  linkMusicStorageURL: `https://drive.google.com/drive/u/0/folders/1nBCKzdrQokYM0oYKlYoVTQuBzaz1NlMT?lfhs=2`
   /*
   musicPlaylist: [
     {

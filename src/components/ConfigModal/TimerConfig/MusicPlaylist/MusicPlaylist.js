@@ -228,6 +228,19 @@ let MusicPlaylist = {
       else {
         return false
       }
+    },
+    popup (url, name = '_blank') {
+      // console.log(url.target.target)
+      if (typeof(url) !== 'string') {
+        name = url.target.target
+        url = url.target.href
+      }
+
+      if (typeof(url) !== 'string') {
+        return false
+      }
+      // console.log(url, name)
+      this.utils.PopupUtils.openURLFullscreen(url, name)
     }
   } // methods
 }

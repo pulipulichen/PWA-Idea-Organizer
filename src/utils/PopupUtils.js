@@ -100,10 +100,10 @@ export default {
   sleep: function (ms = 50) {
     return new Promise(resolve => setTimeout(resolve, ms));
   },
-  openURLFullscreen (url) {
+  openURLFullscreen (url, name = '_blank') {
     // https://stackoverflow.com/a/189931
 
-    var popup = window.open(url, '_blank', "width="+screen.availWidth+",height="+screen.availHeight);
+    var popup = window.open(url, name, "width="+screen.availWidth+",height="+screen.availHeight);
     if (popup == null)
        alert('Please change your popup settings');
     else  {

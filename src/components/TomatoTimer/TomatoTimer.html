@@ -2,6 +2,7 @@
      v-bind:class="clientConfig.timerSize">
   <youtube-player 
     ref="BGMPlayer" 
+    v-if="isYouTubePlayer"
     v-bind:youtubeURL="syncConfig.musicURL"
     v-bind:display="false"
     v-bind:volume="BGMVolume"
@@ -11,6 +12,15 @@
     v-bind:videoEnd="syncConfig.musicVideoEnd"
     v-show="clientConfig.displayVideo"
     ></youTube-player>
+
+  <HTMLVideoPlayer 
+    ref="HTMLVideoPlayer"
+    v-if="isHTMLVideoPlayer"
+    :syncConfig="syncConfig"
+    :clientConfig="clientConfig"
+    v-show="clientConfig.displayVideo">
+  </HTMLVideoPlayer>
+  
   <div class="container">
     <div class="setters"
          v-if="(isStarted === false)">

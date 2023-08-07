@@ -23,7 +23,8 @@ export default function (Index) {
   
   Index.methods._summernoteOptions = function () {
     let buttons = {
-      ConfigModal: this.buildConfigModalButton()
+      ConfigModal: this.buildConfigModalButton(),
+      toggleWidgets: this.buildToggleWidgetsButton()
     }
     
     let options = {
@@ -86,7 +87,7 @@ export default function (Index) {
   }
   
   Index.methods._summernoteOptionsToolbar = function () {
-    let sort = ['toggleSortMode', 'pasteHTML']
+    let sort = ['toggleWidgets', 'toggleSortMode', 'pasteHTML']
     if (location.protocol !== 'https:' 
             && location.hostname !== 'localhost'
             && location.hostname !== '127.0.0.1') {
@@ -199,6 +200,18 @@ export default function (Index) {
     let tooltip = this.$t('Configuration')
     let click = () => {
       this.$refs.ConfigModal.show()
+    }
+    //console.log('buildConfigModalButton')
+    return this.buildButton(contents, tooltip, click)
+  }
+
+  Index.methods.buildToggleWidgetsButton = function () {
+    //console.log('buildConfigModalButton')
+    //return null
+    let contents = '<i class="cog icon"></i>'
+    let tooltip = this.$t('Toggle Widgets')
+    let click = () => {
+      this.clientConfig.displayWidgets = !this.clientConfig.displayWidgets 
     }
     //console.log('buildConfigModalButton')
     return this.buildButton(contents, tooltip, click)

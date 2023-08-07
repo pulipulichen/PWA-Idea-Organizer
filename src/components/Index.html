@@ -17,6 +17,7 @@
   <tomato-timer
     ref="TomatoTimer"
     v-if="syncConfig.enableTomatoTimer && inited"
+    v-show="clientConfig.displayWidgets"
     v-bind:toastr="toastr"
     v-bind:config="config"
     v-bind:utils="utils"

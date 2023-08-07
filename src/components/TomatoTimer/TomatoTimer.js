@@ -94,6 +94,9 @@ let TomatoTimer = {
     BGMVolume () {
       localStorage.setItem('BGMVolume', this.BGMVolume)
       this.isVolumeMute = false
+    },
+    'clientConfig.displayWidgets' () {
+      this.resetTimer()
     }
   },
   async mounted () {
@@ -175,7 +178,8 @@ let TomatoTimer = {
 
       this.intervalTimer = setInterval(() => {
         this.timeLeft = Math.round((remainTime - Date.now()) / 1000);
-        if (this.clientConfig.timerEnableTickingSound) {
+        if (this.clientConfig.timerEnableTickingSound && 
+            this.clientConfig.displayWidgets) {
           if (this.timeLeft % 2 === 0) {
             this.tickSound1Object.play()
           }

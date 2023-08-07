@@ -3,6 +3,7 @@ let clientConfig = {
   timerSize: 'larger',
   timerEnableTickingSound: true,
   enableTypeWriterSound: true,
+  displayWidgets: true
 }
 
 export default clientConfig

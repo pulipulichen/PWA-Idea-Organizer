@@ -27,6 +27,7 @@ let Index = {
       inited: false,
       isBlockExit: false,
       hasPinned: false,
+      pinExtendable: false,
       //googleSheetAPIURL: 'https://script.google.com/macros/s/AKfycbxN92FLWBYYjc4Q6dgxAMQEnaLa-ZhkkoxfsInXoNu4NnuQJ9Hs/exec'
     }
   },
@@ -41,7 +42,7 @@ let Index = {
   computed: {
     enableSync () {
       return (typeof(this.clientConfig.googleSheetAPIURL) === 'string')
-    }
+    },
   },
   watch: {
     // 轉移到 IndexWatchSync.js

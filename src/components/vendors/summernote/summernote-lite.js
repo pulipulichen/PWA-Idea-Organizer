@@ -5549,6 +5549,8 @@ ${links}`
             event.stopPropagation()
             
             let pinElement = $$1(this).clone()
+
+            pinElement.find('ul').remove()
             
             if (pinElement.prop('tagName').toLowerCase() === 'li') {
               pinElement = $$1(`<ul><li>${pinElement.text().trim()}</li></ul>`)
@@ -5572,9 +5574,9 @@ ${links}`
             pinContent.prepend(pinElement)
             _this.savePin()
             
-            _this.toastr.info(_this.lang.font.addPin1 
-                    + pinElement.text().trim() 
-                    + _this.lang.font.addPin2)
+            _this.toastr.info(_this.lang.font.addPin1 + 
+                pinElement.text().trim() + 
+                _this.lang.font.addPin2)
             
           }
           
@@ -6517,12 +6519,13 @@ ${links}`
             })
             //console.log(1)
             // 把歷史元素中的pin拿回來
+            let pinContent = this.$pin.find('.content')
             let pinned = localStorage.getItem('summernote.pinned')
             if (pinned) {
-              this.$pin.append(pinned)
+                pinContent.append(pinned)
             }
             //console.log(2)
-            this.$pin.children(':not(.handler)').dblclick(function () {
+            pinContent.children(':not(.handler)').dblclick(function () {
               _this.removePin($$1(this))
             })
             //console.log(3)
@@ -6551,12 +6554,18 @@ ${links}`
             //let pinned = this.$pin.clone()
             //pinned.find('.handler').remove()
             //pinned.find('.inited').removeClass('inited')
+            for (let i = 0; i < pinContent.children().length; i++) {
+                let child = pinContent.children().eq(i)
+                if (child.text().trim() === '') {
+                    child.remove()
+                }
+            }
             let pinnedHTML = pinContent.html()
             localStorage.setItem('summernote.pinned', pinnedHTML)
             
             //_this.context.triggerEvent('pinChange', pinContent.html());
             if (typeof(_this.context.options.callbacks.pinChange) === 'function') {
-              _this.context.options.callbacks.pinChange(pinContent.text())
+              _this.context.options.callbacks.pinChange(pinContent)
             }
           }
           this.initPin()

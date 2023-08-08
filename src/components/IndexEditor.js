@@ -20,8 +20,11 @@ export default function (Index) {
     }, 100)
     
     let pinned = localStorage.getItem('summernote.pinned')
-    if ($(pinned).text().trim() !== '') {
-      this.hasPinned = true
+    let $pinned = $(pinned)
+    this.hasPinned = ($pinned.text().trim() !== '')
+    this.pinExtendable = ($pinned.find('ul').length > 1)
+    if (this.hasPinned) {
+      this.setDocumentTitle(pinned)
     }
   }
   
@@ -127,7 +130,7 @@ export default function (Index) {
     this.contents = contents
   }
   
-  Index.methods._callbacksOnPinChange = function (contents) {
+  Index.methods._callbacksOnPinChange = function ($contents) {
     // console.log(contents)
     
     //console.log(enableChange)
@@ -135,7 +138,8 @@ export default function (Index) {
       return false
     }
 
-    if (contents.trim() === '') {
+    let contents = $contents.text().trim()
+    if (contents === '') {
       this.hasPinned = false
       this.setDocumentTitle(this.contents)
       return false
@@ -144,9 +148,12 @@ export default function (Index) {
       this.hasPinned = true
     }
 
-    //console.log(contents)
+    // console.log($contents.find('ul').length)
+    this.pinExtendable = ($contents.find('ul').length > 1)
+
+    // console.log(contents)
     //console.log('onChange:', contents, $editable);
-    this.setDocumentTitle(contents)
+    this.setDocumentTitle($contents.html())
     //localStorage.setItem('contents', contents)
     //this.saveToCloud(contents)
     //this.contents = contents
@@ -173,7 +180,7 @@ export default function (Index) {
     let output = []
     let title = ''
     let titleLimit = 50
-
+    // console.log(contents)
     let elements = $('<div>' + contents + '</div>').find('*')
     for (let i = 0; i < elements.length; i++) {
       let element = elements.eq(i)
@@ -195,7 +202,12 @@ export default function (Index) {
       }
     }
 
+    if (elements.length < 2) {
+      title = contents
+    }
+
     if (title.length > 0) {
+      // console.log(title)
       document.title = title
     }
   }

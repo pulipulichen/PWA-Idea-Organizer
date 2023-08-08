@@ -7,4 +7,12 @@
   &.pinned ::v-deep .note-pin {
     display: block;
   }
+
+  ::v-deep .note-pin .handler {
+    display: none;
+  }
+
+  &.pinExtendable ::v-deep .note-pin .handler {
+    display: block;
+  }
 }

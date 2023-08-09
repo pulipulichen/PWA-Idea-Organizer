@@ -22,6 +22,7 @@ export default function (Index) {
     let pinned = localStorage.getItem('summernote.pinned')
     let $pinned = $(pinned)
     this.hasPinned = ($pinned.text().trim() !== '')
+    // console.log($pinned.find('ul').length)
     this.pinExtendable = ($pinned.find('ul').length > 1)
     if (this.hasPinned) {
       this.setDocumentTitle(pinned)
@@ -39,7 +40,8 @@ export default function (Index) {
       lang: this.config.locale,
       //airMode: true,
       toolbar: this._summernoteOptionsToolbar(),
-      toolbarPosition: 'bottom',
+      // toolbarPosition: 'bottom',
+      toolbarPosition: 'top',
 //      popover: {
 //        air: [
 //          ['font', ['forecolor', 'backcolor', 'bold', 'underline', 'clear']]

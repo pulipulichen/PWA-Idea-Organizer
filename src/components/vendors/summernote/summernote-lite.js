@@ -5552,9 +5552,10 @@ ${links}`
 
             pinElement.find('ul').remove()
             
-            if (pinElement.prop('tagName').toLowerCase() === 'li') {
-              pinElement = $$1(`<ul><li>${pinElement.text().trim()}</li></ul>`)
-            }
+            // let tagName = pinElement.prop('tagName').toLowerCase()
+            // if ( === 'li') {
+            pinElement = $$1(`<ul><li>${pinElement.text().trim()}</li></ul>`)
+            // }
 
             // console.log(pinContent)
             // console.log(pinContent.html(), pinElement.html())
@@ -5563,7 +5564,9 @@ ${links}`
             }
             
             
-            pinElement.dblclick(function() {
+            pinElement.dblclick(function(e) {
+               e.preventDefault()
+               e.stopPropagation()
               _this.removePin($$1(this))
             })
             pinElement.removeClass('last-edited')

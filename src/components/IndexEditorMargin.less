@@ -6,6 +6,7 @@
     
     .note-editing-area {
       .note-editable {
+        padding-top: 1rem; 
         max-height: calc(100vh - @toolbarHeight - @pinBarHeight) !important;
       }
     }
@@ -17,7 +18,10 @@
     height: calc(100vh);
     
     .note-pin {
-      width: calc(100% - 2rem);
+      // width: calc(100% - 2rem);
+      width: 100%;
+      left: 0;
+      padding-left: calc(1.5rem + 1px);
       
       &> .handler {
         right: 1rem;

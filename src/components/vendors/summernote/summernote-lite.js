@@ -4787,6 +4787,11 @@ import 'toastr2/dist/toastr.min.css';
               "positionClass": "toast-bottom-right summernote-toast"
             }
           }
+          else {
+            toastrOptions = {
+                "positionClass": "toast-top-right summernote-toast"
+              }
+          }
           this.toastr = new Toastr(toastrOptions);
           this.toastr.$container.id = 'summernoteToast'
           

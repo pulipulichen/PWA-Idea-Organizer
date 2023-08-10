@@ -15,7 +15,17 @@
     box-shadow: 0rem 0.2rem 0.1rem rgba(0,0,0,0.7);
     
     position: fixed;
-    bottom: 0;
+    top: 0px;
+
+    @media only screen and (max-width: 992px) {
+      top: 63px ;
+    }
+
+    @media only screen and (max-height: 520px) {
+      top: 63px ;
+    }
+    // left: 0px;
+    // padding-left: 1em;
     
     //width: calc(100% - 2rem);
     width: 100%;
@@ -26,10 +36,10 @@
       //height: auto;
       
       .handler {
-        .angle.up.icon {
+        .angle.down.icon {
           display: none;
         }
-        .angle.down.icon {
+        .angle.up.icon {
           display: inline-block;
         }
       }
@@ -43,7 +53,7 @@
       padding: 0 1rem;
       text-indent: 0 !important;
       
-      .angle.down.icon {
+      .angle.up.icon {
         display: none;
       }
     }

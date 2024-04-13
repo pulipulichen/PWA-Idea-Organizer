@@ -243,6 +243,7 @@ let MusicPlaylist = {
       this.utils.PopupUtils.openURLFullscreen(url, name)
     },
     thumbnailURL (url) {
+      console.log(url)
       let youtubeID = YouTubeVideoIDParser(url)
       return `https://i3.ytimg.com/vi/${youtubeID}/sddefault.jpg`
     },

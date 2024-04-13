@@ -244,7 +244,7 @@ let MusicPlaylist = {
     },
     thumbnailURL (url) {
       let youtubeID = YouTubeVideoIDParser(url)
-      return `https://i3.ytimg.com/vi/${youtubeID}/maxresdefault.jpg`
+      return `https://i3.ytimg.com/vi/${youtubeID}/sddefault.jpg`
     },
     computedUILabelStyle (url) {
       return {

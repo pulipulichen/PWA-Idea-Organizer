@@ -10,7 +10,8 @@ let YoutubePlayer = {
       inited: false,
       player: null,
       state: null,
-      playerID: null
+      playerID: null,
+      internal: false
     }
   },
 //  components: {
@@ -75,7 +76,11 @@ let YoutubePlayer = {
     },
     isPause () {
       if (this.isPause === true) {
+        this.internal = true
         this.player.pauseVideo()
+        setTimeout(() => {
+          this.internal = false
+        }, 500)
       }
       else {
         this.player.playVideo()
@@ -183,12 +188,18 @@ let YoutubePlayer = {
         //    the player should play for six seconds and then stop.
         //var done = false;
         let onPlayerStateChange = (event) => {
-          //console.log(this.BGMPlayerState)
+          // console.log(this.BGMPlayerState, )
           this.state = event.data
+
+          // console.log(inited, event.data)
+
           if (inited === false && event.data === 1) {
-            inited = true
+            
             //setTimeout(() => {
               event.target.pauseVideo()
+
+              // console.log('暫停')
+              event.target.seekTo(0, true)
               //console.log(1)
               
               //setTimeout(() => {
@@ -204,12 +215,32 @@ let YoutubePlayer = {
                   //console.log(3)
                   //event.target.setVolume(100)
                   //event.target.unMute()
+                  
+
+                  setTimeout(() => {
+                    inited = true
+                  }, 500)
                   _this.inited = true
+
+                  // _this.inited = true
+
                   _this.checkWaitAction()
                   resolve(true)
                 //}, 0)
               //}, 0)
             //}, 0)
+          }
+          else if (inited === true) {
+            if (event.data === 2) {
+              // this.pause()
+              // resolve(true)
+              // console.log('ok?')
+              if (this.internal === false) {
+                this.$parent.resetTimer()
+              }
+              
+              resolve(true)
+            }
           }
         }
         

@@ -31,6 +31,7 @@ let TomatoTimer = {
       endSoundObject: new Audio(endSound),
       tickSound1Object: new Audio(tickSound1),
       tickSound2Object: new Audio(tickSound2),
+      // isInOperation: false
     }
   },
   components: {

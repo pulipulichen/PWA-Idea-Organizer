@@ -50,10 +50,11 @@ let MusicPlaylist = {
   watch: {
     addURL () {
       let url = this.addURL.trim()
-      //console.log(url, )
+      
+      // console.log(url, 12)
       if (url === '' || 
             url.startsWith('http') === false || 
-            url.split('/').length < 4 || 
+            // url.split('/').length < 4 || 
             (url.indexOf('youtu') === -1 && url.indexOf('googl') === -1)) {
         // console.log('addURL false')
         this.isAddable = false

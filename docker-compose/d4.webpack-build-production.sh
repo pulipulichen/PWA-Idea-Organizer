@@ -1,4 +1,8 @@
-BASEDIR=$(dirname "$0")
-cd "$BASEDIR"
-cd ..
-docker-compose run app npm run w4.webpack-build-production
+#!/bin/sh
+set -e
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname "$0")" && pwd)
+. "$SCRIPT_DIR/compose-env.sh"
+cd "$SCRIPT_DIR/.."
+
+$COMPOSE_CMD run app npm run w4.webpack-build-production
